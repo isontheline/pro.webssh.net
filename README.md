@@ -2,9 +2,7 @@
 This repository should be used to [report any issue](https://github.com/isontheline/pro.webssh.net/issues) with the use of [WebSSH Pro](https://apps.apple.com/us/app/webssh-pro/id497714887) application.
 
 ## Becoming an External Tester
-Really? Good luck!
-
-https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester
+Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
 
 ## Diary
 ### July 2020
