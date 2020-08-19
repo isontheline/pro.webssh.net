@@ -4,9 +4,9 @@ This repository should be used to [report any issue](https://github.com/isonthel
 ## Becoming an External Tester
 Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
 
-## Current Thinkings
-* Local Shell Commands #48
-* In App Purchases #23
+## Current Thinkings : Do you have an opinion?
+* Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
+* In App Purchases [#23](https://github.com/isontheline/pro.webssh.net/issues/23)
 
 ## Diary
 ### August 2020
