@@ -7,14 +7,21 @@ Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming
 ## Diary
 ### August 2020
 > I have released 3 versions of WebSSH Pro in less than 30 days 🥳
+>
 > At the time of writing, 25 issues are open, 11 related to bugs and 14 related to improvements.
 > Before July 2020 there was two WebSSH flavors : Pro and Essential. The first one was (and is always) paid whereas Essential was free and "sponsored" by ads. Essential flavor was retired from Apple Store on July because too buggy and the ads too boring.
+>
 > I think it's time to release WebSSH Pro with [In App Purchases](https://github.com/isontheline/pro.webssh.net/issues/23) in order to allow a lot of users to acquire WebSSH.
+>
 > If you already have buyed WebSSH Pro you're not concerned by this change. If you don't have buyed it, you will be able to download it for free in the next few weeks but you will need to buy an In App Purchase in order to upgrade to all features.
+>
 > More to come...
 
 ### July 2020
 > After 2 years and 6 months of inactivity (January 2018) about WebSSH Pro, I´m back!
+>
 > There is a lot of problems to fix : New key formats to support, new Apple OS to support, a lot of crashes and UI bugs...
+>
 > I will fix all problems, so please be patient and create any issue on this repository in order to track the progress.
+>
 > To everyone : Thank you so much for beeing users since 2012 ♥
