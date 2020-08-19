@@ -4,6 +4,10 @@ This repository should be used to [report any issue](https://github.com/isonthel
 ## Becoming an External Tester
 Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
 
+## Current Thinkings
+* Local Shell Commands #48
+* In App Purchases #23
+
 ## Diary
 ### August 2020
 > I have released 3 versions of WebSSH Pro in less than 30 days 🥳
