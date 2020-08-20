@@ -8,6 +8,13 @@ Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming
 * Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
 * In App Purchases [#23](https://github.com/isontheline/pro.webssh.net/issues/23)
 
+# Who is behind?
+Me :)
+
+I'm Arnaud Mengus, full time CISO and DPO, WebSSH is one of my side projects.
+
+My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
+
 ## Diary
 ### August 2020
 > I have released 3 versions of WebSSH Pro in less than 30 days 🥳
