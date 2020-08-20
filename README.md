@@ -8,15 +8,15 @@ Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming
 * Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
 * In App Purchases [#23](https://github.com/isontheline/pro.webssh.net/issues/23)
 
-# Who is behind?
+## Who is behind?
 Me :)
 
 I'm Arnaud Mengus, full time CISO and DPO, WebSSH is one of my side projects.
 
 My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
 
-## WebSSH' Diary
-### August 2020
+# WebSSH' Diary
+## August 2020
 > I have released 3 versions of WebSSH Pro in less than 30 days 🥳
 >
 > At the time of writing, 25 issues are open, 11 related to bugs and 14 related to improvements.
@@ -28,7 +28,7 @@ My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://f
 >
 > More to come...
 
-### July 2020
+## July 2020
 > After 2 years and 6 months of inactivity (January 2018) about WebSSH Pro, I´m back!
 >
 > There is a lot of problems to fix : New key formats to support, new Apple OS to support, a lot of crashes and UI bugs...
