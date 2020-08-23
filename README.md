@@ -6,7 +6,6 @@ Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming
 
 ## Current Thinkings : Do you have an opinion?
 * Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
-* In App Purchases [#23](https://github.com/isontheline/pro.webssh.net/issues/23)
 
 ## Who is behind?
 Me :)
