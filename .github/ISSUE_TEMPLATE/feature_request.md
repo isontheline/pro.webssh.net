@@ -15,7 +15,7 @@ assignees: ''
 - [ ] Tools
 
 **Describe the feature**
-A clear and concise description of what the feature is.
+_A clear and concise description of what the feature is. Be warned : I will refuse requests with no or little informations_
 
 **Screenshots / Draws**
-If applicable, add screenshots and/or draws to help explain your feature request.
+_If applicable, add screenshots and/or draws to help explain your feature request._
