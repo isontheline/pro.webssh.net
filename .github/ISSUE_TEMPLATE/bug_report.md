@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help me to improve WebSSH
 title: ''
 labels: ''
 assignees: ''
@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+_A clear and concise description of what the bug is. Be warned : I will refuse reports with no or little informations_
 
 **Informations**
  - Device : [e.g. iPhone 6]
@@ -16,7 +16,7 @@ A clear and concise description of what the bug is.
  - WebSSH Pro version : [e.g. 13.16]
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+_If applicable, add screenshots to help explain your problem._
 
 **To Reproduce**
 Steps to reproduce the behavior:
