@@ -1,18 +1,18 @@
 # WebSSH
 This repository should be used to [report any issue](https://github.com/isontheline/pro.webssh.net/issues) with the use of [WebSSH](https://apps.apple.com/us/app/webssh-pro/id497714887) application.
 
-## Becoming an External Tester
-Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
-
-## Current Thinkings : Do you have an opinion?
-* Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
-
 ## Who is behind?
 Me :)
 
 I'm Arnaud Mengus, full time CISO and DPO, WebSSH is one of my side projects.
 
 My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
+
+## Current Thinkings : Do you have an opinion?
+* Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
+
+## Becoming an External Tester
+Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
 
 # WebSSH' Diary
 ## September 2020
