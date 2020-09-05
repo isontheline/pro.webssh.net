@@ -17,7 +17,10 @@ My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://f
 # WebSSH' Diary
 ## September 2020
 > Since September 1st, 2020 WebSSH is now available for free 🤩
+>
 > I have implemented an In-App Purchase in order to unlock the ability to add unlimited connections❗️
+>
+> Thanks a lot for your support since 2012 ❤️
 
 ## August 2020
 > I have released 3 versions of WebSSH in less than 30 days 🥳
