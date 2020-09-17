@@ -8,9 +8,6 @@ I'm Arnaud Mengus, full time CISO and DPO, WebSSH is one of my side projects.
 
 My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
 
-## Current Thinkings : Do you have an opinion?
-* Local Shell Commands [#48](https://github.com/isontheline/pro.webssh.net/issues/48)
-
 ## Becoming an External Tester
 Really? [Good luck!](https://github.com/isontheline/pro.webssh.net/wiki/Becoming-External-Tester)
 
