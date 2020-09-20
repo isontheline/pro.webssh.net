@@ -1,0 +1,5 @@
+Copyright 2012 by pontius software GmbH (Switzerland), All rights reserved
+
+The code and its documentation are provided free of charge under the terms of the Creative Commons BY-SA 3.0 license.
+
+You are allowed to use this class for any of your projects (be it commercial or open source). If you do so, you are invited to give credits to the author Ralph Gasser (pontius software GmbH, Switzerland). If you alter the class and/or improve upon it, you are kindly asked to share your work under the same terms.
