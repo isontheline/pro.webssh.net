@@ -1,0 +1,25 @@
+name: Update WebSSH Documentation
+on:
+  push:
+    branches: [ master ]
+jobs:
+  deploy_mkdocs_content:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - run: pip install mkdocs
+      - run: pip install mkdocs-material  
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: cd src; mkdocs build --clean
+      - run: echo "webssh.net" > src/site/CNAME
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: src/site
