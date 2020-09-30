@@ -1,0 +1,18 @@
+site_name: WebSSH - SSH client for iOS
+theme:
+  name: material
+  logo: images/webssh.png
+  favicon: images/favicon.ico
+  font: false
+extra_css:
+  - stylesheets/extra.css
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/isontheline/pro.webssh.net
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/arnaud-mengus
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date

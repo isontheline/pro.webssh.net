@@ -1,0 +1,3 @@
+tasks:
+  - init: 'echo "Installing..."'
+    command: bash ./scripts/mkdocs/install.sh
