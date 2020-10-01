@@ -1,3 +1,5 @@
+# TPKeyboardAvoiding
+```
 Copyright (c) 2013 Michael Tyson
 
 This software is provided 'as-is', without any express or implied
@@ -18,3 +20,4 @@ freely, subject to the following restrictions:
 
 3. This notice may not be removed or altered from any source
    distribution.
+   ```

@@ -1,3 +1,5 @@
+# NYXImagesKit
+```
 Copyright 2011 Benjamin Godard. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are
@@ -23,3 +25,4 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 The views and conclusions contained in the software and documentation are those of the
 authors and should not be interpreted as representing official policies, either expressed
 or implied, of Benjamin Godard.
+```
