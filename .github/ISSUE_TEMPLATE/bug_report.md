@@ -12,8 +12,8 @@ assignees: ''
 - [ ] SFTP
 - [ ] Tunnel
 - [ ] Web
-- [ ] Tools
-  - [ ] mashREPL
+- [ ] mashREPL
+- [ ] Other tool / feature
 
 **Describe the bug**
 _A clear and concise description of what the bug is. Be warned : I will refuse reports with no or little informations_
