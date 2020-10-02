@@ -12,8 +12,8 @@ assignees: ''
 - [ ] SFTP
 - [ ] Tunnel
 - [ ] Web
-- [ ] Tools
-  - [ ] mashREPL
+- [ ] mashREPL
+- [ ] Other tool / feature
   
 **Describe the feature**
 _A clear and concise description of what the feature is. Be warned : I will refuse requests with no or little informations_
