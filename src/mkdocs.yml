@@ -1,5 +1,5 @@
 site_url: https://webssh.net
-site_name: WebSSH - SSH client for iOS
+site_name: WebSSH - iOS SSH client
 theme:
   name: material
   logo: images/webssh.png
