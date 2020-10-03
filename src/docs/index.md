@@ -1,13 +1,10 @@
-# Welcome to WebSSH!
-Here you will find everything you need to make a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=), a [feature request](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=feature_request.md&title=), or a [simple how to](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=how_to.md&title=).
-Don't have downloaded [WebSSH](https://apps.apple.com/us/app/webssh-pro/id497714887) yet?
+# About WebSSH
+WebSSH is an iOS & iPadOS SSH, SFTP and Port Forwarding client available in your pocket since 2012!
 
 ## Who is behind?
-Me :)
+I'm [Arnaud Mengus](https://mengus.net) 🤠 full time CISO and DPO. WebSSH is one of my night projects.
 
-I'm [Arnaud Mengus](https://mengus.net), full time CISO and DPO, WebSSH is one of my side projects.
+My other night projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
 
-My other projects? [Wolf.Solar](https://wolf.solar) and [forwarsto.re](https://forwardsto.re)
-
-## Becoming an External Tester
-Really? [Good luck!](/becoming-external-tester/)
+## Licenses
+In order to make the "best" iOS & iPadOS SSH client of the App Store, some [licenses](/documentation/licenses/) are needed.
