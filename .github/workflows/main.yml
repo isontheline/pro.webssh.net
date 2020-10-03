@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin/issues/10#issuecomment-585752881
+          # Number of commits to fetch. 0 indicates all history.
+          # Default: 1
+          fetch-depth: 0
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
