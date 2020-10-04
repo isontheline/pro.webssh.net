@@ -1,15 +1,11 @@
-# Becoming External Tester
-## Read this before getting any "surprises"
-* Crash logs and statistical information related to your use of WebSSH Pro Beta App will automatically be provided to Apple and WebSSH Team as part of TestFlight.
-* You may submit suggestions and ideas to WebSSH Team.
-* WebSSH Pro Beta App may crash and result in data loss in it.
-* If you already have the full version of WebSSH Pro, installation of the WebSSH Pro Beta App may result in data loss.
-* You can stop participating in the beta test by deleting the WebSSH Pro Beta App from your device.
+# Becoming an External Tester
+!!! danger "Read this before getting started"
+    * Crash logs and statistical information related to your use of WebSSH Beta App will automatically be provided to Apple and WebSSH Team as part of TestFlight.
+    * You may submit suggestions and ideas to WebSSH Team.
+    * WebSSH Beta App may crash and result in data loss in it.
+    * If you already have the full version of WebSSH, installation of the WebSSH Beta App may result in data loss.
+    * You can stop participating in the beta test by deleting the WebSSH Beta App from your device.
+    * You will not be able to use some features if you don't have buyed them through the App Store with the full version of WebSSH
+    * [TestFlight Terms of Service](https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html)
 
-## TestFlight Terms of Service
-[Read TestFlight Terms of Service](https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html)
-
-## I want to be an External Tester!
-OK, please stay calm, [it's here](https://testflight.apple.com/join/QSrBK59z)
-
-**Good luck!**
+Becoming an External Tester is as simple as clicking on a link, so please stay calm :smile: and [click here](https://testflight.apple.com/join/QSrBK59z)
