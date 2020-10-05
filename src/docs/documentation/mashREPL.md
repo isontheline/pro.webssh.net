@@ -4,6 +4,9 @@
 
     **MASH** stands for : **M**engus **A**rnaud **SH**ell
 
+!!! warning "Limitations"
+    At this time of writing, mashREPL doesn't support history and arrow keys :cry:
+
 ## Available commands
 | Command    | Premium          | Limitations |
 | ---------- | ---------------- | ----------- |
