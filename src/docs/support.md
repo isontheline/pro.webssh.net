@@ -7,3 +7,4 @@
 
 !!! success "14.6 - Bicyclist :bicyclist:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
+    Be advised that some [features have been fully removed](/documentation/changelog/14.6/) in order to allow the development of WebSSH to go forward.
