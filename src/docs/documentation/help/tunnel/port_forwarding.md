@@ -12,8 +12,11 @@ title: Port Forwarding
 3. Finally choose the remote server port you want to forward locally by using the right syntax
 
 !!! tip "Port Forwarding Syntax"
-    The Port Forwarding Syntax is as simple as :
+    The Port Forwarding Syntax is as simple as : **LOCAL_PORT:REMOTE_SERVER:REMOTE_PORT**
 
-    LOCAL_PORT**:**REMOTE_SERVER**:**REMOTE_PORT
+    **Examples :**
+
+    * **8080:localhost:80** will forward remote port 80 (on the same server as the SSH one) to local port 8080
+    * **3389:localhost:3389** will forward remote port 3389 (on the same server as the SSH one) to local port 3389
 
 # How it works?
