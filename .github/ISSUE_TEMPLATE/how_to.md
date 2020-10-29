@@ -7,13 +7,5 @@ assignees: ''
 
 ---
 
-**Parent feature category**
-- [ ] SSH
-- [ ] SFTP
-- [ ] Tunnel
-- [ ] Web
-- [ ] mashREPL
-- [ ] Other tool / feature
-
 **How to**
 _A clear and concise question about the use of any WebSSH feature. Be warned : I will refuse requests with useless questions_
