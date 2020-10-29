@@ -1,12 +1,13 @@
 ---
 title: Port Forwarding
 ---
+# Port Forwarding
 !!! info "About Tunnel feature (a.k.a Port Forwarding)"
     WebSSH’s Tunnel feature will let you to enable [Local Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding).
 
     Local port forwarding will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.
 
-# How to use it?
+## How to use it?
 1. Add a new tunnel by choossing **Tunnel** tab and by pessing the **+** button
 2. Fill all required fields in order to establish the SSH connection
 3. Finally choose the remote server port you want to forward locally by using the right syntax
@@ -20,7 +21,7 @@ title: Port Forwarding
     * **3389:localhost:3389** will forward remote port 3389 (on the same server as the SSH one) to local port 3389
     * **2222:172.16.0.18:22** will forward remote port 22 (on the server 172.16.0.18) to local port 2222
 
-# How it works?
+## How it works?
 Behind the scene WebSSH uses [Network Extension](https://developer.apple.com/documentation/networkextension) inside your iDevice in order to setup a [Packet Tunnel Provider](https://developer.apple.com/documentation/networkextension/packet_tunnel_provider).
 
 !!! question "Why WebSSH is requesting to add VPN configuration?"
