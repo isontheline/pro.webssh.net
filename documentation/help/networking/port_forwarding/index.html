@@ -441,12 +441,44 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Port Forwarding
+        <span class="md-nav__icon md-icon"></span>
+      </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
       Port Forwarding
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it" class="md-nav__link">
+    How to use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works?
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -998,8 +1030,28 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-it" class="md-nav__link">
+    How to use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    How it works?
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1012,12 +1064,14 @@
               
                 
                 
+                  <h1>Port Forwarding</h1>
+                
                 <div class="admonition info">
 <p class="admonition-title">About Tunnel feature (a.k.a Port Forwarding)</p>
 <p>WebSSH’s Tunnel feature will let you to enable <a href="https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding">Local Port Forwarding</a>.</p>
 <p>Local port forwarding will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.</p>
 </div>
-<h1 id="how-to-use-it">How to use it?</h1>
+<h2 id="how-to-use-it">How to use it?</h2>
 <ol>
 <li>Add a new tunnel by choossing <strong>Tunnel</strong> tab and by pessing the <strong>+</strong> button</li>
 <li>Fill all required fields in order to establish the SSH connection</li>
@@ -1033,7 +1087,7 @@
 <li><strong>2222:172.16.0.18:22</strong> will forward remote port 22 (on the server 172.16.0.18) to local port 2222</li>
 </ul>
 </div>
-<h1 id="how-it-works">How it works?</h1>
+<h2 id="how-it-works">How it works?</h2>
 <p>Behind the scene WebSSH uses <a href="https://developer.apple.com/documentation/networkextension">Network Extension</a> inside your iDevice in order to setup a <a href="https://developer.apple.com/documentation/networkextension/packet_tunnel_provider">Packet Tunnel Provider</a>.</p>
 <div class="admonition question">
 <p class="admonition-title">Why WebSSH is requesting to add VPN configuration?</p>
