@@ -3,7 +3,7 @@ title: Port Forwarding
 ---
 # Port Forwarding
 !!! info "About Tunnel feature (a.k.a Port Forwarding)"
-    WebSSH’s Tunnel feature will let you to enable [Local Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding).
+    WebSSH's Tunnel feature will let you to enable [Local Port Forwarding](https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding).
 
     Local port forwarding will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.
 
