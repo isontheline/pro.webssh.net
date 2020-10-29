@@ -6,14 +6,6 @@ labels: ''
 assignees: ''
 
 ---
-
-**Parent feature category**
-- [ ] SSH
-- [ ] SFTP
-- [ ] Tunnel
-- [ ] Web
-- [ ] mashREPL
-- [ ] Other tool / feature
   
 **Describe the feature**
 _A clear and concise description of what the feature is. Be warned : I will refuse requests with no or little informations_
