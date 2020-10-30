@@ -29,8 +29,8 @@ Behind the scene WebSSH uses [Network Extension](https://developer.apple.com/doc
     > "WebSSH" Would Like to Add VPN Configurations
     >
     > All network activity on this iDevice may be filtered or monitored when using VPN.
-    [Packet Tunnel Provider](https://developer.apple.com/documentation/networkextension/packet_tunnel_provider) - used by WebSSH and provided by Apple - is designed to implement a packet-oriented custom VPN protocol, so it's why this prompt is displayed.
 
+    [Packet Tunnel Provider](https://developer.apple.com/documentation/networkextension/packet_tunnel_provider) - used by WebSSH and provided by Apple - is designed to implement a packet-oriented custom VPN protocol, so it's why this prompt is displayed.
     WebSSH will never forward your data to any external server. Your data will never leave your iDevice except to your own SSH server!
 
 If you need more help about this feature, please open a [how to](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=how_to.md&title=) issue.
