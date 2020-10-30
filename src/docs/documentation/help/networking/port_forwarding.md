@@ -15,8 +15,7 @@ title: Port Forwarding
 !!! tip "Port Forwarding Syntax"
     The Port Forwarding Syntax is as simple as : **LOCAL_PORT:REMOTE_SERVER:REMOTE_PORT**
 
-    **Examples :**
-
+!!! abstract "Port Forwarding Examples"
     * **8080:localhost:80** will forward remote port 80 (on the same server as the SSH one) to local port 8080
     * **3389:localhost:3389** will forward remote port 3389 (on the same server as the SSH one) to local port 3389
     * **2222:172.16.0.18:22** will forward remote port 22 (on the server 172.16.0.18) to local port 2222
