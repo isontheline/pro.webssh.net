@@ -7,6 +7,11 @@ title: Port Forwarding
 
     Local port forwarding will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.
 
+!!! bug "Dynamic Port Forwarding"
+    I'm aware that 14.6 no longer supports Dynamic Port Forwarding (eg. bastion use) but this is a bug :bug:, don't blame me :angel:
+
+    You can preview 14.7 - Tractor :tractor: by becoming an [External Tester](/becoming-external-tester). Good luck.
+
 ## How to use it?
 1. Add a new tunnel by choossing **Tunnel** tab and by pessing the **+** button
 2. Fill all required fields in order to establish the SSH connection
