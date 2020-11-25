@@ -31,7 +31,7 @@ If you do not agree to this policy, please do not use our App.
 
 Your continued use of the App following the posting of changes to this policy will be deemed your acceptance of those changes.
 
-# Contacting me
+# Contacting us
 If you have any questions about this Privacy Policy, the practices of this App, or your dealings with this App, please contact us at :
 
 * [https://mengus.net/#contact](https://mengus.net/#contact)
