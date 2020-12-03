@@ -1,5 +1,5 @@
 ---
-title: Editing / Deleting connection
+title: Edit / Delete connection
 ---
 # How to edit or delete a connection?
 ## Editing a connection
