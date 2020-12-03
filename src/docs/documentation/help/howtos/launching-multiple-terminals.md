@@ -2,6 +2,7 @@
 title: Multiple terminals
 ---
 # How to launch multiple terminals?
+
 !!! info "Split View / Slide Over"
     WebSSH isn't - yet - compatible with Split View / Slide Over :sob:
 
