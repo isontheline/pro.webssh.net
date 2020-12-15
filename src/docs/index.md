@@ -1,5 +1,5 @@
 # About
-WebSSH is an iOS & iPadOS SSH, SFTP and Port Forwarding client available in your pocket since 2012!
+[WebSSH](https://apps.apple.com/us/app/webssh/id497714887) is an iOS & iPadOS SSH, SFTP and [Port Forwarding](/documentation/help/networking/port_forwarding/) client available in your pocket since 2012!
 
 !!! info "Who is behind?"
     I'm [Arnaud Mengus](https://mengus.net) :guardsman: full time CISO and DPO. WebSSH is one of my night projects.
