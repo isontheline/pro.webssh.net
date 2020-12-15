@@ -2,6 +2,7 @@ site_url: https://webssh.net
 site_name: iOS & iPadOS SSH client - WebSSH
 theme:
   name: material
+  custom_dir: overrides
   logo: images/webssh.png
   favicon: images/favicon.ico
   font: false
