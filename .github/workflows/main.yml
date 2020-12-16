@@ -20,6 +20,7 @@ jobs:
       - run: pip install mkdocs
       - run: pip install mkdocs-material  
       - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install mkdocs-redirects
       - run: cd src; mkdocs build --clean
       - run: echo "webssh.net" > src/site/CNAME
       - name: Deploy
