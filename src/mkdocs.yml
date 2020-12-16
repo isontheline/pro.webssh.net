@@ -18,6 +18,10 @@ plugins:
   - search
   - git-revision-date-localized:
       type: date
+  - redirects:
+      redirect_maps:
+        'documentation/help/networking/port_forwarding.md': 'documentation/help/networking/port-forwarding.md'
+        'documentation/help/networking/port_knocking.md': 'documentation/help/networking/port-knocking.md'
 markdown_extensions:
   - admonition
   - attr_list
