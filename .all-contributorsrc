@@ -16,7 +16,8 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/17353392?v=4",
       "profile": "https://github.com/svenh0",
       "contributions": [
-        "doc"
+        "ideas",
+        "test"
       ]
     },
     {
@@ -25,7 +26,16 @@
       "avatar_url": "https://avatars3.githubusercontent.com/u/56022918?v=4",
       "profile": "https://github.com/ash34",
       "contributions": [
-        "doc"
+        "ideas"
+      ]
+    },
+    {
+      "login": "fergusb",
+      "name": "Fergus Bremner",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2685532?v=4",
+      "profile": "http://www.acedia.com/",
+      "contributions": [
+        "ideas"
       ]
     }
   ],
