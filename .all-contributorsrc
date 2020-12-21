@@ -34,7 +34,7 @@
       "login": "fergusb",
       "name": "Fergus Bremner",
       "avatar_url": "https://avatars0.githubusercontent.com/u/2685532?v=4",
-      "profile": "http://www.acedia.com/",
+      "profile": "https://github.com/fergusb",
       "contributions": [
         "ideas",
         "bug"
@@ -44,10 +44,19 @@
       "login": "rikkipitt",
       "name": "Rikki Pitt",
       "avatar_url": "https://avatars3.githubusercontent.com/u/1147871?v=4",
-      "profile": "https://www.jemcode.co.uk/",
+      "profile": "https://github.com/rikkipitt",
       "contributions": [
         "ideas",
         "bug"
+      ]
+    },
+    {
+      "login": "lukensmall",
+      "name": "Luke N Small",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/33109148?v=4",
+      "profile": "https://fuzzamp.com/",
+      "contributions": [
+        "doc"
       ]
     }
   ],
