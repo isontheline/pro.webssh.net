@@ -54,11 +54,20 @@
       "login": "lukensmall",
       "name": "Luke N Small",
       "avatar_url": "https://avatars3.githubusercontent.com/u/33109148?v=4",
-      "profile": "https://fuzzamp.com/",
+      "profile": "https://github.com/lukensmall",
       "contributions": [
-        "doc"
+        "bug"
+      ]
+    },
+    {
+      "login": "r2ixuz",
+      "name": "r2ixuz",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15087554?v=4",
+      "profile": "https://github.com/r2ixuz",
+      "contributions": [
+        "bug"
       ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 3
 }
