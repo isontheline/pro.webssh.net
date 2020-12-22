@@ -18,6 +18,9 @@ Thanks goes to these wonderful people :
     <td align="center"><a href="https://github.com/lukensmall"><img src="https://avatars3.githubusercontent.com/u/33109148?v=4?s=100" width="100px;" alt=""/><br /><sub><b>lukensmall</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Alukensmall" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/r2ixuz"><img src="https://avatars0.githubusercontent.com/u/15087554?v=4?s=100" width="100px;" alt=""/><br /><sub><b>r2ixuz</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Ar2ixuz" title="Bug reports">🐛</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/ftneek"><img src="https://avatars3.githubusercontent.com/u/34530420?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ftneek</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Aftneek" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
