@@ -87,5 +87,6 @@
       ]
     }
   ],
-  "contributorsPerLine": 3
+  "contributorsPerLine": 3,
+  "contributorsSortAlphabetically": true
 }
