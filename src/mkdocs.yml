@@ -6,6 +6,8 @@ theme:
   logo: images/webssh.png
   favicon: images/favicon.ico
   font: false
+  palette:
+    scheme: preference
 extra_css:
   - stylesheets/extra.css
 extra:
