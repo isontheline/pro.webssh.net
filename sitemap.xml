@@ -52,19 +52,7 @@
      <lastmod>2021-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://webssh.net/documentation/changelog/14.4/</loc>
-     <lastmod>2021-01-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://webssh.net/documentation/changelog/14.5/</loc>
-     <lastmod>2021-01-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://webssh.net/documentation/changelog/14.6/</loc>
-     <lastmod>2021-01-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://webssh.net/documentation/changelog/14.7/</loc>
+     <loc>https://webssh.net/documentation/changelog/14.10/</loc>
      <lastmod>2021-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
@@ -76,7 +64,15 @@
      <lastmod>2021-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://webssh.net/documentation/changelog/older/</loc>
+     <loc>https://webssh.net/documentation/changelog/older/oldest/</loc>
+     <lastmod>2021-01-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://webssh.net/documentation/changelog/older/14/14.6/</loc>
+     <lastmod>2021-01-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://webssh.net/documentation/changelog/older/14/14.7/</loc>
      <lastmod>2021-01-02</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
