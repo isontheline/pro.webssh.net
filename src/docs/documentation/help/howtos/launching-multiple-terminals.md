@@ -1,7 +1,7 @@
 ---
-title: Multiple terminals
+title: Multiple connections
 ---
-# How to launch multiple terminals?
+# How to launch multiple SSH or SFTP connections?
 
 !!! info "Split View / Slide Over"
     WebSSH isn't - yet - compatible with Split View / Slide Over :sob:
