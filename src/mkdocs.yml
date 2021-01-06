@@ -24,6 +24,7 @@ plugins:
       redirect_maps:
         'documentation/help/networking/port_forwarding.md': 'documentation/help/networking/port-forwarding.md'
         'documentation/help/networking/port_knocking.md': 'documentation/help/networking/port-knocking.md'
+        'becoming-external-tester.md': 'documentation/becoming-external-tester.md'
 markdown_extensions:
   - admonition
   - attr_list
