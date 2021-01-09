@@ -464,3 +464,11 @@
 "What_Is_My_IP_Address"="What Is My IP Address";
 "WebSSH_Will_Be_Closed_In_30_Seconds"="WebSSH will be closed in 30 seconds.";
 "Want_To_Be_Notified_For_Closing"="Want to be notified for connection timeout?\r\nPlease enable WebSSH local notifications.";
+// WebSSH 14.6 ->
+"Please_Help_Me_Support_WebSSH"="❣️ Ao adquirir a versão completa do WebSSH, você pode adicionar quantas conexões SSH / SFTP / TUNNEL desejar.";
+// <- WebSSH 14.6
+// WebSSH 14.8 ->
+"Please_Help_Me_Support_WebSSH_Title"="❤️ Ajude-me a continuar WebSSH";
+"Buy_Price" = "Compre\n%@";
+"Do_You_Love_WebSSH"="Você ama o WebSSH?";
+// <- WebSSH 14.8

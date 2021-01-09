@@ -529,3 +529,20 @@
 // WebSSH 13.15 ->
 "Protocol"="Protocol";
 // <- WebSSH 13.15
+// WebSSH 14.6 ->
+"Please_Help_Me_Support_WebSSH"="❣️ By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want.";
+"Disconnect_Tunnel_Before_Another"="Please disconnect tunnel before launching another.";
+// <- WebSSH 14.6
+// WebSSH 14.7 ->
+"Profile_Startup_Command"="Remote command";
+"Startup_Command_Custom"="Custom";
+"Startup_Command_None"="None";
+// <- WebSSH 14.7
+// WebSSH 14.8 ->
+"Please_Help_Me_Support_WebSSH_Title"="❤️ Help me continue WebSSH";
+"Buy_Price" = "Buy\n%@";
+"Profile_Reverse_Wraparound"="Reverse Wrap-Around";
+"Profile_Value_Enabled"="Enabled";
+"Profile_Value_Disabled"="Disabled";
+"Do_You_Love_WebSSH"="Do you love WebSSH?";
+// <- WebSSH 14.8
