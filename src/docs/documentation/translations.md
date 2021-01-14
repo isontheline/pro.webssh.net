@@ -20,6 +20,7 @@ Translations are available [here](https://github.com/isontheline/pro.webssh.net/
 
 === "German"
     * Aykut René İnan
+    * Ralph Cyranka
 
 === "Portuguese"
     * Marcelo PERES
