@@ -1,7 +1,7 @@
 # Support
 
-[Enroll for 14.10 :fontawesome-solid-flask:](/documentation/becoming-external-tester/){: .md-button .md-button--primary }
-[Bug Report :fontawesome-solid-bullhorn:](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=){: .md-button .md-button--primary }
+[Enroll 14.10 :fontawesome-solid-flask:](/documentation/becoming-external-tester/){: .md-button .md-button--primary }
+[Bug! :fontawesome-solid-bug:](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=){: .md-button .md-button--primary }
 
 !!! abstract "All the help you need when you need it"
     Whenever you need to make a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=), or want to share an [idea](https://github.com/isontheline/pro.webssh.net/discussions?discussions_q=category%3AIdeas) for a new feature, or just have a [question](https://github.com/isontheline/pro.webssh.net/discussions?discussions_q=category%3AQ%26A) about how to use WebSSH, [I'm](/) never very far :sunny:
