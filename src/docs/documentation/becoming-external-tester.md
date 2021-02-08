@@ -11,4 +11,8 @@
     * You will not be able to use some features if you don't have buyed them through the App Store with the full version of WebSSH.
     * Please don't to become an External Tester in order to unlock some features, it won't be the case.
 
-Becoming an External Tester is as simple as clicking on a link, so please stay calm :smile: and [click here](https://testflight.apple.com/join/QSrBK59z)
+To become an External Tester just click[^1] on this shiny button :
+
+[Enroll now :fontawesome-solid-flask:](https://testflight.apple.com/join/QSrBK59z){: .md-button .md-button--primary }
+
+[^1]: Good luck :smile:
