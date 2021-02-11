@@ -1,6 +1,6 @@
 # Become a sponsor
 !!! info "Who is behind WebSSH?"
-    I'm [Arnaud Mengus](https://mengus.net) :guardsman: full time CISO and DPO!
+    I'm [Arnaud Mengus](https://mengus.net) :guardsman: full time CTO, CISO and DPO!
     
     But! I'm also a **nighty** Full Stack Developer :grin:  
 
