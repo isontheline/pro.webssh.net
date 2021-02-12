@@ -472,3 +472,7 @@
 "Buy_Price" = "Compre\n%@";
 "Do_You_Love_WebSSH"="Você ama o WebSSH?";
 // <- WebSSH 14.8
+"Profile_Carriage_Return" = "Retorno de carro";
+"Editar" = "Editar";
+"Baixar" = "Baixar";
+"Exibir" = "Exibir";

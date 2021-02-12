@@ -528,3 +528,9 @@
 "Profile_Value_Disabled"="Désactivé";
 "Do_You_Love_WebSSH"="Aimez-vous WebSSH ?";
 // <- WebSSH 14.8
+// WebSSH 14.10 ->
+"Profile_Carriage_Return"="Retour chariot";
+"Edit"="Modifier";
+"Download"="Télécharger";
+"View"="Visualiser";
+// <- WebSSH 14.10

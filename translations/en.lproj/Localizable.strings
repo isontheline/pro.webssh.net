@@ -546,3 +546,11 @@
 "Profile_Value_Disabled"="Disabled";
 "Do_You_Love_WebSSH"="Do you love WebSSH?";
 // <- WebSSH 14.8
+// WebSSH 14.10 ->
+"Profile_Cariage_Return_R"="\\r";
+"Profile_Cariage_Return_N"="\\n";
+"Profile_Carriage_Return"="Carriage Return";
+"Edit"="Edit";
+"Download"="Download";
+"View"="View";
+// <- WebSSH 14.10
