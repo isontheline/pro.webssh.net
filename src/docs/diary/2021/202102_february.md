@@ -2,7 +2,7 @@
 
 Hi everybody :wave:
 
-WebSSH 14.10 - Truck :truck: will be released soon with two bug fixes and two additions and six fixes.
+WebSSH 14.10 - Truck :truck: will be released soon with six bug fixes and two additions.
 
 Since January I'm now a CTO junior, and I have a lot of work... :cold_sweat:
 
