@@ -6,7 +6,7 @@ title: Multiple connections
 !!! info "Split View / Slide Over"
     WebSSH isn't - yet - compatible with Split View / Slide Over :sob:
 
-    But I have a temporary solution for you...
+    But we have a **temporary** solution for you...
 
 1. Launch WebSSH
 2. Go to Settings :gear:
@@ -15,4 +15,4 @@ title: Multiple connections
 
 You will now be able to switch or add new windows by pressing the navigation bar. 
 
-It's hacky but it works while I'm working on Split View / Slide Over :construction_worker:
+It's hacky but it works while we are working on Split View / Slide Over :construction_worker:
