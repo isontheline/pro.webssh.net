@@ -2,12 +2,13 @@
 title: About
 ---
 
-# About WebSSH
+# About
+## WebSSH
 WebSSH is an "awesome" iOS & iPadOS SSH, SFTP and Port Forwarding client maintained by the **MENGUS ARNAUD** company and available in the App Store since 2012!
 
 WebSSH.Net is the official website of the **MENGUS ARNAUD** company.
 
-# About MENGUS ARNAUD
+## MENGUS ARNAUD
 **MENGUS ARNAUD** is the company behind the WebSSH app and website.
 
 | Legal Information |  |

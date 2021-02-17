@@ -1,4 +1,9 @@
-# Becoming an External Tester
+---
+title: Beta Enrollment
+---
+
+# Beta Enrollment
+
 !!! danger "Read this before getting started"
     * Crash logs and statistical information related to your use of WebSSH Beta App will automatically be provided to Apple and WebSSH Team as part of TestFlight.
     * You may submit suggestions and ideas to WebSSH Team.
@@ -11,7 +16,7 @@
     * You will not be able to use some features if you don't have buyed them through the App Store with the full version of WebSSH.
     * Please don't to become an External Tester in order to unlock some features, it won't be the case.
 
-To become an External Tester just click[^1] on this shiny button :
+To enroll for WebSSH Beta Releases, just click[^1] on this shiny button :
 
 [Enroll now :fontawesome-solid-flask:](https://testflight.apple.com/join/QSrBK59z){: .md-button .md-button--primary }
 
