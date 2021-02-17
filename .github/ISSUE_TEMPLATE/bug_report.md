@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Describe the bug**
-_A clear and concise description of what the bug is. Be warned : I will refuse reports with no or little informations_
+_A clear and concise description of what the bug is. Be warned : We will refuse reports with no or little informations_
 
 **Informations**
  - Device : [e.g. iPhone 6]
