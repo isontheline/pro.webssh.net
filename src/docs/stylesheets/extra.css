@@ -1,3 +1,8 @@
 :root {
     --md-primary-fg-color: #129cf3;
 }
+
+[data-md-color-scheme=slate] {
+    --md-default-bg-color: black;
+    --md-admonition-bg-color: var(--md-footer-bg-color);
+}
