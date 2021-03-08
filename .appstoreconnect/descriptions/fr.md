@@ -1,6 +1,6 @@
 Protocoles supportés : SSH, SFTP
 Types de négociation supportés : Session Shell, Session SFTP, Local Forward
-Versions d'iOS supportées : 13, 14
+Versions d'iOS supportées : 14
 
 - Fonctionnalités SSH
 ▪ Port Forwarding (Local)

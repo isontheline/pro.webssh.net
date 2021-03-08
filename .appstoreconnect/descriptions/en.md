@@ -1,6 +1,6 @@
 Supported protocols : SSH, SFTP
 Supported channel types : Session Shell, Session SFTP, Local Forward
-Supported iOS versions : 13, 14
+Supported iOS versions : 14
 
 - SSH Functionalities
 ▪ Port Forwarding (Local)
