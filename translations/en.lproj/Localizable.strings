@@ -519,7 +519,7 @@
 // WebSSH 13.10 ->
 "Show_Virtual_Keys_Above_Keyboard"="Show virtual keys above keyboard";
 "Add_New_Connection_Of_Type"="Add %@ connection";
-"Tap_Plus_Button_To_Add_Your_First_Connection"="Tap the + button to add your first connection";
+"Tap_Plus_Button_To_Add_Your_First_Connection"="Tap (+) button to add your first connection";
 // <- WebSSH 13.10
 // WebSSH 13.13 ->
 "Read_Buffer_Size"="Read Buffer Size (KB)";
@@ -553,4 +553,12 @@
 "Edit"="Edit";
 "Download"="Download";
 "View"="View";
+"Clone"="Clone";
+"Launch"="Launch";
 // <- WebSSH 14.10
+// WebSSH 14.11 ->
+"Checking_Hosts_Availability"="Checking hosts availability";
+// <- WebSSH 14.11
+// WebSSH 14.15 ->
+"Other_Tools"="Other tools";
+// <- WebSSH 14.15
