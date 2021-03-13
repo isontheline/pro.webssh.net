@@ -8,5 +8,5 @@
 
 !!! bug "14.15 - Cookie :cookie:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/14.15/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/14/14.15/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
