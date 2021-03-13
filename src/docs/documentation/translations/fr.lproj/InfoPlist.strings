@@ -1,0 +1,3 @@
+NSFaceIDUsageDescription = "Utilisez Face ID pour déverouiller WebSSH et rien d'autre.";
+NSPhotoLibraryUsageDescription = "Les photos ne sont utilisées qu'avec votre accord.";
+NSLocalNetworkUsageDescription = "L'accès au réseau local est uniquement nécessaire lorsque vous souhaitez vous connecter à un ordinateur local et rien d'autre.";
