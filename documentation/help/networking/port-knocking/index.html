@@ -11,8 +11,8 @@
       
         <link rel="canonical" href="https://webssh.net/documentation/help/networking/port-knocking/">
       
-      <link rel="shortcut icon" href="../../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+      <link rel="icon" href="../../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
     
     
       
@@ -20,7 +20,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.77f3fd56.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2c0c5eaf.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -70,11 +70,9 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
+      <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="https://webssh.net" title="iOS &amp; iPadOS SSH Client - WebSSH" class="md-header__button md-logo" aria-label="iOS & iPadOS SSH Client - WebSSH">
+    <a href="../../../.." title="iOS &amp; iPadOS SSH Client - WebSSH" class="md-header__button md-logo" aria-label="iOS & iPadOS SSH Client - WebSSH" data-md-component="logo">
       
   <img src="../../../../images/webssh.png" alt="logo">
 
@@ -152,11 +150,9 @@
                     
 
 
-
-
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://webssh.net" title="iOS &amp; iPadOS SSH Client - WebSSH" class="md-nav__button md-logo" aria-label="iOS & iPadOS SSH Client - WebSSH">
+    <a href="../../../.." title="iOS &amp; iPadOS SSH Client - WebSSH" class="md-nav__button md-logo" aria-label="iOS & iPadOS SSH Client - WebSSH" data-md-component="logo">
       
   <img src="../../../../images/webssh.png" alt="logo">
 
@@ -1551,11 +1547,11 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Port Knocking Sequence Syntax</p>
-<p>The Port Knocking Sequence Syntax is as simple as : <strong>PROTOCOL:PORT:WAITMS</strong></p>
+<p>The Port Knocking Sequence Syntax is as simple as : <strong>PORT:PROTOCOL:WAITMS</strong></p>
 <ol>
-<li>Fields <strong>PROTOCOL</strong> and <strong>PORT</strong> are mandatory. Field <strong>WAITMS</strong> is optional.</li>
-<li>Field <strong>PROTOCOL</strong> can have these values : <strong>TCP</strong> or <strong>UDP</strong></li>
+<li>Fields <strong>PORT</strong> and <strong>PROTOCOL</strong> are mandatory. Field <strong>WAITMS</strong> is optional.</li>
 <li>Field <strong>PORT</strong> must be an integer between <strong>1</strong> and <strong>65535</strong></li>
+<li>Field <strong>PROTOCOL</strong> can have these values : <strong>TCP</strong> or <strong>UDP</strong></li>
 <li>Field <strong>WAITMS</strong> is an integer to specify the sleep in milliseconds to apply after a port knock. Default is <strong>100</strong> if not specified.</li>
 <li>To add multiple knocks to the sequence, just add a comma between knocks</li>
 </ol>
@@ -1563,9 +1559,9 @@
 <div class="admonition abstract">
 <p class="admonition-title">Port Knocking Examples</p>
 <ul>
-<li><strong>TCP:1985</strong> will knock your server on the TCP port 1985</li>
-<li><strong>TCP:1985,TCP:2020</strong> will knock your server on TCP port 1985 then 2020 (with a default sleep of 100ms)</li>
-<li><strong>TCP:1984:200,UDP:1985:300,TCP:2014:200,UDP:2016:500</strong> will knock on TCP port 1984 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 2014 and will sleep 200 ms, then will knock on UDP port 2016 and will sleep 500 ms.</li>
+<li><strong>1985:TCP</strong> will knock your server on the TCP port 1985</li>
+<li><strong>1985:TCP,2020:TCP</strong> will knock your server on TCP port 1985 then 2020 (with a default sleep of 100ms)</li>
+<li><strong>1984:TCP:200,1985:UDP:300,2014:TCP:200,2016:UDP:500</strong> will knock on TCP port 1984 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 2014 and will sleep 200 ms, then will knock on UDP port 2016 and will sleep 500 ms.</li>
 </ul>
 </div>
                 
@@ -1576,7 +1572,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2021</span>
     
   </small>
 </div>
@@ -1673,7 +1669,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
       
     
   </body>
