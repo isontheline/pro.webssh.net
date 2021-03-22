@@ -18,6 +18,6 @@ title: Beta Enrollment
 
 To enroll for WebSSH Beta Releases, just click[^1] on this shiny button :
 
-[Enroll now :fontawesome-solid-flask:](https://testflight.apple.com/join/QSrBK59z){: .md-button .md-button--primary }
+[:fontawesome-solid-flask: Enroll now](https://testflight.apple.com/join/QSrBK59z){: .md-button .md-button--primary }
 
 [^1]: Good luck :smile:
