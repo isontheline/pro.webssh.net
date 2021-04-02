@@ -1,3 +1,5 @@
+matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate");
+
 if(navigator.userAgent.indexOf('WebSSH') == 0) {
     var body = document.querySelector('[data-md-color-scheme=preference]');
     body.dataset['mdColorScheme'] = 'slate';
