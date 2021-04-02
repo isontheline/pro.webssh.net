@@ -1,4 +1,6 @@
-matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate");
+setTimeout(function() {
+    matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate");
+}, 100);
 
 if(navigator.userAgent.indexOf('WebSSH') == 0) {
     var body = document.querySelector('[data-md-color-scheme=preference]');
