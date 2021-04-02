@@ -9,7 +9,7 @@ theme:
   palette:
     scheme: preference
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra.css?20210402
 extra_javascript:
   - javascripts/extra.js
 extra:
