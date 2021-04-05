@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/SSH/use-old-special-keys/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/mashREPL/database-backup/">
       
       <link rel="icon" href="../../../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.0">
     
     
       
-        <title>Old Special Keys - iOS & iPadOS SSH Client - WebSSH</title>
+        <title>Database Backup - iOS & iPadOS SSH Client - WebSSH</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-old-special-keys" class="md-skip">
+        <a href="#how-to-make-a-backup-of-the-webssh-database" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Old Special Keys
+              Database Backup
             
           </span>
         </div>
@@ -829,14 +829,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_3_4" type="checkbox" id="__nav_4_8_3_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_3_4" type="checkbox" id="__nav_4_8_3_4" >
       
       <label class="md-nav__link" for="__nav_4_8_3_4">
         SSH
@@ -852,20 +850,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../SSH/use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
-      
     </li>
   
 
@@ -918,12 +907,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_3_6" type="checkbox" id="__nav_4_8_3_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_3_6" type="checkbox" id="__nav_4_8_3_6" checked>
       
       <label class="md-nav__link" for="__nav_4_8_3_6">
         mashREPL
@@ -939,11 +930,20 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../mashREPL/database-backup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Database Backup
       </a>
+      
     </li>
   
 
@@ -1577,16 +1577,21 @@
               
                 
                 
-                <h1 id="how-to-use-old-special-keys">How to use "Old Special Keys"</h1>
-<p>So you are an addict of old WebSSH keys used in the past? <img alt="🙀" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f640.svg" title=":scream_cat:" /></p>
-<p>No problem <img alt="‼" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/203c.svg" title=":bangbang:" /></p>
+                <h1 id="how-to-make-a-backup-of-the-webssh-database">How to make a backup of the WebSSH database?</h1>
 <ol>
 <li>Launch WebSSH</li>
-<li>Go to Settings <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /></li>
-<li>Go to SSH Settings</li>
-<li>Enable "Use Old Special Keys"</li>
+<li>Start a mashREPL instance</li>
+<li>Type the following command<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> : webssh database backup</li>
 </ol>
-<p>You will now be able to use the old WebSSH keys <img alt="😁" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f601.svg" title=":grin:" /></p>
+<p>Now you will have a database backup located in the "backups" directory of WebSSH.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>In order to use this functionality, you must upgrade WebSSH to 14.15&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                     
@@ -1595,7 +1600,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 5, 2021</span>
     
   </small>
 </div>
@@ -1618,7 +1623,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../SFTP/startup-folder-path/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../Tunnel/NEVPNErrorDomain/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1627,19 +1632,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Startup Folder / Path
+              NEVPNErrorDomain
             </div>
           </div>
         </a>
       
       
-        <a href="../../Tunnel/NEVPNErrorDomain/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../../networking/port-forwarding/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              NEVPNErrorDomain
+              Port Forwarding
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -938,6 +938,45 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_3_6" type="checkbox" id="__nav_4_8_3_6" >
+      
+      <label class="md-nav__link" for="__nav_4_8_3_6">
+        mashREPL
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
+        <label class="md-nav__title" for="__nav_4_8_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          mashREPL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/database-backup/" class="md-nav__link">
+        Database Backup
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -1587,202 +1626,46 @@
 <p>At this time of writing, mashREPL doesn't support history and arrow keys <img alt="😢" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f622.svg" title=":cry:" /></p>
 </div>
 <h2 id="available-commands">Available commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Premium</th>
-<th>Limitations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>lua</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td>Can only execute .lua scripts, no interactive support</td>
-</tr>
-<tr>
-<td><code>awk</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>cat</code></td>
-<td></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>cd</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>cp</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>date</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>dig</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td></td>
-</tr>
-<tr>
-<td><code>du</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>echo</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>env</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>find</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td></td>
-</tr>
-<tr>
-<td><code>head</code></td>
-<td></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>host</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>ifconfig</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>ls</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>mkdir</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>mv</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>nslookup</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>openurl</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>open</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>ping</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>printenv</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>pwd</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>rm</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>sed</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>setenv</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>sort</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>stat</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>tail</code></td>
-<td></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>tar</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td></td>
-</tr>
-<tr>
-<td><code>touch</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>uname</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>unsetenv</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>uptime</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>wc</code></td>
-<td><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 7 9 19l-5.5-5.5 1.41-1.41L9 16.17 19.59 5.59 21 7z"/></svg></span></td>
-<td>Standard input not supported yet, only piping and redirection</td>
-</tr>
-<tr>
-<td><code>whoami</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>whois</code></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>| Command    | Limitations |
+| ---------- | ---------------- | ----------- |
+| <code>lua</code>      | Can only execute .lua scripts, no interactive support |
+| <code>awk</code>      | Standard input not supported yet, only piping and redirection |
+| <code>cat</code>      | Standard input not supported yet, only piping and redirection |
+| <code>cd</code>       | |
+| <code>cp</code>       | |
+| <code>date</code>     | |
+| <code>dig</code>      | |
+| <code>du</code>       | |
+| <code>echo</code>     | |
+| <code>env</code>      | |
+| <code>find</code>     | |
+| <code>head</code>     | |
+| <code>host</code>     | |
+| <code>ifconfig</code> | |
+| <code>ls</code>       | |
+| <code>mkdir</code>    | |
+| <code>mv</code>       | |
+| <code>nslookup</code> | |
+| <code>openurl</code>  | |
+| <code>open</code>     | |
+| <code>ping</code>     | |
+| <code>printenv</code> | |
+| <code>pwd</code>      | |
+| <code>rm</code>       | |
+| <code>sed</code>      | | Standard input not supported yet, only piping and redirection |
+| <code>setenv</code>   | |
+| <code>sort</code>     | Standard input not supported yet, only piping and redirection |
+| <code>stat</code>     | |
+| <code>tail</code>     | Standard input not supported yet, only piping and redirection |
+| <code>tar</code>      | |
+| <code>touch</code>    | |
+| <code>uname</code>    | |
+| <code>unsetenv</code> | |
+| <code>uptime</code>   | |
+| <code>webssh</code>   | |
+| <code>wc</code>       | Standard input not supported yet, only piping and redirection |
+| <code>whoami</code>   | |
+| <code>whois</code>    | |</p>
                 
                   
                     
@@ -1791,7 +1674,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 5, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 5, 2021</span>
     
   </small>
 </div>
