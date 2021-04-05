@@ -8,42 +8,43 @@
     At this time of writing, mashREPL doesn't support history and arrow keys :cry:
 
 ## Available commands
-| Command    | Premium          | Limitations |
+| Command    | Limitations |
 | ---------- | ---------------- | ----------- |
-| `lua`      | :material-check: | Can only execute .lua scripts, no interactive support |
-| `awk`      | :material-check: | Standard input not supported yet, only piping and redirection |
-| `cat`      |                  | Standard input not supported yet, only piping and redirection |
-| `cd`       |                  |  |
-| `cp`       |                  |  |
-| `date`     |                  |  |
-| `dig`      | :material-check: |  |
-| `du`       |                  |  |
-| `echo`     |                  |  |
-| `env`      |                  |  |
-| `find`     | :material-check: |  |
-| `head`     |                  | Standard input not supported yet, only piping and redirection |
-| `host`     |                  |  |
-| `ifconfig` |                  |  |
-| `ls`       |                  |  |
-| `mkdir`    |                  |  |
-| `mv`       |                  |  |
-| `nslookup` |                  |  |
-| `openurl`  |                  |  |
-| `open`     |                  |  |
-| `ping`     |                  |  |
-| `printenv` |                  |  |
-| `pwd`      |                  |  |
-| `rm`       |                  |  |
-| `sed`      | :material-check: | Standard input not supported yet, only piping and redirection |
-| `setenv`   |                  |  |
-| `sort`     | :material-check: | Standard input not supported yet, only piping and redirection |
-| `stat`     |                  |  |
-| `tail`     |                  | Standard input not supported yet, only piping and redirection |
-| `tar`      | :material-check: |  |
-| `touch`    |                  |  |
-| `uname`    |                  |  |
-| `unsetenv` |                  |  |
-| `uptime`   |                  |  |
-| `wc`       | :material-check: | Standard input not supported yet, only piping and redirection |
-| `whoami`   |                  |  |
-| `whois`    |                  |  |
+| `lua`      | Can only execute .lua scripts, no interactive support |
+| `awk`      | Standard input not supported yet, only piping and redirection |
+| `cat`      | Standard input not supported yet, only piping and redirection |
+| `cd`       | |
+| `cp`       | |
+| `date`     | |
+| `dig`      | |
+| `du`       | |
+| `echo`     | |
+| `env`      | |
+| `find`     | |
+| `head`     | |
+| `host`     | |
+| `ifconfig` | |
+| `ls`       | |
+| `mkdir`    | |
+| `mv`       | |
+| `nslookup` | |
+| `openurl`  | |
+| `open`     | |
+| `ping`     | |
+| `printenv` | |
+| `pwd`      | |
+| `rm`       | |
+| `sed`      | | Standard input not supported yet, only piping and redirection |
+| `setenv`   | |
+| `sort`     | Standard input not supported yet, only piping and redirection |
+| `stat`     | |
+| `tail`     | Standard input not supported yet, only piping and redirection |
+| `tar`      | |
+| `touch`    | |
+| `uname`    | |
+| `unsetenv` | |
+| `uptime`   | |
+| `webssh`   | |
+| `wc`       | Standard input not supported yet, only piping and redirection |
+| `whoami`   | |
+| `whois`    | |
