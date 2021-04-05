@@ -1618,15 +1618,28 @@
                 
                 
                 <h1 id="icloud">iCloud</h1>
-<p>WebSSH 14.15 and above supports iCloud sync across your devices. When you add a connection on one of your device, this connection will be synced to your other devices seemlessly.</p>
+<div class="admonition warning">
+<p class="admonition-title">iCloud as Backup</p>
+<p>iCloud shouldn't be used as a backup!</p>
+<p>Instead you should use mashREPL in order to <a href="/documentation/help/howtos/mashREPL/database-backup/">make a backup</a> of the WebSSH database.</p>
+</div>
+<p>WebSSH supports iCloud and will sync your database across your devices. So when you add a connection on one of your device, this connection will be synced to your other devices seemlessly.</p>
 <h2 id="enabling-syncing">Enabling syncing</h2>
 <p>By default your data are not synced with iCloud. To enable it, follow these steps :</p>
 <ol>
 <li>Launch WebSSH</li>
 <li>Go to Settings <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /></li>
-<li>Go to iCloud</li>
+<li>Go to iCloud<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 <li>Check "Enable iCloud"</li>
 </ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>In order to use this functionality, you must upgrade WebSSH to 14.15&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                     
@@ -1635,7 +1648,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 1, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 5, 2021</span>
     
   </small>
 </div>
