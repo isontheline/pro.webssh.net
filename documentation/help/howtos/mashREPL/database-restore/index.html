@@ -1608,6 +1608,11 @@
 <li>Type the following command<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> : webssh database restore <code>&lt;webssh.db&gt;</code></li>
 </ol>
 <p><code>&lt;webssh.db&gt;</code> is the name of your WebSSH database file you want to restore.</p>
+<div class="admonition warning">
+<p class="admonition-title">iCloud Sync</p>
+<p>If you have iCloud enabled inside WebSSH settings, you should disable it and enable it again after the database restore in order to sync restore changes with all your devices.</p>
+<p>Older connections on iCloud won't be deleted after a database restoration, they will be merged instead.</p>
+</div>
 <div class="footnote">
 <hr />
 <ol>
@@ -1624,7 +1629,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 5, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 6, 2021</span>
     
   </small>
 </div>
