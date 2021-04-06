@@ -9,7 +9,7 @@
 
 ## Available commands
 | Command    | Limitations |
-| ---------- | ---------------- | ----------- |
+| ---------- | ----------- |
 | `lua`      | Can only execute .lua scripts, no interactive support |
 | `awk`      | Standard input not supported yet, only piping and redirection |
 | `cat`      | Standard input not supported yet, only piping and redirection |
