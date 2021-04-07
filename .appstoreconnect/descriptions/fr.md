@@ -15,7 +15,11 @@ Versions d'iOS supportées : 14
 ▪ Créez / Renommez / Supprimez des fichiers et répertoires
 ▪ Editez des fichiers texte
 ▪ Transférez vos fichiers de votre appareil vers votre serveur
-* Téléchargez des fichiers de votre serveur vers votre appareil
+▪ Téléchargez des fichiers de votre serveur vers votre appareil
+
+- mashREPL
+▪ Utilisez un terminal local sans aucune connexion Internet !
+▪ Lancez des commandes telles que cat, ifconfig, uptime, route, etc.
 
 - Ecrans multiples
 ▪ Vous pouvez ouvrir plusieurs écrans afin de faire tout ce que vous souhaitez en même temps : SSH / SFTP / WHOIS / PING, etc.

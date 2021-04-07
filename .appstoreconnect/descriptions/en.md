@@ -17,6 +17,10 @@ Supported iOS versions : 14
 ▪ Upload files from your device to your server
 ▪ Download files from your server to your device
 
+- mashREPL
+▪ Use a local terminal without any Internet connection!
+▪ Run commands such as cat, ifconfig, uptime, route, etc.
+
 - Multiple Screens
 ▪ You can open multiple screens in order to do all you want : SSH / SFTP / WHOIS / PING and more at the same time !
 
