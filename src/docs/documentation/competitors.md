@@ -7,11 +7,11 @@
 
 | Feature | WebSSH | Termius |
 | --- | --- | --- |
-| Sync between devices | :x: | :heavy_check_mark: Subscription |
 | SSH Client | :heavy_check_mark: Free | :heavy_check_mark: Free |
 | Mosh Client | :x: | :heavy_check_mark: Free |
 | Telnet Client | :x: | :heavy_check_mark: Free |
 | Port Forwarding | :heavy_check_mark: Free | :heavy_check_mark: Free |
+| Sync between devices | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
 | SFTP Client | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
 | Macros / Snippets | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
 | Multiple terminals | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
@@ -21,3 +21,4 @@
 | Touch ID | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
 | SSH over Proxy | :x: | :heavy_check_mark: Subscription |
 | Port Knocking | :heavy_check_mark: Free | :heavy_check_mark: Subscription |
+| Local terminal | :heavy_check_mark: Free | :x: |
