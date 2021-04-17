@@ -9,14 +9,14 @@
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/launching-multiple-terminals/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/locking-webssh-password-touch-id-face-id/">
       
       <link rel="icon" href="../../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
     
     
       
-        <title>Multiple connections - iOS & iPadOS SSH Client - WebSSH</title>
+        <title>Locking WebSSH - iOS & iPadOS SSH Client - WebSSH</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-launch-multiple-ssh-or-sftp-connections" class="md-skip">
+        <a href="#how-to-lock-webssh-from-untrusted-users" class="md-skip">
           Skip to content
         </a>
       
@@ -89,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Multiple connections
+              Locking WebSSH
             
           </span>
         </div>
@@ -802,6 +802,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../launching-multiple-terminals/" class="md-nav__link">
+        Multiple connections
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -813,21 +825,9 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Multiple connections
-      </a>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../locking-webssh-password-touch-id-face-id/" class="md-nav__link">
         Locking WebSSH
       </a>
+      
     </li>
   
 
@@ -1635,20 +1635,20 @@
               
                 
                 
-                <h1 id="how-to-launch-multiple-ssh-or-sftp-connections">How to launch multiple SSH or SFTP connections?</h1>
-<div class="admonition info">
-<p class="admonition-title">Split View / Slide Over</p>
-<p>WebSSH isn't - yet - compatible with Split View / Slide Over <img alt="😭" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f62d.svg" title=":sob:" /></p>
-<p>But we have a <strong>temporary</strong> solution for you...</p>
-</div>
+                <h1 id="how-to-lock-webssh-from-untrusted-users">How to lock WebSSH from untrusted users?</h1>
 <ol>
 <li>Launch WebSSH</li>
 <li>Go to Settings <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /></li>
-<li>Go to WebSSH Settings</li>
-<li>Enable "Allow multiple features at the same time"</li>
+<li>Click on "Set Password"</li>
+<li>Define your password</li>
 </ol>
-<p>You will now be able to switch or add new windows by pressing the navigation bar. </p>
-<p>It's hacky but it works while we are working on Split View / Slide Over <img alt="👷" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f477.svg" title=":construction_worker:" /></p>
+<h1 id="how-to-enable-face-id-touch-id">How to enable Face ID / Touch ID?</h1>
+<p>By default Face ID / Touch ID is enabled if you have set a WebSSH password. </p>
+<p>You can of course opt-out, just disable it by pressing the switch.</p>
+<h1 id="when-the-lock-will-occur">When the lock will occur?</h1>
+<p>Screen will be locked at startup or after 60 seconds of background state.</p>
+<h1 id="does-the-webssh-database-is-encrypted-with-the-password">Does the WebSSH database is encrypted with the password?</h1>
+<p>No. The password is only used to unlock WebSSH interface.</p>
                 
                   
                     
@@ -1657,7 +1657,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 17, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 17, 2021</span>
     
   </small>
 </div>
@@ -1680,7 +1680,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../edit-delete-connection/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../launching-multiple-terminals/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1689,19 +1689,19 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Edit / Delete connection
+              Multiple connections
             </div>
           </div>
         </a>
       
       
-        <a href="../locking-webssh-password-touch-id-face-id/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../SFTP/startup-folder-path/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Locking WebSSH
+              Startup Folder / Path
             </div>
           </div>
           <div class="md-footer__button md-icon">
