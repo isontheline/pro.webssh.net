@@ -1,3 +1,7 @@
+WebSSH is an awesome SSH, SFTP and Port Forwarding client!
+
+You will keep it in your pocket for a long time (◕‿-)
+
 Supported protocols : SSH, SFTP
 Supported channel types : Session Shell, Session SFTP, Local Forward
 Supported iOS versions : 14
