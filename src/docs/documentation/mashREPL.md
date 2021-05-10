@@ -14,6 +14,7 @@
 | `cat`      | Standard input not supported yet, only piping and redirection |
 | `cd`       | |
 | `cp`       | |
+| `curl`     | Since WebSSH 14.17 |
 | `date`     | |
 | `dig`      | |
 | `du`       | |
