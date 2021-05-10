@@ -25,6 +25,7 @@
 | `host`     | |
 | `ifconfig` | |
 | `ls`       | |
+| `lua`      | Standard input not supported yet, only piping and redirection |
 | `mkdir`    | |
 | `mv`       | |
 | `nslookup` | |
