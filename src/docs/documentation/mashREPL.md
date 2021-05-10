@@ -24,7 +24,6 @@
 | `host`     | |
 | `ifconfig` | |
 | `ls`       | |
-| `lua`      | Can only execute .lua scripts, no interactive support |
 | `mkdir`    | |
 | `mv`       | |
 | `nslookup` | |
