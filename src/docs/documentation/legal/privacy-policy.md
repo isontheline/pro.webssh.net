@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 ---
+
 # Privacy Policy
 This Privacy Policy governs the manner in which WebSSH collects, uses, maintains and discloses information collected from users (each, a "User") of the WebSSH app ("App"). This privacy policy applies to the App and this website which acts as documentation.
 
