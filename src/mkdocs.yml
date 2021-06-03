@@ -1,5 +1,5 @@
 site_url: https://webssh.net
-site_name: iOS & iPadOS SSH Client - WebSSH
+site_name: iOS / iPadOS / macOS SSH Client - WebSSH
 theme:
   name: material
   custom_dir: overrides
