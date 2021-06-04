@@ -5,7 +5,7 @@
 
 | | :helicopter: FREE | :airplane: STARTER | :rocket: PRO |
 | --- | --- | --- | -- |
-| Maximum number of connections | 1 | 10 | **Unlimited** |
+| Maximum number of connections | **1**&nbsp;connection | **10**&nbsp;connections | **Unlimited**&nbsp;connections |
 | SSH Client | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Port Forwarding | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Sync between devices | :white_check_mark: | :white_check_mark: | :white_check_mark: |
