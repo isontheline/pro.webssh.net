@@ -12,7 +12,7 @@
 | SFTP Client | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Macros / Snippets | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Multiple terminals | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Touch ID | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Touch ID / Face ID | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Port Knocking | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Local terminal | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 
