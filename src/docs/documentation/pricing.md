@@ -1,5 +1,12 @@
 # Pricing
 
+!!! bug "Trouble in FREE version"
+    We are experiencing a trouble since 14.18 (June 4, 2021) : you can't add any connection on the FREE version (only STARTER and PRO versions can).
+
+    A fix will be shipped on June 8 2021. If you can't wait until that date, please redeem a **free unlock code** by writing us : team@webssh.net
+
+    Sorry for the trouble.
+
 !!! abstract "Meet All Your Needs"
     WebSSH is available in three versions : FREE / STARTER / PRO
 
