@@ -3,7 +3,11 @@
 !!! bug "Trouble in FREE version"
     We are experiencing a trouble since 14.18 (June 4, 2021) : you can't add any connection on the FREE version (only STARTER and PRO versions can).
 
-    A fix will be shipped on June 8 2021. If you can't wait until that date, please redeem a **free unlock code** by writing us : team@webssh.net
+    A fix will be shipped on **June 8, 2021**. 
+    
+    If you can't wait until that date, please use an older release on [TestFlight](https://testflight.apple.com/join/QSrBK59z). 
+    
+    If you need any support, please contact us : team@webssh.net
 
     Sorry for the trouble.
 
