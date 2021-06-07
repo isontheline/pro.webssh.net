@@ -379,13 +379,13 @@
 "Furtive_Mode_Detail_Label"="I detta läge görs inga anslutningar mot webssh.net";
 "Send_Diagnostic_And_Usage_Data_Label"="Diagnostik och användardata vi vill veta:\n- Antal aktiva anvämdare\n- Hur du använder applikationen\nUtan denna data kan vi inte förbättra WebSSH :(";
 "Send_Crash_Reports_Label"="Det hjälper oss att fortsätta göra ett bra jobb ;)";
-"Saved_Commands"="Sparade kommandon";
+"Saved_Commands"="Snippets";
 "Add_New_Command"="Lägg till nytt kommando";
 "General"="Generellt";
-"Command"="Kommando";
+"Command"="Snippet";
 "Icon"="Ikon";
-"Name_Of_Your_Saved_Command"="Namn på ditt kommando";
-"Macro_Prefered"="Föredraget kommando";
+"Name_Of_Your_Saved_Command"="Namn på ditt snippet";
+"Macro_Prefered"="Föredraget";
 "Default_Text_For_Crash_Report_Help"="Dear WebSSH Team,¬\n¬\nWebSSH have been crashed while :¬\n(Describe here what you did when WebSSH crashed)¬\n¬\nCould you check why it happened ?¬\n¬\nBest Regards,";
 "Would_You_Like_To_Paste_Content"="Vill du klistra in följande?\n%@";
 "No_Content_To_Paste"="Inget innehåll att klistra in i terminalen";
@@ -465,7 +465,7 @@
 "WebSSH_Will_Be_Closed_In_30_Seconds"="WebSSH will be closed in 30 seconds.";
 "Want_To_Be_Notified_For_Closing"="Want to be notified for connection timeout?\r\nPlease enable WebSSH local notifications.";
 // WebSSH 14.6 ->
-"Please_Help_Me_Support_WebSSH"="❣️ Genom att köpa den fullständiga versionen av WebSSH kan du lägga till så många SSH / SFTP / TUNNEL-anslutningar som du vill.";
+"Please_Help_Me_Support_WebSSH"="Genom att köpa den fullständiga versionen av WebSSH kan du lägga till så många SSH / SFTP / TUNNEL-anslutningar som du vill.";
 // <- WebSSH 14.6
 // WebSSH 14.8 ->
 "Please_Help_Me_Support_WebSSH_Title"="❤️ Hjälp mig att fortsätta WebSSH";

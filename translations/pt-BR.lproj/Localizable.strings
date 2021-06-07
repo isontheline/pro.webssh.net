@@ -379,13 +379,13 @@
 "Furtive_Mode_Detail_Label"="Neste modo não é feito conexão para webssh.net";
 "Send_Diagnostic_And_Usage_Data_Label"="Dados de uso e diagnósticos  deixe-nos saber:\nNúmero de usuários ativos\nAdoção e utilização dos nossos recursos\nSem estes dados não podemos aperfeiçoar WebSSH :(";
 "Send_Crash_Reports_Label"="Isso nos ajuda a manter o bom trabalho ;)";
-"Saved_Commands"="Comandos Salvos";
+"Saved_Commands"="Snippets";
 "Add_New_Command"="Adicionar novo comando";
 "General"="Geral";
-"Command"="Comando";
+"Command"="Snipet";
 "Icon"="Ícone";
-"Name_Of_Your_Saved_Command"="Nome do seu comando";
-"Macro_Prefered"="Comando preferido";
+"Name_Of_Your_Saved_Command"="Nome do seu snippet";
+"Macro_Prefered"="Preferido";
 "Default_Text_For_Crash_Report_Help"="Querido time WebSSH\r\n\r\nWebSSH parou enquanto:\r\n(Descreva aqui o que você fez quando WebSSH travou)\r\n\r\nPode verificar por que isso aconteceu?\r\n\r\nMeus cumprimentos";
 "Would_You_Like_To_Paste_Content"="Gostaria de colar este conteúdo?\r\n%@";
 "No_Content_To_Paste"="Sem conteúdo para colar no terminal";
@@ -465,7 +465,7 @@
 "WebSSH_Will_Be_Closed_In_30_Seconds"="WebSSH will be closed in 30 seconds.";
 "Want_To_Be_Notified_For_Closing"="Want to be notified for connection timeout?\r\nPlease enable WebSSH local notifications.";
 // WebSSH 14.6 ->
-"Please_Help_Me_Support_WebSSH"="❣️ Ao adquirir a versão completa do WebSSH, você pode adicionar quantas conexões SSH / SFTP / TUNNEL desejar.";
+"Please_Help_Me_Support_WebSSH"="Ao adquirir a versão completa do WebSSH, você pode adicionar quantas conexões SSH / SFTP / TUNNEL desejar.";
 // <- WebSSH 14.6
 // WebSSH 14.8 ->
 "Please_Help_Me_Support_WebSSH_Title"="❤️ Ajude-me a continuar WebSSH";
