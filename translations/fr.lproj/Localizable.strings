@@ -380,13 +380,13 @@
 "Furtive_Mode_Detail_Label"="Dans ce mode aucune connexion n'est effectuée vers webssh.net";
 "Send_Diagnostic_And_Usage_Data_Label"="Les diagnostics et données d'utilisation nous permettent de connaître :\r\n- Le nombre d'utilisateurs actifs\r\n- Le taux d'utilisation de nos fonctionnalités\r\nSans ces données nous ne pouvons pas améliorer WebSSH :(";
 "Send_Crash_Reports_Label"="Cela nous aide à faire du bon travail ;)";
-"Saved_Commands"="Commandes sauvegardées";
-"Add_New_Command"="Nouvelle commande";
+"Saved_Commands"="Snippets";
+"Add_New_Command"="Nouveau snippet";
 "General"="Général";
-"Command"="Commande";
+"Command"="Snippet";
 "Icon"="Icone";
-"Name_Of_Your_Saved_Command"="Nom de la commande";
-"Macro_Prefered"="Commande préférée";
+"Name_Of_Your_Saved_Command"="Nom du snippet";
+"Macro_Prefered"="Favoris";
 "Default_Text_For_Crash_Report_Help"="Messieurs,\r\n\r\nWebSSH a crashé alors que :\r\n(Décrire ici ce que vous faisiez)\r\n\r\nPouvez-vous jeter un oeil ?\r\n\r\nBien cordialement,";
 "Would_You_Like_To_Paste_Content"="Souhaitez-vous coller ce contenu ?\r\n%@";
 "No_Content_To_Paste"="Aucun contenu à coller sur le terminal";
@@ -513,11 +513,11 @@
 "Protocol"="Protocole";
 // <- WebSSH 13.15
 // WebSSH 14.6 ->
-"Please_Help_Me_Support_WebSSH"="❣️ En achetant la version complète de WebSSH vous pourrez ajouter autant de connexions SSH / SFTP / TUNNEL que souhaité.";
+"Please_Help_Me_Support_WebSSH"="En achetant la version complète de WebSSH vous pourrez ajouter autant de connexions SSH / SFTP / TUNNEL que souhaité.";
 "Disconnect_Tunnel_Before_Another"="Veuillez déconnecter le tunnel avant d'en lancer un autre.";
 // <- WebSSH 14.6
 // WebSSH 14.7 ->
-"Profile_Startup_Command"="Commande distante";
+"Profile_Startup_Command"="Commande initiale";
 "Startup_Command_Custom"="Personnalisée";
 "Startup_Command_None"="Aucune";
 // <- WebSSH 14.7
@@ -541,4 +541,15 @@
 // <- WebSSH 14.11
 // WebSSH 14.15 ->
 "Other_Tools"="Autres outils";
+"Enable_iCloud"="Activer iCloud";
+"Sync_Credentials"="Synchroniser les identifiants";
 // <- WebSSH 14.15
+// WebSSH 14.16 ->
+"Tab"="Onglet";
+"SSH_Keys"="Clés SSH";
+"Import_From_File"="Importer depuis un fichier";
+"Manually"="Manuellement";
+"Add_Private_Key"="Ajouter une clé privée";
+"Window"="Fenêtre";
+"Licenses"="Licences";
+// <- WebSSH 14.16
