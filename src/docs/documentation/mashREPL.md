@@ -5,45 +5,45 @@
     **MASH** stands for : **M**engus **A**rnaud **SH**ell
 
 ## Available commands
-| Command    | Limitations |
-| ---------- | ----------- |
-| `awk`      | Standard input not supported yet, only piping and redirection |
-| `cat`      | Standard input not supported yet, only piping and redirection |
-| `cd`       | |
-| `cp`       | |
-| `curl`     | Since WebSSH 14.17 |
-| `date`     | |
-| `dig`      | |
-| `du`       | |
-| `echo`     | |
-| `env`      | |
-| `find`     | |
-| `head`     | |
-| `host`     | |
-| `ifconfig` | |
-| `ls`       | |
-| `lua`      | Standard input not supported yet, only piping and redirection |
-| `mkdir`    | |
-| `mv`       | |
-| `nslookup` | |
-| `openurl`  | |
-| `open`     | |
-| `ping`     | |
-| `printenv` | |
-| `pwd`      | |
-| `rm`       | |
-| `route`    | |
-| `sed`      | | Standard input not supported yet, only piping and redirection |
-| `setenv`   | |
-| `sort`     | Standard input not supported yet, only piping and redirection |
-| `stat`     | |
-| `tail`     | Standard input not supported yet, only piping and redirection |
-| `tar`      | |
-| `touch`    | |
-| `uname`    | |
-| `unsetenv` | |
-| `uptime`   | |
-| `webssh`   | |
-| `wc`       | Standard input not supported yet, only piping and redirection |
-| `whoami`   | |
-| `whois`    | |
+| Command    | Since | Limitations |
+| --- | --- | --- |
+| `awk`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `cat`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `cd`       | 14.6 | |
+| `cp`       | 14.6 | |
+| `curl`     | 14.17 | |
+| `date`     | 14.6 | |
+| `dig`      | 14.6 | |
+| `du`       | 14.6 | |
+| `echo`     | 14.6 | |
+| `env`      | 14.6 | |
+| `find`     | 14.6 | |
+| `head`     | 14.6 | |
+| `host`     | 14.6 | |
+| `ifconfig` | 14.6 | |
+| `ls`       | 14.6 | |
+| `lua`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `mkdir`    | 14.6 | |
+| `mv`       | 14.6 | |
+| `nslookup` | 14.6 | |
+| `openurl`  | 14.6 | |
+| `open`     | 14.6 | |
+| `ping`     | 14.6 | |
+| `printenv` | 14.6 | |
+| `pwd`      | 14.6 | |
+| `rm`       | 14.6 | |
+| `route`    | 14.6 | |
+| `sed`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `setenv`   | 14.6 | |
+| `sort`     | 14.6 | Standard input not supported yet, only piping and redirection |
+| `stat`     | 14.6 | |
+| `tail`     | 14.6 | Standard input not supported yet, only piping and redirection |
+| `tar`      | 14.6 | |
+| `touch`    | 14.6 | |
+| `uname`    | 14.6 | |
+| `unsetenv` | 14.6 | |
+| `uptime`   | 14.6 | |
+| `webssh`   | 14.6 | |
+| `wc`       | 14.6 | Standard input not supported yet, only piping and redirection |
+| `whoami`   | 14.6 | |
+| `whois`    | 14.6 | |
