@@ -8,6 +8,8 @@ theme:
   font: false
   palette:
     scheme: preference
+  features:
+    - navigation.tabs
 extra_css:
   - stylesheets/extra.css?20210402
 extra_javascript:
