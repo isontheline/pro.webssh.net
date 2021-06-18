@@ -1,3 +1,7 @@
+[:fontawesome-solid-flask: Beta](/documentation/becoming-external-tester/){: .md-button .md-button--primary }
+[:fontawesome-regular-question-circle: Support](/support/){: .md-button .md-button--primary }
+[:fontawesome-solid-coffee: Coffee](https://www.buymeacoffee.com/arnaud.mengus){: .md-button .md-button--primary }
+
 # Pricing
 
 !!! abstract "The facts"
