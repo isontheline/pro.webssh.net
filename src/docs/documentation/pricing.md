@@ -35,6 +35,6 @@
 * When you buy our "STARTER" or "PRO" version, you buy them for **lifetime**. No hidden fees. See for yourself.
 
 !!! question "Any question?"
-    If you still have any question, we are always available here : team@webssh.net
+    If you still have any question, I'm always available here : team@webssh.net
 
     Have a nice day :sunny:

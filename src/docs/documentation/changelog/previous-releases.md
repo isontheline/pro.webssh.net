@@ -60,7 +60,7 @@ title: Previous Releases
 - Fixed : Crashes for some users on connection's list
 
 ## Version 13.10 (15 jully 2017)
-- Changed : Add and Settings buttons have been moved inside "+" blue button because we will add new mysterious features ;oD
+- Changed : Add and Settings buttons have been moved inside "+" blue button because I will add new mysterious features ;oD
 - Added : Ability to hide special keys over the keyboard (useful with external keyboard). You will find this option inside WebSSH settings panel.
 - Added : Ability to manage macros offline (inside connection's settings)
 - Fixed : Web browser login/password can now be used even when no /etc/hosts file entry defined

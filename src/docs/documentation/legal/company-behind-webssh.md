@@ -2,7 +2,7 @@
 title: Company
 ---
 
-# MENGUS ARNAUD
+# Company behind WebSSH
 **MENGUS ARNAUD** is the company behind the WebSSH app and website.
 
 | Legal Information |  |

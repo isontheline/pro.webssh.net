@@ -7,7 +7,7 @@ Moreover between 23 to 27 December, App Store will be [closed](https://developer
 
 WebSSH [Privacy Policy](/documentation/legal/privacy-policy/) have been updated to reflect [Apple requirements](https://developer.apple.com/news/?id=3wann9gh). Short and long summary : I don't collect any data :raised_hand:
 
-If we don't see you soon, have a nice Xmas with your family and friends :santa: :christmas_tree: :gift:
+If I don't see you soon, have a nice Xmas with your family and friends :santa: :christmas_tree: :gift:
 
 !!! info "Erratum"
-    We are releasing WebSSH 14.8 - Locomotive today December 28, 2020 :muscle:
+    I'm releasing WebSSH 14.8 - Locomotive today December 28, 2020 :muscle:

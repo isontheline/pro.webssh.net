@@ -1,5 +1,5 @@
 # July
-After 2 years and 6 months of inactivity (January 2018) about WebSSH, we are back!
+After 2 years and 6 months of inactivity (January 2018) about WebSSH, I'm back!
 
 There is a lot of problems to fix : New key formats to support, new Apple OS to support, a lot of crashes and UI bugs...
 
