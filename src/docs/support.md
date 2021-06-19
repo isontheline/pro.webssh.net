@@ -4,7 +4,7 @@ title: Support
 
 [:fontawesome-solid-bug: Bug](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=){: .md-button .md-button--primary }
 [:fontawesome-solid-dollar-sign: Pricing](/documentation/pricing/){: .md-button .md-button--primary }
-[:fontawesome-solid-coffee: Coffee](https://www.buymeacoffee.com/arnaud.mengus){: .md-button .md-button--primary }
+[:fontawesome-solid-coffee: Coffee](https://www.buymeacoffee.com/WebSSH){: .md-button .md-button--primary }
 
 # Support
 
