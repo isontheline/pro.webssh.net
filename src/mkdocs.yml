@@ -12,7 +12,7 @@ theme:
   features:
     - navigation.tabs
 extra_css:
-  - stylesheets/extra.css?20210616
+  - stylesheets/extra.css?20210620
 extra_javascript:
   - javascripts/extra.js?20210418
 extra:
