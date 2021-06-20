@@ -21,6 +21,8 @@ extra:
       link: https://github.com/isontheline/pro.webssh.net
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/arnaud-mengus
+    - icon: fontawesome/solid/globe
+      link: https://mengus.net
 plugins:
   - search
   - git-revision-date-localized:
