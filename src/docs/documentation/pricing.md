@@ -10,14 +10,10 @@
 
     :arrow_right: WebSSH is available in three amazing versions : PRO / STARTER / FREE
 
-
-!!! danger "Get it while it’s hot"
-    For a limited time only : **PRO** price cut from <del>$8<sup>99</sup></del> to $4<sup>99</sup>
-
 ## Meet All Your Needs
 | | :rocket:&nbsp;PRO<br />**(Best&#x2011;seller)** | :airplane:&nbsp;STARTER<br />**(Brand&#x2011;new)** | :helicopter:&nbsp;FREE<br />**(For&nbsp;lifetime)**|
 | --- | --- | --- | -- |
-| Price (USD) | <del>$8<sup>99</sup></del><br />$4<sup>99</sup> :sparkles:<br />*Save&nbsp;your&nbsp;spot!* | $4<sup>99</sup> | Free |
+| Price (USD) | $8<sup>99</sup> | $4<sup>99</sup> | Free |
 | Maximum number of connections | **Unlimited** | **10** | **1** |
 | SSH Client | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Port Forwarding | :white_check_mark: | :white_check_mark: | :white_check_mark: |
