@@ -25,7 +25,7 @@
 | `lua`      | 14.6 | Standard input not supported yet, only piping and redirection |
 | `mkdir`    | 14.6 | |
 | `mv`       | 14.6 | |
-| `nslookup` | 14.6 | |
+| `nslookup` | 14.6 | Standard input not supported yet, only piping and redirection |
 | `openurl`  | 14.6 | |
 | `open`     | 14.6 | |
 | `ping`     | 14.6 | |
