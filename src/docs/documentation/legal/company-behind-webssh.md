@@ -2,7 +2,7 @@
 title: Company
 ---
 
-# Company behind WebSSH
+# Company behind WebSSH[&trade;](https://data.inpi.fr/marques/FR4774099)
 **MENGUS ARNAUD** is the company behind the WebSSH app and website.
 
 | Legal Information |  |
@@ -15,3 +15,4 @@ title: Company
 | SIRET Number | 80875194500011 |
 | NAF / APE | 6201Z |
 | Company Creation Date | 01-01-2015 |
+| Registered Trademark Number | [FR4774099](https://data.inpi.fr/marques/FR4774099) |
