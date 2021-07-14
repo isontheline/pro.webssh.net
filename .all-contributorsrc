@@ -11,6 +11,26 @@
   "commitConvention": "none",
   "contributors": [
     {
+      "login": "mbierman",
+      "name": "mbierman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1205471?v=4",
+      "profile": "https://github.com/mbierman",
+      "contributions": [
+        "ideas",
+        "bug"
+      ]
+    },
+    {
+      "login": "akuropka",
+      "name": "akuropka",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22570574?v=4",
+      "profile": "https://github.com/akuropka",
+      "contributions": [
+        "ideas",
+        "bug"
+      ]
+    },
+    {
       "login": "svenh0",
       "name": "svenh0",
       "avatar_url": "https://avatars2.githubusercontent.com/u/17353392?v=4",
