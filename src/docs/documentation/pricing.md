@@ -1,11 +1,13 @@
 # Pricing
 
-!!! abstract "Why upgrading WebSSH?"
-    :arrow_right: Hand-crafted by [Arnaud Mengus](https://mengus.net) since March 2012, WebSSH has been downloaded 897K+
+!!! abstract "Why upgrading to PRO?"
+    :two_hearts: Help [me](https://mengus.net) - an indie developer - continue WebSSH development.
 
-    :arrow_right: Every day two to three thousand people are using WebSSH to efficiently manage their office and home servers
+    :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations.
 
-## :dizzy: To reach the stars, go PRO
+    :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want.
+
+## PRO and FREE features matrix
 | | **PRO** | FREE |
 | --- | --- | --- |
 | Maximum number of connections | **Unlimited** | 1 |
