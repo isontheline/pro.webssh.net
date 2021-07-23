@@ -1,7 +1,7 @@
 # Pricing
 
 !!! abstract "Why upgrading to PRO?"
-    :two_hearts: Help [me](https://mengus.net) - an indie developer - continue WebSSH development.
+    :two_hearts: Help [me](https://github.com/isontheline) - an indie developer - continue WebSSH development.
 
     :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations.
 

@@ -35,6 +35,4 @@ Your continued use of the App following the posting of changes to this policy wi
 # Contacting us
 If you have any questions about this Privacy Policy, the practices of this App, or your dealings with this App, please contact me at :
 
-* [https://mengus.net/#contact](https://mengus.net/#contact)
-* [https://www.linkedin.com/in/arnaud-mengus](https://www.linkedin.com/in/arnaud-mengus)
 * [https://github.com/isontheline/pro.webssh.net/issues](https://github.com/isontheline/pro.webssh.net/issues)

@@ -1,6 +1,6 @@
 site_url: https://webssh.net
 site_name: iOS / iPadOS / macOS SSH Client - WebSSH
-copyright: WebSSH &copy; 2012-2021 by <a href="https://mengus.net">mengus.net</a>
+copyright: WebSSH &copy; 2012-2021
 theme:
   name: material
   custom_dir: overrides
@@ -19,10 +19,6 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/isontheline/pro.webssh.net
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/arnaud-mengus
-    - icon: fontawesome/solid/globe
-      link: https://mengus.net
 plugins:
   - search
   - git-revision-date-localized:
