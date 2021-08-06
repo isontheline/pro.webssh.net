@@ -186,6 +186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/changelog/15/15.1/</loc>
+         <lastmod>2021-08-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/iCloud/</loc>
          <lastmod>2021-08-06</lastmod>
          <changefreq>daily</changefreq>
