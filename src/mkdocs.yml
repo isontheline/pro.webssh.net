@@ -23,6 +23,9 @@ plugins:
   - search
   - git-revision-date-localized:
       type: date
+  - redirects:
+      redirect_maps:
+        'documentation/changelog/15/15.0.md': 'documentation/changelog/15.md'
 markdown_extensions:
   - admonition
   - attr_list
