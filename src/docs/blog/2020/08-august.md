@@ -1,4 +1,8 @@
-# August
+---
+title: August
+---
+
+# August 2020
 We have released 3 versions of WebSSH in less than 30 days :sparkles:
 
 At the time of writing, 25 issues are open, 11 related to bugs and 14 related to improvements.

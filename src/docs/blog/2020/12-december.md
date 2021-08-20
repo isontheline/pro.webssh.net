@@ -1,4 +1,8 @@
-# December
+---
+title: December
+---
+
+# December 2020
 :christmas_tree: Xmas is coming soon and (at this time of writing, December 15) no 14.8 release available, WTF:interrobang:
 
 We are working hard to replace [UIWebView engine by WKWebView](https://developer.apple.com/news/?id=edwud51q) instead. It works fine but I need more [beta testers](/documentation/becoming-external-tester/) to ensure that no glitches are in.

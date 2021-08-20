@@ -1,4 +1,8 @@
-# July
+---
+title: July
+---
+
+# July 2021
 
 I'm switching back :arrows_counterclockwise:
 
