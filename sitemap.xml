@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/blog/2021/09-september/</loc>
+         <lastmod>2021-09-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/becoming-external-tester/</loc>
          <lastmod>2021-09-10</lastmod>
          <changefreq>daily</changefreq>
