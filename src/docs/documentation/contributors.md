@@ -20,12 +20,15 @@ Thanks goes to these wonderful people :
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/ftneek"><img src="https://avatars3.githubusercontent.com/u/34530420?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ftneek</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Aftneek" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/jarrah31"><img src="https://avatars2.githubusercontent.com/u/3072303?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jarrah31</b></sub></a><br /><a href="#ideas-jarrah31" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Ajarrah31" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/lukensmall"><img src="https://avatars3.githubusercontent.com/u/33109148?v=4?s=100" width="100px;" alt=""/><br /><sub><b>lukensmall</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Alukensmall" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/mbierman"><img src="https://avatars.githubusercontent.com/u/1205471?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mbierman</b></sub></a><br /><a href="#ideas-mbierman" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Ambierman" title="Bug reports">🐛</a></td>
   </tr>
   <tr>
+    <td align="center"><a href="https://github.com/mbierman"><img src="https://avatars.githubusercontent.com/u/1205471?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mbierman</b></sub></a><br /><a href="#ideas-mbierman" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Ambierman" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/r2ixuz"><img src="https://avatars0.githubusercontent.com/u/15087554?v=4?s=100" width="100px;" alt=""/><br /><sub><b>r2ixuz</b></sub></a><br /><a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Ar2ixuz" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/rikkipitt"><img src="https://avatars3.githubusercontent.com/u/1147871?v=4?s=100" width="100px;" alt=""/><br /><sub><b>rikkipitt</b></sub></a><br /><a href="#ideas-rikkipitt" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Arikkipitt" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
     <td align="center"><a href="https://github.com/svenh0"><img src="https://avatars2.githubusercontent.com/u/17353392?v=4?s=100" width="100px;" alt=""/><br /><sub><b>svenh0</b></sub></a><br /><a href="#ideas-svenh0" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3Asvenh0" title="Bug reports">🐛</a></td>
   </tr>
 </table>
