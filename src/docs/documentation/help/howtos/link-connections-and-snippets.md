@@ -5,7 +5,7 @@ title: Link Connections and Snippets
 # Link Connections and Snippets
 
 !!! info "About WebSSH Tags"
-    * WebSSH Tags are are one-word labels that can be used to link connections and snippets.
+    * WebSSH Tags are one-word labels that can be used to link connections and snippets.
     * When a snippet is linked to a connection it can be shown as a favorite for the given connection(s).
 
 ## How to link a connection and a snippet?
