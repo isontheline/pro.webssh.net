@@ -17,3 +17,5 @@ title: Contact
     }
 })();
 </script>
+
+<a href="#" onclick="javascript:tidioChatApi.open(); return false;">Launch a chat</a>
