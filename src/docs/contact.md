@@ -2,9 +2,12 @@
 title: Contact
 ---
 
+<script type="text/javascript">
+    document.body.classList.add('mobile');
+</script>
 <script src="//code.tidio.co/v48qtpnshj4pdic9jfpdbx4d8c5ubvni.js" async></script>
 
-<script>
+<script type="text/javascript">
 (function() {
     function onTidioChatApiReady() {
         tidioChatApi.open();
