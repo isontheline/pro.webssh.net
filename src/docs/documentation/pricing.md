@@ -7,6 +7,8 @@
 
     :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want.
 
+    :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. You buy it for lifetime. No hidden costs.
+
 ## PRO and FREE features matrix
 | | **PRO** | FREE |
 | --- | --- | --- |
@@ -22,8 +24,6 @@
 | Local terminal | :white_check_mark: | :white_check_mark: |
 
 !!! question "Any question?"
-    If you still have any question, I'm always available here : team@webssh.net
-
-    Feel free to contact me.
+    If you still have any question, feel free to contact me by [email](team@webssh.net)
 
     Have a nice day :sunny:
