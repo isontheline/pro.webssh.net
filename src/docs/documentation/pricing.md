@@ -24,6 +24,6 @@
 | Local terminal | :white_check_mark: | :white_check_mark: |
 
 !!! question "Any question?"
-    If you still have any question, feel free to contact me by [email](team@webssh.net)
+    If you still have any question, feel free to contact me by [email](mailto:team@webssh.net)
 
     Have a nice day :sunny:
