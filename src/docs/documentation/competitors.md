@@ -11,14 +11,19 @@
 | Mosh Client | :x: | :white_check_mark: Free |
 | Telnet Client | :x: | :white_check_mark: Free |
 | Port Forwarding | :white_check_mark: Free | :white_check_mark: Free |
-| Sync between devices | :white_check_mark: Free | :white_check_mark: Subscription |
-| SFTP Client | :white_check_mark: Free | :white_check_mark: Subscription |
-| Macros / Snippets | :white_check_mark: Free | :white_check_mark: Subscription |
-| Multiple terminals | :white_check_mark: Free | :white_check_mark: Subscription |
-| SSH Agent Forwarding | :x: | :white_check_mark: Subscription |
-| Environment variables | :x: | :white_check_mark: Subscription |
-| Host Chaining | :x: | :white_check_mark: Subscription |
-| Touch ID | :white_check_mark: Free | :white_check_mark: Subscription |
-| SSH over Proxy | :x: | :white_check_mark: Subscription |
-| Port Knocking | :white_check_mark: Free | :white_check_mark: Subscription |
-| Local terminal | :white_check_mark: Free | :x: |
+| Sync between devices | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| SFTP Client | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| Macros / Snippets | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| Multiple terminals | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| SSH Agent Forwarding | :x: | :ballot_box_with_check: Subscription |
+| Environment variables | :x: | :ballot_box_with_check: Subscription |
+| Host Chaining | :x: | :ballot_box_with_check: Subscription |
+| Touch ID | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| SSH over Proxy | :x: | :ballot_box_with_check: Subscription |
+| Port Knocking | :white_check_mark: Free | :ballot_box_with_check: Subscription |
+| Local terminal | :white_check_mark: Free | :o: Only macOS unsandboxed[^1] |
+
+!!! question "Any question?"
+    If you have found an error on this competitor overview, feel free to contact me by [email](mailto:team@webssh.net)
+
+[^1]: https://docs.termius.com/installation

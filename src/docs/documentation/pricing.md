@@ -1,13 +1,13 @@
 # Pricing
 
 !!! abstract "Why upgrading to PRO?"
-    :two_hearts: Help [me](https://github.com/isontheline) - an indie developer - continue WebSSH development.
+    :two_hearts: Help me continue WebSSH development. I'm an indie developer who want to make an awesome tool for you.
 
-    :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations.
+    :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations. I always listen to your needs.
 
-    :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want.
+    :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want. There is no other limitation on the FREE version.
 
-    :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. You buy it for lifetime. No hidden costs.
+    :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. No hidden costs. You buy it for lifetime with regular updates for FREE!
 
 ## PRO and FREE features matrix
 | | **PRO** | FREE |
@@ -22,6 +22,7 @@
 | Touch ID / Face ID | :white_check_mark: | :white_check_mark: |
 | Port Knocking | :white_check_mark: | :white_check_mark: |
 | Local terminal | :white_check_mark: | :white_check_mark: |
+| Regular updates | :white_check_mark: | :white_check_mark: |
 
 !!! question "Any question?"
     If you still have any question, feel free to contact me by [email](mailto:team@webssh.net)
