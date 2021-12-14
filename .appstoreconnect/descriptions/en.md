@@ -1,4 +1,4 @@
-WebSSH is an awesome SSH, SFTP and Port Forwarding client (◕‿-)
+WebSSH is an awesome SSH, SFTP and Port Forwarding client ٩(^‿^)۶
 
 Whether you are at the office, on your sofa or on holiday at the beach or in the mountains: it will be useful everywhere, all the time!
 

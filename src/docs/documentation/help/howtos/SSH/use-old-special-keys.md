@@ -2,7 +2,7 @@
 title: Old Special Keys
 ---
 
-# How to use "Old Special Keys"
+# How to use "Old Special Keys"?
 So you are an addict of old WebSSH keys used in the past? :scream_cat:
 
 No problem :bangbang:
