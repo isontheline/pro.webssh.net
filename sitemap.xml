@@ -246,6 +246,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/howtos/SSH/use-meta-alt-option-key/</loc>
+         <lastmod>2021-12-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/howtos/SSH/use-old-special-keys/</loc>
          <lastmod>2021-12-14</lastmod>
          <changefreq>daily</changefreq>
