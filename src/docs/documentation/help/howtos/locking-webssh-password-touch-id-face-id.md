@@ -1,5 +1,6 @@
 ---
 title: Locking WebSSH
+description: WebSSH can be locked by using Face ID / Touch ID or a password. The lock occurs on launch or after 60 seconds in background.
 ---
 
 # Locking WebSSH
