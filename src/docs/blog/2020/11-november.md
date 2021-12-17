@@ -1,5 +1,5 @@
 ---
-title: November
+title: November 2020
 ---
 
 # November 2020

@@ -1,5 +1,5 @@
 ---
-title: July
+title: July 2020
 ---
 
 # July 2020

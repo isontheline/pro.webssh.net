@@ -1,4 +1,4 @@
-# HTerm
+# HTerm - Terminal Emulator
 ```
 Copyright (c) 2006-2009 The Chromium OS Authors. All rights reserved.
 

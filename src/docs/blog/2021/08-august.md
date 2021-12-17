@@ -1,5 +1,5 @@
 ---
-title: August
+title: August 2021
 ---
 
 # August 2021

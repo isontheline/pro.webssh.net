@@ -1,5 +1,5 @@
 ---
-title: July
+title: July 2021
 ---
 
 # July 2021
