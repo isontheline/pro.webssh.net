@@ -3,7 +3,7 @@ title: October
 ---
 
 # October 2020
-Since two weeks I have removed a lot of dead code :scream: and I have introduced a "pretty" feature inside WebSSH : [mashREPL](/documentation/mashREPL) :boom:
+Since two weeks I have removed a lot of dead code :scream: and I have introduced a "pretty" feature inside WebSSH : [mashREPL](/documentation/mashREPL/) :boom:
 
 We now need a lot of [External Testers](/documentation/becoming-external-tester/) to review this new feature, why not you?
 
