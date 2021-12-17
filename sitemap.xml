@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/blog/</loc>
+         <lastmod>2021-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/blog/2020/07-july/</loc>
          <lastmod>2021-12-17</lastmod>
          <changefreq>daily</changefreq>
@@ -92,6 +97,11 @@
     </url>
     <url>
          <loc>https://webssh.net/blog/2021/12-december/</loc>
+         <lastmod>2021-12-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/documentation/</loc>
          <lastmod>2021-12-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
