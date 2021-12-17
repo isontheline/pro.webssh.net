@@ -32,7 +32,7 @@ If you do not agree to this policy, please do not use our App.
 
 Your continued use of the App following the posting of changes to this policy will be deemed your acceptance of those changes.
 
-# Contacting us
+## Contacting us
 If you have any questions about this Privacy Policy, the practices of this App, or your dealings with this App, please contact me at :
 
 * [https://github.com/isontheline/pro.webssh.net/issues](https://github.com/isontheline/pro.webssh.net/issues)
