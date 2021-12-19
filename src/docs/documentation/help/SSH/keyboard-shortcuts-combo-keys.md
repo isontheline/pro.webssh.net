@@ -9,4 +9,4 @@ title: Keyboard Shortcuts
 
 | Real Key | WebSSH' Combo Keys |
 | --- | --- |
-| Esc | Ctrl + Alt + E |
+| Esc | Ctrl + Alt + Shift + E |
