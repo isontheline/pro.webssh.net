@@ -236,11 +236,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://webssh.net/documentation/help/howtos/create-attach-existing-tmux-session/</loc>
-         <lastmod>2021-12-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://webssh.net/documentation/help/howtos/edit-delete-clone-connection/</loc>
          <lastmod>2021-12-21</lastmod>
          <changefreq>daily</changefreq>
@@ -257,6 +252,11 @@
     </url>
     <url>
          <loc>https://webssh.net/documentation/help/howtos/locking-webssh-password-touch-id-face-id/</loc>
+         <lastmod>2021-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/documentation/help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/</loc>
          <lastmod>2021-12-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -287,6 +287,16 @@
     </url>
     <url>
          <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-restore/</loc>
+         <lastmod>2021-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/documentation/help/howtos/tmux/create-attach-existing-tmux-session/</loc>
+         <lastmod>2021-12-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/documentation/help/howtos/tmux/tmux-scrollback-buffer/</loc>
          <lastmod>2021-12-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
