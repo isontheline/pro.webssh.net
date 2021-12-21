@@ -133,6 +133,16 @@
         "ideas",
         "bug"
       ]
+    },
+    {
+      "login": "AInteriorB",
+      "name": "AInteriorB",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49516700?v=4",
+      "profile": "https://github.com/AInteriorB",
+      "contributions": [
+        "ideas",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 3,
