@@ -1,7 +1,7 @@
 ---
 title: Contributors
 ---
-# WebSSH Contributors ✨
+# Contributors
 Thanks goes to these wonderful people :
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
