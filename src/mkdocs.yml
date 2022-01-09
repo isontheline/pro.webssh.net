@@ -16,6 +16,7 @@ extra_css:
 extra_javascript:
   - javascripts/extra.js?20210418
 extra:
+  disqus: hyvor
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/isontheline/pro.webssh.net
