@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/blog/2022/01-january/</loc>
+         <lastmod>2022-01-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/</loc>
          <lastmod>2022-01-09</lastmod>
          <changefreq>daily</changefreq>
