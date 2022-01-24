@@ -1,4 +1,4 @@
-# ISMethodSwizzling
+# ISRefreshControl / ISMethodSwizzling
 ```
 Copyright (c) 2013 Yosuke Ishikawa
 
