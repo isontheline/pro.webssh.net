@@ -9,6 +9,7 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "none",
+  "contributorTemplate": "<a target=\"blank\" href=\"<%= contributor.profile %>\"><img src=\"<%= contributor.avatar_url %>\" width=\"<%= options.imageSize %>px;\" alt=\"<%= contributor.name %>\"/><br /><sub><b><%= contributor.name %></b></sub></a><br /><%= contributions %>",
   "contributors": [
     {
       "login": "mbierman",
