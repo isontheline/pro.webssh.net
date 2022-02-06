@@ -24,4 +24,4 @@ Alternately if you don't find it, use this link to the App Store : [download Web
 ## What about the name?
 As everybody knows, the "SSH" part means Secure Shell. But what about the "Web" part?
 
-Just because WebSSH terminal rendering engine is based on [hterm](https://github.com/chromium/hterm), a JS library :)
+Just because WebSSH terminal rendering engine is based on [Xterm.js](https://xtermjs.org/), a JS library :)
