@@ -13,8 +13,8 @@ title: Beta Enrollment
     * [TestFlight Terms of Service](https://www.apple.com/legal/internet-services/itunes/testflight/sren/terms.html)
 
 !!! warning "In-App Purchases"
-    * You will not be able to use some features if you don't have buyed them through the App Store with the full version of WebSSH.
-    * Please don't to become an External Tester in order to unlock some features, it won't be the case.
+    * You will not be able to use some of the features if you haven't purchased the full version of WebSSH through the App Store.
+    * Please don't to become an External Tester in order to unlock some features. The full version still requires purchase through the App Store.
 
 To enroll for WebSSH Beta Releases, just click[^1] on this shiny button :
 
