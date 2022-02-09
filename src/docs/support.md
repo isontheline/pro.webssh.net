@@ -12,7 +12,7 @@ title: Support
 !!! danger "10th Anniversary :tada:"
     I'm pleased to inform you that WebSSH will celebrate its 10th anniversary on [March 8](/documentation/changelog/history/previous-releases/#version-10-8-march-2012), 2022.
 
-!!! bug "16 - Gem :gem:"
+!!! bug "17 - Shell :shell:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/16/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/17/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
