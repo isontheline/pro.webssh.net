@@ -7,3 +7,6 @@ Hello :wave: I'm [isontheline](https://github.com/sponsors/isontheline) maintain
 Like my work? [Sponsors](https://github.com/sponsors/isontheline) are welcome!
 Thank you :pray:
 
+| Sponsor | Since |
+| --- | --- |
+| [phillipsitltd](https://github.com/phillipsitltd) | 2022-02-17 |
