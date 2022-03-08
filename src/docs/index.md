@@ -6,9 +6,6 @@ title: Getting Started
 ## About WebSSH
 WebSSH is an "awesome" iOS / macOS SSH, SFTP and Port Forwarding client since 2012!
 
-!!! danger "10th Anniversary :tada:"
-    I'm pleased to inform you that WebSSH will celebrate its 10th anniversary on [March 8](/documentation/changelog/history/previous-releases/#version-10-8-march-2012), 2022.
-
 ## Installation
 1. Launch the App Store on your iOS or macOS device
 2. Search for "WebSSH"

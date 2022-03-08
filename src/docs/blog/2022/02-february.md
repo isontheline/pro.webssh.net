@@ -2,7 +2,7 @@
 title: February 2022
 ---
 
-# Feruary 2022
+# February 2022
 
 WebSSH 17 - Shell :shell: is coming in a few days :tada:
 
