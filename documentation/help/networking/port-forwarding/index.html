@@ -1828,8 +1828,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-port-forwarding-works-inside-webssh" class="md-nav__link">
-    How Port Forwarding works inside WebSSH?
+  <a href="#what-is-vpn-over-ssh" class="md-nav__link">
+    What is VPN-Over-SSH?
   </a>
   
 </li>
@@ -2599,8 +2599,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-port-forwarding-works-inside-webssh" class="md-nav__link">
-    How Port Forwarding works inside WebSSH?
+  <a href="#what-is-vpn-over-ssh" class="md-nav__link">
+    What is VPN-Over-SSH?
   </a>
   
 </li>
@@ -2659,8 +2659,9 @@ LPF and DPF will let you to connect from your iDevice to another server while da
 <li>Save the tunnel and launch it</li>
 <li>You are now able to launch any SSH or SFTP connection inside WebSSH through your bastion</li>
 </ol>
-<h2 id="how-port-forwarding-works-inside-webssh">How Port Forwarding works inside WebSSH?</h2>
-<p>Behind the scene WebSSH uses <a href="https://developer.apple.com/documentation/networkextension">Network Extension</a> inside your iDevice in order to setup a <a href="https://developer.apple.com/documentation/networkextension/packet_tunnel_provider">Packet Tunnel Provider</a>.</p>
+<h2 id="what-is-vpn-over-ssh">What is VPN-Over-SSH?</h2>
+<p>On iOS WebSSH can use <a href="https://developer.apple.com/documentation/networkextension">Network Extension</a> inside your iDevice in order to setup a <a href="https://developer.apple.com/documentation/networkextension/packet_tunnel_provider">Packet Tunnel Provider</a>.</p>
+<p>VPN-Over-SSH is a great feature when you need to forward a port to another application without having WebSSH in foreground to keep the forward open. One drawback of VPN-Over-SSH is that only one port forwarding connection could be launched at a time.</p>
 <div class="admonition question">
 <p class="admonition-title">Why WebSSH is requesting to add VPN configuration?</p>
 <p>When starting a tunnel for the first time you will encounter the following prompt :</p>
@@ -2678,7 +2679,7 @@ WebSSH will never forward your data to any external server. Your data will never
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 16, 2020</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 15, 2022</span>
       
     
   </small>
