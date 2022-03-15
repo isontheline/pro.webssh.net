@@ -33,8 +33,10 @@ title: Port Forwarding
 4. Save the tunnel and launch it
 5. You are now able to launch any SSH or SFTP connection inside WebSSH through your bastion
 
-## How Port Forwarding works inside WebSSH?
-Behind the scene WebSSH uses [Network Extension](https://developer.apple.com/documentation/networkextension) inside your iDevice in order to setup a [Packet Tunnel Provider](https://developer.apple.com/documentation/networkextension/packet_tunnel_provider).
+## What is VPN-Over-SSH?
+On iOS WebSSH can use [Network Extension](https://developer.apple.com/documentation/networkextension) inside your iDevice in order to setup a [Packet Tunnel Provider](https://developer.apple.com/documentation/networkextension/packet_tunnel_provider).
+
+VPN-Over-SSH is a great feature when you need to forward a port to another application without having WebSSH in foreground to keep the forward open. One drawback of VPN-Over-SSH is that only one port forwarding connection could be launched at a time.
 
 !!! question "Why WebSSH is requesting to add VPN configuration?"
     When starting a tunnel for the first time you will encounter the following prompt :
