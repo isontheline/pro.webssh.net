@@ -7,20 +7,14 @@ assignees: ''
 
 ---
 
-**Describe the bug**
-_A clear and concise description of what the bug is. Be warned : We will refuse reports with no or little informations_
+# Bug description
+_Put here a clear and concise description of what the bug is_
 
-**Informations**
- - Device : [e.g. iPhone 6]
- - OS : [e.g. iOS 8.1]
- - WebSSH Pro version : [e.g. 13.16]
+# Screenshots
+_If applicable, add screenshots to help explain your problem_
 
-**Screenshots**
-_If applicable, add screenshots to help explain your problem._
-
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Touch on '....'
-3. Swipe down to '....'
-4. See error
+# Steps to reproduce
+1. 
+2. 
+3. 
+4. Error is thrown
