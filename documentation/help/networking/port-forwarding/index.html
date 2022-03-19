@@ -1802,6 +1802,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#local-port-forwarding-examples" class="md-nav__link">
+    Local Port Forwarding Examples
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1827,13 +1834,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#what-is-vpn-over-ssh" class="md-nav__link">
-    What is VPN-Over-SSH?
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1851,6 +1851,20 @@
     <li class="md-nav__item">
       <a href="../port-knocking/" class="md-nav__link">
         Port Knocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vpn-over-ssh/" class="md-nav__link">
+        VPN-Over-SSH
       </a>
     </li>
   
@@ -2573,6 +2587,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#local-port-forwarding-examples" class="md-nav__link">
+    Local Port Forwarding Examples
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2598,13 +2619,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#what-is-vpn-over-ssh" class="md-nav__link">
-    What is VPN-Over-SSH?
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2623,64 +2637,66 @@
 <div class="admonition info">
 <p class="admonition-title">About Tunnel feature (a.k.a Port Forwarding)</p>
 <p>WebSSH's Tunnel feature will let you to enable <a href="https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding">Local Port Forwarding (LPF)</a> and <a href="https://en.wikipedia.org/wiki/Port_forwarding#Dynamic_port_forwarding">Dynamic Port Forwarding (DPF)</a>.
-LPF and DPF will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol in the following way :</p>
-<ul>
-<li>LPF will forward a local port on your iDevice to a remote IP and port through your SSH server</li>
-<li>DPF will forward all connections <em>INSIDE</em> WebSSH (SSH, SFTP) to a dynamic remote IP and port through your SSH server (aka bastion)</li>
-</ul>
+LPF and DPF will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.</p>
 </div>
 <h2 id="local-port-forwarding">Local Port Forwarding</h2>
+<p>Local Port Forwarding will forward a local port on your iDevice to a remote IP and port through your SSH server.</p>
 <h3 id="how-to-use-it">How to use it?</h3>
 <ol>
 <li>Add a new tunnel by choossing <strong>Tunnel</strong> tab and by pessing the <strong>+</strong> button</li>
 <li>Fill all required fields in order to establish the SSH connection</li>
 <li>Finally choose the remote server port you want to forward locally by using the right syntax</li>
-<li>Save the tunnel and launch it</li>
+<li>Save the tunnel and launch it by tapping on it</li>
 <li>You are now able to connect to your choosed local port</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Port Forwarding Syntax</p>
 <p>The Port Forwarding Syntax is as simple as : <strong>LOCAL_PORT:REMOTE_SERVER:REMOTE_PORT</strong></p>
-<p>Starting WebSSH 17.3 you can add multiple forwards, one per line.</p>
 </div>
-<div class="admonition abstract">
-<p class="admonition-title">Port Forwarding Examples</p>
-<ul>
-<li><strong>8080:localhost:80</strong> will forward remote port 80 (on the same server as the SSH one) to local port 8080</li>
-<li><strong>3389:localhost:3389</strong> will forward remote port 3389 (on the same server as the SSH one) to local port 3389</li>
-<li><strong>2222:172.16.0.18:22</strong> will forward remote port 22 (on the server 172.16.0.18) to local port 2222</li>
-</ul>
+<h3 id="local-port-forwarding-examples">Local Port Forwarding Examples</h3>
+<table>
+<thead>
+<tr>
+<th>Forward Rule</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8080:localhost:80</strong></td>
+<td>Will forward remote port 80 (on the same server as the SSH one) to local port 8080</td>
+</tr>
+<tr>
+<td><strong>3389:localhost:3389</strong></td>
+<td>Will forward remote port 3389 (on the same server as the SSH one) to local port 3389</td>
+</tr>
+<tr>
+<td><strong>2222:172.16.0.18:22</strong></td>
+<td>Will forward remote port 22 (on the server 172.16.0.18) to local port 2222</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Multiple forwards</p>
+<p>Since WebSSH 17.3 you can add multiple forwards by either putting one forward per line or use the comma delimiter between them.</p>
 </div>
 <h2 id="dynamic-port-forwarding">Dynamic Port Forwarding</h2>
+<p>Dynamic Port Forwarding will forward all connections <em>INSIDE</em> WebSSH (SSH, SFTP) to a dynamic remote IP and port through your SSH server (aka <strong>bastion</strong>).</p>
 <h3 id="how-to-use-it_1">How to use it?</h3>
 <ol>
 <li>Add a new tunnel by choossing <strong>Tunnel</strong> tab and by pessing the <strong>+</strong> button</li>
 <li>Fill all required fields in order to establish the SSH connection</li>
-<li>Finally put the magical word inside the port fowarding field, a simple wildcard character : *</li>
-<li>Save the tunnel and launch it</li>
+<li>Finally put the magical word inside the port fowarding field, a simple wildcard character <code>*</code></li>
+<li>Save the tunnel and launch it by tapping on it</li>
 <li>You are now able to launch any SSH or SFTP connection inside WebSSH through your bastion</li>
 </ol>
-<h2 id="what-is-vpn-over-ssh">What is VPN-Over-SSH?</h2>
-<p>On iOS WebSSH can use <a href="https://developer.apple.com/documentation/networkextension">Network Extension</a> inside your iDevice in order to setup a <a href="https://developer.apple.com/documentation/networkextension/packet_tunnel_provider">Packet Tunnel Provider</a>.</p>
-<p>VPN-Over-SSH is a great feature when you need to forward a port to another application without having WebSSH in foreground to keep the forward open. One drawback of VPN-Over-SSH is that only one port forwarding connection could be launched at a time.</p>
-<div class="admonition question">
-<p class="admonition-title">Why WebSSH is requesting to add VPN configuration?</p>
-<p>When starting a tunnel for the first time you will encounter the following prompt :</p>
-<blockquote>
-<p>"WebSSH" Would Like to Add VPN Configurations</p>
-<p>All network activity on this iDevice may be filtered or monitored when using VPN.</p>
-</blockquote>
-<p><a href="https://developer.apple.com/documentation/networkextension/packet_tunnel_provider">Packet Tunnel Provider</a> - used by WebSSH and provided by Apple - is designed to implement a packet-oriented custom VPN protocol, so it's why this prompt is displayed.
-WebSSH will never forward your data to any external server. Your data will never leave your iDevice except to your own SSH server!</p>
-</div>
-<p>If you need more help about this feature, please open a <a href="https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&amp;labels=&amp;template=how_to.md&amp;title=">how to</a> issue.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 19, 2022</span>
       
     
   </small>
