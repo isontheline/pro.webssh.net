@@ -4,7 +4,7 @@ copyright: WebSSH &copy; 2012-2022
 theme:
   name: material
   custom_dir: overrides
-  logo: images/webssh.png
+  logo: images/webssh_round.png
   favicon: images/favicon.ico
   font: false
   palette:
