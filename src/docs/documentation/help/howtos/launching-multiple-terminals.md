@@ -5,10 +5,11 @@ title: Multiple connections
 
 ## WebSSH 17.1 and above
 ### macOS
-You can either :
+In order to use multiple features at same time (SSH, SFTP, mashREPL, ping, ...), you can either launch a new window (<code>Cmd + N</code>) or a new tab :
 
-* Launch a new window : <code>Cmd + N</code>
-* Launch a new tab : <code>Shift + Cmd +  `</code>
+1. macOS Menu Bar > View
+2. Show All Tabs
+3. Press the "+" button
 
 ### iPad
 You can either launch a new window or split one :
