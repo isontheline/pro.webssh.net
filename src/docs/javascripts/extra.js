@@ -1,3 +1,20 @@
+// https://www.w3schools.com/js/js_cookies.asp
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 // Hyvor Talk ->
 var HYVOR_TALK_WEBSITE = 6135;
 var HYVOR_TALK_CONFIG = {
@@ -40,10 +57,8 @@ if (navigator.userAgent.indexOf('WebSSH') == 0) {
     }
 }
 
-const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-});
+const primaryColor = getCookie('PrimaryColor');
 
-if (params.primaryColor) {
-    document.documentElement.style.setProperty('--md-primary-fg-color', params.primaryColor, 'important');
+if (primaryColor) {
+    document.documentElement.style.setProperty('--md-primary-fg-color', primaryColor, 'important');
 }
