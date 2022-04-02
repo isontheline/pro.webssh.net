@@ -3,7 +3,7 @@ title: Port Forwarding
 ---
 
 # Port Forwarding
-!!! info "About Tunnel feature (a.k.a Port Forwarding)"
+!!! abstract "About Tunnel feature (a.k.a Port Forwarding)"
     WebSSH's Tunnel feature will let you to enable [Local Port Forwarding (LPF)](https://en.wikipedia.org/wiki/Port_forwarding#Local_port_forwarding) and [Dynamic Port Forwarding (DPF)](https://en.wikipedia.org/wiki/Port_forwarding#Dynamic_port_forwarding).
     LPF and DPF will let you to connect from your iDevice to another server while data is securely forwarded using SSH protocol.
 
