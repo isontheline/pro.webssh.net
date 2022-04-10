@@ -20,8 +20,6 @@ We only use required cookies, no marketing one, no analytics one.
 
 Only required cookies.
 
-This website uses <a href="https://talk.hyvor.com" target="_blank" rel="noopener noreferrer">Hyvor Talk</a> service as the commenting platform. The comments and other data exchanged are stored securely within the Hyvor Talk system. Your personal data will be processed and transmitted in accordance with the General Data Protection Regulation (GDPR). For more information, please refer to <a href="https://talk.hyvor.com/docs/privacy" target="_blank" rel="noopener noreferrer">their privacy policy</a>.
-
 ## Changes to this privacy policy
 WebSSH has the discretion to update this privacy policy at any time. When we do, we will post a notification on the main page of our documentation and on the App Store and revise the updated date at the bottom of this page. 
 
