@@ -15,24 +15,6 @@ function getCookie(cname) {
     return "";
 }
 
-// Hyvor Talk ->
-var HYVOR_TALK_WEBSITE = 6135;
-var HYVOR_TALK_CONFIG = {
-    url: false,
-    id: false
-};
-
-const article = document.querySelector("article");
-var hyvorTalkView = document.createElement("div");
-hyvorTalkView.id = "hyvor-talk-view";
-article.appendChild(hyvorTalkView);
-
-var script = document.createElement("script");
-script.type = "text/javascript";
-script.src = "https://talk.hyvor.com/web-api/embed.js";
-document.body.appendChild(script);
-// <- Hyvor Talk
-
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.body.setAttribute("data-md-color-scheme", "slate");
 }
