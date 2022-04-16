@@ -14,7 +14,7 @@ theme:
 extra_css:
   - stylesheets/extra.css?20210620
 extra_javascript:
-  - javascripts/extra.js?20220401
+  - javascripts/extra.js?20220416
 extra:
   social:
     - icon: fontawesome/brands/github-alt
