@@ -17,9 +17,3 @@ title: Obtain Public IP Address
 
 !!! warning "Use of VPN / Proxy"
     If you use a VPN or a Proxy (like iCloud Private Relay) you won't be able to retrieve your Public IP Address this these commands. Instead you will retrieve the Output IP Address of your VPN / Proxy.
-
-    To retrieve your Real IP Address, you may use :
-
-    * `curl https://ifconfig.me`
-    * `curl https://checkip.amazonaws.com`
-    * `curl https://ipecho.net/plain`
