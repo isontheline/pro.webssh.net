@@ -1,7 +1,7 @@
 # Pricing
 
 !!! abstract "Why upgrading to PRO?"
-    :two_hearts: Help me continue WebSSH development. I'm an indie developer who want to make an awesome tool for you.
+    :two_hearts: Help me continue WebSSH development. I'm an indie developer who want to make an awesome tool for you!
 
     :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations. I always listen to your needs.
 
