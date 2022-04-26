@@ -44,3 +44,20 @@ const primaryColor = getCookie('PrimaryColor');
 if (primaryColor) {
     document.documentElement.style.setProperty('--md-primary-fg-color', primaryColor, 'important');
 }
+
+let imgAvatar = document.createElement('img');
+imgAvatar.src = 'https://avatars.githubusercontent.com/u/44212923?v=4';
+imgAvatar.title = 'Like my work? Sponsors are welcome!';
+imgAvatar.alt = 'isontheline Sponsors';
+imgAvatar.style.height = '100px';
+imgAvatar.style.border = 'none';
+
+let linkAvatar = document.createElement('a');
+linkAvatar.append(imgAvatar);
+linkAvatar.href = '/documentation/sponsors/';
+
+let divAvatar = document.createElement('div');
+divAvatar.append(linkAvatar);
+divAvatar.style.textAlign = 'center';
+
+document.querySelector('div.md-source-file,div.md-source-date').after(divAvatar);
