@@ -9,10 +9,8 @@ title: Support
 
     You can contact me by [email](mailto:team@webssh.net) or by starting a [discussion](https://github.com/isontheline/pro.webssh.net/discussions).
 
-!!! example "Join Translation of WebSSH"
-    Want to help me translate WebSSH in your native language?
-
-    You're Welcome to [enroll here](https://poeditor.com/join/project/KXbsLC7YZa)
+!!! example "WebSSH' Languages"
+    I need your help to translate WebSSH into your native language. [Join me here](https://poeditor.com/join/project/KXbsLC7YZa).
 
 !!! bug "18 - Honeybee 🐝"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
