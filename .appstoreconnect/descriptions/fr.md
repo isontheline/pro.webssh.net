@@ -1,6 +1,6 @@
 WebSSH est un client SSH, SFTP et Port Forwarding génialissime ٩(^‿^)۶
 
-Que vous soyez au bureau, sur votre canapé ou bien en vacances à la plage ou à la montagne : il vous sera utile partout, tout le temps !
+Que vous soyez au bureau sur votre Mac, sur votre canapé avec votre iPad ou bien en vacances à la plage ou à la montagne en possession de votre iPhone : il vous sera utile partout, tout le temps et tous vos appareils seront synchronisés !
 
 ◖ Fonctionnalités SSH ◗
 ๏ Port Forwarding (Local)
@@ -10,6 +10,7 @@ Que vous soyez au bureau, sur votre canapé ou bien en vacances à la plage ou �
 ๏ Possibilité de modifier le fond et la couleur du texte ainsi que la taille de la police et la séquence dite de "retour"
 ๏ Le clavier peut être virtuel ou physique ;)
 ๏ Notification SSH : Vibreur (ou son sur iPad)
+๏ Touches spéciales Esc, Tab, Ctrl, /, :, -, !, |, $, *
 
 ◖ Fonctionnalités SFTP  ◗
 ๏ Créez / Renommez / Supprimez des fichiers et répertoires
@@ -19,17 +20,7 @@ Que vous soyez au bureau, sur votre canapé ou bien en vacances à la plage ou �
 
 ◖ mashREPL ◗
 ๏ Utilisez un terminal local sans aucune connexion Internet !
-๏ Lancez des commandes telles que cat, ifconfig, uptime, route, etc.
-
-◖ Ecrans multiples ◗
-๏ Vous pouvez ouvrir plusieurs écrans afin de faire tout ce que vous souhaitez en même temps : SSH / SFTP / WHOIS / PING, etc.
-
-◖ Outils Réseau ◗
-๏ Ping
-๏ Whois
-
-◖ Touches du clavier virtuel ◗
-๏ Touches spéciales Esc, Tab, Ctrl, /, :, -, !, |, $, *
+๏ Lancez des commandes telles que : awk, bc, cat, cd, cp, curl, date, dig, du, echo, env, find, grep, head, help, host, ifconfig, ls, mkdir, mv, nslookup, open, openurl, ping, printenv, pwd, rm, sed, setenv, sort, stat, tail, tar, touch, uname, unsetenv, uptime, wc, whoami, whois
 
 ◖ Protection à l'ouverture ◗
 ๏ Touch ID / Face ID
