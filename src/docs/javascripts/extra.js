@@ -52,8 +52,12 @@ imgAvatar.alt = 'isontheline Sponsors';
 imgAvatar.style.height = '100px';
 imgAvatar.style.border = 'none';
 
+let likeMyWork = document.createElement('div');
+likeMyWork.innerHTML = 'Like my work?';
+
 let linkAvatar = document.createElement('a');
 linkAvatar.append(imgAvatar);
+linkAvatar.append(likeMyWork);
 linkAvatar.href = '/documentation/sponsors/';
 
 let divAvatar = document.createElement('div');
