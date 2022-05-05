@@ -45,7 +45,7 @@ if (primaryColor) {
     document.documentElement.style.setProperty('--md-primary-fg-color', primaryColor, 'important');
 }
 
-let imgAvatar = document.createElement('img');
+/*let imgAvatar = document.createElement('img');
 imgAvatar.src = 'https://avatars.githubusercontent.com/u/44212923?v=4';
 imgAvatar.title = 'Like my work? Sponsors are welcome!';
 imgAvatar.alt = 'isontheline Sponsors';
@@ -64,4 +64,4 @@ let divAvatar = document.createElement('div');
 divAvatar.append(linkAvatar);
 divAvatar.style.textAlign = 'center';
 
-document.querySelector('div.md-source-file,div.md-source-date').after(divAvatar);
+document.querySelector('div.md-source-file,div.md-source-date').after(divAvatar);*/
