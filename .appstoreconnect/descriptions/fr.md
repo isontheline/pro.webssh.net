@@ -24,7 +24,7 @@ Que vous soyez au bureau sur votre Mac, sur votre canapé avec votre iPad ou bie
 
 ◖ Protection à l'ouverture ◗
 ๏ Touch ID / Face ID
-๏ Code PIN
+๏ Mot de passe
 
 ◖ Protocoles supportés ◗
 ๏ SSH
@@ -35,18 +35,4 @@ Que vous soyez au bureau sur votre Mac, sur votre canapé avec votre iPad ou bie
 ๏ Session SFTP
 ๏ Local Port Forward
 
-◖ Traductions ◗
-๏ Anglais
-๏ Français
-๏ Russe
-๏ Espagnol
-๏ Coréen
-๏ Chinois simplifié
-๏ Italien
-๏ Allemand
-๏ Portugais
-๏ Et bientôt votre langue :)
-
 Vous souhaitez une nouvelle fonctionnalité ? Contactez moi !
-
-Vous souhaitez traduire WebSSH dans votre langue ? Contactez moi !

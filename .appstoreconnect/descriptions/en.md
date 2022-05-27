@@ -24,7 +24,7 @@ Whether you are in the office on your Mac, on your sofa with your iPad or on hol
 
 ◖ Access Protection ◗
 ๏ Touch ID / Face ID
-๏ PIN code
+๏ Password
 
 ◖ Supported protocols ◗
 ๏ SSH
@@ -34,24 +34,6 @@ Whether you are in the office on your Mac, on your sofa with your iPad or on hol
 ๏ Session Shell
 ๏ Session SFTP
 ๏ Local Port Forward
-
-◖ Translations ◗
-๏ English
-๏ French
-๏ Russian
-๏ Spanish
-๏ Korean
-๏ Simplified Chinese
-๏ Italian
-๏ German
-๏ Portuguese
-๏ Portuguese Brazilian
-๏ Polish
-๏ Danish
-๏ Swedish
-๏ Japanese
-๏ Turkish
-๏ And soon your language :)
 
 Do you want a new feature not available into WebSSH? Contact me!
 
