@@ -13,9 +13,6 @@ title: Support
 
     Do you like my work? [Sponsors](https://github.com/sponsors/isontheline) and [Coffees](https://www.buymeacoffee.com/isontheline) are welcome :pray:
 
-!!! example "WebSSH' Languages"
-    I need your help to translate WebSSH into your native language. [Join me here](https://poeditor.com/join/project/KXbsLC7YZa).
-
 !!! bug "18 - Honeybee 🐝"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
     You can also learn about features [added / changed / removed](/documentation/changelog/18/) inside the next version of WebSSH.
