@@ -13,7 +13,10 @@ title: Support
 
     Do you like my work? [Sponsors](https://github.com/sponsors/isontheline) and [Coffees](https://www.buymeacoffee.com/isontheline) are welcome :pray:
 
-!!! bug "18 - Honeybee 🐝"
+!!! tip "Apple Watch :watch:"
+    I would like to make amazing stuff on the Apple Watch. [Any contribution is welcome](https://www.buymeacoffee.com/isontheline) in order to help me acquire a Watch :two_hearts:
+
+!!! bug "19 - Octopus :octopus:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/18/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/19/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
