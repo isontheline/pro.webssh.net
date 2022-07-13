@@ -9,6 +9,7 @@ Thank you :pray:
 
 | Sponsor | Since |
 | --- | --- |
+| [AA7US](https://github.com/AA7US) | 2022-07-13 |
 | [Lodan-Max](https://github.com/Lodan-Max) | 2022-06-20 |
 | [BobDenny](https://github.com/BobDenny) | 2022-05-28 |
 | [jarrah31](https://github.com/jarrah31) | 2022-03-28 |
