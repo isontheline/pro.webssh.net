@@ -9,7 +9,7 @@ title: Support
 
     Whenever you need to make a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=), or want to share an [idea](https://github.com/isontheline/pro.webssh.net/discussions?discussions_q=category%3AIdeas) for a new feature, or just have a [question](https://github.com/isontheline/pro.webssh.net/discussions?discussions_q=category%3AQ%26A) about how to use WebSSH, I'm never very far.
 
-    You can contact me by [email](mailto:team@webssh.net), by starting a [GitHub discussion](https://github.com/isontheline/pro.webssh.net/discussions) or by joining the WebSSH' [Discord Server](https://discord.gg/M3uxa6Rr9Q).
+    You can contact me by [email](mailto:team@webssh.net), on [GitHub](https://github.com/isontheline/pro.webssh.net/discussions) or on [Discord](https://discord.gg/M3uxa6Rr9Q) :satellite:
 
     Have a nice day :sunny:
 
