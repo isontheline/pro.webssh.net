@@ -191,6 +191,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/changelog/20/</loc>
+         <lastmod>2022-07-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/changelog/history/previous-releases/</loc>
          <lastmod>2022-07-28</lastmod>
          <changefreq>daily</changefreq>
