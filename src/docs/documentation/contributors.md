@@ -9,9 +9,9 @@ Thanks goes to these wonderful people :
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a target="blank" href="https://github.com/AA7US"><img src="https://avatars.githubusercontent.com/u/41341300?v=4" width="100px;" alt="AA7US"/><br /><sub><b>AA7US</b></sub></a><br /><a href="#financial-AA7US" title="Financial">💵</a></td>
     <td align="center"><a target="blank" href="https://github.com/AInteriorB"><img src="https://avatars.githubusercontent.com/u/49516700?v=4" width="100px;" alt="AInteriorB"/><br /><sub><b>AInteriorB</b></sub></a><br /><a href="#ideas-AInteriorB" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/isontheline/pro.webssh.net/issues?q=author%3AAInteriorB" title="Bug reports">🐛</a></td>
     <td align="center"><a target="blank" href="https://github.com/BobDenny"><img src="https://avatars.githubusercontent.com/u/1538556?v=4" width="100px;" alt="Bob Denny"/><br /><sub><b>Bob Denny</b></sub></a><br /><a href="#financial-BobDenny" title="Financial">💵</a></td>
+    <td align="center"><a target="blank" href="https://github.com/AA7US"><img src="https://avatars.githubusercontent.com/u/41341300?v=4" width="100px;" alt="John"/><br /><sub><b>John</b></sub></a><br /><a href="#financial-AA7US" title="Financial">💵</a></td>
   </tr>
   <tr>
     <td align="center"><a target="blank" href="https://github.com/keithellis74"><img src="https://avatars.githubusercontent.com/u/6196195?v=4" width="100px;" alt="Keith"/><br /><sub><b>Keith</b></sub></a><br /><a href="#financial-keithellis74" title="Financial">💵</a></td>
