@@ -6,7 +6,7 @@ title: Port Knocking
     Behind this :sparkles: "magical" name, [Port Knocking](https://en.wikipedia.org/wiki/Port_knocking) is "a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports".
 
 ## How to use it?
-1. Add a connexion (either SSH, SFTP or TUNNEL) by pessing the **+** button
+1. Add a connection (either SSH, SFTP or TUNNEL) by pessing the **+** button
 2. Fill all required fields in order to establish the SSH connection
 3. Finally specify your port knocking sequence by using the right syntax
 
