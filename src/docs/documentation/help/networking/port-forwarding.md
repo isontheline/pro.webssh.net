@@ -38,4 +38,4 @@ Dynamic Port Forwarding will forward all connections *INSIDE* WebSSH (SSH, SFTP)
 2. Fill all required fields in order to establish the SSH connection
 3. Finally put the magical word inside the port fowarding field, a simple wildcard character <code>*</code>
 4. Save the tunnel and launch it by tapping on it
-5. You are now able to launch any SSH or SFTP connection inside WebSSH through your bastion
+5. You are now able to launch any SSH, SFTP or even TUNNEL connection inside WebSSH through your bastion
