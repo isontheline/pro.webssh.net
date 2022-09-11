@@ -316,6 +316,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/howtos/pasting-clipboard-content/</loc>
+         <lastmod>2022-09-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/howtos/switch-language/</loc>
          <lastmod>2022-09-11</lastmod>
          <changefreq>daily</changefreq>
