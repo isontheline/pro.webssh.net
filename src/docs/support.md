@@ -14,7 +14,7 @@ title: Support
     Have a nice day :sunny:
 
 !!! tip "Want to support me further?"
-    If you like my work and want to support me further, you can become a [sponsor](https://github.com/sponsors/isontheline) or you can [Buy Me a Coffee](https://www.buymeacoffee.com/isontheline) :two_hearts:
+    If you like my work and want to support me further, you can become a [sponsor](https://github.com/sponsors/isontheline), you can also take a look at the [merch shop](https://webssh.myspreadshop.net) or you can [Buy Me a Coffee](https://www.buymeacoffee.com/isontheline) :two_hearts:
 
 !!! bug "20 - Moon :first_quarter_moon:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.

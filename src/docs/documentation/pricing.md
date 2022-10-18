@@ -7,7 +7,7 @@
 
     :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want. There is no other limitation on the FREE version.
 
-    :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. No hidden costs. You buy it for lifetime with regular updates for FREE!
+    :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
 
 ## PRO and FREE features matrix
 | | **PRO** | FREE |
