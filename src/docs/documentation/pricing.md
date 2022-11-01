@@ -7,6 +7,8 @@
 
     :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want. There is no other limitation on the FREE version.
 
+    :one: Only one purchase will allow you to use WebSSH on all your devices (by using the same Apple ID). So you will be able to use WebSSH on your iPhone, your iPad and your Mac with the same purchase!
+
     :moneybag: Get your money's worth : Unlike competitors, WebSSH isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
 
 ## PRO and FREE features matrix
