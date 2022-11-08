@@ -4,20 +4,18 @@ title: Multiple connections
 # How to launch multiple SSH or SFTP connections?
 
 ## macOS
-In order to use multiple features at same time (SSH, SFTP, mashREPL, ping, ...), you can either launch a new window (<code>Cmd + N</code>) or a new tab :
-
-1. macOS Menu Bar > View
-2. Show All Tabs
-3. Press the "+" button
+In order to use multiple features at same time (SSH, SFTP, mashREPL, ping, ...) on macOS, you can either :
+* launch a new window (<code>Cmd + N</code>) 
+* launch a new tab (<code>Cmd + T</code>) 
 
 ## iPad
-You can either launch a new window or split one :
-
-1. Press the three dots "..." on top of your iPad status bar
-2. Press (+) to add a new window or choose to split the screen
+On iPad you can also use multiple connections :
+* Use the sidebar to switch between connections
+* Use the three dots "..." on top on your iPad status bar then press (+) to add a new window or choose to split the screen
+* Use Staging Manager (when available)
 
 ## iPhone
-It's easy as :
+On iPhone it's also easy as :
 
 1. Launch a SSH or SFTP connection
 2. Press the "multiple windows" top left icon on the navigation bar
