@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="WebSSH can be locked by using Face ID / Touch ID or a password. The lock occurs on launch or after 60 seconds in background.">
+        <meta name="description" content="WebSSH can be locked by using Face ID / Touch ID. The lock occurs on launch or after 60 seconds (default) in background.">
       
       
       
@@ -1607,22 +1607,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-enable-face-id-touch-id" class="md-nav__link">
-    How to enable Face ID / Touch ID?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#when-the-lock-will-occur" class="md-nav__link">
     When the lock will occur?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#does-the-webssh-database-is-encrypted-with-the-password" class="md-nav__link">
-    Does the WebSSH database is encrypted with the password?
   </a>
   
 </li>
@@ -2781,22 +2767,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-enable-face-id-touch-id" class="md-nav__link">
-    How to enable Face ID / Touch ID?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#when-the-lock-will-occur" class="md-nav__link">
     When the lock will occur?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#does-the-webssh-database-is-encrypted-with-the-password" class="md-nav__link">
-    Does the WebSSH database is encrypted with the password?
   </a>
   
 </li>
@@ -2821,23 +2793,23 @@
 <ol>
 <li>Launch WebSSH</li>
 <li>Go to Settings <img alt="⚙" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/2699.svg" title=":gear:" /></li>
-<li>Click on "Set Password"</li>
-<li>Define your password</li>
+<li>Toggle "Enable Face ID / Touch ID"</li>
 </ol>
-<h2 id="how-to-enable-face-id-touch-id">How to enable Face ID / Touch ID?</h2>
-<p>By default Face ID / Touch ID is enabled if you have set a WebSSH password. </p>
-<p>You can of course opt-out, just disable it by pressing the switch.</p>
 <h2 id="when-the-lock-will-occur">When the lock will occur?</h2>
-<p>Screen will be locked at startup or after 60 seconds of background state.</p>
-<h2 id="does-the-webssh-database-is-encrypted-with-the-password">Does the WebSSH database is encrypted with the password?</h2>
-<p>No. The password is only used to unlock WebSSH interface.</p>
+<p>Screen will be locked at startup or after 60 seconds (default) of background state.</p>
+<p>If you want to change the timeout before the lock occurs :</p>
+<ol>
+<li>Go to iOS Settings</li>
+<li>Scroll down to WeSSH Settings</li>
+<li>Change "Lock After Delay" to your need</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 17, 2021</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2022</span>
       
     
   </small>
