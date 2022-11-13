@@ -1,22 +1,19 @@
 ---
 title: Locking WebSSH
-description: WebSSH can be locked by using Face ID / Touch ID or a password. The lock occurs on launch or after 60 seconds in background.
+description: WebSSH can be locked by using Face ID / Touch ID. The lock occurs on launch or after 60 seconds (default) in background.
 ---
 
 # Locking WebSSH
 ## How to lock WebSSH from untrusted users?
 1. Launch WebSSH
 2. Go to Settings :gear:
-3. Click on "Set Password"
-4. Define your password
-
-## How to enable Face ID / Touch ID?
-By default Face ID / Touch ID is enabled if you have set a WebSSH password. 
-
-You can of course opt-out, just disable it by pressing the switch.
+3. Toggle "Enable Face ID / Touch ID"
 
 ## When the lock will occur?
-Screen will be locked at startup or after 60 seconds of background state.
+Screen will be locked at startup or after 60 seconds (default) of background state.
 
-## Does the WebSSH database is encrypted with the password?
-No. The password is only used to unlock WebSSH interface.
+If you want to change the timeout before the lock occurs :
+
+1. Go to iOS Settings
+2. Scroll down to WeSSH Settings
+3. Change "Lock After Delay" to your need
