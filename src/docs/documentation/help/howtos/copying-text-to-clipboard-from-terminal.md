@@ -17,13 +17,13 @@ title: Copying text to the clipboard from the terminal.
 
     You can change this behavior inside WebSSH settings (iOS : within system settings > WebSSH / macOS : within the app settings).
 
-## How to install wshcopy?
+## How to install wshcopy
 `pip3 install webssh-sh`
 
-## It don't works inside tmux!
-It works! I'm sure! :)
-
-Please tell tmux to allow clipboard access : `tmux set -g set-clipboard on`
+## How to use with tmux >= 3.3
+* `set -g allow-passthrough on` **THEN** `echo "WebSSH is awesome!" | wshcopy -t tmux`
+* **OR**
+* `set -g set-clipboard on` **THEN** `echo "WebSSH is awesome!" | wshcopy -t default`
 
 ## I would like to improve wshcopy :stuck_out_tongue:
 Repository is here : [webssh-sh](https://github.com/isontheline/webssh.sh)
