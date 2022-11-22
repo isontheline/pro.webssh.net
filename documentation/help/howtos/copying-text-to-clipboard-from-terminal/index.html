@@ -1550,14 +1550,14 @@
       
         <li class="md-nav__item">
   <a href="#how-to-install-wshcopy" class="md-nav__link">
-    How to install wshcopy?
+    How to install wshcopy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#it-dont-works-inside-tmux" class="md-nav__link">
-    It don't works inside tmux!
+  <a href="#how-to-use-with-tmux-33" class="md-nav__link">
+    How to use with tmux &gt;= 3.3
   </a>
   
 </li>
@@ -2794,14 +2794,14 @@
       
         <li class="md-nav__item">
   <a href="#how-to-install-wshcopy" class="md-nav__link">
-    How to install wshcopy?
+    How to install wshcopy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#it-dont-works-inside-tmux" class="md-nav__link">
-    It don't works inside tmux!
+  <a href="#how-to-use-with-tmux-33" class="md-nav__link">
+    How to use with tmux &gt;= 3.3
   </a>
   
 </li>
@@ -2844,11 +2844,14 @@
 <p>As the terminal can do "untrusted" things, WebSSH will ask you (by default) if you approve or deny the clipboard access.</p>
 <p>You can change this behavior inside WebSSH settings (iOS : within system settings &gt; WebSSH / macOS : within the app settings).</p>
 </div>
-<h2 id="how-to-install-wshcopy">How to install wshcopy?</h2>
+<h2 id="how-to-install-wshcopy">How to install wshcopy</h2>
 <p><code>pip3 install webssh-sh</code></p>
-<h2 id="it-dont-works-inside-tmux">It don't works inside tmux!</h2>
-<p>It works! I'm sure! :)</p>
-<p>Please tell tmux to allow clipboard access : <code>tmux set -g set-clipboard on</code></p>
+<h2 id="how-to-use-with-tmux-33">How to use with tmux &gt;= 3.3</h2>
+<ul>
+<li><code>set -g allow-passthrough on</code> <strong>THEN</strong> <code>echo "WebSSH is awesome!" | wshcopy -t tmux</code></li>
+<li><strong>OR</strong></li>
+<li><code>set -g set-clipboard on</code> <strong>THEN</strong> <code>echo "WebSSH is awesome!" | wshcopy -t default</code></li>
+</ul>
 <h2 id="i-would-like-to-improve-wshcopy">I would like to improve wshcopy <img alt="😛" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f61b.svg" title=":stuck_out_tongue:" /></h2>
 <p>Repository is here : <a href="https://github.com/isontheline/webssh.sh">webssh-sh</a></p>
 <h1 id="documentation-about-osc52-terminal-escape-sequence">Documentation about OSC52 Terminal Escape Sequence</h1>
@@ -2931,7 +2934,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2022</span>
       
     
   </small>
