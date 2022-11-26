@@ -1,0 +1,204 @@
+<html>
+
+<head>
+	<title>WebSSH - Awesome iOS / macOS SSH, SFTP and Port Forwarding client since 2012!</title>
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+	<meta charset="utf-8" />
+
+	<!-- CodeMirror -->
+	<script type="text/javascript" src="codemirror.js"></script>
+	<link rel="stylesheet" href="codemirror.css" />
+
+	<!-- Search Addon -->
+	<script src="codemirror-addon-jump-to-line.js"></script>
+	<script src="codemirror-addon-search.js"></script>
+	<script src="codemirror-addon-searchcursor.js"></script>
+	<script src="codemirror-addon-mark-selection.js"></script>
+
+	<!-- Dialog Addon -->
+	<script src="codemirror-addon-dialog.js"></script>
+	<link rel="stylesheet" href="codemirror-addon-dialog.css" />
+
+	<!-- Scrollbar Addon -->
+	<script src="codemirror-addon-simplescrollbars.js"></script>
+	<link rel="stylesheet" href="codemirror-addon-simplescrollbars.css" />
+
+	<!-- Matches on Scrollbar Addon -->
+	<script src="codemirror-addon-matchesonscrollbar.js"></script>
+	<link rel="stylesheet" href="codemirror-addon-matchesonscrollbar.css" />
+
+	<!-- Annotates Scrollbar Addon -->
+	<script src="codemirror-addon-annotatescrollbar.js"></script>
+
+	<!-- Active Line Addon -->
+	<script src="codemirror-addon-active-line.js"></script>
+
+	<!-- Modes -->
+	<script src="codemirror-addon-simple.js"></script>
+	<script src="codemirror-modes.js"></script>
+
+	<!-- Themes -->
+	<link rel="stylesheet" href="codemirror-themes.css" />
+
+	<link rel="stylesheet" href="codemirror-webssh.css" />
+</head>
+
+<body>
+	<textarea id="editor"></textarea>
+
+	<script type="text/javascript">
+		function notifySwift(event, eventMetadata) {
+			let data = {
+				event: event
+			};
+
+			Object.assign(data, eventMetadata)
+
+			if (window.webkit && window.webkit.messageHandlers) {
+				window.webkit.messageHandlers.JS2SWIFT.postMessage(data);
+			} else {
+				console.log(data);
+			}
+		}
+
+		window.addEventListener('error', function (event) {
+			notifySwift('error', {
+				message: event.message,
+				source: event.filename,
+				lineno: event.lineno,
+				colno: event.colno,
+				error: event.error,
+				time: event.time,
+			});
+		});
+
+		function buildSettings() {
+			let settings = {
+				lineNumbers: true,
+				lineWrapping: true,
+				mode: '',
+				theme: 'base16-dark',
+				spellcheck: false,
+				autocorrect: false,
+				autocapitalize: false,
+				extraKeys: {
+					'Alt-F': 'findPersistent'
+				},
+				workTime: 200,
+				workDelay: 300,
+				scrollbarStyle: 'simple',
+				styleActiveLine: true,
+				matchBrackets: true,
+				fontSize: 14,
+				styleSelectedText: 'CodeMirror-Selected-Mark',
+			};
+
+			const fragment = window.location.hash.replace('#', '');
+			const fragmentsParts = fragment.split(';');
+
+			for (i in fragmentsParts) {
+				let fragmentParts = fragmentsParts[i].split('=');
+				let fragmentName = fragmentParts[0];
+				let fragmentValue = fragmentParts[1];
+
+				if ('THEME' == fragmentName) {
+					settings.theme = fragmentValue;
+				} else if ('FONTSIZE' == fragmentName) {
+					settings.fontSize = parseInt(fragmentValue);
+				} else if ('MODE' == fragmentName) {
+					settings.mode = fragmentValue;
+				}
+			}
+
+			return settings;
+		}
+
+		function isClean() {
+			return editor.isClean();
+		}
+
+		function markAsClean() {
+			editor.markClean();
+			notifySwift('cleaned');
+		}
+
+		function loadContent(content) {
+			editor.setValue(decodeURIComponent(atob(content)));
+			markAsClean();
+
+			editor.on('change', function (cm, change) {
+				notifySwift('changed');
+			});
+		}
+
+		function getContentEncoded() {
+			return encodeURIComponent(editor.getValue());
+		}
+
+		function getEditorBackgroundColor() {
+			let rgb = window.getComputedStyle(document.querySelector('div.CodeMirror')).backgroundColor;
+
+			// https://stackoverflow.com/a/46258157/8102448
+			return rgb.match(/[0-9]+/g).reduce((a, b) => a + (b | 256).toString(16).slice(1), '#');
+		}
+
+		function setFontSize(fontSize) {
+			if (fontSize < 8 || fontSize > 40) {
+				return;
+			}
+
+			document.querySelector('div.CodeMirror').style.fontSize = fontSize + 'px';
+		}
+
+		function increaseFontSize() {
+			let fontSize = parseInt(window.getComputedStyle(document.querySelector('div.CodeMirror')).fontSize);
+			setFontSize(fontSize + 1);
+		}
+
+		function decreaseFontSize() {
+			let fontSize = parseInt(window.getComputedStyle(document.querySelector('div.CodeMirror')).fontSize);
+			setFontSize(fontSize - 1);
+		}
+
+		function jumpToBottom() {
+			editor.setCursor(editor.lineCount() - 1);
+		}
+
+		function jumpToTop() {
+			editor.setCursor(0);
+		}
+
+		function showFindDialog() {
+			editor.execCommand('findPersistent');
+			disableAutocapitalize();
+		}
+
+		function showReplaceDialog() {
+			editor.execCommand('replace');
+			disableAutocapitalize();
+		}
+
+		function showReplaceAllDialog() {
+			editor.execCommand('replaceAll');
+			disableAutocapitalize();
+		}
+
+		function showJumpToLineDialog() {
+			editor.execCommand('jumpToLine');
+			disableAutocapitalize();
+		}
+
+		function disableAutocapitalize() {
+			document.querySelector('.CodeMirror-search-field').autocapitalize = 'off';
+		}
+
+		const editorSettings = buildSettings();
+		const editor = CodeMirror.fromTextArea(document.getElementById('editor'), editorSettings);
+		editor.setSize("100%", "100%");
+		setFontSize(editorSettings.fontSize);
+	</script>
+</body>
+
+</html>
