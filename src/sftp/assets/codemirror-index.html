@@ -38,6 +38,7 @@
 	<!-- Modes -->
 	<script src="codemirror-addon-simple.js"></script>
 	<script src="codemirror-modes.js"></script>
+	<script src="codemirror-sshconfig-mode.js"></script>
 
 	<!-- Themes -->
 	<link rel="stylesheet" href="codemirror-themes.css" />
@@ -192,6 +193,10 @@
 
 		function disableAutocapitalize() {
 			document.querySelector('.CodeMirror-search-field').autocapitalize = 'off';
+		}
+
+		function changeMode(mode) {
+			editor.setOption('mode', mode);
 		}
 
 		const editorSettings = buildSettings();
