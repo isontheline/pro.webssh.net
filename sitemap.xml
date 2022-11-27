@@ -286,6 +286,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/SSH/ssh-config-file/</loc>
+         <lastmod>2022-11-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-font-size/</loc>
          <lastmod>2022-11-27</lastmod>
          <changefreq>daily</changefreq>
