@@ -1,6 +1,6 @@
-pip install mkdocs
-pip install mkdocs-material
-pip install mkdocs-git-revision-date-localized-plugin
-pip install mkdocs-redirects
+pip3 install mkdocs
+pip3 install mkdocs-material
+pip3 install mkdocs-git-revision-date-localized-plugin
+pip3 install mkdocs-redirects
 
 yarn add --dev all-contributors-cli
