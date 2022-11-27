@@ -2,6 +2,8 @@
 title: SSH Config File
 ---
 
+# SSH Config File
+
 !!! tip "Synced through iCloud"
     If you have enabled iCloud inside WebSSH your SSH Config File will be synced on all your devices.
 
