@@ -25,8 +25,14 @@
 // https://codemirror.net/5/demo/simplemode.html
 CodeMirror.defineSimpleMode("sshconfig", {
     start: [
-        { regex: /[\*!\?]+/, token: "operator" },
-        { regex: /yes|no|ask/, token: "atom" },
+        {
+            regex: /[\*!\?]+/,
+            token: "operator"
+        },
+        {
+            regex: /yes|no|ask/,
+            token: "atom"
+        },
         {
             regex: /(?:Host|User|HostName|Port|IdentityFile)\b/,
             token: "keyword"
@@ -35,8 +41,22 @@ CodeMirror.defineSimpleMode("sshconfig", {
             regex: /\d+/i,
             token: "number"
         },
-        { regex: /#.*/, token: "comment" },
-        { regex: /[a-zA-Z0-9\.\-_$][\w$]*/, token: "variable" },
+        {
+            // This a special WebSSH feature :
+            // When a key starts with => #!
+            // It will be used only by WebSSH to change some SSH or UI behaviors
+            regex: /\s*#!/,
+            token: "variable-2",
+            sol: true
+        },
+        {
+            regex: /#.*/,
+            token: "comment"
+        },
+        {
+            regex: /[a-zA-Z0-9\.\-_$][\w$]*/,
+            token: "variable"
+        },
     ],
     comment: [
     ],
