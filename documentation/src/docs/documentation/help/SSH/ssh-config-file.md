@@ -23,10 +23,10 @@ In order to edit the WebSSH SSH Config File just need to :
 3.  Edit .ssh/config
 
 # Supported Features
-| Keyword | Type | Expected value |
-| --- | --- | --- |
-| Host | String | Connection name (aka alias) |
-| HostName | String | Connection host |
-| Port | Integer | Connection port |
-| RemoteCommand | String | The command to launch instead of requesting a default Shell |
-| User | String | Connection user |
+| Keyword | Type | Expected value | Accepted Tokens |
+| --- | --- | --- | --- |
+| Host | String | Connection name (aka alias) pattern | None |
+| HostName | String | Connection host | None |
+| Port | Integer | Connection port | None |
+| RemoteCommand | String | The command to launch instead of requesting a default Shell | None |
+| User | String | Connection user | None |
