@@ -30,7 +30,7 @@ CodeMirror.defineSimpleMode("sshconfig", {
             token: "operator"
         },
         {
-            regex: /none|yes|no|ask/,
+            regex: /(none|yes|no|ask)\b/,
             token: "atom"
         },
         {
