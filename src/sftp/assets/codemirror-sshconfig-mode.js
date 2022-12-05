@@ -30,7 +30,7 @@ CodeMirror.defineSimpleMode("sshconfig", {
             token: "operator"
         },
         {
-            regex: /yes|no|ask/,
+            regex: /none|yes|no|ask/,
             token: "atom"
         },
         {
@@ -40,14 +40,6 @@ CodeMirror.defineSimpleMode("sshconfig", {
         {
             regex: /\d+/i,
             token: "number"
-        },
-        {
-            // This a special WebSSH feature :
-            // When a key starts with => #!
-            // It will be used only by WebSSH to change some SSH or UI behaviors
-            regex: /\s*#!/,
-            token: "variable-2",
-            sol: true
         },
         {
             regex: /#.*/,
