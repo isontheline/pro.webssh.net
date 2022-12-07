@@ -20,7 +20,7 @@ In order to edit the WebSSH SSH Config File just need to :
 
 1. Open WebSSH Settings (Gear)
 2. Scroll to "SSH"
-3.  Edit .ssh/config
+3.  Edit /etc/ssh/ssh_config
 
 # Supported Features
 | Keyword | Type | Expected value | Accepted Tokens |
