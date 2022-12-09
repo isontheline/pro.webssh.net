@@ -19,6 +19,7 @@
     <script src="xterm-addon-webgl_0.12.0.js"></script>
     <script src="xterm-addon-fit_0.5.0.js"></script>
     <script src="xterm-addon-search_0.9.0.js"></script>
+    <script src="xterm-addon-serialize_0.8.0.js"></script>
 </head>
 
 <body>
@@ -36,6 +37,7 @@
         const terminal = new Terminal(TerminalHelper.buildTerminalSettings(terminalSettings));
         const fitAddon = new FitAddon.FitAddon();
         const searchAddon = new SearchAddon.SearchAddon();
+        const serializeAddon = new SerializeAddon.SerializeAddon();
 
         // Theme :
         document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
@@ -45,6 +47,9 @@
 
         // Load Search Addon :
         terminal.loadAddon(searchAddon);
+
+        // Load Serialize Addon :
+        terminal.loadAddon(serializeAddon);
 
         // Open the terminal :
         terminal.open(document.getElementById('terminal'));
@@ -81,14 +86,14 @@
         // Listen when the buffer changes :
         terminal.buffer._onBufferChange._listeners.push(TerminalHelper.onBufferChange);
 
+        // Register ANSI Escape Sequence handlers :
         TerminalHelper.registerHandlers();
 
         if (terminal.textarea) {
             TerminalHelper.focus(true);
         }
 
-        // Notify that all components are now ready :
-        JS2IOS.calliOSFunction('notifyTerminalReady');
+        TerminalHelper.ready();
     </script>
 </body>
 

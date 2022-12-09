@@ -199,6 +199,23 @@ const CanvasCursorHelper = {
 const TerminalHelper = {
     scrolly: null,
 
+    ready: function() {
+        // Notify that all components are now ready :
+        JS2IOS.calliOSFunction('notifyTerminalReady');
+
+        // Every 60 seconds, save terminal state :
+        //setInterval(TerminalHelper.saveState, 10000);
+    },
+
+    saveState: function () {
+        const encodedContent = Base64.btoa(serializeAddon.serialize({scrollback: 1000}));
+        JS2IOS.calliOSFunction('saveState', encodedContent);
+    },
+
+    restoreState: function(encodedContent) {
+        terminal.write(atob(encodedContent));
+    },
+
     focus: function (enable) {
         const focusEvent = new CustomEvent(enable ? "focus" : "blur", {});
         terminal.textarea.dispatchEvent(focusEvent);
