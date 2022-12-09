@@ -201,10 +201,17 @@
 			editor.setOption('mode', mode);
 		}
 
+		function wantToSaveState() {
+			notifySwift('saveState');
+		}
+
 		const editorSettings = buildSettings();
 		const editor = CodeMirror.fromTextArea(document.getElementById('editor'), editorSettings);
 		editor.setSize("100%", "100%");
 		setFontSize(editorSettings.fontSize);
+
+		// Every 60s we want to save the state of the editor
+		setInterval(wantToSaveState, 60000);
 	</script>
 </body>
 
