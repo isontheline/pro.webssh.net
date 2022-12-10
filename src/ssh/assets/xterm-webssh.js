@@ -204,7 +204,7 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('notifyTerminalReady');
 
         // Every 60 seconds, save terminal state :
-        //setInterval(TerminalHelper.saveState, 60000);
+        setInterval(TerminalHelper.saveState, 60000);
     },
 
     saveState: function () {
