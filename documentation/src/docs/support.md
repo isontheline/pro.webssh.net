@@ -16,7 +16,7 @@ title: Support
 !!! tip "Want to support me further?"
     If you like my work and want to support me further, you can become a [sponsor](https://github.com/sponsors/isontheline) or you can [Buy Me a Coffee](https://www.buymeacoffee.com/isontheline) :two_hearts:
 
-!!! bug "20 - Moon :first_quarter_moon:"
+!!! bug "21 - Penguin :penguin:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/20/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/21/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
