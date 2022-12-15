@@ -2089,6 +2089,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#and-what-about-socks-proxy-server-aka-d" class="md-nav__link">
+    And what about SOCKS Proxy Server? Aka -D
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2888,6 +2895,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#and-what-about-socks-proxy-server-aka-d" class="md-nav__link">
+    And what about SOCKS Proxy Server? Aka -D
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2965,13 +2979,33 @@ LPF and DPF will let you to connect from your iDevice to another server while da
 <li>Save the tunnel and launch it by tapping on it</li>
 <li>You are now able to launch any SSH, SFTP or even TUNNEL connection inside WebSSH through your bastion</li>
 </ol>
+<h3 id="and-what-about-socks-proxy-server-aka-d">And what about SOCKS Proxy Server? Aka -D</h3>
+<ul>
+<li>You can use the Dynamic Port Forwarding feature to create a SOCKS Proxy Server. </li>
+<li>You can use it with any application that supports SOCKS Proxy Server.</li>
+<li>Just configure your application to use the SOCKS Proxy Server on your iDevice and the port you have choosed in the Dynamic Port Forwarding feature.</li>
+</ul>
+<p>Inside Port Forwarding field you can use the following syntax : <strong>*:SOCKS_PORT</strong> where SOCKS_PORT is the port you want to listen to. </p>
+<p>For example : <strong>*:1985</strong> will let the Proxy Server to listen on port 1985.</p>
+<div class="admonition tip">
+<p class="admonition-title">Steps to enable SOCKS Proxy Server on your iDevice</p>
+<ol>
+<li>Allow WebSSH to accept external connections : iOS Settings &gt; WebSSH &gt; Tunnel &gt; Incoming Connections Strategy &gt; Accept both local and remote connections</li>
+<li>(Optional) Enable VPN-Over-SSH (so you will be able to switch between apps on your iDevice)</li>
+<li>(Optional) Enable WebSSH Settings &gt; Keep Device Awake (in order to don't sleep your device)</li>
+<li>Inside port forwarding use this : *:1985 replace 1985 by the SOCKS port you want to listen to (it will be your SOCKS server port for your other devices)</li>
+<li>Launch your tunnel</li>
+<li>(Optional) If you know your device IP address skip this step. Launch mashREPL and get your local IP address with this command : ifconfig</li>
+<li>On your other devices use a SOCKS configuration like this : 192.168.0.18:1985 where 192.168.0.18 is your iDevice and 1985 is your SOCKS server port</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 15, 2022</span>
       
     
   </small>
