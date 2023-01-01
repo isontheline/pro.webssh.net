@@ -1,6 +1,6 @@
 site_url: https://webssh.net
 site_name: WebSSH
-copyright: WebSSH &copy; 2012-2022
+copyright: WebSSH &copy; 2012-2023
 theme:
   name: material
   custom_dir: overrides

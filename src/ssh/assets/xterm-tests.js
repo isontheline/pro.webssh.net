@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012-2022, Arnaud MENGUS (MIT License)
+ * Copyright (c) 2012-2023, Arnaud MENGUS (MIT License)
  * https://github.com/isontheline/pro.webssh.net
  * @license MIT
  *
