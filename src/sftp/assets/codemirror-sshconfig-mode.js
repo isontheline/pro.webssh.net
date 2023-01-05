@@ -42,6 +42,14 @@ CodeMirror.defineSimpleMode("sshconfig", {
             token: "number"
         },
         {
+            // This a special WebSSH feature :
+            // When a key starts with => #!
+            // It will be used only by WebSSH to change some SSH or UI behaviors
+            regex: /\s*#!/,
+            token: "variable-2",
+            sol: true
+        },
+        {
             regex: /#.*/,
             token: "comment"
         },
