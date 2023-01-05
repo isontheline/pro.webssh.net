@@ -15,7 +15,6 @@ To do so you can use these keys :
     * Name : `tmux copy mode`
     * Tags : `*`
     * Icon : Any icon you want :innocent:
-    * Macro Prefered : `YES`
     * Snippet : `<ctrl-b>[`
 
     Now you will be able to enter copy mode by just pressing the choosen icon in the Snippets HUD menu :muscle:
