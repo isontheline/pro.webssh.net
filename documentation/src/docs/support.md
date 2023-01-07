@@ -5,7 +5,7 @@ title: Support
 # Support
 
 !!! abstract "All the help you need when you need it"
-    <img src="https://avatars.githubusercontent.com/u/44212923?v=4" style="width: 150px; margin-bottom: 15px; float: left;" />
+    ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=150 }
 
     Hey there :wave: I'm [isontheline](https://github.com/sponsors/isontheline) maintainer of WebSSH, the awesome iOS / macOS SSH, SFTP and Port Forwarding client that you use everyday!
 
