@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/mashREPL/obtain-public-ip-address/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/SSH/adding-control-key-to-snippets/">
       
       
-        <link rel="prev" href="../database-restore/">
+        <link rel="prev" href="../../SFTP/startup-folder-path/">
       
       
-        <link rel="next" href="../../tmux/create-attach-existing-tmux-session/">
+        <link rel="next" href="../use-arrow-keys-modes/">
       
       <link rel="icon" href="../../../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
     
     
       
-        <title>Obtain Public IP Address - WebSSH</title>
+        <title>Adding Control-Key to Snippets - WebSSH</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-retrieve-my-public-ip-address" class="md-skip">
+        <a href="#adding-control-key-to-snippets" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Obtain Public IP Address
+              Adding Control-Key to Snippets
             
           </span>
         </div>
@@ -1754,12 +1754,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11_5_10" type="checkbox" id="__nav_4_11_5_10" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11_5_10" type="checkbox" id="__nav_4_11_5_10" checked>
       
       
       
@@ -1780,11 +1782,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../SSH/adding-control-key-to-snippets/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Adding Control-Key to Snippets
       </a>
+      
     </li>
   
 
@@ -1796,7 +1808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/use-arrow-keys-modes/" class="md-nav__link">
+      <a href="../use-arrow-keys-modes/" class="md-nav__link">
         Arrow Keys Modes
       </a>
     </li>
@@ -1810,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/use-meta-alt-option-key/" class="md-nav__link">
+      <a href="../use-meta-alt-option-key/" class="md-nav__link">
         Meta / Alt / Option
       </a>
     </li>
@@ -1824,7 +1836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/use-old-special-keys/" class="md-nav__link">
+      <a href="../use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
     </li>
@@ -1890,14 +1902,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11_5_12" type="checkbox" id="__nav_4_11_5_12" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_11_5_12" type="checkbox" id="__nav_4_11_5_12" >
       
       
       
@@ -1920,7 +1930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database-backup/" class="md-nav__link">
+      <a href="../../mashREPL/database-backup/" class="md-nav__link">
         Database Backup
       </a>
     </li>
@@ -1934,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database-restore/" class="md-nav__link">
+      <a href="../../mashREPL/database-restore/" class="md-nav__link">
         Database Restore
       </a>
     </li>
@@ -1946,21 +1956,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../mashREPL/obtain-public-ip-address/" class="md-nav__link">
         Obtain Public IP Address
       </a>
-      
     </li>
   
 
@@ -2832,47 +2832,44 @@
 
 
 
-<h1 id="how-to-retrieve-my-public-ip-address">How to retrieve my Public IP Address?</h1>
-<ol>
-<li>Launch WebSSH</li>
-<li>Start a mashREPL instance <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M41.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 41.4 86.6zM288 416h288c17.7 0 32 14.3 32 32s-14.3 32-32 32H288c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></span></li>
-<li>Type one of the following commands</li>
-</ol>
+<h1 id="adding-control-key-to-snippets">Adding Control-Key to Snippets</h1>
+<p>If you want to add a control-key (Ctrl-A / Ctrl-C / Ctrl-D / ...) to a snippet, you can use the following syntax :</p>
+<p><code>&lt;ctrl-x&gt;</code> (Replace <code>x</code> by the control-key you want to add)</p>
+<p>You can put the control-key anywhere in your snippet. So you can use <code>&lt;ctrl-A&gt;ls</code> to send Ctrl-A and then <code>ls</code> to your SSH session.</p>
+<h1 id="examples">Examples</h1>
 <table>
 <thead>
 <tr>
-<th>Command</th>
+<th>Control-Key</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>dig +short myip.opendns.com @resolver1.opendns.com</code></td>
+<td><code>&lt;ctrl-a&gt;</code></td>
+<td>Send Ctrl-A</td>
 </tr>
 <tr>
-<td><code>curl ifconfig.me</code></td>
+<td><code>&lt;ctrl-b&gt;[</code></td>
+<td>Show history of your tmux session</td>
 </tr>
 <tr>
-<td><code>curl icanhazip.com</code></td>
+<td><code>&lt;ctrl-b&gt;"</code></td>
+<td>Split your tmux session horizontally</td>
 </tr>
 <tr>
-<td><code>curl ipecho.net/plain</code></td>
-</tr>
-<tr>
-<td><code>curl ifconfig.co</code></td>
+<td><code>&lt;ctrl-b&gt;%</code></td>
+<td>Split your tmux session vertically</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">Use of VPN / Proxy</p>
-<p>If you use a VPN or a Proxy (like iCloud Private Relay) you won't be able to retrieve your Public IP Address this these commands. Instead you will retrieve the Output IP Address of your VPN / Proxy.</p>
-</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 7, 2023</span>
       
     
   </small>

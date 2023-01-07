@@ -371,6 +371,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/howtos/SSH/adding-control-key-to-snippets/</loc>
+         <lastmod>2023-01-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/howtos/SSH/use-arrow-keys-modes/</loc>
          <lastmod>2023-01-07</lastmod>
          <changefreq>daily</changefreq>
