@@ -4,7 +4,7 @@ title: Sponsors
 # Sponsors
 Hello :wave: I'm [isontheline](https://github.com/sponsors/isontheline) maintainer of WebSSH, the awesome iOS / macOS SSH, SFTP and Port Forwarding client that you use everyday!
 
-Help me to continue WebSSH development by [sponsoring me](https://github.com/sponsors/isontheline) or [sharing coffees](https://www.buymeacoffee.com/isontheline) ☕️
+Help me to continue WebSSH development by [sponsoring me](https://github.com/sponsors/isontheline) or [sharing coffees](https://www.buymeacoffee.com/isontheline) :coffee:
 
 I spend extra hours each day (I have a daytime job) to enhance WebSSH to meet all your expectations, and I love that! I love your feedback and your support 👍
 
