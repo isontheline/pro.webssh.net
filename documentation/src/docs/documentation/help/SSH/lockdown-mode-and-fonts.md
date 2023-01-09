@@ -2,6 +2,8 @@
 title: Lockdown Mode and Custom Fonts
 ---
 
+# Lockdown Mode and Custom Fonts
+
 !!! tip "Did you know?"
     Lockdown mode does not allow custom fonts so WebSSH can't render properly the MesloLGSNF Web Font.
 

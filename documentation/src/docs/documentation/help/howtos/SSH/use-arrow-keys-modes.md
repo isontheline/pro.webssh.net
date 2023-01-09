@@ -2,6 +2,7 @@
 title: Arrow Keys Modes
 ---
 
+# Arrow Keys Modes
 Some of WebSSH' users are encountering troubles when using arrow keys :
 > * I can't use WebSSH on HP switches, Aruba wireless access points and fortigate firewalls...
 > * Arrow keys aren't working properly inside WebSSH!

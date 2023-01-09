@@ -2,6 +2,7 @@
 title: Restore Purchases
 ---
 
+# Restore Purchases
 If you are encountering an issue with your purchase, you can restore your purchases by following these steps:
 
 * On the device you have bought the PRO purchase :

@@ -2,6 +2,8 @@
 title: Keyboard Shortcuts
 ---
 
+# Keyboard Shortcuts
+
 !!! tip "Shortcuts / Combo Keys"
     Your favorite external keyboard doesn't have all useful keys? 
 
