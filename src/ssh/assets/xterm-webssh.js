@@ -207,13 +207,13 @@ const TerminalHelper = {
         setInterval(TerminalHelper.saveState, 60000);
     },
 
-    saveState: function () {
-        const encodedContent = Base64.btoa(serializeAddon.serialize({scrollback: 1000}));
+    saveState: debounce(() => {
+        const encodedContent = Base64.btoa(unescape(encodeURIComponent(serializeAddon.serialize({scrollback: 1000}))));
         JS2IOS.calliOSFunction('saveState', encodedContent);
-    },
+    }, 1000),
 
     restoreState: function(encodedContent) {
-        terminal.write(atob(encodedContent));
+        terminal.write(decodeURIComponent(escape(atob(encodedContent))));
     },
 
     focus: function (enable) {
