@@ -208,12 +208,16 @@ const TerminalHelper = {
     },
 
     saveState: debounce(() => {
-        const encodedContent = Base64.btoa(unescape(encodeURIComponent(serializeAddon.serialize({scrollback: 1000}))));
+        const encodedContent = Base64.btoa(encodeURIComponent(serializeAddon.serialize({
+            scrollback: 1000,
+            excludeModes: false,
+            excludeAltBuffer: false
+        })));
         JS2IOS.calliOSFunction('saveState', encodedContent);
     }, 1000),
 
     restoreState: function(encodedContent) {
-        terminal.write(decodeURIComponent(escape(atob(encodedContent))));
+        terminal.write(decodeURIComponent(atob(encodedContent)));
     },
 
     focus: function (enable) {
