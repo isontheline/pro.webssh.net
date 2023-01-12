@@ -18,7 +18,7 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
       - run: pip install mkdocs
-      - run: pip install mkdocs-material=="9.*" 
+      - run: pip install mkdocs-material=="9.0.4" 
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install mkdocs-redirects
       - run: cd documentation/src; mkdocs build --clean
