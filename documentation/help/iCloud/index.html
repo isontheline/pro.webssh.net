@@ -2891,8 +2891,13 @@
 <li>Go to iCloud<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
 <li>Check "Enable iCloud"</li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Syncing doesn't work on my macOS</p>
+<div class="admonition warning">
+<p class="admonition-title">iCloud as Backup</p>
+<p>iCloud shouldn't be used as a backup!</p>
+<p>Instead you should use mashREPL in order to <a href="/documentation/help/howtos/mashREPL/database-backup/">make a backup</a> of the WebSSH database.</p>
+</div>
+<details class="tip">
+<summary>Syncing doesn't work on my macOS</summary>
 <p>If the sync doesn't work on your macOS device, please check the following steps :</p>
 <ol>
 <li>System Settings</li>
@@ -2902,12 +2907,12 @@
 <li>Setting</li>
 <li>Check that "WebSSH" switch is enabled in order to allow WebSSH to use iCloud</li>
 </ol>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">iCloud as Backup</p>
-<p>iCloud shouldn't be used as a backup!</p>
-<p>Instead you should use mashREPL in order to <a href="/documentation/help/howtos/mashREPL/database-backup/">make a backup</a> of the WebSSH database.</p>
-</div>
+</details>
+<details class="info">
+<summary>About iCloud Encryption</summary>
+<p>WebSSH uses CloudKit to sync your data with iCloud. CloudKit is a service provided by Apple that allows you to store data securely in the cloud and sync it across your devices.</p>
+<p>You can read more about CloudKit <a href="https://support.apple.com/en-qa/guide/security/sec3cac31735/1/web/1">here</a>.</p>
+</details>
 <div class="footnote">
 <hr />
 <ol>
@@ -2922,7 +2927,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 14, 2023</span>
       
     
   </small>
