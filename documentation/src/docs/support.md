@@ -16,7 +16,7 @@ title: Support
     Have a nice day :sunny:
 
 !!! tip "Want to support me further?"
-    WebSSH isn't a subscription based app (you buy it for [lifetime](/documentation/pricing/)) but if you like my work and want to support me further, you can become a [sponsor](https://github.com/sponsors/isontheline) :two_hearts: or you can [Buy Me a Coffee](https://www.buymeacoffee.com/isontheline) :coffee:
+    WebSSH isn't a subscription based app (you buy it for [lifetime](/documentation/pricing/)) but if you like my work and want to support me further, you can become a [patron](https://en.liberapay.com/isontheline/) :construction_worker:, a [sponsor](https://github.com/sponsors/isontheline) :two_hearts: or you can [buy Me a Coffee](https://www.buymeacoffee.com/isontheline) :coffee:
 
 !!! bug "21 - Penguin :penguin:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
