@@ -6,17 +6,21 @@ Hello :wave: I'm [isontheline](https://github.com/sponsors/isontheline) maintain
 
 Help me to continue WebSSH development by [sponsoring me](https://github.com/sponsors/isontheline), by becoming my [patron](https://en.liberapay.com/isontheline/) :construction_worker: or [sharing coffees](https://www.buymeacoffee.com/isontheline) :coffee:
 
-I spend extra hours each day (I have a daytime job) to enhance WebSSH to meet all your expectations, and I love that! I love your feedback and your support 👍
+I spend extra hours each day (I have a daytime job) to enhance WebSSH to meet all your expectations, and I like that! 
 
-Thank you so much for supporting my work!
+I love your feedback and your support 👍
 
-Thank you ✨
+Thank you so much for supporting my work ✨
 
+## Active Sponsors
 | Sponsor | Since |
 | --- | --- |
+| [andou-azarashi](https://github.com/andou-azarashi) | 2023-01-18 |
 | [AA7US](https://github.com/AA7US) | 2022-07-13 |
-| [Lodan-Max](https://github.com/Lodan-Max) | 2022-06-20 |
-| [BobDenny](https://github.com/BobDenny) | 2022-05-28 |
-| [jarrah31](https://github.com/jarrah31) | 2022-03-28 |
-| [keithellis74](https://github.com/keithellis74) |  2022-02-27 |
 | [phillipsitltd](https://github.com/phillipsitltd) | 2022-02-17 |
+
+## Previous Sponsors
+* [Lodan-Max](https://github.com/Lodan-Max)
+* [BobDenny](https://github.com/BobDenny)
+* [jarrah31](https://github.com/jarrah31)
+* [keithellis74](https://github.com/keithellis74)
