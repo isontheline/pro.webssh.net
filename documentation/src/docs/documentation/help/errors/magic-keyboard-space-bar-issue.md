@@ -12,4 +12,4 @@ If you can't use your space bar on your Apple Magic Keyboard, please try to use 
 * Go to iOS Settings
 * Go to Accessibility
 * Go to Keyboard
-* Disable "full keyboard access"
+* Disable "Full Keyboard Access"
