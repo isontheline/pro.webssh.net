@@ -15,6 +15,6 @@
      WebSSH est une application développée en France. Je suis un développeur indépendant qui souhaite vous proposer un outil de qualité. Je suis à votre écoute et je suis toujours disponible pour répondre à vos questions. Merci pour votre soutien :heart:
 
 !!! question "Une interrogation ?"
-    Si vous avez le moindre doûte ou une question, n'hésitez pas à me contacter par [email](mailto:team@webssh.net)
+    Si vous avez le moindre doute ou une question, n'hésitez pas à me contacter par [email](mailto:team@webssh.net)
 
     Belle journée à vous :sunny:
