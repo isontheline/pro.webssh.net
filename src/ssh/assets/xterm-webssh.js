@@ -199,7 +199,7 @@ const CanvasCursorHelper = {
 const TerminalHelper = {
     scrolly: null,
 
-    ready: function() {
+    ready: function () {
         // Notify that all components are now ready :
         JS2IOS.calliOSFunction('notifyTerminalReady');
 
@@ -216,7 +216,7 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('saveState', encodedContent);
     }, 1000),
 
-    restoreState: function(encodedContent) {
+    restoreState: function (encodedContent) {
         terminal.write(decodeURIComponent(atob(encodedContent)));
     },
 
@@ -329,10 +329,10 @@ const TerminalHelper = {
     },
 
     extractTerminalSettings: function (hashString) {
-        var fragment = atob(hashString.replace('#', ''));
-        var fragmentsParts = fragment.split(';');
+        let fragment = atob(hashString.replace('#', ''));
+        let fragmentsParts = fragment.split(';');
 
-        var terminalSettings = {
+        let terminalSettings = {
             backgroundColor: '#2e3436',
             foregroundColor: '#ffffff',
             cursorColor: '#119cf3',
@@ -344,12 +344,15 @@ const TerminalHelper = {
             copyOnSelect: false,
             cursorStyle: 'block',
             cursorBlink: 'normal',
+            rows: 25,
+            cols: 80,
+            fixedSize: false,
         }
 
-        for (i in fragmentsParts) {
-            var fragmentParts = fragmentsParts[i].split('=');
-            var fragmentName = fragmentParts[0];
-            var fragmentValue = fragmentParts[1];
+        for (let i in fragmentsParts) {
+            let fragmentParts = fragmentsParts[i].split('=');
+            let fragmentName = fragmentParts[0];
+            let fragmentValue = fragmentParts[1];
 
             if ('BC' == fragmentName) {
                 terminalSettings.backgroundColor = fragmentValue;
@@ -384,6 +387,15 @@ const TerminalHelper = {
             } else if ('CB' == fragmentName) {
                 terminalSettings.cursorBlink = fragmentValue;
 
+            } else if ('TS' == fragmentName) {
+                let regex = /(?<cols>[0-9]+)x(?<rows>[0-9]+)/g;
+                let match = regex.exec(fragmentValue);
+                let cols = parseInt(match.groups['cols'], 10);
+                let rows = parseInt(match.groups['rows'], 10);
+
+                terminalSettings.cols = cols;
+                terminalSettings.rows = rows;
+                terminalSettings.fixedSize = true;
             }
         }
 
@@ -411,7 +423,9 @@ const TerminalHelper = {
             fontWeightBold: 'normal',
             cursorStyle: terminalSettings.cursorStyle,
             customGlyphs: true,
-            scrollback: terminalSettings.scrollback
+            scrollback: terminalSettings.scrollback,
+            rows: terminalSettings.rows,
+            cols: terminalSettings.cols,
         };
     },
 

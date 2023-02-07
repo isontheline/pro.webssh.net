@@ -43,7 +43,9 @@
         document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
 
         // Load Fit Addon :
-        terminal.loadAddon(fitAddon);
+        if (!terminalSettings.fixedSize) {
+            terminal.loadAddon(fitAddon);
+        }
 
         // Load Search Addon :
         terminal.loadAddon(searchAddon);
