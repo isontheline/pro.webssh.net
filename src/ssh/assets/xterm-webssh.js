@@ -390,12 +390,15 @@ const TerminalHelper = {
             } else if ('TS' == fragmentName) {
                 let regex = /(?<cols>[0-9]+)x(?<rows>[0-9]+)/g;
                 let match = regex.exec(fragmentValue);
-                let cols = parseInt(match.groups['cols'], 10);
-                let rows = parseInt(match.groups['rows'], 10);
 
-                terminalSettings.cols = cols;
-                terminalSettings.rows = rows;
-                terminalSettings.fixedSize = true;
+                if (match) {
+                    let cols = parseInt(match.groups['cols'], 10);
+                    let rows = parseInt(match.groups['rows'], 10);
+
+                    terminalSettings.cols = cols;
+                    terminalSettings.rows = rows;
+                    terminalSettings.fixedSize = true;
+                }
             }
         }
 
