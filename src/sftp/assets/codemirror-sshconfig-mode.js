@@ -38,6 +38,10 @@ CodeMirror.defineSimpleMode("sshconfig", {
             token: "keyword"
         },
         {
+            regex: /\d+x\d+/i,
+            token: "string"
+        },
+        {
             regex: /\d+/i,
             token: "number"
         },
