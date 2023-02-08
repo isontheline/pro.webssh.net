@@ -4,10 +4,10 @@ title: SSH Config File
 
 # SSH Config File
 
-!!! tip "Synced through iCloud"
+??? tip "Synced through iCloud"
     If you have enabled iCloud inside WebSSH your SSH Config File will be synced on all your devices.
 
-!!! warning "Configuration Overwrite"
+??? warning "Configuration Overwrite"
     When you define a SSH Config File inside WebSSH, it will overwrite the default configuration you have done inside each matched connections.
 
     For example, if you have defined a SSH Config File with a RemoteCommand but you have already defined a RemoteCommand inside a connection, the connection RemoteCommand will be overwritten by the SSH Config File RemoteCommand.
@@ -18,8 +18,8 @@ Since WebSSH 20.6 you can setup a SSH Config File in order to define default val
 
 In order to edit the WebSSH SSH Config File just need to :
 
-1. Open WebSSH Settings (Gear)
-2. Scroll to "SSH"
+1. Open WebSSH Settings :gear:
+2. Scroll to "SSH" settings section
 3.  Edit /etc/ssh/ssh_config
 
 # Supported Features
@@ -34,6 +34,7 @@ In order to edit the WebSSH SSH Config File just need to :
 # Special Features 
 All special features are prefixed by `#!` and are not part of the SSH Config File specification.
 
-| Keyword | Type | Expected value | Since |
-| --- | --- | --- | --- |
-| #!FontSize | Integer | Font size in pixels | 21.1 |
+| Keyword | Type | Expected value | Since | Example usage |
+| --- | --- | --- | --- | --- |
+| #!FontSize | Integer | Font size in pixels | 21.1 | #!FontSize 14 |
+| #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | #!FixedSize 80x25 |
