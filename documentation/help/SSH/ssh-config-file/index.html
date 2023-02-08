@@ -2852,21 +2852,21 @@
 
 
 <h1 id="ssh-config-file">SSH Config File</h1>
-<div class="admonition tip">
-<p class="admonition-title">Synced through iCloud</p>
+<details class="tip">
+<summary>Synced through iCloud</summary>
 <p>If you have enabled iCloud inside WebSSH your SSH Config File will be synced on all your devices.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Configuration Overwrite</p>
+</details>
+<details class="warning">
+<summary>Configuration Overwrite</summary>
 <p>When you define a SSH Config File inside WebSSH, it will overwrite the default configuration you have done inside each matched connections.</p>
 <p>For example, if you have defined a SSH Config File with a RemoteCommand but you have already defined a RemoteCommand inside a connection, the connection RemoteCommand will be overwritten by the SSH Config File RemoteCommand.</p>
 <p>This overwrite only happens when launching a connection. If you edit a connection, you won't see the SSH Config File values.</p>
-</div>
+</details>
 <p>Since WebSSH 20.6 you can setup a SSH Config File in order to define default values for your connections.</p>
 <p>In order to edit the WebSSH SSH Config File just need to :</p>
 <ol>
-<li>Open WebSSH Settings (Gear)</li>
-<li>Scroll to "SSH"</li>
+<li>Open WebSSH Settings <img alt="⚙" class="twemoji" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2699.svg" title=":gear:" /></li>
+<li>Scroll to "SSH" settings section</li>
 <li>Edit /etc/ssh/ssh_config</li>
 </ol>
 <h1 id="supported-features">Supported Features</h1>
@@ -2927,6 +2927,7 @@
 <th>Type</th>
 <th>Expected value</th>
 <th>Since</th>
+<th>Example usage</th>
 </tr>
 </thead>
 <tbody>
@@ -2935,6 +2936,14 @@
 <td>Integer</td>
 <td>Font size in pixels</td>
 <td>21.1</td>
+<td>#!FontSize 14</td>
+</tr>
+<tr>
+<td>#!FixedSize</td>
+<td>String</td>
+<td>Fixed terminal size (cols <strong>x</strong> rows)</td>
+<td>21.4</td>
+<td>#!FixedSize 80x25</td>
 </tr>
 </tbody>
 </table>
@@ -2944,7 +2953,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2023</span>
       
     
   </small>
