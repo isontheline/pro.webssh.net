@@ -200,6 +200,13 @@ const TerminalHelper = {
     scrolly: null,
 
     ready: function () {
+        // Applying a border to the terminal screen if fixedSize enabled :
+        if (terminalSettings.fixedSize) {
+            let xtermScreenStyle = document.querySelector('div.xterm-screen').style;
+            xtermScreenStyle.border = '1px solid rgba(127,127,127,0.2)';
+            xtermScreenStyle.borderStyle = 'none solid solid none';
+        }
+
         // Notify that all components are now ready :
         JS2IOS.calliOSFunction('notifyTerminalReady');
 
