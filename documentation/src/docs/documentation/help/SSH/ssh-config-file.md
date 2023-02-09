@@ -36,7 +36,8 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 
 | Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
-| #!FontSize | Integer | Font size in pixels | 21.1 | #!FontSize 14 |
 | #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | #!FixedSize 80x25 |
+| #!FontSize | Integer | Font size in pixels | 21.1 | #!FontSize 14 |
+| #!TermType | String | $TERM environment variable value | 21.4 | #!TermType xterm-256color |
 
 [^1]: Based on [OpenBSD ssh_config Man](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&sec=5)
