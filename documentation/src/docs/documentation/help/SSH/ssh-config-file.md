@@ -22,7 +22,7 @@ In order to edit the WebSSH SSH Config File just need to :
 2. Scroll to "SSH" settings section
 3.  Edit /etc/ssh/ssh_config
 
-# Supported Features
+# Supported Features [^1]
 | Keyword | Type | Expected value | Accepted Tokens | Since |
 | --- | --- | --- | --- | --- |
 | Host | String | Connection name (aka alias) pattern | None | 20.6 |
@@ -38,3 +38,5 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | --- | --- | --- | --- | --- |
 | #!FontSize | Integer | Font size in pixels | 21.1 | #!FontSize 14 |
 | #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | #!FixedSize 80x25 |
+
+[^1]: Based on [OpenBSD ssh_config Man](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&sec=5)
