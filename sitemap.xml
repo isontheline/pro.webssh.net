@@ -431,6 +431,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/networking/checking-host-availability/</loc>
+         <lastmod>2023-02-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/networking/port-forwarding/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
