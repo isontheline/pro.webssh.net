@@ -1,8 +1,13 @@
 ---
-title: WebSSH Deep Linking
+title: Deep Linking
 ---
 
-# WebSSH Deep Linking
+# Deep Linking
+
+??? warning "Deep Links could harm your device"
+    * Deep links are a way to open WebSSH within a browser. They are very useful to open a specific connection in WebSSH. However, they could also be used to do malicious things. Be careful when you click on a link you don't trust.
+    * In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH settings.
+
 Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.
 
 ## How to use it
@@ -29,3 +34,9 @@ You can combine multiple options in the same link. Here is an example:
 ```
 ssh://username@host:port?save=true&name=My%20Connection&group=My%20Group&tags=tag1,tag2
 ```
+
+## Disabling opening confirmation
+If you want to disable the confirmation dialog when opening a deep link, you can do it in WebSSH settings :
+
+* Under iOS / iPadOS, go to "iOS Settings" > "WebSSH" > "Deep Linking Strategy" > "Always Allow"
+* Under macOS, go to "WebSSH Menu" > "Preferences" > "Deep Linking Strategy" > "Always Allow"
