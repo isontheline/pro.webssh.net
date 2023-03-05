@@ -21,7 +21,7 @@
     
     
       
-        <title>WebSSH Deep Linking - WebSSH</title>
+        <title>Deep Linking - WebSSH</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#webssh-deep-linking" class="md-skip">
+        <a href="#deep-linking" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WebSSH Deep Linking
+              Deep Linking
             
           </span>
         </div>
@@ -1718,12 +1718,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          WebSSH Deep Linking
+          Deep Linking
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        WebSSH Deep Linking
+        Deep Linking
       </a>
       
         
@@ -1751,6 +1751,13 @@
         <li class="md-nav__item">
   <a href="#advanced-usage" class="md-nav__link">
     Advanced usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabling-opening-confirmation" class="md-nav__link">
+    Disabling opening confirmation
   </a>
   
 </li>
@@ -2937,6 +2944,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disabling-opening-confirmation" class="md-nav__link">
+    Disabling opening confirmation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2953,7 +2967,14 @@
 
 
 
-<h1 id="webssh-deep-linking">WebSSH Deep Linking</h1>
+<h1 id="deep-linking">Deep Linking</h1>
+<details class="warning">
+<summary>Deep Links could harm your device</summary>
+<ul>
+<li>Deep links are a way to open WebSSH within a browser. They are very useful to open a specific connection in WebSSH. However, they could also be used to do malicious things. Be careful when you click on a link you don't trust.</li>
+<li>In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH settings.</li>
+</ul>
+</details>
 <p>Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.</p>
 <h2 id="how-to-use-it">How to use it</h2>
 <p>To use deep linking, you need to create a link with the following format:</p>
@@ -2996,13 +3017,19 @@
 <p>You can combine multiple options in the same link. Here is an example:</p>
 <div class="highlight"><pre><span></span><code>ssh://username@host:port?save=true&amp;name=My%20Connection&amp;group=My%20Group&amp;tags=tag1,tag2
 </code></pre></div>
+<h2 id="disabling-opening-confirmation">Disabling opening confirmation</h2>
+<p>If you want to disable the confirmation dialog when opening a deep link, you can do it in WebSSH settings :</p>
+<ul>
+<li>Under iOS / iPadOS, go to "iOS Settings" &gt; "WebSSH" &gt; "Deep Linking Strategy" &gt; "Always Allow"</li>
+<li>Under macOS, go to "WebSSH Menu" &gt; "Preferences" &gt; "Deep Linking Strategy" &gt; "Always Allow"</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2023</span>
       
     
   </small>
