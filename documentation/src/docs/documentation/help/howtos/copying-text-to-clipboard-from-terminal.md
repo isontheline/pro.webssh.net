@@ -15,7 +15,7 @@ title: Copying text to the clipboard from the terminal.
 !!! warning "Daemon hides under terminal"
     As the terminal can do "untrusted" things, WebSSH will ask you (by default) if you approve or deny the clipboard access.
 
-    You can change this behavior inside WebSSH settings (iOS : within system settings > WebSSH / macOS : within the app settings).
+    You can change this behavior inside WebSSH settings (iOS : within system settings > WebSSH > SSH / macOS : within the app settings > SSH) : "Clipboard Access Strategy"
 
 ## How to install wshcopy
 `pip3 install webssh-sh`

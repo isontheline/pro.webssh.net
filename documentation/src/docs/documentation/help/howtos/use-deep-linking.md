@@ -6,7 +6,7 @@ title: Deep Linking
 
 ??? warning "Deep Links could harm your device"
     * Deep links are a way to open WebSSH within a browser. They are very useful to open a specific connection in WebSSH. However, they could also be used to do malicious things. Be careful when you click on a link you don't trust.
-    * In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH settings.
+    * In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH > Settings > "Deep Linking Strategy"
 
 Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.
 

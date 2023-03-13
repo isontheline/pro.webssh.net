@@ -13,4 +13,5 @@ You need to change the "Custom Fonts Strategy" inside the WebSSH settings :
 
 * Open iOS Settings
 * Go to WebSSH Settings (bottom of settings)
+* Go to "SSH" section
 * Change "Custom Fonts Strategy" value to "Disallow"
