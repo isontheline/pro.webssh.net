@@ -2975,7 +2975,10 @@
 <li>In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH &gt; Settings &gt; "Deep Linking Strategy"</li>
 </ul>
 </details>
-<p>Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.</p>
+<ul>
+<li>Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.</li>
+<li>Since 21.6 you can also use deep linking feature to be able to launch a one time connection from the Search Bar (issue <a href="https://github.com/isontheline/pro.webssh.net/issues/833">#833</a>)</li>
+</ul>
 <h2 id="how-to-use-it">How to use it</h2>
 <p>To use deep linking, you need to create a link with the following format:</p>
 <div class="highlight"><pre><span></span><code>ssh://username@host:port
@@ -2994,23 +2997,28 @@
 <tbody>
 <tr>
 <td><code>save</code></td>
-<td>If set to <code>true</code>, the connection will be saved in the connection list.</td>
+<td>If set to <code>true</code>, the connection will be saved in the connection list</td>
 <td><code>ssh://username@host:port?save=true</code></td>
 </tr>
 <tr>
 <td><code>name</code></td>
-<td>The name of the connection.</td>
+<td>The name of the connection</td>
 <td><code>ssh://username@host:port?name=My%20Connection</code></td>
 </tr>
 <tr>
 <td><code>group</code></td>
-<td>The group of the connection.</td>
+<td>The group of the connection</td>
 <td><code>ssh://username@host:port?group=My%20Group</code></td>
 </tr>
 <tr>
 <td><code>tags</code></td>
-<td>The tags of the connection.</td>
+<td>The tags of the connection</td>
 <td><code>ssh://username@host:port?tags=tag1,tag2</code></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>The Private Key name you would like to use to establish the connection. This parameter is case insensitive. Your Private Keys' name should be unique in order to be used with this parameter.</td>
+<td><code>ssh://username@host?key=MYPKEY</code></td>
 </tr>
 </tbody>
 </table>
@@ -3029,7 +3037,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2023</span>
       
     
   </small>
