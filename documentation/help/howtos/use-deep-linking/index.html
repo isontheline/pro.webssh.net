@@ -1762,6 +1762,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-sftp-deep-links" class="md-nav__link">
+    Using SFTP deep links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#another-app-is-using-the-ssh-scheme" class="md-nav__link">
+    Another app is using the ssh:// scheme
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2951,6 +2965,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-sftp-deep-links" class="md-nav__link">
+    Using SFTP deep links
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#another-app-is-using-the-ssh-scheme" class="md-nav__link">
+    Another app is using the ssh:// scheme
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3031,13 +3059,22 @@
 <li>Under iOS / iPadOS, go to "iOS Settings" &gt; "WebSSH" &gt; "Deep Linking Strategy" &gt; "Always Allow"</li>
 <li>Under macOS, go to "WebSSH Menu" &gt; "Preferences" &gt; "Deep Linking Strategy" &gt; "Always Allow"</li>
 </ul>
+<h2 id="using-sftp-deep-links">Using SFTP deep links</h2>
+<p>You just need to replace <code>ssh</code> by <code>sftp</code> in the link. Here is an example:</p>
+<div class="highlight"><pre><span></span><code>sftp://username@host:port
+</code></pre></div>
+<h2 id="another-app-is-using-the-ssh-scheme">Another app is using the ssh:// scheme</h2>
+<p>If you have another app that uses the <code>ssh://</code> scheme, you can use the <code>webssh://</code> scheme instead. So you can use the deep linking feature with WebSSH without removing the other app.</p>
+<p>Here is an example:</p>
+<div class="highlight"><pre><span></span><code>webssh://username@host:port
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 18, 2023</span>
       
     
   </small>
