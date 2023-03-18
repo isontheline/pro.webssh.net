@@ -42,3 +42,19 @@ If you want to disable the confirmation dialog when opening a deep link, you can
 
 * Under iOS / iPadOS, go to "iOS Settings" > "WebSSH" > "Deep Linking Strategy" > "Always Allow"
 * Under macOS, go to "WebSSH Menu" > "Preferences" > "Deep Linking Strategy" > "Always Allow"
+
+## Using SFTP deep links
+You just need to replace `ssh` by `sftp` in the link. Here is an example:
+
+```
+sftp://username@host:port
+```
+
+## Another app is using the ssh:// scheme
+If you have another app that uses the `ssh://` scheme, you can use the `webssh://` scheme instead. So you can use the deep linking feature with WebSSH without removing the other app.
+
+Here is an example:
+
+```
+webssh://username@host:port
+```
