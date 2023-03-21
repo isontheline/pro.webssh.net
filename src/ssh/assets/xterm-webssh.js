@@ -484,6 +484,10 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('setClipboardFromOSC52', pd);
     }, 250),
 
+    onLinkClick: function (event, uri) {
+        JS2IOS.calliOSFunction('openLink', uri);
+    },
+
     pocTest: function () {
         /*const term = terminal;
             term.options['overviewRulerWidth'] = 15;

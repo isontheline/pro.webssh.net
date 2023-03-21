@@ -20,6 +20,7 @@
     <script src="xterm-addon-fit_0.5.0.js"></script>
     <script src="xterm-addon-search_0.9.0.js"></script>
     <script src="xterm-addon-serialize_0.8.0.js"></script>
+    <script src="xterm-addon-web-links_0.8.0.js"></script>
 </head>
 
 <body>
@@ -38,6 +39,7 @@
         const fitAddon = new FitAddon.FitAddon();
         const searchAddon = new SearchAddon.SearchAddon();
         const serializeAddon = new SerializeAddon.SerializeAddon();
+        const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
 
         // Theme :
         document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
@@ -52,6 +54,9 @@
 
         // Load Serialize Addon :
         terminal.loadAddon(serializeAddon);
+
+        // Load Web Links Addon :
+        terminal.loadAddon(webLinksAddon);
 
         // Open the terminal :
         terminal.open(document.getElementById('terminal'));
