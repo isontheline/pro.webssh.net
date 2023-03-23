@@ -19,7 +19,8 @@ Thank you so much for supporting my work ✨
 | [AA7US](https://github.com/AA7US) | 2022-07-13 |
 | [phillipsitltd](https://github.com/phillipsitltd) | 2022-02-17 |
 
-## Previous Sponsors
+## Past Sponsors
+* [Woodpile37](https://github.com/Woodpile37)
 * [Lodan-Max](https://github.com/Lodan-Max)
 * [BobDenny](https://github.com/BobDenny)
 * [jarrah31](https://github.com/jarrah31)
