@@ -27,7 +27,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAA... user@host
 ```
 
 ## Private Key
-SSH private key format is also a standardized format that allows for interoperability between different SSH implementations. There are several different SSH private key formats, but WebSSH supports OpenSSH and PuTTY ones.
+SSH private key format is also a standardized format that allows for interoperability between different SSH implementations. There are several different SSH private key formats, but **WebSSH supports OpenSSH and PuTTY ones**.
 
 Here is an example of an OpenSSH private key:
 
