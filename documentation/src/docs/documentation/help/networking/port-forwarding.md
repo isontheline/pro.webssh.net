@@ -5,7 +5,9 @@ title: Port Forwarding
 # Port Forwarding
 WebSSH's Tunnel feature will let you to enable [**Local Port Forwarding (LPF)**](/documentation/help/networking/local-port-forwarding/) and [**Dynamic Port Forwarding (DPF)**](/documentation/help/networking/dynamic-port-forwarding/).
 
-Local Port Forwarding and Dynamic Port Forwarding are both techniques used in SSH tunneling, but they have different use cases. Here's a little table summarizing the key differences :
+Local Port Forwarding and Dynamic Port Forwarding are both techniques used in SSH tunneling, but they have different use cases. 
+
+Here's a little table summarizing the key differences :
 
 | Feature | Local Port Forwarding | Dynamic Port Forwarding |
 | --- | --- | --- |
