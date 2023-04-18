@@ -10,7 +10,7 @@ title: Dynamic Port Forwarding
 
     When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH and SFTP launched connections are forwarded through the Jump Server, seemlessly.
 
-    In background Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.
+    In background, Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.
 
 !!! warning "Subsequent connections are forwarded through the Jump Server"
     When enabled, Dynamic Port Forwarding will forward all connections *INSIDE* WebSSH (SSH, SFTP, TUNNEL) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.
