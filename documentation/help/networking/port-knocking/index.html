@@ -2240,9 +2240,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
-    How to use it?
+  <a href="#how-to-use-it-inside-webssh" class="md-nav__link">
+    How to use it inside WebSSH?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-server-side-implementation-by-using-knockd" class="md-nav__link">
+    Examples of server side implementation by using knockd
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of server side implementation by using knockd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-ubuntu-etcknockdconf" class="md-nav__link">
+    Debian / Ubuntu : /etc/knockd.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centos-rhel-fedora-almalinux-rockylinux-etcknockdconf" class="md-nav__link">
+    CentOS / RHEL / Fedora / AlmaLinux / RockyLinux : /etc/knockd.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2973,9 +3000,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
-    How to use it?
+  <a href="#how-to-use-it-inside-webssh" class="md-nav__link">
+    How to use it inside WebSSH?
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-of-server-side-implementation-by-using-knockd" class="md-nav__link">
+    Examples of server side implementation by using knockd
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples of server side implementation by using knockd">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debian-ubuntu-etcknockdconf" class="md-nav__link">
+    Debian / Ubuntu : /etc/knockd.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#centos-rhel-fedora-almalinux-rockylinux-etcknockdconf" class="md-nav__link">
+    CentOS / RHEL / Fedora / AlmaLinux / RockyLinux : /etc/knockd.conf
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3000,7 +3054,7 @@
 <p class="admonition-title">About Port Knocking feature</p>
 <p>Behind this <img alt="✨" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2728.svg" title=":sparkles:" /> "magical" name, <a href="https://en.wikipedia.org/wiki/Port_knocking">Port Knocking</a> is "a method of externally opening ports on a firewall by generating a connection attempt on a set of prespecified closed ports".</p>
 </div>
-<h2 id="how-to-use-it">How to use it?</h2>
+<h2 id="how-to-use-it-inside-webssh">How to use it inside WebSSH?</h2>
 <ol>
 <li>Add a connection (either SSH, SFTP or TUNNEL) by pessing the <strong>+</strong> button</li>
 <li>Fill all required fields in order to establish the SSH connection</li>
@@ -3025,13 +3079,46 @@
 <li><strong>1984:TCP:200,1985:UDP:300,2014:TCP:200,2016:UDP:500</strong> will knock on TCP port 1984 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 2014 and will sleep 200 ms, then will knock on UDP port 2016 and will sleep 500 ms.</li>
 </ul>
 </div>
+<h2 id="examples-of-server-side-implementation-by-using-knockd">Examples of server side implementation by using knockd</h2>
+<h3 id="debian-ubuntu-etcknockdconf">Debian / Ubuntu : /etc/knockd.conf</h3>
+<div class="highlight"><pre><span></span><code>[options]
+        UseSyslog
+
+[SSH]
+      sequence    = 1984,1985,2014,2016
+      seq_timeout = 10
+      command     = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
+      tcpflags    = syn
+      cmd_timeout   = 10
+      stop_command  = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
+</code></pre></div>
+<ul>
+<li>On this example, we use the <strong>iptables</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1984,1985,2014,2016</strong></li>
+<li>After the sequence is done, the port <strong>22</strong> is opened for <strong>10</strong> seconds and then closed again</li>
+</ul>
+<h3 id="centos-rhel-fedora-almalinux-rockylinux-etcknockdconf">CentOS / RHEL / Fedora / AlmaLinux / RockyLinux : /etc/knockd.conf</h3>
+<div class="highlight"><pre><span></span><code>[options]
+        UseSyslog
+
+[SSH]
+      sequence      = 1984,1985,2014,2016
+      seq_timeout   = 10
+      start_command = /bin/firewall-cmd --zone=public --add-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
+      tcpflags      = syn
+      cmd_timeout   = 10
+      stop_command  = /bin/firewall-cmd --zone=public --remove-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
+</code></pre></div>
+<ul>
+<li>On this example, we use the <strong>firewall-cmd</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1984,1985,2014,2016</strong></li>
+<li>After the sequence is done, the port <strong>22</strong> is opened for <strong>10</strong> seconds and then closed again</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
       
     
   </small>
