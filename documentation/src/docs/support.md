@@ -16,7 +16,7 @@ title: Support
 !!! tip "Want to support me further?"
     WebSSH isn't a subscription based app (you buy it for [lifetime](/documentation/pricing/)) but if you like my work and want to support me further, you can become my [sponsor](https://github.com/sponsors/isontheline) :two_hearts: or you can [buy me a coffee](https://www.buymeacoffee.com/isontheline) :coffee:
 
-!!! bug "21 - Penguin :penguin:"
+!!! bug "22 - Butterfly :butterfly:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/21/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/22/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
