@@ -122,6 +122,12 @@ const XtermTests = {
         // Should ask to report cursor position :
         terminal.write('\x1b[6n');
 
+        // HTTP URL :
+        terminal.write('HTTP URL : https://github.com/isontheline\r\n');
+
+        // IP Address :
+        terminal.write('IP Address : 1.2.3.4\r\n');
+
         // Should write to clipboard :
         terminal.write('\x1b]52;c;' + btoa('WebSSH is awesome!') + '\x1b');
 

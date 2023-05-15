@@ -46,7 +46,9 @@ const JS2IOS = {
 
         url += JSON.stringify(callInfo)
 
-        if (window.webkit && window.webkit.messageHandlers) {
+        if (window.webkit &&
+            window.webkit.messageHandlers &&
+            window.webkit.messageHandlers.JS2IOS) {
             window.webkit.messageHandlers.JS2IOS.postMessage(url);
         } else {
             console.log(url);
