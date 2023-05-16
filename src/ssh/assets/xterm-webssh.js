@@ -166,38 +166,6 @@ const ResizeHelper = {
     }
 };
 
-const CanvasCursorHelper = {
-    blinkInterval: null,
-
-    startBlink: function () {
-        if (CanvasCursorHelper.blinkInterval) {
-            clearInterval(CanvasCursorHelper.blinkInterval);
-            CanvasCursorHelper.blinkInterval = null;
-        }
-
-        const cursorRenderLayer = terminal._core._renderService._renderer._renderLayers[3];
-        cursorRenderLayer._renderBlurCursor = cursorRenderLayer._renderBlockCursor;
-
-        CanvasCursorHelper.blinkInterval = setInterval(function () {
-            const cursorLayer = document.querySelector('canvas.xterm-cursor-layer');
-            const cursorLayerDisplay = cursorLayer.style.display == 'none' ? '' : 'none';
-            cursorLayer.style.display = cursorLayerDisplay;
-        }, 700);
-    },
-
-    stopBlink: function () {
-        if (CanvasCursorHelper.blinkInterval) {
-            clearInterval(CanvasCursorHelper.blinkInterval);
-            CanvasCursorHelper.blinkInterval = null;
-        }
-
-        const cursorRenderLayer = terminal._core._renderService._renderer._renderLayers[3];
-        cursorRenderLayer._renderBlurCursor = cursorRenderLayer._renderUnderlineCursor;
-
-        document.querySelector('canvas.xterm-cursor-layer').style.display = '';
-    }
-};
-
 const TerminalHelper = {
     scrolly: null,
 
@@ -239,23 +207,10 @@ const TerminalHelper = {
             enable = false;
         }
 
-        terminal.setOption('cursorBlink', enable);
-
+        terminal._core.optionsService.options.cursorBlink = enable;
+        
         if (terminal.textarea) {
             TerminalHelper.focus(enable);
-        }
-
-        if (terminal._core.optionsService.options.rendererType == 'canvas') {
-            const cursorRenderLayer = terminal._core._renderService._renderer._renderLayers[3];
-            if (cursorRenderLayer._renderBlurCursorOriginal == undefined) {
-                cursorRenderLayer._renderBlurCursorOriginal = cursorRenderLayer._renderBlurCursor;
-            }
-
-            if (enable) {
-                CanvasCursorHelper.startBlink();
-            } else {
-                CanvasCursorHelper.stopBlink();
-            }
         }
     },
 
@@ -426,7 +381,7 @@ const TerminalHelper = {
     buildTerminalSettings: function (terminalSettings) {
         return {
             fontFamily: terminalSettings.fontFamily,
-            rendererType: terminalSettings.isMacOS ? 'dom' : 'canvas',
+            rendererType: 'dom',
             allowTransparency: true,
             bellStyle: 'none',
             theme: TerminalHelper.buildTheme(terminalSettings),

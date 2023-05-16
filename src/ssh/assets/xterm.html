@@ -16,7 +16,6 @@
     <script src="xterm-tests.js"></script>
     <script src="xterm-webssh.js"></script>
     <script src="xterm_5.1.0.js"></script>
-    <script src="xterm-addon-webgl_0.14.0.js"></script>
     <script src="xterm-addon-fit_0.7.0.js"></script>
     <script src="xterm-addon-search_0.11.0.js"></script>
     <script src="xterm-addon-serialize_0.8.0.js"></script>
@@ -36,26 +35,26 @@
 
         const terminalSettings = TerminalHelper.extractTerminalSettings(window.location.hash);
         const terminal = new Terminal(TerminalHelper.buildTerminalSettings(terminalSettings));
-        const fitAddon = new FitAddon.FitAddon();
-        const searchAddon = new SearchAddon.SearchAddon();
-        const serializeAddon = new SerializeAddon.SerializeAddon();
-        const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
 
         // Theme :
         document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
 
         // Load Fit Addon :
+        const fitAddon = new FitAddon.FitAddon();
         if (!terminalSettings.fixedSize) {
             terminal.loadAddon(fitAddon);
         }
 
         // Load Search Addon :
+        const searchAddon = new SearchAddon.SearchAddon();
         terminal.loadAddon(searchAddon);
 
         // Load Serialize Addon :
+        const serializeAddon = new SerializeAddon.SerializeAddon();
         terminal.loadAddon(serializeAddon);
 
         // Load Web Links Addon :
+        const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
         terminal.loadAddon(webLinksAddon);
 
         // Open the terminal :
