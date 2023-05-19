@@ -208,7 +208,7 @@ const TerminalHelper = {
         }
 
         terminal._core.optionsService.options.cursorBlink = enable;
-        
+
         if (terminal.textarea) {
             TerminalHelper.focus(enable);
         }
@@ -218,8 +218,28 @@ const TerminalHelper = {
         terminal.scrollToBottom();
     },
 
+    getWindowSelectedText: function () {
+        if (window.getSelection) {
+            return window.getSelection();
+        }
+
+        if (window.document.getSelection) {
+            return window.document.getSelection();
+        }
+
+        if (window.document.selection) {
+            return window.document.selection.createRange().text;
+        }
+
+        return "";
+    },
+
     copySelectedText: function () {
-        const textSelection = TerminalHelper.exportSelectedText();
+        let textSelection = TerminalHelper.exportSelectedText();
+
+        if (textSelection.length == 0) {
+            textSelection = TerminalHelper.getWindowSelectedText();
+        }
 
         JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(textSelection)]);
     },
