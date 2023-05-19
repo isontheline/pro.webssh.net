@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- 
+
 body {
     margin: 0;
     margin-left: 3px;
@@ -30,6 +30,12 @@ body {
     background-color: green;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
+}
+
+body.platform-ios .xterm {
+    user-select: text;
+    -ms-user-select: text;
+    -webkit-user-select: text
 }
 
 #terminal {

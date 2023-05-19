@@ -39,6 +39,9 @@
         // Theme :
         document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
 
+        // Platform :
+        document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
+
         // Load Fit Addon :
         const fitAddon = new FitAddon.FitAddon();
         if (!terminalSettings.fixedSize) {
