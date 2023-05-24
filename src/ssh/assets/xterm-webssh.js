@@ -168,6 +168,7 @@ const ResizeHelper = {
 
 const TerminalHelper = {
     scrolly: null,
+    lastSelectedText: null,
 
     ready: function () {
         // Applying a border to the terminal screen if fixedSize enabled :
@@ -235,13 +236,11 @@ const TerminalHelper = {
     },
 
     copySelectedText: function () {
-        let textSelection = TerminalHelper.exportSelectedText();
-
-        if (textSelection.length == 0) {
-            textSelection = TerminalHelper.getWindowSelectedText();
+        if (TerminalHelper.lastSelectedText == null) {
+            return;
         }
 
-        JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(textSelection)]);
+        JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(TerminalHelper.lastSelectedText)]);
     },
 
     selectAll: function () {
@@ -283,6 +282,20 @@ const TerminalHelper = {
     }, 250),
 
     onSelectionChange: function () {
+        TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
+
+        if (terminalSettings.copyOnSelect) {
+            TerminalHelper.copySelectedText();
+        }
+    },
+
+    onNativeSelectionChange: function () {
+        let range = window.getSelection().getRangeAt(0);
+        TerminalHelper.lastSelectedText = range.toString();
+
+        // TODO : Make native selection sync with xterm.js selection
+        // => Ability to copy lines with carriage return
+
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
         }

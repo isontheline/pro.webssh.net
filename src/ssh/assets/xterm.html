@@ -69,8 +69,13 @@
         // On title change :
         terminal.onTitleChange(TerminalHelper.onTitleChange);
 
-        // On selection change :
+        // On selection change (iOS + macOS) on xterm.js :
         terminal.onSelectionChange(TerminalHelper.onSelectionChange);
+
+        // On native selection change (iOS) :
+        if (!terminalSettings.isMacOS) {
+            document.addEventListener('selectionchange', TerminalHelper.onNativeSelectionChange);
+        }
 
         // On click on the terminal :
         document.addEventListener('click', TerminalHelper.clickListener);
