@@ -301,7 +301,7 @@ const TerminalHelper = {
     },
 
     changeFontSize: function (size) {
-        terminal.setOption('fontSize', size);
+        terminal.options.fontSize = size;
 
         setTimeout(function () {
             ResizeHelper.onWindowResize();
