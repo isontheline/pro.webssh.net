@@ -316,6 +316,10 @@ const TerminalHelper = {
     changeFontSize: function (size) {
         terminal.options.fontSize = size;
 
+        // #897 : Waiting for xterm.js 5.2 to fix this issue
+        // => https://github.com/xtermjs/xterm.js/issues/4474
+        terminal._core._renderService._renderer._injectCss(terminal._core._themeService.colors);
+
         setTimeout(function () {
             ResizeHelper.onWindowResize();
 
