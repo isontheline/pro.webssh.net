@@ -289,12 +289,23 @@ const TerminalHelper = {
         }
     },
 
-    onNativeSelectionChange: function () {
-        let range = window.getSelection().getRangeAt(0);
-        TerminalHelper.lastSelectedText = range.toString();
+    documentFragmentToText: function (documentFragment) {
+        let text = '';
 
-        // TODO : Make native selection sync with xterm.js selection
-        // => Ability to copy lines with carriage return
+        documentFragment.childNodes.forEach(function (parentChild) {
+            if (parentChild.tagName == 'SPAN') {
+                text += parentChild.innerText;
+            } else if (parentChild.tagName == 'DIV') {
+                text += TerminalHelper.documentFragmentToText(parentChild) + '\n';
+            }
+        });
+
+        return text;
+    },
+
+    onNativeSelectionChange: function () {
+        let selectedContents = window.getSelection().getRangeAt(0).cloneContents();
+        TerminalHelper.lastSelectedText = TerminalHelper.documentFragmentToText(selectedContents);
 
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
