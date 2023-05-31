@@ -180,9 +180,6 @@ const TerminalHelper = {
 
         // Notify that all components are now ready :
         JS2IOS.calliOSFunction('notifyTerminalReady');
-
-        // Every 60 seconds, save terminal state :
-        setInterval(TerminalHelper.saveState, 60000);
     },
 
     saveState: debounce(() => {
