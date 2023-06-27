@@ -35,9 +35,8 @@ const debounce = (callback, wait) => {
 
 const JS2IOS = {
     calliOSFunction: function (functionName, args) {
-        var url = "js2ios://";
-
-        var callInfo = {};
+        let url = "js2ios://";
+        let callInfo = {};
         callInfo.functionname = functionName;
 
         if (args) {

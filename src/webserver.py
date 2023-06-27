@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # https://gist.github.com/opyate/6e5fcabc6f41474d248613c027373856
 # Inspired by  https://stackoverflow.com/a/25708957/51280
 from http.server import SimpleHTTPRequestHandler

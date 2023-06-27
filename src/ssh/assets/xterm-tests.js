@@ -131,6 +131,9 @@ const XtermTests = {
         // Should write to clipboard :
         terminal.write('\x1b]52;c;' + btoa('WebSSH is awesome!') + '\x1b');
 
+        // Blinking underline cursor :
+        terminal.write('\x1b[3 q');
+
         // Enter alternate buffer :
         //terminal.write('\x1b[?47h')
     }
