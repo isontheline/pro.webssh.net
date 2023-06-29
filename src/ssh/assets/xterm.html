@@ -27,11 +27,7 @@
     <div id="scrolly"></div>
 
     <script>
-        const enableErrorLogging = false;
-
-        if (enableErrorLogging) {
-            window.addEventListener('error', TerminalHelper.logError);
-        }
+        window.addEventListener('error', TerminalHelper.logError);
 
         const terminalSettings = TerminalHelper.extractTerminalSettings(window.location.hash);
         const terminal = new Terminal(TerminalHelper.buildTerminalSettings(terminalSettings));

@@ -309,15 +309,22 @@ const TerminalHelper = {
     },
 
     logError: function (event) {
-        let msg = source = lineno = colno = error = time = "";
-        msg = event.message;
-        source = event.filename;
-        lineno = event.lineno;
-        colno = event.colno;
-        error = event.error;
-        time = event.time;
+        const errorLoggingStrategy = 'REPORT'; // REPORT or ALERT
 
-        alert(msg + ' : ' + error + ' : ' + lineno);
+        let msg = event.message;
+        let source = event.filename;
+        let lineno = event.lineno;
+        let colno = event.colno;
+        let error = event.error;
+        let time = event.time;
+
+        let errorLog = msg + ' : ' + error + ' : ' + lineno;
+
+        if('ALERT' == errorLoggingStrategy) {
+            alert(errorLog);
+        }
+        
+        JS2IOS.calliOSFunction('logError', errorLog);
     },
 
     changeFontSize: function (size) {
