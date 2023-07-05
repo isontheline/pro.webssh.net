@@ -165,6 +165,43 @@ const ResizeHelper = {
     }
 };
 
+const ColorHelper = {
+    // https://stackoverflow.com/q/35239990
+    parseColor: function (color) {
+        let x = document.createElement('div');
+        document.body.appendChild(x);
+        let red = 0, green = 0, blue = 0, alpha = 0;
+        try {
+            x.style = 'color: ' + color + '!important';
+            color = window.getComputedStyle(x).color
+            let rgba = color.match(/rgba?\((.*)\)/)[1].split(',').map(Number);
+            red = rgba[0];
+            green = rgba[1];
+            blue = rgba[2];
+            alpha = '3' in rgba ? rgba[3] : 1;
+        } catch (e) {
+        }
+
+        x.parentNode.removeChild(x);
+
+        return { 'red': red, 'green': green, 'blue': blue, 'alpha': alpha };
+    },
+
+    // https://stackoverflow.com/q/35239990
+    rgbToHex: function (r, g, b) {
+        return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
+    },
+
+    invertColor: function (hex) {
+        let color = ColorHelper.parseColor(hex);
+        let r = 255 - color.red;
+        let g = 255 - color.green;
+        let b = 255 - color.blue;
+
+        return ColorHelper.rgbToHex(r, g, b);
+    },
+};
+
 const TerminalHelper = {
     scrolly: null,
     lastSelectedText: null,
@@ -320,10 +357,10 @@ const TerminalHelper = {
 
         let errorLog = msg + ' : ' + error + ' : ' + lineno;
 
-        if('ALERT' == errorLoggingStrategy) {
+        if ('ALERT' == errorLoggingStrategy) {
             alert(errorLog);
         }
-        
+
         JS2IOS.calliOSFunction('logError', errorLog);
     },
 
@@ -425,7 +462,10 @@ const TerminalHelper = {
             background: terminalSettings.backgroundColor,
             foreground: terminalSettings.foregroundColor,
             cursor: terminalSettings.cursorColor,
-            cursorAccent: terminalSettings.backgroundColor
+            cursorAccent: terminalSettings.backgroundColor,
+            selectionBackground: ColorHelper.invertColor(terminalSettings.backgroundColor),
+            selectionForeground: ColorHelper.invertColor(terminalSettings.foregroundColor),
+            selectionInactiveBackground: ColorHelper.invertColor(terminalSettings.backgroundColor),
         };
     },
 
