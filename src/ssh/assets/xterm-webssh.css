@@ -32,11 +32,12 @@ body {
     text-size-adjust: none;
 }
 
-body.platform-ios .xterm {
+/* Disabled since #909 / #930 */
+/*body.platform-ios .xterm {
     user-select: text;
     -ms-user-select: text;
     -webkit-user-select: text
-}
+}*/
 
 #terminal {
     width: 100%;

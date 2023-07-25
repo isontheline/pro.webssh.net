@@ -69,9 +69,10 @@
         terminal.onSelectionChange(TerminalHelper.onSelectionChange);
 
         // On native selection change (iOS) :
-        if (!terminalSettings.isMacOS) {
+        // Disabled since #909 / #930
+        /*if (!terminalSettings.isMacOS) {
             document.addEventListener('selectionchange', TerminalHelper.onNativeSelectionChange);
-        }
+        }*/
 
         // On click on the terminal :
         document.addEventListener('click', TerminalHelper.clickListener);
