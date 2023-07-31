@@ -1906,9 +1906,67 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Keyboard Accessory View Customisation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Keyboard Accessory View Customisation
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layout-syntax" class="md-nav__link">
+    Layout Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#character-keys" class="md-nav__link">
+    Character Keys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-keys" class="md-nav__link">
+    Special Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed-special-keys-tokens" class="md-nav__link">
+    Allowed Special Keys Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2979,6 +3037,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#layout-syntax" class="md-nav__link">
+    Layout Syntax
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#character-keys" class="md-nav__link">
+    Character Keys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-keys" class="md-nav__link">
+    Special Keys
+  </a>
+  
+    <nav class="md-nav" aria-label="Special Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allowed-special-keys-tokens" class="md-nav__link">
+    Allowed Special Keys Tokens
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2994,7 +3094,99 @@
 
 
 <h1 id="how-to-customise-the-keyboard-accessory-view-layout1">How to customise the keyboard accessory view layout?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h1>
-<p>In order to customise the keyboard accessory view layout, you need to edit the <a href="documentation/help/SSH/ssh-config-file/">WebSSH SSH Config File</a>.</p>
+<p>In order to customise the keyboard accessory view layout, you need to edit the <a href="documentation/help/SSH/ssh-config-file/">WebSSH SSH Config File</a>. In this file you can define a layout for the keyboard accessory view, on a per connection basis or globally. The configuration is done using the <code>#!KeyboardAccessoryViewLayout</code> keyword.</p>
+<h2 id="layout-syntax">Layout Syntax</h2>
+<p>Each key is defined by a token. </p>
+<p>A token can be :</p>
+<ul>
+<li>A Character Key</li>
+<li>A Special Key</li>
+</ul>
+<p>A token can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key is also available to add a new page.</p>
+<p>Example (apply to all connections here) :</p>
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>*
+<span class="w">    </span><span class="c1">#!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{§}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]</span>
+</code></pre></div>
+<h2 id="character-keys">Character Keys</h2>
+<p>Character Keys are defined by the character itself surrounded by brackets : <code>[X]</code></p>
+<p>Just replace <code>X</code> by the character you want to add. It could be a letter, a number or a special character. No matter the case, only one character is allowed.</p>
+<p>When you press a Character Key, the character will be sent to the terminal.</p>
+<h2 id="special-keys">Special Keys</h2>
+<p>Special Keys are defined by a token surrounded by braces : <code>{CMD}</code></p>
+<p>Just replace <code>CMD</code> by an allowed token. See below for the list of allowed tokens.</p>
+<p>When you press a Special Key, the corresponding action will be executed.</p>
+<h3 id="allowed-special-keys-tokens">Allowed Special Keys Tokens</h3>
+<p>When you press a Special Key, the corresponding action will be executed.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{ESC}</td>
+<td></td>
+</tr>
+<tr>
+<td>{TAB}</td>
+<td></td>
+</tr>
+<tr>
+<td>{CTL}</td>
+<td></td>
+</tr>
+<tr>
+<td>{FN}</td>
+<td></td>
+</tr>
+<tr>
+<td>{ARROWS}</td>
+<td></td>
+</tr>
+<tr>
+<td>{§}</td>
+<td></td>
+</tr>
+<tr>
+<td>{INS}</td>
+<td></td>
+</tr>
+<tr>
+<td>{PGUP}</td>
+<td></td>
+</tr>
+<tr>
+<td>{PGDN}</td>
+<td></td>
+</tr>
+<tr>
+<td>{HOME}</td>
+<td></td>
+</tr>
+<tr>
+<td>{END}</td>
+<td></td>
+</tr>
+<tr>
+<td>{UP}</td>
+<td></td>
+</tr>
+<tr>
+<td>{DOWN}</td>
+<td></td>
+</tr>
+<tr>
+<td>{LEFT}</td>
+<td></td>
+</tr>
+<tr>
+<td>{RIGHT}</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <div class="footnote">
 <hr />
 <ol>
