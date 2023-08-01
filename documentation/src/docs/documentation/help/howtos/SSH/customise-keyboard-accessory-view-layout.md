@@ -50,6 +50,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {ARROWS} | The all-in-one four arrows key |
 | {PJUMP} | Page Jump : Add a new keys page to allow you to subdivide your layout |
 | {INS} | Insert Key |
+| {DEL} | Delete Key |
 | {PGUP} | Page Up Key |
 | {PGDN} | Page Down Key |
 | {HOME} | Home Key |
