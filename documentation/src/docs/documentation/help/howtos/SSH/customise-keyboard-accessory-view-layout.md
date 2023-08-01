@@ -20,7 +20,7 @@ Example (apply to all connections here) :
 
 ```bash
 Host *
-    #!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{§}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]
+    #!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]
 ```
 
 ## Character Keys
@@ -43,20 +43,21 @@ When you press a Special Key, the corresponding action will be executed.
 
 | Token | Description |
 | --- | --- |
-| {ESC} | | 
-| {TAB} | | 
-| {CTL} | |
-| {FN} | | 
-| {ARROWS} | |
-| {§} | | 
-| {INS} | |
-| {PGUP} | |
-| {PGDN} | |
-| {HOME} |
-| {END} | |
-| {UP} | |
-| {DOWN} | |
-| {LEFT} | |
-| {RIGHT} | |
+| {ESC} | Escape / Meta Key |
+| {TAB} | Tab Key |
+| {CTL} | Control Key |
+| {FN} | Display the function keys page |
+| {ARROWS} | The all-in-one four arrows key |
+| {PJUMP} | Page Jump : Add a new keys page to allow you to subdivide your layout |
+| {INS} | Insert Key |
+| {PGUP} | Page Up Key |
+| {PGDN} | Page Down Key |
+| {HOME} | Home Key |
+| {END} | End Key |
+| {UP} | Up Arrow Key |
+| {DOWN} | Down Arrow Key |
+| {LEFT} | Left Arrow Key |
+| {RIGHT} | Right Arrow Key |
+| {HELP} | Help Key : Show this help page |
 
 [^1]: In order to use this functionality, you must upgrade WebSSH to 23

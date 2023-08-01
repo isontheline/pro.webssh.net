@@ -41,7 +41,7 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | `#!FixedSize 80x25` |
 | #!FontSize | Integer | Font size in pixels | 21.1 | `#!FontSize 14` |
 | #!ForegroundColor | String | Terminal foreground color. Any CSS value. | 22.4 | `#!ForegroundColor grey` |
-| #!KeyboardAccessoryViewLayout | String | Keyboard accessory view layout. See [Keyboard Accessory View Customisation](/documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/) | 23.0 | `#!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{§}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]` |
+| #!KeyboardAccessoryViewLayout | String | Keyboard accessory view layout. See [Keyboard Accessory View Customisation](/documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/) | 23.0 | `#!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]` |
 | #!KeyboardAccessoryViewLayoutIdiomPad | String | Same as above (overwrites) but only apply to iPad devices | 23.0 | See above |
 | #!KeyboardAccessoryViewLayoutIdiomPhone | String | Same as above (overwrites) but only apply to iPhone devices | 23.0 | See above |
 | #!TermType | String | $TERM environment variable value | 21.4 | `#!TermType xterm-256color` |
