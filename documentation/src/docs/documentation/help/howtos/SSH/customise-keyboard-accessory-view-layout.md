@@ -61,4 +61,4 @@ When you press a Special Key, the corresponding action will be executed.
 | {RIGHT} | Right Arrow Key |
 | {HELP} | Help Key : Show this help page |
 
-[^1]: In order to use this functionality, you must upgrade WebSSH to 23
+[^1]: In order to use this functionality, you must upgrade to WebSSH 23.0.1138
