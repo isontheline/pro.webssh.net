@@ -6,6 +6,9 @@ title: Keyboard Accessory View Customisation
 
 In order to customise the keyboard accessory view layout, you need to edit the [WebSSH SSH Config File](documentation/help/SSH/ssh-config-file/). In this file you can define a layout for the keyboard accessory view, on a per connection basis or globally. The configuration is done using the `#!KeyboardAccessoryViewLayout` keyword.
 
+??? tip "Customise the layout by idioms"
+    If you want to customise the layout specifically for a device idiom, you can use the `#!KeyboardAccessoryViewLayoutIdiomPhone` and `#!KeyboardAccessoryViewLayoutIdiomPad` keywords instead of `#!KeyboardAccessoryViewLayout`. The layout defined by `#!KeyboardAccessoryViewLayout` will be used as a fallback if the layout for the current idiom is not defined.
+
 ## Layout Syntax
 Each key is defined by a token. 
 
