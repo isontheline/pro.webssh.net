@@ -4,26 +4,39 @@ title: Keyboard Accessory View Customisation
 
 # How to customise the keyboard accessory view layout?[^1]
 
-In order to customise the keyboard accessory view layout, you need to edit the [WebSSH SSH Config File](/documentation/help/SSH/ssh-config-file/). In this file you can define a layout for the keyboard accessory view, on a per connection basis or globally. The configuration is done using the `#!KeyboardAccessoryViewLayout` keyword.
+* In order to customise the keyboard accessory view layout, you need to edit the [WebSSH SSH Config File](/documentation/help/SSH/ssh-config-file/). 
+* You can define a keyboard layout on a per connection basis or globally. 
+* The configuration is done by using the `#!KeyboardAccessoryViewLayout` keyword.
 
-??? tip "Customise the layout by idioms"
-    If you want to customise the layout specifically for a device idiom, you can use the `#!KeyboardAccessoryViewLayoutIdiomPhone` and `#!KeyboardAccessoryViewLayoutIdiomPad` keywords instead of `#!KeyboardAccessoryViewLayout`. The layout defined by `#!KeyboardAccessoryViewLayout` will be used as a fallback if the layout for the current idiom is not defined.
+??? tip "Customising the layout by idioms (iPhone / iPad)"
+    Customising the layout by idioms is also available :
+    
+    * For iPhone use the keyword : `#!KeyboardAccessoryViewLayoutIdiomPhone`
+    * For iPad use the keyword : `#!KeyboardAccessoryViewLayoutIdiomPad`
+    * The layout defined by `#!KeyboardAccessoryViewLayout` will be used as a fallback if the layout for the current idiom is not defined.
 
 ## Layout Syntax
-Each key is defined by a token. 
+Each accessory keyboard key is defined by a **Token** and it can be one of the following :
 
-A token can be :
+* A Character Key Token
+* A Special Key Token
 
-* A Character Key
-* A Special Key
+A **token** can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key token is also available to add a new page.
 
-A token can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key is also available to add a new page.
-
-Example (apply to all connections here) :
+### Example 1 (apply to all connections here as we use the wildcard * character) :
 
 ```bash
 Host *
+    # We define a layout with some keys splited on two panels as we are using the "Page Jump" key token : {PJUMP}
     #!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]
+```
+
+### Example 2 (apply to a specific connection named "MY_SERVER") :
+
+```bash
+Host MY_SERVER
+    # We define a custom layout using plain directional keys instead of the all-in-one {ARROWS} key token :
+    #!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}{LEFT}{UP}{DOWN}{RIGHT}[/][*]
 ```
 
 ## Character Keys
@@ -31,7 +44,12 @@ Character Keys are defined by the character itself surrounded by brackets : `[X]
 
 Just replace `X` by the character you want to add. It could be a letter, a number or a special character. No matter the case, only one character is allowed.
 
-When you press a Character Key, the character will be sent to the terminal.
+### Example
+```bash
+Host *
+    # When you press a Character Key, it will be sent to the terminal :
+    #!KeyboardAccessoryViewLayout [A][B][C][X][Y][Z]
+```
 
 ## Special Keys
 Special Keys are defined by a token surrounded by braces : `{CMD}`
