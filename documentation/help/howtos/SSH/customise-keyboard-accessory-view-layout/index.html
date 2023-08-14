@@ -3094,7 +3094,7 @@
 
 
 <h1 id="how-to-customise-the-keyboard-accessory-view-layout1">How to customise the keyboard accessory view layout?<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h1>
-<p>In order to customise the keyboard accessory view layout, you need to edit the <a href="documentation/help/SSH/ssh-config-file/">WebSSH SSH Config File</a>. In this file you can define a layout for the keyboard accessory view, on a per connection basis or globally. The configuration is done using the <code>#!KeyboardAccessoryViewLayout</code> keyword.</p>
+<p>In order to customise the keyboard accessory view layout, you need to edit the <a href="/documentation/help/SSH/ssh-config-file/">WebSSH SSH Config File</a>. In this file you can define a layout for the keyboard accessory view, on a per connection basis or globally. The configuration is done using the <code>#!KeyboardAccessoryViewLayout</code> keyword.</p>
 <details class="tip">
 <summary>Customise the layout by idioms</summary>
 <p>If you want to customise the layout specifically for a device idiom, you can use the <code>#!KeyboardAccessoryViewLayoutIdiomPhone</code> and <code>#!KeyboardAccessoryViewLayoutIdiomPad</code> keywords instead of <code>#!KeyboardAccessoryViewLayout</code>. The layout defined by <code>#!KeyboardAccessoryViewLayout</code> will be used as a fallback if the layout for the current idiom is not defined.</p>
@@ -3109,7 +3109,7 @@
 <p>A token can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key is also available to add a new page.</p>
 <p>Example (apply to all connections here) :</p>
 <div class="highlight"><pre><span></span><code>Host<span class="w"> </span>*
-<span class="w">    </span><span class="c1">#!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]</span>
+<span class="w">    </span><span class="c1">#!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]</span>
 </code></pre></div>
 <h2 id="character-keys">Character Keys</h2>
 <p>Character Keys are defined by the character itself surrounded by brackets : <code>[X]</code></p>
@@ -3213,7 +3213,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2023</span>
       
     
   </small>
