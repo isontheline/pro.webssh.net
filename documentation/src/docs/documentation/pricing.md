@@ -1,9 +1,9 @@
 # Pricing
 
 !!! abstract "Why upgrading to PRO?"
-    :two_hearts: Help me continue WebSSH development. I'm an indie developer who want to make an awesome tool for you!
+    :two_hearts: Help me continue WebSSH development by upgrading to PRO version : I'm an indie developer who want to make an awesome tool for you!
 
-    :thumbsup: I spend a few hours each day to enhance WebSSH as your expectations. I always listen to your needs.
+    :thumbsup: I spend a few hours each day to enhance WebSSH as your feedbacks are coming. I'm always listening to your needs and I'm trying to implement them as soon as possible.
 
     :arrow_right: By purchasing the full version of WebSSH you can add as many SSH / SFTP / TUNNEL connections as you want. There is no other limitation on the FREE version.
 
