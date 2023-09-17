@@ -5,7 +5,7 @@
     **MASH** stands for : **M**engus **A**rnaud **SH**ell
 
 ## Available commands
-| Command    | Since | Limitations |
+| Command    | Since | Comments |
 | --- | --- | --- |
 | `awk`      | 14.6 | Standard input not supported yet, only piping and redirection |
 | `cat`      | 14.6 | Standard input not supported yet, only piping and redirection |
@@ -23,6 +23,8 @@
 | `ifconfig` | 14.6 | |
 | `ls`       | 14.6 | |
 | `lua`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `malte`    | 21.0 | Little Text Editor with a GUI |
+| `mans`     | 23.2 | Network Scanner "like" nmap |
 | `mkdir`    | 14.6 | |
 | `mv`       | 14.6 | |
 | `nslookup` | 14.6 | Standard input not supported yet, only piping and redirection |
