@@ -19,6 +19,6 @@
     :moneybag: Dernier petit point fort de WebSSH : contrairement aux autres applications du marché aucun abonnement n'est demandé ! J'insiste bien sur ce point. En achetant WebSSH vous l'achetez pour **toujours** et vous profiterez de mises à jour **gratuites** !
 
 !!! question "Une interrogation ?"
-    Si vous avez le moindre doute ou une question, n'hésitez pas à me contacter par [email](mailto:team@webssh.net)
+    Si vous avez une question n'hésitez pas à me contacter par [email](mailto:team@webssh.net), je suis joignable à tout moment.
 
     Belle journée à vous :sunny:
