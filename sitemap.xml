@@ -651,6 +651,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_SWIFTARGUMENTPARSER/</loc>
+         <lastmod>2023-09-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_SwiftMessages/</loc>
          <lastmod>2023-09-21</lastmod>
          <changefreq>daily</changefreq>
