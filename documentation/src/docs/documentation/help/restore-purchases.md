@@ -20,8 +20,7 @@ If you have already bought WebSSH on another platform (iOS <=> macOS) and you ar
 * On **the device you have bought** the PRO purchase originally :
     1. Launch WebSSH
     2. Launch mashREPL tool
-    3. Type `webssh store update`
-    4. Type `webssh store sync`
+    3. Type `webssh store sync`
 
 * On the device you want to restore the purchase :
     1. Launch WebSSH
@@ -57,6 +56,6 @@ Then, you can try the following steps :
 4. You should see a message "Thank you for your purchase!"
 
 ??? question "These steps doesn't work ?"
-    Forward me by [email](mailto:team@webssh.net) your original purchase receipt and I will assist you as much as you need.
+    Forward me by [email](mailto:team@webssh.net) your original purchase receipt and I will help you as much as you need to recover your purchase.
 
 [^1]: In order to use this functionality, you must upgrade WebSSH to 14.15
