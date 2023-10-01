@@ -23,18 +23,16 @@ Each accessory keyboard key is defined by a **Token** and it can be one of the f
 
 A **token** can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key token is also available to add a new page.
 
-### Example 1 (apply to all connections here as we use the wildcard * character) :
-
+### Example 1 (apply to a specific connection named "MY_SERVER") :
 ```bash
-Host *
+Host MY_SERVER
     # We define a layout with some keys splited on two panels as we are using the "Page Jump" key token : {PJUMP}
     #!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]
 ```
 
-### Example 2 (apply to a specific connection named "MY_SERVER") :
-
+### Example 2 (apply to all connections here as we use the wildcard * character) :
 ```bash
-Host MY_SERVER
+Host *
     # We define a custom layout using plain directional keys instead of the all-in-one {ARROWS} key token :
     #!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}{LEFT}{UP}{DOWN}{RIGHT}[/][*]
 ```
