@@ -1939,15 +1939,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-apply-to-all-connections-here-as-we-use-the-wildcard-character" class="md-nav__link">
-    Example 1 (apply to all connections here as we use the wildcard * character) :
+  <a href="#example-1-apply-to-a-specific-connection-named-my_server" class="md-nav__link">
+    Example 1 (apply to a specific connection named "MY_SERVER") :
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-apply-to-a-specific-connection-named-my_server" class="md-nav__link">
-    Example 2 (apply to a specific connection named "MY_SERVER") :
+  <a href="#example-2-apply-to-all-connections-here-as-we-use-the-wildcard-character" class="md-nav__link">
+    Example 2 (apply to all connections here as we use the wildcard * character) :
   </a>
   
 </li>
@@ -3099,15 +3099,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-1-apply-to-all-connections-here-as-we-use-the-wildcard-character" class="md-nav__link">
-    Example 1 (apply to all connections here as we use the wildcard * character) :
+  <a href="#example-1-apply-to-a-specific-connection-named-my_server" class="md-nav__link">
+    Example 1 (apply to a specific connection named "MY_SERVER") :
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-2-apply-to-a-specific-connection-named-my_server" class="md-nav__link">
-    Example 2 (apply to a specific connection named "MY_SERVER") :
+  <a href="#example-2-apply-to-all-connections-here-as-we-use-the-wildcard-character" class="md-nav__link">
+    Example 2 (apply to all connections here as we use the wildcard * character) :
   </a>
   
 </li>
@@ -3195,13 +3195,13 @@
 <li>A Special Key Token</li>
 </ul>
 <p>A <strong>token</strong> can be repeated multiple times and there are no separator between tokens. You can add as many tokens as you want but it's your responsibility to ensure that the layout will fit on the screen width. "Page Jump" key token is also available to add a new page.</p>
-<h3 id="example-1-apply-to-all-connections-here-as-we-use-the-wildcard-character">Example 1 (apply to all connections here as we use the wildcard * character) :</h3>
-<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>*
+<h3 id="example-1-apply-to-a-specific-connection-named-my_server">Example 1 (apply to a specific connection named "MY_SERVER") :</h3>
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>MY_SERVER
 <span class="w">    </span><span class="c1"># We define a layout with some keys splited on two panels as we are using the &quot;Page Jump&quot; key token : {PJUMP}</span>
 <span class="w">    </span><span class="c1">#!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]</span>
 </code></pre></div>
-<h3 id="example-2-apply-to-a-specific-connection-named-my_server">Example 2 (apply to a specific connection named "MY_SERVER") :</h3>
-<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>MY_SERVER
+<h3 id="example-2-apply-to-all-connections-here-as-we-use-the-wildcard-character">Example 2 (apply to all connections here as we use the wildcard * character) :</h3>
+<div class="highlight"><pre><span></span><code>Host<span class="w"> </span>*
 <span class="w">    </span><span class="c1"># We define a custom layout using plain directional keys instead of the all-in-one {ARROWS} key token :</span>
 <span class="w">    </span><span class="c1">#!KeyboardAccessoryViewLayout {ESC}{TAB}{CTL}{FN}{LEFT}{UP}{DOWN}{RIGHT}[/][*]</span>
 </code></pre></div>
@@ -3311,7 +3311,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2023</span>
       
     
   </small>
