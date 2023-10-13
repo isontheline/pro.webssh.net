@@ -79,5 +79,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {LEFT} | Left Arrow Key |
 | {RIGHT} | Right Arrow Key |
 | {HELP} | Help Key : Show this help page |
+| {PASTE} | Paste Key : Paste the clipboard content to the terminal |
+| {PASTE_PASSWORD} | Paste Password Key : Paste the current connection password to the terminal |
 
 [^1]: In order to use this functionality, you must upgrade to WebSSH 23.0.1138
