@@ -15,6 +15,7 @@ Thank you so much for supporting my work ✨
 ## Active Sponsors
 | Sponsor | Since |
 | --- | --- |
+| [necrevistonnezr](https://github.com/necrevistonnezr) | 2023-10-14 |
 | [MrFly72](https://github.com/MrFly72) | 2023-07-18 |
 | [andou-azarashi](https://github.com/andou-azarashi) | 2023-01-18 |
 | [AA7US](https://github.com/AA7US) | 2022-07-13 |
