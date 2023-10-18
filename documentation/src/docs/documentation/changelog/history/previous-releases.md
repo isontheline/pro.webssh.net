@@ -190,7 +190,7 @@ title: Previous Releases
 - Fixed : Facebook social icon blank page. Thanks to @cladxxx
 
 ## Version 8.0.3 (28 february 2015)
-- Added : Two Factor Authentication (Google Authenticator for example) [https://www.webssh.net/blog/two-factor-authentication.html]
+- Added : Two Factor Authentication Google Authenticator for example
 - Added : ability to disable Touch ID for legal issue. Thanks to Fergus!
 - Fixed : crash when returning to the app with the following conditions : Pin Code / Touch ID is enabled and a modal window is displayed (like terminal type for example). Thanks to Icebird!
 
