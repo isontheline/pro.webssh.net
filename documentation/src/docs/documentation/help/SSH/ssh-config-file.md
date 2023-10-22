@@ -25,12 +25,12 @@ In order to edit the WebSSH SSH Config File just need to :
 # Supported Features [^1]
 | Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
-| Host | String | Connection name (aka alias) pattern | 20.6 | `Host MY_SERVER_NAME` |
-| HostName | String | Connection host | 20.6 | `HostName my.host.com` |
-| Port | Integer | Connection port | 20.6 | `Port 2222` |
-| RemoteCommand | String | The command to launch instead of requesting a default Shell | 20.6 | `RemoteCommand /bin/bash` |
-| SetEnv | String | Environment variable to set | 23.6 | `SetEnv MY_ENV="Awesome!"` |
-| User | String | Connection user | 20.6 | `User myuser` |
+| [Host](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host) | String | Connection name (aka alias) pattern | 20.6 | `Host MY_SERVER_NAME` |
+| [Hostname](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Hostname) | String | Connection host | 20.6 | `Hostname my.host.com` |
+| [Port](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Port) | Integer | Connection port | 20.6 | `Port 2222` |
+| [RemoteCommand](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#RemoteCommand) | String | The command to launch instead of requesting a default Shell | 20.6 | `RemoteCommand /bin/bash` |
+| [SetEnv](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#SetEnv) | String | Environment variable to set | 23.6 | `SetEnv MY_ENV="Awesome!"` |
+| [User](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#User) | String | Connection user | 20.6 | `User myuser` |
 
 # Special Features 
 All special features are prefixed by `#!` and are not part of the SSH Config File specification.
