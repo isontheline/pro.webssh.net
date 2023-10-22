@@ -23,13 +23,14 @@ In order to edit the WebSSH SSH Config File just need to :
 3.  Edit /etc/ssh/ssh_config
 
 # Supported Features [^1]
-| Keyword | Type | Expected value | Accepted Tokens | Since |
+| Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
-| Host | String | Connection name (aka alias) pattern | None | 20.6 |
-| HostName | String | Connection host | None | 20.6 |
-| Port | Integer | Connection port | None | 20.6 |
-| RemoteCommand | String | The command to launch instead of requesting a default Shell | None | 20.6 |
-| User | String | Connection user | None | 20.6 |
+| Host | String | Connection name (aka alias) pattern | 20.6 | `Host MY_SERVER_NAME` |
+| HostName | String | Connection host | 20.6 | `HostName my.host.com` |
+| Port | Integer | Connection port | 20.6 | `Port 2222` |
+| RemoteCommand | String | The command to launch instead of requesting a default Shell | 20.6 | `RemoteCommand /bin/bash` |
+| SetEnv | String | Environment variable to set | 23.6 | `SetEnv MY_ENV="Awesome!"` |
+| User | String | Connection user | 20.6 | `User myuser` |
 
 # Special Features 
 All special features are prefixed by `#!` and are not part of the SSH Config File specification.
