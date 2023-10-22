@@ -2555,8 +2555,8 @@
 <th>Keyword</th>
 <th>Type</th>
 <th>Expected value</th>
-<th>Accepted Tokens</th>
 <th>Since</th>
+<th>Example usage</th>
 </tr>
 </thead>
 <tbody>
@@ -2564,36 +2564,43 @@
 <td>Host</td>
 <td>String</td>
 <td>Connection name (aka alias) pattern</td>
-<td>None</td>
 <td>20.6</td>
+<td><code>Host MY_SERVER_NAME</code></td>
 </tr>
 <tr>
 <td>HostName</td>
 <td>String</td>
 <td>Connection host</td>
-<td>None</td>
 <td>20.6</td>
+<td><code>HostName my.host.com</code></td>
 </tr>
 <tr>
 <td>Port</td>
 <td>Integer</td>
 <td>Connection port</td>
-<td>None</td>
 <td>20.6</td>
+<td><code>Port 2222</code></td>
 </tr>
 <tr>
 <td>RemoteCommand</td>
 <td>String</td>
 <td>The command to launch instead of requesting a default Shell</td>
-<td>None</td>
 <td>20.6</td>
+<td><code>RemoteCommand /bin/bash</code></td>
+</tr>
+<tr>
+<td>SetEnv</td>
+<td>String</td>
+<td>Environment variable to set</td>
+<td>23.6</td>
+<td><code>SetEnv MY_ENV="Awesome!"</code></td>
 </tr>
 <tr>
 <td>User</td>
 <td>String</td>
 <td>Connection user</td>
-<td>None</td>
 <td>20.6</td>
+<td><code>User myuser</code></td>
 </tr>
 </tbody>
 </table>
@@ -2696,7 +2703,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 22, 2023</span>
       
     
   </small>
