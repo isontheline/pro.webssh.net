@@ -34,7 +34,7 @@ CodeMirror.defineSimpleMode("sshconfig", {
             token: "atom"
         },
         {
-            regex: /(?:Host|User|HostName|Port|RemoteCommand)\b/,
+            regex: /(?:Host|User|HostName|Port|SetEnv|RemoteCommand)\b/,
             token: "keyword"
         },
         {
