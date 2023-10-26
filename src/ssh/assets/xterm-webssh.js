@@ -512,12 +512,6 @@ const TerminalHelper = {
         } else {
             // Only if alternate buffer is active :
             if (terminal.buffer.active.type == 'alternate') {
-                const pos = terminal._core._mouseService.getCoords(event, terminal._core.screenElement, terminal.cols, terminal.rows);
-                const x = pos[0] - 1;
-                const y = pos[1] - 1;
-
-                // We send the click position to the server :
-                //JS2IOS.calliOSFunction('clickAt', [x, y]);
             }
         }
     },
