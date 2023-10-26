@@ -200,12 +200,11 @@ const TerminalHelper = {
         }
 
         terminal.onData(function(data) {
-            console.log('data', data);
             JS2IOS.calliOSFunction('dataPushBack', data);
         });
 
         terminal.onBinary(function(data) {
-            console.log('binary', data);
+            console.log('On Binary Called');
         });
 
         // Notify that all components are now ready :
