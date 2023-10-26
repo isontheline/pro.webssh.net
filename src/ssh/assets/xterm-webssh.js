@@ -58,21 +58,6 @@ const JS2IOS = {
 const HandlerHelper = {
     // https://xtermjs.org/docs/guides/hooks/
     registerAll: function (terminal) {
-        // CSI ->
-        // Wikipedia : https://en.wikipedia.org/wiki/ANSI_escape_code
-        // * For Control Sequence Introducer, or CSI, commands, the ESC [ is followed by any number (including none) of "parameter bytes" in the range 0x30–0x3F (ASCII 0–9:;<=>?), then by any number of "intermediate bytes" in the range 0x20–0x2F (ASCII space and !"#$%&'()*+,-./), then finally by a single "final byte" in the range 0x40–0x7E (ASCII @A–Z[\]^_`a–z{|}~).
-        // * All common sequences just use the parameters as a series of semicolon-separated numbers such as 1;2;3. Missing numbers are treated as 0 (1;;3 acts like the middle number is 0, and no parameters at all in ESC[m acts like a 0 reset code). Some sequences (such as CUU) treat 0 as 1 in order to make missing parameters useful.
-        // * A subset of arrangements was declared "private" so that terminal manufacturers could insert their own sequences without conflicting with the standard. Sequences containing the parameter bytes <=>? or the final bytes 0x70–0x7E (p–z{|}~) are private.
-        // * The behavior of the terminal is undefined in the case where a CSI sequence contains any character outside of the range 0x20–0x7E. These illegal characters are either C0 control characters (the range 0–0x1F), DEL (0x7F), or bytes with the high bit set. Possible responses are to ignore the byte, to process it immediately, and furthermore whether to continue with the CSI sequence, to abort it immediately, or to ignore the rest of it.
-
-        // \x1b[6n => report cursor position
-        terminal.parser.registerCsiHandler({ final: 'n' }, (params, data) => {
-            if (params.length == 1 && params[0] == 6) {
-                TerminalHelper.sendCursorPosToServer();
-            }
-        });
-        // <- CSI
-
         // DCS ->
         // Wikipedia : https://en.wikipedia.org/wiki/ANSI_escape_code
         // * Terminated by ST.[5]: 5.6  Xterm's uses of this sequence include defining User-Defined Keys, and requesting or setting Termcap/Terminfo data.
@@ -213,6 +198,15 @@ const TerminalHelper = {
             xtermScreenStyle.border = '1px solid rgba(127,127,127,0.2)';
             xtermScreenStyle.borderStyle = 'none solid solid none';
         }
+
+        terminal.onData(function(data) {
+            console.log('data', data);
+            JS2IOS.calliOSFunction('dataPushBack', data);
+        });
+
+        terminal.onBinary(function(data) {
+            console.log('binary', data);
+        });
 
         // Notify that all components are now ready :
         JS2IOS.calliOSFunction('notifyTerminalReady');
@@ -480,6 +474,7 @@ const TerminalHelper = {
             scrollback: terminalSettings.scrollback,
             rows: terminalSettings.rows,
             cols: terminalSettings.cols,
+            macOptionClickForcesSelection: true,
         };
     },
 
@@ -522,7 +517,7 @@ const TerminalHelper = {
                 const y = pos[1] - 1;
 
                 // We send the click position to the server :
-                JS2IOS.calliOSFunction('clickAt', [x, y]);
+                //JS2IOS.calliOSFunction('clickAt', [x, y]);
             }
         }
     },
@@ -530,10 +525,6 @@ const TerminalHelper = {
     registerHandlers: function () {
         HandlerHelper.registerAll(terminal);
     },
-
-    sendCursorPosToServer: debounce(() => {
-        JS2IOS.calliOSFunction('sendCursorPosToServer', TerminalHelper.getCursorPosition());
-    }, 250),
 
     setClipboardFromOSC52: debounce((pd) => {
         JS2IOS.calliOSFunction('setClipboardFromOSC52', pd);
