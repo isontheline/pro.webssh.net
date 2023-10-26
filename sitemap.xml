@@ -416,6 +416,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_DSFSPARKLINE/</loc>
+         <lastmod>2023-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_EDSEMVER/</loc>
          <lastmod>2023-10-26</lastmod>
          <changefreq>daily</changefreq>
