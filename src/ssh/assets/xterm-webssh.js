@@ -199,11 +199,11 @@ const TerminalHelper = {
             xtermScreenStyle.borderStyle = 'none solid solid none';
         }
 
-        terminal.onData(function(data) {
+        terminal.onData(function (data) {
             JS2IOS.calliOSFunction('dataPushBack', data);
         });
 
-        terminal.onBinary(function(data) {
+        terminal.onBinary(function (data) {
             console.log('On Binary Called');
         });
 
@@ -235,6 +235,13 @@ const TerminalHelper = {
         }
 
         terminal._core.optionsService.options.cursorBlink = enable;
+
+        // #974 : Upgrade xterm.js to 5.3.0 ->
+        terminal._core._coreBrowserService.isFocused = enable
+        terminal._core._coreBrowserService._cachedIsFocused = true;
+        $('span.xterm-cursor').classList.add('xterm-cursor-blink'); 
+        $('div.xterm-rows').classList.add('xterm-focus');
+        // <- #974 : Upgrade xterm.js to 5.3.0
 
         if (terminal.textarea) {
             TerminalHelper.focus(enable);
