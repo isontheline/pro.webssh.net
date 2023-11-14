@@ -2605,17 +2605,17 @@
 
 
 <h1 id="dynamic-port-forwarding">Dynamic Port Forwarding</h1>
-<div class="admonition abstract">
-<p class="admonition-title">About Jump Server, Bastion Host and SOCKS Proxy</p>
+<details class="abstract">
+<summary>About Jump Server, Bastion Host and SOCKS Proxy</summary>
 <p>Dynamic Port Forwarding, is a technique used to create a secure encrypted tunnel between a local device and a remote server allowing the device to securely access resources through the remote server.</p>
 <p>The remote server is also named a Bastion Host - or a Jump Server - which is in fact a standard SSH server that is used as an intermediary between the local device and the resources you want to access.</p>
-<p>When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH and SFTP launched connections are forwarded through the Jump Server, seemlessly.</p>
+<p>When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / WEB launched connections are forwarded through the Jump Server, seemlessly.</p>
 <p>In background, Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Subsequent connections are forwarded through the Jump Server</p>
-<p>When enabled, Dynamic Port Forwarding will forward all connections <em>INSIDE</em> WebSSH (SSH, SFTP, TUNNEL) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.</p>
-</div>
+</details>
+<details class="warning">
+<summary>Subsequent connections are forwarded through the Jump Server</summary>
+<p>When enabled, Dynamic Port Forwarding will forward all connections <em>INSIDE</em> WebSSH (SSH, SFTP, TUNNEL, WEB) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.</p>
+</details>
 <h2 id="how-to-use-it">How to use it?</h2>
 <ol>
 <li>Add a new tunnel by choossing <strong>Tunnel</strong> tab and by pessing the <strong>+</strong> button</li>
@@ -2632,8 +2632,8 @@
 </ul>
 <p>Inside Port Forwarding field you can use the following syntax : <strong>*:SOCKS_PORT</strong> where SOCKS_PORT is the port you want to listen to. </p>
 <p>For example : <strong>*:1985</strong> will let the Proxy Server to listen on port 1985.</p>
-<div class="admonition tip">
-<p class="admonition-title">Steps to enable SOCKS Proxy Server on your iDevice</p>
+<details class="tip">
+<summary>Steps to enable SOCKS Proxy Server on your iDevice</summary>
 <ol>
 <li>Allow WebSSH to accept external connections : iOS Settings &gt; WebSSH &gt; Tunnel &gt; Incoming Connections Strategy &gt; Accept both local and remote connections</li>
 <li>(Optional) Enable VPN-Over-SSH (so you will be able to switch between apps on your iDevice)</li>
@@ -2643,14 +2643,14 @@
 <li>(Optional) If you know your device IP address skip this step. Launch mashREPL and get your local IP address with this command : ifconfig</li>
 <li>On your other devices use a SOCKS configuration like this : 192.168.0.18:1985 where 192.168.0.18 is your iDevice and 1985 is your SOCKS server port</li>
 </ol>
-</div>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2023</span>
       
     
   </small>
