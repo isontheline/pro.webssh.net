@@ -3,17 +3,17 @@ title: Dynamic Port Forwarding
 ---
 
 # Dynamic Port Forwarding
-!!! abstract "About Jump Server, Bastion Host and SOCKS Proxy"
+??? abstract "About Jump Server, Bastion Host and SOCKS Proxy"
     Dynamic Port Forwarding, is a technique used to create a secure encrypted tunnel between a local device and a remote server allowing the device to securely access resources through the remote server.
 
     The remote server is also named a Bastion Host - or a Jump Server - which is in fact a standard SSH server that is used as an intermediary between the local device and the resources you want to access.
 
-    When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH and SFTP launched connections are forwarded through the Jump Server, seemlessly.
+    When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / WEB launched connections are forwarded through the Jump Server, seemlessly.
 
     In background, Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.
 
-!!! warning "Subsequent connections are forwarded through the Jump Server"
-    When enabled, Dynamic Port Forwarding will forward all connections *INSIDE* WebSSH (SSH, SFTP, TUNNEL) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.
+??? warning "Subsequent connections are forwarded through the Jump Server"
+    When enabled, Dynamic Port Forwarding will forward all connections *INSIDE* WebSSH (SSH, SFTP, TUNNEL, WEB) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.
 
 ## How to use it?
 1. Add a new tunnel by choossing **Tunnel** tab and by pessing the **+** button
@@ -31,7 +31,7 @@ Inside Port Forwarding field you can use the following syntax : **\*:SOCKS_PORT*
 
 For example : **\*:1985** will let the Proxy Server to listen on port 1985.
 
-!!! tip "Steps to enable SOCKS Proxy Server on your iDevice"
+??? tip "Steps to enable SOCKS Proxy Server on your iDevice"
     1. Allow WebSSH to accept external connections : iOS Settings > WebSSH > Tunnel > Incoming Connections Strategy > Accept both local and remote connections
     2. (Optional) Enable VPN-Over-SSH (so you will be able to switch between apps on your iDevice)
     3. (Optional) Enable WebSSH Settings > Keep Device Awake (in order to don't sleep your device)
