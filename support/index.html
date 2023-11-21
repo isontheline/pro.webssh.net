@@ -585,23 +585,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../documentation/changelog/24/" class="md-nav__link">
+        24 - Dragon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_10" type="checkbox" id="__nav_3_9_10" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_11" type="checkbox" id="__nav_3_9_11" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_9_10" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_9_11" tabindex="0" aria-expanded="false">
           History
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="History" data-md-level="3">
-        <label class="md-nav__title" for="__nav_3_9_10">
+        <label class="md-nav__title" for="__nav_3_9_11">
           <span class="md-nav__icon md-icon"></span>
           History
         </label>
@@ -632,17 +646,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_10_2" type="checkbox" id="__nav_3_9_10_2" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_11_2" type="checkbox" id="__nav_3_9_11_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_9_10_2" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_9_11_2" tabindex="0" aria-expanded="false">
           14
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="14" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_9_10_2">
+        <label class="md-nav__title" for="__nav_3_9_11_2">
           <span class="md-nav__icon md-icon"></span>
           14
         </label>
@@ -2539,6 +2553,15 @@
 
 
 <h1 id="support">Support</h1>
+<details class="example">
+<summary>24 - Dragon <img alt="🐲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f432.svg" title=":dragon_face:" /> : Major Release Breaking Change</summary>
+<p><strong> <a href="https://github.com/isontheline/pro.webssh.net/issues/202">#202 : Unified server list for SSH and SFTP</a> </strong></p>
+<p>SSH and SFTP connections are now unified in the same "SERVERS" list. This means that you can now add a new server and use it for both SSH and SFTP connections. This breaking change have some drawbacks though :</p>
+<ul>
+<li>If you choose both SSH and SFTP roles on your servers then devices older than iOS 16 won't be able to show them. Workaround : choose only one role per server.</li>
+<li>You can have many duplicates in the "All" list as both SSH and SFTP connections are now unified. I'm working on a migration tool to remove duplicates (contact me if you want to be a beta tester).</li>
+</ul>
+</details>
 <div class="admonition abstract">
 <p class="admonition-title">All the help you need when you need it</p>
 <p><img align="left" alt="isontheline maintainer of WebSSH" src="https://avatars.githubusercontent.com/u/44212923?v=4" width="130" /></p>
@@ -2547,9 +2570,9 @@
 <p>Have a nice day <img alt="☀" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2600.svg" title=":sunny:" /></p>
 </div>
 <div class="admonition bug">
-<p class="admonition-title">23 - Satellite <img alt="📡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f4e1.svg" title=":satellite:" /></p>
+<p class="admonition-title">24 - Dragon <img alt="🐲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f432.svg" title=":dragon_face:" /></p>
 <p>If you encounter any catastrophic bug <img alt="🐛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f41b.svg" title=":bug:" />, it's time to submit a <a href="https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=">bug report</a> for the upcoming milestone.
-You can also learn about features <a href="/documentation/changelog/23/">added / changed / removed</a> inside the next version of WebSSH.
+You can also learn about features <a href="/documentation/changelog/24/">added / changed / removed</a> inside the next version of WebSSH.
 Of course you can <a href="/documentation/becoming-external-tester/">Enroll to Beta Releases</a> in order to reach the stars <img alt="✨" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2728.svg" title=":sparkles:" /></p>
 </div>
 
@@ -2558,7 +2581,7 @@ Of course you can <a href="/documentation/becoming-external-tester/">Enroll to B
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 21, 2023</span>
       
     
   </small>
