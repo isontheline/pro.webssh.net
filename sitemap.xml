@@ -186,6 +186,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/webssh-brain/</loc>
+         <lastmod>2023-11-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/SSH/keyboard-shortcuts-combo-keys/</loc>
          <lastmod>2023-11-29</lastmod>
          <changefreq>daily</changefreq>
