@@ -11,6 +11,7 @@ title: Support
     
     * If you choose both SSH and SFTP roles on your servers then devices older than iOS 16 won't be able to show them. Workaround : choose only one role per server.
     * You can have many duplicates in the "All" list as both SSH and SFTP connections are now unified. You can use ["webssh servedit"](/documentation/help/howtos/mashREPL/servedit/) command line inside mashREPL in order to remove the unwanted ones.
+    * It is strongly advised to [backup your data](/documentation/help/howtos/mashREPL/database-backup/) before doing any change to your data.
 
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }

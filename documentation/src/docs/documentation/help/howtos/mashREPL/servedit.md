@@ -9,6 +9,10 @@ When you need to update your connections settings in batch, you can use the "web
     * This tool has been introduced in version 24 of WebSSH in order to help users to update their connections duplicated by the [Unified server list for SSH and SFTP](https://github.com/isontheline/pro.webssh.net/issues/202) feature.
     * This tool is relatively young and will be improved over time. Feel free to [contact me](/support/) if you have any question or suggestion.
 
+??? danger "Backup Your Data"
+    * This tool is a powerful tool that can alter your data if you don't use it carefully or if a bug occurs (more likely)
+    * It is strongly advised to [backup your data](/documentation/help/howtos/mashREPL/database-backup/) before using this tool.
+
 ## Usage
 ```bash
 webssh servedit --help
