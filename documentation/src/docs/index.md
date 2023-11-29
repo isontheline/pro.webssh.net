@@ -21,7 +21,7 @@ Alternately if you don't find it, use this link to the App Store : [download Web
 ## Privacy Policy
 WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
 
-Latest version (2023-10-24) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
+Latest version (2023-11-29) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
 
 ## What about the name?
 The name sounds weird? Think twice! WebSSH is a NATIVE and LOCAL SysAdmin Toolbox with Privacy and Security in mind which ensure that no data will leave your device outside your own secure servers.
