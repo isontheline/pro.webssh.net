@@ -135,6 +135,6 @@ const XtermTests = {
         terminal.write('\x1b[3 q');
 
         // Enter alternate buffer :
-        //terminal.write('\x1b[?47h')
+        //terminal.write('\x1b[?47h');
     }
 }
