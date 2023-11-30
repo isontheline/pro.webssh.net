@@ -485,7 +485,11 @@ const TerminalHelper = {
     },
 
     onBufferChange: function (buffer) {
+        // Hide Scrolly when alternate buffer is active :
         buffer.type === 'alternate' ? TerminalHelper.scrolly.hide() : TerminalHelper.scrolly.show();
+
+        // Inform WebSSH that the buffer has changed :
+        JS2IOS.calliOSFunction('notifyBufferChange', buffer.type);
     },
 
     changeTouchMode: function (touchMode) {
