@@ -31,7 +31,7 @@ If you want to overwrite already existing connections (by alias name), you can u
 webssh import sshconfig --apply --overwrite
 ```
 
-You can also specify a custom ssh_config filepath (since WebSSH 24.2) :
+You can also specify a custom ssh_config filepath (since WebSSH 24.3) :
 ```bash
 webssh import sshconfig --from-file my_config_file
 ```
