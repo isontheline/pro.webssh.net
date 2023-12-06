@@ -17,7 +17,7 @@ When you need to update your connections settings in batch, you can use the "web
 ```bash
 webssh servedit --help
 webssh servedit update --help
-webssh servedit remove --help
+webssh servedit delete --help
 ```
 
 ## Examples Update Connections
@@ -36,8 +36,8 @@ Update connections with name starting with "Awesome" to have the both roles "SSH
 webssh servedit update --set-role="SSH" --set-role="SFTP" --where-name="^Awesome"
 ```
 
-## Examples Remove Connections
-Remove all connections with the only role "SFTP" (useful after the [Unified server list for SSH and SFTP](https://github.com/isontheline/pro.webssh.net/issues/202) update) :
+## Examples Delete Connections
+Delete all connections with the only role "SFTP" (useful after the [Unified server list for SSH and SFTP](https://github.com/isontheline/pro.webssh.net/issues/202) update) :
 ```bash
-webssh servedit remove --where-roles="^SFTP$"
+webssh servedit delete --where-roles="^SFTP$"
 ```
