@@ -1706,8 +1706,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples-remove-connections" class="md-nav__link">
-    Examples Remove Connections
+  <a href="#examples-delete-connections" class="md-nav__link">
+    Examples Delete Connections
   </a>
   
 </li>
@@ -2668,8 +2668,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples-remove-connections" class="md-nav__link">
-    Examples Remove Connections
+  <a href="#examples-delete-connections" class="md-nav__link">
+    Examples Delete Connections
   </a>
   
 </li>
@@ -2709,7 +2709,7 @@
 <h2 id="usage">Usage</h2>
 <div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>servedit<span class="w"> </span>--help
 webssh<span class="w"> </span>servedit<span class="w"> </span>update<span class="w"> </span>--help
-webssh<span class="w"> </span>servedit<span class="w"> </span>remove<span class="w"> </span>--help
+webssh<span class="w"> </span>servedit<span class="w"> </span>delete<span class="w"> </span>--help
 </code></pre></div>
 <h2 id="examples-update-connections">Examples Update Connections</h2>
 <p>Update all connections with the only role "SSH" to have the both roles "SSH" and "SFTP" :
@@ -2721,9 +2721,9 @@ webssh<span class="w"> </span>servedit<span class="w"> </span>remove<span class=
 <p>Update connections with name starting with "Awesome" to have the both roles "SSH" and "SFTP" :
 <div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>servedit<span class="w"> </span>update<span class="w"> </span>--set-role<span class="o">=</span><span class="s2">&quot;SSH&quot;</span><span class="w"> </span>--set-role<span class="o">=</span><span class="s2">&quot;SFTP&quot;</span><span class="w"> </span>--where-name<span class="o">=</span><span class="s2">&quot;^Awesome&quot;</span>
 </code></pre></div></p>
-<h2 id="examples-remove-connections">Examples Remove Connections</h2>
-<p>Remove all connections with the only role "SFTP" (useful after the <a href="https://github.com/isontheline/pro.webssh.net/issues/202">Unified server list for SSH and SFTP</a> update) :
-<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>servedit<span class="w"> </span>remove<span class="w"> </span>--where-roles<span class="o">=</span><span class="s2">&quot;^SFTP</span>$<span class="s2">&quot;</span>
+<h2 id="examples-delete-connections">Examples Delete Connections</h2>
+<p>Delete all connections with the only role "SFTP" (useful after the <a href="https://github.com/isontheline/pro.webssh.net/issues/202">Unified server list for SSH and SFTP</a> update) :
+<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>servedit<span class="w"> </span>delete<span class="w"> </span>--where-roles<span class="o">=</span><span class="s2">&quot;^SFTP</span>$<span class="s2">&quot;</span>
 </code></pre></div></p>
 
   <hr>
@@ -2731,7 +2731,7 @@ webssh<span class="w"> </span>servedit<span class="w"> </span>remove<span class=
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 6, 2023</span>
       
     
   </small>
