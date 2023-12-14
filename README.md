@@ -4,4 +4,4 @@
 * :syringe: If you are not afraid you can [become a beta tester](https://webssh.net/documentation/becoming-external-tester/)
 
 ## macOS
-![macOS](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg)
+![WebSSH macOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg)
