@@ -39,6 +39,7 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | --- | --- | --- | --- | --- |
 | #!BackgroundColor | String | Terminal background color. Any CSS value. | 22.4 | `#!BackgroundColor pink` |
 | #!CursorColor | String | Terminal cursor color. Any CSS value. | 22.4 | `#!CursorColor magenta` |
+| #!CursorKeysMode | String | Terminal cursor keys mode. Possible values : `normal`, `application` | 24.5 | `#!CursorKeysMode application` |
 | #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | `#!FixedSize 80x25` |
 | #!FontSize | Integer | Font size in pixels | 21.1 | `#!FontSize 14` |
 | #!ForegroundColor | String | Terminal foreground color. Any CSS value. | 22.4 | `#!ForegroundColor grey` |
