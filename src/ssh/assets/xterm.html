@@ -33,7 +33,7 @@
         const terminal = new Terminal(TerminalHelper.buildTerminalSettings(terminalSettings));
 
         // Theme :
-        document.querySelector('body').style.backgroundColor = terminalSettings.backgroundColor;
+        document.querySelector('body').style.backgroundColor = terminalSettings.theme.background;
 
         // Platform :
         document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
