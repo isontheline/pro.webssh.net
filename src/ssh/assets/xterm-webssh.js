@@ -239,7 +239,7 @@ const TerminalHelper = {
         // #974 : Upgrade xterm.js to 5.3.0 ->
         terminal._core._coreBrowserService.isFocused = enable
         terminal._core._coreBrowserService._cachedIsFocused = true;
-        document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink'); 
+        document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
         document.querySelector('div.xterm-rows').classList.add('xterm-focus');
         // <- #974 : Upgrade xterm.js to 5.3.0
 
@@ -377,13 +377,11 @@ const TerminalHelper = {
     },
 
     extractTerminalSettings: function (hashString) {
-        let fragment = atob(hashString.replace('#', ''));
-        let fragmentsParts = fragment.split(';');
+        let fragmentJson = atob(hashString.replace('#', ''));
+        let fragment = JSON.parse(fragmentJson);
 
         let terminalSettings = {
-            backgroundColor: '#2e3436',
-            foregroundColor: '#ffffff',
-            cursorColor: '#119cf3',
+            theme: {},
             fontSize: 9,
             reverseWraparound: true,
             isMacOS: true,
@@ -397,72 +395,67 @@ const TerminalHelper = {
             fixedSize: false,
         }
 
-        for (let i in fragmentsParts) {
-            let fragmentParts = fragmentsParts[i].split('=');
-            let fragmentName = fragmentParts[0];
-            let fragmentValue = fragmentParts[1];
+        if (fragment.fontSize) {
+            terminalSettings.fontSize = fragment.fontSize;
+        }
 
-            if ('BC' == fragmentName) {
-                terminalSettings.backgroundColor = fragmentValue;
+        if (fragment.reverseWraparound) {
+            terminalSettings.reverseWraparound = fragment.reverseWraparound;
+        }
 
-            } else if ('FC' == fragmentName) {
-                terminalSettings.foregroundColor = fragmentValue;
+        if (fragment.operatingSystem && fragment.operatingSystem == 'macOS') {
+            terminalSettings.isMacOS = true;
+        }
 
-            } else if ('CC' == fragmentName) {
-                terminalSettings.cursorColor = fragmentValue;
+        if (fragment.scrollback) {
+            terminalSettings.scrollback = fragment.scrollback;
+        }
 
-            } else if ('FS' == fragmentName) {
-                terminalSettings.fontSize = fragmentValue;
+        if (fragment.fontFamily) {
+            terminalSettings.fontFamily = fragment.fontFamily;
+        }
 
-            } else if ('RW' == fragmentName) {
-                terminalSettings.reverseWraparound = fragmentValue == "enabled" ? true : false;
+        if (fragment.textSelectionStrategy && fragment.textSelectionStrategy == 'clipboard') {
+            terminalSettings.copyOnSelect = true;
+        }
 
-            } else if ('OS' == fragmentName) {
-                terminalSettings.isMacOS = fragmentValue == "macOS" ? true : false;
+        if (fragment.cursorStyle) {
+            terminalSettings.cursorStyle = fragment.cursorStyle;
+        }
 
-            } else if ('SB' == fragmentName) {
-                terminalSettings.scrollback = fragmentValue;
+        if (fragment.cursorBlink) {
+            terminalSettings.cursorBlink = fragment.cursorBlink;
+        }
 
-            } else if ('FF' == fragmentName) {
-                terminalSettings.fontFamily = fragmentValue;
+        if (fragment.terminalSize) {
+            let regex = /(?<cols>[0-9]+)x(?<rows>[0-9]+)/g;
+            let match = regex.exec(fragment.terminalSize);
 
-            } else if ('CS' == fragmentName) {
-                terminalSettings.copyOnSelect = fragmentValue == "clipboard" ? true : false;
+            if (match) {
+                let cols = parseInt(match.groups['cols'], 10);
+                let rows = parseInt(match.groups['rows'], 10);
 
-            } else if ('CU' == fragmentName) {
-                terminalSettings.cursorStyle = fragmentValue;
-
-            } else if ('CB' == fragmentName) {
-                terminalSettings.cursorBlink = fragmentValue;
-
-            } else if ('TS' == fragmentName) {
-                let regex = /(?<cols>[0-9]+)x(?<rows>[0-9]+)/g;
-                let match = regex.exec(fragmentValue);
-
-                if (match) {
-                    let cols = parseInt(match.groups['cols'], 10);
-                    let rows = parseInt(match.groups['rows'], 10);
-
-                    terminalSettings.cols = cols;
-                    terminalSettings.rows = rows;
-                    terminalSettings.fixedSize = true;
-                }
+                terminalSettings.cols = cols;
+                terminalSettings.rows = rows;
+                terminalSettings.fixedSize = true;
             }
+        }
+
+        if (fragment.theme) {
+            terminalSettings.theme = JSON.parse(fragment.theme);
         }
 
         return terminalSettings;
     },
 
     buildTheme: function (terminalSettings) {
-        return {
-            background: terminalSettings.backgroundColor,
-            foreground: terminalSettings.foregroundColor,
-            cursor: terminalSettings.cursorColor,
-            cursorAccent: terminalSettings.backgroundColor,
-            selectionBackground: ColorHelper.invertColor(terminalSettings.backgroundColor),
-            selectionForeground: ColorHelper.invertColor(terminalSettings.foregroundColor),
-            selectionInactiveBackground: ColorHelper.invertColor(terminalSettings.backgroundColor),
-        };
+        let theme = terminalSettings.theme;
+        theme.cursor = theme.cursorColor;
+        theme.cursorAccent = theme.background;
+        //theme.selectionForeground = ColorHelper.invertColor(theme.foreground);
+        theme.selectionInactiveBackground = ColorHelper.invertColor(theme.background);
+
+        return theme;
     },
 
     buildTerminalSettings: function (terminalSettings) {
