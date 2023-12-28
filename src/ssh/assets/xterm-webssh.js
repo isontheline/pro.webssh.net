@@ -378,7 +378,15 @@ const TerminalHelper = {
 
     extractTerminalSettings: function (hashString) {
         let fragmentJson = atob(hashString.replace('#', ''));
-        let fragment = JSON.parse(fragmentJson);
+        let fragment = {};
+
+        if (fragmentJson) {
+            try {
+                fragment = JSON.parse(fragmentJson);
+            } catch (e) {
+                alert(e);
+            }
+        }
 
         let terminalSettings = {
             theme: {},
@@ -446,6 +454,10 @@ const TerminalHelper = {
         }
 
         return terminalSettings;
+    },
+
+    applyTheme: function(theme) {
+        terminal._publicOptions.theme = theme;
     },
 
     buildTheme: function (terminalSettings) {
