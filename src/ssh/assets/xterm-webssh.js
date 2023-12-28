@@ -456,8 +456,12 @@ const TerminalHelper = {
         return terminalSettings;
     },
 
-    applyTheme: function(theme) {
+    applyTheme: function (theme) {
         terminal._publicOptions.theme = theme;
+
+        if (theme.background) {
+            document.querySelector('body').style.backgroundColor = theme.background;
+        }
     },
 
     buildTheme: function (terminalSettings) {
