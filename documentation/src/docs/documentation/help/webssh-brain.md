@@ -13,4 +13,6 @@ title: WebSSH Brain
     * The developer cannot assume responsibility for any damage inflicted on a system or individual. 
     * It is imperative to acknowledge that you, as the user, are solely responsible for the actions taken while using WebSSH Brain.
 
-WebSSH Brain is a generative AI that assists you in crafting SSH commands, snippets, and scripts. It will also try to explain you about a lot of errors codes, commands meaning and other computing related sentences you will send to it.
+WebSSH Brain is a generative AI that assists you in crafting SSH commands, snippets, and scripts. 
+
+It will also try to explain you about a lot of errors codes, commands meaning and other computing related sentences you will send to it.
