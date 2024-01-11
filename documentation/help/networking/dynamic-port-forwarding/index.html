@@ -2735,7 +2735,7 @@
 <summary>About Jump Server, Bastion Host and SOCKS Proxy</summary>
 <p>Dynamic Port Forwarding, is a technique used to create a secure encrypted tunnel between a local device and a remote server allowing the device to securely access resources through the remote server.</p>
 <p>The remote server is also named a Bastion Host - or a Jump Server - which is in fact a standard SSH server that is used as an intermediary between the local device and the resources you want to access.</p>
-<p>When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / WEB launched connections are forwarded through the Jump Server, seemlessly.</p>
+<p>When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / <a href="/documentation/web-browser/">WEB</a> launched connections are forwarded through the Jump Server, seemlessly.</p>
 <p>In background, Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.</p>
 </details>
 <details class="warning">
@@ -2748,7 +2748,7 @@
 <li>Fill all required fields in order to establish the SSH connection</li>
 <li>Finally put the magical word inside the port fowarding field : a simple wildcard character <code>*</code></li>
 <li>Save the tunnel and launch it by tapping on it</li>
-<li>You are now able to launch any SSH, SFTP or even TUNNEL connection inside WebSSH through your bastion</li>
+<li>You are now able to launch any SSH, SFTP, TUNNEL and even <a href="/documentation/web-browser/">WEB</a> connection inside WebSSH through your bastion</li>
 </ol>
 <h2 id="and-what-about-socks-proxy-server-aka-d">And what about SOCKS Proxy Server? Aka -D</h2>
 <ul>
@@ -2776,7 +2776,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 11, 2024</span>
       
     
   </small>
