@@ -8,7 +8,7 @@ title: Dynamic Port Forwarding
 
     The remote server is also named a Bastion Host - or a Jump Server - which is in fact a standard SSH server that is used as an intermediary between the local device and the resources you want to access.
 
-    When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / WEB launched connections are forwarded through the Jump Server, seemlessly.
+    When Dynamic Port Forwarding is enabled inside WebSSH, all subsequent SSH / SFTP / TUNNEL / [WEB](/documentation/web-browser/) launched connections are forwarded through the Jump Server, seemlessly.
 
     In background, Dynamic Port Forwarding launches a SOCKS Proxy Server on the local device, which can also be used inside a Web Browser or any other application that supports SOCKS. This way you can access any resource through the Jump Server even it's a web page, a database, a file server, etc.
 
@@ -20,7 +20,7 @@ title: Dynamic Port Forwarding
 2. Fill all required fields in order to establish the SSH connection
 3. Finally put the magical word inside the port fowarding field : a simple wildcard character <code>*</code>
 4. Save the tunnel and launch it by tapping on it
-5. You are now able to launch any SSH, SFTP or even TUNNEL connection inside WebSSH through your bastion
+5. You are now able to launch any SSH, SFTP, TUNNEL and even [WEB](/documentation/web-browser/) connection inside WebSSH through your bastion
 
 ## And what about SOCKS Proxy Server? Aka -D
 * You can use the Dynamic Port Forwarding feature to create a SOCKS Proxy Server. 
