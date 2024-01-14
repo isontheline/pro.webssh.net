@@ -1042,9 +1042,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Terrapin Attack
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Terrapin Attack
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-that" class="md-nav__link">
+    What is that?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webssh-mitigation" class="md-nav__link">
+    WebSSH mitigation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-enable-etm-mac-algorithms" class="md-nav__link">
+    (Re) Enable ETM MAC algorithms
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2670,6 +2715,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-that" class="md-nav__link">
+    What is that?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webssh-mitigation" class="md-nav__link">
+    WebSSH mitigation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#re-enable-etm-mac-algorithms" class="md-nav__link">
+    (Re) Enable ETM MAC algorithms
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2685,17 +2759,20 @@
 
 
 <h1 id="terrapin-attack">Terrapin Attack</h1>
-<p>From <a href="https://terrapin-attack.com">terrapin-attack.com</a> :</p>
+<h2 id="what-is-that">What is that?</h2>
+<p>Quotes from <a href="https://terrapin-attack.com">terrapin-attack.com</a> :</p>
 <blockquote>
 <p>Terrapin is a prefix truncation attack targeting the SSH protocol. More precisely, Terrapin breaks the integrity of SSH's secure channel. By carefully adjusting the sequence numbers during the handshake, an attacker can remove an arbitrary amount of messages sent by the client or server at the beginning of the secure channel without the client or server noticing it.</p>
 <p>If your SSH implementations supports (and is configured to offer) the chacha20-poly1305@openssh.com encryption algorithm, or any encryption algorithm suffixed -cbc in combination with any MAC algorithm suffixed -etm@openssh.com, you are vulnerable to Terrapin.</p>
 </blockquote>
+<h2 id="webssh-mitigation">WebSSH mitigation</h2>
 <p>In order to protect WebSSH users against Terrapin Attack flaw, we have disabled the following algorithms since WebSSH 24.8 :</p>
 <ul>
 <li>chacha20-poly1305@openssh.com encryption algorithm</li>
 <li>all ETM MAC algorithms</li>
 </ul>
-<p>If you need to enable ETM MAC algorithms, you can do it by adding the following lines to your SSH Config File :</p>
+<h2 id="re-enable-etm-mac-algorithms">(Re) Enable ETM MAC algorithms</h2>
+<p>If you need to enable ETM MAC algorithms again (eg in case your server only accepts ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :</p>
 <div class="highlight"><pre><span></span><code>Host*
 <span class="w">    </span><span class="c1">#!Enable-HMAC-ETM</span>
 </code></pre></div>
