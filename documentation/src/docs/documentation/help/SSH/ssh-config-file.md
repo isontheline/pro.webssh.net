@@ -41,6 +41,7 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | #!ColorTheme | String | Terminal color theme. Possible values : any valid theme name | 24.5 | `#!ColorTheme "GITHUB DARK"` |
 | #!CursorColor | String | Terminal cursor color. Any CSS value. | 22.4 | `#!CursorColor magenta` |
 | #!CursorKeysMode | String | Terminal cursor keys mode. Possible values : `normal`, `application` | 24.5 | `#!CursorKeysMode application` |
+| #!Enable-HMAC-ETM | Flag | No value expected. Enable HMAC-ETM MAC algorithms. Read [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) before enabling. | 24.8 | `#!Enable-HMAC-ETM` |
 | #!FixedSize | String | Fixed terminal size (cols **x** rows) | 21.4 | `#!FixedSize 80x25` |
 | #!FontSize | Integer | Font size in pixels | 21.1 | `#!FontSize 14` |
 | #!ForegroundColor | String | Terminal foreground color. Any CSS value. | 22.4 | `#!ForegroundColor grey` |
