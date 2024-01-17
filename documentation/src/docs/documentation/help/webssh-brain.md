@@ -17,6 +17,16 @@ title: WebSSH Brain
 ## Snippet
 Give WebSSH Brain a short command prompt and it will try to generate the best snippet for you.
 
+Input limit : 200 characters
+
 ## Explain
 Need to learn about a command output, error code or other computing related sentence?
 Let WebSSH Brain explain it to you by using few but strong words.
+
+Input limit : 1000 characters
+
+## How-To
+Ever wanted to know how to do something in a terminal? But you don't know how to do it?
+WebSSH Brain will try to generate the best how-to for you.
+
+Input limit : 1000 characters
