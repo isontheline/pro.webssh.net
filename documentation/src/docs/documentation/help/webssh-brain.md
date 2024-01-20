@@ -14,19 +14,25 @@ title: WebSSH Brain
     * The developer cannot assume responsibility for any damage inflicted on a system or individual. 
     * It is imperative to acknowledge that you, as the user, are solely responsible for the actions taken while using WebSSH Brain.
 
-## Snippet
+## Features
+### Snippet
 Give WebSSH Brain a short command prompt and it will try to generate the best snippet for you.
 
 Input limit : 200 characters
 
-## Explain
+### Explain
 Need to learn about a command output, error code or other computing related sentence?
 Let WebSSH Brain explain it to you by using few but strong words.
 
 Input limit : 1000 characters
 
-## How-To
+### How-To
 Ever wanted to know how to do something in a terminal? But you don't know how to do it?
 WebSSH Brain will try to generate the best how-to for you.
 
 Input limit : 1000 characters
+
+## Pricing
+Running WebSSH Brain is costly as it requires a lot of online computing resources.
+During the beta period, WebSSH Brain is free to use with fair use policy.
+After that, it would be available as a paid subscription or at least only available for WebSSH PRO users.
