@@ -14,23 +14,34 @@ title: WebSSH Brain
     * The developer cannot assume responsibility for any damage inflicted on a system or individual. 
     * It is imperative to acknowledge that you, as the user, are solely responsible for the actions taken while using WebSSH Brain.
 
+??? info "How to enable WebSSH Brain?"
+    WebSSH is built with privacy and security by design in mind and WebSSH Brain is no exception.
+
+    In order to enable WebSSH Brain, you have to explicitly enable it in the settings :
+
+    * On iOS : iOS Settings > WebSSH > Brain > Brain Status > Enabled
+    * On macOS : WebSSH > Settings > Brain > Brain Status > Enabled
+
 ## Features
 ### Snippet
 Give WebSSH Brain a short command prompt and it will try to generate the best snippet for you.
 
-Input limit : 200 characters
+You can access this feature by tapping on the Brain icon in the snippet modal dialog.
 
 ### Explain
 Need to learn about a command output, error code or other computing related sentence?
 Let WebSSH Brain explain it to you by using few but strong words.
 
-Input limit : 1000 characters
+To access this feature :
+
+* on macOS -> select text inside terminal, open context menu, selection, choose explain.
+* on iOS -> show the scrollback buffer, select text, choose explain context menu.
 
 ### How-To
 Ever wanted to know how to do something in a terminal? But you don't know how to do it?
 WebSSH Brain will try to generate the best how-to for you.
 
-Input limit : 1000 characters
+This feature is under development and will be available soon.
 
 ## Pricing
 Running WebSSH Brain is costly as it requires a lot of online computing resources.
