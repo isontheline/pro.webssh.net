@@ -4,6 +4,35 @@ title: Support
 
 # Support
 
+??? tip "25.0 - Sunflower :sunflower: - Introducing WebSSH Brain : Generative AI that powers your work about command line"
+    Give it  a short command prompt and it will try to generate the best snippet for you. If you need to learn about a command output, error code or other computing related sentence : let WebSSH Brain explain it to you by using few but strong words. 
+    
+    **Privacy & Security by design :**
+
+    * No data is sent without your action. 
+    * No data of your device or your servers or settings are sent. 
+    * Only data you input manually are being sent with your action.
+    * No data is retained on WebSSH servers.
+    * No data training is conducted.
+    * Disabled by default.
+
+    **To enable WebSSH Brain :**
+
+    * On iOS : iOS Settings > WebSSH > Brain > Brain Status > Enabled
+    * On macOS : WebSSH > Settings > Brain > Brain Status > Enabled
+
+    **To use WebSSH Brain :**
+
+    * To launch Brain Snippet : go to the snippet modal dialog as usual, then tap on the Brain icon
+    * To launch Brain Explain on macOS : select text inside terminal, open context menu, selection, choose explain
+    * To launch Brain Explain on iOS : Show the scrollback buffer, select text, choose explain context menu
+
+    Beta Release available for [Enrolled Beta Testers](/documentation/becoming-external-tester/)
+
+    Read more about [WebSSH Brain](/documentation/help/webssh-brain/)
+
+    Have any concern about WebSSH Brain? [Contact me](mailto:team@webssh.net)
+
 ??? warning "24.8 - Terrapin Attack - Algorithms Disabled"
     In order to protect WebSSH users against [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) flaw, we have disabled the following algorithms since WebSSH 24.8 :
 
