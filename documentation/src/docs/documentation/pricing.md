@@ -23,13 +23,3 @@
 | Local terminal | :white_check_mark: | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | Unlimited number of connections | :cross_mark: (One) | :white_check_mark: |
-
-## Addons
-??? abstract "Why buying addons?"
-    * As you know WebSSH PRO is a lifetime purchase, consider WebSSH Addons as a way to support WebSSH development further. 
-    * WebSSH Addons are available as lifetime in-app purchases.
-    * Use them on all your devices (by using the same Apple ID).
-    * They could be purchased and used with WebSSH **FREE** or **PRO**.
-    * Each Addon need to be purchased separately with a one-time payment.
-
-Addons are available since WebSSH 25.1
