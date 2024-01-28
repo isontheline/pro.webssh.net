@@ -1,5 +1,5 @@
 # Pricing
-## WebSSH FREE vs PRO
+## FREE vs PRO
 ??? abstract "Why upgrading to PRO?"
     :two_hearts: Help me continue WebSSH development by upgrading to **PRO** version : I'm an indie developer who want to make an awesome tool for you!
 
@@ -24,7 +24,7 @@
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | Unlimited number of connections | :cross_mark: (One) | :white_check_mark: |
 
-## WebSSH Addons
+## Addons
 ??? abstract "Why buying addons?"
     * As you know WebSSH PRO is a lifetime purchase, consider WebSSH Addons as a way to support WebSSH development further. 
     * WebSSH Addons are available as lifetime in-app purchases.
