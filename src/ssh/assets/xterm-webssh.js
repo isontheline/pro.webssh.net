@@ -401,6 +401,7 @@ const TerminalHelper = {
             rows: 25,
             cols: 80,
             fixedSize: false,
+            handedness: 'right',
         }
 
         if (fragment.fontSize) {
@@ -433,6 +434,10 @@ const TerminalHelper = {
 
         if (fragment.cursorBlink) {
             terminalSettings.cursorBlink = fragment.cursorBlink;
+        }
+
+        if (fragment.handedness) {
+            terminalSettings.handedness = fragment.handedness;
         }
 
         if (fragment.terminalSize) {

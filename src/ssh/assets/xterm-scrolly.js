@@ -31,6 +31,7 @@ class Scrolly {
         opacityDrag: 0.9,
         isVisible: true,
         cursor: 'grab',
+        handedness: 'right',
     }
 
     static defaultStyles = {
@@ -67,7 +68,11 @@ class Scrolly {
 
         this.styles = {
             ...Scrolly.defaultStyles,
-            ...options.styles
+            ...options.styles,
+            ...{
+                right: options.handedness == undefined || options.handedness === 'right' ? '1px' : '',
+                left: options.handedness != undefined && options.handedness === 'left' ? '1px' : '',
+            }
         }
 
         Object.assign(this.options.scrollbarElement.style, this.styles);

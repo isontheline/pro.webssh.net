@@ -91,7 +91,8 @@
         // Scrollbar management :
         TerminalHelper.scrolly = new Scrolly({
             scrollbarElement: document.getElementById('scrolly'),
-            elementToScroll: document.querySelector('.xterm-viewport')
+            elementToScroll: document.querySelector('.xterm-viewport'),
+            handedness: terminalSettings.handedness
         });
 
         // Listen when the buffer changes :
