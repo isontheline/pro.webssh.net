@@ -646,6 +646,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_WELCOMESHEET/</loc>
+         <lastmod>2024-01-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_XTERMJS/</loc>
          <lastmod>2024-01-31</lastmod>
          <changefreq>daily</changefreq>
