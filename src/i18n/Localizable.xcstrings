@@ -9298,98 +9298,98 @@
       "localizations" : {
         "da" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Force Keyboard Interactive"
+            "state" : "translated",
+            "value" : "Tving tastaturinteraktion (2FA)"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Tastatur interaktiv erzwingen"
+            "state" : "translated",
+            "value" : "Tastaturinteraktion erzwingen (2FA)"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Примусова клавіатурна інтерактивність (2FA)"
+            "value" : "Force Keyboard Interactive (2FA)"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Forzar teclado interactivo"
+            "state" : "translated",
+            "value" : "Forzar Interacción con Teclado (2FA)"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Forcer clavier interactif"
+            "state" : "translated",
+            "value" : "Forcer l'interaction clavier (2FA)"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Forza tastiera interattiva"
+            "state" : "translated",
+            "value" : "Forza l'interazione con la tastiera (2FA)"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "キーボードインタラクティブを強制する"
+            "state" : "translated",
+            "value" : "キーボードインタラクティブを強制する (2FA)"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "강제 키보드 인터랙티브"
+            "state" : "translated",
+            "value" : "키보드 상호 작용 강제 (2FA)"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Wymuś interaktywność klawiatury"
+            "state" : "translated",
+            "value" : "Wymuszaj interakcję klawiatury (2FA)"
           }
         },
         "pt" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Forçar teclado interativo"
+            "state" : "translated",
+            "value" : "Forçar Interação com Teclado (2FA)"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Принудительно активировать клавиатуру"
+            "state" : "translated",
+            "value" : "Принудительная клавиатурная интерактивность (2FA)"
           }
         },
         "sv" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Force Keyboard Interactive"
+            "state" : "translated",
+            "value" : "Tvinga tangentbordsinteraktion (2FA)"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Klavye Etkileşimini Zorla"
+            "state" : "translated",
+            "value" : "Klavye Etkileşimini Zorla (2FA)"
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Force Keyboard Interactive"
+            "state" : "translated",
+            "value" : "Примусова клавіатурна інтерактивність (2FA)"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "强制键盘交互"
+            "state" : "translated",
+            "value" : "强制键盘交互 (2FA)"
           }
         },
         "zh-Hant-TW" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "強制鍵盤互動"
+            "state" : "translated",
+            "value" : "強制鍵盤互動 (2FA)"
           }
         }
       }
