@@ -30,5 +30,14 @@
 | Web Browser | :white_check_mark: | :cross_mark: | :cross_mark: |
 | VPN-Over-SSH | :white_check_mark: | :cross_mark: | :cross_mark: |
 
+??? abstract "How to find with version of WebSSH I'm using?"
+    Just keep a look at the app name on your device :
+    
+     * If it's "WebSSH" then you are using the main version of WebSSH. 
+     * If it's "eWebSSH" then you are using the essential version of WebSSH. 
+     * If it's "WebSSH::o" then you are using the original version of WebSSH.
+
+     You can't choose the wrong version as the App Store will only show you the version that is available in your country.
+
 [^1]: eWebSSH is the "Essential" version of WebSSH. It is mainly distributed in countries with security or law restrictions.
 [^2]: WebSSH::o is the "Original" version of WebSSH. It only contains the main and original features of WebSSH.
