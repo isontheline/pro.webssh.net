@@ -11,15 +11,20 @@
 
     :moneybag: Get your money's worth : Unlike competitors, WebSSH **PRO** isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
 
-| Feature | FREE | PRO |
-| --- | --- | --- |
-| SSH Client | :white_check_mark: | :white_check_mark: |
-| SFTP Client | :white_check_mark: | :white_check_mark: |
-| Port Forwarding | :white_check_mark: | :white_check_mark: |
-| Snippets | :white_check_mark: | :white_check_mark: |
-| Multiple terminals | :white_check_mark: | :white_check_mark: |
-| Touch ID / Face ID | :white_check_mark: | :white_check_mark: |
-| Port Knocking | :white_check_mark: | :white_check_mark: |
-| Local terminal | :white_check_mark: | :white_check_mark: |
-| Regular updates | :white_check_mark: | :white_check_mark: |
-| Unlimited number of connections | :cross_mark: (One) | :white_check_mark: |
+| Feature | FREE | WebSSH PRO | eWebSSH[^1] PRO | WebSSH::o[^2] PRO |
+| --- | --- | --- | --- | --- |
+| SSH Client | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| SFTP Client | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Port Forwarding | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Snippets | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Multiple terminals | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Touch ID / Face ID | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Port Knocking | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Local terminal | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Regular updates | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Web Browser | :white_check_mark: | :white_check_mark: | :cross_mark: | :cross_mark: |
+| VPN-Over-SSH | :white_check_mark: | :white_check_mark: | :cross_mark: | :cross_mark: |
+| Unlimited number of connections | :cross_mark: (One) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+
+[^1]: eWebSSH is the "Essential" version of WebSSH. It is mainly distributed in countries with security or law restrictions.
+[^2]: WebSSH::o is the "Original" version of WebSSH. It only contains the main and original features of WebSSH.
