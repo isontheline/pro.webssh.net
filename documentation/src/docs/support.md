@@ -27,7 +27,7 @@ title: Support
     * To launch Brain Explain on macOS : select text inside terminal, open context menu, selection, choose explain
     * To launch Brain Explain on iOS : Show the scrollback buffer, select text, choose explain context menu
 
-    Beta Release available for [Enrolled Beta Testers](/documentation/becoming-external-tester/)
+    WebSSH Brain requires iOS 17 or macOS 14
 
     Read more about [WebSSH Brain](/documentation/help/webssh-brain/)
 
