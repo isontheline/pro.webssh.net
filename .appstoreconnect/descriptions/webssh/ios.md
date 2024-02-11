@@ -1,6 +1,8 @@
 WebSSH is an awesome SSH, SFTP and Port Forwarding client ٩(^‿^)۶
 
-Whether you are in the office, on your sofa, on holiday at the beach or even in the mountains : WebSSH will be useful to you everywhere, all the time and all your devices will be synchronized!
+Whether you are in the office on your Mac, on your sofa with your iPad or on holiday at the beach or in the mountains with your iPhone: it will be useful to you everywhere, all the time and all your devices will be synchronised!
+
+The name sounds weird? Think twice! WebSSH is a NATIVE and LOCAL SysAdmin Toolbox with Privacy and Security in mind which ensure that no data will leave your device outside your own secure servers.
 
 ◖ SSH Functionalities ◗
 ๏ Port Forwarding (Local)
