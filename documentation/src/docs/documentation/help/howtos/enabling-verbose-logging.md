@@ -3,13 +3,13 @@ title: Enabling Verbose Logging
 ---
 
 # How to enable verbose logging?
-If you want to debug an error perhaps you will need verbose logging to be enabled inside WebSSH.
+If you need to debug an error (even crash) you will need to enable file verbose logging.
 
 ## iOS
 1. iOS Settings
 2. WebSSH
 3. Settings
-4. Log Level > Verbose
+4. WebSSH > File Logger Level > Verbose
 5. Restart WebSSH
 6. Reproduce your action
 7. Find the log files inside iOS > Files > WebSSH
@@ -18,7 +18,7 @@ If you want to debug an error perhaps you will need verbose logging to be enable
 1. Launch WebSSH
 2. WebSSH menu (top bar)
 3. Settings
-4. Log Level > Verbose
+4. WebSSH > File Logger Level > Verbose
 5. Restart WebSSH
 6. Reproduce your action
 7. Launch mashREPL (inside WebSSH)
