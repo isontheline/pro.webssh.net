@@ -20,16 +20,17 @@
 | --- | --- | --- | --- |
 | SSH Client | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | SFTP Client | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Port Forwarding | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Regular updates | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Multiple terminals | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Touch ID / Face ID | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Port Knocking | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Local terminal | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Regular updates | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| WebSSH Brain | :white_check_mark: | :cross_mark: | :cross_mark: |
-| Web Browser | :white_check_mark: | :cross_mark: | :cross_mark: |
-| VPN-Over-SSH | :white_check_mark: | :cross_mark: | :cross_mark: |
+| [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: | :cross_mark: |
+| [WebSSH Brain](/documentation/help/webssh-brain/) | :white_check_mark: | :cross_mark: | :cross_mark: |
+| [Web Browser](/documentation/web-browser/) | :white_check_mark: | :cross_mark: | :cross_mark: |
+| [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 
 ??? abstract "How to find which version of WebSSH I'm using?"
     Just keep a look at the app name on your device :
