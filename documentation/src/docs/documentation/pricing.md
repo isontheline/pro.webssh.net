@@ -33,7 +33,7 @@
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 
 ??? abstract "How to find which version of WebSSH I'm using?"
-    Just keep a look at the app name on your device :
+    Just take a look at the WebSSH app name on your device :
     
      * If it's "WebSSH" then you are using the main version of WebSSH. 
      * If it's "eWebSSH" then you are using the Essential version of WebSSH. 
