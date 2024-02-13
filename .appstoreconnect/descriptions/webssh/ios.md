@@ -20,6 +20,10 @@ The name sounds weird? Think twice! WebSSH is a NATIVE and LOCAL SysAdmin Toolbo
 ๏ Upload files from your device to your server
 ๏ Download files from your server to your device
 
+◖ WebSSH Brain : Generative AI ◗
+๏ Snippet Assistant : Give WebSSH Brain a short command prompt and it will try to generate the best snippet for you.
+๏ Explain Assistant : Need to learn about a command output, error code or other computing related sentence? Let WebSSH Brain explain it to you by using few but strong words.
+
 ◖ mashREPL ◗
 ๏ Use a local terminal without any Internet connection!
 ๏ Run commands such as : awk, bc, cat, cd, cp, curl, date, dig, du, echo, env, find, grep, head, help, host, ifconfig, ls, mkdir, mv, nslookup, open, openurl, ping, printenv, pwd, rm, sed, setenv, sort, stat, tail, tar, touch, uname, unsetenv, uptime, wc, whoami, whois
