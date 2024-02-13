@@ -406,9 +406,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web Browser
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Web Browser
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-your-ssh-server-as-a-web-proxy-vpn" class="md-nav__link">
+    Use your SSH Server as a Web Proxy / VPN
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2694,6 +2725,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#use-your-ssh-server-as-a-web-proxy-vpn" class="md-nav__link">
+    Use your SSH Server as a Web Proxy / VPN
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2712,6 +2758,13 @@
 <p>Since WebSSH 23.8 you can now use an embedded Web Browser<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to access your websites.</p>
 <p>The main goal is to be able to access your websites seemlessly through a secure SSH tunnel (aka <a href="/documentation/help/networking/dynamic-port-forwarding/">Dynamic Port Forwarding</a>) like you would do with a SOCKS proxy.</p>
 <p>This feature is still in progress and will be enhanced in the future. All <a href="/support/">feedbacks</a> are welcome!</p>
+<h2 id="use-your-ssh-server-as-a-web-proxy-vpn">Use your SSH Server as a Web Proxy / VPN</h2>
+<ol>
+<li><a href="/documentation/help/networking/dynamic-port-forwarding/">Create a Dynamic Port Forwarding tunnel</a></li>
+<li>Launch the tunnel</li>
+<li>Open the WebSSH embedded Web Browser</li>
+<li>Use the navigation address bar to access your websites through your SSH server</li>
+</ol>
 <div class="footnote">
 <hr />
 <ol>
@@ -2726,7 +2779,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
       
     
   </small>
