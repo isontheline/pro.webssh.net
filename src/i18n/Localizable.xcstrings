@@ -6667,6 +6667,107 @@
         }
       }
     },
+    "Enable" : {
+      "extractionState" : "manual",
+      "localizations" : {
+          "en" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Enable"
+              }
+          },
+          "zh-Hans" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "启用"
+              }
+          },
+          "zh-Hant-TW" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "啟用"
+              }
+          },
+          "da" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Aktiver"
+              }
+          },
+          "fr" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Activer"
+              }
+          },
+          "de" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Aktivieren"
+              }
+          },
+          "it" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Abilita"
+              }
+          },
+          "ja" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "有効にする"
+              }
+          },
+          "ko" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "활성화"
+              }
+          },
+          "pl" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Włącz"
+              }
+          },
+          "pt" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Ativar"
+              }
+          },
+          "ru" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Включить"
+              }
+          },
+          "es" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Activar"
+              }
+          },
+          "sv" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Aktivera"
+              }
+          },
+          "tr" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Etkinleştir"
+              }
+          },
+          "uk" : {
+              "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Увімкнути"
+              }
+          }
+      }
+  },
     "Enable_Bel_Vibration_Or_Beep" : {
       "extractionState" : "manual",
       "localizations" : {
