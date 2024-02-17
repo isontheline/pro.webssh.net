@@ -1,6 +1,6 @@
 # Pricing
 ## FREE vs PRO
-??? abstract "Why upgrading to PRO?"
+!!! abstract "Why upgrading to PRO?"
     :two_hearts: Help me continue WebSSH development by upgrading to **PRO** version : I'm an indie developer who want to make an awesome tool for you!
 
     :thumbsup: I spend a few hours each day to enhance WebSSH as your feedbacks are coming. I'm always listening to your needs and I'm trying to implement them as soon as possible.
@@ -27,7 +27,10 @@
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: | :cross_mark: |
+| iPhoneOS | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| iPadOS | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| macOS | :white_check_mark: | :cross_mark: | :cross_mark: |
+| [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [WebSSH Brain](/documentation/help/webssh-brain/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [Web Browser](/documentation/web-browser/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :cross_mark: | :cross_mark: |
