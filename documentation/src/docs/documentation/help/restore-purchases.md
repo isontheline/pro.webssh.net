@@ -14,6 +14,11 @@ title: Restoring Purchases
 
     NEVER remove WebSSH! Just install it again from the App Store or, you will lose your data!
 
+??? warning "Can't restore betwwen WebSSH <-> eWebSSH <-> WebSSH::o"
+    WebSSH, eWebSSH and WebSSH::o are different applications and you can't restore your purchase between these applications.
+
+    Please check that you are using the same App on all your devices in order to be able to restore your purchase on all of them.
+
 ## Restoring on another platform (iOS <=> macOS)
 If you have already bought WebSSH on another platform (iOS <=> macOS) and you are encountering an issue about restoring your purchase, you may try the following steps :
 
