@@ -8,6 +8,7 @@ Translations are available [here](https://github.com/isontheline/pro.webssh.net/
 
 === "Russian"
     * Tkachenko Ivan
+    * MiKillCrafter
 
 === "Korean"
     * Sung Gu, Ji

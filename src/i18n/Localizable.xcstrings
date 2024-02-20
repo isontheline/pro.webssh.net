@@ -3299,7 +3299,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Закрывать"
+            "value" : "Закрыть"
           }
         },
         "sv" : {
@@ -3804,7 +3804,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Подключение ... Пожалуйста, подождите."
+            "value" : "Пожалуйста, подождите."
           }
         },
         "sv" : {
@@ -4309,7 +4309,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Продолжай в любом случае"
+            "value" : "Продолжить в любом случае"
           }
         },
         "sv" : {
@@ -5723,7 +5723,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Удалить"
+            "value" : "Удаление"
           }
         },
         "sv" : {
@@ -5824,7 +5824,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отрицать"
+            "value" : "Отказ"
           }
         },
         "sv" : {
@@ -6026,7 +6026,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Каталог не пуст. Вы хотите удалить все вложенные папки и подфайлы?"
+            "value" : "Каталог не пуст. Вы хотите удалить все вложенные файлы и папки?"
           }
         },
         "sv" : {
@@ -6127,7 +6127,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Oтключать"
+            "value" : "Отключиться"
           }
         },
         "sv" : {
@@ -6670,104 +6670,104 @@
     "Enable" : {
       "extractionState" : "manual",
       "localizations" : {
-          "en" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Enable"
-              }
-          },
-          "zh-Hans" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "启用"
-              }
-          },
-          "zh-Hant-TW" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "啟用"
-              }
-          },
-          "da" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Aktiver"
-              }
-          },
-          "fr" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Activer"
-              }
-          },
-          "de" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Aktivieren"
-              }
-          },
-          "it" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Abilita"
-              }
-          },
-          "ja" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "有効にする"
-              }
-          },
-          "ko" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "활성화"
-              }
-          },
-          "pl" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Włącz"
-              }
-          },
-          "pt" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Ativar"
-              }
-          },
-          "ru" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Включить"
-              }
-          },
-          "es" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Activar"
-              }
-          },
-          "sv" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Aktivera"
-              }
-          },
-          "tr" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Etkinleştir"
-              }
-          },
-          "uk" : {
-              "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Увімкнути"
-              }
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiver"
           }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enable"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abilita"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "有効にする"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "활성화"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ativar"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включить"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivera"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etkinleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнути"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "启用"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "啟用"
+          }
+        }
       }
-  },
+    },
     "Enable_Bel_Vibration_Or_Beep" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6935,7 +6935,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Включить идентификацию лица"
+            "value" : "Включить Face ID"
           }
         },
         "sv" : {
@@ -7137,7 +7137,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Включить сенсорный идентификатор"
+            "value" : "Включить Touch ID"
           }
         },
         "sv" : {
@@ -7541,7 +7541,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Введите имя любимой"
+            "value" : "Введите имя избранного"
           }
         },
         "sv" : {
@@ -8450,7 +8450,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Фаворит"
+            "value" : "Избранное"
           }
         },
         "sv" : {
@@ -8551,7 +8551,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Имя Избранное"
+            "value" : "Имя Избранного"
           }
         },
         "sv" : {
@@ -9258,7 +9258,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Находить"
+            "value" : "Найти"
           }
         },
         "sv" : {
@@ -9276,7 +9276,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "знайти"
+            "value" : "Знайти"
           }
         },
         "zh-Hans" : {
@@ -9460,7 +9460,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Принудительная клавиатурная интерактивность (2FA)"
+            "value" : "Принудительная виртуальная клавиатура (2FA)"
           }
         },
         "sv" : {
@@ -9561,7 +9561,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Экспедирование"
+            "value" : "Переадресация"
           }
         },
         "sv" : {
@@ -9662,7 +9662,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Общий"
+            "value" : "Общее"
           }
         },
         "sv" : {
@@ -9763,7 +9763,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Создать"
+            "value" : "Сгенерировать"
           }
         },
         "sv" : {
@@ -11480,7 +11480,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Держите устройство в бодрствующем состоянии"
+            "value" : "Поддерживать устройство включенным"
           }
         },
         "sv" : {
@@ -12490,7 +12490,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Журнальные отчеты "
+            "value" : "Журнал"
           }
         },
         "sv" : {
@@ -14712,7 +14712,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ноты"
+            "value" : "Заметки"
           }
         },
         "sv" : {
@@ -15722,7 +15722,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пассфра"
+            "value" : "Passphrase"
           }
         },
         "sv" : {
@@ -16429,7 +16429,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "В доступе отказано"
+            "value" : "Отказано в доступе"
           }
         },
         "sv" : {
@@ -16833,7 +16833,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "❤️ Помогите мне продолжить WebSSH"
+            "value" : "❤️ Помогите мне развивать WebSSH"
           }
         },
         "sv" : {
@@ -16851,7 +16851,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "❤️ Допоможіть мені продовжити WebSSH"
+            "value" : "❤️ Допоможіть мені розвивати WebSSH"
           }
         },
         "zh-Hans" : {
@@ -17742,7 +17742,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Опустите, чтобы обновить"
+            "value" : "Потяни вниз, для обновления"
           }
         },
         "sv" : {
@@ -17944,7 +17944,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Из-за разрешений этот файл доступен только в режиме только для чтения."
+            "value" : "Из-за разрешений, этот файл доступен только в режиме Только-Чтение."
           }
         },
         "sv" : {
@@ -18146,7 +18146,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Перезагрузить страницу"
+            "value" : "Обновить страницу"
           }
         },
         "sv" : {
@@ -18348,7 +18348,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заменять"
+            "value" : "Заменить"
           }
         },
         "sv" : {
@@ -20469,7 +20469,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Сеансов"
+            "value" : "Сессии"
           }
         },
         "sv" : {
@@ -21176,7 +21176,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Медленный"
+            "value" : "Медленно"
           }
         },
         "sv" : {
@@ -21883,7 +21883,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Оставайтесь на терминале, когда соединение потеряно"
+            "value" : "Оставаться в терминале, после разрыва соединения"
           }
         },
         "sv" : {
@@ -22186,7 +22186,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Успех"
+            "value" : "Успешно"
           }
         },
         "sv" : {
@@ -22489,7 +22489,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вы уверены, что хотите удалить"
+            "value" : "Вы уверены, что хотите удалить?"
           }
         },
         "sv" : {
@@ -26428,7 +26428,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Уменьшение масштаба"
+            "value" : "Уменьшить"
           }
         },
         "sv" : {
