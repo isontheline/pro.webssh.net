@@ -24,6 +24,7 @@
 | Snippets | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Multiple terminals | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Touch ID / Face ID | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| YubiKey OTP NFC | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
