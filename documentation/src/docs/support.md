@@ -33,26 +33,6 @@ title: Support
 
     Have any concern about WebSSH Brain? [Contact me](mailto:team@webssh.net)
 
-??? warning "24.8 - Terrapin Attack - Algorithms Disabled"
-    In order to protect WebSSH users against [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) flaw, we have disabled the following algorithms since WebSSH 24.8 :
-
-    * chacha20-poly1305@openssh.com encryption algorithm
-    * all ETM MAC algorithms
-
-    If you experience any issue with your SSH connections, learn how to [enable ETM MAC algorithms](/documentation/help/SSH/terrapin-attack/#enable-etm-mac-algorithms) again, if you need to.
-
-??? warning "24.6 - Revalidation of all host keys"
-    WebSSH now uses ED25519 - when available - to validate host keys. This means that you will have to revalidate all your host keys. Sorry for the inconvenience.
-
-??? warning "24.0 - Dragon :dragon_face: - Major Release Breaking Change"
-    ** [#202 : Unified server list for SSH and SFTP](https://github.com/isontheline/pro.webssh.net/issues/202) **
-    
-    SSH and SFTP connections are now unified in the same "SERVERS" list. This means that you can now add a new server and use it for both SSH and SFTP connections. This breaking change have some drawbacks though :
-    
-    * If you choose both SSH and SFTP roles on your servers then devices older than iOS 16 won't be able to show them. Workaround : choose only one role per server.
-    * You can have many duplicates in the "All" list as both SSH and SFTP connections are now unified. You can use ["webssh servedit"](/documentation/help/howtos/mashREPL/servedit/) command line inside mashREPL in order to remove the unwanted ones.
-    * It is strongly advised to [backup your data](/documentation/help/howtos/mashREPL/database-backup/) before doing any change to your data.
-
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
 
