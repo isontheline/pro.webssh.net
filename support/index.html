@@ -2734,29 +2734,6 @@
 <p>Read more about <a href="/documentation/help/webssh-brain/">WebSSH Brain</a></p>
 <p>Have any concern about WebSSH Brain? <a href="mailto:team@webssh.net">Contact me</a></p>
 </details>
-<details class="warning">
-<summary>24.8 - Terrapin Attack - Algorithms Disabled</summary>
-<p>In order to protect WebSSH users against <a href="/documentation/help/SSH/terrapin-attack/">Terrapin Attack</a> flaw, we have disabled the following algorithms since WebSSH 24.8 :</p>
-<ul>
-<li>chacha20-poly1305@openssh.com encryption algorithm</li>
-<li>all ETM MAC algorithms</li>
-</ul>
-<p>If you experience any issue with your SSH connections, learn how to <a href="/documentation/help/SSH/terrapin-attack/#enable-etm-mac-algorithms">enable ETM MAC algorithms</a> again, if you need to.</p>
-</details>
-<details class="warning">
-<summary>24.6 - Revalidation of all host keys</summary>
-<p>WebSSH now uses ED25519 - when available - to validate host keys. This means that you will have to revalidate all your host keys. Sorry for the inconvenience.</p>
-</details>
-<details class="warning">
-<summary>24.0 - Dragon <img alt="🐲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f432.svg" title=":dragon_face:" /> - Major Release Breaking Change</summary>
-<p><strong> <a href="https://github.com/isontheline/pro.webssh.net/issues/202">#202 : Unified server list for SSH and SFTP</a> </strong></p>
-<p>SSH and SFTP connections are now unified in the same "SERVERS" list. This means that you can now add a new server and use it for both SSH and SFTP connections. This breaking change have some drawbacks though :</p>
-<ul>
-<li>If you choose both SSH and SFTP roles on your servers then devices older than iOS 16 won't be able to show them. Workaround : choose only one role per server.</li>
-<li>You can have many duplicates in the "All" list as both SSH and SFTP connections are now unified. You can use <a href="/documentation/help/howtos/mashREPL/servedit/">"webssh servedit"</a> command line inside mashREPL in order to remove the unwanted ones.</li>
-<li>It is strongly advised to <a href="/documentation/help/howtos/mashREPL/database-backup/">backup your data</a> before doing any change to your data.</li>
-</ul>
-</details>
 <div class="admonition abstract">
 <p class="admonition-title">All the help you need when you need it</p>
 <p><img align="left" alt="isontheline maintainer of WebSSH" src="https://avatars.githubusercontent.com/u/44212923?v=4" width="130" /></p>
@@ -2776,7 +2753,7 @@ Of course you can <a href="/documentation/becoming-external-tester/">Enroll to B
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2024</span>
       
     
   </small>
