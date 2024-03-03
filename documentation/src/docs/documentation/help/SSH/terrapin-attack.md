@@ -19,6 +19,6 @@ In order to protect WebSSH users against Terrapin Attack flaw, we have disabled 
 If you need to enable ETM MAC algorithms again (eg in case your server only accepts ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :
 
 ```bash
-Host*
+Host *
     #!Enable-HMAC-ETM
 ```
