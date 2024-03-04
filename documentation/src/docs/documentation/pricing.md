@@ -31,6 +31,7 @@
 | iPhoneOS | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | iPadOS | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | macOS | :white_check_mark: | :cross_mark: | :cross_mark: |
+| visionOS<br /><small>(Designed for iPad)</small> | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [WebSSH Brain](/documentation/help/webssh-brain/) | :white_check_mark: | :cross_mark: | :cross_mark: |
 | [Web Browser](/documentation/web-browser/) | :white_check_mark: | :cross_mark: | :cross_mark: |
