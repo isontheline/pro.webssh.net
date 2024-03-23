@@ -1,6 +1,6 @@
 site_url: https://webssh.net
 site_name: WebSSH
-copyright: WebSSH &copy; 2012-2024
+copyright: WebSSH &copy; 2012-2024<br />Like my work? <a href="https://github.com/sponsors/isontheline">Sponsors</a> and <a href="https://www.buymeacoffee.com/isontheline">Coffees</a> are welcome!
 theme:
   name: material
   custom_dir: overrides
@@ -19,6 +19,10 @@ extra:
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/isontheline/pro.webssh.net
+    - icon: fontawesome/solid/heart
+      link: https://github.com/sponsors/isontheline
+    - icon: fontawesome/solid/mug-saucer
+      link: https://www.buymeacoffee.com/isontheline
 plugins:
   - search
   - git-revision-date-localized:
