@@ -13,7 +13,7 @@ title: Support
 
     Have a nice day :sunny:
 
-!!! bug "25 - Sunflower :sunflower:"
+!!! bug "26 - Train :train:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/25/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/26/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:

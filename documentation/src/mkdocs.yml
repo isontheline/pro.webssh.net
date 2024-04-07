@@ -31,6 +31,12 @@ plugins:
       redirect_maps:
         'documentation/changelog/15/15.0.md': 'documentation/changelog/15.md'
         'documentation/pricing-fr.md': 'documentation/pricing.md'
+        'documentation/changelog/15.md': 'documentation/changelog/history/15.md'
+        'documentation/changelog/16.md': 'documentation/changelog/history/16.md'
+        'documentation/changelog/17.md': 'documentation/changelog/history/17.md'
+        'documentation/changelog/18.md': 'documentation/changelog/history/18.md'
+        'documentation/changelog/19.md': 'documentation/changelog/history/19.md'
+        'documentation/changelog/20.md': 'documentation/changelog/history/20.md'
 markdown_extensions:
   - admonition
   - attr_list
