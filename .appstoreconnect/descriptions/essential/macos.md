@@ -7,7 +7,7 @@ Wherever you are it will be useful to you everywhere, all the time!
 ๏ Port Forwarding (Local)
 ๏ Launch a command at connection startup
 ๏ Emulation : XTERM-COLOR256 / XTERM / VT100
-๏ Profil management : background / foreground colors, font size, backspace sequence
+๏ Profil management : themes, background / foreground colors, font size, backspace sequence
 ๏ Keyboard : Virtual or Bluetooth
 ๏ Special keys Esc, Tab, Ctrl, /, :, -, !, |, $, *
 
