@@ -7,7 +7,7 @@ title: VPN-Over-SSH
 VPN-Over-SSH[^1] is a great feature when you need to forward a port and use it on another app outside WebSSH. It's a way to use your own server as a VPN server.
 
 !!! warning "Drawback"
-    One drawback of VPN-Over-SSH is that only one port forwarding connection could be launched at a time.
+    One drawback of VPN-Over-SSH is that only one TUNNEL connection could be launched at a time.
 
 ??? question "Do I need to enable[^1] this feature?"
     If you want to use the forwarded port outside WebSSH => **YES** you need
