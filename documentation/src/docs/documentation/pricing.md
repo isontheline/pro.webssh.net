@@ -16,6 +16,7 @@
 | Unlimited number of connections | :cross_mark: (One) | :white_check_mark: |
 | SSH Client | :white_check_mark: | :white_check_mark: |
 | SFTP Client | :white_check_mark: | :white_check_mark: |
+| TELNET Client[^2] | :white_check_mark: | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
 | Multiple terminals | :white_check_mark: | :white_check_mark: |
@@ -36,3 +37,4 @@
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](mailto:team@webssh.net) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Not available on these countries : China Mainland
+[^2]: TELNET is available since WebSSH 26.1
