@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/known-hosts-manage/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/use-mystic-bbs-telnet-cp437-character-translation/">
       
       
-        <link rel="prev" href="../enabling-verbose-logging/">
+        <link rel="prev" href="../use-deep-linking/">
       
       
-        <link rel="next" href="../launching-multiple-terminals/">
+        <link rel="next" href="../SFTP/bad-interpreter-no-such-file-or-directory/">
       
       <link rel="icon" href="../../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
     
     
       
-        <title>Managing Known Hosts - WebSSH</title>
+        <title>Use Mystic BBS with Telnet CP437 codepage - WebSSH</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#known-hosts" class="md-skip">
+        <a href="#use-mystic-bbs-with-telnet-cp437-codepage" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Managing Known Hosts
+              Use Mystic BBS with Telnet CP437 codepage
             
           </span>
         </div>
@@ -1259,72 +1259,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Managing Known Hosts
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../known-hosts-manage/" class="md-nav__link">
         Managing Known Hosts
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-manage-known-hosts" class="md-nav__link">
-    How to manage known hosts?
-  </a>
-  
-    <nav class="md-nav" aria-label="How to manage known hosts?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deleting-all-known-hosts" class="md-nav__link">
-    Deleting all known hosts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deleting-a-single-known-host" class="md-nav__link">
-    Deleting a single known host
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1418,11 +1357,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Use Mystic BBS with Telnet CP437 codepage
       </a>
+      
     </li>
   
 
@@ -2757,41 +2706,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-manage-known-hosts" class="md-nav__link">
-    How to manage known hosts?
-  </a>
-  
-    <nav class="md-nav" aria-label="How to manage known hosts?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deleting-all-known-hosts" class="md-nav__link">
-    Deleting all known hosts
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deleting-a-single-known-host" class="md-nav__link">
-    Deleting a single known host
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2806,31 +2720,30 @@
 
 
 
-<h1 id="known-hosts">Known Hosts</h1>
-<p>Known hosts are the hosts that you have already connected to. They are stored inside the app database on your device and are used to verify the authenticity of the host you are connecting to. </p>
-<p>If you are connecting to a host for the first time, you will be asked to verify the authenticity of the host. If you are connecting to a host that you have already connected to, you will not be asked to verify the authenticity of the host.</p>
-<p>If you are connecting to a host that you have already connected to, but the host key has changed, you will be asked to verify the authenticity of the host.</p>
-<h2 id="how-to-manage-known-hosts">How to manage known hosts?</h2>
-<p>Yet there is no way to manage known hosts inside WebSSH. You can only delete all known hosts at once or delete a single one.</p>
-<h3 id="deleting-all-known-hosts">Deleting all known hosts</h3>
-<ol>
-<li>Launch WebSSH</li>
-<li>Launch mashREPL</li>
-<li>Execute <code>webssh fingerprint clean all</code></li>
-</ol>
-<h3 id="deleting-a-single-known-host">Deleting a single known host</h3>
-<ol>
-<li>Launch WebSSH</li>
-<li>Launch mashREPL</li>
-<li>Execute <code>webssh fingerprint clean &lt;host&gt;</code></li>
-</ol>
+<h1 id="use-mystic-bbs-with-telnet-cp437-codepage">Use Mystic BBS with Telnet CP437 codepage</h1>
+<p>By default WebSSH uses UTF-8 encoding to display characters. However, some BBS systems like Mystic BBS use the CP437 codepage. This can lead to display issues when connecting to a Mystic BBS system :</p>
+<p><img alt="isontheline maintainer of WebSSH" src="/images/md-content/dogtown-bbs-venice-ca-bad-render.jpg" /></p>
+<h1 id="how-to-fix-it">How to fix it</h1>
+<h2 id="use-the-cp437-remote-character-set">Use the CP437 Remote Character Set</h2>
+<p>Inside your ssh_config file, you need to define a RemoteCharacterSet property in order to use the CP437 codepage. Here is an example of a ssh_config file :</p>
+<div class="highlight"><pre><span></span><code>Host my-mystic-bbs-server-name
+    #!RemoteCharacterSet CP437
+</code></pre></div>
+<h2 id="fix-the-window-size">Fix the window size</h2>
+<p>Most telnet systems like Mystic BBS uses a 80x24 window size. You can define a fixed window size in your ssh_config file :</p>
+<div class="highlight"><pre><span></span><code>Host my-mystic-bbs-server-name
+    #!RemoteCharacterSet CP437
+    #!FixedSize 80x24
+</code></pre></div>
+<p>You will now be able to enjoy your Mystic BBS system with the correct CP437 codepage :
+<img alt="isontheline maintainer of WebSSH" src="/images/md-content/dogtown-bbs-venice-ca-good-render.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2024</span>
       
     
   </small>
