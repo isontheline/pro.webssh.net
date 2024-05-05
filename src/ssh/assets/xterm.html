@@ -38,6 +38,11 @@
         // Platform :
         document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
 
+        // CP437 "hack" :
+        if ('CP437' == terminalSettings.remoteCharacterSet) {
+            document.querySelector('body').classList.add('cp437');
+        }
+
         // Load Fit Addon :
         const fitAddon = new FitAddon.FitAddon();
         if (!terminalSettings.fixedSize) {

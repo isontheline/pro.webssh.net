@@ -26,4 +26,4 @@ Host my-mystic-bbs-server-name
 ```
 
 You will now be able to enjoy your Mystic BBS system with the correct CP437 codepage :
-![isontheline maintainer of WebSSH](/images/md-content/dogtown-bbs-venice-ca-good-render.jpg)
+![isontheline maintainer of WebSSH](/images/md-content/dogtown-bbs-venice-ca-great-render.jpg)

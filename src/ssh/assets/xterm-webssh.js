@@ -402,6 +402,7 @@ const TerminalHelper = {
             cols: 80,
             fixedSize: false,
             handedness: 'right',
+            remoteCharacterSet: 'UTF-8',
         }
 
         if (fragment.fontSize) {
@@ -414,6 +415,10 @@ const TerminalHelper = {
 
         if (fragment.operatingSystem && fragment.operatingSystem == 'macOS') {
             terminalSettings.isMacOS = true;
+        }
+
+        if (fragment.remoteCharacterSet) {
+            terminalSettings.remoteCharacterSet = fragment.remoteCharacterSet;
         }
 
         if (fragment.scrollback) {
