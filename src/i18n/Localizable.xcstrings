@@ -103,7 +103,7 @@
       }
     },
     "A_Password_Is_Required_For_Your_Private_Key" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -150,7 +150,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "사용자의 private key에 비밀번호가 필요합니다."
+            "value" : "사용자의 개인 키를 사용하려면 암호가 필요합니다."
           }
         },
         "pl" : {
@@ -204,6 +204,7 @@
       }
     },
     "About" : {
+      "comment" : "It would be more natural to use \"Information about WebSSH\" or \"App Information\" as \"About\" in Korean.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -251,7 +252,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "소개"
+            "value" : "WebSSH 정보"
           }
         },
         "pl" : {
@@ -305,6 +306,7 @@
       }
     },
     "Active" : {
+      "comment" : "I don't know where this word is used, the translation might vary based on where this word is used. this word could be \"Activated\" or \"Activate\", if translated in English",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -352,7 +354,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "활동적인"
+            "value" : "활성화됨"
           }
         },
         "pl" : {
@@ -406,7 +408,8 @@
       }
     },
     "Add" : {
-      "extractionState" : "migrated",
+      "comment" : "verb to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -453,7 +456,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "추가"
+            "value" : "추가하기"
           }
         },
         "pl" : {
@@ -507,6 +510,7 @@
       }
     },
     "Add_Private_Key" : {
+      "comment" : "verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -554,7 +558,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "개인 키 추가"
+            "value" : "개인 키 추가하기"
           }
         },
         "pl" : {
@@ -655,7 +659,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 폴더를 즐겨찾기에 추가"
+            "value" : "이 폴더를 즐겨찾기에 추가하기"
           }
         },
         "pl" : {
@@ -810,6 +814,7 @@
       }
     },
     "All_Purchases_Unregistered" : {
+      "comment" : "Adding \"하기\" after \"복원\" is more natural in Korean.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -857,7 +862,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "모든 구매항목들이 비활성화되었습니다. 다시 활성화하시려면, \"이전 구매 복원\" 작업을 수행해주세요."
+            "value" : "모든 구매 항목들이 비활성화되었습니다. 다시 활성화하시려면, \"이전 구매 복원하기\" 작업을 수행해 주세요."
           }
         },
         "pl" : {
@@ -911,6 +916,7 @@
       }
     },
     "All_Your_Devices" : {
+      "comment" : "\"단말기\" and \"기기\" refers to same word, \"device\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -958,7 +964,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "모든 단말기에서"
+            "value" : "모든 기기에서"
           }
         },
         "pl" : {
@@ -1012,6 +1018,7 @@
       }
     },
     "All_Your_Devices_Description" : {
+      "comment" : "\"Enjoy WebSSH PRO on all your devices, iPhone / iPad / Mac.\" as \"enjoy purchase\" is not commonly used in korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1059,7 +1066,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "모든 기기에서 구매를 즐기세요: iPhone / iPad / Mac"
+            "value" : "iPhone / iPad / Mac 모든 기기에서 WebSSH PRO를 즐기세요"
           }
         },
         "pl" : {
@@ -1113,7 +1120,8 @@
       }
     },
     "Allow" : {
-      "extractionState" : "migrated",
+      "comment" : "grammar fix : verb to noun",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -1160,7 +1168,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "허용하다"
+            "value" : "허용"
           }
         },
         "pl" : {
@@ -1315,7 +1323,8 @@
       }
     },
     "Are_You_Sure_File_Not_Saved" : {
-      "extractionState" : "migrated",
+      "comment" : "use less-formal word",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -1362,7 +1371,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "아직 저장하지 않으셨습니다.\n저장하지 않고 닫으시겠습니까?"
+            "value" : "아직 저장하지 않으셨습니다.\n저장하지 않고 닫으시겠어요?"
           }
         },
         "pl" : {
@@ -1517,6 +1526,7 @@
       }
     },
     "Awesome_Feature_Enabled" : {
+      "comment" : "When does this string appears? there's no 'it' in translated sentence, so I added \"WebSSH\" as \"it\".",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1618,6 +1628,7 @@
       }
     },
     "Bad_Credentials" : {
+      "comment" : "When does this string used? It might slightly different where it is used.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1665,7 +1676,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "입력하신 정보가 올바르지 않습니다."
+            "value" : "자격 증명이 유효하지 않습니다."
           }
         },
         "pl" : {
@@ -1867,7 +1878,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "잘못된 응답 수신"
+            "value" : "잘못된 응답 수신됨"
           }
         },
         "pl" : {
@@ -1921,6 +1932,7 @@
       }
     },
     "Bad_SSH_Config_File" : {
+      "comment" : "When does this string used? It might slightly different where it is used.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2123,6 +2135,7 @@
       }
     },
     "Brain_Privacy" : {
+      "comment" : "Changed \"your data\" to \"user's data\". the translated word of \"your\", \"귀하\" is not commonly used. this word is often used in docs like formal terms and conditions.\n\"user's\" is more casual, less likely seen as machine-translated word, while keep its meaning",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2170,7 +2183,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH Brain은 개인 정보 보호 및 보안을 우선시합니다. 귀하의 데이터는 WebSSH 서버에 저장되지 않습니다."
+            "value" : "WebSSH Brain은 개인 정보 보호 및 보안을 우선시합니다. 사용자의 데이터는 WebSSH 서버에 저장되지 않습니다."
           }
         },
         "pl" : {
@@ -2224,6 +2237,7 @@
       }
     },
     "Buy" : {
+      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2325,6 +2339,7 @@
       }
     },
     "Buy_Canceled" : {
+      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2527,6 +2542,7 @@
       }
     },
     "Can_Not_Create_File_Because_Already_Exists" : {
+      "comment" : "little touch to make this one more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2574,7 +2590,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "입력하신 \"%@\"는 이미 사용된 이름입니다. 다른 이름을 입력하여 주세요."
+            "value" : "입력하신 \"%@\"는 이미 사용 중인 이름입니다. 다른 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -2729,7 +2745,8 @@
       }
     },
     "CANCEL" : {
-      "extractionState" : "migrated",
+      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -2830,7 +2847,8 @@
       }
     },
     "Changelog" : {
-      "extractionState" : "migrated",
+      "comment" : "used korean word",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -2877,7 +2895,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "변경 로그"
+            "value" : "변경 내역"
           }
         },
         "pl" : {
@@ -2931,6 +2949,7 @@
       }
     },
     "Checking_Hosts_Availability" : {
+      "comment" : "does this message mean that the app is checking hosts availability(like toast message) or a content of button that user can interact?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3032,6 +3051,7 @@
       }
     },
     "Clipboard_Access" : {
+      "comment" : "does this message mean that the app is checking hosts availability(like toast message) or a content of button that user can interact?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3079,7 +3099,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "클립보드 액세스"
+            "value" : "클립보드 접근"
           }
         },
         "pl" : {
@@ -3133,6 +3153,7 @@
       }
     },
     "Clipboard_Write_Access" : {
+      "comment" : "used less-formal words",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3180,7 +3201,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "터미널에서 클립보드에 붙여넣기를 원합니다. 허용합니까?"
+            "value" : "터미널에서 클립보드에 붙여넣기를 원합니다. 허용하시겠어요?"
           }
         },
         "pl" : {
@@ -3234,6 +3255,7 @@
       }
     },
     "Clone" : {
+      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3382,7 +3404,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "연결이 복제됩니다 🎉."
+            "value" : "연결이 복제됩니다🎉"
           }
         },
         "pl" : {
@@ -3436,7 +3458,8 @@
       }
     },
     "Close" : {
-      "extractionState" : "migrated",
+      "comment" : "verb to noun",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -3483,7 +3506,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "닫다"
+            "value" : "닫기"
           }
         },
         "pl" : {
@@ -3537,6 +3560,7 @@
       }
     },
     "Command" : {
+      "comment" : "snippet, or code snippet is usually written as it is, \"snippet\" or \"code snippet\".\nI'll use \"스니펫\", which is transliterated word of \"snippet\" here, as snippet is translated as \"스니펫\" in other strings",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3584,7 +3608,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "단편"
+            "value" : "스니펫"
           }
         },
         "pl" : {
@@ -3739,6 +3763,7 @@
       }
     },
     "Connect" : {
+      "comment" : "this word is verb. does this need to be changed into noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -4143,7 +4168,7 @@
       }
     },
     "Connection" : {
-      "extractionState" : "migrated",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4190,7 +4215,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "커넥션"
+            "value" : "연결"
           }
         },
         "pl" : {
@@ -4345,7 +4370,8 @@
       }
     },
     "Continue" : {
-      "extractionState" : "migrated",
+      "comment" : "changed to noun as this is used in button.",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4392,7 +4418,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "계속하다"
+            "value" : "계속"
           }
         },
         "pl" : {
@@ -4446,6 +4472,7 @@
       }
     },
     "Continue_Anyway" : {
+      "comment" : "does \"ignore and continue\" acceptable?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -4493,7 +4520,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "계속"
+            "value" : "무시하고 계속하기"
           }
         },
         "pl" : {
@@ -4547,7 +4574,8 @@
       }
     },
     "Copy" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4594,7 +4622,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "복사"
+            "value" : "복사하기"
           }
         },
         "pl" : {
@@ -4648,7 +4676,8 @@
       }
     },
     "Copy_All" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4695,7 +4724,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "모두 복사"
+            "value" : "모두 복사하기"
           }
         },
         "pl" : {
@@ -4749,7 +4778,8 @@
       }
     },
     "Copy_Public_Key" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4796,7 +4826,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "공개 키 복사"
+            "value" : "공개 키 복사하기"
           }
         },
         "pl" : {
@@ -4850,7 +4880,8 @@
       }
     },
     "Copy_Screen" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -4897,7 +4928,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "화면 복사"
+            "value" : "화면 복사하기"
           }
         },
         "pl" : {
@@ -4951,6 +4982,7 @@
       }
     },
     "Copy_Selected" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -4998,7 +5030,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "선택 항목 복사"
+            "value" : "선택 항목 복사하기"
           }
         },
         "pl" : {
@@ -5052,6 +5084,7 @@
       }
     },
     "Create_Directory" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -5099,7 +5132,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "폴더 생성"
+            "value" : "폴더 생성하기"
           }
         },
         "pl" : {
@@ -5153,6 +5186,7 @@
       }
     },
     "Create_File" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -5200,7 +5234,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일 생성"
+            "value" : "파일 생성하기"
           }
         },
         "pl" : {
@@ -5254,7 +5288,8 @@
       }
     },
     "Deep_Linking_Ask" : {
-      "extractionState" : "migrated",
+      "comment" : "changed \"you\" to \"user\"\nsame as Brain_Privacy",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -5301,7 +5336,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "귀하(또는 무언가)가 URL에서 연결을 시작하도록 요청했습니다. 확실하지 않은 경우 이 요청을 거부하십시오."
+            "value" : "사용자(또는 무언가)가 URL에서 연결을 시작하도록 요청했습니다. 확실하지 않은 경우 이 요청을 거절하세요."
           }
         },
         "pl" : {
@@ -5557,6 +5592,7 @@
       }
     },
     "Default_Folder_Name" : {
+      "comment" : "same meaning, but short and commonly used word",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -5604,7 +5640,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새로운 폴더 만들기"
+            "value" : "새 폴더 만들기"
           }
         },
         "pl" : {
@@ -5658,7 +5694,8 @@
       }
     },
     "Delete" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -5705,7 +5742,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "삭제"
+            "value" : "삭제하기"
           }
         },
         "pl" : {
@@ -5961,7 +5998,8 @@
       }
     },
     "Deny" : {
-      "extractionState" : "migrated",
+      "comment" : "is this button in allow / deny?",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -6008,7 +6046,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "부인하다"
+            "value" : "거부"
           }
         },
         "pl" : {
@@ -6163,6 +6201,7 @@
       }
     },
     "Directory_Not_Empty_Want_Proceed" : {
+      "comment" : "use term \"folder\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -6210,7 +6249,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "디렉토리가 비어 있지 않습니다. 모든 하위 폴더와 하위 파일을 삭제하시겠습니까?"
+            "value" : "폴더가 비어 있지 않습니다. 하위의 모든 폴더와 파일을 삭제하시겠어요?"
           }
         },
         "pl" : {
@@ -6264,7 +6303,8 @@
       }
     },
     "DISCONNECT" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -6311,7 +6351,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "연결 해제"
+            "value" : "연결 해제하기"
           }
         },
         "pl" : {
@@ -6365,6 +6405,7 @@
       }
     },
     "Disconnect_VPN_Over_SSH_Before_Another" : {
+      "comment" : "VPN-Over-SSH should be used as-it-is",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -6412,7 +6453,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "한 번에 하나의 VPN 오버 SSH 연결을 시작할 수 있습니다."
+            "value" : "한 번에 하나의 VPN-Over-SSH 연결을 시작할 수 있습니다."
           }
         },
         "pl" : {
@@ -6466,6 +6507,7 @@
       }
     },
     "Do_You_Love_WebSSH" : {
+      "comment" : "changed machine-translated-like sentence",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -6513,7 +6555,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH를 좋아합니까?"
+            "value" : "WebSSH가 마음에 드시나요?"
           }
         },
         "pl" : {
@@ -6769,7 +6811,8 @@
       }
     },
     "Edit" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -6816,7 +6859,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "편집"
+            "value" : "편집하기"
           }
         },
         "pl" : {
@@ -7072,6 +7115,7 @@
       }
     },
     "Enable_FaceID" : {
+      "comment" : "proper noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7119,7 +7163,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "얼굴 ID 활성화"
+            "value" : "Face ID 활성화"
           }
         },
         "pl" : {
@@ -7173,6 +7217,7 @@
       }
     },
     "Enable_iCloud" : {
+      "comment" : "proper noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7220,7 +7265,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "아이클라우드 활성화"
+            "value" : "iCloud 활성화"
           }
         },
         "pl" : {
@@ -7274,6 +7319,7 @@
       }
     },
     "Enable_TouchID" : {
+      "comment" : "proper noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7321,7 +7367,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "터치 ID 활성화"
+            "value" : "Touch ID 활성화"
           }
         },
         "pl" : {
@@ -7375,6 +7421,7 @@
       }
     },
     "Enter_Directory_Name" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7422,7 +7469,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "폴더 이름을 입력해주세요."
+            "value" : "폴더 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -7476,6 +7523,7 @@
       }
     },
     "Enter_File_Name" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7523,7 +7571,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일 이름을 입력하세요."
+            "value" : "파일 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -7577,6 +7625,7 @@
       }
     },
     "Enter_Password" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7624,7 +7673,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "비밀번호를 입력해주세요."
+            "value" : "비밀번호를 입력해 주세요."
           }
         },
         "pl" : {
@@ -7678,6 +7727,7 @@
       }
     },
     "Enter_The_Name_Of_The_Favorite" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7725,7 +7775,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "추가할 즐겨찾기의 이름을 입력해주세요."
+            "value" : "즐겨찾기의 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -7779,6 +7829,7 @@
       }
     },
     "Enter_The_New_Name" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -7826,7 +7877,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새 이름을 입력해주세요."
+            "value" : "새 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -7981,6 +8032,7 @@
       }
     },
     "EXECUTING_TITLE" : {
+      "comment" : "grammar fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8028,7 +8080,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "로딩중입니다."
+            "value" : "로딩 중입니다."
           }
         },
         "pl" : {
@@ -8082,6 +8134,7 @@
       }
     },
     "Explain" : {
+      "comment" : "changed verb to noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8129,7 +8182,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "설명하다"
+            "value" : "설명"
           }
         },
         "pl" : {
@@ -8284,6 +8337,7 @@
       }
     },
     "Extension_Not_Recognized" : {
+      "comment" : "changed gerund to verb in the end of the sentence",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8331,7 +8385,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일 확장을 인식할 수 없음"
+            "value" : "파일 확장명을 인식할 수 없습니다."
           }
         },
         "pl" : {
@@ -8385,6 +8439,7 @@
       }
     },
     "Extension_Not_Recognized_Message" : {
+      "comment" : "Fix grammar and make a bit more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8432,7 +8487,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "텍스트파일 같지 않아보입니다.\n그래도 수정하시겠습니까?"
+            "value" : "텍스트 파일로 인식되지 않았습니다.\n그래도 수정하시겠어요?"
           }
         },
         "pl" : {
@@ -8486,6 +8541,7 @@
       }
     },
     "Fast" : {
+      "comment" : "a bit ambiguous word. example needed :(",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -9193,7 +9249,8 @@
       }
     },
     "File_Not_Saved" : {
-      "extractionState" : "migrated",
+      "comment" : "changed gerund to verb",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -9240,7 +9297,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일이 저장되지 않음"
+            "value" : "파일이 저장되지 않았습니다."
           }
         },
         "pl" : {
@@ -9496,7 +9553,8 @@
       }
     },
     "Find" : {
-      "extractionState" : "migrated",
+      "comment" : "changed verb to noun",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -9543,7 +9601,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "찾다"
+            "value" : "찾기"
           }
         },
         "pl" : {
@@ -9698,6 +9756,7 @@
       }
     },
     "Force_Keyboard_Interactive" : {
+      "comment" : "keyboard-interactive is proper noun in ssh, so changed this word from korean to english",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -9745,7 +9804,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "키보드 상호 작용 강제 (2FA)"
+            "value" : "Keyboard Interactive (2FA) 강제 적용"
           }
         },
         "pl" : {
@@ -9799,7 +9858,8 @@
       }
     },
     "Forwardings" : {
-      "extractionState" : "migrated",
+      "comment" : "\"forwarding\" is usually not translated if the word is in the domain of computer related things. used transliteration.",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -9846,7 +9906,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "전달"
+            "value" : "포워딩"
           }
         },
         "pl" : {
@@ -9900,6 +9960,7 @@
       }
     },
     "General" : {
+      "comment" : "changed adjective to noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -9947,7 +10008,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "일반적인"
+            "value" : "일반"
           }
         },
         "pl" : {
@@ -10001,7 +10062,8 @@
       }
     },
     "Generate" : {
-      "extractionState" : "migrated",
+      "comment" : "changed verb to noun",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -10048,7 +10110,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "생성하다"
+            "value" : "생성"
           }
         },
         "pl" : {
@@ -10708,7 +10770,8 @@
       }
     },
     "Host_Is_Required" : {
-      "extractionState" : "migrated",
+      "comment" : "grammar fix",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -10755,7 +10818,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "호스트를 입력해주세요."
+            "value" : "호스트를 입력해 주세요."
           }
         },
         "pl" : {
@@ -10809,6 +10872,7 @@
       }
     },
     "How_To" : {
+      "comment" : "any usage example of this word? the translated one is a bit odd",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -10910,6 +10974,7 @@
       }
     },
     "Icon" : {
+      "comment" : "used transliteration word",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -10957,7 +11022,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "상"
+            "value" : "아이콘"
           }
         },
         "pl" : {
@@ -11011,7 +11076,8 @@
       }
     },
     "Import" : {
-      "extractionState" : "migrated",
+      "comment" : "the original translated one is used in customs. like import or export some material.",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11058,7 +11124,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "수입"
+            "value" : "가져오기"
           }
         },
         "pl" : {
@@ -11213,6 +11279,7 @@
       }
     },
     "Internet_Connection_Seems_Offline" : {
+      "comment" : "the original meaning of changed one is \"Your internet connection is offline.\" this one is more commonly used in korean. or \"internet connection is offline. check your connection\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -11260,7 +11327,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "인터넷 연결이 오프라인 상태인 것 같습니다."
+            "value" : "인터넷 연결이 오프라인 상태입니다."
           }
         },
         "pl" : {
@@ -11415,7 +11482,8 @@
       }
     },
     "Jump" : {
-      "extractionState" : "migrated",
+      "comment" : "unified term \"jump\"",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11462,7 +11530,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "도약"
+            "value" : "이동하기"
           }
         },
         "pl" : {
@@ -11516,7 +11584,8 @@
       }
     },
     "Jump_Bottom" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11563,7 +11632,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "맨 아래로 이동"
+            "value" : "맨 아래로 이동하기"
           }
         },
         "pl" : {
@@ -11617,7 +11686,8 @@
       }
     },
     "Jump_Line" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund.\n\"jump to specific line\" in korean seems to  be more natural",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11664,7 +11734,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "줄로 이동"
+            "value" : "특정 라인으로 이동하기"
           }
         },
         "pl" : {
@@ -11718,7 +11788,8 @@
       }
     },
     "Jump_Top" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -11765,7 +11836,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "맨 위로 이동"
+            "value" : "맨 위로 이동하기"
           }
         },
         "pl" : {
@@ -11819,6 +11890,7 @@
       }
     },
     "Keep_Device_Awake" : {
+      "comment" : "make a bit more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -11866,7 +11938,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "기기를 깨운 상태로 유지하기"
+            "value" : "기기 켜짐 상태 유지하기"
           }
         },
         "pl" : {
@@ -11920,6 +11992,7 @@
       }
     },
     "Keep_Device_Awake_Warning" : {
+      "comment" : "make a bit more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -11967,7 +12040,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "기기를 깨운 상태로 유지하기 기능은 사용자의 배터리를 빠르게 소모하게 하지만, 연결을 유지시켜줍니다."
+            "value" : "기기 켜짐 상태 유지하기 기능은 기기의 배터리를 빠르게 소모하지만, 연결을 유지됩니다."
           }
         },
         "pl" : {
@@ -12122,6 +12195,7 @@
       }
     },
     "Latest_Great_Updates" : {
+      "comment" : "is this kind of notification when a new version releases?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12223,6 +12297,7 @@
       }
     },
     "Launch" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12270,7 +12345,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "시작"
+            "value" : "시작하기"
           }
         },
         "pl" : {
@@ -12425,6 +12500,7 @@
       }
     },
     "Learn" : {
+      "comment" : "changed verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12472,7 +12548,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "배우다"
+            "value" : "배우기"
           }
         },
         "pl" : {
@@ -12627,6 +12703,7 @@
       }
     },
     "Lifetime_Purchase" : {
+      "comment" : "is this a \"lifetime purchase\", not \"purchase lifetime license\"?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12674,7 +12751,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "평생 구매"
+            "value" : "평생 이용권"
           }
         },
         "pl" : {
@@ -12728,6 +12805,7 @@
       }
     },
     "Lifetime_Purchase_Description" : {
+      "comment" : "the word \"it\" in english is \"WebSSH\", right?\ntranslated \"buy it once, enjoy WebSSH forever!\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12775,7 +12853,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "한 번 사면 영원히 즐기세요!"
+            "value" : "한 번 구매하고 평생 WebSSH를 즐기세요!"
           }
         },
         "pl" : {
@@ -13132,6 +13210,7 @@
       }
     },
     "Manually" : {
+      "comment" : "changed gerund to noun",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -13179,7 +13258,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "수동으로"
+            "value" : "수동"
           }
         },
         "pl" : {
@@ -13334,7 +13413,8 @@
       }
     },
     "Missing_Fields" : {
-      "extractionState" : "migrated",
+      "comment" : "\"Missing fields exisits\" into Korean",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -13381,7 +13461,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "입력되지 않은 칸"
+            "value" : "입력되지 않은 필드 존재함"
           }
         },
         "pl" : {
@@ -13738,6 +13818,7 @@
       }
     },
     "Nb_Selected_Items" : {
+      "comment" : "added pad between word and (%d)",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -13785,7 +13866,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "선택됨(%d)"
+            "value" : "선택됨 (%d)"
           }
         },
         "pl" : {
@@ -14445,6 +14526,7 @@
       }
     },
     "No_Product_To_Restore_Message" : {
+      "comment" : "\"have you purchased WebSSH(a product) before? Please contact us\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -14492,7 +14574,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이전에 제품을 구매한 적이 있습니까? 연락주세요."
+            "value" : "이전에 WebSSH를 구매한 적이 있나요? 저희에게 연락해 주세요."
           }
         },
         "pl" : {
@@ -15051,6 +15133,7 @@
       }
     },
     "Not_Found" : {
+      "comment" : "\"Result not found\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -15098,7 +15181,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "찾을 수 없음"
+            "value" : "결과 없음"
           }
         },
         "pl" : {
@@ -15455,6 +15538,7 @@
       }
     },
     "Only_One_DPF_Allowed" : {
+      "comment" : "changed order of words to make natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -15502,7 +15586,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "하나의 동적 포트 포워딩은 한 번에 시작할 수 있습니다."
+            "value" : "한 번에 하나의 동적 포트 포워딩만 시작할 수 있습니다."
           }
         },
         "pl" : {
@@ -15859,7 +15943,8 @@
       }
     },
     "Other_Settings" : {
-      "extractionState" : "migrated",
+      "comment" : "Unified the term \"other\"",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -15906,7 +15991,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "다른 설정"
+            "value" : "기타 설정"
           }
         },
         "pl" : {
@@ -16263,6 +16348,7 @@
       }
     },
     "Pad" : {
+      "comment" : "a bit ambiguous word. example needed :(",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17273,7 +17359,8 @@
       }
     },
     "PKey_Passphrase_Generation" : {
-      "extractionState" : "migrated",
+      "comment" : "make sentence more natural",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -17320,7 +17407,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "개인 키를 보호하기 위해 암호를 입력하십시오. 그렇지 않으면 비워 두십시오. WebSSH가 암호를 저장하도록 하시겠습니까?"
+            "value" : "개인 키를 보호하기 위해 암호를 입력해 주세요. 그렇지 않을 경우에는 비워두세요. WebSSH가 암호를 저장하도록 하시겠어요?"
           }
         },
         "pl" : {
@@ -17374,6 +17461,7 @@
       }
     },
     "Please_Define_Macro_Name_And_Command" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17421,7 +17509,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "매크로 이름과 명령을 정의하십시오"
+            "value" : "매크로 이름과 명령을 정의해 주세요."
           }
         },
         "pl" : {
@@ -17475,6 +17563,7 @@
       }
     },
     "Please_Help_Me_Support_WebSSH" : {
+      "comment" : "used less-formal in the end of sentence\nfull version of WebSSH -> WebSSH Pro in Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17522,7 +17611,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH 정식 버전을 구매하면 SSH / SFTP / TUNNEL 연결을 원하는 만큼 추가할 수 있습니다."
+            "value" : "WebSSH Pro를 구매하면 SSH / SFTP / TUNNEL 연결을 원하는 만큼 추가할 수 있어요."
           }
         },
         "pl" : {
@@ -17576,6 +17665,7 @@
       }
     },
     "Please_Help_Me_Support_WebSSH_Title" : {
+      "comment" : "\"help me continue developing WebSSH\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17623,7 +17713,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "❤️ WebSSH를 계속할 수 있도록 도와주세요"
+            "value" : "❤️ WebSSH를 계속 개발할 수 있도록 도와주세요"
           }
         },
         "pl" : {
@@ -17778,6 +17868,7 @@
       }
     },
     "Port_Forwarding" : {
+      "comment" : "changed to Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17825,7 +17916,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Port Forwarding"
+            "value" : "포트 포워딩"
           }
         },
         "pl" : {
@@ -17879,6 +17970,7 @@
       }
     },
     "Port_Knocking" : {
+      "comment" : "I know this is odd, but people use the term port forwarding as \"포트 포워딩\" in Korean, but rarely use port knocking as \"포트 노킹\" in Korean.\nI think port knocking is not commonly used than port forwarding, so people often use the term port knocking as-it-is.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -17980,6 +18072,7 @@
       }
     },
     "Prefer_IPv6" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -18027,7 +18120,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "IPv6 선호(IPv4를 비활성화할 수 있음)"
+            "value" : "IPv6 우선 사용하기(IPv4가 비활성화될 수 있음)"
           }
         },
         "pl" : {
@@ -18182,7 +18275,8 @@
       }
     },
     "Private_Key" : {
-      "extractionState" : "migrated",
+      "comment" : "translated word to Korean",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -18229,7 +18323,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Private key"
+            "value" : "개인 키"
           }
         },
         "pl" : {
@@ -18384,6 +18478,7 @@
       }
     },
     "Pro_Upgrade" : {
+      "comment" : "fix grammar error",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -18431,7 +18526,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro 로 업그레이드"
+            "value" : "Pro로 업그레이드"
           }
         },
         "pl" : {
@@ -18788,6 +18883,7 @@
       }
     },
     "Pull_Down_To_Refresh" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -18835,7 +18931,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "아래로 끌어당겨 새로고침"
+            "value" : "아래로 끌어당겨서 새로고침하기"
           }
         },
         "pl" : {
@@ -18889,6 +18985,7 @@
       }
     },
     "Purchase_Required_Want_MoreInformations" : {
+      "comment" : "\"In order to use this functionality, a purcahse for WebSSH Pro is required. Do you want to find more information about WebSSH Pro?\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -18936,7 +19033,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 기능을 사용하기 위해서는 구매하셔야 합니다. 이 기능을 사용하시기 위해 필요한 구매에 대해 조금 더 알아보시겠습니까?"
+            "value" : "이 기능을 사용하려면 WebSSH Pro를 구매해야 합니다. WebSSH Pro 구매에 대해 조금 더 알아보고 싶으신가요?"
           }
         },
         "pl" : {
@@ -18990,6 +19087,7 @@
       }
     },
     "Read_Only_File_Warning" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19037,7 +19135,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "권한으로 인해 이 파일은 읽기 전용 모드에서만 사용할 수 있습니다."
+            "value" : "권한 설정으로 인해 이 파일은 읽기 전용으로만 이용 가능합니다."
           }
         },
         "pl" : {
@@ -19091,6 +19189,7 @@
       }
     },
     "RECONNECT" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19192,7 +19291,8 @@
       }
     },
     "Reload_Page" : {
-      "extractionState" : "migrated",
+      "comment" : "is this one used as verb or noun?",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -19293,6 +19393,7 @@
       }
     },
     "Rename" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19394,7 +19495,8 @@
       }
     },
     "Replace" : {
-      "extractionState" : "migrated",
+      "comment" : "verb to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -19441,7 +19543,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "바꾸다"
+            "value" : "바꾸기"
           }
         },
         "pl" : {
@@ -19495,7 +19597,8 @@
       }
     },
     "Replace_All" : {
-      "extractionState" : "migrated",
+      "comment" : "verb to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -19542,7 +19645,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "모두 다 바꿔"
+            "value" : "모두 바꾸기"
           }
         },
         "pl" : {
@@ -19596,7 +19699,8 @@
       }
     },
     "Restart" : {
-      "extractionState" : "migrated",
+      "comment" : "is this one used as verb or noun?",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -19643,7 +19747,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "다시 시작할"
+            "value" : "재시작"
           }
         },
         "pl" : {
@@ -19845,7 +19949,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이전 구매내역 복원"
+            "value" : "이전 구매내역 복원하기"
           }
         },
         "pl" : {
@@ -19899,6 +20003,7 @@
       }
     },
     "Resume" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20000,6 +20105,7 @@
       }
     },
     "Retry" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20047,7 +20153,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "다시 시도하세요"
+            "value" : "재시도"
           }
         },
         "pl" : {
@@ -20202,7 +20308,8 @@
       }
     },
     "Save" : {
-      "extractionState" : "migrated",
+      "comment" : "changed noun to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -20249,7 +20356,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "저장"
+            "value" : "저장하기"
           }
         },
         "pl" : {
@@ -20303,6 +20410,7 @@
       }
     },
     "Saved_Commands" : {
+      "comment" : "transliterated",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20350,7 +20458,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "짧은 발췌"
+            "value" : "스니펫"
           }
         },
         "pl" : {
@@ -20404,7 +20512,8 @@
       }
     },
     "Search" : {
-      "extractionState" : "migrated",
+      "comment" : "verb to gerund",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -20451,7 +20560,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "검색"
+            "value" : "검색하기"
           }
         },
         "pl" : {
@@ -20505,6 +20614,7 @@
       }
     },
     "Search_Connection" : {
+      "comment" : "verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20552,7 +20662,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "연결 검색"
+            "value" : "연결 검색하기"
           }
         },
         "pl" : {
@@ -20606,6 +20716,7 @@
       }
     },
     "Search_Or_Connect" : {
+      "comment" : "verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20653,7 +20764,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "검색 또는 연결"
+            "value" : "검색 또는 연결하기"
           }
         },
         "pl" : {
@@ -21717,6 +21828,7 @@
       }
     },
     "Share" : {
+      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -21818,6 +21930,7 @@
       }
     },
     "Show_Hidden_Files" : {
+      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -21865,7 +21978,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "숨겨진 파일 표시"
+            "value" : "숨겨진 파일 표시하기"
           }
         },
         "pl" : {
@@ -21919,6 +22032,7 @@
       }
     },
     "Show_Password" : {
+      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -21966,7 +22080,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "비밀번호 표시"
+            "value" : "비밀번호 표시하기"
           }
         },
         "pl" : {
@@ -22020,7 +22134,8 @@
       }
     },
     "Show_Scrollback_Buffer" : {
-      "extractionState" : "migrated",
+      "comment" : "is this one used as gerund or noun?",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -22121,6 +22236,7 @@
       }
     },
     "Show_Virtual_Keys_Above_Keyboard" : {
+      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22168,7 +22284,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "키보드 위에 가상 키 표시"
+            "value" : "키보드 위에 가상 키 표시하기"
           }
         },
         "pl" : {
@@ -22222,6 +22338,7 @@
       }
     },
     "Slow" : {
+      "comment" : "a bit ambiguous word. example needed :(",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22828,6 +22945,7 @@
       }
     },
     "Start" : {
+      "comment" : "verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22875,7 +22993,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "시작"
+            "value" : "시작하기"
           }
         },
         "pl" : {
@@ -22929,6 +23047,7 @@
       }
     },
     "Stay_On_Terminal_When_Connection_Lost" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22976,7 +23095,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "연결이 끊겼을 때 터미널에 머물기"
+            "value" : "연결이 끊겼을 때 터미널에 머무르기"
           }
         },
         "pl" : {
@@ -23030,6 +23149,7 @@
       }
     },
     "Stick" : {
+      "comment" : "a bit ambiguous word. example needed :(",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23131,7 +23251,8 @@
       }
     },
     "Stop" : {
-      "extractionState" : "migrated",
+      "comment" : "a bit ambiguous word. example needed :(",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -23178,7 +23299,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "멈춤"
+            "value" : "종료"
           }
         },
         "pl" : {
@@ -23333,6 +23454,7 @@
       }
     },
     "Suggest" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23380,7 +23502,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "제안하다"
+            "value" : "제안"
           }
         },
         "pl" : {
@@ -23434,7 +23556,8 @@
       }
     },
     "Sure_To_Continue" : {
-      "extractionState" : "migrated",
+      "comment" : "used less-formal in the end of sentence",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -23481,7 +23604,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "계속하시겠습니까?"
+            "value" : "계속하시겠어요?"
           }
         },
         "pl" : {
@@ -23535,7 +23658,8 @@
       }
     },
     "Sure_To_Delete_XYZ" : {
-      "extractionState" : "migrated",
+      "comment" : "used less-formal in the end of sentence",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -23582,7 +23706,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정말 %@를 삭제하시겠습니까?"
+            "value" : "정말 %@를 삭제하시겠어요?"
           }
         },
         "pl" : {
@@ -23737,6 +23861,7 @@
       }
     },
     "Tap_Plus_Button_To_Add_Connection" : {
+      "comment" : "used less-formal in the end of sentence",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23784,7 +23909,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "[+] 버튼을 탭하여 연결을 추가하십시오."
+            "value" : "[+] 버튼을 탭하여 연결을 추가하세요."
           }
         },
         "pl" : {
@@ -23838,6 +23963,7 @@
       }
     },
     "Tap_To_Add_Snippet" : {
+      "comment" : "used less-formal in the end of sentence",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23885,7 +24011,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "[+]를 탭하여 스니펫을 추가하십시오"
+            "value" : "[+]를 탭하여 스니펫을 추가하세요."
           }
         },
         "pl" : {
@@ -23939,6 +24065,7 @@
       }
     },
     "texterify_timestamp" : {
+      "comment" : "Korean Time format is \"YYYY-MM-DD HH:mm:ss\", but not important for those who use ssh ;)",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24040,6 +24167,7 @@
       }
     },
     "Thank_You_For_Your_Purchase" : {
+      "comment" : "grammar error fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24087,7 +24215,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "구매해주셔서 감사합니다!"
+            "value" : "구매해 주셔서 감사합니다!"
           }
         },
         "pl" : {
@@ -24545,6 +24673,7 @@
       }
     },
     "Touch_Mode_Scroll" : {
+      "comment" : "changed order of words",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24592,7 +24721,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "스크롤 콘텐츠"
+            "value" : "콘텐츠 스크롤"
           }
         },
         "pl" : {
@@ -24747,6 +24876,7 @@
       }
     },
     "Transfers" : {
+      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24949,6 +25079,7 @@
       }
     },
     "Unable_To_Retrieve_File_Perhaps_Permissions" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24996,7 +25127,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일을 검색할 수 없습니다.\n권한을 확인하세요."
+            "value" : "파일을 검색할 수 없습니다.\n권한을 확인해 주세요."
           }
         },
         "pl" : {
@@ -25097,7 +25228,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DNS 서버에서 IP 주소를 검색할 수 없습니다"
+            "value" : "DNS 서버에서 IP 주소를 검색할 수 없습니다."
           }
         },
         "pl" : {
@@ -25151,7 +25282,8 @@
       }
     },
     "Unknown_PKEY_Format" : {
-      "extractionState" : "migrated",
+      "comment" : "transliterated word \"parse\"",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -25198,7 +25330,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "개인 키를 구문 분석할 수 없습니다."
+            "value" : "개인 키를 파싱할 수 없습니다."
           }
         },
         "pl" : {
@@ -25252,6 +25384,7 @@
       }
     },
     "Unlimited_Connections" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -25299,7 +25432,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "무제한 연결"
+            "value" : "연결 제한 없음"
           }
         },
         "pl" : {
@@ -25353,6 +25486,7 @@
       }
     },
     "Unlimited_Connections_Description" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -25400,7 +25534,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "원하는 만큼 연결을 추가하십시오. 어떠한 제한도 없습니다 "
+            "value" : "제한 없이 원하는 만큼 연결을 추가하세요."
           }
         },
         "pl" : {
@@ -25656,6 +25790,7 @@
       }
     },
     "Updated_Often" : {
+      "comment" : "changed passive to active sentence format",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -25703,7 +25838,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH는 매월 여러 번 업데이트되어 항상 즐길 수 있도록 보장됩니다 ❤️"
+            "value" : "WebSSH는 매월 여러 번 업데이트되어 항상 즐기실 수 있도록 보장합니다 ❤️"
           }
         },
         "pl" : {
@@ -25858,6 +25993,7 @@
       }
     },
     "Upgrade_WebSSH_To_Pro_Version" : {
+      "comment" : "grammar error fix",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -25905,7 +26041,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH Pro Version 으로 업그레이드"
+            "value" : "WebSSH Pro Version으로 업그레이드"
           }
         },
         "pl" : {
@@ -26060,6 +26196,7 @@
       }
     },
     "Upload_File" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -26107,7 +26244,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일 업로드"
+            "value" : "파일 업로드하기"
           }
         },
         "pl" : {
@@ -26161,6 +26298,7 @@
       }
     },
     "Use_As_Default_Path" : {
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -26208,7 +26346,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "기본 경로로 사용"
+            "value" : "기본 경로로 사용하기"
           }
         },
         "pl" : {
@@ -26262,6 +26400,7 @@
       }
     },
     "User" : {
+      "comment" : "\"username\" in korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -26309,7 +26448,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "유저명"
+            "value" : "사용자 이름"
           }
         },
         "pl" : {
@@ -26363,7 +26502,8 @@
       }
     },
     "User_Is_Required" : {
-      "extractionState" : "migrated",
+      "comment" : "\"username\" in korean\ngrammar error fix",
+      "extractionState" : "manual",
       "localizations" : {
         "da" : {
           "stringUnit" : {
@@ -26410,7 +26550,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "유저명을 입력해주세요."
+            "value" : "사용자 이름을 입력해 주세요."
           }
         },
         "pl" : {
@@ -27070,6 +27210,7 @@
       }
     },
     "WebSSH_Brain_Explain_Introduction" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -27117,7 +27258,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "안녕하세요. 저는 WebSSH Brain이고 여러 오류 코드, 명령어 의미 및 다른 컴퓨터 관련 문장에 대해 설명하려고 노력하겠습니다. 보내주시면 감사하겠습니다."
+            "value" : "안녕하세요, 저는 WebSSH Brain입니다. 제게 오류 코드, 명령어의 의미나 컴퓨터 관련 문장을 전달해 주시면 관련 내용에 대해 설명해 드릴게요."
           }
         },
         "pl" : {
@@ -27171,6 +27312,7 @@
       }
     },
     "WebSSH_Brain_Never_Trust_Always_Consider_Checking" : {
+      "comment" : "translated \"Never assert WebSSH Brain gives you answers. Recommend re-check all informations given by WebSSH.\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -27218,7 +27360,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "WebSSH Brain 응답에 절대로 믿지 마십시오. 모든 정보를 확인하는 것을 고려하십시오."
+            "value" : "WebSSH Brain 응답이 무조건 정답이라고 확신하지 말아주세요. WebSSH가 제공하는 모든 정보를 재확인하는 것을 권장합니다."
           }
         },
         "pl" : {
@@ -27272,6 +27414,7 @@
       }
     },
     "WebSSH_Brain_Snippet_Introduction" : {
+      "comment" : "make sentence more natural",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -27319,7 +27462,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "간단한 지시를 주시면 최상의 스니펫을 생성하겠습니다."
+            "value" : "간단한 지시문을 작성해 주시면 최상의 스니펫을 생성해 드릴게요."
           }
         },
         "pl" : {
