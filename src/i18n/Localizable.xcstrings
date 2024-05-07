@@ -3049,7 +3049,7 @@
       }
     },
     "Clipboard_Access" : {
-      "comment" : "does this message mean that the app is checking clipboard access or a content of button that user can interact?",
+      "comment" : "changed to \"Clipboard access permission\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3097,7 +3097,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "클립보드 접근"
+            "value" : "클립보드 접근 권한"
           }
         },
         "pl" : {
@@ -23444,7 +23444,7 @@
       }
     },
     "Suggest" : {
-      "comment" : "is this an action invoked by user? for example, \"suggest\" to somebody. or is this a sort of suggestion given by WebSSH?  \nthe former would use gerund, and noun for the latter.",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23492,7 +23492,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "제안"
+            "value" : "제안하기"
           }
         },
         "pl" : {
