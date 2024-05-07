@@ -306,7 +306,7 @@
       }
     },
     "Active" : {
-      "comment" : "I don't know where this word is used, the translation might vary based on where this word is used. this word could be \"Activated\" or \"Activate\", if translated in English",
+      "comment" : "changed to \"Activated\" in English",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1526,7 +1526,7 @@
       }
     },
     "Awesome_Feature_Enabled" : {
-      "comment" : "When does this string appears? there's no 'it' in translated sentence, so I added \"WebSSH\" as \"it\".",
+      "comment" : "deprecated",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1628,7 +1628,6 @@
       }
     },
     "Bad_Credentials" : {
-      "comment" : "When does this string used? It might slightly different where it is used.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1932,7 +1931,7 @@
       }
     },
     "Bad_SSH_Config_File" : {
-      "comment" : "When does this string used? It might slightly different where it is used.",
+      "comment" : "Changed to \"Bad SSH Config File format\" into Korean",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -1980,7 +1979,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "잘못된 SSH 구성 파일"
+            "value" : "SSH 설정 파일 형식이 올바르지 않습니다."
           }
         },
         "pl" : {
@@ -2237,7 +2236,7 @@
       }
     },
     "Buy" : {
-      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
+      "comment" : "Changed to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2285,7 +2284,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "구매"
+            "value" : "구매하기"
           }
         },
         "pl" : {
@@ -2339,7 +2338,6 @@
       }
     },
     "Buy_Canceled" : {
-      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2745,7 +2743,7 @@
       }
     },
     "CANCEL" : {
-      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
+      "comment" : "I'll leave this one as-it is because I think this word is used in popup message (e.g. OK / Cancel)",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -2949,7 +2947,7 @@
       }
     },
     "Checking_Hosts_Availability" : {
-      "comment" : "does this message mean that the app is checking hosts availability(like toast message) or a content of button that user can interact?",
+      "comment" : "Deprecated",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3051,7 +3049,7 @@
       }
     },
     "Clipboard_Access" : {
-      "comment" : "does this message mean that the app is checking hosts availability(like toast message) or a content of button that user can interact?",
+      "comment" : "does this message mean that the app is checking clipboard access or a content of button that user can interact?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3255,7 +3253,7 @@
       }
     },
     "Clone" : {
-      "comment" : "If your intension of this word is verb, i'll edit this one. the translated one is noun.",
+      "comment" : "changed verb to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -3303,7 +3301,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "복제"
+            "value" : "복제하기"
           }
         },
         "pl" : {
@@ -3763,7 +3761,6 @@
       }
     },
     "Connect" : {
-      "comment" : "this word is verb. does this need to be changed into noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -5998,7 +5995,6 @@
       }
     },
     "Deny" : {
-      "comment" : "is this button in allow / deny?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8541,7 +8537,7 @@
       }
     },
     "Fast" : {
-      "comment" : "a bit ambiguous word. example needed :(",
+      "comment" : "changed noun to adverbs",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -8589,7 +8585,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "빠른"
+            "value" : "빠르게"
           }
         },
         "pl" : {
@@ -10872,7 +10868,7 @@
       }
     },
     "How_To" : {
-      "comment" : "any usage example of this word? the translated one is a bit odd",
+      "comment" : "changed to noun expression of \"how to use\", as it is a bit hard to squeeze \"How To use WebSSH Brain?\" into few characters",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -10920,7 +10916,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "어떻게?"
+            "value" : "사용 방법"
           }
         },
         "pl" : {
@@ -12195,7 +12191,7 @@
       }
     },
     "Latest_Great_Updates" : {
-      "comment" : "is this kind of notification when a new version releases?",
+      "comment" : "changed order and word a bit. \"Awesome Latest Updates\". \"Great\" and \"Awesome\" is slightly different in English, but phrase like this, I think in Korean, \"Awesome\" or \"Cool\" works better",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -12243,7 +12239,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "최신 및 훌륭한 업데이트"
+            "value" : "멋진 최신 업데이트"
           }
         },
         "pl" : {
@@ -12703,7 +12699,7 @@
       }
     },
     "Lifetime_Purchase" : {
-      "comment" : "is this a \"lifetime purchase\", not \"purchase lifetime license\"?",
+      "comment" : "\"you can use it for your lifetime\" in Korean. gogole translator says, \"lifetime pass\".",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -16348,7 +16344,7 @@
       }
     },
     "Pad" : {
-      "comment" : "a bit ambiguous word. example needed :(",
+      "comment" : "At this time, I'll use transliterated one. because the meaning of original one was \"red stamping ink\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -16396,7 +16392,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "인주"
+            "value" : "패드"
           }
         },
         "pl" : {
@@ -19189,7 +19185,7 @@
       }
     },
     "RECONNECT" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19237,7 +19233,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "재연결"
+            "value" : "다시 연결하기"
           }
         },
         "pl" : {
@@ -19291,7 +19287,6 @@
       }
     },
     "Reload_Page" : {
-      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19393,7 +19388,7 @@
       }
     },
     "Rename" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -19441,7 +19436,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이름 변경"
+            "value" : "이름 바꾸기"
           }
         },
         "pl" : {
@@ -19699,7 +19694,6 @@
       }
     },
     "Restart" : {
-      "comment" : "is this one used as verb or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20003,7 +19997,7 @@
       }
     },
     "Resume" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20051,7 +20045,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "작업 재개"
+            "value" : "작업 재개하기"
           }
         },
         "pl" : {
@@ -20105,7 +20099,7 @@
       }
     },
     "Retry" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -20153,7 +20147,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "재시도"
+            "value" : "다시 시도하기"
           }
         },
         "pl" : {
@@ -21828,7 +21822,7 @@
       }
     },
     "Share" : {
-      "comment" : "is this one used as gerund or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -21876,7 +21870,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "공유"
+            "value" : "공유하기"
           }
         },
         "pl" : {
@@ -21930,7 +21924,6 @@
       }
     },
     "Show_Hidden_Files" : {
-      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22032,7 +22025,6 @@
       }
     },
     "Show_Password" : {
-      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22134,7 +22126,6 @@
       }
     },
     "Show_Scrollback_Buffer" : {
-      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22182,7 +22173,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "스크롤백 버퍼 표시"
+            "value" : "스크롤백 버퍼 표시하기"
           }
         },
         "pl" : {
@@ -22236,7 +22227,6 @@
       }
     },
     "Show_Virtual_Keys_Above_Keyboard" : {
-      "comment" : "is this one used as gerund or noun?",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22338,7 +22328,7 @@
       }
     },
     "Slow" : {
-      "comment" : "a bit ambiguous word. example needed :(",
+      "comment" : "changed noun to adverbs",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -22386,7 +22376,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "느린"
+            "value" : "느리게"
           }
         },
         "pl" : {
@@ -23149,7 +23139,7 @@
       }
     },
     "Stick" : {
-      "comment" : "a bit ambiguous word. example needed :(",
+      "comment" : "transliterated \"stick\"",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23197,7 +23187,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "막대"
+            "value" : "스틱"
           }
         },
         "pl" : {
@@ -23251,7 +23241,7 @@
       }
     },
     "Stop" : {
-      "comment" : "a bit ambiguous word. example needed :(",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -23299,7 +23289,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "종료"
+            "value" : "종료하기"
           }
         },
         "pl" : {
@@ -23454,7 +23444,7 @@
       }
     },
     "Suggest" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "is this an action invoked by user? for example, \"suggest\" to somebody. or is this a sort of suggestion given by WebSSH?  \nthe former would use gerund, and noun for the latter.",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24876,7 +24866,7 @@
       }
     },
     "Transfers" : {
-      "comment" : "is this one used as verb or noun?",
+      "comment" : "changed noun to gerund",
       "extractionState" : "manual",
       "localizations" : {
         "da" : {
@@ -24924,7 +24914,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "전송"
+            "value" : "전송됨"
           }
         },
         "pl" : {
