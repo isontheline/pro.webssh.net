@@ -11,6 +11,7 @@ Translations are available [here](https://github.com/isontheline/pro.webssh.net/
     * MiKillCrafter
 
 === "Korean"
+    * 강민재 ([phoi5675](https://github.com/phoi5675))
     * Sung Gu, Ji
 
 === "Simplified Chinese"
