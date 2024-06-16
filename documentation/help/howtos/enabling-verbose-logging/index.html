@@ -1281,16 +1281,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ios" class="md-nav__link">
-    iOS
+  <a href="#inside-webssh" class="md-nav__link">
+    Inside WebSSH
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#file-system-useful-for-crashes" class="md-nav__link">
+    File System (useful for crashes)
+  </a>
+  
+    <nav class="md-nav" aria-label="File System (useful for crashes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" class="md-nav__link">
     macOS
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2765,16 +2785,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ios" class="md-nav__link">
-    iOS
+  <a href="#inside-webssh" class="md-nav__link">
+    Inside WebSSH
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#file-system-useful-for-crashes" class="md-nav__link">
+    File System (useful for crashes)
+  </a>
+  
+    <nav class="md-nav" aria-label="File System (useful for crashes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#macos" class="md-nav__link">
     macOS
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2795,8 +2835,21 @@
 
 
 <h1 id="how-to-enable-verbose-logging">How to enable verbose logging?</h1>
-<p>If you need to debug an error (even crash) you will need to enable file verbose logging.</p>
-<h2 id="ios">iOS</h2>
+<p>Verbose logging is disabled by default but could be useful to debug some issues you may encounter.
+There are two ways to access the logs:</p>
+<ol>
+<li>Inside WebSSH</li>
+<li>In the file system (useful for crashes)</li>
+</ol>
+<h2 id="inside-webssh">Inside WebSSH</h2>
+<ol>
+<li>Launch WebSSH</li>
+<li>Go to Settings menu (gear icon top left)</li>
+<li>Choose Logs entry menu</li>
+<li>Choose "debug" in the level contextual menu</li>
+</ol>
+<h2 id="file-system-useful-for-crashes">File System (useful for crashes)</h2>
+<h3 id="ios">iOS</h3>
 <ol>
 <li>iOS Settings</li>
 <li>WebSSH</li>
@@ -2806,7 +2859,7 @@
 <li>Reproduce your action</li>
 <li>Find the log files inside iOS &gt; Files &gt; WebSSH</li>
 </ol>
-<h2 id="macos">macOS</h2>
+<h3 id="macos">macOS</h3>
 <ol>
 <li>Launch WebSSH</li>
 <li>WebSSH menu (top bar)</li>
@@ -2825,7 +2878,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 16, 2024</span>
       
     
   </small>
