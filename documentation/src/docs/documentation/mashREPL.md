@@ -1,8 +1,6 @@
 # mashREPL
-!!! info "What's mashREPL? And why this name?"
+!!! info "What's mashREPL?"
     It's a small **R**ead **E**val **P**rint **L**oop that allow you to run *local* commands inside your iOS and iPadOS device!
-
-    **MASH** stands for : **M**engus **A**rnaud **SH**ell
 
 ## Available commands
 | Command    | Since | Comments |
