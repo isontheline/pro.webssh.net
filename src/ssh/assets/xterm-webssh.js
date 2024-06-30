@@ -427,6 +427,7 @@ const TerminalHelper = {
 
         if (fragment.fontFamily) {
             terminalSettings.fontFamily = fragment.fontFamily;
+            TerminalHelper.loadFont(terminalSettings.fontFamily);
         }
 
         if (fragment.textSelectionStrategy && fragment.textSelectionStrategy == 'clipboard') {
@@ -501,6 +502,20 @@ const TerminalHelper = {
             cols: terminalSettings.cols,
             macOptionClickForcesSelection: true,
         };
+    },
+
+    loadFont: function (fontFamily) {
+        var fontStyle = document.createElement('style');
+        fontStyle.appendChild(document.createTextNode("\
+        @font-face {\
+            font-family: " + fontFamily + ";\
+            src: url('font://webssh/" + fontFamily + ".woff2') format('woff2');\
+            font-weight: normal;\
+            font-style: normal;\
+            font-display: swap;\
+        }\
+        "));
+        document.head.appendChild(fontStyle);
     },
 
     onBufferChange: function (buffer) {
