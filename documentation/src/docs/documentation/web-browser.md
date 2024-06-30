@@ -14,4 +14,4 @@ This feature is still in progress and will be enhanced in the future. All [feedb
 3. Open the WebSSH embedded Web Browser
 4. Use the navigation address bar to access your websites through your SSH server
 
-[^1]: Web Browser is NOT available on eWebSSH and WebSSH::o versions.
+[^1]: Requires at least iOS 17 or macOS 14

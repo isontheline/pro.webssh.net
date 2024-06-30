@@ -18,12 +18,10 @@ VPN-Over-SSH[^1] is a great feature when you need to forward a port and use it o
     * VNC / RDP
     * And all other apps you want to use with the forwarded port
 
-??? question "How to enable[^1] VPN-Over-SSH when I already need a VPN connection?"
+??? question "How to enable VPN-Over-SSH when I already need a VPN connection?"
     This is another drawback of VPN-Over-SSH. You can't use it if you already have a VPN connection enabled. Sorry.
 
 ??? question "Why WebSSH is requesting to add a VPN configuration to my device?"
     Because VPN-Over-SSH is a VPN connection :) It's a way to use your own server as a VPN server.
     
     WebSSH will never forward your data to any external foreign server. Your data will never leave your iDevice except to your own SSH server!
-
-[^1]: VPN-Over-SSH is NOT available on eWebSSH and WebSSH::o versions.

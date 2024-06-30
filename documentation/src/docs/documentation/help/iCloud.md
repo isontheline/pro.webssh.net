@@ -10,7 +10,7 @@ By default your data are not synced with iCloud. To enable it, follow these step
 
 1. Launch WebSSH
 2. Go to Settings :gear:
-3. Check "Enable iCloud" [^1][^2]
+3. Check "Enable iCloud" [^1]
 
 !!! warning "iCloud as Backup"
     iCloud shouldn't be used as a backup!
@@ -34,4 +34,3 @@ By default your data are not synced with iCloud. To enable it, follow these step
     
 
 [^1]: In order to use this functionality, you must upgrade WebSSH to 14.15
-[^1]: Available on WebSSH and eWebSSH but NOT available on WebSSH::o

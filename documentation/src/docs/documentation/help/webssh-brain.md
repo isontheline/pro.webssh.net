@@ -48,5 +48,4 @@ Running WebSSH Brain is costly as it requires a lot of online computing resource
 During the beta period, WebSSH Brain is free to use with fair use policy.
 After that, it would be available as a paid subscription or at least only available for WebSSH PRO users.
 
-[^1]: WebSSH Brain requires iOS 17 or macOS 14
-[^2]: WebSSH Brain is NOT available on eWebSSH and WebSSH::o versions.
+[^1]: Requires at least iOS 17 or macOS 14
