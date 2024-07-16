@@ -13,7 +13,7 @@ There are two ways to access the logs:
 1. Launch WebSSH
 2. Go to Settings menu (gear icon top left)
 3. Choose Logs entry menu
-4. Choose "debug" in the level contextual menu
+4. Choose "verbose" in the level contextual menu
 
 ## File System (useful for crashes)
 ### iOS
