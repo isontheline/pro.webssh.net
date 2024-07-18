@@ -22,7 +22,7 @@ title: Port Knocking
 !!! example "Port Knocking Examples"
     * **1985:TCP** will knock your server on the TCP port 1985
     * **1985:TCP,2020:TCP** will knock your server on TCP port 1985 then 2020 (with a default sleep of 100ms)
-    * **1984:TCP:200,1985:UDP:300,2014:TCP:200,2016:UDP:500** will knock on TCP port 1984 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 2014 and will sleep 200 ms, then will knock on UDP port 2016 and will sleep 500 ms.
+    * **1789:TCP:200,1985:UDP:300,1492:TCP:200,2005:UDP:500** will knock on TCP port 1789 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 1492 and will sleep 200 ms, then will knock on UDP port 2005 and will sleep 500 ms.
 
 ## Examples of server side implementation by using knockd
 ### Debian / Ubuntu : /etc/knockd.conf
@@ -31,7 +31,7 @@ title: Port Knocking
         UseSyslog
 
 [SSH]
-      sequence    = 1984,1985,2014,2016
+      sequence    = 1789,1985,1492,2005
       seq_timeout = 10
       command     = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
       tcpflags    = syn
@@ -39,7 +39,7 @@ title: Port Knocking
       stop_command  = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
 ```
 
-* On this example, we use the **iptables** command to open the port **22** on the server after you have knocked the right sequence : **1984,1985,2014,2016**
+* On this example, we use the **iptables** command to open the port **22** on the server after you have knocked the right sequence : **1789,1985,1492,2005**
 * After the sequence is done, the port **22** is opened for **10** seconds and then closed again
 
 ### CentOS / RHEL / Fedora / AlmaLinux / RockyLinux : /etc/knockd.conf
@@ -48,7 +48,7 @@ title: Port Knocking
         UseSyslog
 
 [SSH]
-      sequence      = 1984,1985,2014,2016
+      sequence      = 1789,1985,1492,2005
       seq_timeout   = 10
       start_command = /bin/firewall-cmd --zone=public --add-rich-rule 'rule family="ipv4" source address="%IP%" port protocol="tcp" port="22" accept'
       tcpflags      = syn
@@ -56,5 +56,5 @@ title: Port Knocking
       stop_command  = /bin/firewall-cmd --zone=public --remove-rich-rule 'rule family="ipv4" source address="%IP%" port protocol="tcp" port="22" accept'
 ```
 
-* On this example, we use the **firewall-cmd** command to open the port **22** on the server after you have knocked the right sequence : **1984,1985,2014,2016**
+* On this example, we use the **firewall-cmd** command to open the port **22** on the server after you have knocked the right sequence : **1789,1985,1492,2005**
 * After the sequence is done, the port **22** is opened for **10** seconds and then closed again
