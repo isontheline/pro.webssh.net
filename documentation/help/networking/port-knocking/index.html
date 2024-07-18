@@ -2875,7 +2875,7 @@
 <ul>
 <li><strong>1985:TCP</strong> will knock your server on the TCP port 1985</li>
 <li><strong>1985:TCP,2020:TCP</strong> will knock your server on TCP port 1985 then 2020 (with a default sleep of 100ms)</li>
-<li><strong>1984:TCP:200,1985:UDP:300,2014:TCP:200,2016:UDP:500</strong> will knock on TCP port 1984 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 2014 and will sleep 200 ms, then will knock on UDP port 2016 and will sleep 500 ms.</li>
+<li><strong>1789:TCP:200,1985:UDP:300,1492:TCP:200,2005:UDP:500</strong> will knock on TCP port 1789 and will sleep 200 ms, then will knock on UDP port 1985 and will sleep 300 ms, then will knock on TCP port 1492 and will sleep 200 ms, then will knock on UDP port 2005 and will sleep 500 ms.</li>
 </ul>
 </div>
 <h2 id="examples-of-server-side-implementation-by-using-knockd">Examples of server side implementation by using knockd</h2>
@@ -2884,7 +2884,7 @@
         UseSyslog
 
 [SSH]
-      sequence    = 1984,1985,2014,2016
+      sequence    = 1789,1985,1492,2005
       seq_timeout = 10
       command     = /sbin/iptables -I INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
       tcpflags    = syn
@@ -2892,7 +2892,7 @@
       stop_command  = /sbin/iptables -D INPUT -s %IP% -p tcp --dport 22 -j ACCEPT
 </code></pre></div>
 <ul>
-<li>On this example, we use the <strong>iptables</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1984,1985,2014,2016</strong></li>
+<li>On this example, we use the <strong>iptables</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1789,1985,1492,2005</strong></li>
 <li>After the sequence is done, the port <strong>22</strong> is opened for <strong>10</strong> seconds and then closed again</li>
 </ul>
 <h3 id="centos-rhel-fedora-almalinux-rockylinux-etcknockdconf">CentOS / RHEL / Fedora / AlmaLinux / RockyLinux : /etc/knockd.conf</h3>
@@ -2900,7 +2900,7 @@
         UseSyslog
 
 [SSH]
-      sequence      = 1984,1985,2014,2016
+      sequence      = 1789,1985,1492,2005
       seq_timeout   = 10
       start_command = /bin/firewall-cmd --zone=public --add-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
       tcpflags      = syn
@@ -2908,7 +2908,7 @@
       stop_command  = /bin/firewall-cmd --zone=public --remove-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
 </code></pre></div>
 <ul>
-<li>On this example, we use the <strong>firewall-cmd</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1984,1985,2014,2016</strong></li>
+<li>On this example, we use the <strong>firewall-cmd</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1789,1985,1492,2005</strong></li>
 <li>After the sequence is done, the port <strong>22</strong> is opened for <strong>10</strong> seconds and then closed again</li>
 </ul>
 
@@ -2917,7 +2917,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 18, 2024</span>
       
     
   </small>
