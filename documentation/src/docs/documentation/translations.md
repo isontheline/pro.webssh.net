@@ -1,7 +1,7 @@
 # Translations
 WebSSH is beeing translated into 15 languages. 
 English and French are the main languages so I need help to support other translations.
-Translations are available [here](https://github.com/isontheline/pro.webssh.net/tree/master/translations).
+Translations are available [here](https://github.com/isontheline/pro.webssh.net/blob/master/src/i18n/Localizable.xcstrings).
 
 === "Spanish"
     * Roberto Carlos Guzmán Reyna
