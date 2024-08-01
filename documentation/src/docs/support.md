@@ -4,13 +4,6 @@ title: Support
 
 # Support
 
-!!! danger "Private Key Error"
-    Are you encountering an error about your private key and a passphrase?
-
-    Please download WebSSH 27.0 from the [App Store](https://apps.apple.com/us/app/webssh-ssh-client/id497714887) or [TestFlight](https://testflight.apple.com/join/QSrBK59z)
-
-    Sorry for the inconvenience
-
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
 
