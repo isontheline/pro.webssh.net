@@ -1,4 +1,4 @@
-cd src
+cd documentation
 
 mkdocs build --clean
 
