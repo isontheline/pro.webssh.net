@@ -482,6 +482,11 @@ const TerminalHelper = {
         //theme.selectionForeground = ColorHelper.invertColor(theme.foreground);
         theme.selectionInactiveBackground = ColorHelper.invertColor(theme.background);
 
+        // #1173 Theme : Purple color should be named Magenta (ANSI) ->
+        theme.magenta = theme.purple;
+        theme.brightMagenta = theme.brightPurple;
+        // <- #1173 Theme : Purple color should be named Magenta (ANSI)
+
         return theme;
     },
 
