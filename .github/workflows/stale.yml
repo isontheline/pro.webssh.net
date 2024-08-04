@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/stale@v9
         with:
-          stale-issue-message: 'This issue is stale because it has been open 2 years with no activity since. Add any relevant comment to stop the stale process or this will be closed in 30 days.'
+          stale-issue-message: 'This issue is now marked as stale because it has not received any updates since 2 years. Add any relevant comment to stop the stale process or this will be closed in 30 days. All feedbacks are welcome!'
           days-before-stale: 730
           days-before-close: 30
           exempt-all-milestones: true
