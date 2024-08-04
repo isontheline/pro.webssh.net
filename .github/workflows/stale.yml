@@ -1,0 +1,19 @@
+name: 'Close stale issues and PRs'
+on:
+  schedule:
+    - cron: '30 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: 'This issue is stale because it has been open 2 years with no activity since. Add any relevant comment to stop the stale process or this will be closed in 30 days.'
+          days-before-stale: 730
+          days-before-close: 30
+          exempt-all-milestones: true
