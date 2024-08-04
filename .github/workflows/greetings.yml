@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Thank you for your feedback! 🙏 Arnaud (@isontheline) will respond within a few hours. In the meantime, please feel free to add any additional information that may help us resolve or improve WebSSH."
+          pr-message: "Thank you for your Pull Request! 🙏 Arnaud (@isontheline) will review it within a few hours."
