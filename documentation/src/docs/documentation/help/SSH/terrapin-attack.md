@@ -15,10 +15,16 @@ In order to protect WebSSH users against Terrapin Attack flaw, we have disabled 
 * chacha20-poly1305@openssh.com encryption algorithm
 * all ETM MAC algorithms
 
-## (Re) Enable ETM MAC algorithms
-If you need to enable ETM MAC algorithms again (eg in case your server only accepts ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :
+## Enable ETM MAC and ChaCha20 algorithms
+If you need to enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :
 
 ```bash
+# If using WebSSH 27.4 or later :
 Host *
-    #!Enable-HMAC-ETM
+    Ciphers +chacha20-poly1305@openssh.com
+    MACs +hmac-sha1-etm@openssh.com
+
+# If using WebSSH 24.8 to 27.3 :
+Host *
+     #!Enable-HMAC-ETM
 ```
