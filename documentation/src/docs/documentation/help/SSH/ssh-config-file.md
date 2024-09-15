@@ -25,12 +25,12 @@ In order to edit the WebSSH SSH Config File just need to :
 # Supported Features [^1]
 | Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
-| [Ciphers](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Ciphers) | String | List of ciphers to use. Comma separated | 27.4 | [See Ciphers below](#ciphers) |
+| [Ciphers](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Ciphers) | String | List of ciphers to use. Comma separated | 27.4 | [See Ciphers](/documentation/help/SSH/supported-algorithms/#ciphers) |
 | [Host](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host) | String | Connection name (aka alias) pattern | 20.6 | `Host MY_SERVER_NAME` |
-| [HostKeyAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#HostKeyAlgorithms) | String | List of host key algorithms to use. Comma separated | 27.4 | [See HostKeyAlgorithms below](#hostkeyalgortihms) |
+| [HostKeyAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#HostKeyAlgorithms) | String | List of host key algorithms to use. Comma separated | 27.4 | [See HostKeyAlgorithms](/documentation/help/SSH/supported-algorithms/#hostkeyalgorithms) |
 | [Hostname](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Hostname) | String | Connection host | 20.6 | `Hostname my.host.com` |
-| [KexAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#KexAlgorithms) | String | List of key exchange algorithms to use. Comma separated | 27.4 | [See KexAlgorithms below](#kexalgorithms) |
-| [MACs](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#MACs) | String | List of MACs to use. Comma separated | 27.4 | [See MACs below](#macs)  |
+| [KexAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#KexAlgorithms) | String | List of key exchange algorithms to use. Comma separated | 27.4 | [See KexAlgorithms](/documentation/help/SSH/supported-algorithms/#kexalgorithms) |
+| [MACs](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#MACs) | String | List of MACs to use. Comma separated | 27.4 | [See MACs](/documentation/help/SSH/supported-algorithms/#macs)  |
 | [Port](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Port) | Integer | Connection port | 20.6 | `Port 2222` |
 | [RemoteCommand](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#RemoteCommand) | String | The command to launch instead of requesting a default Shell | 20.6 | `RemoteCommand /bin/bash` |
 | [SetEnv](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#SetEnv) | String | Environment variable to set | 23.6 | `SetEnv MY_ENV="Awesome!"` |
@@ -56,93 +56,3 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | #!TermType | String | $TERM environment variable value | 21.4 | `#!TermType xterm-256color` |
 
 [^1]: Based on [OpenBSD ssh_config Man](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5?query=ssh_config&sec=5)
-
-# Advanced Details
-## Ciphers
-The supported ciphers are :
-
-* chacha20-poly1305@openssh.com
-* aes128-ctr
-* aes256-ctr
-* aes192-ctr
-* aes128-cbc
-* aes256-cbc
-* aes192-cbc
-* aes128-gcm@openssh.com
-* aes256-gcm@openssh.com
-* twofish256-cbc
-* twofish128-cbc
-* blowfish-cbc
-
-The default enabled are :
-
-* aes128-ctr
-* aes256-ctr
-* aes128-gcm@openssh.com
-* aes256-gcm@openssh.com
-
-`^` character is not supported by WebSSH. Only `+` and `-` are supported to enable or disable ciphers without changing the default ones.
-
-## HostKeyAlgorithms
-The supported host key algorithms are :
-
-* ecdsa-sha2-nistp256
-* ecdsa-sha2-nistp384
-* ecdsa-sha2-nistp521
-* ssh-ed25519
-* rsa-sha2-256
-* rsa-sha2-512
-* ssh-rsa
-* ssh-dss
-
-The default enabled are :
-
-* ssh-ed25519
-* rsa-sha2-256
-* rsa-sha2-512
-
-`^` character is not supported by WebSSH. Only `+` and `-` are supported to enable or disable host key algorithms without changing the default ones.
-
-## KexAlgorithms
-The supported key exchange algorithms are :
-
-* curve25519-sha256
-* curve25519-sha256@libssh.org
-* ecdh-sha2-nistp256
-* ecdh-sha2-nistp384
-* ecdh-sha2-nistp521
-* diffie-hellman-group14-sha256
-* diffie-hellman-group16-sha512
-* diffie-hellman-group18-sha512
-* diffie-hellman-group-exchange-sha256
-* diffie-hellman-group1-sha1
-* diffie-hellman-group14-sha1
-* diffie-hellman-group-exchange-sha1
-
-The default enabled are :
-
-* curve25519-sha256
-* curve25519-sha256@libssh.org
-* diffie-hellman-group16-sha512
-* diffie-hellman-group18-sha512
-* iffie-hellman-group-exchange-sha256
-
-`^` character is not supported by WebSSH. Only `+` and `-` are supported to enable or disable key exchange algorithms without changing the default ones.
-
-## MACs
-The supported MACs are :
-
-* hmac-sha2-256
-* hmac-sha2-512
-* hmac-sha2-256-etm@openssh.com
-* hmac-sha2-512-etm@openssh.com
-* hmac-sha1-etm@openssh.com
-* hmac-sha1
-* hmac-ripemd160
-* hmac-sha1-96
-* hmac-md5
-
-The default enabled are :
-
-* hmac-sha2-256-etm@openssh.com
-* hmac-sha2-512-etm@openssh.com
