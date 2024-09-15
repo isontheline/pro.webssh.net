@@ -1085,6 +1085,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../supported-algorithms/" class="md-nav__link">
+        Supported Algorithms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrapin-attack/" class="md-nav__link">
         Terrapin Attack
       </a>
@@ -1104,17 +1118,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_4_7" type="checkbox" id="__nav_3_9_4_7" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_9_4_8" type="checkbox" id="__nav_3_9_4_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_9_4_7" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_9_4_8" tabindex="0" aria-expanded="false">
           Terminal settings
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Terminal settings" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_9_4_7">
+        <label class="md-nav__title" for="__nav_3_9_4_8">
           <span class="md-nav__icon md-icon"></span>
           Terminal settings
         </label>
@@ -2783,7 +2797,7 @@
 <td>String</td>
 <td>List of ciphers to use. Comma separated</td>
 <td>27.4</td>
-<td><a href="#ciphers">See Ciphers below</a></td>
+<td><a href="/documentation/help/SSH/supported-algorithms/#ciphers">See Ciphers</a></td>
 </tr>
 <tr>
 <td><a href="https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host">Host</a></td>
@@ -2797,7 +2811,7 @@
 <td>String</td>
 <td>List of host key algorithms to use. Comma separated</td>
 <td>27.4</td>
-<td><a href="#hostkeyalgortihms">See HostKeyAlgorithms below</a></td>
+<td><a href="/documentation/help/SSH/supported-algorithms/#hostkeyalgorithms">See HostKeyAlgorithms</a></td>
 </tr>
 <tr>
 <td><a href="https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Hostname">Hostname</a></td>
@@ -2811,14 +2825,14 @@
 <td>String</td>
 <td>List of key exchange algorithms to use. Comma separated</td>
 <td>27.4</td>
-<td><a href="#kexalgorithms">See KexAlgorithms below</a></td>
+<td><a href="/documentation/help/SSH/supported-algorithms/#kexalgorithms">See KexAlgorithms</a></td>
 </tr>
 <tr>
 <td><a href="https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#MACs">MACs</a></td>
 <td>String</td>
 <td>List of MACs to use. Comma separated</td>
 <td>27.4</td>
-<td><a href="#macs">See MACs below</a></td>
+<td><a href="/documentation/help/SSH/supported-algorithms/#macs">See MACs</a></td>
 </tr>
 <tr>
 <td><a href="https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Port">Port</a></td>
@@ -2956,93 +2970,6 @@
 </tr>
 </tbody>
 </table>
-<h1 id="advanced-details">Advanced Details</h1>
-<h2 id="ciphers">Ciphers</h2>
-<p>The supported ciphers are :</p>
-<ul>
-<li>chacha20-poly1305@openssh.com</li>
-<li>aes128-ctr</li>
-<li>aes256-ctr</li>
-<li>aes192-ctr</li>
-<li>aes128-cbc</li>
-<li>aes256-cbc</li>
-<li>aes192-cbc</li>
-<li>aes128-gcm@openssh.com</li>
-<li>aes256-gcm@openssh.com</li>
-<li>twofish256-cbc</li>
-<li>twofish128-cbc</li>
-<li>blowfish-cbc</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>aes128-ctr</li>
-<li>aes256-ctr</li>
-<li>aes128-gcm@openssh.com</li>
-<li>aes256-gcm@openssh.com</li>
-</ul>
-<p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable ciphers without changing the default ones.</p>
-<h2 id="hostkeyalgorithms">HostKeyAlgorithms</h2>
-<p>The supported host key algorithms are :</p>
-<ul>
-<li>ecdsa-sha2-nistp256</li>
-<li>ecdsa-sha2-nistp384</li>
-<li>ecdsa-sha2-nistp521</li>
-<li>ssh-ed25519</li>
-<li>rsa-sha2-256</li>
-<li>rsa-sha2-512</li>
-<li>ssh-rsa</li>
-<li>ssh-dss</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>ssh-ed25519</li>
-<li>rsa-sha2-256</li>
-<li>rsa-sha2-512</li>
-</ul>
-<p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable host key algorithms without changing the default ones.</p>
-<h2 id="kexalgorithms">KexAlgorithms</h2>
-<p>The supported key exchange algorithms are :</p>
-<ul>
-<li>curve25519-sha256</li>
-<li>curve25519-sha256@libssh.org</li>
-<li>ecdh-sha2-nistp256</li>
-<li>ecdh-sha2-nistp384</li>
-<li>ecdh-sha2-nistp521</li>
-<li>diffie-hellman-group14-sha256</li>
-<li>diffie-hellman-group16-sha512</li>
-<li>diffie-hellman-group18-sha512</li>
-<li>diffie-hellman-group-exchange-sha256</li>
-<li>diffie-hellman-group1-sha1</li>
-<li>diffie-hellman-group14-sha1</li>
-<li>diffie-hellman-group-exchange-sha1</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>curve25519-sha256</li>
-<li>curve25519-sha256@libssh.org</li>
-<li>diffie-hellman-group16-sha512</li>
-<li>diffie-hellman-group18-sha512</li>
-<li>iffie-hellman-group-exchange-sha256</li>
-</ul>
-<p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable key exchange algorithms without changing the default ones.</p>
-<h2 id="macs">MACs</h2>
-<p>The supported MACs are :</p>
-<ul>
-<li>hmac-sha2-256</li>
-<li>hmac-sha2-512</li>
-<li>hmac-sha2-256-etm@openssh.com</li>
-<li>hmac-sha2-512-etm@openssh.com</li>
-<li>hmac-sha1-etm@openssh.com</li>
-<li>hmac-sha1</li>
-<li>hmac-ripemd160</li>
-<li>hmac-sha1-96</li>
-<li>hmac-md5</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>hmac-sha2-256-etm@openssh.com</li>
-<li>hmac-sha2-512-etm@openssh.com</li>
-</ul>
 <div class="footnote">
 <hr />
 <ol>
@@ -3057,7 +2984,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2024</span>
       
     
   </small>
