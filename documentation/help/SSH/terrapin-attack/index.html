@@ -2847,10 +2847,10 @@
 <p>In order to protect WebSSH users against Terrapin Attack flaw, we have disabled the following algorithms since WebSSH 24.8 :</p>
 <ul>
 <li>chacha20-poly1305@openssh.com encryption algorithm</li>
-<li>all ETM MAC algorithms</li>
+<li>deprecated ETM MAC algorithms</li>
 </ul>
 <h2 id="enable-etm-mac-and-chacha20-algorithms">Enable ETM MAC and ChaCha20 algorithms</h2>
-<p>If you need to enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :</p>
+<p>If you need to re-enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts some ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># If using WebSSH 27.4 or later :</span>
 Host<span class="w"> </span>*
 <span class="w">    </span>Ciphers<span class="w"> </span>+chacha20-poly1305@openssh.com
@@ -2866,7 +2866,7 @@ Host<span class="w"> </span>*
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2024</span>
       
     
   </small>
