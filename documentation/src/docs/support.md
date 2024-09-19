@@ -4,6 +4,9 @@ title: Support
 
 # Support
 
+??? tip "Unable to connect to your server using WebSSH 27.4?"
+    Please check that your server is not vulnerable to the [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) flaw.
+
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
 
