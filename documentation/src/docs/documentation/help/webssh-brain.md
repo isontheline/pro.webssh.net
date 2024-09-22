@@ -4,6 +4,7 @@ title: WebSSH Brain
 
 # WebSSH Brain
 > Generative AI that powers your work about command line.
+> <br /><small>Powered by <img src="https://raw.githubusercontent.com/dRAGon-Okinawa/dRAGon/refs/heads/main/static/img/dragon_okinawa_icon.png" alt="dRAGon Okinawa" title="dRAGon Okinawa" style="width:16px; vertical-align:middle"/> [dRAGon](https://github.com/dRAGon-Okinawa/dRAGon)</small>
 
 ??? danger "Privacy, Security, Responsibility"
     * WebSSH Brain prioritizes Privacy and Security. All the data you input into WebSSH Brain is NOT retained on WebSSH servers.

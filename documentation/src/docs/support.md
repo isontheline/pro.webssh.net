@@ -7,6 +7,10 @@ title: Support
 ??? tip "Unable to connect to your server using WebSSH 27.4?"
     Please check that your server is not vulnerable to the [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) flaw.
 
+??? example "Don't miss WebSSH Brain"
+    WebSSH Brain is a generative AI that powers your work about command line. [Learn more](/documentation/help/webssh-brain/)
+    > Powered by <img src="https://raw.githubusercontent.com/dRAGon-Okinawa/dRAGon/refs/heads/main/static/img/dragon_okinawa_icon.png" alt="dRAGon Okinawa" title="dRAGon Okinawa" style="width:16px; vertical-align:middle"/> [dRAGon](https://github.com/dRAGon-Okinawa/dRAGon)
+
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
 
