@@ -16,7 +16,7 @@ In order to protect WebSSH users against Terrapin Attack flaw, we have disabled 
 * deprecated ETM MAC algorithms
 
 ## Enable ETM MAC and ChaCha20 algorithms
-If you need to re-enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts some ETM MAC algorithms), you can do it by adding the following lines to your SSH Config File :
+If you need to re-enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts some ETM MAC algorithms), you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
 
 ```bash
 # If using WebSSH 27.4 or later :
