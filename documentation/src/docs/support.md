@@ -4,8 +4,13 @@ title: Support
 
 # Support
 
-??? tip "Unable to connect to your server using WebSSH 27.4?"
-    Please check that your server is not vulnerable to the [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) flaw.
+??? tip "Unable to connect to your server using latest WebSSH release?"
+    * WebSSH has now deprecated weak algorithms in order to increase security between your device and your server.
+    * It may result in connection issues if your server need to use one of these deprecated algorithms.
+    * You can learn more about [Supported Algorithms](/documentation/help/SSH/supported-algorithms/) and [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) to understand the changes made in WebSSH.
+    * Regularly make an audit of your SSH clients and servers : [ssh-audit.com](https://www.ssh-audit.com)
+    
+    If you want to enable again the deprecated algorithms, you can do it by using [this guide](/documentation/help/SSH/terrapin-attack/#enable-all-algorithms).
 
 ??? example "Don't miss WebSSH Brain"
     WebSSH Brain is a generative AI that powers your work about command line. [Learn more](/documentation/help/webssh-brain/)
