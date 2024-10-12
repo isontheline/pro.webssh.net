@@ -19,7 +19,7 @@ In order to protect WebSSH users against Terrapin Attack flaw, we have disabled 
 If you need to re-enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts some ETM MAC algorithms), you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
 
 ```bash
-# If using WebSSH 27.4 or later :
+# If using WebSSH 27.4 or later, add the following algorithms to your WebSSH SSH Config File :
 Host *
     Ciphers +chacha20-poly1305@openssh.com
     MACs +hmac-sha1-etm@openssh.com
@@ -28,3 +28,17 @@ Host *
 Host *
      #!Enable-HMAC-ETM
 ```
+
+## Enable all algorithms
+If you need to enable all algorithms again, you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
+
+```bash
+Host *
+    Ciphers chacha20-poly1305@openssh.com,aes128-ctr,aes256-ctr,aes192-ctr,aes128-cbc,aes256-cbc,aes192-cbc,aes128-gcm@openssh.com,aes256-gcm@openssh.com,twofish256-cbc,twofish128-cbc,blowfish-cbc
+    HostKeyAlgorithms ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-ed25519,rsa-sha2-256,rsa-sha2-512,ssh-rsa,ssh-dss
+    KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha256,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group-exchange-sha256,diffie-hellman-group1-sha1,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1
+    MACs hmac-sha2-256,hmac-sha2-512,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha1,hmac-ripemd160,hmac-sha1-96,hmac-md5
+```
+
+!!! warning "Security Warning"
+    Enabling all algorithms can lead to security issues. Please make sure you know what you are doing before enabling all algorithms. Make an audit of your client and server security before and after enabling algorithms : [ssh-audit.com](https://www.ssh-audit.com)
