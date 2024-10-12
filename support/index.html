@@ -2772,8 +2772,14 @@
 
 <h1 id="support">Support</h1>
 <details class="tip">
-<summary>Unable to connect to your server using WebSSH 27.4?</summary>
-<p>Please check that your server is not vulnerable to the <a href="/documentation/help/SSH/terrapin-attack/">Terrapin Attack</a> flaw.</p>
+<summary>Unable to connect to your server using latest WebSSH release?</summary>
+<ul>
+<li>WebSSH has now deprecated weak algorithms in order to increase security between your device and your server.</li>
+<li>It may result in connection issues if your server need to use one of these deprecated algorithms.</li>
+<li>You can learn more about <a href="/documentation/help/SSH/supported-algorithms/">Supported Algorithms</a> and <a href="/documentation/help/SSH/terrapin-attack/">Terrapin Attack</a> to understand the changes made in WebSSH.</li>
+<li>Regularly make an audit of your SSH clients and servers : <a href="https://www.ssh-audit.com">ssh-audit.com</a></li>
+</ul>
+<p>If you want to enable again the deprecated algorithms, you can do it by using <a href="/documentation/help/SSH/terrapin-attack/#enable-all-algorithms">this guide</a>.</p>
 </details>
 <details class="example">
 <summary>Don't miss WebSSH Brain</summary>
@@ -2801,7 +2807,7 @@ Of course you can <a href="/documentation/becoming-external-tester/">Enroll to B
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 22, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 12, 2024</span>
       
     
   </small>
