@@ -3,34 +3,28 @@ title: "Terrapin Attack"
 ---
 
 # Terrapin Attack
-## What is that?
-Quotes from [terrapin-attack.com](https://terrapin-attack.com) :
-> Terrapin is a prefix truncation attack targeting the SSH protocol. More precisely, Terrapin breaks the integrity of SSH's secure channel. By carefully adjusting the sequence numbers during the handshake, an attacker can remove an arbitrary amount of messages sent by the client or server at the beginning of the secure channel without the client or server noticing it.
+??? abstract "What is that?"
+    Quotes from [terrapin-attack.com](https://terrapin-attack.com) :
+    > Terrapin is a prefix truncation attack targeting the SSH protocol. More precisely, Terrapin breaks the integrity of SSH's secure channel. By carefully adjusting the sequence numbers during the handshake, an attacker can remove an arbitrary amount of messages sent by the client or server at the beginning of the secure channel without the client or server noticing it.
 
-> If your SSH implementations supports (and is configured to offer) the chacha20-poly1305@openssh.com encryption algorithm, or any encryption algorithm suffixed -cbc in combination with any MAC algorithm suffixed -etm@openssh.com, you are vulnerable to Terrapin.
+    > If your SSH implementations supports (and is configured to offer) the chacha20-poly1305@openssh.com encryption algorithm, or any encryption algorithm suffixed -cbc in combination with any MAC algorithm suffixed -etm@openssh.com, you are vulnerable to Terrapin.
 
-## WebSSH mitigation
-In order to protect WebSSH users against Terrapin Attack flaw, we have disabled the following algorithms since WebSSH 24.8 :
+??? question "Why can't I connect to my server anymore?"
+    When WebSSH connects to your server, it uses the latest security algorithms to ensure the best security between your device and your server. In order to protect you against security flaws, like Terrapin Attack, weak algorithms have been disabled by default. If your server only accepts some of these weak algorithms, you may not be able to connect to your server anymore.
 
-* chacha20-poly1305@openssh.com encryption algorithm
-* deprecated ETM MAC algorithms
+In order to protect WebSSH users against Terrapin Attack flaw, weak algorithms have been disabled by default. Review the [Supported Algorithms](/documentation/help/SSH/supported-algorithms/) to check which algorithms are supported and enabled by default.
 
-## Enable ETM MAC and ChaCha20 algorithms
+## (Re)Enable ETM MAC and ChaCha20 algorithms
 If you need to re-enable ETM MAC and ChaCha20 algorithms again (eg in case your server only accepts some ETM MAC algorithms), you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
 
 ```bash
-# If using WebSSH 27.4 or later, add the following algorithms to your WebSSH SSH Config File :
 Host *
     Ciphers +chacha20-poly1305@openssh.com
     MACs +hmac-sha1-etm@openssh.com
-
-# If using WebSSH 24.8 to 27.3 :
-Host *
-     #!Enable-HMAC-ETM
 ```
 
-## Enable all algorithms
-If you need to enable all algorithms again, you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
+## (Re)Enable all algorithms
+If you need to enable all algorithms, you can do it by adding the following lines to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
 
 ```bash
 Host *
@@ -40,5 +34,5 @@ Host *
     MACs hmac-sha2-256,hmac-sha2-512,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,hmac-sha1,hmac-ripemd160,hmac-sha1-96,hmac-md5
 ```
 
-!!! warning "Security Warning"
-    Enabling all algorithms can lead to security issues. Please make sure you know what you are doing before enabling all algorithms. Make an audit of your client and server security before and after enabling algorithms : [ssh-audit.com](https://www.ssh-audit.com)
+??? warning "Weak Algorithms Warning"
+    Enabling weak algorithms can lead to security issues. Please make sure you know what you are doing before enabling weak algorithms. Make an audit of your client and server security before and after enabling algorithms : [ssh-audit.com](https://www.ssh-audit.com)
