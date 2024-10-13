@@ -10,7 +10,7 @@ title: Support
     * You can learn more about [Supported Algorithms](/documentation/help/SSH/supported-algorithms/) and [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) to understand the changes made in WebSSH.
     * Regularly make an audit of your SSH clients and servers : [ssh-audit.com](https://www.ssh-audit.com)
     
-    If you want to enable again the deprecated algorithms, you can do it by using [this guide](/documentation/help/SSH/terrapin-attack/#enable-all-algorithms).
+    If you want to enable again the deprecated algorithms, you can do it by using [this guide](/documentation/help/SSH/terrapin-attack/#reenable-all-algorithms).
 
 ??? example "Don't miss WebSSH Brain"
     WebSSH Brain is a generative AI that powers your work about command line. [Learn more](/documentation/help/webssh-brain/)
