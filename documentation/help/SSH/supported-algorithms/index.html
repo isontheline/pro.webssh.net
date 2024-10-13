@@ -2883,97 +2883,284 @@
 <p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable algorithms without changing the default ones.</p>
 </details>
 <h2 id="ciphers">Ciphers</h2>
-<p>The supported ciphers are :</p>
-<ul>
-<li>chacha20-poly1305@openssh.com</li>
-<li>aes128-ctr</li>
-<li>aes256-ctr</li>
-<li>aes192-ctr</li>
-<li>aes128-cbc</li>
-<li>aes256-cbc</li>
-<li>aes192-cbc</li>
-<li>aes128-gcm@openssh.com</li>
-<li>aes256-gcm@openssh.com</li>
-<li>twofish256-cbc</li>
-<li>twofish128-cbc</li>
-<li>blowfish-cbc</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>aes128-ctr</li>
-<li>aes256-ctr</li>
-<li>aes128-gcm@openssh.com</li>
-<li>aes256-gcm@openssh.com</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Default Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chacha20-poly1305@openssh.com</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>aes128-ctr</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>aes256-ctr</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>aes192-ctr</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>aes128-cbc</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>aes256-cbc</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>aes192-cbc</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>aes128-gcm@openssh.com</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>aes256-gcm@openssh.com</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>twofish256-cbc</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>twofish128-cbc</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>blowfish-cbc</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Need to enable one or more ciphers?</summary>
+<p>You can enable or disable ciphers using the <code>Ciphers</code> keyword in your <a href="/documentation/help/SSH/ssh-config-file/">ssh_config</a> file.</p>
+<p>For example, to enable the <code>aes192-cbc</code> cipher, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    Ciphers +aes192-cbc
+</code></pre></div></p>
+<p>To disable <code>twofish256-cbc</code> and <code>twofish128-cbc</code> ciphers, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    Ciphers -twofish256-cbc,-twofish128-cbc
+</code></pre></div></p>
+<p>To set only <code>aes128-ctr</code> and <code>aes256-ctr</code> ciphers, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    Ciphers aes128-ctr,aes256-ctr
+</code></pre></div></p>
+</details>
 <h2 id="hostkeyalgorithms">HostKeyAlgorithms</h2>
-<p>The supported host key algorithms are :</p>
-<ul>
-<li>ecdsa-sha2-nistp256</li>
-<li>ecdsa-sha2-nistp384</li>
-<li>ecdsa-sha2-nistp521</li>
-<li>ssh-ed25519</li>
-<li>rsa-sha2-256</li>
-<li>rsa-sha2-512</li>
-<li>ssh-rsa</li>
-<li>ssh-dss</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>ssh-ed25519</li>
-<li>rsa-sha2-256</li>
-<li>rsa-sha2-512</li>
-</ul>
-<p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable host key algorithms without changing the default ones.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Default Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ecdsa-sha2-nistp256</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ecdsa-sha2-nistp384</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ecdsa-sha2-nistp521</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ssh-ed25519</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>rsa-sha2-256</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>rsa-sha2-512</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ssh-rsa</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ssh-dss</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Need to enable one or more host key algorithms?</summary>
+<p>You can enable or disable host key algorithms using the <code>HostKeyAlgorithms</code> keyword in your <a href="/documentation/help/SSH/ssh-config-file/">ssh_config</a> file.</p>
+<p>For example, to enable the <code>ecdsa-sha2-nistp521</code> host key algorithm, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    HostKeyAlgorithms +ecdsa-sha2-nistp521
+</code></pre></div></p>
+<p>To disable <code>ssh-rsa</code> and <code>ssh-dss</code> host key algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    HostKeyAlgorithms -ssh-rsa,-ssh-dss
+</code></pre></div></p>
+<p>To set only <code>ssh-rsa</code> and <code>ssh-ed25519</code> host key algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    HostKeyAlgorithms ssh-rsa,ssh-ed25519
+</code></pre></div></p>
+</details>
 <h2 id="kexalgorithms">KexAlgorithms</h2>
-<p>The supported key exchange algorithms are :</p>
-<ul>
-<li>curve25519-sha256</li>
-<li>curve25519-sha256@libssh.org</li>
-<li>ecdh-sha2-nistp256</li>
-<li>ecdh-sha2-nistp384</li>
-<li>ecdh-sha2-nistp521</li>
-<li>diffie-hellman-group14-sha256</li>
-<li>diffie-hellman-group16-sha512</li>
-<li>diffie-hellman-group18-sha512</li>
-<li>diffie-hellman-group-exchange-sha256</li>
-<li>diffie-hellman-group1-sha1</li>
-<li>diffie-hellman-group14-sha1</li>
-<li>diffie-hellman-group-exchange-sha1</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>curve25519-sha256</li>
-<li>curve25519-sha256@libssh.org</li>
-<li>diffie-hellman-group16-sha512</li>
-<li>diffie-hellman-group18-sha512</li>
-<li>diffie-hellman-group-exchange-sha256</li>
-</ul>
-<p><code>^</code> character is not supported by WebSSH. Only <code>+</code> and <code>-</code> are supported to enable or disable key exchange algorithms without changing the default ones.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Default Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>curve25519-sha256</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>curve25519-sha256@libssh.org</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ecdh-sha2-nistp256</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ecdh-sha2-nistp384</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>ecdh-sha2-nistp521</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>diffie-hellman-group14-sha256</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>diffie-hellman-group16-sha512</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>diffie-hellman-group18-sha512</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>diffie-hellman-group-exchange-sha256</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>diffie-hellman-group1-sha1</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>diffie-hellman-group14-sha1</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>diffie-hellman-group-exchange-sha1</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Need to enable one or more key exchange algorithms?</summary>
+<p>You can enable or disable key exchange algorithms using the <code>KexAlgorithms</code> keyword in your <a href="/documentation/help/SSH/ssh-config-file/">ssh_config</a> file.</p>
+<p>For example, to enable the <code>ecdh-sha2-nistp521</code> key exchange algorithm, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    KexAlgorithms +ecdh-sha2-nistp521
+</code></pre></div></p>
+<p>To disable <code>diffie-hellman-group1-sha1</code>, <code>diffie-hellman-group14-sha1</code> and <code>diffie-hellman-group-exchange-sha1</code> key exchange algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    KexAlgorithms -diffie-hellman-group1-sha1
+</code></pre></div></p>
+<p>To set only <code>curve25519-sha256</code> and <code>ecdh-sha2-nistp256</code> key exchange algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    KexAlgorithms curve25519-sha256,ecdh-sha2-nistp256
+</code></pre></div></p>
+</details>
 <h2 id="macs">MACs</h2>
-<p>The supported MACs are :</p>
-<ul>
-<li>hmac-sha2-256</li>
-<li>hmac-sha2-512</li>
-<li>hmac-sha2-256-etm@openssh.com</li>
-<li>hmac-sha2-512-etm@openssh.com</li>
-<li>hmac-sha1-etm@openssh.com</li>
-<li>hmac-sha1</li>
-<li>hmac-ripemd160</li>
-<li>hmac-sha1-96</li>
-<li>hmac-md5</li>
-</ul>
-<p>The default enabled are :</p>
-<ul>
-<li>hmac-sha2-256-etm@openssh.com</li>
-<li>hmac-sha2-512-etm@openssh.com</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Default Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hmac-sha2-256</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-sha2-512</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-sha2-256-etm@openssh.com</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>hmac-sha2-512-etm@openssh.com</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>hmac-sha1-etm@openssh.com</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-sha1</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-ripemd160</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-sha1-96</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>hmac-md5</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<details class="tip">
+<summary>Need to enable one or more MAC algorithms?</summary>
+<p>You can enable or disable MAC algorithms using the <code>MACs</code> keyword in your <a href="/documentation/help/SSH/ssh-config-file/">ssh_config</a> file.</p>
+<p>For example, to enable the <code>hmac-sha2-256</code> MAC algorithm, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    MACs +hmac-sha2-256
+</code></pre></div></p>
+<p>To disable <code>hmac-sha1</code> and <code>hmac-ripemd160</code> MAC algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    MACs -hmac-sha1,-hmac-ripemd160
+</code></pre></div></p>
+<p>To set only <code>hmac-sha2-256</code> and <code>hmac-sha2-512</code> MAC algorithms, you can add the following line to your <code>ssh_config</code> file :
+<div class="highlight"><pre><span></span><code>Host *
+    MACs hmac-sha2-256,hmac-sha2-512
+</code></pre></div></p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2024</span>
       
     
   </small>
