@@ -491,6 +491,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_FIRACODE/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_FONTAWESOME/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
