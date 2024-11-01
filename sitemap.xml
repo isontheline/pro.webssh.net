@@ -526,12 +526,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_HACK/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://webssh.net/licenses/LICENSE_IAPHELPER/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/licenses/LICENSE_IOSEVKA/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -591,12 +601,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_MONOID/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_NANOSTORE/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://webssh.net/licenses/LICENSE_NYXIMAGESKIT/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/licenses/LICENSE_OPENDYSLEXIC/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -626,6 +646,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/licenses/LICENSE_SOURCECODEPRO/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/licenses/LICENSE_SSHCONFIG/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
@@ -647,6 +672,11 @@
     </url>
     <url>
          <loc>https://webssh.net/licenses/LICENSE_TERMCOLOR_C/</loc>
+         <lastmod>2024-11-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://webssh.net/licenses/LICENSE_TERMINUS/</loc>
          <lastmod>2024-11-01</lastmod>
          <changefreq>daily</changefreq>
     </url>
