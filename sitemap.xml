@@ -81,6 +81,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/changelog/28/</loc>
+         <lastmod>2024-11-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/changelog/history/15/</loc>
          <lastmod>2024-11-03</lastmod>
          <changefreq>daily</changefreq>
