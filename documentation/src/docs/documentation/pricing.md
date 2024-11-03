@@ -33,6 +33,11 @@
 | [WebSSH Brain](/documentation/help/webssh-brain/)[^1] | :white_check_mark: | :white_check_mark: |
 | [Web Browser](/documentation/web-browser/)[^1] | :white_check_mark: | :white_check_mark: |
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/)[^1] | :white_check_mark: | :white_check_mark: |
+| Ping | :white_check_mark: | :white_check_mark: |
+| Traceroute | :white_check_mark: | :white_check_mark: |
+| DNS Lookup | :white_check_mark: | :white_check_mark: |
+| Whois Lookup | :white_check_mark: | :white_check_mark: |
+| Find your Addresses | :white_check_mark: | :white_check_mark: |
 
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](mailto:team@webssh.net) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
