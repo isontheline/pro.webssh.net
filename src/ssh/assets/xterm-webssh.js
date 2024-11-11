@@ -302,6 +302,12 @@ const TerminalHelper = {
         return textSelection;
     },
 
+    exportRowsAsRawArray: function () {
+        Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
+            return element.textContent.trim();
+        });
+    },
+
     onBell: debounce(() => {
         JS2IOS.calliOSFunction('notifyTerminalBell');
     }, 250),
