@@ -302,10 +302,19 @@ const TerminalHelper = {
         return textSelection;
     },
 
-    exportRowsAsRawArray: function () {
-        return Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
+    exportRawScreenRows: function () {
+        const rows = Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
             return element.textContent.trim();
         });
+        const lineHeight = TerminalHelper.getLineHeight();
+        return {
+            rows,
+            lineHeight
+        };
+    },
+
+    getLineHeight: function () {
+        return parseInt(document.querySelector('div.xterm-rows div').style.lineHeight, 10);
     },
 
     onBell: debounce(() => {
