@@ -303,7 +303,7 @@ const TerminalHelper = {
     },
 
     exportRowsAsRawArray: function () {
-        Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
+        return Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
             return element.textContent.trim();
         });
     },
