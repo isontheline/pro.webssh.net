@@ -71,6 +71,7 @@ const HandlerHelper = {
         // Wikipedia : https://en.wikipedia.org/wiki/ANSI_escape_code
         // * Terminated by BEL or ST.
 
+        // TODO : Replace with -> https://github.com/xtermjs/xterm.js/tree/master/addons/addon-clipboard
         // OSC52 is a terminal escape sequence that allows copying text to the clipboard from the terminal. It is supported by many terminal emulators, including xterm, gnome-terminal, and iTerm2.
         terminal.parser.registerOscHandler(52, (data, params) => {
             // Documentation :
