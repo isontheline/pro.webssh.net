@@ -225,6 +225,26 @@ const TerminalHelper = {
         terminal.write(decodeURIComponent(atob(encodedContent)));
     },
 
+    exportBuffer: function (exportType) {
+        let exportResult = '';
+        switch (exportType) {
+            case 'html':
+                exportResult = serializeAddon.serializeAsHTML({
+                    includeGlobalBackground: true
+                });
+                break;
+            case 'text':
+                exportResult = serializeAddon.serialize({
+                    excludeModes: true,
+                    excludeAltBuffer: true
+                });
+                break;
+            default:
+                exportResult = exportResult = serializeAddon.serialize();
+        }
+        JS2IOS.calliOSFunction('exportBuffer', Base64.utoa(exportResult));
+    },
+
     focus: function (enable) {
         const focusEvent = new CustomEvent(enable ? "focus" : "blur", {});
         terminal.textarea.dispatchEvent(focusEvent);
