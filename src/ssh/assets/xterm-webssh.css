@@ -58,5 +58,9 @@ body {
 }
 
 body.cp437 .xterm-dom-renderer-owner-1 .xterm-rows div {
-    margin-bottom: -1px;
+    margin-bottom: -1px !important;
+}
+
+body.cp437 .xterm-rows {
+    letter-spacing: 0px !important;
 }
