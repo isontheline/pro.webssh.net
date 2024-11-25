@@ -146,7 +146,10 @@ const ResizeHelper = {
         // Hack -> Don't use scrollbar width in order to use all columns on screen :
         terminal._core.viewport.scrollBarWidth = 0;
 
-        fitAddon.fit();
+        if (!terminalSettings.fixedSize) {
+            fitAddon.fit();
+        }
+
         JS2IOS.calliOSFunction('notifyTerminalSize', [terminal.cols, terminal.rows]);
     }
 };
@@ -198,6 +201,10 @@ const TerminalHelper = {
             let xtermScreenStyle = document.querySelector('div.xterm-screen').style;
             xtermScreenStyle.border = '1px solid rgba(127,127,127,0.2)';
             xtermScreenStyle.borderStyle = 'none solid solid none';
+
+            setTimeout(function () {
+                TerminalHelper.changeFontSize(TerminalHelper.retriveFontSize());
+            }, 500);
         }
 
         terminal.onData(function (data) {
@@ -398,6 +405,10 @@ const TerminalHelper = {
         }
 
         JS2IOS.calliOSFunction('logError', errorLog);
+    },
+
+    retriveFontSize: function () {
+        return parseInt(terminal.options.fontSize, 10);
     },
 
     changeFontSize: function (size) {
