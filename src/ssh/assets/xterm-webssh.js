@@ -439,7 +439,7 @@ const TerminalHelper = {
             theme: {},
             fontSize: 9,
             reverseWraparound: true,
-            isMacOS: true,
+            isMacOS: false,
             scrollback: 1000,
             fontFamily: '"Cascadia Code", Menlo, monospace',
             copyOnSelect: false,

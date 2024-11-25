@@ -58,11 +58,11 @@ body {
 }
 
 body.cp437 .xterm-dom-renderer-owner-1 .xterm-rows div {
-    margin-bottom: -3px !important;
+    margin-bottom: -5px !important;
 }
 
 body.cp437 .xterm-dom-renderer-owner-1 .xterm-rows {
-    font-family: monospace, 'PT Mono', 'Andale Mono' !important;
+    font-family: monospace !important;
 }
 
 /* Not needed if `TerminalHelper.changeFontSize(TerminalHelper.retriveFontSize());`is applied */
