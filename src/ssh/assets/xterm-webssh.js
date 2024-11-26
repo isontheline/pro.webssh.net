@@ -240,13 +240,16 @@ const TerminalHelper = {
                     includeGlobalBackground: true
                 });
                 break;
-            case 'text':
+            case 'txt':
                 exportResult = TerminalHelper.exportScrollback();
                 break;
             default:
                 exportResult = exportResult = serializeAddon.serialize();
         }
-        JS2IOS.calliOSFunction('exportBuffer', Base64.utoa(exportResult));
+        JS2IOS.calliOSFunction('exportBuffer', {
+            exportContent: Base64.utoa(exportResult),
+            exportType: exportType
+        });
     },
 
     focus: function (enable) {
