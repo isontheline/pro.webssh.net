@@ -241,10 +241,7 @@ const TerminalHelper = {
                 });
                 break;
             case 'text':
-                exportResult = serializeAddon.serialize({
-                    excludeModes: true,
-                    excludeAltBuffer: true
-                });
+                exportResult = TerminalHelper.exportScrollback();
                 break;
             default:
                 exportResult = exportResult = serializeAddon.serialize();
