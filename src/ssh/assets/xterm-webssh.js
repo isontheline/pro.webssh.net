@@ -236,9 +236,24 @@ const TerminalHelper = {
         let exportResult = '';
         switch (exportType) {
             case 'html':
-                exportResult = serializeAddon.serializeAsHTML({
+                let htmlOutput = serializeAddon.serializeAsHTML({
                     includeGlobalBackground: true
                 });
+                let styles = `
+                    html, body, pre { 
+                        margin: 0; 
+                    } 
+                    pre>div { 
+                        padding:5px;
+                    } 
+                    * { 
+                        font-family: monospace !important
+                    }
+                `;
+                exportResult = htmlOutput.replace(
+                    '<html>',
+                    `<html><head><style>${styles}</style></head>`
+                );
                 break;
             case 'txt':
                 exportResult = TerminalHelper.exportScrollback();
