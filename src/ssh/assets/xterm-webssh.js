@@ -219,6 +219,10 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('notifyTerminalReady');
     },
 
+    setWebViewTitle: function (title) {
+        document.title = title;
+    },
+
     saveState: debounce(() => {
         const encodedContent = Base64.btoa(encodeURIComponent(serializeAddon.serialize({
             scrollback: 1000,
