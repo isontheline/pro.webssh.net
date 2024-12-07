@@ -539,6 +539,13 @@ const TerminalHelper = {
         if (theme.background) {
             document.querySelector('body').style.backgroundColor = theme.background;
         }
+
+        if (theme._fontFamilyName) {
+            terminal.options.fontFamily = theme._fontFamilyName;
+            TerminalHelper.loadFont(theme._fontFamilyName);
+        } else {
+            terminal.options.fontFamily = '"Cascadia Code", Menlo, monospace';
+        }
     },
 
     buildTheme: function (terminalSettings) {
