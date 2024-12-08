@@ -540,13 +540,14 @@ const TerminalHelper = {
             document.querySelector('body').style.backgroundColor = theme.background;
         }
 
-        if (theme._fontFamilyName) {
+        // TODO : Ability to update Font Family on a running terminal:
+        /*if (theme._fontFamilyName) {
             TerminalHelper.loadFont(theme._fontFamilyName, () => {
                 terminal._publicOptions.fontFamily = theme._fontFamilyName;
             });
         } else {
             terminal._publicOptions.fontFamily = '"MesloLGS NF"';
-        }
+        }*/
     },
 
     buildTheme: function (terminalSettings) {

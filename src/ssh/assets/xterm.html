@@ -19,6 +19,7 @@
     <script src="xterm-addon-search.js"></script>
     <script src="xterm-addon-serialize.js"></script>
     <script src="xterm-addon-web-links.js"></script>
+    <script src="xterm-addon-webgl.js"></script>
 </head>
 
 <body>
@@ -41,6 +42,16 @@
         if ('CP437' == terminalSettings.remoteCharacterSet) {
             document.querySelector('body').classList.add('cp437');
         }
+
+        // Load WebGL Addon :
+        const webglAddon = new WebglAddon.WebglAddon();
+        webglAddon.onContextLoss(e => {
+            webglAddon.dispose();
+            setTimeout(() => {
+                terminal.loadAddon(webglAddon);
+            }, 500);
+        });
+        terminal.loadAddon(webglAddon);
 
         // Load Fit Addon :
         const fitAddon = new FitAddon.FitAddon();
