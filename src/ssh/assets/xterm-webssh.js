@@ -541,10 +541,11 @@ const TerminalHelper = {
         }
 
         if (theme._fontFamilyName) {
-            terminal.options.fontFamily = theme._fontFamilyName;
-            TerminalHelper.loadFont(theme._fontFamilyName);
+            TerminalHelper.loadFont(theme._fontFamilyName, () => {
+                terminal._publicOptions.fontFamily = theme._fontFamilyName;
+            });
         } else {
-            terminal.options.fontFamily = '"Cascadia Code", Menlo, monospace';
+            terminal._publicOptions.fontFamily = '"MesloLGS NF"';
         }
     },
 
@@ -582,7 +583,7 @@ const TerminalHelper = {
         };
     },
 
-    loadFont: function (fontFamily) {
+    loadFont: function (fontFamily, callback) {
         var fontStyle = document.createElement('style');
         fontStyle.appendChild(document.createTextNode("\
         @font-face {\
@@ -594,6 +595,16 @@ const TerminalHelper = {
         }\
         "));
         document.head.appendChild(fontStyle);
+
+        // Use the FontFaceSet API to check when the font is loaded :
+        document.fonts.load(`16px "${fontFamily}"`).then(() => {
+            console.log(`Font ${fontFamily} loaded successfully`);
+            if (callback) {
+                callback();
+            }
+        }).catch((error) => {
+            console.error(`Failed to load font ${fontFamily}:`, error);
+        });
     },
 
     onBufferChange: function (buffer) {
