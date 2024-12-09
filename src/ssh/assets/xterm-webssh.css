@@ -56,16 +56,3 @@ body {
 .xterm-decoration-overview-ruler {
     margin-right: 5px;
 }
-
-body.cp437 .xterm-dom-renderer-owner-1 .xterm-rows div {
-    margin-bottom: -5px !important;
-}
-
-body.cp437 .xterm-dom-renderer-owner-1 .xterm-rows {
-    font-family: monospace !important;
-}
-
-/* Not needed if `TerminalHelper.changeFontSize(TerminalHelper.retriveFontSize());`is applied */
-/*body.cp437 .xterm-rows {
-    letter-spacing: 0px !important;
-}*/

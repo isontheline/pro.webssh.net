@@ -38,11 +38,6 @@
         // Platform :
         document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
 
-        // CP437 "hack" :
-        if ('CP437' == terminalSettings.remoteCharacterSet) {
-            document.querySelector('body').classList.add('cp437');
-        }
-
         // Load WebGL Addon :
         const webglAddon = new WebglAddon.WebglAddon();
         webglAddon.onContextLoss(e => {
