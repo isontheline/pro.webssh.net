@@ -25,7 +25,7 @@
 body {
     margin: 0;
     margin-left: 3px;
-    margin-top: 0px;
+    margin-top: 0px; /* If >0 => Need to update accessibilityFrame Y accordingly */
     padding: 0;
     background-color: green;
     -webkit-text-size-adjust: none;
