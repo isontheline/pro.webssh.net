@@ -277,6 +277,7 @@ const TerminalHelper = {
     },
 
     enableCursorBlink: function (enable) {
+        const renderType = TerminalHelper.getRenderType();
         if ('disabled' == terminalSettings.cursorBlink) {
             enable = false;
         }
@@ -286,8 +287,10 @@ const TerminalHelper = {
         // #974 : Upgrade xterm.js to 5.3.0 ->
         terminal._core._coreBrowserService.isFocused = enable
         terminal._core._coreBrowserService._cachedIsFocused = true;
-        document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
-        document.querySelector('div.xterm-rows').classList.add('xterm-focus');
+        if ('DOM' === renderType) {
+            document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
+            document.querySelector('div.xterm-rows').classList.add('xterm-focus');
+        }
         // <- #974 : Upgrade xterm.js to 5.3.0
 
         if (terminal.textarea) {
@@ -358,31 +361,26 @@ const TerminalHelper = {
 
     exportRawScreenRows: function () {
         const renderType = TerminalHelper.getRenderType();
-        let rows = [];
-
         if ('DOM' === renderType) {
-            rows = Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
-                return element.textContent.trim();
-            });
+            return {
+                rows: Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
+                    return element.textContent.trim();
+                }),
+                lineHeight: parseInt(document.querySelector('div.xterm-rows div').style.lineHeight, 10)
+            };
         } else {
             const startRow = terminal._core._bufferService.buffer.ydisp;
             const endRow = startRow + terminal.rows;
+            let rows = [];
             for (let rowIndex = startRow; rowIndex < endRow; rowIndex++) {
                 let rawRow = terminal._core._bufferService.buffer.translateBufferLineToString(rowIndex).trim();
                 rows.push(rawRow);
             }
+            return {
+                rows,
+                lineHeight: parseInt(document.querySelector('div.xterm-screen').style.height, 10) / rows.length
+            };
         }
-
-        const lineHeight = TerminalHelper.getLineHeight();
-        return {
-            rows,
-            lineHeight
-        };
-    },
-
-    getLineHeight: function () {
-        const renderType = TerminalHelper.getRenderType();
-        return 'DOM' === renderType ? parseInt(document.querySelector('div.xterm-rows div').style.lineHeight, 10) : terminal.options.fontSize;
     },
 
     onBell: debounce(() => {
