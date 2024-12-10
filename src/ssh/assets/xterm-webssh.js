@@ -349,10 +349,30 @@ const TerminalHelper = {
         return textSelection;
     },
 
+    getRenderType: function () {
+        const hasWebGLAddon = terminal._addonManager._addons.some(
+            addon => addon.instance && addon.instance._addonType === "WebglAddon"
+        );
+        return hasWebGLAddon ? "WEBGL" : "DOM";
+    },
+
     exportRawScreenRows: function () {
-        const rows = Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
-            return element.textContent.trim();
-        });
+        const renderType = TerminalHelper.getRenderType();
+        let rows = [];
+
+        if ('DOM' === renderType) {
+            rows = Array.from(document.querySelectorAll('div.xterm-rows div')).map((element, index) => {
+                return element.textContent.trim();
+            });
+        } else {
+            const startRow = terminal._core._bufferService.buffer.ydisp;
+            const endRow = startRow + terminal.rows;
+            for (let rowIndex = startRow; rowIndex < endRow; rowIndex++) {
+                let rawRow = terminal._core._bufferService.buffer.translateBufferLineToString(rowIndex).trim();
+                rows.push(rawRow);
+            }
+        }
+
         const lineHeight = TerminalHelper.getLineHeight();
         return {
             rows,
@@ -361,7 +381,8 @@ const TerminalHelper = {
     },
 
     getLineHeight: function () {
-        return parseInt(document.querySelector('div.xterm-rows div').style.lineHeight, 10);
+        const renderType = TerminalHelper.getRenderType();
+        return 'DOM' === renderType ? parseInt(document.querySelector('div.xterm-rows div').style.lineHeight, 10) : terminal.options.fontSize;
     },
 
     onBell: debounce(() => {
@@ -568,7 +589,6 @@ const TerminalHelper = {
     buildTerminalSettings: function (terminalSettings) {
         return {
             fontFamily: terminalSettings.fontFamily,
-            rendererType: 'dom',
             allowTransparency: true,
             bellStyle: 'none',
             theme: TerminalHelper.buildTheme(terminalSettings),
