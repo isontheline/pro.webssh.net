@@ -194,6 +194,7 @@ const ColorHelper = {
 const TerminalHelper = {
     scrolly: null,
     lastSelectedText: null,
+    cursorBlinkInterval: null,
 
     ready: function () {
         // Applying a border to the terminal screen if fixedSize enabled :
@@ -282,20 +283,25 @@ const TerminalHelper = {
             enable = false;
         }
 
-        terminal._core.optionsService.options.cursorBlink = enable;
-
-        // #974 : Upgrade xterm.js to 5.3.0 ->
-        terminal._core._coreBrowserService.isFocused = enable
-        terminal._core._coreBrowserService._cachedIsFocused = true;
-        if ('DOM' === renderType) {
-            document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
-            document.querySelector('div.xterm-rows').classList.add('xterm-focus');
+        if (TerminalHelper.cursorBlinkInterval) {
+            clearInterval(TerminalHelper.cursorBlinkInterval);
         }
-        // <- #974 : Upgrade xterm.js to 5.3.0
+        TerminalHelper.cursorBlinkInterval = setInterval(function () {
+            terminal._core.optionsService.options.cursorBlink = enable;
 
-        if (terminal.textarea) {
-            TerminalHelper.focus(enable);
-        }
+            // #974 : Upgrade xterm.js to 5.3.0 ->
+            terminal._core._coreBrowserService.isFocused = enable
+            terminal._core._coreBrowserService._cachedIsFocused = true;
+            if ('DOM' === renderType) {
+                document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
+                document.querySelector('div.xterm-rows').classList.add('xterm-focus');
+            }
+            // <- #974 : Upgrade xterm.js to 5.3.0
+
+            if (terminal.textarea) {
+                TerminalHelper.focus(enable);
+            }
+        }, 1500);
     },
 
     scrollToBottom: function () {
@@ -482,6 +488,7 @@ const TerminalHelper = {
             fontFamily: '"Cascadia Code", Menlo, monospace',
             copyOnSelect: false,
             cursorStyle: 'block',
+            cursorInactiveStyle: 'outline',
             cursorBlink: 'normal',
             rows: 25,
             cols: 80,
@@ -521,6 +528,7 @@ const TerminalHelper = {
 
         if (fragment.cursorStyle) {
             terminalSettings.cursorStyle = fragment.cursorStyle;
+            terminalSettings.cursorInactiveStyle = fragment.cursorStyle;
         }
 
         if (fragment.cursorBlink) {
@@ -594,6 +602,7 @@ const TerminalHelper = {
             fontWeight: 'normal',
             fontWeightBold: 'normal',
             cursorStyle: terminalSettings.cursorStyle,
+            cursorInactiveStyle: terminalSettings.cursorStyle,
             customGlyphs: true,
             scrollback: terminalSettings.scrollback,
             rows: terminalSettings.rows,
