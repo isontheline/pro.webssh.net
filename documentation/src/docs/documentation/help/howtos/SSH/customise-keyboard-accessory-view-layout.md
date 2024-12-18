@@ -60,27 +60,28 @@ When you press a Special Key, the corresponding action will be executed.
 
 When you press a Special Key, the corresponding action will be executed.
 
-| Token            | Description                                                      | Required Version |
-|------------------|------------------------------------------------------------------|------------------|
-| {ARROWS}        | The all-in-one four arrows key                                   | 23.0            |
-| {CTL}           | Control Key                                                      | 23.0            |
-| {DEL}           | Delete Key                                                       | 23.0            |
-| {DOWN}          | Down Arrow Key                                                   | 23.0            |
-| {END}           | End Key                                                          | 23.0            |
-| {ENTER}         | Enter Key                                                        | 28.3            |
-| {ESC}           | Escape / Meta Key                                                | 23.0            |
-| {FN}            | Display the function keys page                                   | 23.0            |
-| {HELP}          | Help Key : Show this help page                                   | 23.0            |
-| {HOME}          | Home Key                                                         | 23.0            |
-| {INS}           | Insert Key                                                       | 23.0            |
-| {LEFT}          | Left Arrow Key                                                   | 23.0            |
-| {PASTE}         | Paste Key : Paste the clipboard content to the terminal          | 23.0            |
-| {PASTE_PASSWORD}| Paste Password Key : Paste the current connection password       | 23.0            |
-| {PGDN}          | Page Down Key                                                    | 23.0            |
-| {PGUP}          | Page Up Key                                                      | 23.0            |
-| {PJUMP}         | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0            |
-| {RIGHT}         | Right Arrow Key                                                  | 23.0            |
-| {TAB}           | Tab Key                                                          | 23.0            |
-| {UP}            | Up Arrow Key                                                     | 23.0            |
+| Token           | Description                                                      | Required Version |
+|-----------------|------------------------------------------------------------------|------------------|
+| {ARROWS}        | The all-in-one four arrows key                                   | 23.0             |
+| {BRACKETS}      | All brackets options on same key                                 | 28.3             |
+| {CTL}           | Control Key                                                      | 23.0             |
+| {DEL}           | Delete Key                                                       | 23.0             |
+| {DOWN}          | Down Arrow Key                                                   | 23.0             |
+| {END}           | End Key                                                          | 23.0             |
+| {ENTER}         | Enter Key                                                        | 28.3             |
+| {ESC}           | Escape / Meta Key                                                | 23.0             |
+| {FN}            | Display the function keys page                                   | 23.0             |
+| {HELP}          | Help Key : Show this help page                                   | 23.0             |
+| {HOME}          | Home Key                                                         | 23.0             |
+| {INS}           | Insert Key                                                       | 23.0             |
+| {LEFT}          | Left Arrow Key                                                   | 23.0             |
+| {PASTE}         | Paste Key : Paste the clipboard content to the terminal          | 23.0             |
+| {PASTE_PASSWORD}| Paste Password Key : Paste the current connection password       | 23.0             |
+| {PGDN}          | Page Down Key                                                    | 23.0             |
+| {PGUP}          | Page Up Key                                                      | 23.0             |
+| {PJUMP}         | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0             |
+| {RIGHT}         | Right Arrow Key                                                  | 23.0             |
+| {TAB}           | Tab Key                                                          | 23.0             |
+| {UP}            | Up Arrow Key                                                     | 23.0             |
 
 [^1]: In order to use this functionality, you must upgrade to WebSSH 23.0.1138
