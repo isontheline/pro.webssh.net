@@ -290,8 +290,10 @@ const TerminalHelper = {
             terminal._core.optionsService.options.cursorBlink = enable;
 
             // #974 : Upgrade xterm.js to 5.3.0 ->
-            terminal._core._coreBrowserService.isFocused = enable
-            terminal._core._coreBrowserService._cachedIsFocused = true;
+            if (terminal._core._coreBrowserService) {
+                terminal._core._coreBrowserService.isFocused = enable;
+                terminal._core._coreBrowserService._cachedIsFocused = true;
+            }
             if ('DOM' === renderType) {
                 document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
                 document.querySelector('div.xterm-rows').classList.add('xterm-focus');
