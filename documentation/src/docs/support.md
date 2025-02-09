@@ -4,17 +4,14 @@ title: Support
 
 # Support
 
-??? tip "Unable to connect to your server using latest WebSSH release?"
-    * WebSSH has now deprecated weak algorithms in order to increase security between your device and your server.
-    * It may result in connection issues if your server need to use one of these deprecated algorithms.
-    * You can learn more about [Supported Algorithms](/documentation/help/SSH/supported-algorithms/) and [Terrapin Attack](/documentation/help/SSH/terrapin-attack/) to understand the changes made in WebSSH.
-    * Regularly make an audit of your SSH clients and servers : [ssh-audit.com](https://www.ssh-audit.com)
-    
-    If you want to enable again the deprecated algorithms, you can do it by using [this guide](/documentation/help/SSH/terrapin-attack/#reenable-all-algorithms).
+??? example "Deploy WebSSH in Your Organization"
+    Looking to deploy WebSSH within your organization? 
 
-??? example "Don't miss WebSSH Brain"
-    WebSSH Brain is a generative AI that powers your work about command line. [Learn more](/documentation/help/webssh-brain/)
-    > Powered by <img src="https://raw.githubusercontent.com/dRAGon-Okinawa/dRAGon/refs/heads/main/static/img/dragon_okinawa_icon.png" alt="dRAGon Okinawa" title="dRAGon Okinawa" style="width:16px; vertical-align:middle"/> [dRAGon](https://github.com/dRAGon-Okinawa/dRAGon)
+    For seamless deployment, we recommend using [Apple Business Manager](https://business.apple.com/) or [Apple School Manager](https://school.apple.com/), which provide the most efficient way to manage and distribute WebSSH across your organization.
+
+    To proceed, please contact me via [email](mailto:team@webssh.net) and include your **Organization ID** and **Organization Name**. I will provide you with a dedicated link to download WebSSH for your organization.
+
+    For any additional inquiries, feel free to reach out.
 
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
