@@ -17,6 +17,7 @@
 | SSH Client | :white_check_mark: | :white_check_mark: |
 | SFTP Client | :white_check_mark: | :white_check_mark: |
 | TELNET Client[^2] | :white_check_mark: | :white_check_mark: |
+| Serial Port Client[^3] | :white_check_mark: | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
 | Multiple terminals | :white_check_mark: | :white_check_mark: |
@@ -43,3 +44,4 @@ If you need more information about the differences between **FREE** and **PRO** 
 
 [^1]: Not available on these countries : China Mainland
 [^2]: TELNET is available since WebSSH 26.1
+[^3]: Serial Port Client is available since WebSSH 29.0
