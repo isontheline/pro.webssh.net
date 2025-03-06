@@ -1,6 +1,6 @@
 site_url: https://webssh.net
 site_name: WebSSH
-copyright: WebSSH &copy; 2012-2024<br />Like my work? <a href="https://github.com/sponsors/isontheline">Sponsors</a> and <a href="https://www.buymeacoffee.com/isontheline">Coffees</a> are welcome!
+copyright: WebSSH &copy; 2012-2025<br />Like my work? <a href="https://github.com/sponsors/isontheline">Sponsors</a> and <a href="https://www.buymeacoffee.com/isontheline">Coffees</a> are welcome!
 theme:
   name: material
   custom_dir: overrides
