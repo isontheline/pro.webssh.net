@@ -44,4 +44,4 @@ If you need more information about the differences between **FREE** and **PRO** 
 
 [^1]: Not available on these countries : China Mainland
 [^2]: TELNET is available since WebSSH 26.1
-[^3]: Serial Port Client is available since WebSSH 29.0
+[^3]: Serial Port Client is available since WebSSH 29.0, only on macOS
