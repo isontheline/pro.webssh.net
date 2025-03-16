@@ -39,15 +39,17 @@
         document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
 
         // Load WebGL Addon :
-        const webglAddon = new WebglAddon.WebglAddon();
-        webglAddon._addonType = 'WebglAddon';
-        webglAddon.onContextLoss(e => {
-            webglAddon.dispose();
-            setTimeout(() => {
-                terminal.loadAddon(webglAddon);
-            }, 500);
-        });
-        terminal.loadAddon(webglAddon);
+        if(terminalSettings.runMode == 'normal') {
+            const webglAddon = new WebglAddon.WebglAddon();
+            webglAddon._addonType = 'WebglAddon';
+            webglAddon.onContextLoss(e => {
+                webglAddon.dispose();
+                setTimeout(() => {
+                    terminal.loadAddon(webglAddon);
+                }, 500);
+            });
+            terminal.loadAddon(webglAddon);
+        }
 
         // Load Fit Addon :
         const fitAddon = new FitAddon.FitAddon();

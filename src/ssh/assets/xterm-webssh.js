@@ -497,6 +497,7 @@ const TerminalHelper = {
             fixedSize: false,
             handedness: 'right',
             remoteCharacterSet: 'UTF-8',
+            runMode: 'normal'
         }
 
         if (fragment.fontSize) {
@@ -522,6 +523,10 @@ const TerminalHelper = {
         if (fragment.fontFamily) {
             terminalSettings.fontFamily = fragment.fontFamily;
             TerminalHelper.loadFont(terminalSettings.fontFamily);
+        }
+
+        if (fragment.runMode) {
+            terminalSettings.runMode = fragment.runMode;
         }
 
         if (fragment.textSelectionStrategy && fragment.textSelectionStrategy == 'clipboard') {
