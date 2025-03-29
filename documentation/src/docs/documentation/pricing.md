@@ -39,9 +39,11 @@
 | DNS Lookup | :white_check_mark: | :white_check_mark: |
 | Whois Lookup | :white_check_mark: | :white_check_mark: |
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
+| Wake-on-LAN[^4] | :white_check_mark: | :white_check_mark: |
 
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](mailto:team@webssh.net) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Not available on these countries : China Mainland
 [^2]: TELNET is available since WebSSH 26.1
 [^3]: Serial Port Client is available since WebSSH 29.0, only on macOS
+[^4]: Wake-on-LAN is available since WebSSH 29.2
