@@ -28,7 +28,7 @@ If you return an undefined value or a null value, the item will be hidden in the
 The Item Result Object is an object that contains the following properties:
 
 * **label**: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.
-* **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.
+* **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to [SF Symbols](https://developer.apple.com/sf-symbols/) for the list of available icons. If not provided, the last icon set will be used.
 
 ### Examples
 #### Connectivity Indicator
@@ -41,6 +41,19 @@ No need to write a label, as the icon will be enough to indicate the connection 
     return {
         label: '',
         icon
+    } 
+})();
+```
+
+#### Display Remote Date
+This example shows how to display the remote date in the State Bar.
+
+```javascript
+(function() {
+    let date = ssh.exec('date')
+    return {
+        label: date,
+        icon: 'calendar'
     } 
 })();
 ```
