@@ -460,6 +460,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectivity-indicator" class="md-nav__link">
+    Connectivity Indicator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exposed-variables-and-functions" class="md-nav__link">
     Exposed variables and functions
   </a>
@@ -3104,6 +3124,26 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectivity-indicator" class="md-nav__link">
+    Connectivity Indicator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exposed-variables-and-functions" class="md-nav__link">
     Exposed variables and functions
   </a>
@@ -3164,10 +3204,24 @@
 <li><strong>label</strong>: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.</li>
 <li><strong>icon</strong>: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.</li>
 </ul>
+<h3 id="examples">Examples</h3>
+<h4 id="connectivity-indicator">Connectivity Indicator</h4>
+<p>This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
+No need to write a label, as the icon will be enough to indicate the connection status.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ssh</span><span class="p">.</span><span class="nx">isConnected</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;cable.connector&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cable.connector.slash&#39;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">})();</span>
+</code></pre></div>
 <h3 id="exposed-variables-and-functions">Exposed variables and functions</h3>
-<p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
-* <code>ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Will return a String
-* <code>ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</p>
+<p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:</p>
+<ul>
+<li><code>ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.</li>
+<li><code>ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
+</ul>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
 <p>State Bar will be improved over months but, keep in mind that there are some limitations and known issues:</p>
 <ul>
@@ -3182,7 +3236,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 09:45:39">May 9, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 13:33:34">May 9, 2025</span>
       
     
   </small>
