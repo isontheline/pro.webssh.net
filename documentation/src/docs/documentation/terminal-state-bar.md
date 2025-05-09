@@ -30,9 +30,25 @@ The Item Result Object is an object that contains the following properties:
 * **label**: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.
 * **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.
 
+### Examples
+#### Connectivity Indicator
+This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
+No need to write a label, as the icon will be enough to indicate the connection status.
+
+```javascript
+(function() {
+    let icon = ssh.isConnected() ? 'cable.connector' : 'cable.connector.slash'
+    return {
+        label: '',
+        icon
+    } 
+})();
+```
+
 ### Exposed variables and functions
 The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
-* `ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Will return a String
+
+* `ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.
 * `ssh.isConnected`: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.
 
 ## Known Issues / Limitations
