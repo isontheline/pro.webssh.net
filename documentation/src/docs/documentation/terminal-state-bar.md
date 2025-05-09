@@ -27,8 +27,8 @@ If you return an undefined value or a null value, the item will be hidden in the
 ### Item Result Object
 The Item Result Object is an object that contains the following properties:
 
-* **value**: The value of the item, this is the value that will be displayed in the State Bar. This property is mandatory.
-* **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons.
+* **label**: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.
+* **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.
 
 ### Exposed variables and functions
 The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
@@ -41,3 +41,4 @@ State Bar will be improved over months but, keep in mind that there are some lim
 * When using `ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.
 * "Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.
 * When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.
+* State Bar is updated every 3 seconds when no user interaction is detected.
