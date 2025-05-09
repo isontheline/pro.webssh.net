@@ -3161,8 +3161,8 @@
 <h3 id="item-result-object">Item Result Object</h3>
 <p>The Item Result Object is an object that contains the following properties:</p>
 <ul>
-<li><strong>value</strong>: The value of the item, this is the value that will be displayed in the State Bar. This property is mandatory.</li>
-<li><strong>icon</strong>: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons.</li>
+<li><strong>label</strong>: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.</li>
+<li><strong>icon</strong>: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.</li>
 </ul>
 <h3 id="exposed-variables-and-functions">Exposed variables and functions</h3>
 <p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
@@ -3174,6 +3174,7 @@
 <li>When using <code>ssh.exec</code>, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.</li>
 <li>"Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.</li>
 <li>When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.</li>
+<li>State Bar is updated every 3 seconds when no user interaction is detected.</li>
 </ul>
 
   <hr>
@@ -3181,7 +3182,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 08:31:28">May 9, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 09:45:39">May 9, 2025</span>
       
     
   </small>
