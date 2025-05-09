@@ -474,6 +474,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-remote-date" class="md-nav__link">
+    Display Remote Date
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3138,6 +3145,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-remote-date" class="md-nav__link">
+    Display Remote Date
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3202,7 +3216,7 @@
 <p>The Item Result Object is an object that contains the following properties:</p>
 <ul>
 <li><strong>label</strong>: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.</li>
-<li><strong>icon</strong>: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to SF Symbols for the list of available icons. If not provided, the last icon set will be used.</li>
+<li><strong>icon</strong>: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to <a href="https://developer.apple.com/sf-symbols/">SF Symbols</a> for the list of available icons. If not provided, the last icon set will be used.</li>
 </ul>
 <h3 id="examples">Examples</h3>
 <h4 id="connectivity-indicator">Connectivity Indicator</h4>
@@ -3213,6 +3227,16 @@ No need to write a label, as the icon will be enough to indicate the connection 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">icon</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">})();</span>
+</code></pre></div>
+<h4 id="display-remote-date">Display Remote Date</h4>
+<p>This example shows how to display the remote date in the State Bar.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">date</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;calendar&#39;</span>
 <span class="w">    </span><span class="p">}</span><span class="w"> </span>
 <span class="p">})();</span>
 </code></pre></div>
@@ -3236,7 +3260,7 @@ No need to write a label, as the icon will be enough to indicate the connection 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 13:33:34">May 9, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 9, 2025 13:40:23">May 9, 2025</span>
       
     
   </small>
