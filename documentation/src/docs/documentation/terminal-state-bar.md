@@ -49,7 +49,7 @@ The JavascriptCode is running inside a sandbox, so you can't access the DOM or a
 * `$ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.
 * `$ssh.isConnected`: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.
 * `$vars`: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.
-  * `$vars.set(key, value)`: Set a variable in the `$vars` object. If the key starts with `GLOBAL_`, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.
+  * `$vars.set(key, value)`: Set a variable in the `$vars` object. It will private to the item and not shared. If the key starts with `GLOBAL_`, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.
   * `$vars.get(key)`: Get a variable from the `$vars` object.
   * `$vars.get(key, fallback)`: Get a variable from the `$vars` object. If the variable is not set, return the fallback value. This is useful to avoid errors when the variable is not set.
 
