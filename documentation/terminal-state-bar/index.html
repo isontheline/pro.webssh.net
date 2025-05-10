@@ -3243,18 +3243,19 @@
 <h3 id="exposed-variables-and-functions">Exposed variables and functions</h3>
 <p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:</p>
 <ul>
-<li><code>ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.</li>
-<li><code>ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
+<li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.</li>
+<li><code>$ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
 <li><code>$vars</code>: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.</li>
 <li><code>$vars.set(key, value)</code>: Set a variable in the <code>$vars</code> object. If the key starts with <code>GLOBAL_</code>, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.</li>
 <li><code>$vars.get(key)</code>: Get a variable from the <code>$vars</code> object.</li>
+<li><code>$vars.get(key, fallback)</code>: Get a variable from the <code>$vars</code> object. If the variable is not set, return the fallback value. This is useful to avoid errors when the variable is not set.</li>
 </ul>
 <h3 id="examples">Examples</h3>
 <h4 id="connectivity-indicator">Connectivity Indicator</h4>
 <p>This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
 No need to write a label, as the icon will be enough to indicate the connection status.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ssh</span><span class="p">.</span><span class="nx">isConnected</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;cable.connector&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cable.connector.slash&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">isConnected</span><span class="p">()</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;cable.connector&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cable.connector.slash&#39;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">icon</span>
@@ -3275,7 +3276,7 @@ No need to write a label, as the icon will be enough to indicate the connection 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 14:49:12">May 10, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 15:19:32">May 10, 2025</span>
       
     
   </small>
