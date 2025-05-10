@@ -467,11 +467,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
+  <a href="#javascript-examples" class="md-nav__link">
+    JavaScript Examples
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="JavaScript Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3145,11 +3145,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
+  <a href="#javascript-examples" class="md-nav__link">
+    JavaScript Examples
   </a>
   
-    <nav class="md-nav" aria-label="Examples">
+    <nav class="md-nav" aria-label="JavaScript Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3238,10 +3238,12 @@
 <li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.</li>
 <li><code>$ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
 <li><code>$vars</code>: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.</li>
-<li><code>$vars.set(key, value)</code>: Set a variable in the <code>$vars</code> object. It will private to the item and not shared. If the key starts with <code>GLOBAL_</code>, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.</li>
+<li><code>$vars.set(key, value)</code>: Set a variable in the <code>$vars</code> object. It will private to the item and not shared. If the key starts with <code>GLOBAL_</code>, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.<ul>
 <li><code>$vars.get(key)</code>: Get a variable from the <code>$vars</code> object.</li>
 <li><code>$vars.get(key, fallback)</code>: Get a variable from the <code>$vars</code> object. If the variable is not set, return the fallback value. This is useful to avoid errors when the variable is not set.</li>
-<li><code>WebSSH_</code> vars: Contain some useful information about the current session. There are read-only and cannot be modified. The following properties are available:<ul>
+</ul>
+</li>
+<li><code>WebSSH_</code> vars: Contain some useful information about the current session. These are read-only ones and cannot be modified. The following properties are available:<ul>
 <li><code>WebSSH_CONNECTION_NAME</code>: The name of the current session (eg. "My SSH Server")</li>
 <li><code>WebSSH_CONNECTION_HOST</code>: The host of the current session (eg. "ssh.example.com")</li>
 <li><code>WebSSH_CONNECTION_ADDRESS</code>: The resolved address of the current session (eg. "172.21.0.40")</li>
@@ -3249,7 +3251,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="examples">Examples</h3>
+<h3 id="javascript-examples">JavaScript Examples</h3>
 <h4 id="connectivity-indicator">Connectivity Indicator</h4>
 <p>This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
 No need to write a label, as the icon will be enough to indicate the connection status.</p>
@@ -3291,7 +3293,7 @@ No need to write a label, as the icon will be enough to indicate the connection 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 16:16:39">May 10, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 16:19:45">May 10, 2025</span>
       
     
   </small>
