@@ -85,7 +85,7 @@ This example shows how to display the resolved address of the remote server in t
 ## Known Issues / Limitations
 State Bar will be improved over months but, keep in mind that there are some limitations and known issues:
 
-* When using `ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.
+* When using `$ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.
 * "Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.
 * When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.
 * State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.
