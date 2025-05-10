@@ -30,21 +30,6 @@ The Item Result Object is an object that contains the following properties:
 * **label**: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.
 * **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to [SF Symbols](https://developer.apple.com/sf-symbols/) for the list of available icons. If not provided, the last icon set will be used.
 
-### Examples
-#### Connectivity Indicator
-This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
-No need to write a label, as the icon will be enough to indicate the connection status.
-
-```javascript
-(function() {
-    let icon = ssh.isConnected() ? 'cable.connector' : 'cable.connector.slash'
-    return {
-        label: '',
-        icon
-    } 
-})();
-```
-
 #### Display Remote Date
 This example shows how to display the remote date in the State Bar.
 
@@ -63,6 +48,24 @@ The JavascriptCode is running inside a sandbox, so you can't access the DOM or a
 
 * `ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.
 * `ssh.isConnected`: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.
+* `$vars`: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.
+  * `$vars.set(key, value)`: Set a variable in the `$vars` object. If the key starts with `GLOBAL_`, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.
+  * `$vars.get(key)`: Get a variable from the `$vars` object.
+
+### Examples
+#### Connectivity Indicator
+This example shows how to create a connectivity indicator that will display a different icon depending on the connection status.
+No need to write a label, as the icon will be enough to indicate the connection status.
+
+```javascript
+(function() {
+    let icon = ssh.isConnected() ? 'cable.connector' : 'cable.connector.slash'
+    return {
+        label: '',
+        icon
+    } 
+})();
+```
 
 ## Known Issues / Limitations
 State Bar will be improved over months but, keep in mind that there are some limitations and known issues:
@@ -70,4 +73,4 @@ State Bar will be improved over months but, keep in mind that there are some lim
 * When using `ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.
 * "Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.
 * When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.
-* State Bar is updated every 3 seconds when no user interaction is detected.
+* State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.
