@@ -30,19 +30,6 @@ The Item Result Object is an object that contains the following properties:
 * **label**: The text value of the item, this is the value that will be displayed in the State Bar. Fallback to empty string if not defined.
 * **icon**: The icon of the item, this icon will be displayed in the State Bar. This property is optional. Refer to [SF Symbols](https://developer.apple.com/sf-symbols/) for the list of available icons. If not provided, the last icon set will be used.
 
-#### Display Remote Date
-This example shows how to display the remote date in the State Bar.
-
-```javascript
-(function() {
-    let date = ssh.exec('date')
-    return {
-        label: date,
-        icon: 'calendar'
-    } 
-})();
-```
-
 ### Exposed variables and functions
 The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
 
@@ -70,6 +57,28 @@ No need to write a label, as the icon will be enough to indicate the connection 
         label: '',
         icon
     } 
+})();
+```
+
+#### Display Remote Date
+This example shows how to display the remote date in the State Bar.
+
+```javascript
+(function() {
+    let date = ssh.exec('date')
+    return {
+        label: date,
+        icon: 'calendar'
+    } 
+})();
+```
+
+#### Remote Server Resolved Address
+This example shows how to display the resolved address of the remote server in the State Bar. As we don't return an Item Result Object, the label will be displayed by using the address and the icon will be the last one set.
+
+```javascript
+(function() {
+    return $vars.get('WEBSSH_CONNECTION_ADDRESS');
 })();
 ```
 
