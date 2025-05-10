@@ -52,6 +52,11 @@ The JavascriptCode is running inside a sandbox, so you can't access the DOM or a
   * `$vars.set(key, value)`: Set a variable in the `$vars` object. It will private to the item and not shared. If the key starts with `GLOBAL_`, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.
   * `$vars.get(key)`: Get a variable from the `$vars` object.
   * `$vars.get(key, fallback)`: Get a variable from the `$vars` object. If the variable is not set, return the fallback value. This is useful to avoid errors when the variable is not set.
+  * `WebSSH_` vars: Contain some useful information about the current session. There are read-only and cannot be modified. The following properties are available:
+    * `WebSSH_CONNECTION_NAME`: The name of the current session (eg. "My SSH Server")
+    * `WebSSH_CONNECTION_HOST`: The host of the current session (eg. "ssh.example.com")
+    * `WebSSH_CONNECTION_ADDRESS`: The resolved address of the current session (eg. "172.21.0.40")
+    * `WebSSH_CONNECTION_SERVER_IDENTIFIER`: The SSH server identifier of the current session (eg. "SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.2")
 
 ### Examples
 #### Connectivity Indicator
