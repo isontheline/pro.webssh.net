@@ -33,7 +33,7 @@ The Item Result Object is an object that contains the following properties:
 ### Exposed variables and functions
 The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:
 
-* `$ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.
+* `$ssh.exec`: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. You should use as much as possible the [Linux `timeout`](https://www.man7.org/linux/man-pages/man1/timeout.1.html) command to limit the execution time of the command. Will return a String.
 * `$ssh.isConnected`: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.
 * `$vars`: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.
   * `$vars.set(key, value)`: Set a variable in the `$vars` object. It will private to the item and not shared. If the key starts with `GLOBAL_`, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.
@@ -82,10 +82,19 @@ This example shows how to display the resolved address of the remote server in t
 })();
 ```
 
+#### Display Used Disk Space on /
+We will use the `df` command to get the used disk space on the root partition. As the command could hang, we will use the `timeout` command to limit the execution time to 1 second.
+
+```javascript
+(function() {
+    return $ssh.exec("timeout -k 1s 1s df -h / | awk 'NR==2 {print $3}'")
+})();
+```
+
 ## Known Issues / Limitations
 State Bar will be improved over months but, keep in mind that there are some limitations and known issues:
 
-* When using `$ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.
+* When using `$ssh.exec`, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished. You should use as much as possible the [Linux `timeout`](https://www.man7.org/linux/man-pages/man1/timeout.1.html) command to limit the execution time of the command.
 * "Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.
 * When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.
 * State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.
