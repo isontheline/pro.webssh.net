@@ -495,6 +495,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-used-disk-space-on" class="md-nav__link">
+    Display Used Disk Space on /
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3173,6 +3180,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#display-used-disk-space-on" class="md-nav__link">
+    Display Used Disk Space on /
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3235,7 +3249,7 @@
 <h3 id="exposed-variables-and-functions">Exposed variables and functions</h3>
 <p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:</p>
 <ul>
-<li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. Will return a String.</li>
+<li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. You should use as much as possible the <a href="https://www.man7.org/linux/man-pages/man1/timeout.1.html">Linux <code>timeout</code></a> command to limit the execution time of the command. Will return a String.</li>
 <li><code>$ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
 <li><code>$vars</code>: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.</li>
 <li><code>$vars.set(key, value)</code>: Set a variable in the <code>$vars</code> object. It will private to the item and not shared. If the key starts with <code>GLOBAL_</code>, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.<ul>
@@ -3279,10 +3293,16 @@ No need to write a label, as the icon will be enough to indicate the connection 
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">$vars</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;WEBSSH_CONNECTION_ADDRESS&#39;</span><span class="p">);</span>
 <span class="p">})();</span>
 </code></pre></div>
+<h4 id="display-used-disk-space-on">Display Used Disk Space on /</h4>
+<p>We will use the <code>df</code> command to get the used disk space on the root partition. As the command could hang, we will use the <code>timeout</code> command to limit the execution time to 1 second.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 1s 1s df -h / | awk &#39;NR==2 {print $3}&#39;&quot;</span><span class="p">)</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
 <p>State Bar will be improved over months but, keep in mind that there are some limitations and known issues:</p>
 <ul>
-<li>When using <code>$ssh.exec</code>, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished.</li>
+<li>When using <code>$ssh.exec</code>, try to avoid long running commands, as they will block the UI and the State Bar will not be updated until the command is finished. You should use as much as possible the <a href="https://www.man7.org/linux/man-pages/man1/timeout.1.html">Linux <code>timeout</code></a> command to limit the execution time of the command.</li>
 <li>"Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.</li>
 <li>When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.</li>
 <li>State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.</li>
@@ -3293,7 +3313,7 @@ No need to write a label, as the icon will be enough to indicate the connection 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 10, 2025 16:19:45">May 10, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 11, 2025 09:53:02">May 11, 2025</span>
       
     
   </small>
