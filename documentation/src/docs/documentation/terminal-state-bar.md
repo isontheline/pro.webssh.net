@@ -91,6 +91,9 @@ We will use the `df` command to get the used disk space on the root partition. A
 })();
 ```
 
+## State Bar Hub
+The State Bar Hub is a collection of State Bar Items that are freely available to use : https://statebarhub.webssh.net
+
 ## Known Issues / Limitations
 State Bar will be improved over months but, keep in mind that there are some limitations and known issues:
 
