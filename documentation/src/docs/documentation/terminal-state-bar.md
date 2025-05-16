@@ -16,6 +16,7 @@ An item is a piece of information that you can display in the State Bar. You can
 Items are defined by :
 
 * **Name**: The name of the item, not displayed in the State Bar, only used to identify the item in the settings
+* **Tags**: The tags of the item, used to link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/).
 * **Icon**: The icon of the item, displayed in the State Bar
 * **JavaScript**: The JavaScript code that will be executed to get the value of the item. The result of this code will be displayed in the State Bar.
 
