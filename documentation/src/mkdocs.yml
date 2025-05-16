@@ -36,6 +36,7 @@ plugins:
         'documentation/changelog/18.md': 'documentation/changelog/history/18.md'
         'documentation/changelog/19.md': 'documentation/changelog/history/19.md'
         'documentation/changelog/20.md': 'documentation/changelog/history/20.md'
+        'documentation/help/howtos/link-connections-and-snippets.md': 'documentation/help/howtos/link-connections-using-tags.md'
 markdown_extensions:
   - admonition
   - attr_list
