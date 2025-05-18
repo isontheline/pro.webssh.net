@@ -4,14 +4,12 @@ title: Support
 
 # Support
 
-??? example "Deploy WebSSH in Your Organization"
-    Looking to deploy WebSSH within your organization? 
-
-    For seamless deployment, we recommend using [Apple Business Manager](https://business.apple.com/) or [Apple School Manager](https://school.apple.com/), which provide the most efficient way to manage and distribute WebSSH across your organization.
-
-    To proceed, please contact me via [email](mailto:team@webssh.net) and include your **Organization ID** and **Organization Name**. I will provide you with a dedicated link to download WebSSH for your organization.
-
-    For any additional inquiries, feel free to reach out.
+??? example "Terminal State Bar"
+    The **Terminal State Bar** is a new feature in WebSSH that enhances your terminal experience by displaying useful information at the bottom of your session. 
+    
+    It’s fully customizable—you can add your own scripts to show exactly what you need, from system stats to connection details. If you prefer a cleaner interface, no worries—you can easily disable the bar anytime from the settings. 
+    
+    I’m also working on a variety of [built-in items](https://statebarhub.webssh.net/) to make it even more powerful, so stay tuned over the next few weeks for new updates!
 
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
@@ -26,3 +24,12 @@ title: Support
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
     You can also learn about features [added / changed / removed](/documentation/changelog/29/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
+
+??? note "Deploy WebSSH in Your Organization"
+    Looking to deploy WebSSH within your organization? 
+
+    For seamless deployment, we recommend using [Apple Business Manager](https://business.apple.com/) or [Apple School Manager](https://school.apple.com/), which provide the most efficient way to manage and distribute WebSSH across your organization.
+
+    To proceed, please contact me via [email](mailto:team@webssh.net) and include your **Organization ID** and **Organization Name**. I will provide you with a dedicated link to download WebSSH for your organization.
+
+    For any additional inquiries, feel free to reach out.
