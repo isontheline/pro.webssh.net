@@ -3250,7 +3250,7 @@
 <h3 id="exposed-variables-and-functions">Exposed variables and functions</h3>
 <p>The JavascriptCode is running inside a sandbox, so you can't access the DOM or any other global variables. You can only use the following variables and functions:</p>
 <ul>
-<li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. You should use as much as possible the <a href="https://www.man7.org/linux/man-pages/man1/timeout.1.html">Linux <code>timeout</code></a> command to limit the execution time of the command. Will return a String.</li>
+<li><code>$ssh.exec</code>: The SSH object used to execute commands on the remote server. You can use it to execute any command you want. Avoid long running commands. You should use as much as possible the <a href="https://www.man7.org/linux/man-pages/man1/timeout.1.html">Linux <code>timeout</code></a> command to limit the execution time of the command. Will return a String with the output of the command. If the command fails, it will return null.</li>
 <li><code>$ssh.isConnected</code>: A boolean that indicates if the SSH connection is established or not. Useful to display a message when the connection is lost.</li>
 <li><code>$vars</code>: A special object that could be used to store variables that you want to share between runs of the JavaScript code. Could also be used to share data between items. This variable is not persistent, so it will be reset when the connection is closed.</li>
 <li><code>$vars.set(key, value)</code>: Set a variable in the <code>$vars</code> object. It will private to the item and not shared. If the key starts with <code>GLOBAL_</code>, the variable will be stored in the global scope and will be available for all items. This is useful to share data between items.<ul>
@@ -3314,7 +3314,7 @@ No need to write a label, as the icon will be enough to indicate the connection 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 22, 2025 19:38:31">May 22, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 22, 2025 20:32:20">May 22, 2025</span>
       
     
   </small>
