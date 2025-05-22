@@ -9,7 +9,7 @@ title: Support
     
     It’s fully customizable—you can add your own scripts to show exactly what you need, from system stats to connection details. If you prefer a cleaner interface, no worries—you can easily disable the bar anytime from the settings. 
     
-    I’m also working on a variety of [built-in items](https://statebarhub.webssh.net/) to make it even more powerful, so stay tuned over the next few weeks for new updates!
+    Please contact me if you have any questions or suggestions about this feature. I’m here to help!
 
 !!! abstract "All the help you need when you need it"
     ![isontheline maintainer of WebSSH](https://avatars.githubusercontent.com/u/44212923?v=4){ align=left width=130 }
