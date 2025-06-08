@@ -367,6 +367,12 @@ const TerminalHelper = {
         return hasWebGLAddon ? "WEBGL" : "DOM";
     },
 
+    getBracketedPasteMode: function() {
+        // Support of "Bracketed Paste" mode #1356 ->
+        return terminal._core.coreService.decPrivateModes.bracketedPasteMode;
+        // <- Support of "Bracketed Paste" mode #1356
+    },
+
     exportRawScreenRows: function () {
         const renderType = TerminalHelper.getRenderType();
         if ('DOM' === renderType) {
@@ -523,6 +529,12 @@ const TerminalHelper = {
         if (fragment.fontFamily) {
             terminalSettings.fontFamily = fragment.fontFamily;
             TerminalHelper.loadFont(terminalSettings.fontFamily);
+
+            // Apply Font Family to "#badge" element :
+            let badge = document.querySelector('#badge');
+            if (badge) {
+                badge.style.fontFamily = terminalSettings.fontFamily;
+            }
         }
 
         if (fragment.runMode) {
