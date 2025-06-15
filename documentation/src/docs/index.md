@@ -18,11 +18,6 @@ Alternately if you don't find it, use this link to the App Store : [download Web
 
     [Enroll to Beta Releases](/documentation/becoming-external-tester/) and reach the stars :sparkles:
 
-## Privacy Policy
-WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
-
-Latest version (2024-01-06) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
-
 ## What about the name?
 The name sounds weird? Think twice! WebSSH is a NATIVE and LOCAL SysAdmin Toolbox with Privacy and Security in mind which ensure that no data will leave your device outside your own secure servers.
 
@@ -31,3 +26,22 @@ As everybody knows, the "SSH" part means Secure Shell. But what about the "Web" 
 Just because WebSSH terminal rendering engine is based on [Xterm.js](https://xtermjs.org/), a JS library running on your own device! :)
 
 Have a nice day :sunny:
+
+## Screenshots
+### macOS
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg" style="max-height: 200px;" alt="WebSSH macOS SSH / SFTP / Port Forwarding client" />
+
+### iOS
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/iphone/webssh-iphone-ssh-client.jpg" style="max-height: 200px;" alt="WebSSH iOS SSH / SFTP / Port Forwarding client" />
+
+### iPadOS
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/ipad/webssh-ipad-ssh-client.jpg" style="max-height: 200px;" alt="WebSSH iPadOS SSH / SFTP / Port Forwarding client" />
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
+
+## Privacy Policy
+WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
+
+Latest version (2024-01-06) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).

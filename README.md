@@ -3,5 +3,13 @@
 * :blue_book: You are also welcome to read [documentation](https://webssh.net)
 * :syringe: If you are not afraid you can [become a beta tester](https://webssh.net/documentation/becoming-external-tester/)
 
-## macOS
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
+
+## Screenshots
+### macOS
 ![WebSSH macOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg)
+
+### iOS
+![WebSSH iOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/iphone/webssh-iphone-ssh-client.jpg)
