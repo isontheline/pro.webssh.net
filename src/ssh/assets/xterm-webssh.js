@@ -367,7 +367,7 @@ const TerminalHelper = {
         return hasWebGLAddon ? "WEBGL" : "DOM";
     },
 
-    getBracketedPasteMode: function() {
+    getBracketedPasteMode: function () {
         // Support of "Bracketed Paste" mode #1356 ->
         return terminal._core.coreService.decPrivateModes.bracketedPasteMode;
         // <- Support of "Bracketed Paste" mode #1356
@@ -488,22 +488,32 @@ const TerminalHelper = {
         }
 
         let terminalSettings = {
-            theme: {},
-            fontSize: 9,
-            reverseWraparound: true,
-            isMacOS: false,
-            scrollback: 1000,
-            fontFamily: '"Cascadia Code", Menlo, monospace',
-            copyOnSelect: false,
-            cursorStyle: 'block',
-            cursorInactiveStyle: 'outline',
-            cursorBlink: 'normal',
-            rows: 25,
+            badgeContent: '',
+            badgeColor: '#ff0000',
             cols: 80,
+            copyOnSelect: false,
+            cursorBlink: 'normal',
+            cursorInactiveStyle: 'outline',
+            cursorStyle: 'block',
             fixedSize: false,
+            fontFamily: '"Cascadia Code", Menlo, monospace',
+            fontSize: 9,
             handedness: 'right',
+            isMacOS: false,
             remoteCharacterSet: 'UTF-8',
-            runMode: 'normal'
+            reverseWraparound: true,
+            rows: 25,
+            runMode: 'normal',
+            scrollback: 1000,
+            theme: {}
+        }
+
+        if (fragment.badgeContent) {
+            terminalSettings.badgeContent = fragment.badgeContent;
+        }
+
+        if (fragment.badgeColor) {
+            terminalSettings.badgeColor = fragment.badgeColor;
         }
 
         if (fragment.fontSize) {
@@ -529,12 +539,6 @@ const TerminalHelper = {
         if (fragment.fontFamily) {
             terminalSettings.fontFamily = fragment.fontFamily;
             TerminalHelper.loadFont(terminalSettings.fontFamily);
-
-            // Apply Font Family to "#badge" element :
-            let badge = document.querySelector('#badge');
-            if (badge) {
-                badge.style.fontFamily = terminalSettings.fontFamily;
-            }
         }
 
         if (fragment.runMode) {

@@ -25,6 +25,7 @@
 <body>
     <div id="terminal"></div>
     <div id="scrolly"></div>
+    <div id="badge"></div>
 
     <script>
         window.addEventListener('error', TerminalHelper.logError);
@@ -39,7 +40,7 @@
         document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
 
         // Load WebGL Addon :
-        if(terminalSettings.runMode == 'normal') {
+        if (terminalSettings.runMode == 'normal') {
             const webglAddon = new WebglAddon.WebglAddon();
             webglAddon._addonType = 'WebglAddon';
             webglAddon.onContextLoss(e => {
@@ -99,6 +100,14 @@
         // Reverse Wraparound :
         if (terminalSettings.reverseWraparound) {
             terminal.write('\x1b[?45h');
+        }
+
+        // Badge :
+        if (terminalSettings.badgeContent) {
+            const badge = document.getElementById('badge');
+            badge.textContent = terminalSettings.badgeContent;
+            badge.style.color = terminalSettings.badgeColor;
+            badge.style.fontFamily = terminalSettings.fontFamily;
         }
 
         // Scrollbar management :
