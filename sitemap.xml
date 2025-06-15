@@ -261,6 +261,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-badge/</loc>
+         <lastmod>2025-06-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-font-size/</loc>
          <lastmod>2025-06-15</lastmod>
          <changefreq>daily</changefreq>
