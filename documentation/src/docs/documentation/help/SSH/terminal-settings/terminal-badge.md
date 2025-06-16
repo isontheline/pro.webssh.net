@@ -18,20 +18,33 @@ title: Terminal Badge
 4. Fill a custom badge content
 5. Save your changes
 
-## How to change your Badge Color
+## Change Badge Color
 1. Go to WebSSH Settings :gear:
 2. Scroll to edit "/etc/ssh/ssh_config"
 3. Add the line `#!BadgeColor YOUR_COLOR` (e.g., `#!BadgeColor red`) to your host configuration
 4. Save your changes
 5. Relaunch your SSH connection to see the new badge color
 
-More information about the SSH Config File is available [here](/documentation/help/SSH/ssh-config-file/#special-features).
-
-## How to change Badge Font Size
+## Set Badge Font Size
 1. Follow the same steps as above
 2. Add the line `#!BadgeFontSize YOUR_SIZE` (e.g., `#!BadgeFontSize 14`) to your host configuration
 3. Save your changes
 4. Relaunch your SSH connection to see the new badge font size
+
+## Define Badge Position
+1. Follow the same steps as above
+2. Add the line `#!BadgePosition YOUR_POSITION` (e.g., `#!BadgePosition top-right`) to your host configuration
+3. Save your changes
+4. Relaunch your SSH connection to see the badge in the new position
+
+More possible values for `YOUR_POSITION` are:
+
+- `top-left`
+- `top-center`
+- `top-right`
+- `bottom-left`
+- `bottom-center`
+- `bottom-right`
 
 ## Set Badge Content Programmatically
 You can set the badge content programmatically using the `#!BadgeContent` special feature in your SSH config file. This allows you to display different information based on the host by defining it in your SSH config file.
@@ -42,3 +55,5 @@ Host myserver
     User myuser
     #!BadgeContent "My Server - Production"
 ```
+
+More information about the SSH Config File is available [here](/documentation/help/SSH/ssh-config-file/#special-features).
