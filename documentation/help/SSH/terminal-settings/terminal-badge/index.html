@@ -1250,15 +1250,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-change-your-badge-color" class="md-nav__link">
-    How to change your Badge Color
+  <a href="#change-badge-color" class="md-nav__link">
+    Change Badge Color
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-change-badge-font-size" class="md-nav__link">
-    How to change Badge Font Size
+  <a href="#set-badge-font-size" class="md-nav__link">
+    Set Badge Font Size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-badge-position" class="md-nav__link">
+    Define Badge Position
   </a>
   
 </li>
@@ -3096,15 +3103,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-change-your-badge-color" class="md-nav__link">
-    How to change your Badge Color
+  <a href="#change-badge-color" class="md-nav__link">
+    Change Badge Color
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-change-badge-font-size" class="md-nav__link">
-    How to change Badge Font Size
+  <a href="#set-badge-font-size" class="md-nav__link">
+    Set Badge Font Size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-badge-position" class="md-nav__link">
+    Define Badge Position
   </a>
   
 </li>
@@ -3147,7 +3161,7 @@ Display key info right in your SSH sessions—automatically, securely, and with 
 <li>Fill a custom badge content</li>
 <li>Save your changes</li>
 </ol>
-<h2 id="how-to-change-your-badge-color">How to change your Badge Color</h2>
+<h2 id="change-badge-color">Change Badge Color</h2>
 <ol>
 <li>Go to WebSSH Settings <img alt="⚙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2699.svg" title=":gear:" /></li>
 <li>Scroll to edit "/etc/ssh/ssh_config"</li>
@@ -3155,14 +3169,29 @@ Display key info right in your SSH sessions—automatically, securely, and with 
 <li>Save your changes</li>
 <li>Relaunch your SSH connection to see the new badge color</li>
 </ol>
-<p>More information about the SSH Config File is available <a href="/documentation/help/SSH/ssh-config-file/#special-features">here</a>.</p>
-<h2 id="how-to-change-badge-font-size">How to change Badge Font Size</h2>
+<h2 id="set-badge-font-size">Set Badge Font Size</h2>
 <ol>
 <li>Follow the same steps as above</li>
 <li>Add the line <code>#!BadgeFontSize YOUR_SIZE</code> (e.g., <code>#!BadgeFontSize 14</code>) to your host configuration</li>
 <li>Save your changes</li>
 <li>Relaunch your SSH connection to see the new badge font size</li>
 </ol>
+<h2 id="define-badge-position">Define Badge Position</h2>
+<ol>
+<li>Follow the same steps as above</li>
+<li>Add the line <code>#!BadgePosition YOUR_POSITION</code> (e.g., <code>#!BadgePosition top-right</code>) to your host configuration</li>
+<li>Save your changes</li>
+<li>Relaunch your SSH connection to see the badge in the new position</li>
+</ol>
+<p>More possible values for <code>YOUR_POSITION</code> are:</p>
+<ul>
+<li><code>top-left</code></li>
+<li><code>top-center</code></li>
+<li><code>top-right</code></li>
+<li><code>bottom-left</code></li>
+<li><code>bottom-center</code></li>
+<li><code>bottom-right</code></li>
+</ul>
 <h2 id="set-badge-content-programmatically">Set Badge Content Programmatically</h2>
 <p>You can set the badge content programmatically using the <code>#!BadgeContent</code> special feature in your SSH config file. This allows you to display different information based on the host by defining it in your SSH config file.
 For example:
@@ -3171,13 +3200,14 @@ For example:
     User myuser
     #!BadgeContent &quot;My Server - Production&quot;
 </code></pre></div></p>
+<p>More information about the SSH Config File is available <a href="/documentation/help/SSH/ssh-config-file/#special-features">here</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 20:13:02 UTC">June 16, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 20:17:17 UTC">June 16, 2025</span>
       
     
   </small>
