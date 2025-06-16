@@ -43,6 +43,9 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | --- | --- | --- | --- | --- |
 | #!BackgroundColor | String | Terminal background color. Any CSS value. | 22.4 | `#!BackgroundColor pink` |
 | #!BadgeColor | String | Terminal badge color. Any CSS value. | 29.6 | `#!BadgeColor red` |
+| #!BadgeContent | String | Terminal badge content. Any text value. | 29.6 | `#!BadgeContent "My Server - Production"` |
+| #!BadgeFontSize | Integer | Terminal badge font size in pixels. | 29.6 | `#!BadgeFontSize 14` |
+| #!BadgePosition | String | Terminal badge position. Possible values : `top-left`, `top-center`, `top-right`, `bottom-left`,  `bottom-center`, `bottom-right`| 29.6 | `#!BadgePosition top-right` |
 | #!ColorTheme | String | Terminal color theme. Possible values : any valid theme name | 24.5 | `#!ColorTheme "GITHUB DARK"` |
 | #!CursorColor | String | Terminal cursor color. Any CSS value. | 22.4 | `#!CursorColor magenta` |
 | #!CursorKeysMode | String | Terminal cursor keys mode. Possible values : `normal`, `application` | 24.5 | `#!CursorKeysMode application` |

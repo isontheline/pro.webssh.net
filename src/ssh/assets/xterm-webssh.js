@@ -490,6 +490,8 @@ const TerminalHelper = {
         let terminalSettings = {
             badgeContent: '',
             badgeColor: '#ff0000',
+            badgeFontSize: 40,
+            badgePosition: 'top-right',
             cols: 80,
             copyOnSelect: false,
             cursorBlink: 'normal',
@@ -514,6 +516,14 @@ const TerminalHelper = {
 
         if (fragment.badgeColor) {
             terminalSettings.badgeColor = fragment.badgeColor;
+        }
+
+        if (fragment.badgeFontSize) {
+            terminalSettings.badgeFontSize = fragment.badgeFontSize;
+        }
+
+        if (fragment.badgePosition) {
+            terminalSettings.badgePosition = fragment.badgePosition;
         }
 
         if (fragment.fontSize) {
