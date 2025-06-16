@@ -1256,6 +1256,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-change-badge-font-size" class="md-nav__link">
+    How to change Badge Font Size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-badge-content-programmatically" class="md-nav__link">
+    Set Badge Content Programmatically
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3088,6 +3102,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-change-badge-font-size" class="md-nav__link">
+    How to change Badge Font Size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-badge-content-programmatically" class="md-nav__link">
+    Set Badge Content Programmatically
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3127,14 +3155,29 @@ Display key info right in your SSH sessions—automatically, securely, and with 
 <li>Save your changes</li>
 <li>Relaunch your SSH connection to see the new badge color</li>
 </ol>
-<p>More information about the SSH Config File is available <a href="/documentation/help/SSH/ssh-config-file/">here</a>.</p>
+<p>More information about the SSH Config File is available <a href="/documentation/help/SSH/ssh-config-file/#special-features">here</a>.</p>
+<h2 id="how-to-change-badge-font-size">How to change Badge Font Size</h2>
+<ol>
+<li>Follow the same steps as above</li>
+<li>Add the line <code>#!BadgeFontSize YOUR_SIZE</code> (e.g., <code>#!BadgeFontSize 14</code>) to your host configuration</li>
+<li>Save your changes</li>
+<li>Relaunch your SSH connection to see the new badge font size</li>
+</ol>
+<h2 id="set-badge-content-programmatically">Set Badge Content Programmatically</h2>
+<p>You can set the badge content programmatically using the <code>#!BadgeContent</code> special feature in your SSH config file. This allows you to display different information based on the host by defining it in your SSH config file.
+For example:
+<div class="highlight"><pre><span></span><code>Host myserver
+    Hostname myserver.example.com
+    User myuser
+    #!BadgeContent &quot;My Server - Production&quot;
+</code></pre></div></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 15, 2025 20:28:06 UTC">June 15, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 20:13:02 UTC">June 16, 2025</span>
       
     
   </small>
