@@ -3068,7 +3068,7 @@
 <tr>
 <td><a href="https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host">Host</a></td>
 <td>String</td>
-<td>Connection name (aka alias) pattern</td>
+<td>Connection name (aka alias) pattern. See below for examples.</td>
 <td>20.6</td>
 <td><code>Host MY_SERVER_NAME</code></td>
 </tr>
@@ -3130,6 +3130,31 @@
 </tr>
 </tbody>
 </table>
+<h2 id="host-patterns">Host Patterns</h2>
+<blockquote>
+<p>ℹ️ <strong>New in WebSSH 29.6:</strong> You can now use <strong>regular expressions</strong> in <code>Host</code> patterns by wrapping them with slashes.<br />
+This allows advanced matching beyond the standard <code>*</code> and <code>?</code> wildcards.</p>
+</blockquote>
+<h3 id="standard-wildcard-pattern">Standard wildcard pattern</h3>
+<div class="highlight"><pre><span></span><code>Host *.example.com
+    User defaultuser
+</code></pre></div>
+<h3 id="regex-pattern-matches-prod-01examplecom-prod-99examplecom-etc">Regex pattern: matches prod-01.example.com, prod-99.example.com, etc.</h3>
+<div class="highlight"><pre><span></span><code>Host /^prod-[0-9]+.example.com$/
+    User deploy
+</code></pre></div>
+<h3 id="negated-regex-pattern-excludes-test-hosts">Negated regex pattern: excludes test-* hosts</h3>
+<div class="highlight"><pre><span></span><code>Host !/^test-.*/
+    User production
+</code></pre></div>
+<ul>
+<li>Patterns without slashes behave like OpenSSH (<code>*</code>, <code>?</code>, <code>!</code>)</li>
+<li>Patterns wrapped in <code>/.../</code> are treated as full regular expressions</li>
+<li><code>!</code> still works to exclude matching hosts</li>
+</ul>
+<blockquote>
+<p>⚠️ Be sure to escape special regex characters like <code>.</code> or <code>+</code> when needed.</p>
+</blockquote>
 <h1 id="special-features">Special Features</h1>
 <p>All special features are prefixed by <code>#!</code> and are not part of the SSH Config File specification.</p>
 <table>
@@ -3278,7 +3303,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 20:13:02 UTC">June 16, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 17, 2025 06:40:25 UTC">June 17, 2025</span>
       
     
   </small>
