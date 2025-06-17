@@ -40,6 +40,12 @@ In order to edit the WebSSH SSH Config File just need to :
 > ℹ️ **New in WebSSH 29.6:** You can now use **regular expressions** in `Host` patterns by wrapping them with slashes.  
 > This allows advanced matching beyond the standard `*` and `?` wildcards.
 
+- Patterns without slashes behave like OpenSSH (`*`, `?`, `!`)
+- Patterns wrapped in `/.../` are treated as full regular expressions
+- `!` still works to exclude matching hosts
+
+> ⚠️ Be sure to escape special regex characters like `.` or `+` when needed.
+
 ### Standard wildcard pattern
 ```ssh
 Host *.example.com
@@ -58,12 +64,11 @@ Host !/^test-.*/
     User production
 ```
 
-- Patterns without slashes behave like OpenSSH (`*`, `?`, `!`)
-- Patterns wrapped in `/.../` are treated as full regular expressions
-- `!` still works to exclude matching hosts
-
-> ⚠️ Be sure to escape special regex characters like `.` or `+` when needed.
-
+### Insensitive regex pattern: matches both prod-01.example.com and PROD-01.EXAMPLE.COM
+```ssh
+Host /(?i)^prod-[0-9]+.example.com$/
+    User deploy
+```
 
 # Special Features 
 All special features are prefixed by `#!` and are not part of the SSH Config File specification.
