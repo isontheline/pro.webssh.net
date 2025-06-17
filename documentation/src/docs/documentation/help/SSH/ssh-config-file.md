@@ -26,7 +26,7 @@ In order to edit the WebSSH SSH Config File just need to :
 | Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
 | [Ciphers](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Ciphers) | String | List of ciphers to use. Comma separated | 27.4 | [See Ciphers](/documentation/help/SSH/supported-algorithms/#ciphers) |
-| [Host](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host) | String | Connection name (aka alias) pattern | 20.6 | `Host MY_SERVER_NAME` |
+| [Host](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Host) | String | Connection name (aka alias) pattern. See below for examples. | 20.6 | `Host MY_SERVER_NAME` |
 | [HostKeyAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#HostKeyAlgorithms) | String | List of host key algorithms to use. Comma separated | 27.4 | [See HostKeyAlgorithms](/documentation/help/SSH/supported-algorithms/#hostkeyalgorithms) |
 | [Hostname](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#Hostname) | String | Connection host | 20.6 | `Hostname my.host.com` |
 | [KexAlgorithms](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#KexAlgorithms) | String | List of key exchange algorithms to use. Comma separated | 27.4 | [See KexAlgorithms](/documentation/help/SSH/supported-algorithms/#kexalgorithms) |
@@ -35,6 +35,35 @@ In order to edit the WebSSH SSH Config File just need to :
 | [RemoteCommand](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#RemoteCommand) | String | The command to launch instead of requesting a default Shell | 20.6 | `RemoteCommand /bin/bash` |
 | [SetEnv](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#SetEnv) | String | Environment variable to set | 23.6 | `SetEnv MY_ENV="Awesome!"` |
 | [User](https://man.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man5/ssh_config.5#User) | String | Connection user | 20.6 | `User myuser` |
+
+## Host Patterns
+> ℹ️ **New in WebSSH 29.6:** You can now use **regular expressions** in `Host` patterns by wrapping them with slashes.  
+> This allows advanced matching beyond the standard `*` and `?` wildcards.
+
+### Standard wildcard pattern
+```ssh
+Host *.example.com
+    User defaultuser
+```
+
+### Regex pattern: matches prod-01.example.com, prod-99.example.com, etc.
+```ssh
+Host /^prod-[0-9]+.example.com$/
+    User deploy
+```
+
+### Negated regex pattern: excludes test-* hosts
+```ssh
+Host !/^test-.*/
+    User production
+```
+
+- Patterns without slashes behave like OpenSSH (`*`, `?`, `!`)
+- Patterns wrapped in `/.../` are treated as full regular expressions
+- `!` still works to exclude matching hosts
+
+> ⚠️ Be sure to escape special regex characters like `.` or `+` when needed.
+
 
 # Special Features 
 All special features are prefixed by `#!` and are not part of the SSH Config File specification.
