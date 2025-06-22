@@ -120,6 +120,26 @@ const HandlerHelper = {
                     break;
             }
         });
+
+        // iTerm OSC 1337 : https://iterm2.com/documentation-escape-codes.html
+        terminal.parser.registerOscHandler(1337, (data, params) => {
+            // Split first part of the data by equals sign
+            let parts = data.split('=');
+            if (parts.length < 2) {
+                return;
+            }
+            let command = parts[0].trim();
+            let value = parts.slice(1).join('=').trim();
+            // Handle the command
+            switch (command) {
+                case 'SetBadgeFormat':
+                    // Decode base64 value
+                    let badgeContent = decodeURIComponent(atob(value));
+                    // Set the badge content
+                    TerminalHelper.setBadgeContent(badgeContent);
+                    break;
+            }
+        });
         // <- OSC
     }
 };
@@ -717,6 +737,11 @@ const TerminalHelper = {
     setClipboardFromOSC52: debounce((pd) => {
         JS2IOS.calliOSFunction('setClipboardFromOSC52', pd);
     }, 250),
+
+    setBadgeContent: function (badgeContent) {
+        const badge = document.getElementById('badge');
+        badge.textContent = badgeContent;
+    },
 
     onLinkClick: function (event, uri) {
         JS2IOS.calliOSFunction('openLink', uri);
