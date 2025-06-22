@@ -102,48 +102,46 @@
             terminal.write('\x1b[?45h');
         }
 
-        // Badge :
-        if (terminalSettings.badgeContent) {
-            const badge = document.getElementById('badge');
-            badge.textContent = terminalSettings.badgeContent;
-            badge.style.color = terminalSettings.badgeColor;
-            badge.style.fontFamily = terminalSettings.fontFamily;
-            badge.style.fontSize = terminalSettings.badgeFontSize + 'px';
-            // Set position according to badgePosition
-            switch (terminalSettings.badgePosition) {
-                case 'top-left':
-                    badge.style.top = '0';
-                    badge.style.left = '0';
-                    break;
-                case 'top-center':
-                    badge.style.top = '0';
-                    badge.style.left = '50%';
-                    badge.style.transform = 'translateX(-50%)';
-                    break;
-                case 'top-right':
-                    badge.style.top = '0';
-                    badge.style.right = '0';
-                    break;
-                case 'bottom-left':
-                    badge.style.bottom = '0';
-                    badge.style.left = '0';
-                    break;
-                case 'bottom-center':
-                    badge.style.bottom = '0';
-                    badge.style.left = '50%';
-                    badge.style.transform = 'translateX(-50%)';
-                    break;
-                case 'bottom-right':
-                    badge.style.bottom = '0';
-                    badge.style.right = '0';
-                    break;
-                default:
-                    // fallback to top-right if invalid value
-                    badge.style.top = '0';
-                    badge.style.right = '0';
-            }
+        // Badge ->
+        const badge = document.getElementById('badge');
+        badge.textContent = terminalSettings.badgeContent;
+        badge.style.color = terminalSettings.badgeColor;
+        badge.style.fontFamily = terminalSettings.fontFamily;
+        badge.style.fontSize = terminalSettings.badgeFontSize + 'px';
+        // Set position according to badgePosition
+        switch (terminalSettings.badgePosition) {
+            case 'top-left':
+                badge.style.top = '0';
+                badge.style.left = '0';
+                break;
+            case 'top-center':
+                badge.style.top = '0';
+                badge.style.left = '50%';
+                badge.style.transform = 'translateX(-50%)';
+                break;
+            case 'top-right':
+                badge.style.top = '0';
+                badge.style.right = '0';
+                break;
+            case 'bottom-left':
+                badge.style.bottom = '0';
+                badge.style.left = '0';
+                break;
+            case 'bottom-center':
+                badge.style.bottom = '0';
+                badge.style.left = '50%';
+                badge.style.transform = 'translateX(-50%)';
+                break;
+            case 'bottom-right':
+                badge.style.bottom = '0';
+                badge.style.right = '0';
+                break;
+            default:
+                // fallback to top-right if invalid value
+                badge.style.top = '0';
+                badge.style.right = '0';
         }
-
+        
         // Scrollbar management :
         TerminalHelper.scrolly = new Scrolly({
             scrollbarElement: document.getElementById('scrolly'),
