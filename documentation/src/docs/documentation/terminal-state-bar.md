@@ -45,6 +45,7 @@ The JavascriptCode is running inside a sandbox, so you can't access the DOM or a
     * `WebSSH_CONNECTION_HOST`: The host of the current session (eg. "ssh.example.com")
     * `WebSSH_CONNECTION_ADDRESS`: The resolved address of the current session (eg. "172.21.0.40")
     * `WebSSH_CONNECTION_SERVER_IDENTIFIER`: The SSH server identifier of the current session (eg. "SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.2")
+    * `WebSSH_CONNECTION_USERNAME`[^1]: The username of the current session (eg. "root")
 
 ### JavaScript Examples
 #### Connectivity Indicator
@@ -99,3 +100,5 @@ State Bar will be improved over months but, keep in mind that there are some lim
 * "Connect Through" is not supported yet, so you can't use the State Bar when connected using this feature.
 * When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.
 * State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.
+
+[^1]: Since WebSSH 29.6, you can use the `WebSSH_CONNECTION_USERNAME` variable to get the username of the current session. This is useful to display the username in the State Bar.
