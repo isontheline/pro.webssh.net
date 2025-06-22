@@ -3277,6 +3277,7 @@
 <li><code>WebSSH_CONNECTION_HOST</code>: The host of the current session (eg. "ssh.example.com")</li>
 <li><code>WebSSH_CONNECTION_ADDRESS</code>: The resolved address of the current session (eg. "172.21.0.40")</li>
 <li><code>WebSSH_CONNECTION_SERVER_IDENTIFIER</code>: The SSH server identifier of the current session (eg. "SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.2")</li>
+<li><code>WebSSH_CONNECTION_USERNAME</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>: The username of the current session (eg. "root")</li>
 </ul>
 </li>
 </ul>
@@ -3322,13 +3323,21 @@ No need to write a label, as the icon will be enough to indicate the connection 
 <li>When poor/no network, the State Bar and other UI elements may freeze. Disable the State Bar to avoid this issue.</li>
 <li>State Bar is updated every 3 seconds when NO user interaction is detected. Eg. when you are typing in the terminal, the State Bar will not be updated until you stop typing.</li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Since WebSSH 29.6, you can use the <code>WebSSH_CONNECTION_USERNAME</code> variable to get the username of the current session. This is useful to display the username in the State Bar.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="May 22, 2025 20:32:20 UTC">May 22, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 22, 2025 18:59:16 UTC">June 22, 2025</span>
       
     
   </small>
