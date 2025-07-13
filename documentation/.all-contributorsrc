@@ -236,6 +236,15 @@
             "contributions": [
                 "financial"
             ]
+        },
+        {
+            "login": "ellite",
+            "name": "Miguel Ribeiro",
+            "avatar_url": "https://avatars.githubusercontent.com/u/3831180?v=4",
+            "profile": "https://github.com/ellite",
+            "contributions": [
+                "financial"
+            ]
         }
     ],
     "contributorsPerLine": 3,
