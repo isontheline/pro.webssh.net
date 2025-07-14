@@ -522,6 +522,7 @@ const TerminalHelper = {
             fontSize: 9,
             handedness: 'right',
             isMacOS: false,
+            openLinksStrategy: 'disabled',
             remoteCharacterSet: 'UTF-8',
             reverseWraparound: true,
             rows: 25,
@@ -590,6 +591,10 @@ const TerminalHelper = {
 
         if (fragment.handedness) {
             terminalSettings.handedness = fragment.handedness;
+        }
+
+        if (fragment.openLinksStrategy) {
+            terminalSettings.openLinksStrategy = fragment.openLinksStrategy;
         }
 
         if (fragment.terminalSize) {

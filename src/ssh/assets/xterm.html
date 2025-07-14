@@ -67,8 +67,10 @@
         terminal.loadAddon(serializeAddon);
 
         // Load Web Links Addon :
-        const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
-        terminal.loadAddon(webLinksAddon);
+        if (terminalSettings.openLinksStrategy != 'disabled') {
+            const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
+            terminal.loadAddon(webLinksAddon);
+        }
 
         // Open the terminal :
         terminal.open(document.getElementById('terminal'));
