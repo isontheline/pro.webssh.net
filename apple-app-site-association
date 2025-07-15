@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "CUJ3DLPVPB.com.itimeteo.webssh",
+        "paths": [ "/*" ]
+      },
+      {
+        "appID": "CUJ3DLPVPB.net.webssh.businessandschool",
+        "paths": [ "/*" ]
+      }
+    ]
+  }
+}
