@@ -23,6 +23,8 @@ extra:
       link: https://github.com/sponsors/isontheline
     - icon: fontawesome/solid/mug-saucer
       link: https://www.buymeacoffee.com/isontheline
+    - icon: fontawesome/solid/sun
+      link: https://wolf.solar
 plugins:
   - search
   - git-revision-date-localized:
