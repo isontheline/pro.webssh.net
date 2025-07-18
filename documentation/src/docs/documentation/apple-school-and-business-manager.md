@@ -12,7 +12,7 @@ By leveraging **Apple Business Manager** or **Apple School Manager**, your organ
 
 ## Requesting WebSSH for Your Organization
 
-To begin the deployment process, please reach out to us via **[email](mailto:team@webssh.net)** with the following details:
+To begin the deployment process, please reach out to us via **[email](/documentation/contact-me/)** with the following details:
 
 - **Organization ID** – The unique identifier assigned to your business or educational institution within Apple Business Manager or Apple School Manager.
 - **Organization Name** – The official name of your organization as registered with Apple.
@@ -31,7 +31,7 @@ WebSSH is a powerful, secure, and feature-rich **SSH client** designed for **IT 
 
 ## Need Assistance?
 
-If you have any questions or require additional information, feel free to contact us at **[team@webssh.net](mailto:team@webssh.net)**. We are happy to assist you with the deployment process and ensure a smooth experience for your organization.
+If you have any questions or require additional information, feel free to contact us via **[email](/documentation/contact-me/)**. We are happy to assist you with the deployment process and ensure a smooth experience for your organization.
 
 ---
 

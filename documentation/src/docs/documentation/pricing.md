@@ -41,7 +41,7 @@
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
 | Wake-on-LAN[^4] | :white_check_mark: | :white_check_mark: |
 
-If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](mailto:team@webssh.net) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
+If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Not available on these countries : China Mainland
 [^2]: TELNET is available since WebSSH 26.1

@@ -38,4 +38,4 @@ If you do not agree to this Privacy Policy, please do not use our App or Website
 Your continued use of the App or Website following the posting of changes to this policy will be deemed your acceptance of those changes.
 
 ## Contacting us
-If you have any questions about this Privacy Policy, the practices of this App and Website, or your dealings with this App and Website, please [contact us](mailto:team@webssh.net).
+If you have any questions about this Privacy Policy, the practices of this App and Website, or your dealings with this App and Website, please [contact us](/documentation/contact-me/).

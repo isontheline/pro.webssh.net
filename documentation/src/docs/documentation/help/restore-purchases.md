@@ -7,7 +7,7 @@ title: Restoring Purchases
 ??? info "WebSSH PRO is a lifetime purchase"
     Don't worry if you have lost your device or if you have changed your device, you can restore your purchase on any device you want. You only need to use the same Apple ID that you have used to buy WebSSH PRO.
 
-    I'm always [here](mailto:team@webssh.net) to help you if you have any issue about restoring your purchase.
+    I'm always [here](/documentation/contact-me/) to help you if you have any issue about restoring your purchase.
 
 ??? warning "TestFlight purchase restoration isn't supported"
     If you are using TestFlight and want to restore or buy WebSSH PRO, please re-install WebSSH from the App Store and then restore / buy your purchase.
@@ -56,6 +56,6 @@ Then, you can try the following steps :
 4. You should see a message "Thank you for your purchase!"
 
 ??? question "These steps doesn't work ?"
-    Forward me by [email](mailto:team@webssh.net) your original purchase receipt and I will help you as much as you need to recover your purchase.
+    Forward me by [email](/documentation/contact-me/t) your original purchase receipt and I will help you as much as you need to recover your purchase.
 
 [^1]: In order to use this functionality, you must upgrade WebSSH to 14.15
