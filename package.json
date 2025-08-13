@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "all-contributors-cli": "^6.26.1"
+    "all-contributors-cli": "^6.26.1",
+    "tmp": ">=0.2.4"
   }
 }
