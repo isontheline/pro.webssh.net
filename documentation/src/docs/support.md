@@ -20,9 +20,9 @@ title: Support
 
     Have a nice day :sunny:
 
-!!! bug "29 - Monkey :monkey:"
+!!! bug "30 - Snowflake :snowflake:"
     If you encounter any catastrophic bug :bug:, it's time to submit a [bug report](https://github.com/isontheline/pro.webssh.net/issues/new?assignees=&labels=&template=bug_report.md&title=) for the upcoming milestone.
-    You can also learn about features [added / changed / removed](/documentation/changelog/29/) inside the next version of WebSSH.
+    You can also learn about features [added / changed / removed](/documentation/changelog/30/) inside the next version of WebSSH.
     Of course you can [Enroll to Beta Releases](/documentation/becoming-external-tester/) in order to reach the stars :sparkles:
 
 ??? note "Deploy WebSSH in Your Organization"
