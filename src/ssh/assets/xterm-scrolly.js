@@ -59,6 +59,26 @@ class Scrolly {
     constructor(options) {
         const that = this;
 
+        this.update = function () {
+            const element = that.options.elementToScroll;
+            if (!element) { return; }
+
+            const scrollPosition = element.scrollTop;
+            const scrollTopMaximum = Math.max(1, element.scrollHeight - element.clientHeight);
+            const scrollPercent = scrollPosition / scrollTopMaximum;
+            const scrollbarElementHeight = that.options.height;
+
+            let scrollbarTop = scrollPercent * element.offsetHeight - scrollbarElementHeight;
+            if (scrollbarTop < 0) {
+                scrollbarTop = 0;
+            }
+
+            Object.assign(that.options.scrollbarElement.style, {
+                top: scrollbarTop + 'px',
+                display: that.options.isVisible ? 'block' : 'none',
+            });
+        }
+
         this.isDragging = false;
 
         this.options = {
@@ -79,24 +99,19 @@ class Scrolly {
 
         this.options.scrollbarElement.innerHTML = '<div>&#xFE19;</div>';
 
-        this.options.elementToScroll.onscroll = function () {
-            const element = this;
-            const scrollPosition = element.scrollTop;
-            const scrollTopMaximum = element.scrollHeight - element.clientHeight;
-            const scrollPercent = scrollPosition / scrollTopMaximum;
-            const scrollbarElementHeight = that.options.height;
+        this.options.elementToScroll.addEventListener('scroll', this.update);
 
-            var scrollbarTop = scrollPercent * this.offsetHeight - scrollbarElementHeight;
+        // React to element size changes
+        this.resizeObserver = new ResizeObserver(() => {
+            that.update();
+        });
+        this.resizeObserver.observe(this.options.elementToScroll);
 
-            if (scrollbarTop < 0) {
-                scrollbarTop = 0;
-            }
+        // Also react to viewport resizes as a coarse fallback
+        window.addEventListener('resize', this.update);
 
-            Object.assign(that.options.scrollbarElement.style, {
-                top: scrollbarTop + 'px',
-                display: that.options.isVisible ? 'block' : 'none',
-            });
-        }
+        // Initial paint
+        this.update();
 
         this.options.scrollbarElement.onmouseover = function () {
             if (!that.isDragging) {
@@ -163,6 +178,7 @@ class Scrolly {
                 const scrollTop = scrollTopMaximum * (dragY / elementOffsetHeight);
 
                 that.options.elementToScroll.scrollTop = scrollTop;
+                that.update();
             }
         }
 
@@ -183,6 +199,19 @@ class Scrolly {
             Object.assign(that.options.scrollbarElement.style, {
                 display: 'block',
             });
+        }
+
+        this.destroy = function () {
+            try { that.options.elementToScroll.removeEventListener('scroll', that.update); } catch (e) {}
+            try { window.removeEventListener('resize', that.update); } catch (e) {}
+            try { that.resizeObserver && that.resizeObserver.disconnect(); } catch (e) {}
+            if (that.isDragging) {
+                document.removeEventListener('mousemove', that.onMouseMove);
+                document.removeEventListener('touchmove', that.onMouseMove);
+                document.removeEventListener('mouseup', that.onMouseUp);
+                document.removeEventListener('touchend', that.onMouseUp);
+                that.isDragging = false;
+            }
         }
     }
 }
