@@ -63,6 +63,15 @@ class Scrolly {
             const element = that.options.elementToScroll;
             if (!element) { return; }
 
+            // Hide when no scrolling is possible
+            const canScroll = (element.scrollHeight - element.clientHeight) > 1; // 1px tolerance
+            if (!canScroll || !that.options.isVisible) {
+                Object.assign(that.options.scrollbarElement.style, {
+                    display: 'none',
+                });
+                return;
+            }
+
             const scrollPosition = element.scrollTop;
             const scrollTopMaximum = Math.max(1, element.scrollHeight - element.clientHeight);
             const scrollPercent = scrollPosition / scrollTopMaximum;
@@ -75,7 +84,7 @@ class Scrolly {
 
             Object.assign(that.options.scrollbarElement.style, {
                 top: scrollbarTop + 'px',
-                display: that.options.isVisible ? 'block' : 'none',
+                display: 'block',
             });
         }
 
@@ -196,9 +205,7 @@ class Scrolly {
 
         this.show = function () {
             this.options.isVisible = true;
-            Object.assign(that.options.scrollbarElement.style, {
-                display: 'block',
-            });
+            that.update();
         }
 
         this.destroy = function () {
