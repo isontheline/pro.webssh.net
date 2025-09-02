@@ -5,7 +5,7 @@ title: Support
 # Support
 
 ??? example "Terminal State Bar"
-    The [Terminal State Bar](/documentation/terminal-state-bar/) is a new feature in WebSSH that enhances your terminal experience by displaying useful information at the bottom of your session. 
+    The [Terminal State Bar](/documentation/terminal-state-bar/) is a new feature in WebSSH that enhances your terminal experience by displaying useful information of your session. 
     
     It’s fully customizable—you can add your own scripts to show exactly what you need, from system stats to connection details. If you prefer a cleaner interface, no worries—you can easily disable the bar anytime from the settings. 
     

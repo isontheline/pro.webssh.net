@@ -2,7 +2,7 @@
 title: Terminal State Bar
 ---
 # Terminal State Bar
-Since WebSSH 29.3 a "State Bar" is available at the bottom of the terminal. This bar is used to display dynamic information about anything you want, your are free to customize it as you want.
+Since WebSSH 29.3 a "State Bar" is available at the top (iOS) or bottom (macOS) of the terminal. This bar is used to display dynamic information about anything you want, your are free to customize it as you want.
 
 ## How to customize the State Bar
 1. Go to the "Settings" section of WebSSH (gear icon)
