@@ -6,3 +6,11 @@
     padding: 2px 10px !important;
     margin-bottom: 5px !important;
 }
+
+nav a[data-md-component="logo"] img {
+    border-radius: 5px;
+}
+
+.md-header__title {
+    margin-left: 0px !important;
+}
