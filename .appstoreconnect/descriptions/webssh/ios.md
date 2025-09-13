@@ -20,6 +20,13 @@ Wherever you are it will be useful to you everywhere, all the time!
 ◖ TELNET Functionalities ◗
 ๏ Ability to launch a connection without authentication or using keyboard-interactive authentication
 
+◖ Sysadmin Tools ◗
+๏ Addresses
+๏ Ping
+๏ Whois
+๏ Traceroute
+๏ DNS Lookup
+
 ◖ mashREPL ◗
 ๏ Use a local terminal without any Internet connection!
 ๏ Run commands such as : awk, bc, cat, cd, cp, curl, date, dig, du, echo, env, find, grep, head, help, host, ifconfig, ls, mkdir, mv, nslookup, open, openurl, ping, printenv, pwd, rm, sed, setenv, sort, stat, tail, tar, touch, uname, unsetenv, uptime, wc, whoami, whois
