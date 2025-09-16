@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for file in pages -%}
-    {% if not file.page.is_link and (file.page.abs_url or file.page.canonical_url) %}
-    <url>
-         <loc>{% if file.page.canonical_url %}{{ file.page.canonical_url|e }}{% else %}{{ file.page.abs_url|e }}{% endif %}</loc>
-         {#- NOTE: we exclude `lastmod` for pages using a template, as their update time is not correctly detected #}
-         {%- if not file.page.meta.template and file.page.meta.git_revision_date_localized_raw_iso_datetime %}
-         <lastmod>{{ (file.page.meta.git_revision_date_localized_raw_iso_datetime + "+00:00") | replace(" ", "T") }}</lastmod>
-         {%- endif %}
-         <changefreq>daily</changefreq>
-    </url>
-    {%- endif -%}
-{% endfor %}
+  {% if not file.page.is_link and (file.page.abs_url or file.page.canonical_url) %}
+  <url>
+    <loc>{% if file.page.canonical_url %}{{ file.page.canonical_url|e }}{% else %}{{ file.page.abs_url|e }}{% endif %}</loc>
+
+    {# Use Git revision if trustworthy (exclude templated pages) #}
+    {% if not file.page.meta.template and file.page.meta.git_revision_date_localized_raw_iso_datetime %}
+      {%- set last_iso = (file.page.meta.git_revision_date_localized_raw_iso_datetime + "+00:00") | replace(" ", "T") -%}
+      <lastmod>{{ last_iso }}</lastmod>
+
+      {# Try datetime math first #}
+      {% set last_dt = file.page.meta.git_revision_date_localized_raw_datetime %}
+      {% if last_dt is not string %}
+        {# Proper timedelta (days) #}
+        {% set delta_days = (build_date_utc - last_dt).days %}
+        {% if delta_days <= 92 %}
+          <changefreq>daily</changefreq>
+        {% elif delta_days <= 365 %}
+          <changefreq>monthly</changefreq>
+        {% else %}
+          <changefreq>yearly</changefreq>
+        {% endif %}
+      {% else %}
+        {# Fallback: month-based comparison from ISO string #}
+        {# last_iso is 'YYYY-MM-DDTHH:MM:SS+00:00' #}
+        {% set ly = last_iso[0:4] | int %}
+        {% set lm = last_iso[5:7] | int %}
+        {% set ny = build_date_utc.strftime('%Y') | int %}
+        {% set nm = build_date_utc.strftime('%m') | int %}
+        {% set month_diff = (ny - ly) * 12 + (nm - lm) %}
+
+        {% if month_diff <= 3 %}
+          <changefreq>daily</changefreq>
+        {% elif month_diff <= 12 %}
+          <changefreq>monthly</changefreq>
+        {% else %}
+          <changefreq>yearly</changefreq>
+        {% endif %}
+      {% endif %}
+    {% else %}
+      <changefreq>yearly</changefreq>
+    {% endif %}
+  </url>
+  {% endif %}
+{%- endfor -%}
 </urlset>
