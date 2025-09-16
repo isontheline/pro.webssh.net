@@ -1,803 +1,3842 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-         <loc>https://webssh.net/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/support/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/apple-school-and-business-manager/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/becoming-external-tester/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/contact-me/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/contributors/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/mashREPL/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/pricing/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/terminal-state-bar/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/translations/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/web-browser/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/21/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/22/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/23/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/24/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/25/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/26/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/27/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/28/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/29/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/30/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/15/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/16/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/17/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/18/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/19/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/20/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/previous-releases/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.10/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.11/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.12/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.13/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.14/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.15/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.16/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.17/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.18/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.19/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.6/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.7/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.8/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/changelog/history/14/14.9/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/iCloud/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/restore-purchases/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/webssh-brain/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/keyboard-shortcuts-combo-keys/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/lockdown-mode-and-fonts/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/public-private-key/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/ssh-config-file/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/ssh-copy-id/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/supported-algorithms/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/terrapin-attack/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/unable-to-agree-upon-client-to-server/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-badge/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-font-size/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/errors/cant-connect-anymore-using-macos-sequoia/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/errors/magic-keyboard-space-bar-issue/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/errors/no-route-to-host-error/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/arrange-connections-inside-folders/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/copying-text-to-clipboard-from-terminal/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/edit-delete-clone-connection/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/enabling-verbose-logging/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/known-hosts-manage/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/launching-multiple-terminals/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/link-connections-using-tags/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/locking-webssh-password-touch-id-face-id/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/pasting-clipboard-content/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/switch-language/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/use-deep-linking/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/use-mystic-bbs-telnet-cp437-character-translation/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SFTP/search-replace-text-editor/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SFTP/startup-folder-path/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/adding-control-key-to-snippets/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/use-arrow-keys-modes/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/use-function-keys-on-mac/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/use-meta-alt-option-key/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/SSH/use-old-special-keys/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-backup/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-restore/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/mashREPL/import/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/mashREPL/obtain-public-ip-address/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/mashREPL/servedit/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/tmux/create-attach-existing-tmux-session/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/howtos/tmux/tmux-scrollback-buffer/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/checking-host-availability/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/dynamic-port-forwarding/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/local-port-forwarding/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/port-forwarding/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/port-knocking/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/vpn-over-ssh/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/help/networking/wake-on-lan/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/documentation/legal/privacy-policy/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_ANSITERMINAL/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_BLOCKALERTS/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_CLOUDKITQUEUES/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_COCOALUMBERJACK/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_CODEMIRROR/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_COLORPICKER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_CUE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_CYRKEYBOARDBUTTON/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_DNSCLIENT/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_DSFSPARKLINE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_EDSEMVER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_EVENTSOURCE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_FIRACODE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_FONTAWESOME/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_FXFORMS/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_GCDTIMER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_GCIMAGEPICKERCONTROLLER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_GRADIENTBUTTON/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_HACK/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_IAPHELPER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_IOSEVKA/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_IOS_SYSTEM/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_IOS_SYSTEM_SERVICES/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_ISREFRESHCONTROL_LICENSE_ISMETHODSWIZZLING/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_ITERM2_COLOR_SCHEMES/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_JGACTIONSHEET/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_JSCONTROLLER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_KXMENU/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_LIBTELNET/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_MARKDOWNUI/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_MESLOLGS_NF/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_MMWORMHOLE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_MONOID/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_NANOSTORE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_NYXIMAGESKIT/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_OPENDYSLEXIC/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_OPENSSL/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_ORSSERIALPORT/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_RAPTUREXML/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_REACHABILITY/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_RUNESTONE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SIMPLEPING/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SOURCECODEPRO/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SSHCONFIG/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SVHTTPREQUEST/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SWIFTARGUMENTPARSER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SYMBOLPICKER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_SwiftMessages/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_TERMCOLOR_C/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_TERMINUS/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_TPKEYBOARDAVOIDING/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_TSLANGUAGEMANAGER/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_TURTLEBEZIERPATH/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_UCKEYCHAINSTORE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_UIDEVICEHARDWARE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_UIIMAGEVIEWRESIZABLE/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_WELCOMESHEET/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_XTERMJS/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://webssh.net/licenses/LICENSE_YUBIKIT/</loc>
-         <lastmod>2025-09-16</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-</urlset>
+  <url>
+    <loc>https://webssh.net/</loc>
+
+    
+    <lastmod>2025-06-15T15:44:45+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/support/</loc>
+
+    
+    <lastmod>2025-09-02T19:28:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/apple-school-and-business-manager/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/becoming-external-tester/</loc>
+
+    
+    <lastmod>2024-06-30T09:17:15+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/contact-me/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/contributors/</loc>
+
+    
+    <lastmod>2025-07-13T15:53:51+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
+
+    
+    <lastmod>2025-09-16T19:09:12+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/mashREPL/</loc>
+
+    
+    <lastmod>2024-06-19T19:55:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/pricing/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/terminal-state-bar/</loc>
+
+    
+    <lastmod>2025-09-02T19:28:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/translations/</loc>
+
+    
+    <lastmod>2024-07-19T10:54:28+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/web-browser/</loc>
+
+    
+    <lastmod>2024-07-02T06:42:24+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/21/</loc>
+
+    
+    <lastmod>2023-04-28T20:22:49+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/22/</loc>
+
+    
+    <lastmod>2023-07-09T20:18:26+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/23/</loc>
+
+    
+    <lastmod>2023-11-30T06:31:34+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/24/</loc>
+
+    
+    <lastmod>2024-01-23T12:27:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/25/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/26/</loc>
+
+    
+    <lastmod>2024-06-30T15:49:13+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/27/</loc>
+
+    
+    <lastmod>2024-11-10T21:11:57+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/28/</loc>
+
+    
+    <lastmod>2025-01-28T20:38:35+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/29/</loc>
+
+    
+    <lastmod>2025-09-10T19:05:28+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/30/</loc>
+
+    
+    <lastmod>2025-09-10T19:05:28+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/15/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/16/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/17/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/18/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/19/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/20/</loc>
+
+    
+    <lastmod>2024-04-07T14:51:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/previous-releases/</loc>
+
+    
+    <lastmod>2023-10-18T19:26:17+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.10/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.11/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.12/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.13/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.14/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.15/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.16/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.17/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.18/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.19/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.6/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.7/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.8/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/14/14.9/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/iCloud/</loc>
+
+    
+    <lastmod>2024-06-30T09:17:15+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/restore-purchases/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/webssh-brain/</loc>
+
+    
+    <lastmod>2025-03-10T20:28:42+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/keyboard-shortcuts-combo-keys/</loc>
+
+    
+    <lastmod>2023-01-09T20:12:30+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/lockdown-mode-and-fonts/</loc>
+
+    
+    <lastmod>2023-03-13T21:28:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/public-private-key/</loc>
+
+    
+    <lastmod>2023-04-15T20:48:49+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/ssh-config-file/</loc>
+
+    
+    <lastmod>2025-06-17T06:58:31+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/ssh-copy-id/</loc>
+
+    
+    <lastmod>2023-04-24T19:53:24+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/supported-algorithms/</loc>
+
+    
+    <lastmod>2024-10-13T20:09:21+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/terrapin-attack/</loc>
+
+    
+    <lastmod>2024-10-13T20:09:21+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/unable-to-agree-upon-client-to-server/</loc>
+
+    
+    <lastmod>2024-10-29T19:53:12+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-badge/</loc>
+
+    
+    <lastmod>2025-06-16T20:17:17+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/SSH/terminal-settings/terminal-font-size/</loc>
+
+    
+    <lastmod>2023-01-09T20:12:30+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/errors/cant-connect-anymore-using-macos-sequoia/</loc>
+
+    
+    <lastmod>2025-01-06T08:56:23+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/errors/magic-keyboard-space-bar-issue/</loc>
+
+    
+    <lastmod>2023-01-19T19:46:58+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/errors/no-route-to-host-error/</loc>
+
+    
+    <lastmod>2025-07-10T19:49:32+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/arrange-connections-inside-folders/</loc>
+
+    
+    <lastmod>2024-11-10T21:11:57+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/copying-text-to-clipboard-from-terminal/</loc>
+
+    
+    <lastmod>2023-03-13T21:28:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/edit-delete-clone-connection/</loc>
+
+    
+    <lastmod>2024-02-03T21:06:37+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/enabling-verbose-logging/</loc>
+
+    
+    <lastmod>2024-07-16T05:33:16+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/known-hosts-manage/</loc>
+
+    
+    <lastmod>2023-03-24T20:51:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/launching-multiple-terminals/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/link-connections-using-tags/</loc>
+
+    
+    <lastmod>2025-05-16T20:09:00+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/locking-webssh-password-touch-id-face-id/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/pasting-clipboard-content/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/switch-language/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/use-deep-linking/</loc>
+
+    
+    <lastmod>2023-03-18T21:54:30+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/use-mystic-bbs-telnet-cp437-character-translation/</loc>
+
+    
+    <lastmod>2024-05-05T19:47:02+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SFTP/search-replace-text-editor/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SFTP/startup-folder-path/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/adding-control-key-to-snippets/</loc>
+
+    
+    <lastmod>2023-01-07T21:26:58+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/</loc>
+
+    
+    <lastmod>2024-12-18T20:17:40+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/use-arrow-keys-modes/</loc>
+
+    
+    <lastmod>2023-01-09T20:12:30+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/use-function-keys-on-mac/</loc>
+
+    
+    <lastmod>2023-02-08T21:17:03+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/use-meta-alt-option-key/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/SSH/use-old-special-keys/</loc>
+
+    
+    <lastmod>2023-10-01T19:38:30+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-backup/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-restore/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/import/</loc>
+
+    
+    <lastmod>2023-12-05T19:34:07+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/obtain-public-ip-address/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/servedit/</loc>
+
+    
+    <lastmod>2023-12-06T19:57:12+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/tmux/create-attach-existing-tmux-session/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/tmux/tmux-scrollback-buffer/</loc>
+
+    
+    <lastmod>2023-01-05T20:56:21+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/checking-host-availability/</loc>
+
+    
+    <lastmod>2023-02-09T21:28:34+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/dynamic-port-forwarding/</loc>
+
+    
+    <lastmod>2024-01-11T21:47:42+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/local-port-forwarding/</loc>
+
+    
+    <lastmod>2023-04-18T19:50:29+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/port-forwarding/</loc>
+
+    
+    <lastmod>2023-04-18T19:54:10+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/port-knocking/</loc>
+
+    
+    <lastmod>2024-07-18T19:08:14+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/vpn-over-ssh/</loc>
+
+    
+    <lastmod>2024-06-30T09:17:15+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/networking/wake-on-lan/</loc>
+
+    
+    <lastmod>2025-03-25T21:03:38+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/legal/privacy-policy/</loc>
+
+    
+    <lastmod>2025-07-18T11:30:46+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_ANSITERMINAL/</loc>
+
+    
+    <lastmod>2023-11-27T21:37:34+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_BLOCKALERTS/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_CLOUDKITQUEUES/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_COCOALUMBERJACK/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_CODEMIRROR/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_COLORPICKER/</loc>
+
+    
+    <lastmod>2023-12-16T21:37:56+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_CUE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_CYRKEYBOARDBUTTON/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_DNSCLIENT/</loc>
+
+    
+    <lastmod>2024-10-02T20:32:42+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_DSFSPARKLINE/</loc>
+
+    
+    <lastmod>2023-10-26T19:52:51+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_EDSEMVER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_EVENTSOURCE/</loc>
+
+    
+    <lastmod>2024-01-05T21:16:16+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_FIRACODE/</loc>
+
+    
+    <lastmod>2024-11-01T10:01:16+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_FONTAWESOME/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_FXFORMS/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_GCDTIMER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_GCIMAGEPICKERCONTROLLER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_GRADIENTBUTTON/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_HACK/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/</loc>
+
+    
+    <lastmod>2024-01-05T21:16:16+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_IAPHELPER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_IOSEVKA/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_IOS_SYSTEM/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_IOS_SYSTEM_SERVICES/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_ISREFRESHCONTROL_LICENSE_ISMETHODSWIZZLING/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_ITERM2_COLOR_SCHEMES/</loc>
+
+    
+    <lastmod>2023-12-19T06:33:19+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_JGACTIONSHEET/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_JSCONTROLLER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_KXMENU/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_LIBTELNET/</loc>
+
+    
+    <lastmod>2024-05-02T14:05:08+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_MARKDOWNUI/</loc>
+
+    
+    <lastmod>2024-01-05T21:16:16+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_MESLOLGS_NF/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_MMWORMHOLE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_MONOID/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_NANOSTORE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_NYXIMAGESKIT/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_OPENDYSLEXIC/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_OPENSSL/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_ORSSERIALPORT/</loc>
+
+    
+    <lastmod>2025-03-01T17:08:58+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_RAPTUREXML/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_REACHABILITY/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_RUNESTONE/</loc>
+
+    
+    <lastmod>2024-05-11T20:23:04+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SIMPLEPING/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SOURCECODEPRO/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SSHCONFIG/</loc>
+
+    
+    <lastmod>2022-12-04T21:08:59+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SVHTTPREQUEST/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SWIFTARGUMENTPARSER/</loc>
+
+    
+    <lastmod>2023-09-21T18:31:19+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SYMBOLPICKER/</loc>
+
+    
+    <lastmod>2025-02-14T14:23:45+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_SwiftMessages/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_TERMCOLOR_C/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_TERMINUS/</loc>
+
+    
+    <lastmod>2024-11-01T19:56:54+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_TPKEYBOARDAVOIDING/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_TSLANGUAGEMANAGER/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_TURTLEBEZIERPATH/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_UCKEYCHAINSTORE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_UIDEVICEHARDWARE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_UIIMAGEVIEWRESIZABLE/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_WELCOMESHEET/</loc>
+
+    
+    <lastmod>2024-01-31T21:16:27+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_XTERMJS/</loc>
+
+    
+    <lastmod>2022-11-25T20:42:39+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_YUBIKIT/</loc>
+
+    
+    <lastmod>2024-03-30T15:47:01+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  </urlset>
