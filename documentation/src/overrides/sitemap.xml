@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for file in pages -%}
+    {% if not file.page.is_link and (file.page.abs_url or file.page.canonical_url) %}
+    <url>
+         <loc>{% if file.page.canonical_url %}{{ file.page.canonical_url|e }}{% else %}{{ file.page.abs_url|e }}{% endif %}</loc>
+         {#- NOTE: we exclude `lastmod` for pages using a template, as their update time is not correctly detected #}
+         {%- if not file.page.meta.template and file.page.meta.git_revision_date_localized_raw_iso_datetime %}
+         <lastmod>{{ (file.page.meta.git_revision_date_localized_raw_iso_datetime + "+00:00") | replace(" ", "T") }}</lastmod>
+         {%- endif %}
+         <changefreq>daily</changefreq>
+    </url>
+    {%- endif -%}
+{% endfor %}
+</urlset>
