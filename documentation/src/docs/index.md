@@ -29,13 +29,13 @@ Have a nice day :sunny:
 
 ## Screenshots
 ### macOS
-<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg" style="max-height: 200px;" alt="WebSSH macOS SSH / SFTP / Port Forwarding client" />
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-macos.jpg" style="max-height: 200px;" alt="WebSSH macOS SSH / SFTP / Port Forwarding client" />
 
 ### iOS
-<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/iphone/webssh-iphone-ssh-client.jpg" style="max-height: 200px;" alt="WebSSH iOS SSH / SFTP / Port Forwarding client" />
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-ios.jpg" style="max-height: 200px;" alt="WebSSH iOS SSH / SFTP / Port Forwarding client" />
 
 ### iPadOS
-<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/ipad/webssh-ipad-ssh-client.jpg" style="max-height: 200px;" alt="WebSSH iPadOS SSH / SFTP / Port Forwarding client" />
+<img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-ipados.jpg" style="max-height: 200px;" alt="WebSSH iPadOS SSH / SFTP / Port Forwarding client" />
 
 ## Star History
 

@@ -9,7 +9,10 @@
 
 ## Screenshots
 ### macOS
-![WebSSH macOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/mac/webssh-macos-ssh-sftp-port-forwarding-client.jpg)
+![WebSSH macOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-macos.jpg)
+
+### iPadOS
+![WebSSH iPad SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-ipadod.jpg)
 
 ### iOS
-![WebSSH iOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/iphone/webssh-iphone-ssh-client.jpg)
+![WebSSH iPhone SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-ios.jpg)

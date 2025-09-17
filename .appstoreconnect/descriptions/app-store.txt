@@ -1,0 +1,23 @@
+Whether you’re on the go or at your desk, WebSSH keeps you connected—anytime, anywhere! ٩(^‿^)۶
+
+WebSSH is a powerful and user-friendly SSH, SFTP, Telnet, and Port Forwarding client for iOS and macOS. It allows developers, system administrators, and IT professionals to manage servers securely and efficiently, wherever they are.
+
+With WebSSH, you can connect to your servers using modern authentication methods including password, two-factor challenge, or keys (RSA, DSA, ED25519, PuTTY). Connections are fast and reliable, with support for local port forwarding, automatic command execution at startup, and full terminal emulation (XTERM-COLOR256, XTERM, VT100). Profiles let you customize themes, colors, fonts, and keyboard behavior to perfectly fit your workflow.
+
+Managing files on remote servers is simple thanks to the integrated SFTP client. You can browse directories, create or rename files, upload documents from your device, download files locally, and even edit text files directly within the app.
+
+Beyond SSH and SFTP, WebSSH also supports Telnet and Serial connections, making it a versatile tool for a wide range of use cases. Serial connections can be fully configured (baud rate, data bits, parity, stop bits, flow control), while Telnet connections support both direct and interactive authentication.
+
+For quick diagnostics, WebSSH includes built-in sysadmin tools such as Ping, Whois, Traceroute, and DNS Lookup. And if you need a terminal even without internet access, the mashREPL feature gives you a local shell with essential commands like ls, grep, curl, ping, tar, and many more.
+
+WebSSH supports multiple protocols (SSH, SFTP, Telnet, Serial) and channel types (Shell sessions, SFTP sessions, Local Port Forwarding), ensuring compatibility with most professional scenarios.
+
+____
+
+Why WebSSH?
+
+Unlike basic terminal clients, WebSSH combines professional-grade features with a polished, mobile-first design. It is secure, reliable, and easy to use — the all-in-one solution to keep your servers close at hand, no matter where you are.
+
+____
+
+Download WebSSH today and experience secure, seamless server management on iOS and macOS.
