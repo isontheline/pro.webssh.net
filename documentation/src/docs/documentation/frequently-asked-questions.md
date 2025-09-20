@@ -8,7 +8,7 @@ title: FAQ
     A GitHub issue could be find to track this feature request : [#761](https://github.com/isontheline/pro.webssh.net/issues/761)
 
 ??? abstract "How can I lock access to the app?"
-    Since iOS 18 and iPadOS 18, you can use the built-in Lock Screen feature to lock access to the app :
+    Since WebSSH 30, the access lock feature rely on iOS / iPadOS 18 built-in "Lock an app" feature. To use it, please refer to the following Apple documentation :
 
     * [iPad User Guide](https://support.apple.com/en-gw/guide/ipad/ipad4026f2de/ipados)
     * [iPhone User Guide](https://support.apple.com/en-gw/guide/iphone/iph00f208d05/ios)
