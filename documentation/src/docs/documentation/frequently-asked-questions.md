@@ -18,3 +18,14 @@ title: FAQ
     1. Open WebSSH
     2. Go to Settings
     3. Enable Face ID / Touch ID / Password Lock
+
+??? abstract "Is it possible to force WebSSH to use IPv4 instead of IPv6 when connecting to a host?"
+    Yes, it is possible to force WebSSH to use IPv4 instead of IPv6 when connecting to a host.
+
+    To do so, please follow these steps :
+
+    1. Go to WebSSH Settings
+    2. Internet Protocol Strategy
+    3. Choose "Try IPv4 host address before IPv6" or "Only use IPv4 for resolution"
+
+    Once done, WebSSH will prioritize IPv4 connections when both IPv4 and IPv6 are available for a host.
