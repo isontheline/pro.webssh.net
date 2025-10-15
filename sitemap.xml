@@ -313,102 +313,6 @@
   </url>
   
   <url>
-    <loc>https://webssh.net/documentation/changelog/21/</loc>
-
-    
-    <lastmod>2023-04-28T20:22:49+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>yearly</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
-    <loc>https://webssh.net/documentation/changelog/22/</loc>
-
-    
-    <lastmod>2023-07-09T20:18:26+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>yearly</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
-    <loc>https://webssh.net/documentation/changelog/23/</loc>
-
-    
-    <lastmod>2023-11-30T06:31:34+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>yearly</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
-    <loc>https://webssh.net/documentation/changelog/24/</loc>
-
-    
-    <lastmod>2024-01-23T12:27:06+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>yearly</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
     <loc>https://webssh.net/documentation/changelog/25/</loc>
 
     
@@ -532,7 +436,7 @@
     <loc>https://webssh.net/documentation/changelog/30/</loc>
 
     
-    <lastmod>2025-10-08T19:33:17+00:00</lastmod>
+    <lastmod>2025-10-15T19:45:25+00:00</lastmod>
 
       
       
@@ -691,6 +595,102 @@
 
         
           <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/21/</loc>
+
+    
+    <lastmod>2025-10-15T19:47:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/22/</loc>
+
+    
+    <lastmod>2025-10-15T19:47:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/23/</loc>
+
+    
+    <lastmod>2025-10-15T19:47:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/history/24/</loc>
+
+    
+    <lastmod>2025-10-15T19:47:44+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
