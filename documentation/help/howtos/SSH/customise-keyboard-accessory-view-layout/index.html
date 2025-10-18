@@ -3253,6 +3253,24 @@
 <li>The layout defined by <code>#!KeyboardAccessoryViewLayout</code> will be used as a fallback if the layout for the current idiom is not defined.</li>
 </ul>
 </details>
+<details class="info">
+<summary>iPhone Default Layout</summary>
+<p>The default iPhone layout is the following :
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{HELP}
+</code></pre></div></p>
+<p>If VoiceOver is enabled, the default iPhone layout will be :
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{HELP}
+</code></pre></div></p>
+</details>
+<details class="info">
+<summary>iPad Default Layout</summary>
+<p>The default iPad layout is the following :
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{HELP}
+</code></pre></div></p>
+<p>If VoiceOver is enabled, the default iPad layout will be :
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{HELP}
+</code></pre></div></p>
+</details>
 <h2 id="layout-syntax">Layout Syntax</h2>
 <p>Each accessory keyboard key is defined by a <strong>Token</strong> and it can be one of the following :</p>
 <ul>
@@ -3394,6 +3412,11 @@
 <td>23.0</td>
 </tr>
 <tr>
+<td>{TOGGLE_KEYBOARD}</td>
+<td>Toggle Keyboard : Show / Hide the virtual keyboard</td>
+<td>30.5</td>
+</tr>
+<tr>
 <td>{UP}</td>
 <td>Up Arrow Key</td>
 <td>23.0</td>
@@ -3414,7 +3437,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 18, 2024 20:17:40 UTC">December 18, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2025 16:44:14 UTC">October 18, 2025</span>
       
     
   </small>
