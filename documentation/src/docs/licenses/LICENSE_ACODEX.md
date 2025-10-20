@@ -1,4 +1,4 @@
-# ACodeX
+# AcodeX
 ```
 MIT License
 
