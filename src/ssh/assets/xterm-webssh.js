@@ -625,15 +625,6 @@ const TerminalHelper = {
         if (theme.background) {
             document.querySelector('body').style.backgroundColor = theme.background;
         }
-
-        // TODO : Ability to update Font Family on a running terminal:
-        /*if (theme._fontFamilyName) {
-            TerminalHelper.loadFont(theme._fontFamilyName, () => {
-                terminal._publicOptions.fontFamily = theme._fontFamilyName;
-            });
-        } else {
-            terminal._publicOptions.fontFamily = '"MesloLGS NF"';
-        }*/
     },
 
     buildTheme: function (terminalSettings) {
@@ -647,6 +638,15 @@ const TerminalHelper = {
         theme.magenta = theme.purple;
         theme.brightMagenta = theme.brightPurple;
         // <- #1173 Theme : Purple color should be named Magenta (ANSI)
+
+        const style = document.createElement('style');
+        style.textContent = `
+        .terminal-selection-handle.start-handle,
+        .terminal-selection-handle.end-handle { 
+            background-color: ${theme.cursor} !important;
+            border: 1px solid ${theme.background} !important;
+        }`;
+        document.head.appendChild(style);
 
         return theme;
     },
@@ -751,47 +751,6 @@ const TerminalHelper = {
 
     onLinkClick: function (event, uri) {
         JS2IOS.calliOSFunction('openLink', uri);
-    },
-
-    pocTest: function () {
-        /*const term = terminal;
-            term.options['overviewRulerWidth'] = 15;
-            term.registerDecoration({marker: term.registerMarker(1), overviewRulerOptions: { color: '#ef2929' }});
-            term.registerDecoration({marker: term.registerMarker(3), overviewRulerOptions: { color: '#8ae234' }});
-            term.registerDecoration({marker: term.registerMarker(5), overviewRulerOptions: { color: '#729fcf' }});
-            term.registerDecoration({marker: term.registerMarker(7), overviewRulerOptions: { color: '#ef2929', position: 'left' }});
-            term.registerDecoration({marker: term.registerMarker(7), overviewRulerOptions: { color: '#8ae234', position: 'center' }});
-            term.registerDecoration({marker: term.registerMarker(7), overviewRulerOptions: { color: '#729fcf', position: 'right' }});
-            term.registerDecoration({marker: term.registerMarker(10), overviewRulerOptions: { color: '#8ae234', position: 'center' }});
-            term.registerDecoration({marker: term.registerMarker(10), overviewRulerOptions: { color: '#ff0000', position: 'full' }});
-
-
-            const marker = term.registerMarker(1);
-            const decoration = term.registerDecoration({
-                marker,
-                backgroundColor: '#FF0000',
-                foregroundColor: '#FFFFFF',
-                overviewRulerOptions: { color: '#0000FF', position: 'left' }
-            });
-            //decoration.onRender(e => {
-            //    e.style.right = '100%';
-            //    e.style.backgroundColor = '#ef292980';
-            //});
-
-            searchAddon.findNext('ok', {
-                regex: false,
-                wholeWord: false,
-                caseSensitive: false,
-                incremental: false,
-                decorations: {
-                    matchBackground: '#0000FF',
-                    matchBorder: '#00FF00',
-                    matchOverviewRuler: 'orange',
-                    activeMatchBackground: '#FFFF00',
-                    activeMatchBorder: '#0000FF',
-                    activeMatchColorOverviewRuler: 'orange'
-                }
-            });*/
     }
 };
 
