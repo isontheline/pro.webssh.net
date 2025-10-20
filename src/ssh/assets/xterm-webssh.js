@@ -215,6 +215,7 @@ const TerminalHelper = {
     scrolly: null,
     lastSelectedText: null,
     cursorBlinkInterval: null,
+    selectionManager: null,
 
     ready: function () {
         // Applying a border to the terminal screen if fixedSize enabled :

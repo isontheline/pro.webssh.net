@@ -20,6 +20,7 @@
     <script src="xterm-addon-serialize.js"></script>
     <script src="xterm-addon-web-links.js"></script>
     <script src="xterm-addon-webgl.js"></script>
+    <script src="xterm-selectioncore.js"></script>
 </head>
 
 <body>
@@ -150,6 +151,9 @@
             elementToScroll: document.querySelector('.xterm-viewport'),
             handedness: terminalSettings.handedness
         });
+
+        // Selection management :
+        TerminalHelper.selectionManager = new SelectionCore(terminal, document.querySelector('#terminal'), {});
 
         // Listen when the buffer changes :
         terminal.buffer._onBufferChange._listeners.push(TerminalHelper.onBufferChange);
