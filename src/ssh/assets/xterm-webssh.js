@@ -433,6 +433,11 @@ const TerminalHelper = {
     onSelectionChange: function () {
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
 
+        // iOS / iPadOS needs to be notified of selection changes :
+        if (!terminalSettings.isMacOS && TerminalHelper.lastSelectedText != "") {
+            JS2IOS.calliOSFunction('notifyTextSelectionChange', [Base64.utoa(TerminalHelper.lastSelectedText)]);
+        }
+
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
         }
@@ -639,6 +644,7 @@ const TerminalHelper = {
         theme.brightMagenta = theme.brightPurple;
         // <- #1173 Theme : Purple color should be named Magenta (ANSI)
 
+        // Custom Terminal Selection Handles Styles ->
         const style = document.createElement('style');
         style.textContent = `
         .terminal-selection-handle.start-handle,
@@ -647,6 +653,7 @@ const TerminalHelper = {
             border: 1px solid ${theme.background} !important;
         }`;
         document.head.appendChild(style);
+        // <- Custom Terminal Selection Handles Styles
 
         return theme;
     },
