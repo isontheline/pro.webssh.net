@@ -430,7 +430,7 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('notifyTerminalTitle', Base64.btoa(title));
     }, 250),
 
-    onSelectionChange: function () {
+    onSelectionChange: debounce(() => {
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
 
         // iOS / iPadOS needs to be notified of selection changes :
@@ -441,7 +441,7 @@ const TerminalHelper = {
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
         }
-    },
+    }, 500),
 
     documentFragmentToText: function (documentFragment) {
         let text = '';
