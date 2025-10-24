@@ -53,6 +53,16 @@ class MagnifierAddon {
         this._mutationObs = undefined;
         this._pointerDown = false;
         this._waitTicker = 0; // frames spent waiting for pixels
+
+        this._edgeInset = opts.edgeInset ?? 8;          // px: padding from container bounds
+        this._gap = opts.gap ?? 8;                      // px: gap between finger and lens
+        this._touchAvoidRadius = opts.touchAvoidRadius ?? 28; // px: approx half of 56px touch contact
+        this._lastPointerType = 'mouse';                // remember last pointer type
+
+        this._sideSnapOnly = opts.sideSnapOnly ?? true;              // force left/right docking
+        this._sideSnapHysteresis = opts.sideSnapHysteresis ?? 24;    // px: minimize flip-flop
+        this._sidePreference = opts.sidePreference ?? 'auto';        // 'auto' | 'left' | 'right'
+        this._currentSide = null;                                    // 'left' | 'right'
     }
 
     activate(terminal) {
@@ -227,6 +237,7 @@ class MagnifierAddon {
         const hostRect = this._overlayHost.getBoundingClientRect();
         this._pointerX = e.clientX - hostRect.left;
         this._pointerY = e.clientY - hostRect.top;
+        this._lastPointerType = e.pointerType || this._lastPointerType;
         this._positionLens();
         this._markDirty();
     }
@@ -248,12 +259,60 @@ class MagnifierAddon {
     }
 
     _positionLens() {
-        if (!this._lensCanvas) return;
+        if (!this._lensCanvas || !this._overlayHost) return;
+
         const r = this._radius;
-        const host = this._overlayHost.getBoundingClientRect();
-        const x = Math.max(r, Math.min(this._pointerX, host.width - r));
-        const y = Math.max(r, Math.min(this._pointerY, host.height - r));
-        this._lensCanvas.style.transform = `translate(${x - r}px, ${y - r}px)`;
+        const hostRect = this._overlayHost.getBoundingClientRect();
+        const W = hostRect.width;
+        const H = hostRect.height;
+
+        const x = this._pointerX;
+        const y = this._pointerY;
+
+        // Distance to keep lens away from the finger.
+        const baseClear = r + this._gap;
+        const avoid = (this._lastPointerType === 'touch')
+            ? (this._touchAvoidRadius + baseClear)
+            : baseClear;
+
+        const edge = this._edgeInset;
+
+        // Decide side: ONLY 'left' or 'right'
+        let desiredSide;
+
+        if (this._sidePreference === 'left' || this._sidePreference === 'right') {
+            // Forced preference
+            desiredSide = this._sidePreference;
+        } else {
+            const roomLeft = x;        // pixels available to the left edge
+            const roomRight = W - x;    // pixels available to the right edge
+            const delta = roomRight - roomLeft; // >0 means more room on the right
+
+            if (!this._currentSide) {
+                // First decision: choose the side with more room
+                desiredSide = (delta >= 0) ? 'right' : 'left';
+            } else {
+                // Hysteresis: switch sides only if the opposite side has
+                // at least _sideSnapHysteresis px more room.
+                if (this._currentSide === 'right') {
+                    desiredSide = (delta < -this._sideSnapHysteresis) ? 'left' : 'right';
+                } else { // currentSide === 'left'
+                    desiredSide = (delta > this._sideSnapHysteresis) ? 'right' : 'left';
+                }
+            }
+        }
+
+        this._currentSide = desiredSide;
+
+        // Place the lens to that side, aligned vertically with the finger.
+        let cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
+        let cy = y;
+
+        // Clamp to keep the full circle visible
+        cx = Math.max(edge + r, Math.min(cx, W - edge - r));
+        cy = Math.max(edge + r, Math.min(cy, H - edge - r));
+
+        this._lensCanvas.style.transform = `translate3d(${cx - r}px, ${cy - r}px, 0)`;
     }
 
     _markDirty() {
