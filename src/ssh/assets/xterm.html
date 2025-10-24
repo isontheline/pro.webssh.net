@@ -21,6 +21,7 @@
     <script src="xterm-addon-web-links.js"></script>
     <script src="xterm-addon-webgl.js"></script>
     <script src="xterm-selectioncore.js"></script>
+    <script src="xterm-magnifier.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
 
         // Load WebGL Addon :
         if (terminalSettings.runMode == 'normal') {
-            const webglAddon = new WebglAddon.WebglAddon();
+            const webglAddon = new WebglAddon.WebglAddon(true);
             webglAddon._addonType = 'WebglAddon';
             webglAddon.onContextLoss(e => {
                 webglAddon.dispose();
@@ -72,6 +73,16 @@
             const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
             terminal.loadAddon(webLinksAddon);
         }
+
+        // Magnifier :
+        const magnifier = new MagnifierAddon({
+            radius: 30,
+            zoom: 2.25,
+            holdToShow: true,
+            canvasSelector: 'canvas:not(.xterm-link-layer)',
+            debug: false
+        });
+        terminal.loadAddon(magnifier);
 
         // Open the terminal :
         terminal.open(document.getElementById('terminal'));
