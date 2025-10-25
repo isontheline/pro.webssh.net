@@ -162,6 +162,7 @@ class MagnifierAddon {
         this._enabled = false;
         this._hideLens();
         if (this._overlayHost) this._overlayHost.style.pointerEvents = 'none';
+        this._currentSide = null;
     }
 
     setZoom(factor) {
@@ -256,63 +257,16 @@ class MagnifierAddon {
         this._lensCanvas.style.visibility = 'hidden';
         cancelAnimationFrame(this._raf);
         this._raf = 0;
+        this._currentSide = null;
     }
 
     _positionLens() {
         if (!this._lensCanvas || !this._overlayHost) return;
-
-        const r = this._radius;
-        const hostRect = this._overlayHost.getBoundingClientRect();
-        const W = hostRect.width;
-        const H = hostRect.height;
-
-        const x = this._pointerX;
-        const y = this._pointerY;
-
-        // Distance to keep lens away from the finger.
-        const baseClear = r + this._gap;
-        const avoid = (this._lastPointerType === 'touch')
-            ? (this._touchAvoidRadius + baseClear)
-            : baseClear;
-
-        const edge = this._edgeInset;
-
-        // Decide side: ONLY 'left' or 'right'
-        let desiredSide;
-
-        if (this._sidePreference === 'left' || this._sidePreference === 'right') {
-            // Forced preference
-            desiredSide = this._sidePreference;
+        if (this._sideSnapOnly) {
+            this._placeLensSideOnly();
         } else {
-            const roomLeft = x;        // pixels available to the left edge
-            const roomRight = W - x;    // pixels available to the right edge
-            const delta = roomRight - roomLeft; // >0 means more room on the right
-
-            if (!this._currentSide) {
-                // First decision: choose the side with more room
-                desiredSide = (delta >= 0) ? 'right' : 'left';
-            } else {
-                // Hysteresis: switch sides only if the opposite side has
-                // at least _sideSnapHysteresis px more room.
-                if (this._currentSide === 'right') {
-                    desiredSide = (delta < -this._sideSnapHysteresis) ? 'left' : 'right';
-                } else { // currentSide === 'left'
-                    desiredSide = (delta > this._sideSnapHysteresis) ? 'right' : 'left';
-                }
-            }
+            this._placeLensSmart();
         }
-
-        this._currentSide = desiredSide;
-
-        // Place the lens to that side, aligned vertically with the finger.
-        let cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
-        let cy = y;
-
-        // Clamp to keep the full circle visible
-        cx = Math.max(edge + r, Math.min(cx, W - edge - r));
-        cy = Math.max(edge + r, Math.min(cy, H - edge - r));
-
-        this._lensCanvas.style.transform = `translate3d(${cx - r}px, ${cy - r}px, 0)`;
     }
 
     _markDirty() {
@@ -485,5 +439,129 @@ class MagnifierAddon {
 
         // If chosen has 0×0 now, we’ll still use it but wait until it gets pixels.
         return chosen;
+    }
+
+    _placeLensSideOnly() {
+        const r = this._radius;
+        const hostRect = this._overlayHost.getBoundingClientRect();
+        const W = hostRect.width;
+        const H = hostRect.height;
+
+        const x = this._pointerX;
+        const y = this._pointerY;
+
+        const baseClear = r + this._gap;
+        const avoid = (this._lastPointerType === 'touch')
+            ? (this._touchAvoidRadius + baseClear)
+            : baseClear;
+
+        const edge = this._edgeInset;
+
+        // Decide side with hysteresis around the midline using room delta.
+        let desiredSide;
+        if (this._sidePreference === 'left' || this._sidePreference === 'right') {
+            desiredSide = this._sidePreference;
+        } else {
+            const roomLeft = x;        // space to left edge
+            const roomRight = W - x;    // space to right edge
+            const delta = roomRight - roomLeft;
+
+            if (!this._currentSide) {
+                desiredSide = (delta >= 0) ? 'right' : 'left';
+            } else if (this._currentSide === 'right') {
+                desiredSide = (delta < -this._sideSnapHysteresis) ? 'left' : 'right';
+            } else {
+                desiredSide = (delta > this._sideSnapHysteresis) ? 'right' : 'left';
+            }
+        }
+
+        // Candidate position on chosen side
+        let cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
+        let cy = y;
+
+        // Clamp inside overlay
+        const clampedCx = Math.max(edge + r, Math.min(cx, W - edge - r));
+        const clampedCy = Math.max(edge + r, Math.min(cy, H - edge - r));
+
+        // Safety fallback: if clamping pushed us so close that the lens edge
+        // overlaps the finger, flip to opposite side (matters at extreme edges).
+        const nearEdgeDistance = Math.abs(clampedCx - x) - r;
+        const minClear = (this._lastPointerType === 'touch')
+            ? (this._touchAvoidRadius + this._gap)
+            : this._gap;
+
+        if (nearEdgeDistance < minClear) {
+            // Flip
+            desiredSide = (desiredSide === 'right') ? 'left' : 'right';
+            cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
+        }
+
+        this._currentSide = desiredSide;
+
+        // Final clamp & apply
+        const finalCx = Math.max(edge + r, Math.min(cx, W - edge - r));
+        const finalCy = Math.max(edge + r, Math.min(cy, H - edge - r));
+        this._lensCanvas.style.transform = `translate3d(${finalCx - r}px, ${finalCy - r}px, 0)`;
+    }
+
+    _placeLensSmart() {
+        const r = this._radius;
+        const hostRect = this._overlayHost.getBoundingClientRect();
+        const W = hostRect.width;
+        const H = hostRect.height;
+        const x = this._pointerX;
+        const y = this._pointerY;
+
+        const baseClear = r + this._gap;
+        const avoid = (this._lastPointerType === 'touch')
+            ? (this._touchAvoidRadius + baseClear)
+            : baseClear;
+
+        const edge = this._edgeInset;
+
+        const roomLeft = x;
+        const roomRight = W - x;
+        const roomTop = y;
+        const roomBot = H - y;
+
+        // Prefer side with more room unless very close to top/bottom thirds
+        const topBand = H * 0.33;
+        const bottomBand = H * 0.67;
+        const sideBias = (roomRight >= roomLeft) ? ['right', 'left'] : ['left', 'right'];
+
+        const order = (y <= topBand)
+            ? ['bottom', ...sideBias, 'top']
+            : (y >= bottomBand)
+                ? ['top', ...sideBias, 'bottom']
+                : [...sideBias, (roomTop >= roomBot ? 'top' : 'bottom')];
+
+        const edgeClamp = (cx, cy) => ([
+            Math.max(edge + r, Math.min(cx, W - edge - r)),
+            Math.max(edge + r, Math.min(cy, H - edge - r))
+        ]);
+
+        const candidates = order.map(a => {
+            let cx = x, cy = y;
+            switch (a) {
+                case 'left': cx = x - avoid; break;
+                case 'right': cx = x + avoid; break;
+                case 'top': cy = y - avoid; break;
+                case 'bottom': cy = y + avoid; break;
+            }
+            const [clx, cly] = edgeClamp(cx, cy);
+            return { a, cx: clx, cy: cly };
+        });
+
+        // Score: distance from finger (visibility) + mild center bias (stability)
+        const score = ({ cx, cy }) => {
+            const dist = Math.hypot(cx - x, cy - y);
+            const centerBias = (W / 2 - Math.abs(cx - W / 2)) + (H / 2 - Math.abs(cy - H / 2));
+            return dist * 2 + centerBias * 0.25;
+        };
+
+        candidates.sort((A, B) => score(B) - score(A));
+        const best = candidates[0];
+
+        this._lensCanvas.style.transform = `translate3d(${best.cx - r}px, ${best.cy - r}px, 0)`;
     }
 }
