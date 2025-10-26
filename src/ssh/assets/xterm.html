@@ -20,7 +20,7 @@
     <script src="xterm-addon-serialize.js"></script>
     <script src="xterm-addon-web-links.js"></script>
     <script src="xterm-addon-webgl.js"></script>
-    <script src="xterm-selectioncore.js"></script>
+    <script src="xterm-selection-handles.js"></script>
     <script src="xterm-magnifier.js"></script>
 </head>
 
@@ -83,10 +83,17 @@
             sideSnapOnly: false,
             debug: false
         });
-        terminal.loadAddon(magnifier);
+        //terminal.loadAddon(magnifier);
 
         // Open the terminal :
         terminal.open(document.getElementById('terminal'));
+
+        // Selection Handles Addon ->
+        const selectionHandlesAddon = new SelectionHandlesAddon({
+            selectionHaptics: false
+        });
+        terminal.loadAddon(selectionHandlesAddon); //!\\ This addon need to be called after terminal.open() //!\\
+        // <- Selection Handles Addon
 
         // On "bell" event :
         terminal.onBell(TerminalHelper.onBell);
@@ -163,9 +170,6 @@
             elementToScroll: document.querySelector('.xterm-viewport'),
             handedness: terminalSettings.handedness
         });
-
-        // Selection management :
-        TerminalHelper.selectionManager = new SelectionCore(terminal, document.querySelector('#terminal'), {});
 
         // Listen when the buffer changes :
         terminal.buffer._onBufferChange._listeners.push(TerminalHelper.onBufferChange);

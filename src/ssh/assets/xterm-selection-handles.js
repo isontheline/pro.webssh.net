@@ -1,7 +1,7 @@
 // MIT License
-// Copyright (c) 2023 Raunak Raj
-// https://github.com/bajrangCoder/acode-plugin-acodex/blob/main/License.md
-class SelectionCore {
+// Original Work Copyright (c) 2023 Raunak Raj : https://github.com/bajrangCoder/acode-plugin-acodex
+// Upgraded Work Copyright (c) 2025 Arnaud MENGUS : https://github.com/isontheline/pro.webssh.net
+class SelectionHandlesAddon {
   isSelecting = false;
   isTapAndHoldActive = false;
   tapHoldTimeout = null;
@@ -18,18 +18,50 @@ class SelectionCore {
   // references to DOM elements
   terminal = null;
   terminalContainer = null;
-  settings = null;
   startHandle = null;
   endHandle = null;
 
-  constructor(terminal, terminalContainer, settings) {
+  // Addon configuration
+  settings = {
+    selectionHaptics: true
+  };
+
+  constructor(options = {}) {
+    // Allow configuration through constructor
+    this.settings = { ...this.settings, ...options };
+  }
+
+  /**
+   * Activate the addon (called by xterm.js)
+   * @param {Terminal} terminal - The xterm.js terminal instance
+   */
+  activate(terminal) {
     this.terminal = terminal;
-    this.terminalContainer = terminalContainer;
-    this.settings = settings;
+
+    // Wait for terminal to be ready (element needs to be created via open())
+    if (!terminal.element) {
+      console.error('Terminal element not found. Make sure to call terminal.open() before loading addons.');
+      return;
+    }
+
+    // Find the terminal container - xterm.js uses the parent element
+    this.terminalContainer = terminal.element.parentElement;
+
+    if (!this.terminalContainer) {
+      console.error('Terminal container not found');
+      return;
+    }
 
     // Create handles
     this._createHandles();
     this._attachEventListeners();
+  }
+
+  /**
+   * Dispose the addon (called by xterm.js)
+   */
+  dispose() {
+    this.destroy();
   }
 
   /**
@@ -71,19 +103,20 @@ class SelectionCore {
     this.terminal.element.addEventListener(
       "touchstart",
       this._boundTerminalTouchStart,
-      { passive: false },
+      { passive: false }
     );
+
     this._boundTerminalTouchMove = this.terminalTouchMoveCb.bind(this);
     this.terminal.element.addEventListener(
       "touchmove",
       this._boundTerminalTouchMove,
-      { passive: false },
+      { passive: false }
     );
 
     this._boundTerminalTouchEnd = this.terminalTouchEndCb.bind(this);
     this.terminal.element.addEventListener(
       "touchend",
-      this._boundTerminalTouchEnd,
+      this._boundTerminalTouchEnd
     );
 
     // Handle touch events
@@ -94,7 +127,7 @@ class SelectionCore {
     this.startHandle.addEventListener(
       "touchstart",
       this._boundStartHandleTouchStart,
-      { passive: false },
+      { passive: false }
     );
 
     this._boundEndHandleTouchStart = (e) => {
@@ -104,24 +137,24 @@ class SelectionCore {
     this.endHandle.addEventListener(
       "touchstart",
       this._boundEndHandleTouchStart,
-      { passive: false },
+      { passive: false }
     );
 
     this._boundStartHandleTouchMove = this.startHandleTouchMoveCb.bind(this);
     this.startHandle.addEventListener(
       "touchmove",
       this._boundStartHandleTouchMove,
-      { passive: false },
+      { passive: false }
     );
 
     this._boundEndHandleTouchMove = this.endHandleTouchMoveCb.bind(this);
     this.endHandle.addEventListener(
       "touchmove",
       this._boundEndHandleTouchMove,
-      { passive: false },
+      { passive: false }
     );
 
-    // Selection change event
+    // Selection change event - xterm.js uses onSelectionChange event
     this._boundSelectionChange = () => this.terminalSelectionChangeCb();
     this.terminal.onSelectionChange(this._boundSelectionChange);
 
@@ -134,6 +167,7 @@ class SelectionCore {
    * Get the cell dimensions from the terminal
    */
   _getCellSize() {
+    // Access xterm.js internal render service
     const renderer = this.terminal._core._renderService.dimensions;
     return {
       cellWidth: renderer.css.cell.width,
@@ -158,7 +192,7 @@ class SelectionCore {
     const scrollOffset = this.terminal.buffer.active.viewportY;
     const column = Math.max(
       0,
-      Math.min(Math.floor(x / cellWidth), this.terminal.cols - 1),
+      Math.min(Math.floor(x / cellWidth), this.terminal.cols - 1)
     );
     const row = Math.max(0, Math.floor(y / cellHeight) + scrollOffset);
 
@@ -198,11 +232,11 @@ class SelectionCore {
     // Ensure handles stay within bounds
     x = Math.max(
       this.handleSize / 2,
-      Math.min(x, containerRect.width - this.handleSize / 2),
+      Math.min(x, containerRect.width - this.handleSize / 2)
     );
     y = Math.max(
       this.handleSize / 2,
-      Math.min(y, containerRect.height - this.handleSize / 2),
+      Math.min(y, containerRect.height - this.handleSize / 2)
     );
 
     return { x, y };
@@ -236,13 +270,13 @@ class SelectionCore {
         this.startHandle,
         this.selectionStart.row,
         this.selectionStart.column,
-        true,
+        true
       );
       this.setHandlePosition(
         this.endHandle,
         this.selectionEnd.row,
         this.selectionEnd.column,
-        false,
+        false
       );
     }
   }
@@ -291,7 +325,7 @@ class SelectionCore {
       startRow,
       endRow,
       startColumn,
-      endColumn,
+      endColumn
     );
 
     this.terminal.select(startColumn, startRow, totalLength);
@@ -302,14 +336,14 @@ class SelectionCore {
       this.startHandle,
       this.selectionStart.row,
       this.selectionStart.column,
-      !isSwapped,
+      !isSwapped
     );
 
     this.setHandlePosition(
       this.endHandle,
       this.selectionEnd.row,
       this.selectionEnd.column,
-      isSwapped,
+      isSwapped
     );
   }
 
@@ -388,7 +422,9 @@ class SelectionCore {
       if (moveX < this.touchMoveThreshold && moveY < this.touchMoveThreshold) {
         this.isTapAndHoldActive = true;
         this.startSelection(coords.row, coords.column);
-        if (this.settings.selectionHaptics) navigator.vibrate(300);
+        if (this.settings.selectionHaptics && navigator.vibrate) {
+          navigator.vibrate(300);
+        }
       }
     }, 500);
   }
@@ -477,13 +513,13 @@ class SelectionCore {
         this.startHandle,
         this.selectionStart.row,
         this.selectionStart.column,
-        true,
+        true
       );
       this.setHandlePosition(
         this.endHandle,
         this.selectionEnd.row,
         this.selectionEnd.column,
-        false,
+        false
       );
     }
   }
@@ -492,39 +528,48 @@ class SelectionCore {
    * Clean up event listeners and DOM elements
    */
   destroy() {
-    // Remove event listeners
-    this.terminal.element.removeEventListener(
-      "touchstart",
-      this._boundTerminalTouchStart,
-    );
-    this.terminal.element.removeEventListener(
-      "touchmove",
-      this._boundTerminalTouchMove,
-    );
-    this.terminal.element.removeEventListener(
-      "touchend",
-      this._boundTerminalTouchEnd,
-    );
+    if (!this.terminal) return;
 
-    this.startHandle.removeEventListener(
-      "touchstart",
-      this._boundStartHandleTouchStart,
-    );
-    this.endHandle.removeEventListener(
-      "touchstart",
-      this._boundEndHandleTouchStart,
-    );
-    this.startHandle.removeEventListener(
-      "touchmove",
-      this._boundStartHandleTouchMove,
-    );
-    this.endHandle.removeEventListener(
-      "touchmove",
-      this._boundEndHandleTouchMove,
-    );
+    // Remove event listeners
+    if (this.terminal.element) {
+      this.terminal.element.removeEventListener(
+        "touchstart",
+        this._boundTerminalTouchStart
+      );
+      this.terminal.element.removeEventListener(
+        "touchmove",
+        this._boundTerminalTouchMove
+      );
+      this.terminal.element.removeEventListener(
+        "touchend",
+        this._boundTerminalTouchEnd
+      );
+    }
+
+    if (this.startHandle) {
+      this.startHandle.removeEventListener(
+        "touchstart",
+        this._boundStartHandleTouchStart
+      );
+      this.startHandle.removeEventListener(
+        "touchmove",
+        this._boundStartHandleTouchMove
+      );
+    }
+
+    if (this.endHandle) {
+      this.endHandle.removeEventListener(
+        "touchstart",
+        this._boundEndHandleTouchStart
+      );
+      this.endHandle.removeEventListener(
+        "touchmove",
+        this._boundEndHandleTouchMove
+      );
+    }
 
     // Remove selection change callback
-    if (typeof this.terminal.onSelectionChange === "function") {
+    if (this._boundSelectionChange) {
       try {
         this.terminal.onSelectionChange(null);
       } catch (e) {
@@ -544,5 +589,11 @@ class SelectionCore {
 
     // Clear any pending timeouts
     clearTimeout(this.tapHoldTimeout);
+
+    // Clear references
+    this.terminal = null;
+    this.terminalContainer = null;
+    this.startHandle = null;
+    this.endHandle = null;
   }
 }
