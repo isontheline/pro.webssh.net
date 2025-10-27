@@ -90,7 +90,10 @@
 
         // Selection Handles Addon ->
         const selectionHandlesAddon = new SelectionHandlesAddon({
-            selectionHaptics: false
+            selectionHaptics: false,
+            enableDesktop: true,
+            autoCopyOnSelection: false,
+            useHandlesOnCoarsePointer: true
         });
         terminal.loadAddon(selectionHandlesAddon); //!\\ This addon need to be called after terminal.open() //!\\
         // <- Selection Handles Addon

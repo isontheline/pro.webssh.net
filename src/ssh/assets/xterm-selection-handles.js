@@ -1,74 +1,73 @@
 // MIT License
-// Original Work Copyright (c) 2023 Raunak Raj : https://github.com/bajrangCoder/acode-plugin-acodex
-// Upgraded Work Copyright (c) 2025 Arnaud MENGUS : https://github.com/isontheline/pro.webssh.net
+// Original Work -> Copyright (c) 2023 Raunak Raj : https://github.com/bajrangCoder/acode-plugin-acodex
+// Converting to Xterm.js addon -> Copyright (c) 2025 Arnaud MENGUS : https://github.com/isontheline/pro.webssh.net
+
 class SelectionHandlesAddon {
+  // State
   isSelecting = false;
   isTapAndHoldActive = false;
   tapHoldTimeout = null;
-  selectionStart = null;
-  selectionEnd = null;
-  touchStartY = 0;
-  touchStartX = 0;
-  touchStartTime = 0;
-  scrollThreshold = 10; // pixels
-  scrollTimeThreshold = 100; // milliseconds
-  touchMoveThreshold = 5; // pixels - to prevent accidental selections
+  selectionStart = null; // {row, column}
+  selectionEnd = null;   // {row, column}
+  _selectionAnchor = null;
+  _activeHandle = null;
+  _movedBeyondThreshold = false;
+  _lastPointer = null;
+
+  // thresholds
+  scrollThreshold = 10; // px
+  scrollTimeThreshold = 100; // ms
+  touchMoveThreshold = 5; // px
   handleSize = 20;
 
-  // references to DOM elements
+  // refs
   terminal = null;
   terminalContainer = null;
   startHandle = null;
   endHandle = null;
 
+  // xterm disposables
+  _onSelectionChangeDisposable = null;
+  _onScrollDisposable = null;
+  _onResizeDisposable = null;
+
   // Addon configuration
   settings = {
-    selectionHaptics: true
+    selectionHaptics: true,
+    enableDesktop: true,
+    autoCopyOnSelection: false,
+    useHandlesOnCoarsePointer: true
   };
 
   constructor(options = {}) {
-    // Allow configuration through constructor
     this.settings = { ...this.settings, ...options };
   }
 
-  /**
-   * Activate the addon (called by xterm.js)
-   * @param {Terminal} terminal - The xterm.js terminal instance
-   */
+  // xterm.js entry points
   activate(terminal) {
     this.terminal = terminal;
 
-    // Wait for terminal to be ready (element needs to be created via open())
     if (!terminal.element) {
       console.error('Terminal element not found. Make sure to call terminal.open() before loading addons.');
       return;
     }
 
-    // Find the terminal container - xterm.js uses the parent element
     this.terminalContainer = terminal.element.parentElement;
-
     if (!this.terminalContainer) {
       console.error('Terminal container not found');
       return;
     }
 
-    // Create handles
     this._createHandles();
     this._attachEventListeners();
   }
 
-  /**
-   * Dispose the addon (called by xterm.js)
-   */
   dispose() {
     this.destroy();
   }
 
-  /**
-   * Create teardrop selection handles
-   */
+  // UI helpers
   _createHandles() {
-    // Create start handle
     const styleText = `
       z-index: 1000;
       touch-action: none;
@@ -85,136 +84,132 @@ class SelectionHandlesAddon {
     this.startHandle.className = "terminal-selection-handle start-handle";
     this.startHandle.style.cssText = styleText;
 
-    // Create end handle
     this.endHandle = document.createElement("div");
     this.endHandle.className = "terminal-selection-handle end-handle";
     this.endHandle.style.cssText = styleText;
 
-    // Append handles to the terminal container
     this.terminalContainer.appendChild(this.startHandle);
     this.terminalContainer.appendChild(this.endHandle);
   }
 
-  /**
-   * Attach all necessary event listeners
-   */
   _attachEventListeners() {
-    this._boundTerminalTouchStart = this.terminalTouchStartCb.bind(this);
-    this.terminal.element.addEventListener(
-      "touchstart",
-      this._boundTerminalTouchStart,
-      { passive: false }
-    );
+    // Pointer events on terminal
+    this._boundPointerDown = this.terminalPointerDownCb.bind(this);
+    this.terminal.element.addEventListener('pointerdown', this._boundPointerDown, { passive: true });
 
-    this._boundTerminalTouchMove = this.terminalTouchMoveCb.bind(this);
-    this.terminal.element.addEventListener(
-      "touchmove",
-      this._boundTerminalTouchMove,
-      { passive: false }
-    );
+    this._boundPointerMove = this.terminalPointerMoveCb.bind(this);
+    this.terminal.element.addEventListener('pointermove', this._boundPointerMove, { passive: false });
 
-    this._boundTerminalTouchEnd = this.terminalTouchEndCb.bind(this);
-    this.terminal.element.addEventListener(
-      "touchend",
-      this._boundTerminalTouchEnd
-    );
+    this._boundPointerUp = this.terminalPointerUpCb.bind(this);
+    document.addEventListener('pointerup', this._boundPointerUp, { passive: true });
 
-    // Handle touch events
-    this._boundStartHandleTouchStart = (e) => {
-      e.stopPropagation();
+    // Handle interactions via pointer
+    this._boundStartHandlePointerDown = (e) => {
       e.preventDefault();
-    };
-    this.startHandle.addEventListener(
-      "touchstart",
-      this._boundStartHandleTouchStart,
-      { passive: false }
-    );
-
-    this._boundEndHandleTouchStart = (e) => {
       e.stopPropagation();
-      e.preventDefault();
+      this._activeHandle = 'start';
+      try { this.startHandle.setPointerCapture(e.pointerId); } catch {}
     };
-    this.endHandle.addEventListener(
-      "touchstart",
-      this._boundEndHandleTouchStart,
-      { passive: false }
-    );
+    this.startHandle.addEventListener('pointerdown', this._boundStartHandlePointerDown, { passive: false });
 
-    this._boundStartHandleTouchMove = this.startHandleTouchMoveCb.bind(this);
-    this.startHandle.addEventListener(
-      "touchmove",
-      this._boundStartHandleTouchMove,
-      { passive: false }
-    );
+    this._boundEndHandlePointerDown = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      this._activeHandle = 'end';
+      try { this.endHandle.setPointerCapture(e.pointerId); } catch {}
+    };
+    this.endHandle.addEventListener('pointerdown', this._boundEndHandlePointerDown, { passive: false });
 
-    this._boundEndHandleTouchMove = this.endHandleTouchMoveCb.bind(this);
-    this.endHandle.addEventListener(
-      "touchmove",
-      this._boundEndHandleTouchMove,
-      { passive: false }
-    );
+    this._boundHandlePointerMove = this.handlePointerMoveCb.bind(this);
+    this.startHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
+    this.endHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
 
-    // Selection change event - xterm.js uses onSelectionChange event
+    this._boundHandlePointerUp = (e) => { this._activeHandle = null; };
+    this.startHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
+    this.endHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
+
+    // Selection change from xterm
     this._boundSelectionChange = () => this.terminalSelectionChangeCb();
-    this.terminal.onSelectionChange(this._boundSelectionChange);
+    try {
+      // xterm onSelectionChange returns IDisposable; prefer that if available
+      const d = this.terminal.onSelectionChange(this._boundSelectionChange);
+      if (d && typeof d.dispose === 'function') this._onSelectionChangeDisposable = d;
+    } catch {
+      // fallback: no-op
+    }
 
     // Click outside to remove selection
     this._boundRemoveSelection = this.removeSelectionCb.bind(this);
-    document.addEventListener("touchstart", this._boundRemoveSelection);
+    document.addEventListener('pointerdown', this._boundRemoveSelection, { passive: true });
+
+    // Resize and scroll updates
+    this._boundOnResize = () => this.updateHandles();
+    window.addEventListener('resize', this._boundOnResize, { passive: true });
+
+    if (typeof this.terminal.onScroll === 'function') {
+      const d = this.terminal.onScroll(this._boundOnResize);
+      if (d && typeof d.dispose === 'function') this._onScrollDisposable = d;
+    }
+    if (typeof this.terminal.onResize === 'function') {
+      const d = this.terminal.onResize(this._boundOnResize);
+      if (d && typeof d.dispose === 'function') this._onResizeDisposable = d;
+    }
+
+    // Desktop cursor and handle visibility
+    if (this.isFinePointer()) {
+      this.terminal.element.style.cursor = 'text';
+    }
+    if (!this.isCoarsePointer() || !this.settings.useHandlesOnCoarsePointer) {
+      this.hideHandles();
+    }
   }
 
-  /**
-   * Get the cell dimensions from the terminal
-   */
+  // Feature detection
+  isCoarsePointer() {
+    return typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+  }
+  isFinePointer() {
+    return typeof matchMedia === 'function' && matchMedia('(pointer: fine)').matches;
+  }
+
+  // Geometry
   _getCellSize() {
     // Access xterm.js internal render service
-    const renderer = this.terminal._core._renderService.dimensions;
+    const renderer = this.terminal?._core?._renderService?.dimensions;
     return {
-      cellWidth: renderer.css.cell.width,
-      cellHeight: renderer.css.cell.height,
+      cellWidth: renderer?.css?.cell?.width ?? 9,
+      cellHeight: renderer?.css?.cell?.height ?? 18,
     };
   }
 
-  /**
-   * Convert touch coordinates to terminal cell coordinates
-   */
-  getTouchCoordinates(event) {
-    if (!event.touches || event.touches.length === 0) return null;
-
+  // Unified pointer coordinates -> terminal row/column
+  getPointerCoordinates(event) {
     const rect = this.terminal.element.getBoundingClientRect();
-    const touch = event.touches[0];
 
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
+    const clientX = event.clientX ?? (event.touches && event.touches[0]?.clientX) ?? 0;
+    const clientY = event.clientY ?? (event.touches && event.touches[0]?.clientY) ?? 0;
+
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
 
     const { cellWidth, cellHeight } = this._getCellSize();
 
     const scrollOffset = this.terminal.buffer.active.viewportY;
-    const column = Math.max(
-      0,
-      Math.min(Math.floor(x / cellWidth), this.terminal.cols - 1)
-    );
+    const column = Math.max(0, Math.min(Math.floor(x / cellWidth), this.terminal.cols - 1));
     const row = Math.max(0, Math.floor(y / cellHeight) + scrollOffset);
 
     return { row, column };
   }
 
-  /**
-   * Calculate handle position with teardrop positioning
-   */
+  // Handle positioning
   calculateHandlePosition(row, column, isStartHandle) {
     const { cellWidth, cellHeight } = this._getCellSize();
     const terminalRect = this.terminal.element.getBoundingClientRect();
     const containerRect = this.terminalContainer.getBoundingClientRect();
 
-    // Get scroll offsets
-    const terminalScrollOffset = this.terminal.element.scrollTop || 0;
     const viewportScrollOffset = this.terminal.buffer.active.viewportY;
-
-    // Adjust row to account for terminal scrolling
     const adjustedRow = row - viewportScrollOffset;
 
-    // Calculate x position - point should be at the edge of selection
     let x;
     if (isStartHandle) {
       x = terminalRect.left + column * cellWidth;
@@ -222,29 +217,17 @@ class SelectionHandlesAddon {
       x = terminalRect.left + (column + 1) * cellWidth;
     }
 
-    // Calculate y position - middle of cell
     let y = terminalRect.top + (adjustedRow + 1) * cellHeight - 2;
 
-    // Adjust for container position
     x = x - containerRect.left;
     y = y - containerRect.top;
 
-    // Ensure handles stay within bounds
-    x = Math.max(
-      this.handleSize / 2,
-      Math.min(x, containerRect.width - this.handleSize / 2)
-    );
-    y = Math.max(
-      this.handleSize / 2,
-      Math.min(y, containerRect.height - this.handleSize / 2)
-    );
+    x = Math.max(this.handleSize / 2, Math.min(x, containerRect.width - this.handleSize / 2));
+    y = Math.max(this.handleSize / 2, Math.min(y, containerRect.height - this.handleSize / 2));
 
     return { x, y };
   }
 
-  /**
-   * Set handle position with proper teardrop orientation
-   */
   setHandlePosition(handle, row, column, isStartHandle = false) {
     const position = this.calculateHandlePosition(row, column, isStartHandle);
 
@@ -253,37 +236,21 @@ class SelectionHandlesAddon {
     handle.style.display = "block";
   }
 
-  /**
-   * Hide both selection handles
-   */
   hideHandles() {
-    this.startHandle.style.display = "none";
-    this.endHandle.style.display = "none";
+    if (this.startHandle) this.startHandle.style.display = "none";
+    if (this.endHandle) this.endHandle.style.display = "none";
   }
 
-  /**
-   * Show both selection handles
-   */
   showHandles() {
+    if (!this.settings.useHandlesOnCoarsePointer) return;
+    if (!this.isCoarsePointer()) return;
     if (this.selectionStart && this.selectionEnd) {
-      this.setHandlePosition(
-        this.startHandle,
-        this.selectionStart.row,
-        this.selectionStart.column,
-        true
-      );
-      this.setHandlePosition(
-        this.endHandle,
-        this.selectionEnd.row,
-        this.selectionEnd.column,
-        false
-      );
+      this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, true);
+      this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, false);
     }
   }
 
-  /**
-   * Start a selection at the given coordinates
-   */
+  // Selection model
   startSelection(row, column) {
     this.selectionStart = { row, column };
     this.selectionEnd = { row, column };
@@ -294,11 +261,12 @@ class SelectionHandlesAddon {
     this.terminal.select(column, row, 1);
 
     this.showHandles();
+
+    // Toggle CSS to prevent native selection only while selecting
+    this.terminalContainer?.classList?.add('terminal-selecting');
+    // Recommend in CSS: .terminal-selecting, .terminal-selecting * { user-select: none !important; }
   }
 
-  /**
-   * Update the selection based on current start and end points
-   */
   updateSelection() {
     if (!this.selectionStart || !this.selectionEnd) return;
 
@@ -309,174 +277,166 @@ class SelectionHandlesAddon {
     let endRow = this.selectionEnd.row;
     let endColumn = this.selectionEnd.column;
 
-    // Ensure start is always before end in text flow
-    const isSwapped =
-      startRow > endRow || (startRow === endRow && startColumn > endColumn);
+    const isSwapped = startRow > endRow || (startRow === endRow && startColumn > endColumn);
     if (isSwapped) {
-      [startRow, startColumn, endRow, endColumn] = [
-        endRow,
-        endColumn,
-        startRow,
-        startColumn,
-      ];
+      [startRow, startColumn, endRow, endColumn] = [endRow, endColumn, startRow, startColumn];
     }
 
-    const totalLength = this._calculateTotalSelectionLength(
-      startRow,
-      endRow,
-      startColumn,
-      endColumn
-    );
-
+    const totalLength = this._calculateTotalSelectionLength(startRow, endRow, startColumn, endColumn);
     this.terminal.select(startColumn, startRow, totalLength);
 
-    // We need to adjust handle positions based on the actual handles,
-    // not the logical selection bounds (for proper teardrop orientation)
-    this.setHandlePosition(
-      this.startHandle,
-      this.selectionStart.row,
-      this.selectionStart.column,
-      !isSwapped
-    );
-
-    this.setHandlePosition(
-      this.endHandle,
-      this.selectionEnd.row,
-      this.selectionEnd.column,
-      isSwapped
-    );
+    // Handles follow the actual drag endpoints to preserve teardrop orientation
+    this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, !isSwapped);
+    this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, isSwapped);
   }
 
-  /**
-   * Calculate the total length of the selection in characters
-   */
   _calculateTotalSelectionLength(startRow, endRow, startColumn, endColumn) {
     const terminalCols = this.terminal.cols;
 
     if (startRow === endRow) {
-      return endColumn - startColumn + 1;
+      return Math.max(1, endColumn - startColumn + 1);
     }
 
     let length = 0;
-    length += terminalCols - startColumn; // First row
-    length += (endRow - startRow - 1) * terminalCols; // Middle rows
-    length += endColumn + 1; // Last row
-
-    return length;
+    length += terminalCols - startColumn; // first row remainder
+    if (endRow - startRow - 1 > 0) {
+      length += (endRow - startRow - 1) * terminalCols; // middle full rows
+    }
+    length += endColumn + 1; // last row up to endColumn
+    return Math.max(1, length);
   }
 
-  /**
-   * Handle touch move on the start handle
-   */
-  startHandleTouchMoveCb(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  // Pointer handlers (terminal)
+  terminalPointerDownCb(event) {
+    // Only left button for desktop selection
+    if (event.button !== undefined && event.button !== 0) return;
 
-    const coords = this.getTouchCoordinates(event);
+    this._lastPointer = event;
+    this.terminal.focus();
+
+    const coords = this.getPointerCoordinates(event);
     if (!coords) return;
 
-    this.selectionStart = coords;
-    this.updateSelection();
+    // Desktop double/triple click
+    if (this.isFinePointer() && this.settings.enableDesktop) {
+      if (event.detail === 2) {
+        this._selectWordAt(coords);
+        return;
+      }
+      if (event.detail >= 3) {
+        this._selectLineAt(coords);
+        return;
+      }
+    }
+
+    if (this.isCoarsePointer() && event.pointerType === 'touch') {
+      // Touch: long-press to start selection
+      this.isTapAndHoldActive = false;
+      clearTimeout(this.tapHoldTimeout);
+      this._movedBeyondThreshold = false;
+
+      this.tapHoldTimeout = setTimeout(() => {
+        if (!this._movedBeyondThreshold) {
+          this.isTapAndHoldActive = true;
+          this.startSelection(coords.row, coords.column);
+          if (this.settings.selectionHaptics && navigator.vibrate) {
+            navigator.vibrate(30);
+          }
+        }
+      }, 500);
+    } else {
+      // Desktop: immediate selection start, Shift+click to extend from anchor
+      if (event.shiftKey && this._selectionAnchor) {
+        this.selectionStart = { ...this._selectionAnchor };
+        this.selectionEnd = { ...coords };
+        this.isSelecting = true;
+        this.updateSelection();
+      } else {
+        this.startSelection(coords.row, coords.column);
+        this._selectionAnchor = { ...coords };
+      }
+    }
+
+    // Capture pointer so we keep getting move events
+    try { this.terminal.element.setPointerCapture(event.pointerId); } catch {}
   }
 
-  /**
-   * Handle touch move on the end handle
-   */
-  endHandleTouchMoveCb(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  terminalPointerMoveCb(event) {
+    // Cancel long-press if touch moved significantly
+    if (this.isCoarsePointer() && event.pointerType === 'touch' && this.tapHoldTimeout) {
+      const dx = Math.abs(event.clientX - (this._lastPointer?.clientX ?? event.clientX));
+      const dy = Math.abs(event.clientY - (this._lastPointer?.clientY ?? event.clientY));
+      if (dx > this.touchMoveThreshold || dy > this.touchMoveThreshold) {
+        this._movedBeyondThreshold = true;
+        clearTimeout(this.tapHoldTimeout);
+      }
+    }
 
-    const coords = this.getTouchCoordinates(event);
+    if (!this.isSelecting) return;
+
+    // Prevent native selection/scroll while dragging a selection
+    event.preventDefault();
+
+    const coords = this.getPointerCoordinates(event);
     if (!coords) return;
 
     this.selectionEnd = coords;
     this.updateSelection();
   }
 
-  /**
-   * Handle touch start on the terminal
-   */
-  terminalTouchStartCb(event) {
-    // Record initial touch position and time for later movement detection
-    this.touchStartY = event.touches[0].clientY;
-    this.touchStartX = event.touches[0].clientX;
-    this.touchStartTime = Date.now();
+  terminalPointerUpCb(event) {
+    clearTimeout(this.tapHoldTimeout);
 
-    // If already selecting, don't set up a new tap-and-hold
-    if (this.isSelecting) return;
+    if (!this.isSelecting) {
+      // Ended without an active selection; ensure CSS toggle resets
+      this.terminalContainer?.classList?.remove('terminal-selecting');
+      return;
+    }
 
-    const coords = this.getTouchCoordinates(event);
+    // Optional auto-copy on desktop
+    if (this.settings.autoCopyOnSelection && navigator.clipboard && this.isFinePointer()) {
+      const sel = this.terminal.getSelection?.();
+      if (sel) {
+        navigator.clipboard.writeText(sel).catch(() => {});
+      }
+    }
+
+    if (!this.isCoarsePointer()) {
+      // Hide handles for desktop
+      this.hideHandles();
+    } else {
+      // Keep handles visible on touch
+      this.showHandles();
+    }
+
+    // Selection finished
+    this.isSelecting = false;
+    this.terminalContainer?.classList?.remove('terminal-selecting');
+    try { this.terminal.element.releasePointerCapture?.(event.pointerId); } catch {}
+  }
+
+  // Handle dragging (touch/coarse)
+  handlePointerMoveCb(event) {
+    if (!this._activeHandle) return;
+    event.preventDefault();
+    event.stopPropagation();
+
+    const coords = this.getPointerCoordinates(event);
     if (!coords) return;
 
-    this.isTapAndHoldActive = false;
-
-    // Setup tap and hold timer
-    clearTimeout(this.tapHoldTimeout);
-    this.tapHoldTimeout = setTimeout(() => {
-      // Only activate if there hasn't been significant movement
-      const currentX = event.touches?.[0]?.clientX || 0;
-      const currentY = event.touches?.[0]?.clientY || 0;
-      const moveX = Math.abs(currentX - this.touchStartX);
-      const moveY = Math.abs(currentY - this.touchStartY);
-
-      if (moveX < this.touchMoveThreshold && moveY < this.touchMoveThreshold) {
-        this.isTapAndHoldActive = true;
-        this.startSelection(coords.row, coords.column);
-        if (this.settings.selectionHaptics && navigator.vibrate) {
-          navigator.vibrate(300);
-        }
-      }
-    }, 500);
-  }
-
-  /**
-   * Handle touch move on the terminal
-   */
-  terminalTouchMoveCb(event) {
-    if (this.isSelecting) {
-      event.preventDefault();
-      const coords = this.getTouchCoordinates(event);
-      if (!coords) return;
-
-      this.selectionEnd = coords;
-      this.updateSelection();
+    if (this._activeHandle === 'start') {
+      this.selectionStart = coords;
     } else {
-      // Check if it's a significant movement (likely scrolling)
-      const touchMoveX = event.touches[0].clientX;
-      const touchMoveY = event.touches[0].clientY;
-      const touchMoveDeltaX = Math.abs(touchMoveX - this.touchStartX);
-      const touchMoveDeltaY = Math.abs(touchMoveY - this.touchStartY);
-      const touchMoveTime = Date.now() - this.touchStartTime;
-
-      // Cancel tap-and-hold if movement detected
-      if (
-        (touchMoveDeltaX > this.scrollThreshold ||
-          touchMoveDeltaY > this.scrollThreshold) &&
-        touchMoveTime < this.scrollTimeThreshold
-      ) {
-        clearTimeout(this.tapHoldTimeout);
-      }
+      this.selectionEnd = coords;
     }
+    this.isSelecting = true;
+    this.updateSelection();
   }
 
-  /**
-   * Handle touch end on the terminal
-   */
-  terminalTouchEndCb(event) {
-    clearTimeout(this.tapHoldTimeout);
-
-    // Only focus the terminal if we're not selecting
-    if (!this.isSelecting) {
-      this.terminal.focus();
-    }
-  }
-
-  /**
-   * Handle terminal selection change
-   */
+  // Selection change callback
   terminalSelectionChangeCb() {
-    const selection = this.terminal.getSelection();
-    if (selection && selection.length > 0 && this.isSelecting) {
+    const selection = this.terminal.getSelection?.();
+    if (selection && selection.length > 0 && (this.isSelecting || this.isCoarsePointer())) {
       this.showHandles();
     } else if (!selection || selection.length === 0) {
       this.hideHandles();
@@ -484,116 +444,123 @@ class SelectionHandlesAddon {
     }
   }
 
-  /**
-   * Handle touch outside the terminal
-   */
+  // Click/tap outside to clear selection
   removeSelectionCb(event) {
-    // Ignore if touching the handles
+    const target = event.target;
     if (
-      this.startHandle.contains(event.target) ||
-      this.endHandle.contains(event.target)
+      (this.startHandle && this.startHandle.contains(target)) ||
+      (this.endHandle && this.endHandle.contains(target))
     ) {
       return;
     }
 
-    // Check if touch is outside terminal
-    if (this.terminal && !this.terminal.element.contains(event.target)) {
+    if (this.terminal && !this.terminal.element.contains(target)) {
       this.isSelecting = false;
+      this._activeHandle = null;
       this.terminal.clearSelection();
       this.hideHandles();
+      this.terminalContainer?.classList?.remove('terminal-selecting');
     }
   }
 
-  /**
-   * Update the positions of the selection handles
-   */
+  // Keep handle positions in sync
   updateHandles() {
     if (this.selectionStart && this.selectionEnd) {
-      this.setHandlePosition(
-        this.startHandle,
-        this.selectionStart.row,
-        this.selectionStart.column,
-        true
-      );
-      this.setHandlePosition(
-        this.endHandle,
-        this.selectionEnd.row,
-        this.selectionEnd.column,
-        false
-      );
+      this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, true);
+      this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, false);
     }
   }
 
-  /**
-   * Clean up event listeners and DOM elements
-   */
+  // Desktop double/triple click helpers
+  _selectWordAt({ row, column }) {
+    // Try to read the buffer line; gracefully fallback
+    try {
+      const lineObj = this.terminal.buffer.active.getLine(row);
+      const line = lineObj ? lineObj.translateToString(true) : '';
+      if (!line || column >= line.length) {
+        this.startSelection(row, column);
+        this.isSelecting = false;
+        return;
+      }
+
+      // Define word characters: letters, numbers, underscore. Treat others as separators.
+      const isWordChar = (ch) => /\w/.test(ch);
+
+      let startCol = column;
+      let endCol = column;
+
+      while (startCol > 0 && isWordChar(line[startCol - 1])) startCol--;
+      while (endCol < line.length - 1 && isWordChar(line[endCol + 1])) endCol++;
+
+      this.selectionStart = { row, column: Math.max(0, startCol) };
+      this.selectionEnd = { row, column: Math.max(0, Math.min(endCol, this.terminal.cols - 1)) };
+      this.isSelecting = true;
+      this.updateSelection();
+      this.isSelecting = false;
+      this.showHandles();
+    } catch {
+      this.startSelection(row, column);
+      this.isSelecting = false;
+    }
+  }
+
+  _selectLineAt({ row }) {
+    this.selectionStart = { row, column: 0 };
+    this.selectionEnd = { row, column: this.terminal.cols - 1 };
+    this.isSelecting = true;
+    this.updateSelection();
+    this.isSelecting = false;
+    this.showHandles();
+  }
+
+  // Cleanup
   destroy() {
     if (!this.terminal) return;
 
-    // Remove event listeners
-    if (this.terminal.element) {
-      this.terminal.element.removeEventListener(
-        "touchstart",
-        this._boundTerminalTouchStart
-      );
-      this.terminal.element.removeEventListener(
-        "touchmove",
-        this._boundTerminalTouchMove
-      );
-      this.terminal.element.removeEventListener(
-        "touchend",
-        this._boundTerminalTouchEnd
-      );
-    }
+    // Remove terminal pointer listeners
+    this.terminal.element?.removeEventListener('pointerdown', this._boundPointerDown);
+    this.terminal.element?.removeEventListener('pointermove', this._boundPointerMove);
+    document.removeEventListener('pointerup', this._boundPointerUp);
 
+    // Remove handle listeners
     if (this.startHandle) {
-      this.startHandle.removeEventListener(
-        "touchstart",
-        this._boundStartHandleTouchStart
-      );
-      this.startHandle.removeEventListener(
-        "touchmove",
-        this._boundStartHandleTouchMove
-      );
+      this.startHandle.removeEventListener('pointerdown', this._boundStartHandlePointerDown);
+      this.startHandle.removeEventListener('pointermove', this._boundHandlePointerMove);
+      this.startHandle.removeEventListener('pointerup', this._boundHandlePointerUp);
     }
-
     if (this.endHandle) {
-      this.endHandle.removeEventListener(
-        "touchstart",
-        this._boundEndHandleTouchStart
-      );
-      this.endHandle.removeEventListener(
-        "touchmove",
-        this._boundEndHandleTouchMove
-      );
+      this.endHandle.removeEventListener('pointerdown', this._boundEndHandlePointerDown);
+      this.endHandle.removeEventListener('pointermove', this._boundHandlePointerMove);
+      this.endHandle.removeEventListener('pointerup', this._boundHandlePointerUp);
     }
 
-    // Remove selection change callback
-    if (this._boundSelectionChange) {
-      try {
-        this.terminal.onSelectionChange(null);
-      } catch (e) {
-        console.warn("Could not remove selection change listener", e);
-      }
-    }
+    // Selection change disposables
+    try { this._onSelectionChangeDisposable?.dispose?.(); } catch {}
+    try { this._onScrollDisposable?.dispose?.(); } catch {}
+    try { this._onResizeDisposable?.dispose?.(); } catch {}
 
-    document.removeEventListener("touchstart", this._boundRemoveSelection);
+    // Outside click and resize
+    document.removeEventListener('pointerdown', this._boundRemoveSelection);
+    window.removeEventListener('resize', this._boundOnResize);
 
-    // Remove handles from DOM
-    if (this.startHandle?.parentNode) {
-      this.startHandle.parentNode.removeChild(this.startHandle);
-    }
-    if (this.endHandle?.parentNode) {
-      this.endHandle.parentNode.removeChild(this.endHandle);
-    }
+    // Remove handles
+    if (this.startHandle?.parentNode) this.startHandle.parentNode.removeChild(this.startHandle);
+    if (this.endHandle?.parentNode) this.endHandle.parentNode.removeChild(this.endHandle);
 
-    // Clear any pending timeouts
+    // Timeouts
     clearTimeout(this.tapHoldTimeout);
 
-    // Clear references
+    // Reset CSS hint
+    this.terminalContainer?.classList?.remove('terminal-selecting');
+
+    // Clear refs
     this.terminal = null;
     this.terminalContainer = null;
     this.startHandle = null;
     this.endHandle = null;
+    this.selectionStart = null;
+    this.selectionEnd = null;
+    this._selectionAnchor = null;
+    this._activeHandle = null;
   }
 }
