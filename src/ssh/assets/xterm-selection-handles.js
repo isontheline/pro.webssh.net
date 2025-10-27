@@ -108,7 +108,7 @@ class SelectionHandlesAddon {
       e.preventDefault();
       e.stopPropagation();
       this._activeHandle = 'start';
-      try { this.startHandle.setPointerCapture(e.pointerId); } catch {}
+      try { this.startHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.startHandle.addEventListener('pointerdown', this._boundStartHandlePointerDown, { passive: false });
 
@@ -116,7 +116,7 @@ class SelectionHandlesAddon {
       e.preventDefault();
       e.stopPropagation();
       this._activeHandle = 'end';
-      try { this.endHandle.setPointerCapture(e.pointerId); } catch {}
+      try { this.endHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.endHandle.addEventListener('pointerdown', this._boundEndHandlePointerDown, { passive: false });
 
@@ -358,7 +358,7 @@ class SelectionHandlesAddon {
     }
 
     // Capture pointer so we keep getting move events
-    try { this.terminal.element.setPointerCapture(event.pointerId); } catch {}
+    try { this.terminal.element.setPointerCapture(event.pointerId); } catch { }
   }
 
   terminalPointerMoveCb(event) {
@@ -397,7 +397,7 @@ class SelectionHandlesAddon {
     if (this.settings.autoCopyOnSelection && navigator.clipboard && this.isFinePointer()) {
       const sel = this.terminal.getSelection?.();
       if (sel) {
-        navigator.clipboard.writeText(sel).catch(() => {});
+        navigator.clipboard.writeText(sel).catch(() => { });
       }
     }
 
@@ -412,7 +412,7 @@ class SelectionHandlesAddon {
     // Selection finished
     this.isSelecting = false;
     this.terminalContainer?.classList?.remove('terminal-selecting');
-    try { this.terminal.element.releasePointerCapture?.(event.pointerId); } catch {}
+    try { this.terminal.element.releasePointerCapture?.(event.pointerId); } catch { }
   }
 
   // Handle dragging (touch/coarse)
@@ -465,7 +465,7 @@ class SelectionHandlesAddon {
 
   // Keep handle positions in sync
   updateHandles() {
-    if (this.selectionStart && this.selectionEnd) {
+    if (this.selectionStart && this.selectionEnd && this.selectionStart.x != this.selectionEnd.x && this.selectionStart.y != this.selectionEnd.y) {
       this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, true);
       this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, false);
     }
@@ -535,9 +535,9 @@ class SelectionHandlesAddon {
     }
 
     // Selection change disposables
-    try { this._onSelectionChangeDisposable?.dispose?.(); } catch {}
-    try { this._onScrollDisposable?.dispose?.(); } catch {}
-    try { this._onResizeDisposable?.dispose?.(); } catch {}
+    try { this._onSelectionChangeDisposable?.dispose?.(); } catch { }
+    try { this._onScrollDisposable?.dispose?.(); } catch { }
+    try { this._onResizeDisposable?.dispose?.(); } catch { }
 
     // Outside click and resize
     document.removeEventListener('pointerdown', this._boundRemoveSelection);
