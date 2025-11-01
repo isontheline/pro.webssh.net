@@ -59,7 +59,7 @@
 }
 
 .chat-layout .chat-body:after {
-    content: 'AI Agent can make mistakes. Double check everything it suggests.';
+    content: 'AI can make mistakes. Double check everything it suggests.';
     color: #888;
     font-style: italic;
     text-align: center;
