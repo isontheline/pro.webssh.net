@@ -13,8 +13,11 @@ theme:
     - navigation.tabs
 extra_css:
   - stylesheets/extra.css?20250910
+  - https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css
+  - stylesheets/autorag.css?20251101
 extra_javascript:
   - javascripts/extra.js?20250910
+  - javascripts/autorag.js?20251101
 extra:
   social:
     - icon: fontawesome/brands/github-alt
