@@ -9,12 +9,13 @@ function injectModule(url) {
         });
 }
 
+let winbox = null;
 function showDocumentationAssistant() {
     loadBulkResources([
         '/javascripts/winbox.bundle.min.js',
         'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css'
     ], function () {
-        new WinBox({
+        winbox = new WinBox({
             index: 1,
             id: 'documentation-assistant',
             title: 'WebSSH Documentation Assistant',
@@ -22,11 +23,11 @@ function showDocumentationAssistant() {
             max: true,
             min: true,
             hidden: false,
-            top: 0,
+            /*top: 0,
             right: 0,
             bottom: 0,
-            left: 0,
-            html: '<p>Please wait a second...</p>',
+            left: 0,*/
+            html: '<p>Please wait a second...</p>'
         });
         injectModule('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js')
             .then(function (module) {

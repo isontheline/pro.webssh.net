@@ -12,11 +12,11 @@ theme:
   features:
     - navigation.tabs
 extra_css:
-  - stylesheets/extra.css?20251102A
-  - stylesheets/autorag.css?20251102A
+  - stylesheets/extra.css?20251102B
+  - stylesheets/autorag.css?20251102B
 extra_javascript:
-  - javascripts/extra.js?20251102A
-  - javascripts/autorag.js?20251102A
+  - javascripts/extra.js?20251102B
+  - javascripts/autorag.js?20251102B
 extra:
   social:
     - icon: fontawesome/brands/github-alt
