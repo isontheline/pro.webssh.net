@@ -29,3 +29,16 @@ title: FAQ
     3. Choose "Try IPv4 host address before IPv6" or "Only use IPv4 for resolution"
 
     Once done, WebSSH will prioritize IPv4 connections when both IPv4 and IPv6 are available for a host.
+
+??? abstract "Does WebSSH support Agent Forwarding?"
+    Unfortunately, WebSSH does not support SSH Agent Forwarding at this time.
+
+    A GitHub issue could be find to track this feature request : [#754](https://github.com/isontheline/pro.webssh.net/issues/754)
+
+??? abstract "How can I check that I own the PRO version of WebSSH?"
+    To verify that you own the PRO version of WebSSH, please follow these steps:
+
+    1. Open WebSSH on your device.
+    2. Navigate to the "Settings" section (gear icon).
+    3. Go down the "App Store" section
+    4. If you have purchased the PRO version, you should see the message "Thank you for your purchase!" which confirms that the PRO features are unlocked.
