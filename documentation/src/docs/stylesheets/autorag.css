@@ -32,10 +32,10 @@
 	--chat--header--color: var(--chat--color-light);
 	--chat--subtitle--font-size: inherit;
 	--chat--subtitle--line-height: 1.8;
-    --chat--input--font-size: 0.8rem;
+    --chat--input--font-size: 1.6em;
 	--chat--textarea--height: 50px;
 
-	--chat--message--font-size: 0.8rem;
+	--chat--message--font-size: 0.8em;
 	--chat--message--padding: var(--chat--spacing);
 	--chat--message--border-radius: var(--chat--border-radius);
 	--chat--message-line-height: 1.8;
@@ -65,4 +65,26 @@
     text-align: center;
     font-size: 1em;
     padding-bottom: 5px;
+}
+
+.chat-message-from-user {
+	background-color: #129cf3 !important;
+}
+
+.chat-message-markdown {
+	font-size: 0.8em !important;
+}
+
+#documentation-assistant {
+	z-index: 999999 !important;
+	/*border-radius: 8px !important;*/
+	height: 100% !important;
+	font-size: 1.5em !important;
+}
+
+.wb-header {
+	background-color: #129cf3;
+	/*border-top-left-radius: 8px;
+	border-top-right-radius: 8px;*/
+	font-weight: bold;
 }
