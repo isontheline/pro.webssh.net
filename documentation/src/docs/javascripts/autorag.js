@@ -22,6 +22,10 @@ function showDocumentationAssistant() {
             max: true,
             min: true,
             hidden: false,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
             html: '<p>Please wait a second...</p>',
         });
         injectModule('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js')
