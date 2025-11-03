@@ -1,14 +1,14 @@
 ---
-title: Local Port Forwarding
+title: Local Port Forwarding (LPF)
 ---
 
-# Local Port Forwarding
+# Local Port Forwarding (LPF)
 !!! abstract "About SSH Tunneling"
     SSH Local Port Forwarding, also known as SSH Tunneling, is a technique that allows you to securely forward network traffic from a local port on your device to a remote host. 
     
     This can be useful in a variety of scenarios, such as accessing a service on a remote machine that is not directly accessible from your local device, or accessing a service securely over an untrusted network.
 
-## How to use it?
+## How to enable Local Port Forwarding?
 1. Add a new tunnel by choossing **Tunnel** tab and by pessing the **+** button
 2. Fill all required fields in order to establish the SSH connection
 3. Finally choose the remote server port you want to forward locally by using the right syntax

@@ -1,8 +1,8 @@
 ---
-title: Dynamic Port Forwarding
+title: Dynamic Port Forwarding (DPF)
 ---
 
-# Dynamic Port Forwarding
+# Dynamic Port Forwarding (DPF)
 ??? abstract "About Jump Server, Bastion Host and SOCKS Proxy"
     Dynamic Port Forwarding, is a technique used to create a secure encrypted tunnel between a local device and a remote server allowing the device to securely access resources through the remote server.
 
@@ -15,7 +15,7 @@ title: Dynamic Port Forwarding
 ??? warning "Subsequent connections are forwarded through the Jump Server"
     When enabled, Dynamic Port Forwarding will forward all connections *INSIDE* WebSSH (SSH, SFTP, TUNNEL, WEB) to your Jump Server. This means that you only will be able to access resources reachable through the Jump Server.
 
-## How to use it?
+## How to enable Dynamic Port Forwarding?
 1. Add a new tunnel by choossing **Tunnel** tab and by pessing the **+** button
 2. Fill all required fields in order to establish the SSH connection
 3. Finally put the magical word inside the port fowarding field : a simple wildcard character <code>*</code>

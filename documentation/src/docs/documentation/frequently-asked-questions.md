@@ -35,6 +35,18 @@ title: FAQ
 
     A GitHub issue could be find to track this feature request : [#754](https://github.com/isontheline/pro.webssh.net/issues/754)
 
+??? abstract "Does Dynamic Port Forwarding forwards all my device traffic?"
+    No, Dynamic Port Forwarding (DPF) in WebSSH only forwards traffic from subsequent connections made within WebSSH app itself. It does not route all device traffic through the SSH tunnel. So DPF could act as a bastion host to access remote services from within WebSSH.
+
+??? abstract "How can I enable Dynamic Port Forwarding?"
+    1. Add a new tunnel by choosing **Tunnel** tab and by pressing the **+** button
+    2. Enable DPF forwarding by using "*" as the Port Forwarding rule
+    3. Save the tunnel
+    4. Launch your DPF forward (tap on it)
+    5. Open any SSH or SFTP connection, it will go through the DPF forward
+
+    More information about DPF is available here : [Dynamic Port Forwarding (DPF)](/documentation/help/networking/dynamic-port-forwarding/)
+
 ??? abstract "How can I check that I own the PRO version of WebSSH?"
     To verify that you own the PRO version of WebSSH, please follow these steps:
 
