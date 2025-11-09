@@ -54,3 +54,6 @@ title: FAQ
     2. Navigate to the "Settings" section (gear icon).
     3. Go down the "App Store" section
     4. If you have purchased the PRO version, you should see the message "Thank you for your purchase!" which confirms that the PRO features are unlocked.
+
+??? abstract "What are snippets?"
+    Snippets are reusable pieces of code / commands / scripts that can be quickly inserted into your terminal session. They help you save time by allowing you to reuse commonly used commands without having to type them out each time.
