@@ -3124,13 +3124,24 @@ A GitHub issue could be find to track this feature request : <a href="https://gi
 <summary>Does the backspace key could repeat when held down?</summary>
 <p>No, the backspace key does not repeat when held down in WebSSH. This is a limitation of the current implementation.</p>
 </details>
+<details class="abstract">
+<summary>Can I use the ssh_config file to establish connections?</summary>
+<p>No, WebSSH doesn't use the ssh_config file to establish connections. Each connection in WebSSH is configured individually within the app itself.</p>
+<p>The ssh_config file is ONLY used to define or override default values for your connections when launching them.</p>
+<p>For more information about using ssh_config file in WebSSH, please refer to this documentation : <a href="/documentation/help/SSH/ssh-config-file/">SSH Config File</a></p>
+</details>
+<details class="abstract">
+<summary>Can I define a Private Key inside the ssh_config file to be used globally for all connections?</summary>
+<p>No, WebSSH does not support - yet - defining a Private Key inside the ssh_config file for global use across all connections.
+I hope to add this feature in a future release.</p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 9, 2025 21:06:46 UTC">November 9, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 12, 2025 20:28:51 UTC">November 12, 2025</span>
       
     
   </small>
