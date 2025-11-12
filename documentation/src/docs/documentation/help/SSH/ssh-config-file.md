@@ -14,13 +14,13 @@ title: SSH Config File
 
     This overwrite only happens when launching a connection. If you edit a connection, you won't see the SSH Config File values.
 
-Since WebSSH 20.6 you can setup a SSH Config File in order to define default values for your connections.
+Since WebSSH 20.6 you can setup a SSH Config File in order to define default - or to override - values for your connections.
 
 In order to edit the WebSSH SSH Config File just need to :
 
 1. Open WebSSH Settings :gear:
 2. Scroll to "SSH" settings section
-3.  Edit /etc/ssh/ssh_config
+3. Tap on "Edit /etc/ssh/ssh_config"
 
 # Supported Features [^1]
 | Keyword | Type | Expected value | Since | Example usage |

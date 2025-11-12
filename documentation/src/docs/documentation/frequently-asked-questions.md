@@ -62,3 +62,14 @@ title: FAQ
 
 ??? abstract "Does the backspace key could repeat when held down?"
     No, the backspace key does not repeat when held down in WebSSH. This is a limitation of the current implementation.
+
+??? abstract "Can I use the ssh_config file to establish connections?"
+    No, WebSSH doesn't use the ssh_config file to establish connections. Each connection in WebSSH is configured individually within the app itself.
+
+    The ssh_config file is ONLY used to define or override default values for your connections when launching them.
+
+    For more information about using ssh_config file in WebSSH, please refer to this documentation : [SSH Config File](/documentation/help/SSH/ssh-config-file/)
+
+??? abstract "Can I define a Private Key inside the ssh_config file to be used globally for all connections?"
+    No, WebSSH does not support - yet - defining a Private Key inside the ssh_config file for global use across all connections.
+    I hope to add this feature in a future release.
