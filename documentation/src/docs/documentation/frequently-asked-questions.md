@@ -73,3 +73,9 @@ title: FAQ
 ??? abstract "Can I define a Private Key inside the ssh_config file to be used globally for all connections?"
     No, WebSSH does not support - yet - defining a Private Key inside the ssh_config file for global use across all connections.
     I hope to add this feature in a future release.
+
+??? abstract "How can I send a Return (Enter) key in a WebSSH snippet?"
+    To send a Return (Enter) key in a WebSSH snippet, simply make a carriage return (new line) in the snippet editor where you want the Return key to be sent.
+
+??? abstract "How can I arrange or update my server list in WebSSH?"
+    WebSSH doesn't currently support arranging the server list manually. Servers are sorted alphabetically by default. However, you can use folders and tags to organize your servers into categories for easier access.
