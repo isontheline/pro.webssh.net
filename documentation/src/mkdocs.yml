@@ -21,7 +21,7 @@ extra_css:
   - stylesheets/autorag.css?20251102B
 extra_javascript:
   - javascripts/extra.js?20251102B
-  - javascripts/autorag.js?20251102B
+  - javascripts/autorag.js?20251116
 extra:
   social:
     - icon: fontawesome/brands/github-alt
