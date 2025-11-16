@@ -430,13 +430,27 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('notifyTerminalTitle', Base64.btoa(title));
     }, 250),
 
-    onSelectionChange: function () {
+    onSelectionChangeMacOS: function () {
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
 
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
         }
     },
+
+    // On iOS we need to debounce selection changes because selected value is not immediately available after selection change event.
+    onSelectionChangeIOS: debounce(() => {
+        TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
+
+        if (terminalSettings.copyOnSelect) {
+            TerminalHelper.copySelectedText();
+        }
+
+        // Notify iOS / iPadOS of selection changes in order to show the popup menu :
+        if (TerminalHelper.lastSelectedText != "") {
+            JS2IOS.calliOSFunction('notifyTextSelectionChange', [Base64.utoa(TerminalHelper.lastSelectedText)]);
+        }
+    }, 500),
 
     documentFragmentToText: function (documentFragment) {
         let text = '';
