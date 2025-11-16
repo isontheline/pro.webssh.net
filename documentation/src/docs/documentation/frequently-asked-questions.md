@@ -82,3 +82,13 @@ title: FAQ
 
 ??? abstract "Do you offer student or educator discounts for WebSSH PRO?"
     Yes, students and educators can qualify for a discount on WebSSH PRO. Please refer to the [Pricing Documentation](/documentation/pricing/) for more details and the redeem link.
+
+??? abstract "How can I prevent WebSSH disconnecting when switching apps on iPad or iPhone?"
+    This is a limitation imposed by iOS and iPadOS operating systems. They have strict background execution limits for apps, about 30 seconds. After this time, the OS may suspend the app to save resources, which can lead to disconnections.
+
+    On iPad you could use Split View or Slide Over to keep WebSSH active while using another app. This way, WebSSH remains in the foreground and is less likely to be suspended.
+
+??? abstract "How can I quickly copy text from the WebSSH terminal on iOS or iPadOS?"
+    Just use the standard text selection gestures of iOS / iPadOS to make a selection in the terminal, then tap "Copy" from the context menu that appears.
+
+    If you want a better experience or to copy large amounts of text, you can use the top "..." menu, then choose "Copy" and select "Show Scrollback Buffer". This will open the full scrollback buffer in a separate view where you can easily select and copy large amounts of text.
