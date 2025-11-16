@@ -34,7 +34,7 @@ function showDocumentationAssistant() {
                 module.createChat({
                     mode: 'fullscreen',
                     target: 'div.wb-body',
-                    webhookUrl: 'https://api.mengus.net/webhook/c468d733-6667-42b9-92c2-51ff1e396d88/chat',
+                    webhookUrl: 'https://api.webssh.net/webhook/c468d733-6667-42b9-92c2-51ff1e396d88/chat',
                     initialMessages: [
                         "Hey 👋 Ask me anything about WebSSH and I will do my best to help you!",
                     ],
