@@ -347,13 +347,13 @@ const TerminalHelper = {
         return "";
     },
 
-    copySelectedText: function () {
+    copySelectedText: debounce(() => {
         if (TerminalHelper.lastSelectedText == null) {
             return;
         }
 
         JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(TerminalHelper.lastSelectedText)]);
-    },
+    }, 250),
 
     selectAll: function () {
         terminal.selectAll();
@@ -430,18 +430,13 @@ const TerminalHelper = {
         JS2IOS.calliOSFunction('notifyTerminalTitle', Base64.btoa(title));
     }, 250),
 
-    onSelectionChange: debounce(() => {
+    onSelectionChange: function () {
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
-
-        // iOS / iPadOS needs to be notified of selection changes :
-        if (!terminalSettings.isMacOS && TerminalHelper.lastSelectedText != "") {
-            JS2IOS.calliOSFunction('notifyTextSelectionChange', [Base64.utoa(TerminalHelper.lastSelectedText)]);
-        }
 
         if (terminalSettings.copyOnSelect) {
             TerminalHelper.copySelectedText();
         }
-    }, 500),
+    },
 
     documentFragmentToText: function (documentFragment) {
         let text = '';
@@ -455,15 +450,6 @@ const TerminalHelper = {
         });
 
         return text;
-    },
-
-    onNativeSelectionChange: function () {
-        let selectedContents = window.getSelection().getRangeAt(0).cloneContents();
-        TerminalHelper.lastSelectedText = TerminalHelper.documentFragmentToText(selectedContents);
-
-        if (terminalSettings.copyOnSelect) {
-            TerminalHelper.copySelectedText();
-        }
     },
 
     logError: function (event) {
