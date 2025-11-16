@@ -25,7 +25,7 @@
 | TELNET Client[^2] | :white_check_mark: | :white_check_mark: |
 | Serial Port Client[^3] | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
-| **Advanced Features** | FREE | PRO |
+| **Advanced Features** | **FREE** | **PRO** |
 | YubiKey OTP NFC | :white_check_mark: | :white_check_mark: |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
