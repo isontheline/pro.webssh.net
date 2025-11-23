@@ -80,9 +80,6 @@ title: FAQ
 ??? abstract "How can I arrange or update my server list in WebSSH?"
     WebSSH doesn't currently support arranging the server list manually. Servers are sorted alphabetically by default. However, you can use folders and tags to organize your servers into categories for easier access.
 
-??? abstract "Do you offer student or educator discounts for WebSSH PRO?"
-    Yes, students and educators can qualify for a discount on WebSSH PRO. Please refer to the [Pricing Documentation](/documentation/pricing/) for more details and the redeem link.
-
 ??? abstract "How can I prevent WebSSH disconnecting when switching apps on iPad or iPhone?"
     This is a limitation imposed by iOS and iPadOS operating systems. They have strict background execution limits for apps, about 30 seconds. After this time, the OS may suspend the app to save resources, which can lead to disconnections.
 

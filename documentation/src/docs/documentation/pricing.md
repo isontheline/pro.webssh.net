@@ -11,11 +11,6 @@
 
     :moneybag: Get your money's worth : Unlike competitors, WebSSH **PRO** isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
 
-??? tip "Students and educators, you qualify for a discount!"
-    If you are a student or an educator, you can get a discount on WebSSH **PRO** purchase.
-
-    To redeem your discount, please use this [link](https://apps.apple.com/redeem?ctx=offercodes&id=497714887&code=EDUCARE25N) to access the Apple Store and get WebSSH **PRO** at a reduced price.
-
 ## FREE vs PRO
 | Main Features | FREE | PRO |
 | --- | --- | --- |
