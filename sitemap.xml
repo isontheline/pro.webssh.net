@@ -1105,30 +1105,6 @@
   </url>
   
   <url>
-    <loc>https://webssh.net/documentation/help/webssh-brain/</loc>
-
-    
-    <lastmod>2025-11-09T14:58:48+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>daily</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
     <loc>https://webssh.net/documentation/help/SSH/keyboard-shortcuts-combo-keys/</loc>
 
     
@@ -2131,6 +2107,78 @@
 
         
           <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/intelligence/</loc>
+
+    
+    <lastmod>2025-11-23T17:24:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/intelligence/api-mcp-server/</loc>
+
+    
+    <lastmod>2025-11-23T17:24:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/intelligence/webssh-brain/</loc>
+
+    
+    <lastmod>2025-11-23T17:24:41+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     

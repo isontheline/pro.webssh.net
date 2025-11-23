@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/networking/port-forwarding/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/intelligence/">
       
       
-        <link rel="prev" href="../local-port-forwarding/">
+        <link rel="prev" href="../howtos/tmux/tmux-scrollback-buffer/">
       
       
-        <link rel="next" href="../port-knocking/">
+        <link rel="next" href="api-mcp-server/">
       
-      <link rel="icon" href="../../../../images/favicon.ico">
+      <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
     
     
       
-        <title>Port Forwarding - WebSSH</title>
+        <title>Intelligence & Automation - WebSSH</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -38,11 +38,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css?20251102B">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css?20251102B">
     
-      <link rel="stylesheet" href="../../../../stylesheets/autorag.css?20251102B">
+      <link rel="stylesheet" href="../../../stylesheets/autorag.css?20251102B">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#port-forwarding" class="md-skip">
+        <a href="#intelligence-automation" class="md-skip">
           Skip to content
         </a>
       
@@ -84,9 +84,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Port Forwarding
+              Intelligence & Automation
             
           </span>
         </div>
@@ -165,7 +165,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Getting Started
     </a>
   </li>
@@ -177,7 +177,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../support/" class="md-tabs__link">
+    <a href="../../../support/" class="md-tabs__link">
       Support
     </a>
   </li>
@@ -194,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Documentation
       </a>
     </li>
@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../licenses/" class="md-tabs__link">
+      <a href="../../../licenses/" class="md-tabs__link">
         Licenses
       </a>
     </li>
@@ -238,9 +238,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     WebSSH
@@ -256,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -271,7 +271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/" class="md-nav__link">
+      <a href="../../../support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -315,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         About Documentation
       </a>
     </li>
@@ -329,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../apple-school-and-business-manager/" class="md-nav__link">
+      <a href="../../apple-school-and-business-manager/" class="md-nav__link">
         Apple School and Business Manager
       </a>
     </li>
@@ -343,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../becoming-external-tester/" class="md-nav__link">
+      <a href="../../becoming-external-tester/" class="md-nav__link">
         Beta Enrollment
       </a>
     </li>
@@ -357,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact-me/" class="md-nav__link">
+      <a href="../../contact-me/" class="md-nav__link">
         Contact Me
       </a>
     </li>
@@ -371,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributors/" class="md-nav__link">
+      <a href="../../contributors/" class="md-nav__link">
         Contributors
       </a>
     </li>
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../frequently-asked-questions/" class="md-nav__link">
+      <a href="../../frequently-asked-questions/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mashREPL/" class="md-nav__link">
+      <a href="../../mashREPL/" class="md-nav__link">
         mashREPL
       </a>
     </li>
@@ -413,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         Pricing
       </a>
     </li>
@@ -427,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminal-state-bar/" class="md-nav__link">
+      <a href="../../terminal-state-bar/" class="md-nav__link">
         Terminal State Bar
       </a>
     </li>
@@ -441,7 +441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../translations/" class="md-nav__link">
+      <a href="../../translations/" class="md-nav__link">
         Translations
       </a>
     </li>
@@ -455,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web-browser/" class="md-nav__link">
+      <a href="../../web-browser/" class="md-nav__link">
         Web Browser
       </a>
     </li>
@@ -496,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/25/" class="md-nav__link">
+      <a href="../../changelog/25/" class="md-nav__link">
         25 - Sunflower
       </a>
     </li>
@@ -510,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/26/" class="md-nav__link">
+      <a href="../../changelog/26/" class="md-nav__link">
         26 - Train
       </a>
     </li>
@@ -524,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/27/" class="md-nav__link">
+      <a href="../../changelog/27/" class="md-nav__link">
         27 - Stars
       </a>
     </li>
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/28/" class="md-nav__link">
+      <a href="../../changelog/28/" class="md-nav__link">
         28 - Fox
       </a>
     </li>
@@ -552,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/29/" class="md-nav__link">
+      <a href="../../changelog/29/" class="md-nav__link">
         29 - Monkey
       </a>
     </li>
@@ -566,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/30/" class="md-nav__link">
+      <a href="../../changelog/30/" class="md-nav__link">
         30 - Snowflake
       </a>
     </li>
@@ -607,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/15/" class="md-nav__link">
+      <a href="../../changelog/history/15/" class="md-nav__link">
         15 - Cactus
       </a>
     </li>
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/16/" class="md-nav__link">
+      <a href="../../changelog/history/16/" class="md-nav__link">
         16 - Gem
       </a>
     </li>
@@ -635,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/17/" class="md-nav__link">
+      <a href="../../changelog/history/17/" class="md-nav__link">
         17 - Shell
       </a>
     </li>
@@ -649,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/18/" class="md-nav__link">
+      <a href="../../changelog/history/18/" class="md-nav__link">
         18 - Honeybee
       </a>
     </li>
@@ -663,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/19/" class="md-nav__link">
+      <a href="../../changelog/history/19/" class="md-nav__link">
         19 - Octopus
       </a>
     </li>
@@ -677,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/20/" class="md-nav__link">
+      <a href="../../changelog/history/20/" class="md-nav__link">
         20 - Moon
       </a>
     </li>
@@ -691,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/21/" class="md-nav__link">
+      <a href="../../changelog/history/21/" class="md-nav__link">
         21 - Penguin
       </a>
     </li>
@@ -705,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/22/" class="md-nav__link">
+      <a href="../../changelog/history/22/" class="md-nav__link">
         22 - Butterfly
       </a>
     </li>
@@ -719,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/23/" class="md-nav__link">
+      <a href="../../changelog/history/23/" class="md-nav__link">
         23 - Satellite
       </a>
     </li>
@@ -733,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/24/" class="md-nav__link">
+      <a href="../../changelog/history/24/" class="md-nav__link">
         24 - Dragon
       </a>
     </li>
@@ -747,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/previous-releases/" class="md-nav__link">
+      <a href="../../changelog/history/previous-releases/" class="md-nav__link">
         Previous Releases
       </a>
     </li>
@@ -788,7 +788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.10/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.10/" class="md-nav__link">
         14.10 - Truck
       </a>
     </li>
@@ -802,7 +802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.11/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.11/" class="md-nav__link">
         14.11 - Milky Way
       </a>
     </li>
@@ -816,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.12/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.12/" class="md-nav__link">
         14.12 - Volcano
       </a>
     </li>
@@ -830,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.13/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.13/" class="md-nav__link">
         14.13 - Tent
       </a>
     </li>
@@ -844,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.14/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.14/" class="md-nav__link">
         14.14 - Green Apple
       </a>
     </li>
@@ -858,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.15/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.15/" class="md-nav__link">
         14.15 - Cookie
       </a>
     </li>
@@ -872,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.16/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.16/" class="md-nav__link">
         14.16 - Whale
       </a>
     </li>
@@ -886,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.17/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.17/" class="md-nav__link">
         14.17 - Trèfle
       </a>
     </li>
@@ -900,7 +900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.18/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.18/" class="md-nav__link">
         14.18 - Mushroom
       </a>
     </li>
@@ -914,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.19/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.19/" class="md-nav__link">
         14.19 - Crocodile
       </a>
     </li>
@@ -928,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.6/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.6/" class="md-nav__link">
         14.6 - Bicyclist
       </a>
     </li>
@@ -942,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.7/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.7/" class="md-nav__link">
         14.7 - Tractor
       </a>
     </li>
@@ -956,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.8/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.8/" class="md-nav__link">
         14.8 - Locomotive
       </a>
     </li>
@@ -970,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.9/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.9/" class="md-nav__link">
         14.9 - Helicopter
       </a>
     </li>
@@ -1034,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iCloud/" class="md-nav__link">
+      <a href="../iCloud/" class="md-nav__link">
         iCloud
       </a>
     </li>
@@ -1048,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../restore-purchases/" class="md-nav__link">
+      <a href="../restore-purchases/" class="md-nav__link">
         Restoring Purchases
       </a>
     </li>
@@ -1089,7 +1089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
+      <a href="../SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
         Keyboard Shortcuts
       </a>
     </li>
@@ -1103,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/lockdown-mode-and-fonts/" class="md-nav__link">
+      <a href="../SSH/lockdown-mode-and-fonts/" class="md-nav__link">
         Lockdown Mode and Custom Fonts
       </a>
     </li>
@@ -1117,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/public-private-key/" class="md-nav__link">
+      <a href="../SSH/public-private-key/" class="md-nav__link">
         Public / Private Key
       </a>
     </li>
@@ -1131,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/ssh-config-file/" class="md-nav__link">
+      <a href="../SSH/ssh-config-file/" class="md-nav__link">
         SSH Config File
       </a>
     </li>
@@ -1145,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/ssh-copy-id/" class="md-nav__link">
+      <a href="../SSH/ssh-copy-id/" class="md-nav__link">
         ssh-copy-id
       </a>
     </li>
@@ -1159,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/supported-algorithms/" class="md-nav__link">
+      <a href="../SSH/supported-algorithms/" class="md-nav__link">
         Supported Algorithms
       </a>
     </li>
@@ -1173,7 +1173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terrapin-attack/" class="md-nav__link">
+      <a href="../SSH/terrapin-attack/" class="md-nav__link">
         Terrapin Attack
       </a>
     </li>
@@ -1187,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
+      <a href="../SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
         Unable to agree upon client-to-server Error
       </a>
     </li>
@@ -1228,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-settings/terminal-badge/" class="md-nav__link">
+      <a href="../SSH/terminal-settings/terminal-badge/" class="md-nav__link">
         Terminal Badge
       </a>
     </li>
@@ -1242,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
+      <a href="../SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
         Terminal Font Size
       </a>
     </li>
@@ -1297,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
+      <a href="../errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
         Can't connect anymore using macOS Sequoia 15.x
       </a>
     </li>
@@ -1311,7 +1311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
+      <a href="../errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
         Apple Magic Keyboard Space Bar Issue
       </a>
     </li>
@@ -1325,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/no-route-to-host-error/" class="md-nav__link">
+      <a href="../errors/no-route-to-host-error/" class="md-nav__link">
         No Route to Host Error
       </a>
     </li>
@@ -1339,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
+      <a href="../errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
         Must first connect to the SSH server
       </a>
     </li>
@@ -1387,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/arrange-connections-inside-folders/" class="md-nav__link">
+      <a href="../howtos/arrange-connections-inside-folders/" class="md-nav__link">
         Arrange connections inside folders (groups and subgroups)
       </a>
     </li>
@@ -1401,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
+      <a href="../howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
         Copying text to the clipboard from the terminal.
       </a>
     </li>
@@ -1415,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/edit-delete-clone-connection/" class="md-nav__link">
+      <a href="../howtos/edit-delete-clone-connection/" class="md-nav__link">
         Edit / Delete / Clone a connection
       </a>
     </li>
@@ -1429,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/enabling-verbose-logging/" class="md-nav__link">
+      <a href="../howtos/enabling-verbose-logging/" class="md-nav__link">
         Enabling Verbose Logging
       </a>
     </li>
@@ -1443,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/known-hosts-manage/" class="md-nav__link">
+      <a href="../howtos/known-hosts-manage/" class="md-nav__link">
         Managing Known Hosts
       </a>
     </li>
@@ -1457,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/launching-multiple-terminals/" class="md-nav__link">
+      <a href="../howtos/launching-multiple-terminals/" class="md-nav__link">
         Multiple connections
       </a>
     </li>
@@ -1471,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/link-connections-using-tags/" class="md-nav__link">
+      <a href="../howtos/link-connections-using-tags/" class="md-nav__link">
         Link Connections using Tags
       </a>
     </li>
@@ -1485,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/pasting-clipboard-content/" class="md-nav__link">
+      <a href="../howtos/pasting-clipboard-content/" class="md-nav__link">
         Paste Clipboard Content
       </a>
     </li>
@@ -1499,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/snippets/" class="md-nav__link">
+      <a href="../howtos/snippets/" class="md-nav__link">
         Snippets
       </a>
     </li>
@@ -1513,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/switch-language/" class="md-nav__link">
+      <a href="../howtos/switch-language/" class="md-nav__link">
         Switch WebSSH UI Language
       </a>
     </li>
@@ -1527,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/use-deep-linking/" class="md-nav__link">
+      <a href="../howtos/use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
     </li>
@@ -1541,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+      <a href="../howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
         Use Mystic BBS with Telnet CP437 codepage
       </a>
     </li>
@@ -1582,7 +1582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
+      <a href="../howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
         Bad interpreter / No such file or directory
       </a>
     </li>
@@ -1596,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
+      <a href="../howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
         Search / Replace text in SFTP editor
       </a>
     </li>
@@ -1610,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SFTP/startup-folder-path/" class="md-nav__link">
+      <a href="../howtos/SFTP/startup-folder-path/" class="md-nav__link">
         Startup Folder / Path
       </a>
     </li>
@@ -1658,7 +1658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
+      <a href="../howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
         Adding Control-Key to Snippets
       </a>
     </li>
@@ -1672,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
+      <a href="../howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
         Keyboard Accessory View Customisation
       </a>
     </li>
@@ -1686,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
+      <a href="../howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
         Arrow Keys Modes
       </a>
     </li>
@@ -1700,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
+      <a href="../howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
         Function Keys on Mac
       </a>
     </li>
@@ -1714,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
+      <a href="../howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
         Meta / Alt / Option
       </a>
     </li>
@@ -1728,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/SSH/use-old-special-keys/" class="md-nav__link">
+      <a href="../howtos/SSH/use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
     </li>
@@ -1776,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/mashREPL/database-backup/" class="md-nav__link">
+      <a href="../howtos/mashREPL/database-backup/" class="md-nav__link">
         Database Backup
       </a>
     </li>
@@ -1790,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/mashREPL/database-restore/" class="md-nav__link">
+      <a href="../howtos/mashREPL/database-restore/" class="md-nav__link">
         Database Restore
       </a>
     </li>
@@ -1804,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/mashREPL/import/" class="md-nav__link">
+      <a href="../howtos/mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
     </li>
@@ -1818,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
+      <a href="../howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
         Obtain Public IP Address
       </a>
     </li>
@@ -1832,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/mashREPL/servedit/" class="md-nav__link">
+      <a href="../howtos/mashREPL/servedit/" class="md-nav__link">
         Servedit - Update Connections in Batch
       </a>
     </li>
@@ -1880,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
+      <a href="../howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
         Create or attach an existing tmux session
       </a>
     </li>
@@ -1894,7 +1894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
+      <a href="../howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
         Scrollback buffer in tmux
       </a>
     </li>
@@ -1920,18 +1920,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_6" type="checkbox" id="__nav_3_13_6" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_6" type="checkbox" id="__nav_3_13_6" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_6" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_13_6" tabindex="0" aria-expanded="true">
           Intelligence
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1947,11 +1949,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../intelligence/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Intelligence & Automation
       </a>
+      
     </li>
   
 
@@ -1963,7 +1975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intelligence/api-mcp-server/" class="md-nav__link">
+      <a href="api-mcp-server/" class="md-nav__link">
         API / MCP Server
       </a>
     </li>
@@ -1977,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intelligence/webssh-brain/" class="md-nav__link">
+      <a href="webssh-brain/" class="md-nav__link">
         WebSSH Brain
       </a>
     </li>
@@ -1996,20 +2008,18 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_7" type="checkbox" id="__nav_3_13_7" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_7" type="checkbox" id="__nav_3_13_7" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_7" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_13_7" tabindex="0" aria-expanded="false">
           Networking
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2027,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../checking-host-availability/" class="md-nav__link">
+      <a href="../networking/checking-host-availability/" class="md-nav__link">
         Checking Host Availability
       </a>
     </li>
@@ -2041,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dynamic-port-forwarding/" class="md-nav__link">
+      <a href="../networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
     </li>
@@ -2055,7 +2065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../local-port-forwarding/" class="md-nav__link">
+      <a href="../networking/local-port-forwarding/" class="md-nav__link">
         Local Port Forwarding (LPF)
       </a>
     </li>
@@ -2067,21 +2077,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../networking/port-forwarding/" class="md-nav__link">
         Port Forwarding
       </a>
-      
     </li>
   
 
@@ -2093,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../port-knocking/" class="md-nav__link">
+      <a href="../networking/port-knocking/" class="md-nav__link">
         Port Knocking
       </a>
     </li>
@@ -2107,7 +2107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vpn-over-ssh/" class="md-nav__link">
+      <a href="../networking/vpn-over-ssh/" class="md-nav__link">
         VPN-Over-SSH
       </a>
     </li>
@@ -2121,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wake-on-lan/" class="md-nav__link">
+      <a href="../networking/wake-on-lan/" class="md-nav__link">
         Wake-on-LAN
       </a>
     </li>
@@ -2176,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../legal/privacy-policy/" class="md-nav__link">
+      <a href="../../legal/privacy-policy/" class="md-nav__link">
         Privacy Policy
       </a>
     </li>
@@ -2232,7 +2232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/" class="md-nav__link">
+      <a href="../../../licenses/" class="md-nav__link">
         About Licenses
       </a>
     </li>
@@ -2246,7 +2246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
         ANSITerminal
       </a>
     </li>
@@ -2260,7 +2260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
         BlockAlerts
       </a>
     </li>
@@ -2274,7 +2274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
         CloudKitQueues
       </a>
     </li>
@@ -2288,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
         CocoaLumberjack
       </a>
     </li>
@@ -2302,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
         ColorPicker
       </a>
     </li>
@@ -2316,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CUE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CUE/" class="md-nav__link">
         CueIcons
       </a>
     </li>
@@ -2330,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
         CYRKeyboardButton
       </a>
     </li>
@@ -2344,7 +2344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
         DNSClient
       </a>
     </li>
@@ -2358,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
         DSFSparkline
       </a>
     </li>
@@ -2372,7 +2372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
         EDSemver
       </a>
     </li>
@@ -2386,7 +2386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
         EventSource
       </a>
     </li>
@@ -2400,7 +2400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
         Fira Code
       </a>
     </li>
@@ -2414,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
         FontAwesome
       </a>
     </li>
@@ -2428,7 +2428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
         FXForms
       </a>
     </li>
@@ -2442,7 +2442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
         LICENSE GCDTIMER
       </a>
     </li>
@@ -2456,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
         GCImagePickerController
       </a>
     </li>
@@ -2470,7 +2470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
         GCPlaceHolderTextView
       </a>
     </li>
@@ -2484,7 +2484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
         GradientButton
       </a>
     </li>
@@ -2498,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_HACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HACK/" class="md-nav__link">
         Hack - A typeface designed for source code
       </a>
     </li>
@@ -2512,7 +2512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
         HilightedTextEditor
       </a>
     </li>
@@ -2526,7 +2526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
         IAPHelper
       </a>
     </li>
@@ -2540,7 +2540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
         Iosevka
       </a>
     </li>
@@ -2554,7 +2554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
         ios_system
       </a>
     </li>
@@ -2568,7 +2568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
         iOS-System-Services
       </a>
     </li>
@@ -2582,7 +2582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ISREFRESHCONTROL_LICENSE_ISMETHODSWIZZLING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ISREFRESHCONTROL_LICENSE_ISMETHODSWIZZLING/" class="md-nav__link">
         ISRefreshControl / ISMethodSwizzling
       </a>
     </li>
@@ -2596,7 +2596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
         iTerm Color Schemes
       </a>
     </li>
@@ -2610,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
         JGActionSheet
       </a>
     </li>
@@ -2624,7 +2624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
         JSController
       </a>
     </li>
@@ -2638,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
         KXMenu
       </a>
     </li>
@@ -2652,7 +2652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
         libtelnet
       </a>
     </li>
@@ -2666,7 +2666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
         MarkdownUI
       </a>
     </li>
@@ -2680,7 +2680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
         MesloLGS NF
       </a>
     </li>
@@ -2694,7 +2694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
         MMWormhole
       </a>
     </li>
@@ -2708,7 +2708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MONOID/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MONOID/" class="md-nav__link">
         Monoid
       </a>
     </li>
@@ -2722,7 +2722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
         NanoStore
       </a>
     </li>
@@ -2736,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
         NYXImagesKit
       </a>
     </li>
@@ -2750,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
         OpenDyslexic
       </a>
     </li>
@@ -2764,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
         OpenSSL
       </a>
     </li>
@@ -2778,7 +2778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
         ORSSerialPort
       </a>
     </li>
@@ -2792,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
         RaptureXML
       </a>
     </li>
@@ -2806,7 +2806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
         Reachability
       </a>
     </li>
@@ -2820,7 +2820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
         Runestone
       </a>
     </li>
@@ -2834,7 +2834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
         SimplePing
       </a>
     </li>
@@ -2848,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
         Source Code Pro
       </a>
     </li>
@@ -2862,7 +2862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
         SSHConfig
       </a>
     </li>
@@ -2876,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
         SVHttpRequest
       </a>
     </li>
@@ -2890,7 +2890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
         Swift Argument Parser
       </a>
     </li>
@@ -2904,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
         SymbolPicker
       </a>
     </li>
@@ -2918,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
         SwiftMessages
       </a>
     </li>
@@ -2932,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
         termcolor-c
       </a>
     </li>
@@ -2946,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
         Terminus
       </a>
     </li>
@@ -2960,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
         TPKeyboardAvoiding
       </a>
     </li>
@@ -2974,7 +2974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
         TSLanguageManager
       </a>
     </li>
@@ -2988,7 +2988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
         TurtleBezierPath
       </a>
     </li>
@@ -3002,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
         UCKeychainStore
       </a>
     </li>
@@ -3016,7 +3016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
         UIAlertControllerConvenience
       </a>
     </li>
@@ -3030,7 +3030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
         UIDeviceHardware
       </a>
     </li>
@@ -3044,7 +3044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
         UIImageViewResizable
       </a>
     </li>
@@ -3058,7 +3058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
         Welcome Sheet
       </a>
     </li>
@@ -3072,7 +3072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
         Xterm.js
       </a>
     </li>
@@ -3086,7 +3086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
         Yubico Mobile iOS SDK (YubiKit)
       </a>
     </li>
@@ -3134,47 +3134,16 @@
 
 
 
-<h1 id="port-forwarding">Port Forwarding</h1>
-<p>WebSSH's Tunnel feature will let you to enable <a href="/documentation/help/networking/local-port-forwarding/"><strong>Local Port Forwarding (LPF)</strong></a> and <a href="/documentation/help/networking/dynamic-port-forwarding/"><strong>Dynamic Port Forwarding (DPF)</strong></a>.</p>
-<p>Local Port Forwarding and Dynamic Port Forwarding are both techniques used in SSH tunneling, but they have different use cases. </p>
-<p>Here's a little table summarizing the key differences :</p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Local Port Forwarding</th>
-<th>Dynamic Port Forwarding</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Purpose</td>
-<td>Forward traffic from a local port to a remote host/service</td>
-<td>Create a SOCKS proxy for accessing multiple remote services</td>
-</tr>
-<tr>
-<td>Security</td>
-<td>Provides secure access to a specific remote service</td>
-<td>Can potentially provide access to multiple remote services</td>
-</tr>
-<tr>
-<td>Example Usage</td>
-<td>Accessing a web server on a remote host</td>
-<td>Accessing multiple remote services through a proxy</td>
-</tr>
-</tbody>
-</table>
-<p>In summary, SSH Local Port Forwarding is used to forward traffic from a specific local port to a specific remote host/service, while Dynamic Port Forwarding is used to create a SOCKS proxy that can be used to access multiple remote services. </p>
-<p>Both are simple to use, and can be configured in WebSSH by following the instructions below :</p>
-<p><a class="md-button md-button--primary" href="/documentation/help/networking/local-port-forwarding/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M246.6 150.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l96-96c12.5-12.5 32.8-12.5 45.3 0l96 96c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L352 109.3V384c0 35.3 28.7 64 64 64h64c17.7 0 32 14.3 32 32s-14.3 32-32 32h-64c-70.7 0-128-57.3-128-128 0-35.3-28.7-64-64-64H109.3l41.4 41.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-96-96c-12.5-12.5-12.5-32.8 0-45.3l96-96c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L109.3 256H224c23.3 0 45.2 6.2 64 17.1V109.3l-41.4 41.4z"/></svg></span> Local Port Forwarding</a>
-<a class="md-button md-button--primary" href="/documentation/help/networking/dynamic-port-forwarding/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M248 504C111.25 504 0 392.75 0 256S111.25 8 248 8s248 111.25 248 248-111.25 248-248 248zm0-479.47C120.37 24.53 16.53 128.37 16.53 256S120.37 487.47 248 487.47 479.47 383.63 479.47 256 375.63 24.53 248 24.53zm27.62 21.81v24.62a185.933 185.933 0 0 1 83.57 34.54l17.39-17.36c-28.75-22.06-63.3-36.89-100.96-41.8zm-55.37.07c-37.64 4.94-72.16 19.8-100.88 41.85l17.28 17.36h.08c24.07-17.84 52.55-30.06 83.52-34.67V46.41zm12.25 50.17v82.87c-10.04 2.03-19.42 5.94-27.67 11.42l-58.62-58.59-21.93 21.93 58.67 58.67c-5.47 8.23-9.45 17.59-11.47 27.62h-82.9v31h82.9c2.02 10.02 6.01 19.31 11.47 27.54l-58.67 58.69 21.93 21.93 58.62-58.62a77.873 77.873 0 0 0 27.67 11.47v82.9h31v-82.9c10.05-2.03 19.37-6.06 27.62-11.55l58.67 58.69 21.93-21.93-58.67-58.69c5.46-8.23 9.47-17.52 11.5-27.54h82.87v-31h-82.87c-2.02-10.02-6.03-19.38-11.5-27.62l58.67-58.67-21.93-21.93-58.67 58.67c-8.25-5.49-17.57-9.47-27.62-11.5V96.58h-31zm183.24 30.72-17.36 17.36a186.337 186.337 0 0 1 34.67 83.67h24.62c-4.95-37.69-19.83-72.29-41.93-101.03zm-335.55.13c-22.06 28.72-36.91 63.26-41.85 100.91h24.65c4.6-30.96 16.76-59.45 34.59-83.52l-17.39-17.39zM38.34 283.67c4.92 37.64 19.75 72.18 41.8 100.9l17.36-17.39c-17.81-24.07-29.92-52.57-34.51-83.52H38.34zm394.7 0c-4.61 30.99-16.8 59.5-34.67 83.6l17.36 17.36c22.08-28.74 36.98-63.29 41.93-100.96h-24.62zM136.66 406.38l-17.36 17.36c28.73 22.09 63.3 36.98 100.96 41.93v-24.64c-30.99-4.63-59.53-16.79-83.6-34.65zm222.53.05c-24.09 17.84-52.58 30.08-83.57 34.67v24.57c37.67-4.92 72.21-19.79 100.96-41.85l-17.31-17.39h-.08z"/></svg></span> Dynamic Port Forwarding</a></p>
+<h1 id="intelligence-automation">Intelligence &amp; Automation</h1>
+<p><a class="md-button" href="/documentation/help/intelligence/webssh-brain/">WebSSH Brain <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M184 0c30.9 0 56 25.1 56 56v400c0 30.9-25.1 56-56 56-28.9 0-52.7-21.9-55.7-50.1-5.2 1.4-10.7 2.1-16.3 2.1-35.3 0-64-28.7-64-64 0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1 3-28 26.8-49.9 55.7-49.9zm144 0c28.9 0 52.6 21.9 55.7 49.9C411.5 56.9 432 82 432 112c0 6-.8 11.9-2.4 17.4 28.8 6.2 50.4 31.9 50.4 62.6 0 15-5.1 28.8-13.8 39.7 27.1 12.8 45.8 40.4 45.8 72.3 0 34.2-21.4 63.4-51.6 74.8 2.3 6.6 3.6 13.8 3.6 21.2 0 35.3-28.7 64-64 64-5.6 0-11.1-.7-16.3-2.1-3 28.2-26.8 50.1-55.7 50.1-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"/></svg></span></a></p>
+<p><a class="md-button" href="/documentation/help/intelligence/api-mcp-server/">API / MCP Server <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v16h192V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-16H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-96c-26.5 0-48-21.5-48-48v-96c0-1.7.1-3.4.3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg></span></a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 18, 2023 19:54:10 UTC">April 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 23, 2025 17:24:41 UTC">November 23, 2025</span>
       
     
   </small>
@@ -3265,14 +3234,14 @@ WebSSH &copy; 2012-2025<br />
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
-        <script src="../../../../javascripts/extra.js?20251102B"></script>
+        <script src="../../../javascripts/extra.js?20251102B"></script>
       
-        <script src="../../../../javascripts/autorag.js?20251116"></script>
+        <script src="../../../javascripts/autorag.js?20251116"></script>
       
     
   </body>
