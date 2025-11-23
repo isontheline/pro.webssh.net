@@ -8,7 +8,7 @@ Since version `30.6.1606`, WebSSH introduces a built-in **API / MCP (Model Conte
 
 This opens up a range of possibilities for integration—including with AI applications such as Claude Desktop. By using the API, these tools can automate tasks, retrieve data, or incorporate WebSSH’s capabilities into more complex workflows.
 
-This ability is only available on macOS.
+This feature is only available on macOS.
 
 ## Example Use Cases
 
