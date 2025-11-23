@@ -50,6 +50,7 @@ plugins:
         'documentation/changelog/23.md': 'documentation/changelog/history/23.md'
         'documentation/changelog/24.md': 'documentation/changelog/history/24.md'
         'documentation/help/howtos/link-connections-and-snippets.md': 'documentation/help/howtos/link-connections-using-tags.md'
+        'documentation/help/webssh-brain.md': 'documentation/help/intelligence/webssh-brain.md'
 markdown_extensions:
   - admonition
   - attr_list
