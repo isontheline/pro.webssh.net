@@ -89,3 +89,8 @@ title: FAQ
     Just use the standard text selection gestures of iOS / iPadOS to make a selection in the terminal, then tap "Copy" from the context menu that appears.
 
     If you want a better experience or to copy large amounts of text, you can use the top "..." menu, then choose "Copy" and select "Show Scrollback Buffer". This will open the full scrollback buffer in a separate view where you can easily select and copy large amounts of text.
+
+??? abstract "How can I download a folder using SFTP?"
+    Unfortunately, WebSSH does not currently support downloading entire folders using SFTP. You can only download individual files one at a time.
+
+    A GitHub issue could be find to track this feature request : [#205](https://github.com/isontheline/pro.webssh.net/issues/205)
