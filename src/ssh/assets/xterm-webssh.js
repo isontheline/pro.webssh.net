@@ -216,6 +216,8 @@ const TerminalHelper = {
     lastSelectedText: null,
     cursorBlinkInterval: null,
     selectionManager: null,
+    canNotifySelectionChange: true,
+    endCopySelectedTextCallback: null,
 
     ready: function () {
         // Applying a border to the terminal screen if fixedSize enabled :
@@ -331,29 +333,40 @@ const TerminalHelper = {
         terminal.scrollToBottom();
     },
 
-    getWindowSelectedText: function () {
-        if (window.getSelection) {
-            return window.getSelection();
-        }
-
-        if (window.document.getSelection) {
-            return window.document.getSelection();
-        }
-
-        if (window.document.selection) {
-            return window.document.selection.createRange().text;
-        }
-
-        return "";
-    },
-
     copySelectedText: debounce(() => {
         if (TerminalHelper.lastSelectedText == null) {
             return;
         }
 
         JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(TerminalHelper.lastSelectedText)]);
+
+        if (TerminalHelper.endCopySelectedTextCallback) {
+            TerminalHelper.endCopySelectedTextCallback();
+            TerminalHelper.endCopySelectedTextCallback = null;
+        }
     }, 250),
+
+    copyScreenContent: function () {
+        TerminalHelper.canNotifySelectionChange = false;
+        TerminalHelper.selectScreen();
+        TerminalHelper.endCopySelectedTextCallback = function () {
+            TerminalHelper.clearSelection();
+            TerminalHelper.canNotifySelectionChange = true;
+        };
+        TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
+        TerminalHelper.copySelectedText();
+    },
+
+    copyAllContent: function () {
+        TerminalHelper.canNotifySelectionChange = false;
+        TerminalHelper.selectAll();
+        TerminalHelper.endCopySelectedTextCallback = function () {
+            TerminalHelper.clearSelection();
+            TerminalHelper.canNotifySelectionChange = true;
+        }
+        TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
+        TerminalHelper.copySelectedText();
+    },
 
     selectAll: function () {
         terminal.selectAll();
@@ -367,6 +380,7 @@ const TerminalHelper = {
 
     clearSelection: function () {
         terminal.clearSelection();
+        TerminalHelper.lastSelectedText = null;
     },
 
     exportSelectedText: function () {
@@ -447,7 +461,7 @@ const TerminalHelper = {
         }
 
         // Notify iOS / iPadOS of selection changes in order to show the popup menu :
-        if (TerminalHelper.lastSelectedText != "") {
+        if (TerminalHelper.lastSelectedText != "" && TerminalHelper.canNotifySelectionChange) {
             JS2IOS.calliOSFunction('notifyTextSelectionChange', [Base64.utoa(TerminalHelper.lastSelectedText)]);
         }
     }, 500),

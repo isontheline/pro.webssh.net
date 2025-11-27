@@ -4,7 +4,7 @@ title: API / MCP Server
 
 # API / MCP Server
 
-Since version `30.6.1606`, WebSSH introduces a built-in **API / MCP (Model Context Protocol) server**, enabling external applications to interact with WebSSH programmatically.
+Since version `30.7`, WebSSH introduces a built-in **API / MCP (Model Context Protocol) server**, enabling external applications to interact with WebSSH programmatically.
 
 This opens up a range of possibilities for integration—including with AI applications such as Claude Desktop. By using the API, these tools can automate tasks, retrieve data, or incorporate WebSSH’s capabilities into more complex workflows.
 
@@ -20,3 +20,14 @@ This feature is only available on macOS.
 
 - **Data Retrieval and Management:**  
   Programmatically fetch server status, logs, or outputs for use in dashboards or other applications.
+
+## Available Features
+- [ ] Terminal Access
+  - [ ] Read Terminal Output
+  - [ ] Send Commands to Terminal
+- [ ] Sysadmin Tools
+  - [ ] Addresses
+  - [ ] DNS Lookup
+  - [ ] Ping
+  - [ ] Traceroute
+- [ ] Documentation Search
