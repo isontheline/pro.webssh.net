@@ -94,3 +94,6 @@ title: FAQ
     Unfortunately, WebSSH does not currently support downloading entire folders using SFTP. You can only download individual files one at a time.
 
     A GitHub issue could be find to track this feature request : [#205](https://github.com/isontheline/pro.webssh.net/issues/205)
+
+??? abstract "Do you offer student or educator discounts for WebSSH PRO?"
+    Yes, students and educators can qualify for a discount on WebSSH PRO. Please [contact me](/documentation/contact-me/) for more details and the redeem link.
