@@ -2012,6 +2012,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usage-instructions" class="md-nav__link">
+    Usage Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-the-api-mcp-server" class="md-nav__link">
+    Enabling the API / MCP Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-claude-desktop-as-a-mcp-client" class="md-nav__link">
+    Using Claude Desktop as a MCP Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webssh-openapi-specification" class="md-nav__link">
+    WebSSH OpenAPI Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webssh-mcp-server" class="md-nav__link">
+    WebSSH MCP Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3178,6 +3226,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#usage-instructions" class="md-nav__link">
+    Usage Instructions
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-the-api-mcp-server" class="md-nav__link">
+    Enabling the API / MCP Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-claude-desktop-as-a-mcp-client" class="md-nav__link">
+    Using Claude Desktop as a MCP Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webssh-openapi-specification" class="md-nav__link">
+    WebSSH OpenAPI Specification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webssh-mcp-server" class="md-nav__link">
+    WebSSH MCP Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3215,23 +3311,55 @@
 </ul>
 <h2 id="available-features">Available Features</h2>
 <ul>
-<li>[ ] Terminal Access</li>
-<li>[ ] Read Terminal Output</li>
-<li>[ ] Send Commands to Terminal</li>
-<li>[ ] Sysadmin Tools</li>
-<li>[ ] Addresses</li>
-<li>[ ] DNS Lookup</li>
-<li>[ ] Ping</li>
-<li>[ ] Traceroute</li>
-<li>[ ] Documentation Search</li>
+<li>🚧 Retrieve Terminal Content</li>
+<li>🚧 Send Commands to Terminal</li>
+<li>🚧 Retrieve your Addresses</li>
+<li>🚧 Make DNS Lookup</li>
+<li>🚧 Make Ping Requests</li>
+<li>🚧 Launch Traceroute</li>
+<li>🚧 Make Documentation Search</li>
 </ul>
+<h2 id="usage-instructions">Usage Instructions</h2>
+<h3 id="enabling-the-api-mcp-server">Enabling the API / MCP Server</h3>
+<ol>
+<li>Open WebSSH on your Mac</li>
+<li>Navigate to <strong>WebSSH</strong> menu &gt; <strong>Settings</strong></li>
+<li>Locate the <strong>API / MCP</strong> settings panel</li>
+<li>Toggle "Feature Availability" to <strong>Enabled</strong></li>
+<li>Close the settings window</li>
+<li>Go to <strong>Inventory</strong> &gt; <strong>Tools</strong></li>
+<li>Toggle the <strong>API / MCP Server</strong> switch to <strong>ON</strong></li>
+</ol>
+<h3 id="using-claude-desktop-as-a-mcp-client">Using Claude Desktop as a MCP Client</h3>
+<p>Make sure you have Docker Desktop installed on your Mac, then:</p>
+<ol>
+<li>Download latest WebSSH MCPB Extension here : https://github.com/webssh-software/webssh-mcpb-dxt-extension/releases</li>
+<li>Open the .mcpb file (Claude should launch if installed)</li>
+<li>Review and adjust the settings (e.g., Port, Bearer Token)</li>
+<li>Turn on the WebSSH Extension in Claude Desktop</li>
+<li>The first time wait a minute to allow Docker to pull the container image needed</li>
+<li>Now just ask Claude to perform actions using WebSSH!</li>
+</ol>
+<h3 id="webssh-openapi-specification">WebSSH OpenAPI Specification</h3>
+<p>Once the API / MCP server is enabled, you can access the OpenAPI specification by navigating to:
+<code>http://localhost:1985/openapi.json</code></p>
+<p>This JSON file describes all available endpoints, request/response formats, and authentication methods for interacting with the WebSSH API. You can use this specification to generate client libraries or documentation for your specific use case.</p>
+<h3 id="webssh-mcp-server">WebSSH MCP Server</h3>
+<p>With the API / MCP server enabled, you can access the MCP endpoints at:
+<code>http://localhost:1985/mcp</code></p>
+<p>You can use any external application which supports MCP protocol to connect to WebSSH and interact with its features programmatically.</p>
+<p>To play and debug MCP requests, you can use the awesome Context app : https://github.com/indragiek/Context</p>
+<h3 id="authentication">Authentication</h3>
+<p>Authentication is handled via a Bearer Token, which can be found in the <strong>API / MCP</strong> settings panel within WebSSH.</p>
+<p>When making requests to the API, include the following HTTP header:</p>
+<p><code>Authorization: Bearer YOUR_BEARER_TOKEN_HERE</code></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 27, 2025 20:51:53 UTC">November 27, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 30, 2025 20:57:17 UTC">November 30, 2025</span>
       
     
   </small>
