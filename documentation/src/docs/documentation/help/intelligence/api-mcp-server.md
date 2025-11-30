@@ -43,7 +43,7 @@ This feature is only available on macOS.
 ### Using Claude Desktop as a MCP Client
 Make sure you have Docker Desktop installed on your Mac, then:
 
-1. Download latest WebSSH MCPB Extension here : https://github.com/webssh-software/webssh-mcpb-dxt-extension/releases
+1. [Download latest WebSSH MCPB Extension here](https://github.com/webssh-software/webssh-mcpb-dxt-extension/releases)
 2. Open the .mcpb file (Claude should launch if installed)
 3. Review and adjust the settings (e.g., Port, Bearer Token)
 4. Turn on the WebSSH Extension in Claude Desktop
