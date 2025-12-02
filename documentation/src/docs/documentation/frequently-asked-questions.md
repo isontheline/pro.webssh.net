@@ -97,3 +97,6 @@ title: FAQ
 
 ??? abstract "Do you offer student or educator discounts for WebSSH PRO?"
     Yes, students and educators can qualify for a discount on WebSSH PRO. Please [contact me](/documentation/contact-me/) for more details and the redeem link.
+
+??? abstract "How can I increase the font size in WebSSH?"
+    Just pinch in or out with two fingers on the terminal screen to adjust the font size dynamically. If you use a Mac with a trackpad, you can also use the pinch gesture on the trackpad to adjust the font size.
