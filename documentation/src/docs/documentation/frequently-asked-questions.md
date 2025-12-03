@@ -100,3 +100,9 @@ title: FAQ
 
 ??? abstract "How can I increase the font size in WebSSH?"
     Just pinch in or out with two fingers on the terminal screen to adjust the font size dynamically. If you use a Mac with a trackpad, you can also use the pinch gesture on the trackpad to adjust the font size.
+
+??? abstract "Does WebSSH support serial port connections?"
+    Yes, since 29.0 WebSSH supports serial port connections BUT requires a Mac. Not available on iOS or iPadOS.
+
+??? abstract "Can I store the passphrase for an encrypted private key in WebSSH?"
+    Yes, WebSSH allows you to store the passphrase for an encrypted private key. When you add a private key that is encrypted, you will be prompted to enter the passphrase. You can choose to save the passphrase securely within the app so that you don't have to enter it each time you use the key.
