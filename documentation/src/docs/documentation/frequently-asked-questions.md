@@ -106,3 +106,11 @@ title: FAQ
 
 ??? abstract "Can I store the passphrase for an encrypted private key in WebSSH?"
     Yes, WebSSH allows you to store the passphrase for an encrypted private key. When you add a private key that is encrypted, you will be prompted to enter the passphrase. You can choose to save the passphrase securely within the app so that you don't have to enter it each time you use the key.
+
+??? abstract "How much does WebSSH PRO cost?"
+    The cost of WebSSH PRO may vary based on your region. Please check the App Store for the most up-to-date pricing information for WebSSH PRO in your area : https://apps.apple.com/us/app/webssh-sysadmin-tools/id497714887
+
+    If you are a student or educator, you may be eligible for a discount. Please [contact me](/documentation/contact-me/) for more details.
+
+??? abstract "How to edit / delete / clone an existing connection?"
+    Please refer to this guide : [Edit / Delete / Clone a connection](/documentation/help/howtos/edit-delete-clone-connection/)
