@@ -1,10 +1,14 @@
 <html>
+  <head>
+    <title>
+      WebSSH - Awesome iOS / macOS SSH, SFTP and Port Forwarding client since
+      2012!
+    </title>
 
-<head>
-    <title>WebSSH - Awesome iOS / macOS SSH, SFTP and Port Forwarding client since 2012!</title>
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
+    />
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="xterm.css" />
@@ -22,164 +26,185 @@
     <script src="xterm-addon-webgl.js"></script>
     <script src="xterm-selection-handles.js"></script>
     <script src="xterm-magnifier.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="terminal"></div>
     <div id="scrolly"></div>
     <div id="badge"></div>
 
     <script>
-        window.addEventListener('error', TerminalHelper.logError);
+      window.addEventListener("error", TerminalHelper.logError);
 
-        const terminalSettings = TerminalHelper.extractTerminalSettings(window.location.hash);
-        const terminal = new Terminal(TerminalHelper.buildTerminalSettings(terminalSettings));
+      const terminalSettings = TerminalHelper.extractTerminalSettings(
+        window.location.hash
+      );
+      const terminal = new Terminal(
+        TerminalHelper.buildTerminalSettings(terminalSettings)
+      );
 
-        // Theme :
-        document.querySelector('body').style.backgroundColor = terminalSettings.theme.background;
+      // Theme :
+      document.querySelector("body").style.backgroundColor =
+        terminalSettings.theme.background;
 
-        // Platform :
-        document.querySelector('body').classList.add(terminalSettings.isMacOS ? 'platform-macos' : 'platform-ios');
+      // Platform :
+      document
+        .querySelector("body")
+        .classList.add(
+          terminalSettings.isMacOS ? "platform-macos" : "platform-ios"
+        );
 
-        // Load WebGL Addon :
-        if (terminalSettings.runMode == 'normal') {
-            const webglAddon = new WebglAddon.WebglAddon(true);
-            webglAddon._addonType = 'WebglAddon';
-            webglAddon.onContextLoss(e => {
-                webglAddon.dispose();
-                setTimeout(() => {
-                    terminal.loadAddon(webglAddon);
-                }, 500);
-            });
+      // Load WebGL Addon :
+      if (terminalSettings.runMode == "normal") {
+        const webglAddon = new WebglAddon.WebglAddon(true);
+        webglAddon._addonType = "WebglAddon";
+        webglAddon.onContextLoss((e) => {
+          webglAddon.dispose();
+          setTimeout(() => {
             terminal.loadAddon(webglAddon);
-        }
-
-        // Load Fit Addon :
-        const fitAddon = new FitAddon.FitAddon();
-        if (!terminalSettings.fixedSize) {
-            terminal.loadAddon(fitAddon);
-        }
-
-        // Load Search Addon :
-        const searchAddon = new SearchAddon.SearchAddon();
-        terminal.loadAddon(searchAddon);
-
-        // Load Serialize Addon :
-        const serializeAddon = new SerializeAddon.SerializeAddon();
-        terminal.loadAddon(serializeAddon);
-
-        // Load Web Links Addon :
-        if (terminalSettings.openLinksStrategy != 'disabled') {
-            const webLinksAddon = new WebLinksAddon.WebLinksAddon(TerminalHelper.onLinkClick);
-            terminal.loadAddon(webLinksAddon);
-        }
-
-        // Magnifier :
-        const magnifier = new MagnifierAddon({
-            radius: 30,
-            zoom: 2.25,
-            holdToShow: true,
-            canvasSelector: 'canvas:not(.xterm-link-layer)',
-            sideSnapOnly: false,
-            debug: false
+          }, 500);
         });
-        //terminal.loadAddon(magnifier);
+        terminal.loadAddon(webglAddon);
+      }
 
-        // Open the terminal :
-        terminal.open(document.getElementById('terminal'));
+      // Load Fit Addon :
+      const fitAddon = new FitAddon.FitAddon();
+      if (!terminalSettings.fixedSize) {
+        terminal.loadAddon(fitAddon);
+      }
 
-        // Selection Handles Addon ->
-        const selectionHandlesAddon = new SelectionHandlesAddon({
-            selectionHaptics: false,
-            enableDesktop: true,
-            autoCopyOnSelection: false,
-            useHandlesOnCoarsePointer: true
-        });
-        terminal.loadAddon(selectionHandlesAddon); //!\\ This addon need to be called after terminal.open() //!\\
-        // <- Selection Handles Addon
+      // Load Search Addon :
+      const searchAddon = new SearchAddon.SearchAddon();
+      terminal.loadAddon(searchAddon);
 
-        // On "bell" event :
-        terminal.onBell(TerminalHelper.onBell);
+      // Load Serialize Addon :
+      const serializeAddon = new SerializeAddon.SerializeAddon();
+      terminal.loadAddon(serializeAddon);
 
-        // On title change :
-        terminal.onTitleChange(TerminalHelper.onTitleChange);
+      // Load Web Links Addon :
+      if (terminalSettings.openLinksStrategy != "disabled") {
+        const webLinksAddon = new WebLinksAddon.WebLinksAddon(
+          TerminalHelper.onLinkClick
+        );
+        terminal.loadAddon(webLinksAddon);
+      }
 
-        // On selection change (iOS + macOS) on xterm.js :
-        terminal.onSelectionChange(terminalSettings.isMacOS ? TerminalHelper.onSelectionChangeMacOS : TerminalHelper.onSelectionChangeIOS);
+      // Magnifier Addon ->
+      const magnifier = new MagnifierAddon({
+        radius: 30,
+        zoom: 2.25,
+        holdToShow: true,
+        canvasSelector: "canvas:not(.xterm-link-layer)",
+        sideSnapOnly: false,
+        debug: false,
+      });
+      //terminal.loadAddon(magnifier);
+      // <- Magnifier Addon
 
-        // On click on the terminal :
-        document.addEventListener('click', TerminalHelper.clickListener);
+      // Open the terminal :
+      terminal.open(document.getElementById("terminal"));
 
-        // Removing textarea :
-        document.querySelector('textarea').remove();
+      // Selection Handles Addon ->
+      //!\\ This addon need to be called after terminal.open() //!\\
+      //!\\ Designed primarily for iOS devices, it may interfere with text selection on macOS. //!\\
+      const selectionHandlesAddon = new SelectionHandlesAddon({
+        selectionHaptics: false,
+        enableDesktop: true,
+        autoCopyOnSelection: false,
+        useHandlesOnCoarsePointer: true,
+      });
+      if (!terminalSettings.isMacOS) {
+        terminal.loadAddon(selectionHandlesAddon);
+      }
+      // <- Selection Handles Addon
 
-        // Managing resize events :
-        ResizeHelper.init();
+      // On "bell" event :
+      terminal.onBell(TerminalHelper.onBell);
 
-        // Reverse Wraparound :
-        if (terminalSettings.reverseWraparound) {
-            terminal.write('\x1b[?45h');
-        }
+      // On title change :
+      terminal.onTitleChange(TerminalHelper.onTitleChange);
 
-        // Badge ->
-        const badge = document.getElementById('badge');
-        badge.textContent = terminalSettings.badgeContent;
-        badge.style.color = terminalSettings.badgeColor;
-        badge.style.fontFamily = terminalSettings.fontFamily;
-        badge.style.fontSize = terminalSettings.badgeFontSize + 'px';
-        // Set position according to badgePosition
-        switch (terminalSettings.badgePosition) {
-            case 'top-left':
-                badge.style.top = '0';
-                badge.style.left = '0';
-                break;
-            case 'top-center':
-                badge.style.top = '0';
-                badge.style.left = '50%';
-                badge.style.transform = 'translateX(-50%)';
-                break;
-            case 'top-right':
-                badge.style.top = '0';
-                badge.style.right = '0';
-                break;
-            case 'bottom-left':
-                badge.style.bottom = '0';
-                badge.style.left = '0';
-                break;
-            case 'bottom-center':
-                badge.style.bottom = '0';
-                badge.style.left = '50%';
-                badge.style.transform = 'translateX(-50%)';
-                break;
-            case 'bottom-right':
-                badge.style.bottom = '0';
-                badge.style.right = '0';
-                break;
-            default:
-                // fallback to top-right if invalid value
-                badge.style.top = '0';
-                badge.style.right = '0';
-        }
-        
-        // Scrollbar management :
-        TerminalHelper.scrolly = new Scrolly({
-            scrollbarElement: document.getElementById('scrolly'),
-            elementToScroll: document.querySelector('.xterm-viewport'),
-            handedness: terminalSettings.handedness
-        });
+      // On selection change (iOS + macOS) on xterm.js :
+      terminal.onSelectionChange(
+        terminalSettings.isMacOS
+          ? TerminalHelper.onSelectionChangeMacOS
+          : TerminalHelper.onSelectionChangeIOS
+      );
 
-        // Listen when the buffer changes :
-        terminal.buffer._onBufferChange._listeners.push(TerminalHelper.onBufferChange);
+      // On click on the terminal :
+      document.addEventListener("click", TerminalHelper.clickListener);
 
-        // Register ANSI Escape Sequence handlers :
-        TerminalHelper.registerHandlers();
+      // Removing textarea :
+      document.querySelector("textarea").remove();
 
-        if (terminal.textarea) {
-            TerminalHelper.focus(true);
-        }
+      // Managing resize events :
+      ResizeHelper.init();
 
-        TerminalHelper.ready();
+      // Reverse Wraparound :
+      if (terminalSettings.reverseWraparound) {
+        terminal.write("\x1b[?45h");
+      }
+
+      // Badge ->
+      const badge = document.getElementById("badge");
+      badge.textContent = terminalSettings.badgeContent;
+      badge.style.color = terminalSettings.badgeColor;
+      badge.style.fontFamily = terminalSettings.fontFamily;
+      badge.style.fontSize = terminalSettings.badgeFontSize + "px";
+      // Set position according to badgePosition
+      switch (terminalSettings.badgePosition) {
+        case "top-left":
+          badge.style.top = "0";
+          badge.style.left = "0";
+          break;
+        case "top-center":
+          badge.style.top = "0";
+          badge.style.left = "50%";
+          badge.style.transform = "translateX(-50%)";
+          break;
+        case "top-right":
+          badge.style.top = "0";
+          badge.style.right = "0";
+          break;
+        case "bottom-left":
+          badge.style.bottom = "0";
+          badge.style.left = "0";
+          break;
+        case "bottom-center":
+          badge.style.bottom = "0";
+          badge.style.left = "50%";
+          badge.style.transform = "translateX(-50%)";
+          break;
+        case "bottom-right":
+          badge.style.bottom = "0";
+          badge.style.right = "0";
+          break;
+        default:
+          // fallback to top-right if invalid value
+          badge.style.top = "0";
+          badge.style.right = "0";
+      }
+
+      // Scrollbar management :
+      TerminalHelper.scrolly = new Scrolly({
+        scrollbarElement: document.getElementById("scrolly"),
+        elementToScroll: document.querySelector(".xterm-viewport"),
+        handedness: terminalSettings.handedness,
+      });
+
+      // Listen when the buffer changes :
+      terminal.buffer._onBufferChange._listeners.push(
+        TerminalHelper.onBufferChange
+      );
+
+      // Register ANSI Escape Sequence handlers :
+      TerminalHelper.registerHandlers();
+
+      if (terminal.textarea) {
+        TerminalHelper.focus(true);
+      }
+
+      TerminalHelper.ready();
     </script>
-</body>
-
+  </body>
 </html>
