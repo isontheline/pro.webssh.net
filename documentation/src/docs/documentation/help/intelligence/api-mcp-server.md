@@ -25,7 +25,8 @@ This feature is only available on macOS.
 * 🚧 Retrieve Terminal Content
 * 🚧 Send Commands to Terminal
 * ✅ Retrieve your IP Addresses
-* 🚧 Make DNS Lookup
+* ✅ Make DNS Lookup
+* ✅ Make Whois Requests
 * 🚧 Make Ping Requests
 * 🚧 Launch Traceroute
 * 🚧 Make Documentation Search
