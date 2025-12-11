@@ -114,3 +114,8 @@ title: FAQ
 
 ??? abstract "How to edit / delete / clone an existing connection?"
     Please refer to this guide : [Edit / Delete / Clone a connection](/documentation/help/howtos/edit-delete-clone-connection/)
+
+??? abstract "Does WebSSH supports Apple Family Sharing?"
+    Yes, WebSSH PRO supports Apple Family Sharing. Once you have purchased WebSSH PRO, you can share it with up to six family members (including you) using Apple's Family Sharing feature.
+
+    For more information on how to set up Family Sharing, please refer to Apple's official documentation : [Set up Family Sharing](https://support.apple.com/en-us/HT201088)
