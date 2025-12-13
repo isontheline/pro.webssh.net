@@ -10036,7 +10036,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spedizioni"
+            "value" : "Trasferimenti"
           }
         },
         "ja" : {
@@ -21550,7 +21550,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Frammenti"
+            "value" : "Snippets"
           }
         },
         "ja" : {

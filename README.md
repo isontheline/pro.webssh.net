@@ -7,6 +7,10 @@
 
 [![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
 
+## Sponsors
+
+[![WebSSH Sponsors](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/sponsors/sponsors.png)](https://github.com/sponsors/isontheline)
+
 ## Screenshots
 ### macOS
 ![WebSSH macOS SSH / SFTP / Port Forwarding client](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-macos.jpg)
