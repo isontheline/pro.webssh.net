@@ -44,4 +44,4 @@ Have a nice day :sunny:
 ## Privacy Policy
 WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
 
-Latest version (2024-01-06) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
+Latest version (2025-12-13) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
