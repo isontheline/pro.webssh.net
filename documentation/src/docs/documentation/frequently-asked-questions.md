@@ -114,8 +114,15 @@ title: FAQ
 
     If you are a student or educator, you may be eligible for a discount. Please [contact me](/documentation/contact-me/) for more details.
 
-??? abstract "How to edit / delete / clone an existing connection?"
-    Please refer to this guide : [Edit / Delete / Clone a connection](/documentation/help/howtos/edit-delete-clone-connection/)
+??? abstract "What's a connection inside WebSSH?"
+    A connection inside WebSSH represents a saved configuration that allows you to connect to a remote server using protocols like SSH, SFTP, or Telnet. Each connection contains details such as the server's hostname or IP address, port number, username, authentication method (password or private key), and other optional settings.
+
+    By saving connections, you can quickly access and manage multiple servers without having to re-enter connection details each time.
+
+    To summarize, a connection can be seen as a "server" profile that stores all the necessary information to establish a remote session.
+
+??? abstract "How to edit, delete or clone an existing connection (aka server)?"
+    Please refer to this guide : [Edit / Delete / Clone a connection (server)](/documentation/help/howtos/edit-delete-clone-connection/)
 
 ??? abstract "Does WebSSH supports Apple Family Sharing?"
     Yes, WebSSH PRO supports Apple Family Sharing. Once you have purchased WebSSH PRO, you can share it with up to six family members (including you) using Apple's Family Sharing feature.
