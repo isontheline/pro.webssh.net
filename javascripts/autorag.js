@@ -18,7 +18,7 @@ function showDocumentationAssistant() {
         winbox = new WinBox({
             index: 1,
             id: 'documentation-assistant',
-            title: 'WebSSH Documentation Assistant',
+            title: 'WebSSH Brain - Documentation Assistant',
             modal: true,
             max: true,
             min: true,
@@ -41,7 +41,7 @@ function showDocumentationAssistant() {
                     enableStreaming: true,
                     i18n: {
                         en: {
-                            title: 'WebSSH Documentation Assistant',
+                            title: 'WebSSH Brain - Documentation Assistant',
                             subtitle: "",
                             footer: '',
                             getStarted: 'New Conversation',
