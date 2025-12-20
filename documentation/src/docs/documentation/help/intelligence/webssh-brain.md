@@ -15,7 +15,7 @@ title: WebSSH Brain
 ## AI Assistants
 
 ### Documentation Assistant
-WebSSH Documentation Assistant is an AI-powered tool designed to help you find relevant articles and information within the WebSSH documentation. It operates on WebSSH servers to process your queries and provide accurate responses. 
+WebSSH Brain Documentation Assistant is an AI-powered tool designed to help you find relevant articles and information within the WebSSH documentation. It operates on WebSSH servers to process your queries and provide accurate responses. 
 
 ### Snippet Assistant
 Give WebSSH Brain a short command prompt and it will try to generate the best snippet for you.

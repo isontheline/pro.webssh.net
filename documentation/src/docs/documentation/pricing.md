@@ -55,7 +55,7 @@
 
 Yes you see it right : **FREE** version is the most generous free tier you can find on the App Store for SSH / SFTP / TELNET / Serial Port clients! You can do the same as the **PRO** version but with only one connection saved at a time.
 
-If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/), [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub or just ask my <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">AI Documentation Assistant</a>.
+If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/), [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub or just ask <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">WebSSH Brain - Documentation Assistant</a>.
 
 [^1]: Not available on these countries : China Mainland
 [^2]: TELNET is available since WebSSH 26.1

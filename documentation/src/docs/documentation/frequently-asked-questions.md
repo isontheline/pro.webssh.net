@@ -3,7 +3,7 @@ title: FAQ
 ---
 
 # FAQ - Frequently Asked Questions
-:sparkles: <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">AI Documentation Assistant</a> is at your disposal - ask away with any WebSSH questions that come to mind!
+:sparkles: <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">WebSSH Brain - Documentation Assistant</a> is at your disposal - ask away with any WebSSH questions that come to mind!
 
 ??? abstract "Does WebSSH support ZMODEM, YMODEM or XMODEM transfers?"
     Unfortunately, WebSSH does not support ZMODEM, YMODEM or XMODEM transfers.
@@ -108,6 +108,12 @@ title: FAQ
 
 ??? abstract "Can I store the passphrase for an encrypted private key in WebSSH?"
     Yes, WebSSH allows you to store the passphrase for an encrypted private key. When you add a private key that is encrypted, you will be prompted to enter the passphrase. You can choose to save the passphrase securely within the app so that you don't have to enter it each time you use the key.
+
+??? abstract "How to create or import a Private Key into WebSSH?"
+    1. Go to WebSSH Settings (gear icon)
+    2. Choose "SSH Keys"
+    3. Press "+" button
+    4. Now choose if you want to create a new Private Key or import an existing one.
 
 ??? abstract "How much does WebSSH PRO cost?"
     The cost of WebSSH PRO may vary based on your region. Please check the App Store for the most up-to-date pricing information for WebSSH PRO in your area : https://apps.apple.com/us/app/webssh-sysadmin-tools/id497714887
