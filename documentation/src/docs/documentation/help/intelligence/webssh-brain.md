@@ -3,7 +3,7 @@ title: WebSSH Brain
 ---
 
 # WebSSH Brain
-> Generative AI that powers your Sysadmin tasks!
+> Privacy-First Remote AI Engine
 
 ??? danger "Privacy, Security, Responsibility"
     * WebSSH Brain prioritizes Privacy and Security. Read the [Privacy Policy](/documentation/legal/privacy-policy/) for more details on data handling.
@@ -12,7 +12,7 @@ title: WebSSH Brain
     * The developer cannot assume responsibility for any damage inflicted on a system or individual. 
     * It is imperative to acknowledge that you, as the user, are solely responsible for the actions taken while using WebSSH Brain.
 
-## AI Assistants
+## Powered AI Assistants
 
 ### Documentation Assistant
 WebSSH Brain Documentation Assistant is an AI-powered tool designed to help you find relevant articles and information within the WebSSH documentation. It operates on WebSSH servers to process your queries and provide accurate responses. 

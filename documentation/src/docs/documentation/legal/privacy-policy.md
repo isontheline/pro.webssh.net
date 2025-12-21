@@ -21,7 +21,7 @@ We maintain a strict zero-data collection policy. Your WebSSH usage remains enti
 We don't use tracking cookies on the Website.
 
 ## WebSSH Brain
-WebSSH Brain is a generative AI assistant that helps you craft SSH commands, snippets, and scripts. It can also answer questions about the WebSSH documentation website.
+WebSSH Brain is a Privacy-First Remote AI Engine that helps you craft SSH commands, snippets, and scripts. It can also answer questions about the WebSSH documentation website.
 
 ### AI Tools Rely on Third-Party AI Services
 WebSSH Brain utilizes Third-Party AI Services through OpenRouter's gateway to provide AI-powered assistance. AI models are chosen dynamically based on performance, privacy and relevance to your queries. OpenRouter acts as an intermediary and has its own privacy practices, which you can review at [openrouter.ai/privacy](https://openrouter.ai/privacy).
@@ -76,4 +76,4 @@ Your continued use of the App or Website following the posting of changes to thi
 If you have any questions about this Privacy Policy, the practices of this App and Website, or your dealings with this App and Website, please [contact us](/documentation/contact-me/).
 
 ## Date of Last Update
-This Privacy Policy was last updated on December 17, 2025.
+This Privacy Policy was last updated on December 21, 2025.
