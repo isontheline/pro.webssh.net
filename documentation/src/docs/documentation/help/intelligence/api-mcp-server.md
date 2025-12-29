@@ -22,14 +22,14 @@ This feature is only available on macOS.
   Programmatically fetch server status, logs, or outputs for use in dashboards or other applications.
 
 ## Available Features
-* 🚧 Retrieve Terminal Content
+* ✅ Retrieve Terminal Content
 * 🚧 Send Commands to Terminal
 * ✅ Retrieve your IP Addresses
 * ✅ Make DNS Lookup
 * ✅ Make Whois Requests
 * 🚧 Make Ping Requests
 * 🚧 Launch Traceroute
-* 🚧 Make Documentation Search
+* ✅ Make Documentation Search
 
 ## Usage Instructions
 ### Enabling the API / MCP Server
