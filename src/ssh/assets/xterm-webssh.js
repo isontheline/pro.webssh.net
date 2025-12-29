@@ -395,19 +395,15 @@ const TerminalHelper = {
         return textSelection;
     },
 
-    getRenderType: function () {
-        const hasWebGLAddon = terminal._addonManager._addons.some(
-            addon => addon.instance && addon.instance._addonType === "WebglAddon"
-        );
-        return hasWebGLAddon ? "WEBGL" : "DOM";
+    exportScreenText: function () {
+        TerminalHelper.selectScreen();
+        const textSelection = TerminalHelper.exportSelectedText();
+        terminal.clearSelection();
+
+        return textSelection;
     },
 
-    getBracketedPasteMode: function () {
-        // Support of "Bracketed Paste" mode #1356 ->
-        return terminal._core.coreService.decPrivateModes.bracketedPasteMode;
-        // <- Support of "Bracketed Paste" mode #1356
-    },
-
+    // Used for VoiceOver support :
     exportRawScreenRows: function () {
         const renderType = TerminalHelper.getRenderType();
         if ('DOM' === renderType) {
@@ -430,6 +426,19 @@ const TerminalHelper = {
                 lineHeight: parseInt(document.querySelector('div.xterm-screen').style.height, 10) / rows.length
             };
         }
+    },
+
+    getRenderType: function () {
+        const hasWebGLAddon = terminal._addonManager._addons.some(
+            addon => addon.instance && addon.instance._addonType === "WebglAddon"
+        );
+        return hasWebGLAddon ? "WEBGL" : "DOM";
+    },
+
+    getBracketedPasteMode: function () {
+        // Support of "Bracketed Paste" mode #1356 ->
+        return terminal._core.coreService.decPrivateModes.bracketedPasteMode;
+        // <- Support of "Bracketed Paste" mode #1356
     },
 
     onBell: debounce(() => {
