@@ -23,7 +23,7 @@ This feature is only available on macOS.
 
 ## Available Features
 * ✅ Retrieve Terminal Content
-* 🚧 Send Commands to Terminal
+* ✅ Send Commands to Terminal
 * ✅ Retrieve your IP Addresses
 * ✅ Make DNS Lookup
 * ✅ Make Whois Requests
