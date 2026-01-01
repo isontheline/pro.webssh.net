@@ -128,7 +128,7 @@ title: FAQ
     To summarize, a connection can be seen as a "server" profile that stores all the necessary information to establish a remote session.
 
 ??? abstract "How to edit, delete or clone an existing connection (aka server)?"
-    Please refer to this guide : [Edit / Delete / Clone a connection (server)](/documentation/help/howtos/edit-delete-clone-connection/)
+    If you want to edit / delete / clone an existing connection (server) inside WebSSH, please refer to this guide : [Edit / Delete / Clone a connection (server)](/documentation/help/howtos/edit-delete-clone-connection/)
 
 ??? abstract "Does WebSSH supports Apple Family Sharing?"
     Yes, WebSSH PRO supports Apple Family Sharing. Once you have purchased WebSSH PRO, you can share it with up to six family members (including you) using Apple's Family Sharing feature.
