@@ -54,7 +54,7 @@
 | macOS | :white_check_mark: | :white_check_mark: |
 | visionOS<br /><small>(Supported as "Designed for iPad")</small> | :white_check_mark: | :white_check_mark: |
 | **Notable Mentions** | **FREE** | **PRO** |
-| Lifetime purchase (no subscription) | :ballot_box_with_check: | :white_check_mark: |
+| Lifetime purchase (no subscription) | / | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | No Ads | :white_check_mark: | :white_check_mark: |
 | No data collection | :white_check_mark: | :white_check_mark: |
