@@ -11,10 +11,17 @@
 
     :moneybag: Get your money's worth : Unlike competitors, WebSSH **PRO** isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
 
-??? abstract "Student and educator discounts"
-    Students and educators can qualify for a discount on WebSSH PRO.
+??? tip "Student and educator discounts"
+    Students and educators are the backbone of our tech community. Whether you're learning system administration, teaching others, or managing school infrastructure, I want to make sure WebSSH **PRO** is accessible to you.
     
-    Please [contact me](/documentation/contact-me/) for more details and the redeem link for the discount.
+    [Contact me](/documentation/contact-me/) for details and your discount redemption link.
+
+??? danger "It's too expensive!"
+    Since 2012, WebSSH has been sustained and maintained as an indie app supported by a one-time purchase, with regular monthly updates provided for **FREE** — and I want to keep it that way. Unlike competitors, there's no subscription model or hidden costs.
+
+    If you think the price is too high, please consider the effort I put into making WebSSH an awesome sysadmin tool for you. The price supports ongoing development and maintenance of the app.
+
+    If you still can't afford it, you can continue using the **FREE** version, which is already very generous compared to competitors, or contact me to discuss a promotional code :)
 
 ## FREE vs PRO
 | Main Features | FREE | PRO |
@@ -22,17 +29,17 @@
 | Unlimited number of connections | :cross_mark: (Only 1) | :white_check_mark: |
 | SSH Client | :white_check_mark: | :white_check_mark: |
 | SFTP Client | :white_check_mark: | :white_check_mark: |
-| TELNET Client[^2] | :white_check_mark: | :white_check_mark: |
-| Serial Port Client[^3] | :white_check_mark: | :white_check_mark: |
+| TELNET Client | :white_check_mark: | :white_check_mark: |
+| Serial Port Client[^1] | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
 | **Advanced Features** | **FREE** | **PRO** |
 | YubiKey OTP NFC | :white_check_mark: | :white_check_mark: |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
-| [iCloud Sync](/documentation/help/iCloud/)[^1] | :white_check_mark: | :white_check_mark: |
-| [WebSSH Brain](/documentation/help/webssh-brain/)[^1] | :white_check_mark: | :white_check_mark: |
-| [Web Browser](/documentation/web-browser/)[^1] | :white_check_mark: | :white_check_mark: |
-| [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/)[^1] | :white_check_mark: | :white_check_mark: |
+| [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: |
+| [WebSSH Brain](/documentation/help/webssh-brain/) | :white_check_mark: | :white_check_mark: |
+| [Web Browser](/documentation/web-browser/) | :white_check_mark: | :white_check_mark: |
+| [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :white_check_mark: |
 | **Sysadmin Tools** | **FREE** | **PRO** |
 | [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: |
 | Ping | :white_check_mark: | :white_check_mark: |
@@ -40,12 +47,12 @@
 | DNS Lookup | :white_check_mark: | :white_check_mark: |
 | Whois Lookup | :white_check_mark: | :white_check_mark: |
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
-| Wake-on-LAN[^4] | :white_check_mark: | :white_check_mark: |
+| Wake-on-LAN | :white_check_mark: | :white_check_mark: |
 | **Operating System Support** | **FREE** | **PRO** |
 | iPhoneOS | :white_check_mark: | :white_check_mark: |
 | iPadOS | :white_check_mark: | :white_check_mark: |
-| macOS[^1] | :white_check_mark: | :white_check_mark: |
-| visionOS[^1]<br /><small>(Designed for iPad)</small> | :white_check_mark: | :white_check_mark: |
+| macOS | :white_check_mark: | :white_check_mark: |
+| visionOS<br /><small>(Supported as "Designed for iPad")</small> | :white_check_mark: | :white_check_mark: |
 | **Notable Mentions** | **FREE** | **PRO** |
 | Lifetime purchase (no subscription) | :ballot_box_with_check: | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
@@ -57,7 +64,4 @@ Yes you see it right : **FREE** version is the most generous free tier you can f
 
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/), [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub or just ask <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">WebSSH Brain - Documentation Assistant</a>.
 
-[^1]: Not available on these countries : China Mainland
-[^2]: TELNET is available since WebSSH 26.1
-[^3]: Serial Port Client is available since WebSSH 29.0, only on macOS
-[^4]: Wake-on-LAN is available since WebSSH 29.2
+[^1]: Serial Port Client is only available on macOS
