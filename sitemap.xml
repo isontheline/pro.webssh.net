@@ -148,7 +148,7 @@
     <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
 
     
-    <lastmod>2026-01-01T17:26:37+00:00</lastmod>
+    <lastmod>2026-01-17T14:55:17+00:00</lastmod>
 
       
       
@@ -1459,6 +1459,30 @@
 
         
           <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/create-or-import-public-private-key-pair/</loc>
+
+    
+    <lastmod>2026-01-17T14:55:17+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
