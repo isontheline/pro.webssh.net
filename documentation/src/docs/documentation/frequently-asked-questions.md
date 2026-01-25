@@ -135,5 +135,12 @@ title: FAQ
 
     For more information on how to set up Family Sharing, please refer to Apple's official documentation : [Set up Family Sharing](https://support.apple.com/en-us/HT201088)
 
+??? abstract "Does WebSSH supports Key Repeat?"
+    Unfortunately, WebSSH does not support Key Repeat at this time.
+    Related GitHub issues could be found to track this feature request :
+
+    - [#976](https://github.com/isontheline/pro.webssh.net/issues/976)
+    - [#1196](https://github.com/isontheline/pro.webssh.net/issues/1196)
+
 ??? abstract "How can I generate an SSH public/private key pair using WebSSH?"
     To generate an SSH [Public / Private Key Pair](/documentation/help/SSH/public-private-key/) using WebSSH, please refer to this guide : [Create or Import a Public/Private Key Pair](/documentation/help/howtos/create-or-import-public-private-key-pair/)
