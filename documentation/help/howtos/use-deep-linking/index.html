@@ -3245,8 +3245,8 @@
 </ul>
 </details>
 <ul>
-<li>Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.</li>
-<li>Since 21.6 you can also use deep linking feature to be able to launch a one time connection from the Search Bar (issue <a href="https://github.com/isontheline/pro.webssh.net/issues/833">#833</a>)</li>
+<li>WebSSH supports deep linking, this means that you can open a SSH connection directly from a link.</li>
+<li>You can also use this feature to be able to launch a one time connection from the Search Bar</li>
 </ul>
 <h2 id="how-to-use-it">How to use it</h2>
 <p>To use deep linking, you need to create a link with the following format:</p>
@@ -3265,9 +3265,14 @@
 </thead>
 <tbody>
 <tr>
-<td><code>save</code></td>
-<td>If set to <code>true</code>, the connection will be saved in the connection list</td>
-<td><code>ssh://username@host:port?save=true</code></td>
+<td><code>group</code></td>
+<td>The group of the connection</td>
+<td><code>ssh://username@host:port?group=My%20Group</code></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td>The Private Key name you would like to use to establish the connection. This parameter is case insensitive. Your Private Keys' name should be unique in order to be used with this parameter.</td>
+<td><code>ssh://username@host?key=MYPKEY</code></td>
 </tr>
 <tr>
 <td><code>name</code></td>
@@ -3275,9 +3280,9 @@
 <td><code>ssh://username@host:port?name=My%20Connection</code></td>
 </tr>
 <tr>
-<td><code>group</code></td>
-<td>The group of the connection</td>
-<td><code>ssh://username@host:port?group=My%20Group</code></td>
+<td><code>save</code></td>
+<td>If set to <code>true</code>, the connection will be saved in the connection list</td>
+<td><code>ssh://username@host:port?save=true</code></td>
 </tr>
 <tr>
 <td><code>tags</code></td>
@@ -3285,9 +3290,9 @@
 <td><code>ssh://username@host:port?tags=tag1,tag2</code></td>
 </tr>
 <tr>
-<td><code>key</code></td>
-<td>The Private Key name you would like to use to establish the connection. This parameter is case insensitive. Your Private Keys' name should be unique in order to be used with this parameter.</td>
-<td><code>ssh://username@host?key=MYPKEY</code></td>
+<td><code>theme</code></td>
+<td>The theme name to use</td>
+<td><code>ssh://username@host:port?theme=GitHub%20Dark</code></td>
 </tr>
 </tbody>
 </table>
@@ -3315,7 +3320,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 18, 2023 21:54:30 UTC">March 18, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 1, 2026 16:26:15 UTC">February 1, 2026</span>
       
     
   </small>
