@@ -8,8 +8,8 @@ title: Deep Linking
     * Deep links are a way to open WebSSH within a browser. They are very useful to open a specific connection in WebSSH. However, they could also be used to do malicious things. Be careful when you click on a link you don't trust.
     * In order to prevent malicious links, WebSSH will ask you to confirm the connection before opening it. You can disable this confirmation in WebSSH > Settings > "Deep Linking Strategy"
 
-* Since version 21.4, WebSSH supports deep linking. This means that you can open a SSH connection directly from a link.
-* Since 21.6 you can also use deep linking feature to be able to launch a one time connection from the Search Bar (issue [#833](https://github.com/isontheline/pro.webssh.net/issues/833))
+* WebSSH supports deep linking, this means that you can open a SSH connection directly from a link.
+* You can also use this feature to be able to launch a one time connection from the Search Bar
 
 ## How to use it
 To use deep linking, you need to create a link with the following format:
@@ -25,11 +25,12 @@ You can also specify some options to customize the connection. Here is the list 
 
 | Option | Description | Example |
 | --- | --- | --- |
-| `save` | If set to `true`, the connection will be saved in the connection list | `ssh://username@host:port?save=true` |
-| `name` | The name of the connection | `ssh://username@host:port?name=My%20Connection` |
 | `group` | The group of the connection | `ssh://username@host:port?group=My%20Group` |
-| `tags` | The tags of the connection | `ssh://username@host:port?tags=tag1,tag2` |
 | `key`| The Private Key name you would like to use to establish the connection. This parameter is case insensitive. Your Private Keys' name should be unique in order to be used with this parameter. | `ssh://username@host?key=MYPKEY`|
+| `name` | The name of the connection | `ssh://username@host:port?name=My%20Connection` |
+| `save` | If set to `true`, the connection will be saved in the connection list | `ssh://username@host:port?save=true` |
+| `tags` | The tags of the connection | `ssh://username@host:port?tags=tag1,tag2` |
+| `theme` | The theme name to use | `ssh://username@host:port?theme=GitHub%20Dark` |
 
 You can combine multiple options in the same link. Here is an example:
 
