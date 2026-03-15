@@ -33,7 +33,6 @@
 | Serial Port Client[^1] | :white_check_mark: | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
 | **Advanced Features** | **FREE** | **PRO** |
-| YubiKey OTP NFC | :white_check_mark: | :white_check_mark: |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
 | [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: |
