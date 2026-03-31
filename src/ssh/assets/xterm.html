@@ -24,6 +24,7 @@
     <script src="xterm-addon-serialize.js"></script>
     <script src="xterm-addon-web-links.js"></script>
     <script src="xterm-addon-webgl.js"></script>
+    <script src="xterm-addon-canvas.js"></script>
     <script src="xterm-selection-handles.js"></script>
     <script src="xterm-magnifier.js"></script>
   </head>
@@ -54,8 +55,16 @@
           terminalSettings.isMacOS ? "platform-macos" : "platform-ios"
         );
 
-      // Load WebGL Addon :
-      if (terminalSettings.runMode == "normal") {
+      // Load renderer addon :
+      // OS 26+ has a WebGL font atlas rendering bug (garbled/italic text).
+      // Use the canvas renderer on OS 26+ until xterm.js ships a fix.
+      const useCanvasRenderer = true || terminalSettings.runMode == "lockmode";
+
+      if (useCanvasRenderer) {
+        const canvasAddon = new CanvasAddon.CanvasAddon();
+        canvasAddon._addonType = "CanvasAddon";
+        terminal.loadAddon(canvasAddon);
+      } else {
         const webglAddon = new WebglAddon.WebglAddon(true);
         webglAddon._addonType = "WebglAddon";
         webglAddon.onContextLoss((e) => {

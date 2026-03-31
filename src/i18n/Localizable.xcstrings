@@ -9495,6 +9495,27 @@
         }
       }
     },
+    "Item" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Element" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Element" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Item" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Elemento" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Élément" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Elemento" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アイテム" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "항목" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Element" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Item" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Элемент" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Objekt" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Öğe" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Елемент" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "项目" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "項目" } }
+      }
+    },
     "File_Name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -25655,6 +25676,321 @@
         }
       }
     },
+    "SyncMode_Sheet_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniseringstilstand" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Synchronisierungsmodus" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync Mode" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Modo de sincronización" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mode de synchronisation" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Modalità di sincronizzazione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "同期モード" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "동기화 모드" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Tryb synchronizacji" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Modo de sincronização" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Режим синхронизации" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniseringsläge" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Senkronizasyon modu" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Режим синхронізації" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同步模式" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "同步模式" } }
+      }
+    },
+    "Recommended" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Anbefalet" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Empfohlen" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recommended" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Recomendado" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Recommandé" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Consigliato" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "おすすめ" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "추천" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Zalecane" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Recomendado" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Рекомендуется" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Rekommenderas" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Önerilen" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Рекомендовано" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "推荐" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "推薦" } }
+      }
+    },
+    "SyncMode_0_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser alt" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Alles synchronisieren" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync All" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar todo" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Tout synchroniser" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza tutto" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "すべて同期" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "모두 동기화" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj wszystko" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar tudo" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать всё" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera allt" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hepsini eşitle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізувати все" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "全部同步" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "全部同步" } }
+      }
+    },
+    "SyncMode_0_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser alle filer, selv hvis de allerede findes på destinationen" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Alle Dateien synchronisieren, auch wenn sie bereits am Ziel vorhanden sind" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync every file, even if it already exists on the destination" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar todos los archivos, aunque ya existan en el destino" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchroniser tous les fichiers, même s'ils existent déjà sur la destination" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza tutti i file, anche se esistono già sulla destinazione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "転送先に既に存在していても、すべてのファイルを同期します" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "대상에 이미 존재하더라도 모든 파일을 동기화합니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj wszystkie pliki, nawet jeśli już istnieją w miejscu docelowym" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronize todos os arquivos, mesmo que já existam no destino" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать все файлы, даже если они уже существуют в месте назначения" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera alla filer, även om de redan finns på destinationen" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Hedefte zaten mevcut olsa bile tüm dosyaları eşitle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізуйте всі файли, навіть якщо вони вже є в місці призначення" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同步所有文件，即使目标上已存在" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "同步所有檔案，即使目的地上已存在" } }
+      }
+    },
+    "SyncMode_1_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Kun nye filer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nur neue Dateien" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New Files Only" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Solo archivos nuevos" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouveaux fichiers uniquement" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Solo nuovi file" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新しいファイルのみ" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "새 파일만" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Tylko nowe pliki" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Apenas novos arquivos" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Только новые файлы" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Endast nya filer" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yalnızca yeni dosyalar" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Тільки нові файли" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅新文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "僅新檔案" } }
+      }
+    },
+    "SyncMode_1_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser kun filer, der endnu ikke findes på destinationen" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nur Dateien synchronisieren, die noch nicht am Ziel vorhanden sind" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync only files that don't exist on the destination yet" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar solo archivos que aún no existen en el destino" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchroniser uniquement les fichiers qui n'existent pas encore sur la destination" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza solo i file che non esistono ancora sulla destinazione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "転送先にまだ存在しないファイルのみを同期します" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "대상에 아직 없는 파일만 동기화합니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj tylko pliki, które jeszcze nie istnieją w miejscu docelowym" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronize apenas os arquivos que ainda não existem no destino" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать только файлы, которых ещё нет в месте назначения" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera bara filer som inte finns på destinationen ännu" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yalnızca hedefte henüz bulunmayan dosyaları eşitle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізуйте лише файли, яких ще немає в місці призначення" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅同步目标上不存在的文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "僅同步目的地上不存在的檔案" } }
+      }
+    },
+    "SyncMode_2_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Ny og opdateret" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Neu und aktualisiert" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "New & Updated" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nuevos y actualizados" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouveaux et mis à jour" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Nuovi e aggiornati" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新規および更新済み" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "새것 및 업데이트됨" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Nowe i zaktualizowane" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Novos e atualizados" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Новые и обновлённые" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Nya och uppdaterade" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yeni ve güncellenenler" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Нові та оновлені" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "新建及更新" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "新建及更新" } }
+      }
+    },
+    "SyncMode_2_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser nye filer og erstat forældede" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Neue Dateien synchronisieren und veraltete ersetzen" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync new files and replace outdated ones" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar archivos nuevos y reemplazar los desactualizados" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchroniser les nouveaux fichiers et remplacer les obsolètes" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza nuovi file e sostituisci quelli obsoleti" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新しいファイルを同期し、古いファイルを置き換えます" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "새 파일을 동기화하고 오래된 파일을 교체합니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj nowe pliki i zastąp przestarzałe" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronize novos arquivos e substitua os desatualizados" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать новые файлы и заменить устаревшие" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera nya filer och ersätt föråldrade" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yeni dosyaları eşitle ve güncel olmayanları değiştir" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізуйте нові файли та замініть застарілі" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同步新文件并替换过期文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "同步新檔案並替換過期檔案" } }
+      }
+    },
+    "SyncMode_3_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Kun opdaterede" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Nur aktualisierte" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Updated Only" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Solo actualizados" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Mis à jour uniquement" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Solo aggiornati" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "更新済みのみ" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "업데이트된 것만" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Tylko zaktualizowane" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Apenas atualizados" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Только обновлённые" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Endast uppdaterade" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yalnızca güncellenenler" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Лише оновлені" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "仅更新的" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "僅更新的" } }
+      }
+    },
+    "SyncMode_3_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Erstat forældede filer; spring over filer, der endnu ikke er på destinationen" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Veraltete Dateien ersetzen; Dateien überspringen, die noch nicht am Ziel sind" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Replace outdated files; skip files not yet on the destination" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Reemplazar archivos desactualizados; omitir archivos que aún no están en el destino" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Remplacer les fichiers obsolètes ; ignorer les fichiers pas encore sur la destination" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sostituisci i file obsoleti; salta i file non ancora sulla destinazione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "古いファイルを置き換え、転送先にまだないファイルはスキップします" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "오래된 파일을 교체하고, 대상에 아직 없는 파일은 건너뜁니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Zastąp przestarzałe pliki; pomiń pliki, których jeszcze nie ma w miejscu docelowym" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Substitua arquivos desatualizados; ignore arquivos que ainda não estão no destino" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Заменить устаревшие файлы; пропустить файлы, которых ещё нет в месте назначения" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Ersätt föråldrade filer; hoppa över filer som inte finns på destinationen än" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Güncel olmayan dosyaları değiştir; hedefte henüz bulunmayan dosyaları atla" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Замініть застарілі файли; пропустіть файли, яких ще немає в місці призначення" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "替换过期文件；跳过目标上尚未存在的文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "替換過期檔案；跳過目的地上尚未存在的檔案" } }
+      }
+    },
+    "SyncMode_4_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Størrelsesforskelle" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Größenunterschiede" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Size Differences" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Diferencias de tamaño" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Différences de taille" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Differenze di dimensione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "サイズの違い" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "크기 차이" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Różnice rozmiarów" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Diferenças de tamanho" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Различия в размере" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Storleksskillnader" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Boyut farkları" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Різниця в розмірі" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "大小差异" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "大小差異" } }
+      }
+    },
+    "SyncMode_4_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser nye filer eller filer med en størrelsesforskel" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Neue Dateien oder Dateien mit Größenunterschied synchronisieren" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync new files or files with a size mismatch" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar archivos nuevos o archivos con diferencia de tamaño" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchroniser les nouveaux fichiers ou ceux avec une différence de taille" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza nuovi file o file con una differenza di dimensione" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新しいファイルやサイズが異なるファイルを同期します" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "새 파일이나 크기가 다른 파일을 동기화합니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj nowe pliki lub pliki z różnicą rozmiarów" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronize novos arquivos ou arquivos com diferença de tamanho" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать новые файлы или файлы с различием в размере" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera nya filer eller filer med storleksskillnad" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yeni dosyaları veya boyutu farklı dosyaları eşitle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізуйте нові файли або файли з різницею в розмірі" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同步新文件或大小不同的文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "同步新檔案或大小不同的檔案" } }
+      }
+    },
+    "SyncMode_5_Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Intelligent synkronisering" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Intelligente Synchronisation" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Intelligent Sync" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronización inteligente" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchronisation intelligente" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizzazione intelligente" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "インテリジェント同期" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "인텔리전트 동기화" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Inteligentna synchronizacja" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronização inteligente" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Умная синхронизация" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Intelligent synkronisering" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Akıllı senkronizasyon" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Розумна синхронізація" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "智能同步" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "智慧同步" } }
+      }
+    },
+    "SyncMode_5_Subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Synkroniser nye filer, filer med størrelsesforskel og nyere filer" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Neue, größenunterschiedliche und neuere Dateien synchronisieren" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sync new files, size-different, and newer files" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizar archivos nuevos, con diferencia de tamaño y más recientes" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Synchroniser les nouveaux fichiers, ceux avec une différence de taille et les plus récents" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Sincronizza file nuovi, con differenze di dimensione e più recenti" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "新しいファイル、サイズが異なるファイル、より新しいファイルを同期します" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "새 파일, 크기가 다른 파일, 더 최신 파일을 동기화합니다" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Synchronizuj nowe pliki, pliki z różnicą rozmiarów i nowsze pliki" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Sincronize arquivos novos, com diferença de tamanho e mais recentes" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Синхронизировать новые файлы, файлы с различием в размере и более новые файлы" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Synkronisera nya filer, filer med storleksskillnad och nyare filer" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yeni, boyutu farklı ve daha yeni dosyaları eşitle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Синхронізуйте нові файли, файли з різницею в розмірі та новіші файли" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "同步新文件、大小不同的文件和更新的文件" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "同步新檔案、大小不同的檔案和更新的檔案" } }
+      }
+    },
+    "Upload" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : { "stringUnit" : { "state" : "translated", "value" : "Upload" } },
+        "de" : { "stringUnit" : { "state" : "translated", "value" : "Hochladen" } },
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upload" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Subir" } },
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envoyer" } },
+        "it" : { "stringUnit" : { "state" : "translated", "value" : "Carica" } },
+        "ja" : { "stringUnit" : { "state" : "translated", "value" : "アップロード" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "업로드" } },
+        "pl" : { "stringUnit" : { "state" : "translated", "value" : "Wyślij" } },
+        "pt" : { "stringUnit" : { "state" : "translated", "value" : "Upload" } },
+        "ru" : { "stringUnit" : { "state" : "translated", "value" : "Загрузить" } },
+        "sv" : { "stringUnit" : { "state" : "translated", "value" : "Ladda upp" } },
+        "tr" : { "stringUnit" : { "state" : "translated", "value" : "Yükle" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Завантажити" } },
+        "zh-Hans" : { "stringUnit" : { "state" : "translated", "value" : "上传" } },
+        "zh-Hant-TW" : { "stringUnit" : { "state" : "translated", "value" : "上傳" } }
+      }
+    },
     "Tab" : {
       "extractionState" : "migrated",
       "localizations" : {
@@ -28782,6 +29118,107 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "上傳檔案"
+          }
+        }
+      }
+    },
+    "Upload_Folder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload en mappe"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordner hochladen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload a folder"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargar una carpeta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer un dossier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carica una cartella"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダをアップロードする"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "폴더 업로드하기"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyślij folder"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload uma pasta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузить папку"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladda upp en mapp"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir klasör yükle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантажте папку"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上传一个文件夹"
+          }
+        },
+        "zh-Hant-TW" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上傳資料夾"
           }
         }
       }
