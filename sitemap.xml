@@ -18,7 +18,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -2322,7 +2322,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -2346,7 +2346,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -2514,7 +2514,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -2538,7 +2538,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -3474,7 +3474,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
