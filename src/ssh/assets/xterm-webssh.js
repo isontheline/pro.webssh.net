@@ -668,17 +668,26 @@ const TerminalHelper = {
         // <- #1173 Theme : Purple color should be named Magenta (ANSI)
 
         // Custom Terminal Selection Handles Styles ->
-        const style = document.createElement('style');
+        let style = document.getElementById('terminal-selection-handles-style');
+        if (!style) {
+            style = document.createElement('style');
+            style.id = 'terminal-selection-handles-style';
+            document.head.appendChild(style);
+        }
         style.textContent = `
         .terminal-selection-handle.start-handle,
-        .terminal-selection-handle.end-handle { 
+        .terminal-selection-handle.end-handle {
             background-color: ${theme.cursor} !important;
             border: 1px solid ${theme.background} !important;
         }`;
-        document.head.appendChild(style);
         // <- Custom Terminal Selection Handles Styles
 
         return theme;
+    },
+
+    applyRawTheme: function (themeObj) {
+        let builtTheme = TerminalHelper.buildTheme({ theme: themeObj });
+        TerminalHelper.applyTheme(builtTheme);
     },
 
     buildTerminalSettings: function (terminalSettings) {
