@@ -318,8 +318,10 @@ const TerminalHelper = {
                 terminal._core._coreBrowserService._cachedIsFocused = true;
             }
             if ('DOM' === renderType) {
-                document.querySelector('span.xterm-cursor').classList.add('xterm-cursor-blink');
-                document.querySelector('div.xterm-rows').classList.add('xterm-focus');
+                const cursorEl = document.querySelector('span.xterm-cursor');
+                const rowsEl = document.querySelector('div.xterm-rows');
+                if (cursorEl) cursorEl.classList.add('xterm-cursor-blink');
+                if (rowsEl) rowsEl.classList.add('xterm-focus');
             }
             // <- #974 : Upgrade xterm.js to 5.3.0
 
@@ -432,7 +434,11 @@ const TerminalHelper = {
         const hasWebGLAddon = terminal._addonManager._addons.some(
             addon => addon.instance && addon.instance._addonType === "WebglAddon"
         );
-        return hasWebGLAddon ? "WEBGL" : "DOM";
+        if (hasWebGLAddon) return "WEBGL";
+        const hasCanvasAddon = terminal._addonManager._addons.some(
+            addon => addon.instance && addon.instance._addonType === "CanvasAddon"
+        );
+        return hasCanvasAddon ? "canvas" : "DOM";
     },
 
     getBracketedPasteMode: function () {
