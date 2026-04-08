@@ -309,7 +309,7 @@ const TerminalHelper = {
         if (TerminalHelper.cursorBlinkInterval) {
             clearInterval(TerminalHelper.cursorBlinkInterval);
         }
-        TerminalHelper.cursorBlinkInterval = setInterval(function () {
+        const applyBlink = function () {
             terminal._core.optionsService.options.cursorBlink = enable;
 
             // #974 : Upgrade xterm.js to 5.3.0 ->
@@ -328,7 +328,9 @@ const TerminalHelper = {
             if (terminal.textarea) {
                 TerminalHelper.focus(enable);
             }
-        }, 1500);
+        };
+        applyBlink();
+        TerminalHelper.cursorBlinkInterval = setInterval(applyBlink, 1500);
     },
 
     scrollToBottom: function () {
