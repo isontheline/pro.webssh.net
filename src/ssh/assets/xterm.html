@@ -56,9 +56,12 @@
         );
 
       // Load renderer addon :
-      // OS 26+ has a WebGL font atlas rendering bug (garbled/italic text).
-      // Use the canvas renderer on OS 26+ until xterm.js ships a fix.
-      const useCanvasRenderer = true || terminalSettings.runMode == "lockmode";
+      // OS 26.5+ has a WebGL font atlas rendering bug (garbled/italic text).
+      // "auto" currently maps to canvas until xterm.js ships a fix.
+      // Lockdown mode always forces canvas regardless of the renderer setting.
+      const useCanvasRenderer = terminalSettings.rendererMode === "canvas" ||
+        terminalSettings.rendererMode === "auto" ||
+        terminalSettings.runMode === "lockdown";
 
       if (useCanvasRenderer) {
         const canvasAddon = new CanvasAddon.CanvasAddon();

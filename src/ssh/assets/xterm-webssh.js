@@ -564,6 +564,7 @@ const TerminalHelper = {
             reverseWraparound: true,
             rows: 25,
             runMode: 'normal',
+            rendererMode: 'auto',
             scrollback: 1000,
             theme: {}
         }
@@ -611,6 +612,10 @@ const TerminalHelper = {
 
         if (fragment.runMode) {
             terminalSettings.runMode = fragment.runMode;
+        }
+
+        if (fragment.rendererMode) {
+            terminalSettings.rendererMode = fragment.rendererMode;
         }
 
         if (fragment.textSelectionStrategy && fragment.textSelectionStrategy == 'clipboard') {
