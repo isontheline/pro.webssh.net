@@ -564,7 +564,7 @@ const TerminalHelper = {
             reverseWraparound: true,
             rows: 25,
             runMode: 'normal',
-            rendererMode: 'auto',
+            rendererMode: 'canvas',
             scrollback: 1000,
             theme: {}
         }
