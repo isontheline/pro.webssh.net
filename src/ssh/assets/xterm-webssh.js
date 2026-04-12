@@ -407,6 +407,10 @@ const TerminalHelper = {
         return textSelection;
     },
 
+    serializeScreen: function () {
+        return serializeAddon.serialize({ scrollback: 0 });
+    },
+
     // Used for VoiceOver support :
     exportRawScreenRows: function () {
         const renderType = TerminalHelper.getRenderType();
