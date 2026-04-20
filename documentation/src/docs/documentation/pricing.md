@@ -59,8 +59,8 @@
 | No data collection | :white_check_mark: | :white_check_mark: |
 | No marketing tracking | :white_check_mark: | :white_check_mark: |
 
-Yes you see it right : **FREE** version is the most generous free tier you can find on the App Store for SSH / SFTP / TELNET / Serial Port clients! You can do the same as the **PRO** version but with only one connection saved at a time.
+Yes you see it right : **FREE** version is the most generous free tier you can find on the App Store!
 
-If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/), [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub or just ask <a href="#" onclick="javascript:showDocumentationAssistant(); return false;">WebSSH Brain - Documentation Assistant</a>.
+If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Serial Port Client is only available on macOS
