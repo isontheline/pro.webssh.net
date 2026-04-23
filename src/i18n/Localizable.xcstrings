@@ -506,6 +506,107 @@
         }
       }
     },
+    "Add_Key_Subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tryk for at tilføje en ny nøgle"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tippe, um einen neuen Schlüssel hinzuzufügen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap to add a new key"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toca para agregar una nueva clave"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appuyez pour ajouter une nouvelle clé"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocca per aggiungere una nuova chiave"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タップして新しいキーを追加"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "새 키를 추가하려면 탭하세요"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dotknij, aby dodać nowy klucz"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para adicionar uma nova chave"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите, чтобы добавить новый ключ"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tryck för att lägga till en ny nyckel"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni anahtar eklemek için dokunun"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Торкніться, щоб додати новий ключ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "点击以添加新密钥"
+          }
+        },
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "點擊以新增新金鑰"
+          }
+        }
+      }
+    },
     "Add_Marker": {
       "extractionState": "manual",
       "localizations": {
@@ -16262,6 +16363,208 @@
         }
       }
     },
+    "No_Connections_Found": {
+      "extractionState": "manual",
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen forbindelser fundet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Verbindungen gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Connections Found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron conexiones"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune connexion trouvée"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna connessione trovata"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "接続が見つかりません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "연결을 찾을 수 없음"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie znaleziono połączeń"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma ligação encontrada"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подключения не найдены"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga anslutningar hittades"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantı bulunamadı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Підключень не знайдено"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到连接"
+          }
+        },
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到連線"
+          }
+        }
+      }
+    },
+    "No_Keys_Found": {
+      "extractionState": "manual",
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen nøgler fundet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Schlüssel gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Keys Found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron claves"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune clé trouvée"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna chiave trovata"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キーが見つかりません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "키를 찾을 수 없음"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie znaleziono kluczy"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhuma chave encontrada"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ключи не найдены"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga nycklar hittades"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anahtar bulunamadı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ключі не знайдено"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到密钥"
+          }
+        },
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到金鑰"
+          }
+        }
+      }
+    },
     "No_Name": {
       "extractionState": "manual",
       "localizations": {
@@ -16571,97 +16874,97 @@
         "da": {
           "stringUnit": {
             "state": "translated",
-            "value": "Start en optagelse fra State Bar under en aktiv SSH-session."
+            "value": "Start en optagelse fra State Bar under en aktiv terminalsession."
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Starte eine Aufnahme über die State Bar während einer aktiven SSH-Sitzung."
+            "value": "Starte eine Aufnahme über die State Bar während einer aktiven Terminalsitzung."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Start a recording from the State Bar during an active SSH session."
+            "value": "Start a recording from the State Bar during an active terminal session."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicia una grabación desde la barra de estado durante una sesión SSH activa."
+            "value": "Inicia una grabación desde la barra de estado durante una sesión de terminal activa."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Démarrez un enregistrement depuis la barre d'état lors d'une session SSH active."
+            "value": "Démarrez un enregistrement depuis la barre d'état lors d'une session de terminal active."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Avvia una registrazione dalla barra di stato durante una sessione SSH attiva."
+            "value": "Avvia una registrazione dalla barra di stato durante una sessione di terminale attiva."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "アクティブなSSHセッション中にState Barから録画を開始します。"
+            "value": "アクティブなターミナルセッション中にState Barから録画を開始します。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "활성 SSH 세션 중 State Bar에서 녹화를 시작하세요."
+            "value": "활성 터미널 세션 중 State Bar에서 녹화를 시작하세요."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Rozpocznij nagrywanie z State Bar podczas aktywnej sesji SSH."
+            "value": "Rozpocznij nagrywanie z State Bar podczas aktywnej sesji terminalowej."
           }
         },
         "pt": {
           "stringUnit": {
             "state": "translated",
-            "value": "Inicie uma gravação na State Bar durante uma sessão SSH ativa."
+            "value": "Inicie uma gravação na State Bar durante uma sessão de terminal ativa."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Начните запись из State Bar во время активной сессии SSH."
+            "value": "Начните запись из State Bar во время активного сеанса терминала."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Starta en inspelning från State Bar under en aktiv SSH-session."
+            "value": "Starta en inspelning från State Bar under en aktiv terminalsession."
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Aktif bir SSH oturumu sırasında State Bar'dan kayıt başlatın."
+            "value": "Aktif bir terminal oturumu sırasında State Bar'dan kayıt başlatın."
           }
         },
         "uk": {
           "stringUnit": {
             "state": "translated",
-            "value": "Почніть запис із State Bar під час активного SSH-сеансу."
+            "value": "Почніть запис із State Bar під час активного сеансу терміналу."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在活跃的 SSH 会话中，从 State Bar 开始录制。"
+            "value": "在活跃的终端会话中，从 State Bar 开始录制。"
           }
         },
         "zh-Hant-TW": {
           "stringUnit": {
             "state": "translated",
-            "value": "在活躍的 SSH 工作階段中，從 State Bar 開始錄製。"
+            "value": "在活躍的終端機工作階段中，從 State Bar 開始錄製。"
           }
         }
       }
@@ -16763,6 +17066,107 @@
           "stringUnit": {
             "state": "translated",
             "value": "尚無錄製"
+          }
+        }
+      }
+    },
+    "No_Snippets_Found": {
+      "extractionState": "manual",
+      "localizations": {
+        "da": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingen snippets fundet"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keine Snippets gefunden"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Snippets Found"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se encontraron snippets"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucun snippet trouvé"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun snippet trovato"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スニペットが見つかりません"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "스니펫을 찾을 수 없음"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie znaleziono snippetów"
+          }
+        },
+        "pt": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum snippet encontrado"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сниппеты не найдены"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inga snippets hittades"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snippet bulunamadı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сніпети не знайдено"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到 Snippet"
+          }
+        },
+        "zh-Hant-TW": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未找到 Snippet"
           }
         }
       }
