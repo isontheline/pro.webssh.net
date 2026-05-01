@@ -402,7 +402,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -1434,7 +1434,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -1650,7 +1650,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -1674,7 +1674,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -2731,6 +2731,30 @@
 
         
           <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/licenses/LICENSE_CYBERCHEF/</loc>
+
+    
+    <lastmod>2026-05-01T15:49:11+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
