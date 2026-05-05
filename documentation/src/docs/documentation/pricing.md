@@ -36,7 +36,6 @@
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
 | [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: |
-| [WebSSH Brain](/documentation/help/webssh-brain/) | :white_check_mark: | :white_check_mark: |
 | [Web Browser](/documentation/web-browser/) | :white_check_mark: | :white_check_mark: |
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :white_check_mark: |
 | **Sysadmin Tools** | **FREE** | **PRO** |

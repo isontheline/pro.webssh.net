@@ -12,6 +12,13 @@ title: WebSSH Brain
     * The developer cannot assume responsibility for any damage inflicted on a system or individual. 
     * It is imperative to acknowledge that you, as the user, are solely responsible for the actions taken while using WebSSH Brain.
 
+??? warning "WebSSH Brain is beeing retired"
+    WebSSH Brain is being retired and will no longer be available in future updates. The decision to retire WebSSH Brain was made after careful consideration of various factors, including user feedback, maintenance requirements, and the evolving landscape of AI technologies.
+
+    While WebSSH Brain has been a valuable tool for many users, it has become increasingly challenging to maintain and update the AI model effectively. As a result, I have decided to focus my resources on other features and improvements that will enhance the overall user experience of WebSSH.
+
+    I understand that some users may have found WebSSH Brain helpful, and I appreciate your support and understanding as I transition away from this feature. If you have any questions or concerns about the retirement of WebSSH Brain, please feel free to reach out to me through our [contact page](/documentation/contact-me/).
+
 ## Powered AI Assistants
 
 ### Documentation Assistant
