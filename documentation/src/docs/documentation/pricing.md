@@ -46,6 +46,7 @@
 | Whois Lookup | :white_check_mark: | :white_check_mark: |
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
 | Wake-on-LAN | :white_check_mark: | :white_check_mark: |
+| Baker Toolkit : Unlimited number of recipes | :cross_mark: (Only 1) | :white_check_mark: |
 | **Operating System Support** | **FREE** | **PRO** |
 | iPhoneOS | :white_check_mark: | :white_check_mark: |
 | iPadOS | :white_check_mark: | :white_check_mark: |
