@@ -7,7 +7,7 @@
 
 [![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
 
-## Sponsors
+## Sponsors ❤️
 
 [![WebSSH Sponsors](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/sponsors/sponsors.png)](https://github.com/sponsors/isontheline)
 
