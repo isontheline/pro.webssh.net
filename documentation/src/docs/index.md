@@ -37,9 +37,13 @@ Have a nice day :sunny:
 ### iPadOS
 <img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-ipados.jpg" style="max-height: 200px;" alt="WebSSH iPadOS SSH / SFTP / Port Forwarding client" />
 
-## Star History
+## Star History ⭐
 
 [![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
+
+## Sponsors ❤️
+
+[![WebSSH Sponsors](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/sponsors/sponsors.png)](https://github.com/sponsors/isontheline)
 
 ## Privacy Policy
 WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!

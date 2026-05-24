@@ -3,7 +3,7 @@
 * :blue_book: You are also welcome to read [documentation](https://webssh.net)
 * :syringe: If you are not afraid you can [become a beta tester](https://webssh.net/documentation/becoming-external-tester/)
 
-## Star History
+## Star History ⭐
 
 [![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
 
