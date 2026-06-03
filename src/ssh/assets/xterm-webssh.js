@@ -239,6 +239,11 @@ const TerminalHelper = {
             console.log('On Binary Called');
         });
 
+        // #994 : Enable touch -> wheel forwarding (finger scroll in neovim/vim/less...).
+        // The scroll-mode handler self-gates (it only acts when the app uses mouse
+        // tracking or the alternate buffer), so this is inert for normal scrollback.
+        TerminalHelper.changeTouchMode('scroll');
+
         // Notify that all components are now ready :
         JS2IOS.calliOSFunction('notifyTerminalReady');
     },
@@ -763,6 +768,13 @@ const TerminalHelper = {
 
         switch (touchMode) {
             case 'select':
+                // #994 : Stop forwarding finger scroll while selecting text ->
+                xtermScreen.removeEventListener("touchstart", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.removeEventListener("touchmove", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.removeEventListener("touchend", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.removeEventListener("touchcancel", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                // <- #994
+
                 xtermScreen.addEventListener("touchstart", TouchHelper.touchHandler, true);
                 xtermScreen.addEventListener("touchmove", TouchHelper.touchHandler, true);
                 xtermScreen.addEventListener("touchend", TouchHelper.touchHandler, true);
@@ -774,6 +786,16 @@ const TerminalHelper = {
                 xtermScreen.removeEventListener("touchmove", TouchHelper.touchHandler, true);
                 xtermScreen.removeEventListener("touchend", TouchHelper.touchHandler, true);
                 xtermScreen.removeEventListener("touchcancel", TouchHelper.touchHandler, true);
+
+                // #994 : Forward finger scroll to the server (neovim/vim/less...) ->
+                // When an application is in mouse-tracking or alternate-buffer mode,
+                // native viewport scrolling does nothing useful, so we translate the
+                // swipe into synthetic wheel events that xterm.js forwards to the host.
+                xtermScreen.addEventListener("touchstart", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.addEventListener("touchmove", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.addEventListener("touchend", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                xtermScreen.addEventListener("touchcancel", TouchHelper.scrollForwardHandler, { capture: true, passive: false });
+                // <- #994
                 break;
 
             default:
@@ -841,5 +863,112 @@ const TouchHelper = {
 
         // We don't want to propagate the event to the terminal :
         event.stopPropagation();
+    },
+
+    // #994 : Forward finger scroll to the server ->
+    // Per-gesture state for the touch -> wheel forwarder :
+    _scrollActive: false,   // gesture is armed (forwarding may apply)
+    _scrollEmitted: false,  // we have started forwarding (>= 1 line scrolled)
+    _scrollLastY: 0,
+    _scrollAccum: 0,
+
+    // Decide whether the current gesture should be forwarded to the host.
+    // We only forward when native viewport scrolling wouldn't reach the server :
+    //   - the application enabled mouse tracking (e.g. neovim `:set mouse=a`), or
+    //   - the alternate buffer is active (full-screen apps : vim, less, man...).
+    // In every other case we leave the native scrollback scrolling untouched.
+    shouldForwardScroll: function () {
+        try {
+            if (terminal._core.coreMouseService.areMouseEventsActive) {
+                return true;
+            }
+        } catch (e) { }
+
+        return terminal.buffer.active.type === 'alternate';
+    },
+
+    // One terminal line in CSS pixels, used to size each synthetic wheel event :
+    scrollLineHeight: function () {
+        try {
+            const height = terminal._core._renderService.dimensions.css.cell.height;
+            if (height > 0) {
+                return height;
+            }
+        } catch (e) { }
+
+        return 17;
+    },
+
+    scrollForwardHandler: function (event) {
+        switch (event.type) {
+            case 'touchstart':
+                // Ignore multi-touch (pinch/zoom...) and only arm when forwarding applies :
+                if (event.touches.length !== 1) {
+                    TouchHelper._scrollActive = false;
+                    return;
+                }
+
+                // Arm tracking, but DON'T swallow the touch here. A tap (no movement)
+                // must still reach xterm.js as a synthesized mouse click so TUI buttons
+                // and mouse-mode apps keep working. We only take over the gesture once a
+                // real scroll of at least one line happens (see 'touchmove').
+                TouchHelper._scrollActive = TouchHelper.shouldForwardScroll();
+                TouchHelper._scrollEmitted = false;
+                TouchHelper._scrollLastY = event.touches[0].clientY;
+                TouchHelper._scrollAccum = 0;
+                break;
+
+            case 'touchmove':
+                if (!TouchHelper._scrollActive || event.touches.length !== 1) {
+                    return;
+                }
+
+                const touch = event.touches[0];
+
+                // Direct manipulation : the content follows the finger.
+                const dy = touch.clientY - TouchHelper._scrollLastY;
+                TouchHelper._scrollLastY = touch.clientY;
+                TouchHelper._scrollAccum += dy;
+
+                const step = TouchHelper.scrollLineHeight();
+                let emitted = false;
+
+                while (Math.abs(TouchHelper._scrollAccum) >= step) {
+                    const dir = TouchHelper._scrollAccum > 0 ? 1 : -1;
+                    const wheel = new WheelEvent('wheel', {
+                        deltaY: dir * step, // pixel mode (deltaMode 0) : WebKit ignores deltaMode in ctor
+                        deltaX: 0,
+                        bubbles: true,
+                        cancelable: true,
+                        clientX: touch.clientX,
+                        clientY: touch.clientY,
+                    });
+                    (event.target || document.querySelector('.xterm-screen')).dispatchEvent(wheel);
+
+                    TouchHelper._scrollAccum -= dir * step;
+                    emitted = true;
+                }
+
+                // Take over the gesture (suppress native scroll / click synthesis) only
+                // once we've actually scrolled. A pure tap never reaches this branch, so
+                // its synthesized click is preserved.
+                if (emitted || TouchHelper._scrollEmitted) {
+                    TouchHelper._scrollEmitted = true;
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                break;
+
+            case 'touchend':
+            case 'touchcancel':
+                TouchHelper._scrollActive = false;
+                TouchHelper._scrollEmitted = false;
+                TouchHelper._scrollAccum = 0;
+                break;
+
+            default:
+                return;
+        }
     }
+    // <- #994
 };
