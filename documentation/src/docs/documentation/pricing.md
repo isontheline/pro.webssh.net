@@ -27,6 +27,7 @@
 | Main Features | FREE | PRO |
 | --- | --- | --- |
 | Unlimited number of connections | :cross_mark: (Only 1) | :white_check_mark: |
+| Unlimited number of connectors[^2] | :cross_mark: (Only 1) | :white_check_mark: |
 | SSH Client | :white_check_mark: | :white_check_mark: |
 | SFTP Client | :white_check_mark: | :white_check_mark: |
 | TELNET Client | :white_check_mark: | :white_check_mark: |
@@ -64,3 +65,4 @@ Yes you see it right : **FREE** version is the most generous free tier you can f
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Serial Port Client is only available on macOS
+[^2]: Connectors are coming on WebSSH v32.3 - so stay tuned for more information about this new feature!
