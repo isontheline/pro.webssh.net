@@ -5,7 +5,7 @@
 
 ## Star History ⭐
 
-[![Star History Chart](https://api.star-history.com/svg?repos=isontheline/pro.webssh.net&type=Date)](https://github.com/isontheline/pro.webssh.net)
+[![Star History Chart](https://api.star-history.com/chart?repos=isontheline/pro.webssh.net&type=date&legend=top-left&sealed_token=rv0Na2ir4qB80d0Xeb8Jau9GgogbcTUmVlBE5B4tQR0gAwTEb_gXBknBIW29zxGpr_XfWccmR-fd_-Rsn3uOzztIukEjq1TxeGwh5KOxXVHwSc3jqIsqSDsdxQIJt6SKd1BiWs0pe_jsYYuKDR0gzc8bhVcKtu4RBe1CrPqnxWs1uEHVPVjDz_7PWuxh)](https://github.com/isontheline/pro.webssh.net)
 
 ## Sponsors ❤️
 
