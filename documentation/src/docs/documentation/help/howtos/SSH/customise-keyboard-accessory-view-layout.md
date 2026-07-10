@@ -84,6 +84,7 @@ When you press a Special Key, the corresponding action will be executed.
 
 | Token            | Description                                                      | Required Version |
 |------------------|------------------------------------------------------------------|------------------|
+| {ALT}            | Alt / Meta / Option Key                                          | 32.4             |
 | {ARROWS}         | The all-in-one four arrows key                                   | 23.0             |
 | {BRACKETS}       | All brackets options on same key                                 | 28.3             |
 | {CTL}            | Control Key                                                      | 23.0             |
