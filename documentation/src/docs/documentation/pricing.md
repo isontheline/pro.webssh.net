@@ -65,4 +65,4 @@ Yes you see it right : **FREE** version is the most generous free tier you can f
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 [^1]: Serial Port Client is only available on macOS
-[^2]: Connectors are coming soon on WebSSH v32.x - so stay tuned for more information about this new feature!
+[^2]: Connectors are coming soon on a future version of WebSSH - so stay tuned for more information about this new feature!
