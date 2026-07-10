@@ -18,6 +18,15 @@ title: Meta / Alt / Option
 3. Choose the "Alt" key
 4. As the "Alt" key is now toggled you can now press a key character in order to send the wanted escape sequence
 
+## How to choose the ALT + Arrow keys encoding[^2]?
+By default, ALT + ◄ / ► send the readline words motion sequences (`ESC b` / `ESC f`) and ALT + ▲ / ▼ send the `ESC` prefixed arrow sequences.
+
+If you are using a program that expects the standard xterm modifier sequences (`\e[1;3A-D`) — like Zellij, tmux or byobu — add the following to your [SSH Config File](/documentation/help/SSH/ssh-config-file/) :
+```
+#!AltArrowKeysMode csi
+```
+This setting applies to both the virtual keyboard arrow keys and a physical keyboard.
+
 ## How to use it[^1] on a physical keyboard?
 1. Launch a SSH connection
 2. Press "Control" AND "Option" keys AND press a key character in order to send the wanted escape sequence

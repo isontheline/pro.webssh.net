@@ -75,6 +75,7 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 
 | Keyword | Type | Expected value | Since | Example usage |
 | --- | --- | --- | --- | --- |
+| #!AltArrowKeysMode | String | Encoding used when sending ALT + Arrow keys. Possible values : `readline` (words motion : `ESC b` / `ESC f`), `csi` (standard xterm modifier sequences `\e[1;3A-D` understood by Zellij / tmux / byobu) | 32.4 | `#!AltArrowKeysMode csi` |
 | #!BackgroundColor | String | Terminal background color. Any CSS value. | 22.4 | `#!BackgroundColor pink` |
 | #!BadgeColor | String | Terminal badge color. Any CSS value. | 29.6 | `#!BadgeColor red` |
 | #!BadgeContent | String | Terminal badge content. Any text value. | 29.6 | `#!BadgeContent "My Server - Production"` |
