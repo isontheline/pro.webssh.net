@@ -30,7 +30,7 @@ Quick diagnostics without leaving the app: Ping, Traceroute, DNS Lookup, and Who
 
 WHY WEBSSH?
 
-Most SSH clients are either too basic or too bloated. WebSSH hits the sweet spot: professional-grade features, a clean mobile-first interface, and rock-solid reliability — all in a single one-time purchase, no subscription required.
+Most SSH clients are either too basic or too bloated. WebSSH hits the sweet spot: professional-grade features, a clean mobile-first interface, and rock-solid reliability — every on-device feature unlocked with a single one-time PRO purchase, yours for life.
 
 One app. Every protocol. Zero compromises.
 
