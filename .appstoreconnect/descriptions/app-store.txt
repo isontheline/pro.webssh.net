@@ -1,6 +1,6 @@
 Whether you're on the go or at your desk, WebSSH keeps you connected — anytime, anywhere! ٩(^‿^)۶
 
-WebSSH is a professional SSH, SFTP, Telnet, and Port Forwarding client for iOS and macOS — built for developers, system administrators, and IT professionals who need reliable, secure remote access wherever they are.
+WebSSH is a professional SSH, SFTP, Telnet, and Port Forwarding client for iOS and macOS — now with an integrated Proxmox client. Built for developers, system administrators, and IT professionals who need reliable, secure remote access wherever they are.
 
 
 CONNECT WITH CONFIDENCE
@@ -16,6 +16,11 @@ The integrated SFTP client lets you browse directories, create, rename, upload, 
 MORE THAN SSH
 
 WebSSH also supports Telnet and Serial connections, making it a versatile tool across a wide range of scenarios. Serial connections support full configuration (baud rate, parity, stop bits, flow control), and Telnet supports both direct and interactive authentication.
+
+
+PROXMOX AT YOUR FINGERTIPS
+
+NEW: WebSSH now includes a built-in Proxmox client. Connect to one or more Proxmox servers and clusters, monitor your nodes at a glance (CPU, memory, storage), and manage your VMs and LXC containers — start, stop, reboot and migrate them right from your iPhone, iPad, or Mac.
 
 
 BUILT-IN SYSADMIN TOOLKIT

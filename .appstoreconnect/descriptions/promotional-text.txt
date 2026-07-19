@@ -1,0 +1,1 @@
+NEW: Built-in Proxmox client! Monitor your nodes and manage VMs & LXC containers across servers and clusters — right from your iPhone, iPad, or Mac.
