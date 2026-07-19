@@ -32,6 +32,7 @@
 | SFTP Client | :white_check_mark: | :white_check_mark: |
 | TELNET Client | :white_check_mark: | :white_check_mark: |
 | Serial Port Client[^1] | :white_check_mark: | :white_check_mark: |
+| Proxmox-Over-SSH[^3] | :check_mark: (Read Only) | :white_check_mark: |
 | Snippets | :white_check_mark: | :white_check_mark: |
 | **Advanced Features** | **FREE** | **PRO** |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
@@ -67,3 +68,4 @@ If you need more information about the differences between **FREE** and **PRO** 
 
 [^1]: Serial Port Client is only available on macOS
 [^2]: Connectors are coming soon on a future version of WebSSH - so stay tuned for more information about this new feature!
+[^3]: Proxmox-Over-SSH is available since WebSSH 32.5
