@@ -8,13 +8,13 @@ Most SSH clients on the App Store have quietly moved to subscription pricing. Yo
 
 ## The Problem with Subscription SSH Clients
 
-Subscription-based apps make financial sense for the developer, but they create a real problem for the user:
+There is nothing wrong with a subscription when it funds servers running 24/7 for you. The problem is paying a recurring fee for features that run entirely on your own device:
 
 - **Ongoing cost** — a $9.99/month SSH client costs more per year than most desktop tools
 - **Held hostage** — if you stop paying, your saved connections and keys may become inaccessible
-- **Privacy concerns** — some sync your server credentials to the developer's cloud infrastructure
+- **Privacy concerns** — some sync your server credentials to the developer's cloud infrastructure, whether you want it or not
 
-If you use SSH professionally, you're already paying for servers, VPNs, and tooling. Your SSH client shouldn't be another recurring line item.
+If you use SSH professionally, you're already paying for servers, VPNs, and tooling. Core SSH features shouldn't be another recurring line item.
 
 ## WebSSH: One Purchase, No Subscription
 
@@ -34,7 +34,7 @@ See the [full feature comparison](/documentation/pricing/) for FREE vs PRO detai
 
 ## Your Data Stays on Your Device
 
-WebSSH stores your connections, credentials, and private keys locally on your device. Sync across your own Apple devices happens through your personal iCloud account — your data never passes through any third-party server.
+WebSSH stores your connections, credentials, and private keys locally on your device. Sync across your own Apple devices happens through your personal iCloud account — nothing is sent to the developer's servers.
 
 This matters when you're storing SSH private keys and server credentials. You should know exactly where that data lives.
 
@@ -56,6 +56,9 @@ If the one-time price is a barrier, discounts are available for students and edu
 
 ??? question "Will future versions be free updates or paid upgrades?"
     All updates to WebSSH have been free since 2012. There has never been a paid major version upgrade.
+
+??? question "Will WebSSH PRO ever become a subscription?"
+    No. **PRO is a lifetime purchase** : every feature that runs on your device is included forever. If WebSSH one day offers optional cloud-powered services (features requiring servers running 24/7), those would be a separate, optional subscription — nothing you already own would move behind it.
 
 ??? question "What happens if I delete the app?"
     Your purchase is tied to your Apple ID. Reinstall WebSSH and restore your purchase from **Settings → App Store → Restore Purchase**. See [Restore Purchases](/documentation/help/restore-purchases/).

@@ -9,15 +9,20 @@
 
     :one: Only one purchase will allow you to use WebSSH **PRO** on all your devices (by using the same Apple ID). So you will be able to use WebSSH **PRO** on your iPhone, your iPad and your Mac with the same purchase!
 
-    :moneybag: Get your money's worth : Unlike competitors, WebSSH **PRO** isn't a subscription model app. No hidden costs. You buy it for **lifetime** with regular updates for **FREE**!
+    :moneybag: Get your money's worth : WebSSH **PRO** is a **one-time lifetime purchase**. Every on-device feature is yours forever, with regular updates for **FREE**. No hidden costs.
 
 ??? tip "Student and educator discounts"
     Students and educators are the backbone of our tech community. Whether you're learning system administration, teaching others, or managing school infrastructure, I want to make sure WebSSH **PRO** is accessible to you.
     
     [Contact me](/documentation/contact-me/) for details and your discount redemption link.
 
+??? info "Will PRO ever become a subscription?"
+    **No.** WebSSH **PRO** is and will remain a **one-time lifetime purchase** : every feature that runs on your device is included, forever, with **FREE** regular updates.
+
+    In the future, WebSSH may offer **optional cloud-powered services** (features that rely on servers running 24/7). Because these have recurring infrastructure costs, they would be offered as a **separate, optional subscription** — but nothing you already own moves behind it. Your **PRO** purchase keeps its full value, always.
+
 ??? danger "It's too expensive!"
-    Since 2012, WebSSH has been sustained and maintained as an indie app supported by a one-time purchase, with regular monthly updates provided for **FREE** — and I want to keep it that way. Unlike competitors, there's no subscription model or hidden costs.
+    Since 2012, WebSSH has been sustained and maintained as an indie app supported by a one-time purchase, with regular monthly updates provided for **FREE**. No hidden costs.
 
     If you think the price is too high, please consider the effort I put into making WebSSH an awesome sysadmin tool for you. The price supports ongoing development and maintenance of the app.
 
@@ -56,7 +61,7 @@
 | macOS | :white_check_mark: | :white_check_mark: |
 | visionOS<br /><small>(Supported as "Designed for iPad")</small> | :white_check_mark: | :white_check_mark: |
 | **Notable Mentions** | **FREE** | **PRO** |
-| Lifetime purchase (no subscription) | / | :white_check_mark: |
+| Lifetime purchase (pay once, keep forever) | / | :white_check_mark: |
 | Regular updates | :white_check_mark: | :white_check_mark: |
 | No Ads | :white_check_mark: | :white_check_mark: |
 | No data collection | :white_check_mark: | :white_check_mark: |
