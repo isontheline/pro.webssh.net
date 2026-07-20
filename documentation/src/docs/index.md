@@ -43,7 +43,7 @@ Have a nice day :sunny:
 
 ## Sponsors ❤️
 
-WebSSH **PRO** is a one-time purchase app, but if you like it and want to support the project further, please consider [sponsoring](https://github.com/sponsors/isontheline). 
+WebSSH **PRO** is a one-time purchase, but if you like it and want to support the project further, please consider [sponsoring](https://github.com/sponsors/isontheline). 
 
 Every contribution - even a small one - is greatly appreciated and will help me keep the project alive and improve it.
 
