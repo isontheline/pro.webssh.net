@@ -43,7 +43,9 @@ Have a nice day :sunny:
 
 ## Sponsors ❤️
 
-[![WebSSH Sponsors](https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/sponsors/sponsors.png)](https://github.com/sponsors/isontheline)
+WebSSH **PRO** is a one-time purchase app, but if you like it and want to support the project further, please consider [sponsoring](https://github.com/sponsors/isontheline). 
+
+Every contribution - even a small one - is greatly appreciated and will help me keep the project alive and improve it.
 
 ## Privacy Policy
 WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
