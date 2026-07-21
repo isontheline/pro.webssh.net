@@ -6,29 +6,31 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Manage your Proxmox VE server from iPhone or iPad over SSH. Start VMs, enter containers, check cluster status and reach the web UI — with WebSSH.">
       
       
-        <link rel="canonical" href="https://webssh.net/licenses/LICENSE_GCIMAGEPICKERCONTROLLER/">
+      
+        <link rel="canonical" href="https://webssh.net/documentation/guides/ssh-proxmox-iphone/">
       
       
-        <link rel="prev" href="../LICENSE_GCDTIMER/">
+        <link rel="prev" href="../sftp-file-transfer-iphone/">
       
       
-        <link rel="next" href="../LICENSE_GCPLACEHOLDERTEXTVIEW/">
+        <link rel="next" href="../synology-ssh-iphone-ipad/">
       
-      <link rel="icon" href="../../images/favicon.ico">
+      <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
     
     
       
-        <title>GCImagePickerController - WebSSH</title>
+        <title>How to SSH into Proxmox from iPhone or iPad - WebSSH</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -38,11 +40,11 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css?20251102B">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css?20251102B">
     
-      <link rel="stylesheet" href="../../stylesheets/autorag.css?20251102B">
+      <link rel="stylesheet" href="../../../stylesheets/autorag.css?20251102B">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gcimagepickercontroller" class="md-skip">
+        <a href="#how-to-ssh-into-proxmox-from-iphone-or-ipad" class="md-skip">
           Skip to content
         </a>
       
@@ -84,9 +86,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCImagePickerController
+              How to SSH into Proxmox from iPhone or iPad
             
           </span>
         </div>
@@ -165,7 +167,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Getting Started
     </a>
   </li>
@@ -177,26 +179,10 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../support/" class="md-tabs__link">
+    <a href="../../../support/" class="md-tabs__link">
       Support
     </a>
   </li>
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../documentation/" class="md-tabs__link">
-        Documentation
-      </a>
-    </li>
-  
 
       
         
@@ -210,7 +196,23 @@
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../licenses/" class="md-tabs__link">
         Licenses
       </a>
     </li>
@@ -238,9 +240,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     WebSSH
@@ -256,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -271,7 +273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../support/" class="md-nav__link">
+      <a href="../../../support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -284,18 +286,20 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
           Documentation
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -313,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         About Documentation
       </a>
     </li>
@@ -327,7 +331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/becoming-external-tester/" class="md-nav__link">
+      <a href="../../becoming-external-tester/" class="md-nav__link">
         Beta Enrollment
       </a>
     </li>
@@ -341,7 +345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/contact-me/" class="md-nav__link">
+      <a href="../../contact-me/" class="md-nav__link">
         Contact Me
       </a>
     </li>
@@ -355,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/frequently-asked-questions/" class="md-nav__link">
+      <a href="../../frequently-asked-questions/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -369,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/mashREPL/" class="md-nav__link">
+      <a href="../../mashREPL/" class="md-nav__link">
         mashREPL
       </a>
     </li>
@@ -383,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         Pricing
       </a>
     </li>
@@ -397,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/terminal-state-bar/" class="md-nav__link">
+      <a href="../../terminal-state-bar/" class="md-nav__link">
         Terminal State Bar
       </a>
     </li>
@@ -411,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/translations/" class="md-nav__link">
+      <a href="../../translations/" class="md-nav__link">
         Translations
       </a>
     </li>
@@ -425,7 +429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/web-browser/" class="md-nav__link">
+      <a href="../../web-browser/" class="md-nav__link">
         Web Browser
       </a>
     </li>
@@ -466,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/25/" class="md-nav__link">
+      <a href="../../changelog/25/" class="md-nav__link">
         25 - Sunflower
       </a>
     </li>
@@ -480,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/26/" class="md-nav__link">
+      <a href="../../changelog/26/" class="md-nav__link">
         26 - Train
       </a>
     </li>
@@ -494,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/27/" class="md-nav__link">
+      <a href="../../changelog/27/" class="md-nav__link">
         27 - Stars
       </a>
     </li>
@@ -508,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/28/" class="md-nav__link">
+      <a href="../../changelog/28/" class="md-nav__link">
         28 - Fox
       </a>
     </li>
@@ -522,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/29/" class="md-nav__link">
+      <a href="../../changelog/29/" class="md-nav__link">
         29 - Monkey
       </a>
     </li>
@@ -536,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/30/" class="md-nav__link">
+      <a href="../../changelog/30/" class="md-nav__link">
         30 - Snowflake
       </a>
     </li>
@@ -550,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/31/" class="md-nav__link">
+      <a href="../../changelog/31/" class="md-nav__link">
         31 - Ocean
       </a>
     </li>
@@ -564,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/32/" class="md-nav__link">
+      <a href="../../changelog/32/" class="md-nav__link">
         32 - Comet
       </a>
     </li>
@@ -605,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/15/" class="md-nav__link">
+      <a href="../../changelog/history/15/" class="md-nav__link">
         15 - Cactus
       </a>
     </li>
@@ -619,7 +623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/16/" class="md-nav__link">
+      <a href="../../changelog/history/16/" class="md-nav__link">
         16 - Gem
       </a>
     </li>
@@ -633,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/17/" class="md-nav__link">
+      <a href="../../changelog/history/17/" class="md-nav__link">
         17 - Shell
       </a>
     </li>
@@ -647,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/18/" class="md-nav__link">
+      <a href="../../changelog/history/18/" class="md-nav__link">
         18 - Honeybee
       </a>
     </li>
@@ -661,7 +665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/19/" class="md-nav__link">
+      <a href="../../changelog/history/19/" class="md-nav__link">
         19 - Octopus
       </a>
     </li>
@@ -675,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/20/" class="md-nav__link">
+      <a href="../../changelog/history/20/" class="md-nav__link">
         20 - Moon
       </a>
     </li>
@@ -689,7 +693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/21/" class="md-nav__link">
+      <a href="../../changelog/history/21/" class="md-nav__link">
         21 - Penguin
       </a>
     </li>
@@ -703,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/22/" class="md-nav__link">
+      <a href="../../changelog/history/22/" class="md-nav__link">
         22 - Butterfly
       </a>
     </li>
@@ -717,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/23/" class="md-nav__link">
+      <a href="../../changelog/history/23/" class="md-nav__link">
         23 - Satellite
       </a>
     </li>
@@ -731,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/24/" class="md-nav__link">
+      <a href="../../changelog/history/24/" class="md-nav__link">
         24 - Dragon
       </a>
     </li>
@@ -745,7 +749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/previous-releases/" class="md-nav__link">
+      <a href="../../changelog/history/previous-releases/" class="md-nav__link">
         Previous Releases
       </a>
     </li>
@@ -786,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.10/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.10/" class="md-nav__link">
         14.10 - Truck
       </a>
     </li>
@@ -800,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.11/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.11/" class="md-nav__link">
         14.11 - Milky Way
       </a>
     </li>
@@ -814,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.12/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.12/" class="md-nav__link">
         14.12 - Volcano
       </a>
     </li>
@@ -828,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.13/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.13/" class="md-nav__link">
         14.13 - Tent
       </a>
     </li>
@@ -842,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.14/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.14/" class="md-nav__link">
         14.14 - Green Apple
       </a>
     </li>
@@ -856,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.15/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.15/" class="md-nav__link">
         14.15 - Cookie
       </a>
     </li>
@@ -870,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.16/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.16/" class="md-nav__link">
         14.16 - Whale
       </a>
     </li>
@@ -884,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.17/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.17/" class="md-nav__link">
         14.17 - Trèfle
       </a>
     </li>
@@ -898,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.18/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.18/" class="md-nav__link">
         14.18 - Mushroom
       </a>
     </li>
@@ -912,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.19/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.19/" class="md-nav__link">
         14.19 - Crocodile
       </a>
     </li>
@@ -926,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.6/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.6/" class="md-nav__link">
         14.6 - Bicyclist
       </a>
     </li>
@@ -940,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.7/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.7/" class="md-nav__link">
         14.7 - Tractor
       </a>
     </li>
@@ -954,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.8/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.8/" class="md-nav__link">
         14.8 - Locomotive
       </a>
     </li>
@@ -968,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/changelog/history/14/14.9/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.9/" class="md-nav__link">
         14.9 - Helicopter
       </a>
     </li>
@@ -1001,18 +1005,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="true">
           Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1030,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/free-ssh-client-for-ipad/" class="md-nav__link">
+      <a href="../free-ssh-client-for-ipad/" class="md-nav__link">
         Free SSH Client for iPad — WebSSH
       </a>
     </li>
@@ -1044,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/free-ssh-client-for-iphone/" class="md-nav__link">
+      <a href="../free-ssh-client-for-iphone/" class="md-nav__link">
         Free SSH Client for iPhone — WebSSH
       </a>
     </li>
@@ -1058,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/homelab-ssh-tunnel-ios/" class="md-nav__link">
+      <a href="../homelab-ssh-tunnel-ios/" class="md-nav__link">
         Access Your Homelab Remotely via SSH Tunnel on iOS
       </a>
     </li>
@@ -1072,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/no-subscription-ssh-client-ios/" class="md-nav__link">
+      <a href="../no-subscription-ssh-client-ios/" class="md-nav__link">
         Best SSH Client for iOS Without a Subscription
       </a>
     </li>
@@ -1086,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/port-forwarding-ios/" class="md-nav__link">
+      <a href="../port-forwarding-ios/" class="md-nav__link">
         SSH Port Forwarding on iOS — Tunnels on iPhone & iPad
       </a>
     </li>
@@ -1100,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/raspberry-pi-ssh-ios/" class="md-nav__link">
+      <a href="../raspberry-pi-ssh-ios/" class="md-nav__link">
         How to SSH into a Raspberry Pi from iPhone or iPad
       </a>
     </li>
@@ -1114,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/sftp-file-transfer-iphone/" class="md-nav__link">
+      <a href="../sftp-file-transfer-iphone/" class="md-nav__link">
         Transfer Files via SFTP on iPhone and iPad
       </a>
     </li>
@@ -1126,11 +1132,101 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../documentation/guides/ssh-proxmox-iphone/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          How to SSH into Proxmox from iPhone or iPad
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         How to SSH into Proxmox from iPhone or iPad
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need" class="md-nav__link">
+    What you need
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-add-the-proxmox-connection-in-webssh" class="md-nav__link">
+    Step 1 — Add the Proxmox connection in WebSSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-manage-vms-and-containers-from-the-terminal" class="md-nav__link">
+    Step 2 — Manage VMs and containers from the terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-switch-to-ssh-key-authentication" class="md-nav__link">
+    Step 3 — Switch to SSH key authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-reach-the-proxmox-web-ui-through-an-ssh-tunnel" class="md-nav__link">
+    Step 4 — Reach the Proxmox web UI through an SSH tunnel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    Going further
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1142,7 +1238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/guides/synology-ssh-iphone-ipad/" class="md-nav__link">
+      <a href="../synology-ssh-iphone-ipad/" class="md-nav__link">
         SSH to Synology NAS from iPhone or iPad
       </a>
     </li>
@@ -1190,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/iCloud/" class="md-nav__link">
+      <a href="../../help/iCloud/" class="md-nav__link">
         iCloud
       </a>
     </li>
@@ -1204,7 +1300,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/restore-purchases/" class="md-nav__link">
+      <a href="../../help/restore-purchases/" class="md-nav__link">
         Restoring Purchases
       </a>
     </li>
@@ -1245,7 +1341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
+      <a href="../../help/SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
         Keyboard Shortcuts
       </a>
     </li>
@@ -1259,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/lockdown-mode-and-fonts/" class="md-nav__link">
+      <a href="../../help/SSH/lockdown-mode-and-fonts/" class="md-nav__link">
         Lockdown Mode and Custom Fonts
       </a>
     </li>
@@ -1273,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/public-private-key/" class="md-nav__link">
+      <a href="../../help/SSH/public-private-key/" class="md-nav__link">
         Public / Private Key
       </a>
     </li>
@@ -1287,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/ssh-config-file/" class="md-nav__link">
+      <a href="../../help/SSH/ssh-config-file/" class="md-nav__link">
         SSH Config File
       </a>
     </li>
@@ -1301,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/ssh-copy-id/" class="md-nav__link">
+      <a href="../../help/SSH/ssh-copy-id/" class="md-nav__link">
         ssh-copy-id
       </a>
     </li>
@@ -1315,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/supported-algorithms/" class="md-nav__link">
+      <a href="../../help/SSH/supported-algorithms/" class="md-nav__link">
         Supported Algorithms
       </a>
     </li>
@@ -1329,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/terrapin-attack/" class="md-nav__link">
+      <a href="../../help/SSH/terrapin-attack/" class="md-nav__link">
         Terrapin Attack
       </a>
     </li>
@@ -1343,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
+      <a href="../../help/SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
         Unable to agree upon client-to-server Error
       </a>
     </li>
@@ -1384,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/terminal-settings/terminal-badge/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-settings/terminal-badge/" class="md-nav__link">
         Terminal Badge
       </a>
     </li>
@@ -1398,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
         Terminal Font Size
       </a>
     </li>
@@ -1453,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
+      <a href="../../help/errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
         Can't connect anymore using macOS Sequoia 15.x
       </a>
     </li>
@@ -1467,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
+      <a href="../../help/errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
         Apple Magic Keyboard Space Bar Issue
       </a>
     </li>
@@ -1481,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/errors/no-route-to-host-error/" class="md-nav__link">
+      <a href="../../help/errors/no-route-to-host-error/" class="md-nav__link">
         No Route to Host Error
       </a>
     </li>
@@ -1495,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
+      <a href="../../help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
         Must first connect to the SSH server
       </a>
     </li>
@@ -1543,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/arrange-connections-inside-folders/" class="md-nav__link">
+      <a href="../../help/howtos/arrange-connections-inside-folders/" class="md-nav__link">
         Arrange connections inside folders (groups and subgroups)
       </a>
     </li>
@@ -1557,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
+      <a href="../../help/howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
         Copying text to the clipboard from the terminal.
       </a>
     </li>
@@ -1571,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/create-or-import-public-private-key-pair/" class="md-nav__link">
+      <a href="../../help/howtos/create-or-import-public-private-key-pair/" class="md-nav__link">
         Create or Import a Public/Private Key Pair
       </a>
     </li>
@@ -1585,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/edit-delete-clone-connection/" class="md-nav__link">
+      <a href="../../help/howtos/edit-delete-clone-connection/" class="md-nav__link">
         Edit / Delete / Clone a connection (server)
       </a>
     </li>
@@ -1599,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/enabling-verbose-logging/" class="md-nav__link">
+      <a href="../../help/howtos/enabling-verbose-logging/" class="md-nav__link">
         Enabling Verbose Logging
       </a>
     </li>
@@ -1613,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/known-hosts-manage/" class="md-nav__link">
+      <a href="../../help/howtos/known-hosts-manage/" class="md-nav__link">
         Managing Known Hosts
       </a>
     </li>
@@ -1627,7 +1723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/launching-multiple-terminals/" class="md-nav__link">
+      <a href="../../help/howtos/launching-multiple-terminals/" class="md-nav__link">
         Multiple connections
       </a>
     </li>
@@ -1641,7 +1737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/link-connections-using-tags/" class="md-nav__link">
+      <a href="../../help/howtos/link-connections-using-tags/" class="md-nav__link">
         Link Connections using Tags
       </a>
     </li>
@@ -1655,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/pasting-clipboard-content/" class="md-nav__link">
+      <a href="../../help/howtos/pasting-clipboard-content/" class="md-nav__link">
         Paste Clipboard Content
       </a>
     </li>
@@ -1669,7 +1765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/snippets/" class="md-nav__link">
+      <a href="../../help/howtos/snippets/" class="md-nav__link">
         Snippets
       </a>
     </li>
@@ -1683,7 +1779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/switch-language/" class="md-nav__link">
+      <a href="../../help/howtos/switch-language/" class="md-nav__link">
         Switch WebSSH UI Language
       </a>
     </li>
@@ -1697,7 +1793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/use-deep-linking/" class="md-nav__link">
+      <a href="../../help/howtos/use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
     </li>
@@ -1711,7 +1807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+      <a href="../../help/howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
         Use Mystic BBS with Telnet CP437 codepage
       </a>
     </li>
@@ -1752,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
         Bad interpreter / No such file or directory
       </a>
     </li>
@@ -1766,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
         Search / Replace text in SFTP editor
       </a>
     </li>
@@ -1780,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SFTP/startup-folder-path/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/startup-folder-path/" class="md-nav__link">
         Startup Folder / Path
       </a>
     </li>
@@ -1828,7 +1924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
         Adding Control-Key to Snippets
       </a>
     </li>
@@ -1842,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
         Keyboard Accessory View Customisation
       </a>
     </li>
@@ -1856,7 +1952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
         Arrow Keys Modes
       </a>
     </li>
@@ -1870,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
         Function Keys on Mac
       </a>
     </li>
@@ -1884,7 +1980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
         Meta / Alt / Option
       </a>
     </li>
@@ -1898,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/SSH/use-old-special-keys/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
     </li>
@@ -1946,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/mashREPL/database-backup/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/database-backup/" class="md-nav__link">
         Database Backup
       </a>
     </li>
@@ -1960,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/mashREPL/database-restore/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/database-restore/" class="md-nav__link">
         Database Restore
       </a>
     </li>
@@ -1974,7 +2070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/mashREPL/import/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
     </li>
@@ -1988,7 +2084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
         Obtain Public IP Address
       </a>
     </li>
@@ -2002,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/mashREPL/servedit/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/servedit/" class="md-nav__link">
         Servedit - Update Connections in Batch
       </a>
     </li>
@@ -2050,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
+      <a href="../../help/howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
         Create or attach an existing tmux session
       </a>
     </li>
@@ -2064,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
+      <a href="../../help/howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
         Scrollback buffer in tmux
       </a>
     </li>
@@ -2119,7 +2215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/intelligence/" class="md-nav__link">
+      <a href="../../help/intelligence/" class="md-nav__link">
         Intelligence & Automation
       </a>
     </li>
@@ -2133,7 +2229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/intelligence/api-mcp-server/" class="md-nav__link">
+      <a href="../../help/intelligence/api-mcp-server/" class="md-nav__link">
         API / MCP Server
       </a>
     </li>
@@ -2147,7 +2243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/intelligence/webssh-brain/" class="md-nav__link">
+      <a href="../../help/intelligence/webssh-brain/" class="md-nav__link">
         WebSSH Brain
       </a>
     </li>
@@ -2195,7 +2291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/checking-host-availability/" class="md-nav__link">
+      <a href="../../help/networking/checking-host-availability/" class="md-nav__link">
         Checking Host Availability
       </a>
     </li>
@@ -2209,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/dynamic-port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
     </li>
@@ -2223,7 +2319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/local-port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/local-port-forwarding/" class="md-nav__link">
         Local Port Forwarding (LPF)
       </a>
     </li>
@@ -2237,7 +2333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/port-forwarding/" class="md-nav__link">
         Port Forwarding
       </a>
     </li>
@@ -2251,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/port-knocking/" class="md-nav__link">
+      <a href="../../help/networking/port-knocking/" class="md-nav__link">
         Port Knocking
       </a>
     </li>
@@ -2265,7 +2361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/vpn-over-ssh/" class="md-nav__link">
+      <a href="../../help/networking/vpn-over-ssh/" class="md-nav__link">
         VPN-Over-SSH
       </a>
     </li>
@@ -2279,7 +2375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/help/networking/wake-on-lan/" class="md-nav__link">
+      <a href="../../help/networking/wake-on-lan/" class="md-nav__link">
         Wake-on-LAN
       </a>
     </li>
@@ -2334,7 +2430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../documentation/legal/privacy-policy/" class="md-nav__link">
+      <a href="../../legal/privacy-policy/" class="md-nav__link">
         Privacy Policy
       </a>
     </li>
@@ -2361,20 +2457,18 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
           Licenses
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -2392,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../../licenses/" class="md-nav__link">
         About Licenses
       </a>
     </li>
@@ -2406,7 +2500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_ANSITERMINAL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
         ANSITerminal
       </a>
     </li>
@@ -2420,7 +2514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
         Asciinema Player
       </a>
     </li>
@@ -2434,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_BLOCKALERTS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
         BlockAlerts
       </a>
     </li>
@@ -2448,7 +2542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
         CloudKitQueues
       </a>
     </li>
@@ -2462,7 +2556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_COCOALUMBERJACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
         CocoaLumberjack
       </a>
     </li>
@@ -2476,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_COLORPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
         ColorPicker
       </a>
     </li>
@@ -2490,7 +2584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_CUE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CUE/" class="md-nav__link">
         CueIcons
       </a>
     </li>
@@ -2504,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_CYBERCHEF/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
         CyberChef
       </a>
     </li>
@@ -2518,7 +2612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
         CYRKeyboardButton
       </a>
     </li>
@@ -2532,7 +2626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_DNSCLIENT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
         DNSClient
       </a>
     </li>
@@ -2546,7 +2640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_DSFSPARKLINE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
         DSFSparkline
       </a>
     </li>
@@ -2560,7 +2654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_EDSEMVER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
         EDSemver
       </a>
     </li>
@@ -2574,7 +2668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_EVENTSOURCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
         EventSource
       </a>
     </li>
@@ -2588,7 +2682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_FIRACODE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
         Fira Code
       </a>
     </li>
@@ -2602,7 +2696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_FONTAWESOME/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
         FontAwesome
       </a>
     </li>
@@ -2616,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_FXFORMS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
         FXForms
       </a>
     </li>
@@ -2630,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_GCDTIMER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
         LICENSE GCDTIMER
       </a>
     </li>
@@ -2642,21 +2736,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
         GCImagePickerController
       </a>
-      
     </li>
   
 
@@ -2668,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
         GCPlaceHolderTextView
       </a>
     </li>
@@ -2682,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_GRADIENTBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
         GradientButton
       </a>
     </li>
@@ -2696,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_HACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HACK/" class="md-nav__link">
         Hack - A typeface designed for source code
       </a>
     </li>
@@ -2710,7 +2794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
         HilightedTextEditor
       </a>
     </li>
@@ -2724,7 +2808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_IAPHELPER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
         IAPHelper
       </a>
     </li>
@@ -2738,7 +2822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_IOSEVKA/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
         Iosevka
       </a>
     </li>
@@ -2752,7 +2836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_IOS_SYSTEM/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
         ios_system
       </a>
     </li>
@@ -2766,7 +2850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
         iOS-System-Services
       </a>
     </li>
@@ -2780,7 +2864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
         iTerm Color Schemes
       </a>
     </li>
@@ -2794,7 +2878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_JGACTIONSHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
         JGActionSheet
       </a>
     </li>
@@ -2808,7 +2892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_JSCONTROLLER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
         JSController
       </a>
     </li>
@@ -2822,7 +2906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_KXMENU/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
         KXMenu
       </a>
     </li>
@@ -2836,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_LIBTELNET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
         libtelnet
       </a>
     </li>
@@ -2850,7 +2934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_MARKDOWNUI/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
         MarkdownUI
       </a>
     </li>
@@ -2864,7 +2948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_MESLOLGS_NF/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
         MesloLGS NF
       </a>
     </li>
@@ -2878,7 +2962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_MMWORMHOLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
         MMWormhole
       </a>
     </li>
@@ -2892,7 +2976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_MONOID/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MONOID/" class="md-nav__link">
         Monoid
       </a>
     </li>
@@ -2906,7 +2990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_NANOSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
         NanoStore
       </a>
     </li>
@@ -2920,7 +3004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_NYXIMAGESKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
         NYXImagesKit
       </a>
     </li>
@@ -2934,7 +3018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_OPENDYSLEXIC/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
         OpenDyslexic
       </a>
     </li>
@@ -2948,7 +3032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_OPENSSL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
         OpenSSL
       </a>
     </li>
@@ -2962,7 +3046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_ORSSERIALPORT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
         ORSSerialPort
       </a>
     </li>
@@ -2976,7 +3060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_RAPTUREXML/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
         RaptureXML
       </a>
     </li>
@@ -2990,7 +3074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_REACHABILITY/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
         Reachability
       </a>
     </li>
@@ -3004,7 +3088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_RUNESTONE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
         Runestone
       </a>
     </li>
@@ -3018,7 +3102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SIMPLEPING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
         SimplePing
       </a>
     </li>
@@ -3032,7 +3116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SOURCECODEPRO/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
         Source Code Pro
       </a>
     </li>
@@ -3046,7 +3130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SSHCONFIG/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
         SSHConfig
       </a>
     </li>
@@ -3060,7 +3144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SVHTTPREQUEST/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
         SVHttpRequest
       </a>
     </li>
@@ -3074,7 +3158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
         Swift Argument Parser
       </a>
     </li>
@@ -3088,7 +3172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SYMBOLPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
         SymbolPicker
       </a>
     </li>
@@ -3102,7 +3186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_SwiftMessages/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
         SwiftMessages
       </a>
     </li>
@@ -3116,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_TERMCOLOR_C/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
         termcolor-c
       </a>
     </li>
@@ -3130,7 +3214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_TERMINUS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
         Terminus
       </a>
     </li>
@@ -3144,7 +3228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
         TPKeyboardAvoiding
       </a>
     </li>
@@ -3158,7 +3242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
         TSLanguageManager
       </a>
     </li>
@@ -3172,7 +3256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
         TurtleBezierPath
       </a>
     </li>
@@ -3186,7 +3270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
         UCKeychainStore
       </a>
     </li>
@@ -3200,7 +3284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
         UIAlertControllerConvenience
       </a>
     </li>
@@ -3214,7 +3298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
         UIDeviceHardware
       </a>
     </li>
@@ -3228,7 +3312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
         UIImageViewResizable
       </a>
     </li>
@@ -3242,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_WELCOMESHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
         Welcome Sheet
       </a>
     </li>
@@ -3256,7 +3340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_XTERMJS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
         Xterm.js
       </a>
     </li>
@@ -3270,7 +3354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../LICENSE_YUBIKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
         Yubico Mobile iOS SDK (YubiKit)
       </a>
     </li>
@@ -3304,6 +3388,70 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-need" class="md-nav__link">
+    What you need
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-add-the-proxmox-connection-in-webssh" class="md-nav__link">
+    Step 1 — Add the Proxmox connection in WebSSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-manage-vms-and-containers-from-the-terminal" class="md-nav__link">
+    Step 2 — Manage VMs and containers from the terminal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-switch-to-ssh-key-authentication" class="md-nav__link">
+    Step 3 — Switch to SSH key authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-reach-the-proxmox-web-ui-through-an-ssh-tunnel" class="md-nav__link">
+    Step 4 — Reach the Proxmox web UI through an SSH tunnel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#going-further" class="md-nav__link">
+    Going further
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3318,34 +3466,141 @@
 
 
 
-<h1 id="gcimagepickercontroller">GCImagePickerController</h1>
-<div class="highlight"><pre><span></span><code>Copyright (C) 2011-2012 Caleb Davenport.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+<h1 id="how-to-ssh-into-proxmox-from-iphone-or-ipad">How to SSH into Proxmox from iPhone or iPad</h1>
+<p>You can manage a Proxmox VE server entirely from an iPhone or iPad over SSH: start and stop VMs with <code>qm</code>, enter LXC containers with <code>pct</code>, check cluster health, and even reach the Proxmox web UI through an SSH tunnel. WebSSH gives you a full terminal and port forwarding on iOS, so your hypervisor is never more than a pocket away.</p>
+<p>This guide covers connecting to a Proxmox node from iOS, the commands you'll actually use, and how to reach the web interface on port 8006 without exposing it to the internet.</p>
+<h2 id="what-you-need">What you need</h2>
+<ul>
+<li>A <strong>Proxmox VE</strong> server (any recent version — 7.x or 8.x) reachable on your network</li>
+<li>Its IP address or hostname — visible on the Proxmox console banner, or in the web UI under <strong>Datacenter → your node → System → Network</strong></li>
+<li><a href="https://apps.apple.com/app/id497714887">WebSSH</a> on your iPhone or iPad</li>
+</ul>
+<p>Unlike many systems, <strong>SSH is enabled by default on Proxmox VE</strong> — the installer sets up <code>sshd</code> with root login allowed via password. There is nothing to activate server-side.</p>
+<div class="admonition tip">
+<p class="admonition-title">Harden root access once key auth works</p>
+<p>Password login for root is convenient for the first connection, but once your key is installed (see Step 3), consider setting <code>PermitRootLogin prohibit-password</code> in <code>/etc/ssh/sshd_config</code>. Don't lock yourself out: test the key first.</p>
+</div>
+<h2 id="step-1-add-the-proxmox-connection-in-webssh">Step 1 — Add the Proxmox connection in WebSSH</h2>
+<ol>
+<li>Open <strong>WebSSH</strong> and tap <strong>+</strong> to create a new connection</li>
+<li>Fill in the fields:<ul>
+<li><strong>Name:</strong> something recognizable, e.g. <code>Proxmox - pve1</code></li>
+<li><strong>Host:</strong> your node's IP or hostname (e.g. <code>192.168.1.10</code>)</li>
+<li><strong>Port:</strong> <code>22</code> (unless you changed it)</li>
+<li><strong>Username:</strong> <code>root</code></li>
+</ul>
+</li>
+<li>Choose <strong>Password</strong> authentication to start</li>
+<li>Tap <strong>Save</strong>, then tap the connection to connect</li>
+</ol>
+<p>On first connection, WebSSH asks you to confirm the host key fingerprint — normal for any new server. You should land on the familiar <code>root@pve:~#</code> prompt.</p>
+<div class="admonition info">
+<p class="admonition-title">Why root?</p>
+<p>Most Proxmox management commands (<code>qm</code>, <code>pct</code>, <code>pvecm</code>) require root privileges. Proxmox is designed around root access on the node shell. If you prefer a non-root user with sudo, that works with WebSSH too — configure it as you would on any Debian system.</p>
+</div>
+<h2 id="step-2-manage-vms-and-containers-from-the-terminal">Step 2 — Manage VMs and containers from the terminal</h2>
+<p>Everything the web UI does for day-to-day operations has a CLI equivalent. The ones you'll use most:</p>
+<p><strong>Virtual machines (<code>qm</code>):</strong></p>
+<div class="highlight"><pre><span></span><code>qm<span class="w"> </span>list<span class="w">                     </span><span class="c1"># all VMs with status</span>
+qm<span class="w"> </span>start<span class="w"> </span><span class="m">100</span><span class="w">                </span><span class="c1"># start VM 100</span>
+qm<span class="w"> </span>shutdown<span class="w"> </span><span class="m">100</span><span class="w">             </span><span class="c1"># clean shutdown</span>
+qm<span class="w"> </span>stop<span class="w"> </span><span class="m">100</span><span class="w">                 </span><span class="c1"># force stop (like pulling the plug)</span>
+qm<span class="w"> </span>reboot<span class="w"> </span><span class="m">100</span><span class="w">               </span><span class="c1"># reboot</span>
+qm<span class="w"> </span>config<span class="w"> </span><span class="m">100</span><span class="w">               </span><span class="c1"># show a VM&#39;s configuration</span>
 </code></pre></div>
+<p><strong>LXC containers (<code>pct</code>):</strong></p>
+<div class="highlight"><pre><span></span><code>pct<span class="w"> </span>list<span class="w">                    </span><span class="c1"># all containers with status</span>
+pct<span class="w"> </span>start<span class="w"> </span><span class="m">101</span><span class="w">               </span><span class="c1"># start container 101</span>
+pct<span class="w"> </span>stop<span class="w"> </span><span class="m">101</span><span class="w">                </span><span class="c1"># stop it</span>
+pct<span class="w"> </span>enter<span class="w"> </span><span class="m">101</span><span class="w">               </span><span class="c1"># open a shell INSIDE the container</span>
+</code></pre></div>
+<p><code>pct enter</code> is the killer feature on mobile: one tap into your Proxmox node, one command, and you're inside any container — no per-container SSH setup needed.</p>
+<p><strong>Node and cluster health:</strong></p>
+<div class="highlight"><pre><span></span><code>pveversion<span class="w">                  </span><span class="c1"># Proxmox version</span>
+pvecm<span class="w"> </span>status<span class="w">                </span><span class="c1"># cluster status and quorum</span>
+pvesm<span class="w"> </span>status<span class="w">                </span><span class="c1"># storage status</span>
+journalctl<span class="w"> </span>-b<span class="w"> </span>-u<span class="w"> </span>pveproxy<span class="w">   </span><span class="c1"># web UI service logs for this boot</span>
+df<span class="w"> </span>-h<span class="w">                       </span><span class="c1"># disk usage</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Save these as Snippets</p>
+<p>WebSSH's <a href="/documentation/help/howtos/snippets/">Snippets</a> let you store commands like <code>qm list</code> or <code>pct enter 101</code> and run them with one tap — no typing IDs on a phone keyboard. You can <a href="/documentation/help/howtos/link-connections-using-tags/">link snippets to connections using tags</a> so your Proxmox commands only show up on your Proxmox node.</p>
+</div>
+<h2 id="step-3-switch-to-ssh-key-authentication">Step 3 — Switch to SSH key authentication</h2>
+<p>For anything you connect to regularly, a key pair beats a password — faster on mobile, and far more secure.</p>
+<p><strong>Generate the key in WebSSH:</strong></p>
+<ol>
+<li>Go to <strong>WebSSH Settings</strong> (gear icon)</li>
+<li>Tap <strong>SSH Keys → +</strong></li>
+<li>Tap <strong>Generate</strong> and choose <strong>ED25519</strong></li>
+<li>Save, then tap the key to copy the <strong>public key</strong></li>
+</ol>
+<p><strong>Authorize it on the Proxmox node</strong> — SSH in once with your password, then:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PASTE_YOUR_PUBLIC_KEY_HERE&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/authorized_keys
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
+</code></pre></div>
+<p>Finally, edit the WebSSH connection, set authentication to your new key, and reconnect. See <a href="/documentation/help/howtos/create-or-import-public-private-key-pair/">Create or Import a Public / Private Key Pair</a> for details, including importing an existing key.</p>
+<h2 id="step-4-reach-the-proxmox-web-ui-through-an-ssh-tunnel">Step 4 — Reach the Proxmox web UI through an SSH tunnel</h2>
+<p>The Proxmox web interface listens on <strong>port 8006</strong> and should never be exposed to the internet. With WebSSH's <a href="/documentation/help/networking/local-port-forwarding/">Local Port Forwarding</a>, you can tunnel to it securely from your iPad or iPhone:</p>
+<ol>
+<li>In WebSSH, go to the <strong>Tunnel</strong> tab and tap <strong>+</strong></li>
+<li>Fill in the same host / credentials as your SSH connection</li>
+<li>In the port forwarding field, enter:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>8006:127.0.0.1:8006
+</code></pre></div>
+<ol>
+<li>Save and launch the tunnel</li>
+<li>Open <code>https://127.0.0.1:8006</code> in Safari (accept the self-signed certificate warning) — you're on your Proxmox web UI, encrypted end-to-end through SSH</li>
+</ol>
+<p>This works from anywhere your node's SSH port is reachable — and only SSH needs to be reachable.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<details class="question">
+<summary>Connection refused on port 22</summary>
+<p>Rare on Proxmox since SSH is on by default. Check that you're using the node's IP (not a VM's), and that no firewall rule blocks port 22: in the web UI, <strong>Datacenter → Firewall</strong> and <strong>node → Firewall</strong>.</p>
+</details>
+<details class="question">
+<summary>Permission denied (publickey) after hardening</summary>
+<p>You set <code>PermitRootLogin prohibit-password</code> before the key worked. Check that the public key is in <code>/root/.ssh/authorized_keys</code> with permissions <code>600</code>, and the directory <code>700</code>. If locked out, use the physical console or the web UI shell to fix it.</p>
+</details>
+<details class="question">
+<summary>qm/pct: command not found</summary>
+<p>You're probably SSH'd into a VM or container, not the Proxmox node itself. These commands only exist on the hypervisor. Check the prompt hostname.</p>
+</details>
+<details class="question">
+<summary>The web UI tunnel connects but Safari shows an error</summary>
+<p>Use <code>https://</code> (not <code>http://</code>) with port 8006, and accept the self-signed certificate. If the page stays blank, verify <code>pveproxy</code> is running: <code>systemctl status pveproxy</code>.</p>
+</details>
+<details class="question">
+<summary>My session dies when I switch apps</summary>
+<p>iOS suspends backgrounded apps. For long operations (migrations, backups), run them inside <a href="/documentation/help/howtos/tmux/create-attach-existing-tmux-session/">tmux</a> so they survive disconnects — reattach with <code>tmux attach</code> when you're back.</p>
+</details>
+<h2 id="going-further">Going further</h2>
+<ul>
+<li><strong>Multiple nodes?</strong> Use <a href="/documentation/help/howtos/link-connections-using-tags/">tags</a> to group your cluster's connections, and <a href="/documentation/help/howtos/arrange-connections-inside-folders/">folders</a> to keep the list tidy.</li>
+<li><strong>Node behind a bastion?</strong> <a href="/documentation/help/networking/dynamic-port-forwarding/">Dynamic Port Forwarding</a> turns any reachable SSH server into a jump host for your whole homelab.</li>
+<li><strong>Wake a sleeping machine:</strong> WebSSH supports <a href="/documentation/help/networking/wake-on-lan/">Wake On LAN</a> for nodes you power down between uses.</li>
+<li><strong>More homelab services:</strong> see <a href="/documentation/guides/homelab-ssh-tunnel-ios/">Access Your Homelab Remotely via SSH Tunnel on iOS</a>.</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<p><strong>Can I manage Proxmox VMs from an iPhone?</strong>
+Yes. SSH into the Proxmox node with WebSSH and use <code>qm</code> (VMs) and <code>pct</code> (containers) — list, start, stop, and enter guests directly from the terminal.</p>
+<p><strong>Is SSH enabled by default on Proxmox VE?</strong>
+Yes. Proxmox VE ships with SSH enabled and root password login allowed. You can connect immediately after installation with the root credentials chosen during setup.</p>
+<p><strong>Can I access the Proxmox web interface from an iPad without exposing it?</strong>
+Yes. Create a WebSSH tunnel forwarding local port 8006 to <code>127.0.0.1:8006</code> on the node, then open <code>https://127.0.0.1:8006</code> in Safari. Only the SSH port needs to be reachable.</p>
+<p><strong>Does this require a subscription?</strong>
+No. WebSSH is a one-time purchase — no subscription. The free version lets you try it with one saved connection.</p>
+<hr />
+<p><a href="https://apps.apple.com/app/id497714887">Download WebSSH on the App Store →</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 25, 2022 20:42:39 UTC">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 21, 2026 15:40:21 UTC">July 21, 2026</span>
       
     
   </small>
@@ -3435,14 +3690,14 @@ WebSSH &copy; 2012-2026<br />
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
-        <script src="../../javascripts/extra.js?20251102B"></script>
+        <script src="../../../javascripts/extra.js?20251102B"></script>
       
-        <script src="../../javascripts/autorag.js?20251116"></script>
+        <script src="../../../javascripts/autorag.js?20251116"></script>
       
     
   </body>
