@@ -8,6 +8,14 @@ title: Keyboard Accessory View Customisation
 * You can define a keyboard layout on a per connection basis or globally. 
 * The configuration is done by using the `#!KeyboardAccessoryViewLayout` keyword.
 
+??? tip "Graphical Layout Editor (WebSSH 32.6+)"
+    Since WebSSH 32.6 you can also customise the layout graphically, without editing the SSH Config File :
+
+    * Open the editor from **Settings → SSH → Keyboard Shortcut Bar** or by tapping the **{EDIT}** key at the end of the default accessory bar.
+    * The editor offers a live preview, drag & drop reordering, pages management and a key palette.
+    * The layout built with the editor is stored on the device itself (it is not synced) and applies to all connections.
+    * `#!KeyboardAccessoryViewLayout*` directives defined in the SSH Config File always take precedence over the layout built with the editor.
+
 ??? tip "Customising the layout by idioms (iPhone / iPad)"
     Customising the layout by idioms is also available :
     
@@ -18,23 +26,23 @@ title: Keyboard Accessory View Customisation
 ??? info "iPhone Default Layout"
     The default iPhone layout is the following :
     ```
-    {ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{HELP}
+    {ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{EDIT}
     ```
 
     If VoiceOver is enabled, the default iPhone layout will be :
     ```
-    {ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{HELP}
+    {ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
     ```
 
 ??? info "iPad Default Layout"
     The default iPad layout is the following :
     ```
-    {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{HELP}
+    {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{EDIT}
     ```
 
     If VoiceOver is enabled, the default iPad layout will be :
     ```
-    {ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{HELP}
+    {ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
     ```
 
 ## Layout Syntax
@@ -90,6 +98,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {CTL}            | Control Key                                                      | 23.0             |
 | {DEL}            | Delete Key                                                       | 23.0             |
 | {DOWN}           | Down Arrow Key                                                   | 23.0             |
+| {EDIT}           | Edit Key : Open the graphical Keyboard Accessory Layout Editor   | 32.6             |
 | {END}            | End Key                                                          | 23.0             |
 | {ENTER}          | Enter Key                                                        | 28.3             |
 | {ESC}            | Escape / Meta Key                                                | 23.0             |
@@ -104,7 +113,8 @@ When you press a Special Key, the corresponding action will be executed.
 | {PGUP}           | Page Up Key                                                      | 23.0             |
 | {PJUMP}          | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0             |
 | {RIGHT}          | Right Arrow Key                                                  | 23.0             |
-| {TAB}            | Tab Key                                                          | 23.0             |
+| {SHIFT_TAB}      | Shift + Tab (Back-Tab) Key                                       | 32.6             |
+| {TAB}            | Tab Key (long press : Shift + Tab)                               | 23.0             |
 | {TOGGLE_KEYBOARD}| Toggle Keyboard : Show / Hide the virtual keyboard               | 30.5             |
 | {UP}             | Up Arrow Key                                                     | 23.0             |
 
