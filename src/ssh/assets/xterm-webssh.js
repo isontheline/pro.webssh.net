@@ -343,7 +343,9 @@ const TerminalHelper = {
     },
 
     copySelectedText: debounce(() => {
-        if (TerminalHelper.lastSelectedText == null) {
+        // An empty selection must never reach the clipboard : entering an alternate
+        // screen app (vi, ...) clears the selection and would flush the copy buffer.
+        if (TerminalHelper.lastSelectedText == null || TerminalHelper.lastSelectedText === '') {
             return;
         }
 
