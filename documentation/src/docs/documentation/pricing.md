@@ -71,6 +71,13 @@ Yes you see it right : **FREE** version is the most generous free tier you can f
 
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
+??? tip "Want to support WebSSH even further?"
+    :heart: WebSSH **PRO** is — and will always remain — a **one-time lifetime purchase**. But if you'd like to go further and help me keep WebSSH moving forward, you can now leave a small voluntary tip: the **WebSSH Developer Tip**, a monthly or yearly subscription available in the app (Settings → Support WebSSH) once you own **PRO**.
+
+    :gift: As a thank-you, supporters unlock a few **digital goodies**: mini games and other delightfully useless things :sweat_smile:. The tip never unlocks — and will never unlock — any real feature.
+
+    Thank you so much for your support!
+
 [^1]: Serial Port Client is only available on macOS
 [^2]: Connectors are coming soon on a future version of WebSSH - so stay tuned for more information about this new feature!
 [^3]: Proxmox-Over-SSH is available since WebSSH 32.5
