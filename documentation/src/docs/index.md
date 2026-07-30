@@ -50,4 +50,4 @@ Every contribution - even a small one - is greatly appreciated and will help me 
 ## Privacy Policy
 WebSSH has been created with Privacy and Security in mind. We don't collect any data at all, period!
 
-Latest version (2025-12-21) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
+Latest version (2026-07-30) of our Privacy Policy is available [here](/documentation/legal/privacy-policy/).
