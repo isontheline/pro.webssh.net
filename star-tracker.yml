@@ -1,0 +1,5 @@
+only_repos:
+  - isontheline/pro.webssh.net
+data_branch: star-tracker-data
+compare_against: last-run   # last-run | 24h | 7d | 30d
+locale: en
