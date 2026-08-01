@@ -1,5 +1,7 @@
+only_orgs:
+  - isontheline
 only_repos:
-  - https://github.com/isontheline/pro.webssh.net
+  - pro.webssh.net
 data_branch: star-tracker-data
 compare_against: last-run   # last-run | 24h | 7d | 30d
 locale: en
