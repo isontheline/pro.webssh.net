@@ -119,7 +119,19 @@
           "stars": 2
         }
       ]
+    },
+    {
+      "timestamp": "2026-08-01T13:17:53.603Z",
+      "totalStars": 560,
+      "repos": [
+        {
+          "fullName": "isontheline/pro.webssh.net",
+          "name": "pro.webssh.net",
+          "owner": "isontheline",
+          "stars": 560
+        }
+      ]
     }
   ],
-  "starsAtLastNotification": 620
+  "starsAtLastNotification": 560
 }
