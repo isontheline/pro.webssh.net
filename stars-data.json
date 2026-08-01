@@ -1,0 +1,125 @@
+{
+  "snapshots": [
+    {
+      "timestamp": "2026-08-01T13:01:53.837Z",
+      "totalStars": 620,
+      "repos": [
+        {
+          "fullName": "isontheline/ALE",
+          "name": "ALE",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/AppIconKit",
+          "name": "AppIconKit",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/ChopChop",
+          "name": "ChopChop",
+          "owner": "isontheline",
+          "stars": 2
+        },
+        {
+          "fullName": "isontheline/ChopChopAction",
+          "name": "ChopChopAction",
+          "owner": "isontheline",
+          "stars": 2
+        },
+        {
+          "fullName": "isontheline/CotEditorScripts",
+          "name": "CotEditorScripts",
+          "owner": "isontheline",
+          "stars": 6
+        },
+        {
+          "fullName": "isontheline/CSSH",
+          "name": "CSSH",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/detectify-client",
+          "name": "detectify-client",
+          "owner": "isontheline",
+          "stars": 3
+        },
+        {
+          "fullName": "isontheline/directus-extension-user-role-css-injector",
+          "name": "directus-extension-user-role-css-injector",
+          "owner": "isontheline",
+          "stars": 2
+        },
+        {
+          "fullName": "isontheline/fastlistbuilder",
+          "name": "fastlistbuilder",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/gotangle",
+          "name": "gotangle",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/mybooklive-meteofrance-vigilance-led",
+          "name": "mybooklive-meteofrance-vigilance-led",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/panasonic-html-image-app",
+          "name": "panasonic-html-image-app",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/pro.webssh.net",
+          "name": "pro.webssh.net",
+          "owner": "isontheline",
+          "stars": 560
+        },
+        {
+          "fullName": "isontheline/smdr-parser",
+          "name": "smdr-parser",
+          "owner": "isontheline",
+          "stars": 0
+        },
+        {
+          "fullName": "isontheline/SSHConfig",
+          "name": "SSHConfig",
+          "owner": "isontheline",
+          "stars": 6
+        },
+        {
+          "fullName": "isontheline/vscode-sysmon",
+          "name": "vscode-sysmon",
+          "owner": "isontheline",
+          "stars": 10
+        },
+        {
+          "fullName": "isontheline/webssh.sh",
+          "name": "webssh.sh",
+          "owner": "isontheline",
+          "stars": 21
+        },
+        {
+          "fullName": "isontheline/wolfdotsolar",
+          "name": "wolfdotsolar",
+          "owner": "isontheline",
+          "stars": 6
+        },
+        {
+          "fullName": "webssh-software/.github",
+          "name": ".github",
+          "owner": "webssh-software",
+          "stars": 2
+        }
+      ]
+    }
+  ],
+  "starsAtLastNotification": 620
+}
