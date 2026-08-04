@@ -29,6 +29,8 @@ class SelectionHandlesAddon {
   // xterm disposables
   _onSelectionChangeDisposable = null;
   _onScrollDisposable = null;
+  _boundViewportScroll = null;
+  _viewportElement = null;
   _onResizeDisposable = null;
 
   // Addon configuration
@@ -154,6 +156,15 @@ class SelectionHandlesAddon {
       const d = this.terminal.onResize(this._boundOnResize);
       if (d && typeof d.dispose === 'function') this._onResizeDisposable = d;
     }
+
+    // terminal.onScroll only covers programmatic scrolls : xterm.js deliberately
+    // suppresses it when the user scrolls the DOM viewport (feedback-loop
+    // protection), so listen to the viewport too. rAF : xterm updates viewportY
+    // in its own requestAnimationFrame, queued before ours — updating after it
+    // avoids a one-frame-stale offset :
+    this._boundViewportScroll = () => window.requestAnimationFrame(this._boundOnResize);
+    this._viewportElement = this.terminal.element.querySelector('.xterm-viewport');
+    this._viewportElement?.addEventListener('scroll', this._boundViewportScroll, { passive: true });
 
     // Desktop cursor and handle visibility
     if (this.isFinePointer()) {
@@ -542,6 +553,8 @@ class SelectionHandlesAddon {
     // Outside click and resize
     document.removeEventListener('pointerdown', this._boundRemoveSelection);
     window.removeEventListener('resize', this._boundOnResize);
+    this._viewportElement?.removeEventListener('scroll', this._boundViewportScroll);
+    this._viewportElement = null;
 
     // Remove handles
     if (this.startHandle?.parentNode) this.startHandle.parentNode.removeChild(this.startHandle);

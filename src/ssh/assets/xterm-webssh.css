@@ -65,3 +65,16 @@ body {
     user-select: none;
     -webkit-user-select: none;
 }
+
+#password-prompt-hint {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    padding: 0 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}

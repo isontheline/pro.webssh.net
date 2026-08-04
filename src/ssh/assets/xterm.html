@@ -209,6 +209,9 @@
       // Register ANSI Escape Sequence handlers :
       TerminalHelper.registerHandlers();
 
+      // Password prompt hint (#1660) :
+      PasswordPromptHelper.init(terminal);
+
       if (terminal.textarea) {
         TerminalHelper.focus(true);
       }

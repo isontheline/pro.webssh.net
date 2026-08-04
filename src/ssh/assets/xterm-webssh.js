@@ -211,6 +211,181 @@ const ColorHelper = {
     },
 };
 
+// Issue #1660 : Tabby-style "Press Enter to paste saved password" hint on password prompts.
+// Detection + hint rendering happen here because only xterm.js sees the parsed buffer
+// (SSH chunks reach the native side arbitrarily split). Arming and Enter interception
+// are native : keystrokes never originate in this WebView (the xterm textarea is removed)
+// and the saved password never reaches this context.
+const PasswordPromptHelper = {
+    enabled: false,
+    hasPassword: false,
+    hintText: 'Press Enter to paste saved password',
+    patterns: [
+        // sudo prompt, any locale ("[sudo] password for user:", "[sudo] Mot de passe de user :", ...) :
+        /^\[sudo\].*[:：]\s*$/,
+        // generic password prompts (su, doas, nested ssh, passphrases, ...) :
+        /(password|passphrase|passwort|mot de passe|contraseña|senha|wachtwoord|hasło|lösenord|adgangskode|parola|пароль|암호|비밀번호|パスワード|密码|密碼)[^:：]*[:：]\s*$/i
+    ],
+    armed: false,
+    hintEl: null,
+    _promptRow: -1,
+    _promptCol: -1,
+    // Last announced prompt (row + text). Kept after hideHint() so a prompt the user
+    // chose to answer manually never re-arms (a stray Enter must stay a plain Enter) :
+    _lastSignature: null,
+
+    init: function (terminal) {
+        PasswordPromptHelper.enabled = terminalSettings.passwordPromptHintEnabled;
+
+        // Disabled for this terminal's lifetime (the setting is read again on the
+        // next terminal load, and native never re-enables through configure()) :
+        // don't build the overlay nor subscribe — zero work per write :
+        if (!PasswordPromptHelper.enabled) {
+            return;
+        }
+
+        const hintEl = document.createElement('div');
+        hintEl.id = 'password-prompt-hint';
+        const foreground = ColorHelper.parseColor(terminalSettings.theme.foreground || '#ffffff');
+        hintEl.style.color = `rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.75)`;
+        hintEl.style.backgroundColor = `rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.12)`;
+        hintEl.style.fontFamily = terminalSettings.fontFamily;
+        hintEl.style.fontSize = terminalSettings.fontSize + 'px';
+        terminal.element.parentElement.appendChild(hintEl);
+        PasswordPromptHelper.hintEl = hintEl;
+
+        terminal.onWriteParsed(debounce(PasswordPromptHelper.check, 150));
+        terminal.onResize(debounce(PasswordPromptHelper.check, 150));
+
+        // terminal.onScroll only covers programmatic scrolls : xterm.js
+        // deliberately suppresses it when the user scrolls the DOM viewport
+        // (feedback-loop protection), so listen to both :
+        terminal.onScroll(PasswordPromptHelper.reposition);
+        // (rAF : xterm updates viewportY in its own requestAnimationFrame, queued
+        // before ours — repositioning after it avoids a one-frame-stale offset)
+        terminal.element.querySelector('.xterm-viewport').addEventListener('scroll', () => {
+            window.requestAnimationFrame(PasswordPromptHelper.reposition);
+        }, { passive: true });
+    },
+
+    // Called by native : hasPassword is runtime state (not known at page load) and
+    // hintText arrives Base64.atou-decoded because the settings fragment is not UTF-8 safe.
+    configure: function (config) {
+        if (typeof config.enabled !== 'undefined') {
+            PasswordPromptHelper.enabled = config.enabled;
+        }
+        if (typeof config.hasPassword !== 'undefined') {
+            PasswordPromptHelper.hasPassword = config.hasPassword;
+        }
+        if (config.hintText) {
+            PasswordPromptHelper.hintText = config.hintText;
+        }
+        if (!PasswordPromptHelper.enabled || !PasswordPromptHelper.hasPassword) {
+            PasswordPromptHelper.hide(true);
+        }
+    },
+
+    check: function () {
+        if (!PasswordPromptHelper.enabled ||
+            !PasswordPromptHelper.hasPassword ||
+            terminal.buffer.active.type !== 'normal') {
+            PasswordPromptHelper.hide(true);
+            return;
+        }
+
+        const buffer = terminal.buffer.active;
+        const row = buffer.baseY + buffer.cursorY;
+        const line = buffer.getLine(row);
+        const lineText = line ? line.translateToString(true) : '';
+
+        // The cursor must sit right after the prompt text : a shorter cursorX means
+        // the match comes from older content, not from a prompt awaiting input.
+        const matched = lineText !== '' &&
+            buffer.cursorX >= lineText.length &&
+            PasswordPromptHelper.patterns.some((pattern) => pattern.test(lineText));
+
+        if (!matched) {
+            PasswordPromptHelper._lastSignature = null;
+            PasswordPromptHelper.hide(true);
+            return;
+        }
+
+        PasswordPromptHelper._promptRow = row;
+        PasswordPromptHelper._promptCol = buffer.cursorX;
+
+        const signature = row + '|' + lineText;
+        if (signature !== PasswordPromptHelper._lastSignature) {
+            PasswordPromptHelper._lastSignature = signature;
+            PasswordPromptHelper.armed = true;
+            JS2IOS.calliOSFunction('notifyPasswordPromptDetected');
+        }
+
+        if (PasswordPromptHelper.armed) {
+            PasswordPromptHelper.reposition();
+        }
+    },
+
+    reposition: function () {
+        const hintEl = PasswordPromptHelper.hintEl;
+        if (!PasswordPromptHelper.armed || !hintEl) {
+            return;
+        }
+
+        const buffer = terminal.buffer.active;
+        const viewportRow = PasswordPromptHelper._promptRow - buffer.viewportY;
+        if (viewportRow < 0 || viewportRow >= terminal.rows) {
+            // Prompt scrolled out of the viewport : hide visually but stay armed,
+            // onScroll re-shows the chip when the prompt comes back :
+            hintEl.style.display = 'none';
+            return;
+        }
+
+        const renderer = terminal._core?._renderService?.dimensions;
+        const cellWidth = renderer?.css?.cell?.width ?? 9;
+        const cellHeight = renderer?.css?.cell?.height ?? 18;
+        const terminalRect = terminal.element.getBoundingClientRect();
+        const containerRect = terminal.element.parentElement.getBoundingClientRect();
+
+        hintEl.textContent = '⏎ ' + PasswordPromptHelper.hintText;
+        hintEl.style.lineHeight = cellHeight + 'px';
+        hintEl.style.display = 'block';
+
+        let x = terminalRect.left - containerRect.left + (PasswordPromptHelper._promptCol + 1.5) * cellWidth;
+        let y = terminalRect.top - containerRect.top + viewportRow * cellHeight;
+
+        // Keep the chip inside the container; move it below (or above on the last
+        // row) the prompt line when the right edge would clip it, so it never
+        // covers the cursor cell :
+        const maxX = containerRect.width - hintEl.offsetWidth - 2;
+        if (x > maxX) {
+            x = Math.max(0, maxX);
+            y += (viewportRow + 1 < terminal.rows) ? cellHeight : -cellHeight;
+        }
+
+        hintEl.style.left = x + 'px';
+        hintEl.style.top = y + 'px';
+    },
+
+    hide: function (notifyNative) {
+        if (PasswordPromptHelper.hintEl) {
+            PasswordPromptHelper.hintEl.style.display = 'none';
+        }
+        if (PasswordPromptHelper.armed) {
+            PasswordPromptHelper.armed = false;
+            if (notifyNative) {
+                JS2IOS.calliOSFunction('notifyPasswordPromptDismissed');
+            }
+        }
+    },
+
+    // Called by native after the password has been pasted, on any other user
+    // keystroke while armed, or when arming is vetoed. _lastSignature is kept on
+    // purpose : the current prompt must not re-arm (see its declaration above).
+    hideHint: function () {
+        PasswordPromptHelper.hide(false);
+    }
+};
+
 const TerminalHelper = {
     scrolly: null,
     lastSelectedText: null,
@@ -571,6 +746,7 @@ const TerminalHelper = {
             handedness: 'right',
             isMacOS: false,
             openLinksStrategy: 'disabled',
+            passwordPromptHintEnabled: false,
             remoteCharacterSet: 'UTF-8',
             reverseWraparound: true,
             rows: 25,
@@ -648,6 +824,10 @@ const TerminalHelper = {
 
         if (fragment.openLinksStrategy) {
             terminalSettings.openLinksStrategy = fragment.openLinksStrategy;
+        }
+
+        if (fragment.passwordPromptHintStrategy && fragment.passwordPromptHintStrategy == 'enabled') {
+            terminalSettings.passwordPromptHintEnabled = true;
         }
 
         if (fragment.terminalSize) {
@@ -760,6 +940,11 @@ const TerminalHelper = {
     onBufferChange: function (buffer) {
         // Hide Scrolly when alternate buffer is active :
         buffer.type === 'alternate' ? TerminalHelper.scrolly.hide() : TerminalHelper.scrolly.show();
+
+        // A full-screen app (vim, less...) took over : any pending password prompt is stale :
+        if (buffer.type === 'alternate') {
+            PasswordPromptHelper.hide(true);
+        }
 
         // Inform WebSSH that the buffer has changed :
         JS2IOS.calliOSFunction('notifyBufferChange', buffer.type);
