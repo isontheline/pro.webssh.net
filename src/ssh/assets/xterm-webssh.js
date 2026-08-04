@@ -220,6 +220,10 @@ const PasswordPromptHelper = {
     enabled: false,
     hasPassword: false,
     hintText: 'Press Enter to paste saved password',
+    submitHintText: 'Press Enter to submit',
+    // After the paste nothing echoes (sudo hides input) : the chip swaps to
+    // submitHintText so the user knows a second Enter submits :
+    _submitPhase: false,
     patterns: [
         // sudo prompt, any locale ("[sudo] password for user:", "[sudo] Mot de passe de user :", ...) :
         /^\[sudo\].*[:：]\s*$/,
@@ -280,6 +284,9 @@ const PasswordPromptHelper = {
         if (config.hintText) {
             PasswordPromptHelper.hintText = config.hintText;
         }
+        if (config.submitHintText) {
+            PasswordPromptHelper.submitHintText = config.submitHintText;
+        }
         if (!PasswordPromptHelper.enabled || !PasswordPromptHelper.hasPassword) {
             PasswordPromptHelper.hide(true);
         }
@@ -316,6 +323,7 @@ const PasswordPromptHelper = {
         const signature = row + '|' + lineText;
         if (signature !== PasswordPromptHelper._lastSignature) {
             PasswordPromptHelper._lastSignature = signature;
+            PasswordPromptHelper._submitPhase = false;
             PasswordPromptHelper.armed = true;
             JS2IOS.calliOSFunction('notifyPasswordPromptDetected');
         }
@@ -346,7 +354,7 @@ const PasswordPromptHelper = {
         const terminalRect = terminal.element.getBoundingClientRect();
         const containerRect = terminal.element.parentElement.getBoundingClientRect();
 
-        hintEl.textContent = '⏎ ' + PasswordPromptHelper.hintText;
+        hintEl.textContent = '⏎ ' + (PasswordPromptHelper._submitPhase ? PasswordPromptHelper.submitHintText : PasswordPromptHelper.hintText);
         hintEl.style.lineHeight = cellHeight + 'px';
         hintEl.style.display = 'block';
 
@@ -366,7 +374,19 @@ const PasswordPromptHelper = {
         hintEl.style.top = y + 'px';
     },
 
+    // Called by native right after the password has been pasted : swap the chip
+    // to "Press Enter to submit". The server's next output hides it (check()) :
+    showSubmitHint: function () {
+        if (!PasswordPromptHelper.hintEl) {
+            return;
+        }
+        PasswordPromptHelper._submitPhase = true;
+        PasswordPromptHelper.armed = true;
+        PasswordPromptHelper.reposition();
+    },
+
     hide: function (notifyNative) {
+        PasswordPromptHelper._submitPhase = false;
         if (PasswordPromptHelper.hintEl) {
             PasswordPromptHelper.hintEl.style.display = 'none';
         }
@@ -826,7 +846,7 @@ const TerminalHelper = {
             terminalSettings.openLinksStrategy = fragment.openLinksStrategy;
         }
 
-        if (fragment.passwordPromptHintStrategy && fragment.passwordPromptHintStrategy == 'enabled') {
+        if (fragment.passwordPromptHintStrategy && fragment.passwordPromptHintStrategy != 'disabled') {
             terminalSettings.passwordPromptHintEnabled = true;
         }
 
