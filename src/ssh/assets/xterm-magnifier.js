@@ -65,6 +65,8 @@ class MagnifierAddon {
         this._sideSnapHysteresis = opts.sideSnapHysteresis ?? 24;    // px: minimize flip-flop
         this._sidePreference = opts.sidePreference ?? 'auto';        // 'auto' | 'left' | 'right'
         this._currentSide = null;                                    // 'left' | 'right'
+        this._currentAnchor = null;                                  // smart mode : sticky docking side
+        this._transitionTimeout = null;                              // pending glide window (anchor flip)
     }
 
     activate(terminal) {
@@ -94,6 +96,11 @@ class MagnifierAddon {
                 boxShadow: this._boxShadow,
                 pointerEvents: 'none',
                 willChange: 'transform',
+                // Direct tracking by default; _applyLensTransform enables a
+                // short transition only while the docking side flips — a
+                // permanent transition restarts its easing on every move and
+                // makes the lens tremble :
+                transition: 'none',
                 visibility: 'hidden'
             });
             this._ctx = this._lensCanvas.getContext('2d');
@@ -166,6 +173,10 @@ class MagnifierAddon {
         cancelAnimationFrame(this._raf);
         this._raf = 0;
         this._currentSide = null;
+        this._currentAnchor = null;
+        clearTimeout(this._transitionTimeout);
+        this._transitionTimeout = null;
+        if (this._lensCanvas) this._lensCanvas.style.transition = 'none';
     }
 
     setZoom(factor) {
@@ -345,6 +356,26 @@ class MagnifierAddon {
         }
     }
 
+    // animate=true opens a short glide window (docking side flip). While the
+    // window is open, further moves keep gliding to their new target; once it
+    // closes, tracking is direct again — jitter-free.
+    _applyLensTransform(x, y, animate) {
+        if (!this._lensCanvas) return;
+
+        if (animate) {
+            this._lensCanvas.style.transition = 'transform 0.1s ease-out';
+            clearTimeout(this._transitionTimeout);
+            this._transitionTimeout = setTimeout(() => {
+                this._transitionTimeout = null;
+                if (this._lensCanvas) this._lensCanvas.style.transition = 'none';
+            }, 120);
+        } else if (!this._transitionTimeout) {
+            this._lensCanvas.style.transition = 'none';
+        }
+
+        this._lensCanvas.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    }
+
     _placeLensSideOnly() {
         const r = this._radius;
         const rootRect = this._root.getBoundingClientRect();
@@ -399,12 +430,13 @@ class MagnifierAddon {
             cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
         }
 
+        const sideFlipped = this._currentSide !== null && this._currentSide !== desiredSide;
         this._currentSide = desiredSide;
 
         // Final clamp & apply
         const finalCx = Math.max(edge + r, Math.min(cx, W - edge - r));
         const finalCy = Math.max(edge + r, Math.min(cy, H - edge - r));
-        this._lensCanvas.style.transform = `translate3d(${finalCx - r}px, ${finalCy - r}px, 0)`;
+        this._applyLensTransform(finalCx - r, finalCy - r, sideFlipped);
     }
 
     _placeLensSmart() {
@@ -422,6 +454,41 @@ class MagnifierAddon {
 
         const edge = this._edgeInset;
 
+        const edgeClamp = (cx, cy) => ([
+            Math.max(edge + r, Math.min(cx, W - edge - r)),
+            Math.max(edge + r, Math.min(cy, H - edge - r))
+        ]);
+
+        const candidateFor = (a) => {
+            let cx = x, cy = y;
+            switch (a) {
+                case 'left': cx = x - avoid; break;
+                case 'right': cx = x + avoid; break;
+                case 'top': cy = y - avoid; break;
+                case 'bottom': cy = y + avoid; break;
+            }
+            const [clx, cly] = edgeClamp(cx, cy);
+            return { a, cx: clx, cy: cly };
+        };
+
+        // Feasible = after edge clamping, the lens still clears the finger :
+        const minClear = (this._lastPointerType === 'touch')
+            ? (this._touchAvoidRadius + this._gap)
+            : this._gap;
+        const isFeasible = ({ cx, cy }) => (Math.hypot(cx - x, cy - y) - r) >= minClear;
+
+        // Sticky anchor : keep the current docking side as long as it stays
+        // feasible. Re-scoring on every move makes near-tied candidates swap
+        // winners frame to frame near the edges — the lens teleports around
+        // the finger (flicker). Only re-evaluate when the side breaks down :
+        if (this._currentAnchor) {
+            const keep = candidateFor(this._currentAnchor);
+            if (isFeasible(keep)) {
+                this._applyLensTransform(keep.cx - r, keep.cy - r, false);
+                return;
+            }
+        }
+
         const roomLeft = x;
         const roomRight = W - x;
         const roomTop = y;
@@ -438,22 +505,9 @@ class MagnifierAddon {
                 ? ['top', ...sideBias, 'bottom']
                 : [...sideBias, (roomTop >= roomBot ? 'top' : 'bottom')];
 
-        const edgeClamp = (cx, cy) => ([
-            Math.max(edge + r, Math.min(cx, W - edge - r)),
-            Math.max(edge + r, Math.min(cy, H - edge - r))
-        ]);
-
-        const candidates = order.map(a => {
-            let cx = x, cy = y;
-            switch (a) {
-                case 'left': cx = x - avoid; break;
-                case 'right': cx = x + avoid; break;
-                case 'top': cy = y - avoid; break;
-                case 'bottom': cy = y + avoid; break;
-            }
-            const [clx, cly] = edgeClamp(cx, cy);
-            return { a, cx: clx, cy: cly };
-        });
+        const candidates = order.map(candidateFor);
+        const feasible = candidates.filter(isFeasible);
+        const pool = feasible.length ? feasible : candidates;
 
         // Score: distance from finger (visibility) + mild center bias (stability)
         const score = ({ cx, cy }) => {
@@ -462,9 +516,11 @@ class MagnifierAddon {
             return dist * 2 + centerBias * 0.25;
         };
 
-        candidates.sort((A, B) => score(B) - score(A));
-        const best = candidates[0];
+        pool.sort((A, B) => score(B) - score(A));
+        const best = pool[0];
 
-        this._lensCanvas.style.transform = `translate3d(${best.cx - r}px, ${best.cy - r}px, 0)`;
+        const anchorFlipped = this._currentAnchor !== null && this._currentAnchor !== best.a;
+        this._currentAnchor = best.a;
+        this._applyLensTransform(best.cx - r, best.cy - r, anchorFlipped);
     }
 }
