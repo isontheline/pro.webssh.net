@@ -250,9 +250,14 @@ const PasswordPromptHelper = {
 
         const hintEl = document.createElement('div');
         hintEl.id = 'password-prompt-hint';
+        // Tooltip-like : opaque background + border, so the chip stays readable
+        // when it has to overlap existing text (narrow screens move it to the
+        // row above/below the prompt) :
         const foreground = ColorHelper.parseColor(terminalSettings.theme.foreground || '#ffffff');
-        hintEl.style.color = `rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.75)`;
-        hintEl.style.backgroundColor = `rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.12)`;
+        hintEl.style.color = `rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.9)`;
+        hintEl.style.backgroundColor = terminalSettings.theme.background || '#000000';
+        hintEl.style.border = `1px solid rgba(${foreground.red}, ${foreground.green}, ${foreground.blue}, 0.35)`;
+        hintEl.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.35)';
         hintEl.style.fontFamily = terminalSettings.fontFamily;
         hintEl.style.fontSize = terminalSettings.fontSize + 'px';
         terminal.element.parentElement.appendChild(hintEl);

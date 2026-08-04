@@ -77,4 +77,7 @@ body {
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
+    max-width: calc(100% - 8px);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
