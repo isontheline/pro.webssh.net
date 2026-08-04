@@ -904,12 +904,14 @@ const TerminalHelper = {
             document.head.appendChild(style);
         }
         // box-shadow instead of border : the handles' border is a transparent
-        // 12px hit-zone extension (44px Apple HIG target), it must stay intact :
+        // 12px hit-zone extension (44px Apple HIG target), it must stay intact.
+        // INSET so the ring hugs the visible 20px dot — an outer shadow would
+        // outline the invisible 44px hit zone (giant teardrop) instead :
         style.textContent = `
         .terminal-selection-handle.start-handle,
         .terminal-selection-handle.end-handle {
             background-color: ${theme.cursor} !important;
-            box-shadow: 0 0 0 1px ${theme.background};
+            box-shadow: inset 0 0 0 1px ${theme.background};
         }`;
         // <- Custom Terminal Selection Handles Styles
 
