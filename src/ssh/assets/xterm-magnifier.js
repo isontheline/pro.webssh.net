@@ -85,7 +85,8 @@ class MagnifierAddon {
                 position: 'absolute',
                 left: '0px',
                 top: '0px',
-                zIndex: '40',
+                zIndex: '1100', // above the selection handles (1000) : the lens floats over everything, iOS-style
+
                 width: `${this._radius * 2}px`,
                 height: `${this._radius * 2}px`,
                 border: this._border,
