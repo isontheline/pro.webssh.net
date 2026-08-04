@@ -1092,6 +1092,13 @@ const TouchHelper = {
     //   - the alternate buffer is active (full-screen apps : vim, less, man...).
     // In every other case we leave the native scrollback scrolling untouched.
     shouldForwardScroll: function () {
+        // #1636 : while a local text-selection drag is in progress, the
+        // selection wins over mouse-tracking scroll forwarding :
+        if (typeof selectionHandlesAddon !== 'undefined' && selectionHandlesAddon &&
+            (selectionHandlesAddon.isSelecting || selectionHandlesAddon._activeHandle)) {
+            return false;
+        }
+
         try {
             if (terminal._core.coreMouseService.areMouseEventsActive) {
                 return true;
@@ -1134,6 +1141,13 @@ const TouchHelper = {
 
             case 'touchmove':
                 if (!TouchHelper._scrollActive || event.touches.length !== 1) {
+                    return;
+                }
+
+                // #1636 : a selection drag started mid-gesture (long-press) — stand down :
+                if (typeof selectionHandlesAddon !== 'undefined' && selectionHandlesAddon &&
+                    (selectionHandlesAddon.isSelecting || selectionHandlesAddon._activeHandle)) {
+                    TouchHelper._scrollActive = false;
                     return;
                 }
 

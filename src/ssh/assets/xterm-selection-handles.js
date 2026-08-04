@@ -29,6 +29,9 @@ class SelectionHandlesAddon {
   _autoScrollDir = 0;
   _autoScrollTimer = null;
   _boundTouchMoveBlocker = null;
+  _boundTouchEndBlocker = null;
+  _suppressNextTouchEnd = false; // swallow the compatibility click following a drag (#1636)
+  _lastHapticRow = null;
 
   // refs
   terminal = null;
@@ -141,6 +144,9 @@ class SelectionHandlesAddon {
     this.endHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
 
     this._boundHandlePointerUp = (e) => {
+      if (this._activeHandle) {
+        this._suppressNextTouchEnd = true;
+      }
       this._activeHandle = null;
       this._grabOffset = null;
       this._lastDragPoint = null;
@@ -194,6 +200,17 @@ class SelectionHandlesAddon {
       }
     };
     this.terminalContainer.addEventListener('touchmove', this._boundTouchMoveBlocker, { passive: false });
+
+    // #1636 : after a selection drag (or a long-press), swallow the compatibility
+    // click iOS synthesizes on touchend — it would otherwise reach mouse-tracking
+    // apps (tmux...) as a stray mouse press. Plain taps are untouched (#994) :
+    this._boundTouchEndBlocker = (e) => {
+      if (this.isSelecting || this._activeHandle || this._suppressNextTouchEnd) {
+        this._suppressNextTouchEnd = false;
+        e.preventDefault();
+      }
+    };
+    this.terminalContainer.addEventListener('touchend', this._boundTouchEndBlocker, { passive: false });
 
     // Desktop cursor and handle visibility
     if (this.isFinePointer()) {
@@ -389,10 +406,8 @@ class SelectionHandlesAddon {
       this.tapHoldTimeout = setTimeout(() => {
         if (!this._movedBeyondThreshold) {
           this.isTapAndHoldActive = true;
-          this.startSelection(coords.row, coords.column);
-          if (this.settings.selectionHaptics && navigator.vibrate) {
-            navigator.vibrate(30);
-          }
+          this._startTouchSelection(coords);
+          this._hapticFeedback('medium');
         }
       }, 500);
     } else {
@@ -434,6 +449,11 @@ class SelectionHandlesAddon {
     this._lastDragPoint = { clientX: event.clientX, clientY: event.clientY };
     this._updateAutoScroll(event);
 
+    if (coords.row !== this._lastHapticRow) {
+      this._lastHapticRow = coords.row;
+      this._hapticFeedback('light');
+    }
+
     this.selectionEnd = coords;
     this.updateSelection();
   }
@@ -443,6 +463,10 @@ class SelectionHandlesAddon {
     this._stopAutoScroll();
     this._grabOffset = null;
     this._lastDragPoint = null;
+
+    if (this.isSelecting) {
+      this._suppressNextTouchEnd = true;
+    }
 
     if (!this.isSelecting) {
       // Ended without an active selection; ensure CSS toggle resets
@@ -484,6 +508,11 @@ class SelectionHandlesAddon {
     this._lastDragPoint = { clientX: event.clientX, clientY: event.clientY };
     this._updateAutoScroll(event);
 
+    if (coords.row !== this._lastHapticRow) {
+      this._lastHapticRow = coords.row;
+      this._hapticFeedback('light');
+    }
+
     if (this._activeHandle === 'start') {
       this.selectionStart = coords;
     } else {
@@ -491,6 +520,25 @@ class SelectionHandlesAddon {
     }
     this.isSelecting = true;
     this.updateSelection();
+  }
+
+  // iOS convention : long-press selects the whole word under the finger
+  // (_selectWordAt falls back to a single character on whitespace), then
+  // dragging extends the selection from there.
+  _startTouchSelection(coords) {
+    this.terminal.focus();
+    this.terminal.clearSelection();
+    this._selectWordAt(coords);
+    this.isSelecting = true;
+    this._lastHapticRow = coords.row;
+    this.terminalContainer?.classList?.add('terminal-selecting');
+  }
+
+  // navigator.vibrate does not exist in iOS WKWebView : haptics must go
+  // through the native bridge :
+  _hapticFeedback(style) {
+    if (!this.settings.selectionHaptics) return;
+    try { JS2IOS.calliOSFunction('performHapticFeedback', style); } catch { }
   }
 
   // The finger grabs the teardrop drawn below/beside the text : remember the
@@ -672,9 +720,11 @@ class SelectionHandlesAddon {
     this._viewportElement?.removeEventListener('scroll', this._boundViewportScroll);
     this._viewportElement = null;
     this.terminalContainer?.removeEventListener('touchmove', this._boundTouchMoveBlocker);
+    this.terminalContainer?.removeEventListener('touchend', this._boundTouchEndBlocker);
     this._stopAutoScroll();
     this._grabOffset = null;
     this._lastDragPoint = null;
+    this._suppressNextTouchEnd = false;
 
     // Remove handles
     if (this.startHandle?.parentNode) this.startHandle.parentNode.removeChild(this.startHandle);
