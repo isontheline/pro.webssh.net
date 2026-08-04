@@ -18,7 +18,17 @@ class SelectionHandlesAddon {
   scrollThreshold = 10; // px
   scrollTimeThreshold = 100; // ms
   touchMoveThreshold = 5; // px
-  handleSize = 20;
+  handleSize = 20; // visual teardrop size
+  handleHitPadding = 12; // transparent border : the 20px dot sits inside a 44px hit target (Apple HIG minimum)
+  autoScrollEdgeZone = 30; // px from the top/bottom edge that triggers auto-scroll while dragging
+  autoScrollIntervalMs = 80;
+
+  // drag state
+  _grabOffset = null;     // finger-to-text-point delta captured when grabbing a handle
+  _lastDragPoint = null;  // last {clientX, clientY} of the active drag (for auto-scroll re-extension)
+  _autoScrollDir = 0;
+  _autoScrollTimer = null;
+  _boundTouchMoveBlocker = null;
 
   // refs
   terminal = null;
@@ -77,6 +87,8 @@ class SelectionHandlesAddon {
       position: absolute;
       width: ${this.handleSize}px;
       height: ${this.handleSize}px;
+      border: ${this.handleHitPadding}px solid transparent;
+      background-clip: padding-box;
       background-color: rgba(0, 0, 255, 0.7);
       border-radius: 50% 50% 50% 0;
       transform: rotate(135deg);
@@ -110,6 +122,7 @@ class SelectionHandlesAddon {
       e.preventDefault();
       e.stopPropagation();
       this._activeHandle = 'start';
+      this._grabOffset = this._computeGrabOffset(e, this.selectionStart, true);
       try { this.startHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.startHandle.addEventListener('pointerdown', this._boundStartHandlePointerDown, { passive: false });
@@ -118,6 +131,7 @@ class SelectionHandlesAddon {
       e.preventDefault();
       e.stopPropagation();
       this._activeHandle = 'end';
+      this._grabOffset = this._computeGrabOffset(e, this.selectionEnd, false);
       try { this.endHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.endHandle.addEventListener('pointerdown', this._boundEndHandlePointerDown, { passive: false });
@@ -126,7 +140,12 @@ class SelectionHandlesAddon {
     this.startHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
     this.endHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
 
-    this._boundHandlePointerUp = (e) => { this._activeHandle = null; };
+    this._boundHandlePointerUp = (e) => {
+      this._activeHandle = null;
+      this._grabOffset = null;
+      this._lastDragPoint = null;
+      this._stopAutoScroll();
+    };
     this.startHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
     this.endHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
 
@@ -166,6 +185,16 @@ class SelectionHandlesAddon {
     this._viewportElement = this.terminal.element.querySelector('.xterm-viewport');
     this._viewportElement?.addEventListener('scroll', this._boundViewportScroll, { passive: true });
 
+    // Real scroll lock while a selection drag is in progress : on iOS,
+    // preventDefault on pointermove does NOT stop scrolling — only a
+    // non-passive touchmove listener can cancel it :
+    this._boundTouchMoveBlocker = (e) => {
+      if (this.isSelecting || this._activeHandle) {
+        e.preventDefault();
+      }
+    };
+    this.terminalContainer.addEventListener('touchmove', this._boundTouchMoveBlocker, { passive: false });
+
     // Desktop cursor and handle visibility
     if (this.isFinePointer()) {
       this.terminal.element.style.cursor = 'text';
@@ -194,11 +223,12 @@ class SelectionHandlesAddon {
   }
 
   // Unified pointer coordinates -> terminal row/column
-  getPointerCoordinates(event) {
+  // offset : optional finger-to-text-point delta (see _computeGrabOffset)
+  getPointerCoordinates(event, offset = null) {
     const rect = this.terminal.element.getBoundingClientRect();
 
-    const clientX = event.clientX ?? (event.touches && event.touches[0]?.clientX) ?? 0;
-    const clientY = event.clientY ?? (event.touches && event.touches[0]?.clientY) ?? 0;
+    const clientX = (event.clientX ?? (event.touches && event.touches[0]?.clientX) ?? 0) + (offset?.dx ?? 0);
+    const clientY = (event.clientY ?? (event.touches && event.touches[0]?.clientY) ?? 0) + (offset?.dy ?? 0);
 
     const x = clientX - rect.left;
     const y = clientY - rect.top;
@@ -240,10 +270,20 @@ class SelectionHandlesAddon {
   }
 
   setHandlePosition(handle, row, column, isStartHandle = false) {
-    const position = this.calculateHandlePosition(row, column, isStartHandle);
+    // A handle whose row scrolled out of the viewport must disappear, not stick
+    // clamped to the screen edge :
+    const viewportRow = row - this.terminal.buffer.active.viewportY;
+    if (viewportRow < 0 || viewportRow >= this.terminal.rows) {
+      handle.style.display = "none";
+      return;
+    }
 
-    handle.style.left = `${position.x - this.handleSize / 2}px`;
-    handle.style.top = `${position.y - 2}px`;
+    const position = this.calculateHandlePosition(row, column, isStartHandle);
+    const totalSize = this.handleSize + 2 * this.handleHitPadding;
+
+    // The transparent hit-zone border shifts the visual dot by handleHitPadding :
+    handle.style.left = `${position.x - totalSize / 2}px`;
+    handle.style.top = `${position.y - this.handleHitPadding - 2}px`;
     handle.style.display = "block";
   }
 
@@ -391,12 +431,18 @@ class SelectionHandlesAddon {
     const coords = this.getPointerCoordinates(event);
     if (!coords) return;
 
+    this._lastDragPoint = { clientX: event.clientX, clientY: event.clientY };
+    this._updateAutoScroll(event);
+
     this.selectionEnd = coords;
     this.updateSelection();
   }
 
   terminalPointerUpCb(event) {
     clearTimeout(this.tapHoldTimeout);
+    this._stopAutoScroll();
+    this._grabOffset = null;
+    this._lastDragPoint = null;
 
     if (!this.isSelecting) {
       // Ended without an active selection; ensure CSS toggle resets
@@ -432,8 +478,11 @@ class SelectionHandlesAddon {
     event.preventDefault();
     event.stopPropagation();
 
-    const coords = this.getPointerCoordinates(event);
+    const coords = this.getPointerCoordinates(event, this._grabOffset);
     if (!coords) return;
+
+    this._lastDragPoint = { clientX: event.clientX, clientY: event.clientY };
+    this._updateAutoScroll(event);
 
     if (this._activeHandle === 'start') {
       this.selectionStart = coords;
@@ -441,6 +490,69 @@ class SelectionHandlesAddon {
       this.selectionEnd = coords;
     }
     this.isSelecting = true;
+    this.updateSelection();
+  }
+
+  // The finger grabs the teardrop drawn below/beside the text : remember the
+  // delta to the logical text point so the selection doesn't jump by that
+  // offset on the first move, and stays visible above the finger while dragging.
+  _computeGrabOffset(event, point, isStartHandle) {
+    if (!point) return null;
+
+    const rect = this.terminal.element.getBoundingClientRect();
+    const { cellWidth, cellHeight } = this._getCellSize();
+    const viewportY = this.terminal.buffer.active.viewportY;
+
+    const targetX = rect.left + (point.column + (isStartHandle ? 0 : 1)) * cellWidth;
+    const targetY = rect.top + (point.row - viewportY + 0.5) * cellHeight;
+
+    return { dx: targetX - event.clientX, dy: targetY - event.clientY };
+  }
+
+  // Auto-scroll while dragging near the top/bottom edge, so a selection can
+  // extend beyond the visible viewport :
+  _updateAutoScroll(event) {
+    const rect = this.terminal.element.getBoundingClientRect();
+    const y = (event.clientY ?? 0) + (this._grabOffset?.dy ?? 0);
+
+    let dir = 0;
+    if (y < rect.top + this.autoScrollEdgeZone) dir = -1;
+    else if (y > rect.bottom - this.autoScrollEdgeZone) dir = 1;
+
+    if (dir === this._autoScrollDir) return;
+
+    this._autoScrollDir = dir;
+    clearInterval(this._autoScrollTimer);
+    this._autoScrollTimer = null;
+
+    if (dir !== 0) {
+      this._autoScrollTimer = setInterval(() => {
+        try {
+          this.terminal.scrollLines(this._autoScrollDir);
+          this._extendToLastDragPoint();
+        } catch { }
+      }, this.autoScrollIntervalMs);
+    }
+  }
+
+  _stopAutoScroll() {
+    this._autoScrollDir = 0;
+    clearInterval(this._autoScrollTimer);
+    this._autoScrollTimer = null;
+  }
+
+  // After each auto-scroll step the same finger position maps to a new row :
+  _extendToLastDragPoint() {
+    if (!this._lastDragPoint) return;
+
+    const coords = this.getPointerCoordinates(this._lastDragPoint, this._grabOffset);
+    if (!coords) return;
+
+    if (this._activeHandle === 'start') {
+      this.selectionStart = coords;
+    } else {
+      this.selectionEnd = coords;
+    }
     this.updateSelection();
   }
 
@@ -474,12 +586,16 @@ class SelectionHandlesAddon {
     }
   }
 
-  // Keep handle positions in sync
+  // Keep handle positions in sync (scroll / resize / font size changes).
+  // NB : the old guard compared selectionStart.x/.y — properties that do not
+  // exist on {row, column} points — so this callback was a silent no-op and
+  // handles never followed the viewport :
   updateHandles() {
-    if (this.selectionStart && this.selectionEnd && this.selectionStart.x != this.selectionEnd.x && this.selectionStart.y != this.selectionEnd.y) {
-      this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, true);
-      this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, false);
-    }
+    if (!this.selectionStart || !this.selectionEnd) return;
+    if (!this.terminal?.getSelection?.()) return;
+
+    this.setHandlePosition(this.startHandle, this.selectionStart.row, this.selectionStart.column, true);
+    this.setHandlePosition(this.endHandle, this.selectionEnd.row, this.selectionEnd.column, false);
   }
 
   // Desktop double/triple click helpers
@@ -555,6 +671,10 @@ class SelectionHandlesAddon {
     window.removeEventListener('resize', this._boundOnResize);
     this._viewportElement?.removeEventListener('scroll', this._boundViewportScroll);
     this._viewportElement = null;
+    this.terminalContainer?.removeEventListener('touchmove', this._boundTouchMoveBlocker);
+    this._stopAutoScroll();
+    this._grabOffset = null;
+    this._lastDragPoint = null;
 
     // Remove handles
     if (this.startHandle?.parentNode) this.startHandle.parentNode.removeChild(this.startHandle);

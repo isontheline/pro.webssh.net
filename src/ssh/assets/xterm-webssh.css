@@ -66,6 +66,16 @@ body {
     -webkit-user-select: none;
 }
 
+/* While a selection drag is in progress (class toggled by
+   xterm-selection-handles.js) : block native text selection and callouts.
+   The scroll lock itself is a non-passive touchmove listener in the addon. */
+.terminal-selecting,
+.terminal-selecting * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+}
+
 #password-prompt-hint {
     position: absolute;
     z-index: 1000;

@@ -903,11 +903,13 @@ const TerminalHelper = {
             style.id = 'terminal-selection-handles-style';
             document.head.appendChild(style);
         }
+        // box-shadow instead of border : the handles' border is a transparent
+        // 12px hit-zone extension (44px Apple HIG target), it must stay intact :
         style.textContent = `
         .terminal-selection-handle.start-handle,
         .terminal-selection-handle.end-handle {
             background-color: ${theme.cursor} !important;
-            border: 1px solid ${theme.background} !important;
+            box-shadow: 0 0 0 1px ${theme.background};
         }`;
         // <- Custom Terminal Selection Handles Styles
 
