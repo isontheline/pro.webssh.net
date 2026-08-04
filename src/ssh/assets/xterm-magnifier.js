@@ -1,8 +1,14 @@
 /**
  * MagnifierAddon
- * Xterm.js addon: circular magnifier that follows touch/pointer movement
- * and magnifies the WebGL renderer canvas. DPI-aware, no external deps.
- * 
+ * Xterm.js addon: circular magnifier lens over the renderer canvas.
+ * DPI-aware, no external deps.
+ *
+ * PASSIVE component : it owns no event listeners and captures no input.
+ * The lens is driven by callers (xterm-selection-handles.js shows it while a
+ * selection drag is in progress) through showAt()/hide(). The previous
+ * design — a full-size pointer-capturing overlay — made the whole terminal
+ * inert and is the reason this addon was never shipped.
+ *
  * Copyright (c) 2025, Arnaud MENGUS (MIT License)
  * https://github.com/isontheline/pro.webssh.net
  * @license MIT
@@ -28,8 +34,7 @@
 class MagnifierAddon {
     constructor(opts = {}) {
         this._term = undefined;
-        this._container = undefined;
-        this._overlayHost = undefined;
+        this._root = undefined;
         this._lensCanvas = undefined;
         this._ctx = null;
 
@@ -38,26 +43,23 @@ class MagnifierAddon {
         this._zoom = Math.max(1, opts.zoom ?? 2.0);
         this._border = opts.border ?? '2px solid rgba(255,255,255,0.8)';
         this._boxShadow = opts.boxShadow ?? '0 8px 24px rgba(0,0,0,0.35)';
-        this._holdToShow = (opts.holdToShow ?? true);
         this._canvasSelector = opts.canvasSelector;
         this._debug = !!opts.debug;
 
-        this._enabled = false;
         this._visible = false;
         this._raf = 0;
         this._dirty = false;
-        this._pointerX = 0;
+        this._pointerX = 0; // relative to _root
         this._pointerY = 0;
 
         this._resizeObs = undefined;
         this._mutationObs = undefined;
-        this._pointerDown = false;
         this._waitTicker = 0; // frames spent waiting for pixels
 
         this._edgeInset = opts.edgeInset ?? 8;          // px: padding from container bounds
         this._gap = opts.gap ?? 8;                      // px: gap between finger and lens
         this._touchAvoidRadius = opts.touchAvoidRadius ?? 28; // px: approx half of 56px touch contact
-        this._lastPointerType = 'mouse';                // remember last pointer type
+        this._lastPointerType = 'touch';
 
         this._sideSnapOnly = opts.sideSnapOnly ?? true;              // force left/right docking
         this._sideSnapHysteresis = opts.sideSnapHysteresis ?? 24;    // px: minimize flip-flop
@@ -69,30 +71,21 @@ class MagnifierAddon {
         this._term = terminal;
 
         requestAnimationFrame(() => {
-            this._container = terminal.element;
-            if (!this._container) return;
+            const container = terminal.element;
+            if (!container) return;
 
-            const root = this._container.querySelector('.xterm') || this._container;
+            const root = container.querySelector('.xterm') || container;
             if (getComputedStyle(root).position === 'static') root.style.position = 'relative';
+            this._root = root;
 
-            // Transparent overlay to capture pointer/touch
-            this._overlayHost = document.createElement('div');
-            Object.assign(this._overlayHost.style, {
-                position: 'absolute',
-                inset: '0',
-                zIndex: '40',
-                pointerEvents: 'auto',
-                touchAction: 'none',
-                background: 'transparent'
-            });
-
-            // Lens canvas
+            // Lens canvas (pointer-transparent : this addon never captures input)
             this._lensCanvas = document.createElement('canvas');
             this._lensCanvas.width = this._lensCanvas.height = this._lensPixelSize();
             Object.assign(this._lensCanvas.style, {
                 position: 'absolute',
                 left: '0px',
                 top: '0px',
+                zIndex: '40',
                 width: `${this._radius * 2}px`,
                 height: `${this._radius * 2}px`,
                 border: this._border,
@@ -103,18 +96,14 @@ class MagnifierAddon {
                 visibility: 'hidden'
             });
             this._ctx = this._lensCanvas.getContext('2d');
-
-            root.appendChild(this._overlayHost);
             root.appendChild(this._lensCanvas);
 
             // Locate renderer canvas
             this._sourceCanvas = this._findSourceCanvas(root);
             if (this._debug) console.log('[Magnifier] sourceCanvas=', this._sourceCanvas);
 
-            // Keep overlay sized to .xterm-screen
-            this._resizeObs = new ResizeObserver(() => this._syncOverlayBounds());
+            this._resizeObs = new ResizeObserver(() => this._markDirty());
             this._resizeObs.observe(root);
-            this._syncOverlayBounds();
 
             // Detect renderer re-initialisation/swaps
             this._mutationObs = new MutationObserver(() => {
@@ -127,41 +116,54 @@ class MagnifierAddon {
                 }
             });
             this._mutationObs.observe(root, { childList: true, subtree: true });
-
-            this._bindEvents();
-            this.enable();
         });
     }
 
     dispose() {
         cancelAnimationFrame(this._raf);
         this._raf = 0;
-        this._enabled = false;
         this._visible = false;
 
-        if (this._overlayHost && this._overlayHost.isConnected) this._overlayHost.remove();
         if (this._lensCanvas && this._lensCanvas.isConnected) this._lensCanvas.remove();
 
         if (this._resizeObs) this._resizeObs.disconnect();
         if (this._mutationObs) this._mutationObs.disconnect();
 
-        this._overlayHost = undefined;
+        this._root = undefined;
         this._lensCanvas = undefined;
         this._ctx = null;
         this._sourceCanvas = null;
     }
 
-    enable() {
-        if (this._enabled) return;
-        this._enabled = true;
-        if (this._overlayHost) this._overlayHost.style.pointerEvents = 'auto';
+    // ---------------- public API (driven by the caller) ----------------
+
+    // Show / move the lens so it magnifies the given client (page) point.
+    // The lens itself is placed away from the finger by the docking logic.
+    showAt(clientX, clientY, pointerType = 'touch') {
+        if (!this._lensCanvas || !this._root) return;
+
+        const rootRect = this._root.getBoundingClientRect();
+        this._pointerX = clientX - rootRect.left;
+        this._pointerY = clientY - rootRect.top;
+        this._lastPointerType = pointerType;
+
+        if (!this._visible) {
+            this._visible = true;
+            this._lensCanvas.style.visibility = 'visible';
+            this._renderLoop();
+        }
+
+        this._positionLens();
+        this._markDirty();
+        this._drawLens();
     }
 
-    disable() {
-        if (!this._enabled) return;
-        this._enabled = false;
-        this._hideLens();
-        if (this._overlayHost) this._overlayHost.style.pointerEvents = 'none';
+    hide() {
+        if (!this._lensCanvas || !this._visible) return;
+        this._visible = false;
+        this._lensCanvas.style.visibility = 'hidden';
+        cancelAnimationFrame(this._raf);
+        this._raf = 0;
         this._currentSide = null;
     }
 
@@ -182,93 +184,6 @@ class MagnifierAddon {
 
     // ---------------- internals ----------------
 
-    _bindEvents() {
-        if (!this._overlayHost) return;
-        const opts = { passive: false };
-
-        this._overlayHost.addEventListener('pointerdown', (e) => {
-            if (!this._enabled) return;
-            try { this._overlayHost.setPointerCapture(e.pointerId); } catch (_) { }
-            this._pointerDown = true;
-            this._updatePointer(e);
-            if (this._holdToShow) this._showLens();
-            e.preventDefault();
-        }, opts);
-
-        this._overlayHost.addEventListener('pointermove', (e) => {
-            if (!this._enabled) return;
-            this._updatePointer(e);
-            if (!this._holdToShow && !this._visible) this._showLens();
-            // Draw immediately on the first move to avoid a blank frame
-            if (this._visible) this._drawLens();
-            e.preventDefault();
-        }, opts);
-
-        const end = (e) => {
-            if (!this._enabled) return;
-            try { this._overlayHost.releasePointerCapture?.(e.pointerId); } catch (_) { }
-            this._pointerDown = false;
-            if (this._holdToShow) this._hideLens();
-            e.preventDefault();
-        };
-
-        this._overlayHost.addEventListener('pointerup', end, opts);
-        this._overlayHost.addEventListener('pointercancel', end, opts);
-        this._overlayHost.addEventListener('pointerleave', (e) => {
-            if (!this._enabled) return;
-            if (this._holdToShow || !this._pointerDown) this._hideLens();
-            e.preventDefault();
-        }, opts);
-
-        // Hover mode when holdToShow=false
-        this._overlayHost.addEventListener('mouseenter', (e) => {
-            if (!this._enabled || this._holdToShow) return;
-            this._updatePointer(e);
-            this._showLens();
-            this._drawLens();
-        }, opts);
-
-        this._overlayHost.addEventListener('mouseleave', () => {
-            if (!this._enabled || this._holdToShow) return;
-            this._hideLens();
-        }, opts);
-    }
-
-    _updatePointer(e) {
-        const hostRect = this._overlayHost.getBoundingClientRect();
-        this._pointerX = e.clientX - hostRect.left;
-        this._pointerY = e.clientY - hostRect.top;
-        this._lastPointerType = e.pointerType || this._lastPointerType;
-        this._positionLens();
-        this._markDirty();
-    }
-
-    _showLens() {
-        if (!this._lensCanvas || this._visible) return;
-        this._visible = true;
-        this._lensCanvas.style.visibility = 'visible';
-        this._positionLens();
-        this._renderLoop();
-    }
-
-    _hideLens() {
-        if (!this._lensCanvas || !this._visible) return;
-        this._visible = false;
-        this._lensCanvas.style.visibility = 'hidden';
-        cancelAnimationFrame(this._raf);
-        this._raf = 0;
-        this._currentSide = null;
-    }
-
-    _positionLens() {
-        if (!this._lensCanvas || !this._overlayHost) return;
-        if (this._sideSnapOnly) {
-            this._placeLensSideOnly();
-        } else {
-            this._placeLensSmart();
-        }
-    }
-
     _markDirty() {
         this._dirty = true;
         if (this._visible && !this._raf) this._renderLoop();
@@ -284,7 +199,7 @@ class MagnifierAddon {
 
     _drawLens() {
         this._dirty = false;
-        if (!this._ctx || !this._lensCanvas || !this._sourceCanvas) return;
+        if (!this._ctx || !this._lensCanvas || !this._sourceCanvas || !this._root) return;
 
         const ctx = this._ctx;
         const lens = this._lensCanvas;
@@ -340,11 +255,11 @@ class MagnifierAddon {
         const lensPx = this._lensPixelSize(); // 2*radius*dpr
         const rPx = lensPx / 2;
 
-        // Pointer in page coords -> source canvas CSS coords
+        // Pointer (root-relative) -> page coords -> source canvas CSS coords
         const srcRect = src.getBoundingClientRect();
-        const hostRect = this._overlayHost.getBoundingClientRect();
-        const ptrClientX = this._pointerX + hostRect.left;
-        const ptrClientY = this._pointerY + hostRect.top;
+        const rootRect = this._root.getBoundingClientRect();
+        const ptrClientX = this._pointerX + rootRect.left;
+        const ptrClientY = this._pointerY + rootRect.top;
 
         const srcXcss = ptrClientX - srcRect.left;
         const srcYcss = ptrClientY - srcRect.top;
@@ -401,27 +316,6 @@ class MagnifierAddon {
         return Math.max(2, Math.round(this._radius * 2 * dpr));
     }
 
-    _syncOverlayBounds() {
-        if (!this._overlayHost || !this._container) return;
-        const screen = this._container.querySelector('.xterm-screen') || this._container;
-        const rect = screen.getBoundingClientRect();
-
-        const root = this._container.querySelector('.xterm') || this._container;
-        const rootRect = root.getBoundingClientRect();
-
-        const offsetLeft = rect.left - rootRect.left;
-        const offsetTop = rect.top - rootRect.top;
-
-        Object.assign(this._overlayHost.style, {
-            left: `${offsetLeft}px`,
-            top: `${offsetTop}px`,
-            width: `${rect.width}px`,
-            height: `${rect.height}px`
-        });
-
-        this._markDirty();
-    }
-
     _findSourceCanvas(root) {
         const screen = root.querySelector('.xterm-screen') || root;
 
@@ -441,11 +335,20 @@ class MagnifierAddon {
         return chosen;
     }
 
+    _positionLens() {
+        if (!this._lensCanvas || !this._root) return;
+        if (this._sideSnapOnly) {
+            this._placeLensSideOnly();
+        } else {
+            this._placeLensSmart();
+        }
+    }
+
     _placeLensSideOnly() {
         const r = this._radius;
-        const hostRect = this._overlayHost.getBoundingClientRect();
-        const W = hostRect.width;
-        const H = hostRect.height;
+        const rootRect = this._root.getBoundingClientRect();
+        const W = rootRect.width;
+        const H = rootRect.height;
 
         const x = this._pointerX;
         const y = this._pointerY;
@@ -479,9 +382,8 @@ class MagnifierAddon {
         let cx = (desiredSide === 'right') ? (x + avoid) : (x - avoid);
         let cy = y;
 
-        // Clamp inside overlay
+        // Clamp inside root
         const clampedCx = Math.max(edge + r, Math.min(cx, W - edge - r));
-        const clampedCy = Math.max(edge + r, Math.min(cy, H - edge - r));
 
         // Safety fallback: if clamping pushed us so close that the lens edge
         // overlaps the finger, flip to opposite side (matters at extreme edges).
@@ -506,9 +408,9 @@ class MagnifierAddon {
 
     _placeLensSmart() {
         const r = this._radius;
-        const hostRect = this._overlayHost.getBoundingClientRect();
-        const W = hostRect.width;
-        const H = hostRect.height;
+        const rootRect = this._root.getBoundingClientRect();
+        const W = rootRect.width;
+        const H = rootRect.height;
         const x = this._pointerX;
         const y = this._pointerY;
 

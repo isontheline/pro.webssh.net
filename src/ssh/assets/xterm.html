@@ -99,15 +99,15 @@
       }
 
       // Magnifier Addon ->
+      // Passive lens : it captures no input, the selection handles drive it
+      // through showAt()/hide() while a selection drag is in progress.
       const magnifier = new MagnifierAddon({
-        radius: 30,
-        zoom: 2.25,
-        holdToShow: true,
+        radius: 40,
+        zoom: 2.0,
         canvasSelector: "canvas:not(.xterm-link-layer)",
         sideSnapOnly: false,
         debug: false,
       });
-      //terminal.loadAddon(magnifier);
       // <- Magnifier Addon
 
       // Open the terminal :
@@ -124,6 +124,10 @@
       });
       if (!terminalSettings.isMacOS) {
         terminal.loadAddon(selectionHandlesAddon);
+
+        // Magnifier lens shown while dragging a selection (touch precision aid) :
+        terminal.loadAddon(magnifier);
+        selectionHandlesAddon.magnifier = magnifier;
       }
       // <- Selection Handles Addon
 

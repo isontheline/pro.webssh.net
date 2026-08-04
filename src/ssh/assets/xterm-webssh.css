@@ -76,6 +76,17 @@ body {
     -webkit-touch-callout: none !important;
 }
 
+/* Stock xterm.css only protects the .xterm subtree with user-select: none.
+   Our chrome (selection handles, password hint, badge, scrolly) lives in
+   #terminal OUTSIDE .xterm : without this, a long-press on a handle starts
+   the NATIVE WebKit text selection (blue grabbers) over our custom one. */
+#terminal,
+#terminal * {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-touch-callout: none !important;
+}
+
 #password-prompt-hint {
     position: absolute;
     z-index: 1000;

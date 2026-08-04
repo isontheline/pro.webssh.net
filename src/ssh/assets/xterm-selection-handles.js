@@ -30,8 +30,12 @@ class SelectionHandlesAddon {
   _autoScrollTimer = null;
   _boundTouchMoveBlocker = null;
   _boundTouchEndBlocker = null;
+  _boundHandleTouchStart = null;
   _suppressNextTouchEnd = false; // swallow the compatibility click following a drag (#1636)
   _lastHapticRow = null;
+
+  // Optional MagnifierAddon (passive lens) shown while dragging, wired in xterm.html :
+  magnifier = null;
 
   // refs
   terminal = null;
@@ -87,6 +91,9 @@ class SelectionHandlesAddon {
       z-index: 1000;
       touch-action: none;
       pointer-events: auto;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
       position: absolute;
       width: ${this.handleSize}px;
       height: ${this.handleSize}px;
@@ -126,6 +133,7 @@ class SelectionHandlesAddon {
       e.stopPropagation();
       this._activeHandle = 'start';
       this._grabOffset = this._computeGrabOffset(e, this.selectionStart, true);
+      this.terminalContainer?.classList?.add('terminal-selecting');
       try { this.startHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.startHandle.addEventListener('pointerdown', this._boundStartHandlePointerDown, { passive: false });
@@ -135,9 +143,17 @@ class SelectionHandlesAddon {
       e.stopPropagation();
       this._activeHandle = 'end';
       this._grabOffset = this._computeGrabOffset(e, this.selectionEnd, false);
+      this.terminalContainer?.classList?.add('terminal-selecting');
       try { this.endHandle.setPointerCapture(e.pointerId); } catch { }
     };
     this.endHandle.addEventListener('pointerdown', this._boundEndHandlePointerDown, { passive: false });
+
+    // A long-press on a handle must never boot the NATIVE WebKit text
+    // selection : swallow the touch at its source (pointer events, which drive
+    // the drag, are not affected by preventDefault on touch events) :
+    this._boundHandleTouchStart = (e) => { e.preventDefault(); };
+    this.startHandle.addEventListener('touchstart', this._boundHandleTouchStart, { passive: false });
+    this.endHandle.addEventListener('touchstart', this._boundHandleTouchStart, { passive: false });
 
     this._boundHandlePointerMove = this.handlePointerMoveCb.bind(this);
     this.startHandle.addEventListener('pointermove', this._boundHandlePointerMove, { passive: false });
@@ -151,6 +167,8 @@ class SelectionHandlesAddon {
       this._grabOffset = null;
       this._lastDragPoint = null;
       this._stopAutoScroll();
+      this.magnifier?.hide();
+      this.terminalContainer?.classList?.remove('terminal-selecting');
     };
     this.startHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
     this.endHandle.addEventListener('pointerup', this._boundHandlePointerUp, { passive: true });
@@ -454,6 +472,8 @@ class SelectionHandlesAddon {
       this._hapticFeedback('light');
     }
 
+    this.magnifier?.showAt(event.clientX, event.clientY, event.pointerType || 'touch');
+
     this.selectionEnd = coords;
     this.updateSelection();
   }
@@ -463,6 +483,7 @@ class SelectionHandlesAddon {
     this._stopAutoScroll();
     this._grabOffset = null;
     this._lastDragPoint = null;
+    this.magnifier?.hide();
 
     if (this.isSelecting) {
       this._suppressNextTouchEnd = true;
@@ -512,6 +533,13 @@ class SelectionHandlesAddon {
       this._lastHapticRow = coords.row;
       this._hapticFeedback('light');
     }
+
+    // Magnify the logical text point (grab offset applied), not the finger :
+    this.magnifier?.showAt(
+      event.clientX + (this._grabOffset?.dx ?? 0),
+      event.clientY + (this._grabOffset?.dy ?? 0),
+      event.pointerType || 'touch'
+    );
 
     if (this._activeHandle === 'start') {
       this.selectionStart = coords;
@@ -596,6 +624,12 @@ class SelectionHandlesAddon {
     const coords = this.getPointerCoordinates(this._lastDragPoint, this._grabOffset);
     if (!coords) return;
 
+    // Keep the lens content fresh while the viewport scrolls under a still finger :
+    this.magnifier?.showAt(
+      this._lastDragPoint.clientX + (this._grabOffset?.dx ?? 0),
+      this._lastDragPoint.clientY + (this._grabOffset?.dy ?? 0)
+    );
+
     if (this._activeHandle === 'start') {
       this.selectionStart = coords;
     } else {
@@ -630,6 +664,7 @@ class SelectionHandlesAddon {
       this._activeHandle = null;
       this.terminal.clearSelection();
       this.hideHandles();
+      this.magnifier?.hide();
       this.terminalContainer?.classList?.remove('terminal-selecting');
     }
   }
@@ -702,11 +737,13 @@ class SelectionHandlesAddon {
       this.startHandle.removeEventListener('pointerdown', this._boundStartHandlePointerDown);
       this.startHandle.removeEventListener('pointermove', this._boundHandlePointerMove);
       this.startHandle.removeEventListener('pointerup', this._boundHandlePointerUp);
+      this.startHandle.removeEventListener('touchstart', this._boundHandleTouchStart);
     }
     if (this.endHandle) {
       this.endHandle.removeEventListener('pointerdown', this._boundEndHandlePointerDown);
       this.endHandle.removeEventListener('pointermove', this._boundHandlePointerMove);
       this.endHandle.removeEventListener('pointerup', this._boundHandlePointerUp);
+      this.endHandle.removeEventListener('touchstart', this._boundHandleTouchStart);
     }
 
     // Selection change disposables
@@ -725,6 +762,8 @@ class SelectionHandlesAddon {
     this._grabOffset = null;
     this._lastDragPoint = null;
     this._suppressNextTouchEnd = false;
+    this.magnifier?.hide();
+    this.magnifier = null;
 
     // Remove handles
     if (this.startHandle?.parentNode) this.startHandle.parentNode.removeChild(this.startHandle);
