@@ -478,10 +478,22 @@ class MagnifierAddon {
         const isFeasible = ({ cx, cy }) => (Math.hypot(cx - x, cy - y) - r) >= minClear;
 
         // Sticky anchor : keep the current docking side as long as it stays
-        // feasible. Re-scoring on every move makes near-tied candidates swap
-        // winners frame to frame near the edges — the lens teleports around
-        // the finger (flicker). Only re-evaluate when the side breaks down :
+        // feasible. Re-evaluating on every move makes near-tied candidates
+        // swap winners frame to frame near the edges — the lens teleports
+        // around the finger (flicker). Only re-evaluate when the side breaks
+        // down — with one exception : return ABOVE the finger (iOS convention,
+        // the hand covers the area below) as soon as there is comfortably
+        // room again, with hysteresis to avoid flip-flop at the boundary :
         if (this._currentAnchor) {
+            if (this._currentAnchor !== 'top') {
+                const top = candidateFor('top');
+                if ((Math.hypot(top.cx - x, top.cy - y) - r) >= minClear + this._sideSnapHysteresis) {
+                    this._currentAnchor = 'top';
+                    this._applyLensTransform(top.cx - r, top.cy - r, true);
+                    return;
+                }
+            }
+
             const keep = candidateFor(this._currentAnchor);
             if (isFeasible(keep)) {
                 this._applyLensTransform(keep.cx - r, keep.cy - r, false);
@@ -489,35 +501,22 @@ class MagnifierAddon {
             }
         }
 
-        const roomLeft = x;
-        const roomRight = W - x;
-        const roomTop = y;
-        const roomBot = H - y;
-
-        // Prefer side with more room unless very close to top/bottom thirds
-        const topBand = H * 0.33;
-        const bottomBand = H * 0.67;
-        const sideBias = (roomRight >= roomLeft) ? ['right', 'left'] : ['left', 'right'];
-
-        const order = (y <= topBand)
-            ? ['bottom', ...sideBias, 'top']
-            : (y >= bottomBand)
-                ? ['top', ...sideBias, 'bottom']
-                : [...sideBias, (roomTop >= roomBot ? 'top' : 'bottom')];
+        // Preference order, iOS-style : above the finger first, then the side
+        // with more room, below only as a last resort :
+        const sideBias = ((W - x) >= x) ? ['right', 'left'] : ['left', 'right'];
+        const order = ['top', ...sideBias, 'bottom'];
 
         const candidates = order.map(candidateFor);
         const feasible = candidates.filter(isFeasible);
-        const pool = feasible.length ? feasible : candidates;
 
-        // Score: distance from finger (visibility) + mild center bias (stability)
-        const score = ({ cx, cy }) => {
-            const dist = Math.hypot(cx - x, cy - y);
-            const centerBias = (W / 2 - Math.abs(cx - W / 2)) + (H / 2 - Math.abs(cy - H / 2));
-            return dist * 2 + centerBias * 0.25;
-        };
-
-        pool.sort((A, B) => score(B) - score(A));
-        const best = pool[0];
+        let best;
+        if (feasible.length) {
+            best = feasible[0];
+        } else {
+            // Nothing clears the finger (tiny viewport) : take the farthest one
+            best = candidates.slice().sort((A, B) =>
+                Math.hypot(B.cx - x, B.cy - y) - Math.hypot(A.cx - x, A.cy - y))[0];
+        }
 
         const anchorFlipped = this._currentAnchor !== null && this._currentAnchor !== best.a;
         this._currentAnchor = best.a;
