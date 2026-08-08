@@ -230,6 +230,14 @@ const PasswordPromptHelper = {
         // generic password prompts (su, doas, nested ssh, passphrases, ...) :
         /(password|passphrase|passwort|mot de passe|contraseña|senha|wachtwoord|hasło|lösenord|adgangskode|parola|пароль|암호|비밀번호|パスワード|密码|密碼)[^:：]*[:：]\s*$/i
     ],
+    // Alternate buffer (a shell inside screen/tmux also lives there) : only
+    // unambiguous prompts — a text editor can legitimately show a line ending
+    // with "Password:" and Enter would paste the password into the file :
+    alternatePatterns: [
+        /^\[sudo\].*[:：]\s*$/,
+        /^doas \([^)]*\)[^:：]*[:：]\s*$/i
+    ],
+    detectionScope: 'enabled', // enabled | standard_buffer ("off" is the Hint strategy's job)
     armed: false,
     hintEl: null,
     _promptRow: -1,
@@ -240,10 +248,12 @@ const PasswordPromptHelper = {
 
     init: function (terminal) {
         PasswordPromptHelper.enabled = terminalSettings.passwordPromptHintEnabled;
+        PasswordPromptHelper.detectionScope = terminalSettings.passwordPromptDetectionScope;
 
-        // Disabled for this terminal's lifetime (the setting is read again on the
-        // next terminal load, and native never re-enables through configure()) :
-        // don't build the overlay nor subscribe — zero work per write :
+        // Disabled for this terminal's lifetime (the settings are read again on
+        // the next terminal load, and native never re-enables through
+        // configure()) : don't build the overlay nor subscribe — zero work per
+        // write :
         if (!PasswordPromptHelper.enabled) {
             return;
         }
@@ -298,23 +308,44 @@ const PasswordPromptHelper = {
     },
 
     check: function () {
-        if (!PasswordPromptHelper.enabled ||
-            !PasswordPromptHelper.hasPassword ||
-            terminal.buffer.active.type !== 'normal') {
+        if (!PasswordPromptHelper.enabled || !PasswordPromptHelper.hasPassword) {
             PasswordPromptHelper.hide(true);
             return;
         }
 
         const buffer = terminal.buffer.active;
+        const isAlternate = buffer.type === 'alternate';
+
+        if (isAlternate) {
+            // A shell inside screen/tmux lives in the alternate buffer too —
+            // don't write it off wholesale, but be strict (#1660 follow-up) :
+            if (PasswordPromptHelper.detectionScope !== 'enabled') {
+                PasswordPromptHelper.hide(true);
+                return;
+            }
+
+            // A real TUI (vim mouse=a, htop...) is not a shell — stand down.
+            // screen/tmux hosting a plain shell don't enable mouse tracking :
+            let mouseTracking = false;
+            try { mouseTracking = terminal._core.coreMouseService.areMouseEventsActive; } catch (e) { }
+            if (mouseTracking) {
+                PasswordPromptHelper.hide(true);
+                return;
+            }
+        }
+
         const row = buffer.baseY + buffer.cursorY;
         const line = buffer.getLine(row);
         const lineText = line ? line.translateToString(true) : '';
+
+        // Alternate buffer : unambiguous prompts only (see alternatePatterns) :
+        const activePatterns = isAlternate ? PasswordPromptHelper.alternatePatterns : PasswordPromptHelper.patterns;
 
         // The cursor must sit right after the prompt text : a shorter cursorX means
         // the match comes from older content, not from a prompt awaiting input.
         const matched = lineText !== '' &&
             buffer.cursorX >= lineText.length &&
-            PasswordPromptHelper.patterns.some((pattern) => pattern.test(lineText));
+            activePatterns.some((pattern) => pattern.test(lineText));
 
         if (!matched) {
             PasswordPromptHelper._lastSignature = null;
@@ -772,6 +803,7 @@ const TerminalHelper = {
             isMacOS: false,
             openLinksStrategy: 'disabled',
             passwordPromptHintEnabled: false,
+            passwordPromptDetectionScope: 'enabled',
             remoteCharacterSet: 'UTF-8',
             reverseWraparound: true,
             rows: 25,
@@ -853,6 +885,10 @@ const TerminalHelper = {
 
         if (fragment.passwordPromptHintStrategy && fragment.passwordPromptHintStrategy != 'disabled') {
             terminalSettings.passwordPromptHintEnabled = true;
+        }
+
+        if (fragment.passwordPromptDetectionScope) {
+            terminalSettings.passwordPromptDetectionScope = fragment.passwordPromptDetectionScope;
         }
 
         if (fragment.terminalSize) {
