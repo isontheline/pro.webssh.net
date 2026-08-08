@@ -38,7 +38,7 @@
 | TELNET Client | :white_check_mark: | :white_check_mark: |
 | Serial Port Client[^1] | :white_check_mark: | :white_check_mark: |
 | Proxmox-Over-SSH[^3] | :check_mark: (Read Only) | :white_check_mark: |
-| Snippets | :white_check_mark: | :white_check_mark: |
+| Snippets | :check_mark: (3 Snippets) | :white_check_mark: |
 | **Advanced Features** | **FREE** | **PRO** |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
