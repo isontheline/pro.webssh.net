@@ -35,3 +35,5 @@ Most SSH clients are either too basic or too bloated. WebSSH hits the sweet spot
 One app. Every protocol. Zero compromises.
 
 Download WebSSH and keep your servers close at hand, no matter where you are.
+
+Terms of Use (EULA): https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
