@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "files": {
+    "public-ip-address.sh": {
+      "summary": "Public IP address via OpenDNS (nslookup, dig fallback)",
+      "os": ["linux", "macos"],
+      "maintainers": ["isontheline"],
+      "packages": {
+        "apt": "dnsutils",
+        "dnf": "bind-utils"
+      }
+    }
+  }
+}
