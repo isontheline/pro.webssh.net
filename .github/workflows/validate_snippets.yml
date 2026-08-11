@@ -1,0 +1,123 @@
+name: Validate Snippets
+
+on:
+  pull_request:
+    paths:
+      - "snippets/**"
+  push:
+    branches: [master]
+    paths:
+      - "snippets/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate manifests, listings and index
+        run: |
+          python3 - <<'EOF'
+          import json, os, re, sys
+
+          ROOT = "snippets"
+          MAX_SIZE = 1024
+          OS_VALUES = {"linux", "macos", "windows", "freebsd", "openbsd"}
+          USERNAME = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$")
+          errors = []
+
+          def check_maintainers(scope, meta):
+              maintainers = (meta or {}).get("maintainers", [])
+              if not isinstance(maintainers, list):
+                  errors.append(f"{scope}: 'maintainers' must be an array of GitHub usernames")
+                  return
+              for username in maintainers:
+                  if not isinstance(username, str) or not USERNAME.match(username):
+                      errors.append(f"{scope}: invalid GitHub username '{username}' in maintainers")
+
+          collections = [d for d in sorted(os.listdir(ROOT))
+                         if os.path.isdir(os.path.join(ROOT, d)) and not d.startswith(".")]
+
+          for coll in collections:
+              base = os.path.join(ROOT, coll)
+              manifest_path = os.path.join(base, "webssh.json")
+              if not os.path.isfile(manifest_path):
+                  errors.append(f"{coll}: missing webssh.json")
+                  continue
+              try:
+                  manifest = json.load(open(manifest_path, encoding="utf-8"))
+              except Exception as e:
+                  errors.append(f"{coll}/webssh.json: invalid JSON ({e})")
+                  continue
+
+              if manifest.get("version") != 1:
+                  errors.append(f"{coll}/webssh.json: 'version' must be exactly 1 (current schema)")
+
+              files = manifest.get("files")
+              if not isinstance(files, dict) or not files:
+                  errors.append(f"{coll}/webssh.json: 'files' must be a non-empty object")
+                  continue
+
+              on_disk = {f for f in os.listdir(base)
+                         if os.path.isfile(os.path.join(base, f)) and f != "webssh.json"}
+
+              for name, meta in files.items():
+                  if name not in on_disk:
+                      errors.append(f"{coll}: manifest lists '{name}' but the file is missing")
+                      continue
+                  size = os.path.getsize(os.path.join(base, name))
+                  if size > MAX_SIZE:
+                      errors.append(f"{coll}/{name}: {size} bytes exceeds the 1 KB limit")
+                  try:
+                      open(os.path.join(base, name), encoding="utf-8").read()
+                  except UnicodeDecodeError:
+                      errors.append(f"{coll}/{name}: not valid UTF-8 text")
+                  for osv in (meta or {}).get("os", []):
+                      if osv not in OS_VALUES:
+                          errors.append(f"{coll}/{name}: unknown os value '{osv}'")
+                  check_maintainers(f"{coll}/{name}", meta)
+
+              for name in sorted(on_disk - set(files)):
+                  errors.append(f"{coll}: '{name}' exists but is not listed in webssh.json (invisible in-app)")
+
+              if "collection" in manifest:
+                  errors.append(f"{coll}/webssh.json: 'collection' is no longer part of the schema — os/maintainers are per-file only")
+
+          # index.md: every collection link must point to an existing folder.
+          # HTML comment blocks document the format — skip them, like the app.
+          index = open(os.path.join(ROOT, "index.md"), encoding="utf-8").read()
+          index = re.sub(r"<!--.*?-->", "", index, flags=re.S)
+          linked = set()
+          for match in re.finditer(r"\]\(([^)\s]+)\)", index):
+              url = match.group(1)
+              m = re.match(r"https://github\.com/isontheline/pro\.webssh\.net/tree/master/snippets/([^)#?]+)", url)
+              slug = None
+              if m:
+                  slug = m.group(1).strip("/")
+              elif re.fullmatch(r"\.?/?[A-Za-z0-9_/-]+/?", url) and "." not in url:
+                  slug = url.strip("./").strip("/")
+              if slug:
+                  linked.add(slug)
+                  if not os.path.isdir(os.path.join(ROOT, slug)):
+                      errors.append(f"index.md: linked collection '{slug}' does not exist")
+
+          for coll in collections:
+              if coll not in linked:
+                  print(f"::warning::collection '{coll}' is not referenced by index.md")
+
+          if errors:
+              for e in errors:
+                  print(f"::error::{e}")
+              sys.exit(1)
+          print(f"OK — {len(collections)} collection(s) validated")
+          EOF
+
+      - name: ShellCheck (errors are blocking)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
+          find snippets -name "*.sh" -print0 | xargs -0 -r shellcheck -S error -s bash
+
+      - name: ShellCheck (style report, non-blocking)
+        continue-on-error: true
+        run: |
+          find snippets -name "*.sh" -print0 | xargs -0 -r shellcheck -s bash
