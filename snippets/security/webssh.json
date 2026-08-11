@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "files": {
+    "failed-logins.sh": {
+      "name": "Failed Logins",
+      "summary": "The 20 most recent failed login attempts",
+      "os": [
+        "linux"
+      ],
+      "root": true,
+      "icon": "person.crop.circle.badge.xmark",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "security-audit.sh": {
+      "name": "Security Audit",
+      "summary": "Full system hardening audit with actionable warnings (lynis)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "checkmark.shield",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "lynis",
+        "dnf": "lynis",
+        "brew": "lynis"
+      }
+    }
+  }
+}

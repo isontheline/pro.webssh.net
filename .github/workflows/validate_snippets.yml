@@ -24,6 +24,38 @@ jobs:
           MAX_SIZE = 1024
           OS_VALUES = {"linux", "macos", "windows", "freebsd", "openbsd"}
           USERNAME = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$")
+          # SF Symbols names: dot-separated lowercase segments (e.g.
+          # "externaldrive.badge.checkmark"). Existence can't be checked on
+          # Linux — the app falls back to a default icon for unknown names.
+          SF_SYMBOL = re.compile(r"[a-z0-9]+(?:\.[a-z0-9]+)*$")
+          # Only two snippet kinds exist, each with its own validator: .sh
+          # (ShellCheck) and .ks key sequences. Anything else could smuggle
+          # an unreviewed command past ShellCheck.
+          ALLOWED_EXTENSIONS = {".sh", ".ks"}
+          # <ctrl-x> tokens the app expands; ctrl-j (LF) and ctrl-m (CR) are
+          # banned — with no newline allowed either, a .ks can TYPE text but
+          # never EXECUTE it: the user always presses Enter themself.
+          KS_TOKEN = re.compile(r"<ctrl-[a-ik-ln-z]>")
+          KS_MAX_SIZE = 64
+          KS_MAX_LITERAL = 16
+
+          def check_key_sequence(scope, path):
+              data = open(path, "rb").read()
+              if len(data) > KS_MAX_SIZE:
+                  errors.append(f"{scope}: key sequence exceeds {KS_MAX_SIZE} bytes")
+              try:
+                  text = data.decode("utf-8")
+              except UnicodeDecodeError:
+                  return  # already reported by the generic UTF-8 check
+              if "\n" in text or "\r" in text:
+                  errors.append(f"{scope}: .ks must be a single line with NO trailing newline (a newline would auto-execute the typed text)")
+              if not KS_TOKEN.search(text):
+                  errors.append(f"{scope}: .ks must contain at least one <ctrl-x> token (a-z, except ctrl-j/ctrl-m)")
+              literal = KS_TOKEN.sub("", text)
+              if re.search(r"<ctrl-[^>]*>", literal):
+                  errors.append(f"{scope}: unknown or banned <ctrl-...> token (ctrl-j/ctrl-m are Enter — not allowed)")
+              elif len(literal) > KS_MAX_LITERAL:
+                  errors.append(f"{scope}: too much literal text around the tokens ({len(literal)} > {KS_MAX_LITERAL} chars) — write a .sh snippet instead")
           errors = []
 
           def check_maintainers(scope, meta):
@@ -65,6 +97,11 @@ jobs:
                   if name not in on_disk:
                       errors.append(f"{coll}: manifest lists '{name}' but the file is missing")
                       continue
+                  extension = os.path.splitext(name)[1].lower()
+                  if extension not in ALLOWED_EXTENSIONS:
+                      errors.append(f"{coll}/{name}: extension '{extension}' not allowed — .sh (ShellCheck) or .ks (key sequence) only")
+                  elif extension == ".ks":
+                      check_key_sequence(f"{coll}/{name}", os.path.join(base, name))
                   size = os.path.getsize(os.path.join(base, name))
                   if size > MAX_SIZE:
                       errors.append(f"{coll}/{name}: {size} bytes exceeds the 1 KB limit")
@@ -75,6 +112,16 @@ jobs:
                   for osv in (meta or {}).get("os", []):
                       if osv not in OS_VALUES:
                           errors.append(f"{coll}/{name}: unknown os value '{osv}'")
+                  for flag in ("danger", "root"):
+                      value = (meta or {}).get(flag)
+                      if value is not None and not isinstance(value, bool):
+                          errors.append(f"{coll}/{name}: '{flag}' must be a boolean")
+                  display_name = (meta or {}).get("name")
+                  if display_name is not None and (not isinstance(display_name, str) or not display_name.strip()):
+                      errors.append(f"{coll}/{name}: 'name' must be a non-empty string")
+                  icon = (meta or {}).get("icon")
+                  if icon is not None and (not isinstance(icon, str) or not SF_SYMBOL.match(icon)):
+                      errors.append(f"{coll}/{name}: 'icon' must be an SF Symbols name (lowercase, dot-separated)")
                   check_maintainers(f"{coll}/{name}", meta)
 
               for name in sorted(on_disk - set(files)):

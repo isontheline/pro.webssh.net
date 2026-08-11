@@ -2,12 +2,58 @@
   "version": 1,
   "files": {
     "public-ip-address.sh": {
+      "name": "Public IP Address",
       "summary": "Public IP address via OpenDNS (nslookup, dig fallback)",
-      "os": ["linux", "macos"],
-      "maintainers": ["isontheline"],
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "network",
+      "maintainers": [
+        "isontheline"
+      ],
       "packages": {
         "apt": "dnsutils",
         "dnf": "bind-utils"
+      }
+    },
+    "listening-ports.sh": {
+      "name": "Listening Ports",
+      "summary": "Every listening TCP/UDP port with the process behind it",
+      "os": [
+        "linux"
+      ],
+      "icon": "antenna.radiowaves.left.and.right",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "interfaces-brief.sh": {
+      "name": "Interfaces Brief",
+      "summary": "All network interfaces and addresses in three readable columns",
+      "os": [
+        "linux"
+      ],
+      "icon": "point.3.connected.trianglepath.dotted",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "bandwidth-by-process.sh": {
+      "name": "Bandwidth by Process",
+      "summary": "Live network usage per process — who saturates the line",
+      "os": [
+        "linux"
+      ],
+      "root": true,
+      "icon": "arrow.up.arrow.down.circle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "nethogs",
+        "dnf": "nethogs",
+        "pacman": "nethogs"
       }
     }
   }

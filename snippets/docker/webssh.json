@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "files": {
+    "docker-disk-usage.sh": {
+      "name": "Docker Disk Usage",
+      "summary": "How much disk images, containers and volumes really eat",
+      "os": ["linux", "macos"],
+      "icon": "shippingbox",
+      "maintainers": ["isontheline"]
+    },
+    "containers-top.sh": {
+      "name": "Containers Top",
+      "summary": "top-like live view of your containers' CPU and memory (ctop)",
+      "os": ["linux", "macos"],
+      "icon": "chart.bar",
+      "maintainers": ["isontheline"],
+      "packages": {
+        "brew": "ctop"
+      }
+    }
+  }
+}

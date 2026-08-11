@@ -27,6 +27,15 @@ snippets/
    overwrites or reboots.
 6. Every file of the collection **must be listed** in `webssh.json` — unlisted files
    are invisible to the app.
+7. **Two file kinds only** — each with its own CI validator, so nothing dodges
+   review:
+   - `.sh` — shell snippets, ShellCheck-verified.
+   - `.ks` — **key sequences**: WebSSH expands `<ctrl-x>` tokens into the real
+     control character when running the snippet (e.g. `<ctrl-b>[` enters tmux
+     copy mode). One single line, **no trailing newline**, at least one token,
+     little literal text. Newlines and `<ctrl-j>`/`<ctrl-m>` are rejected —
+     they are Enter, so a `.ks` can *type* keys but never *execute* a command
+     by itself.
 
 ## `webssh.json` manifest
 
@@ -35,9 +44,11 @@ snippets/
   "version": 1,
   "files": {
     "docker-cleanup.sh": {
+      "name": "Docker Cleanup",
       "summary": "Prune unused images, containers and volumes",
       "os": ["linux"],
       "danger": true,
+      "icon": "shippingbox",
       "maintainers": ["your-github-username"],
       "packages": {
         "apt": "docker.io",
@@ -54,10 +65,20 @@ snippets/
   reboots. The app shows a warning triangle next to the file before import,
   so users know what they are about to run. Reviewers will ask for it on
   destructive commands — when in doubt, flag it.
+- `icon` — optional [SF Symbols](https://developer.apple.com/sf-symbols/) name
+  applied to the imported snippet (e.g. `network`, `shippingbox`, `externaldrive`).
+  Prefer symbols available since SF Symbols 1/2: on devices whose OS does not
+  know the symbol yet, the app silently falls back to a default snippet icon.
+- `root` — set to `true` when the command needs root privileges to be useful
+  (`lastb`, `nethogs`…). The app shows a discreet key badge; don't put `sudo`
+  in the snippet itself.
 - `maintainers` — GitHub usernames of the snippet's contributors (per-file
   only) — add yourself there when contributing a snippet.
 - `packages` — map of package manager (`apt`, `dnf`, `apk`, `pacman`, `zypper`, `brew`, `pkg`)
   to package name(s). Informative only; omit for tools preinstalled everywhere.
+- `name` — optional clean display name ("Public IP Address" beats
+  *public-ip-address*); it becomes the snippet name on import. Omitted ⇒ the
+  filename (minus its extension) is used.
 - `summary` — one line, English, shown under the filename in the app.
 
 ## Adding your collection to the catalog

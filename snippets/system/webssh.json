@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "files": {
+    "disk-usage.sh": {
+      "name": "Disk Usage",
+      "summary": "Interactive disk usage explorer, current filesystem only (ncdu)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "internaldrive",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "ncdu",
+        "dnf": "ncdu",
+        "apk": "ncdu",
+        "pacman": "ncdu",
+        "brew": "ncdu"
+      }
+    },
+    "disk-usage-overview.sh": {
+      "name": "Disk Usage Overview",
+      "summary": "All mounted filesystems as colorful tables — the modern df (duf)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "chart.pie",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "duf",
+        "dnf": "duf",
+        "pacman": "duf",
+        "brew": "duf"
+      }
+    },
+    "failed-services.sh": {
+      "name": "Failed Services",
+      "summary": "systemd units in failed state — first thing to check on a sick server",
+      "os": [
+        "linux"
+      ],
+      "icon": "gearshape.2",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "boot-errors.sh": {
+      "name": "Errors Since Boot",
+      "summary": "Every error-level journal entry since the last boot",
+      "os": [
+        "linux"
+      ],
+      "icon": "exclamationmark.bubble",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "needrestart.sh": {
+      "name": "Restart Check",
+      "summary": "Services still running outdated libraries after an upgrade",
+      "os": [
+        "linux"
+      ],
+      "root": true,
+      "icon": "arrow.triangle.2.circlepath",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "needrestart"
+      }
+    },
+    "copy-progress.sh": {
+      "name": "Copy Progress",
+      "summary": "Live progress of already-running cp, mv, dd and friends (progress)",
+      "os": [
+        "linux"
+      ],
+      "icon": "hourglass",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "progress",
+        "dnf": "progress",
+        "pacman": "progress"
+      }
+    },
+    "watch-disk-space.sh": {
+      "name": "Watch Disk Space",
+      "summary": "df every 2s with changes highlighted — watch -d does the diffing",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "binoculars",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "brew": "watch"
+      }
+    },
+    "who-is-logged-in.sh": {
+      "name": "Who Is Logged In",
+      "summary": "Logged-in users, lightweight finger style (pinky)",
+      "os": [
+        "linux"
+      ],
+      "icon": "person.2",
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

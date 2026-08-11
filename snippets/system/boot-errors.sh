@@ -1,0 +1,1 @@
+journalctl -p err -b

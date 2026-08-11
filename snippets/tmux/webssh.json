@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "files": {
+    "show-history.ks": {
+      "name": "Show History",
+      "summary": "Enter copy mode to scroll the pane history (prefix + [)",
+      "os": ["linux", "macos"],
+      "icon": "clock.arrow.trianglehead.counterclockwise.rotate.90",
+      "maintainers": ["isontheline"],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "split-horizontal.ks": {
+      "name": "Split Screen Horizontally",
+      "summary": "Split the current pane into top and bottom (prefix + \")",
+      "os": ["linux", "macos"],
+      "icon": "trapezoid.and.line.horizontal",
+      "maintainers": ["isontheline"],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "split-vertical.ks": {
+      "name": "Split Screen Vertically",
+      "summary": "Split the current pane side by side (prefix + %)",
+      "os": ["linux", "macos"],
+      "icon": "trapezoid.and.line.vertical",
+      "maintainers": ["isontheline"],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    }
+  }
+}
