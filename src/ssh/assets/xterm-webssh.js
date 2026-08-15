@@ -573,20 +573,33 @@ const TerminalHelper = {
         terminal.scrollToBottom();
     },
 
-    copySelectedText: debounce(() => {
-        // An empty selection must never reach the clipboard : entering an alternate
-        // screen app (vi, ...) clears the selection and would flush the copy buffer.
-        if (TerminalHelper.lastSelectedText == null || TerminalHelper.lastSelectedText === '') {
-            return;
-        }
+    copySelectedText: (() => {
+        const notifyCopyTextSelection = debounce((textSelection) => {
+            JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(textSelection)]);
 
-        JS2IOS.calliOSFunction('notifyCopyTextSelection', [Base64.utoa(TerminalHelper.lastSelectedText)]);
+            if (TerminalHelper.endCopySelectedTextCallback) {
+                TerminalHelper.endCopySelectedTextCallback();
+                TerminalHelper.endCopySelectedTextCallback = null;
+            }
+        }, navigator.platform.startsWith('Mac') ? 1 : 250);
 
-        if (TerminalHelper.endCopySelectedTextCallback) {
-            TerminalHelper.endCopySelectedTextCallback();
-            TerminalHelper.endCopySelectedTextCallback = null;
-        }
-    }, navigator.platform.startsWith('Mac') ? 1 : 250),
+        return () => {
+            // Capture the selection before debouncing. xterm.js can emit another
+            // selection-change event at a line boundary before the delayed callback
+            // runs, which used to replace lastSelectedText with an empty string.
+            const currentSelection = TerminalHelper.exportSelectedText();
+            const textSelection = currentSelection || TerminalHelper.lastSelectedText;
+
+            // An empty selection must never reach the clipboard : entering an alternate
+            // screen app (vi, ...) clears the selection and would flush the copy buffer.
+            if (textSelection == null || textSelection === '') {
+                return;
+            }
+
+            TerminalHelper.lastSelectedText = textSelection;
+            notifyCopyTextSelection(textSelection);
+        };
+    })(),
 
     copyScreenContent: function () {
         TerminalHelper.canNotifySelectionChange = false;
