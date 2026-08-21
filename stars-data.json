@@ -276,7 +276,19 @@
           "stars": 586
         }
       ]
+    },
+    {
+      "timestamp": "2026-08-21T03:45:40.014Z",
+      "totalStars": 585,
+      "repos": [
+        {
+          "fullName": "isontheline/pro.webssh.net",
+          "name": "pro.webssh.net",
+          "owner": "isontheline",
+          "stars": 585
+        }
+      ]
     }
   ],
-  "starsAtLastNotification": 586
+  "starsAtLastNotification": 585
 }
