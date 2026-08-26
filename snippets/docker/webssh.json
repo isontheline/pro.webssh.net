@@ -10,7 +10,7 @@
     },
     "containers-top.sh": {
       "name": "Containers Top",
-      "summary": "top-like live view of your containers' CPU and memory (ctop)",
+      "summary": "top-like live view of your Docker containers (ctop)",
       "os": ["linux", "macos"],
       "icon": "chart.bar",
       "maintainers": ["isontheline"],

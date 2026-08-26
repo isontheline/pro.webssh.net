@@ -26,6 +26,16 @@
       "icon": "antenna.radiowaves.left.and.right",
       "maintainers": [
         "isontheline"
+      ],
+      "examples": [
+        {
+          "command": "ss -tlpn",
+          "comment": "TCP listeners only"
+        },
+        {
+          "command": "ss -s",
+          "comment": "Socket summary counters"
+        }
       ]
     },
     "interfaces-brief.sh": {

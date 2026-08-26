@@ -76,6 +76,11 @@ snippets/
   only) — add yourself there when contributing a snippet.
 - `packages` — map of package manager (`apt`, `dnf`, `apk`, `pacman`, `zypper`, `brew`, `pkg`)
   to package name(s). Informative only; omit for tools preinstalled everywhere.
+- `examples` — up to 15 documented variants of the command, each
+  `{"command": "ncdu -x /var", "comment": "Focus on /var"}` (`comment` is
+  optional, `command` ≤ 200 chars). Shown on the snippet sheet; users can
+  copy one or import it as their own snippet. Keep them genuinely different
+  from the base command — teaching moments, not filler.
 - `name` — optional clean display name ("Public IP Address" beats
   *public-ip-address*); it becomes the snippet name on import. Omitted ⇒ the
   filename (minus its extension) is used.

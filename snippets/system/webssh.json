@@ -18,7 +18,21 @@
         "apk": "ncdu",
         "pacman": "ncdu",
         "brew": "ncdu"
-      }
+      },
+      "examples": [
+        {
+          "command": "ncdu -x /var",
+          "comment": "Focus on /var, stay on this filesystem"
+        },
+        {
+          "command": "ncdu --exclude /mnt /",
+          "comment": "Scan root but skip mounted shares"
+        },
+        {
+          "command": "ncdu -o /tmp/scan.json /",
+          "comment": "Save the scan, browse it later with ncdu -f"
+        }
+      ]
     },
     "disk-usage-overview.sh": {
       "name": "Disk Usage Overview",

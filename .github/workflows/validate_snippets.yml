@@ -112,6 +112,18 @@ jobs:
                   for osv in (meta or {}).get("os", []):
                       if osv not in OS_VALUES:
                           errors.append(f"{coll}/{name}: unknown os value '{osv}'")
+                  examples = (meta or {}).get("examples")
+                  if examples is not None:
+                      if not isinstance(examples, list) or len(examples) > 15:
+                          errors.append(f"{coll}/{name}: 'examples' must be an array of at most 15 objects")
+                      else:
+                          for i, example in enumerate(examples):
+                              if not isinstance(example, dict) \
+                                 or not isinstance(example.get("command"), str) \
+                                 or not example["command"].strip() \
+                                 or len(example["command"]) > 200 \
+                                 or not isinstance(example.get("comment", ""), str):
+                                  errors.append(f"{coll}/{name}: examples[{i}] must be {{\"command\": \"...\" (non-empty, <= 200 chars), \"comment\": \"...\" (optional)}}")
                   for flag in ("danger", "root"):
                       value = (meta or {}).get(flag)
                       if value is not None and not isinstance(value, bool):
