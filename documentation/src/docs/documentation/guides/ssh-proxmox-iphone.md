@@ -113,6 +113,40 @@ The Proxmox web interface listens on **port 8006** and should never be exposed t
 
 This works from anywhere your node's SSH port is reachable — and only SSH needs to be reachable.
 
+## Even simpler — the built-in Proxmox dashboard[^1]
+
+For day-to-day management, you don't even need the tunnel: WebSSH includes a **native Proxmox dashboard** that runs entirely over your SSH connection. Under the hood it drives `pvesh` on the node, so there is no port 8006 to expose, no API token to create, nothing to install server-side — if SSH works, the dashboard works.
+
+**Enable it on your connection:**
+
+1. Edit your Proxmox connection settings
+2. Go to the **Roles** section
+3. Enable the **PROXMOX-OVER-SSH** role (keep **SSH** enabled too if you also want the terminal)
+4. Save the roles, then save the connection
+
+From now on, tapping the connection lets you pick between the **terminal** and the **Proxmox dashboard**.
+
+**What the dashboard gives you:**
+
+- **Nodes overview** — every node with status, CPU, memory and disk gauges, and uptime; drill into a node or the aggregated cluster view
+- **VMs and containers** — searchable, filterable lists of QEMU VMs and LXC containers with live CPU and memory usage
+- **Lifecycle actions** — start, shutdown, reboot, stop, suspend and resume guests, with a confirmation before anything disruptive
+- **Statistics charts** — CPU, memory, network and disk I/O history over the last hour, day, week or month, with touch scrubbing
+- **Snapshots** — browse a guest's snapshot tree, create (optionally including RAM), roll back and delete
+- **Backups** — launch `vzdump` backups (snapshot / suspend / stop mode, compression choice), browse archives per datastore, protect or delete them
+- **Migration** — move a guest to another node, online or with restart, with optional bandwidth limit and target storage
+- **Storage** — each node's datastores with usage, and their content: ISOs, container templates, backups and disk images
+- **Tasks** — the same task feed as the Proxmox web UI, with live log tailing and the ability to stop a running task
+- **Cluster health** — quorum, HA resources, per-node versions and pending apt updates (security updates highlighted)
+
+The visible screen auto-refreshes every ~10 seconds, so the dashboard stays live while you watch a backup or a migration run. The full web UI (Step 4) remains the place for what the dashboard doesn't cover — creating a VM from scratch, editing the firewall, or the noVNC console.
+
+!!! info "Free vs PRO"
+    The read-only dashboard is available to everyone. Actions that change state — start/stop, snapshots, backups, migrations — require the PRO version. See [Pricing](/documentation/pricing/) for details.
+
+!!! tip "Connect to the node, not a guest"
+    The dashboard needs `pvesh`, which only exists on the Proxmox node itself. Point the connection at the hypervisor's IP — not at a VM or container — with a user allowed to run `pvesh` (root, typically).
+
 ## Troubleshooting
 
 ??? question "Connection refused on port 22"
@@ -148,9 +182,14 @@ Yes. Proxmox VE ships with SSH enabled and root password login allowed. You can 
 **Can I access the Proxmox web interface from an iPad without exposing it?**
 Yes. Create a WebSSH tunnel forwarding local port 8006 to `127.0.0.1:8006` on the node, then open `https://127.0.0.1:8006` in Safari. Only the SSH port needs to be reachable.
 
+**Does WebSSH have a GUI for Proxmox?**
+Yes. Enable the **PROXMOX-OVER-SSH** role on your connection and WebSSH shows a native dashboard: nodes, VMs, containers, storages, snapshots, backups, migrations, tasks and cluster health — carried entirely over SSH, with no exposed API port and no token to configure.
+
 **Does this require a subscription?**
 No. WebSSH is a one-time purchase — no subscription. The free version lets you try it with one saved connection.
 
 ---
 
 [Download WebSSH on the App Store →](https://apps.apple.com/app/id497714887)
+
+[^1]: The Proxmox-over-SSH dashboard is available since WebSSH 32.5.
