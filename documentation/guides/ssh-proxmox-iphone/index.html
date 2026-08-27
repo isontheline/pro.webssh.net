@@ -1201,6 +1201,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#even-simpler-the-built-in-proxmox-dashboard1" class="md-nav__link">
+    Even simpler — the built-in Proxmox dashboard1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -3428,6 +3435,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#even-simpler-the-built-in-proxmox-dashboard1" class="md-nav__link">
+    Even simpler — the built-in Proxmox dashboard1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     Troubleshooting
   </a>
@@ -3553,6 +3567,38 @@ chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~
 <li>Open <code>https://127.0.0.1:8006</code> in Safari (accept the self-signed certificate warning) — you're on your Proxmox web UI, encrypted end-to-end through SSH</li>
 </ol>
 <p>This works from anywhere your node's SSH port is reachable — and only SSH needs to be reachable.</p>
+<h2 id="even-simpler-the-built-in-proxmox-dashboard1">Even simpler — the built-in Proxmox dashboard<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<p>For day-to-day management, you don't even need the tunnel: WebSSH includes a <strong>native Proxmox dashboard</strong> that runs entirely over your SSH connection. Under the hood it drives <code>pvesh</code> on the node, so there is no port 8006 to expose, no API token to create, nothing to install server-side — if SSH works, the dashboard works.</p>
+<p><strong>Enable it on your connection:</strong></p>
+<ol>
+<li>Edit your Proxmox connection settings</li>
+<li>Go to the <strong>Roles</strong> section</li>
+<li>Enable the <strong>PROXMOX-OVER-SSH</strong> role (keep <strong>SSH</strong> enabled too if you also want the terminal)</li>
+<li>Save the roles, then save the connection</li>
+</ol>
+<p>From now on, tapping the connection lets you pick between the <strong>terminal</strong> and the <strong>Proxmox dashboard</strong>.</p>
+<p><strong>What the dashboard gives you:</strong></p>
+<ul>
+<li><strong>Nodes overview</strong> — every node with status, CPU, memory and disk gauges, and uptime; drill into a node or the aggregated cluster view</li>
+<li><strong>VMs and containers</strong> — searchable, filterable lists of QEMU VMs and LXC containers with live CPU and memory usage</li>
+<li><strong>Lifecycle actions</strong> — start, shutdown, reboot, stop, suspend and resume guests, with a confirmation before anything disruptive</li>
+<li><strong>Statistics charts</strong> — CPU, memory, network and disk I/O history over the last hour, day, week or month, with touch scrubbing</li>
+<li><strong>Snapshots</strong> — browse a guest's snapshot tree, create (optionally including RAM), roll back and delete</li>
+<li><strong>Backups</strong> — launch <code>vzdump</code> backups (snapshot / suspend / stop mode, compression choice), browse archives per datastore, protect or delete them</li>
+<li><strong>Migration</strong> — move a guest to another node, online or with restart, with optional bandwidth limit and target storage</li>
+<li><strong>Storage</strong> — each node's datastores with usage, and their content: ISOs, container templates, backups and disk images</li>
+<li><strong>Tasks</strong> — the same task feed as the Proxmox web UI, with live log tailing and the ability to stop a running task</li>
+<li><strong>Cluster health</strong> — quorum, HA resources, per-node versions and pending apt updates (security updates highlighted)</li>
+</ul>
+<p>The visible screen auto-refreshes every ~10 seconds, so the dashboard stays live while you watch a backup or a migration run. The full web UI (Step 4) remains the place for what the dashboard doesn't cover — creating a VM from scratch, editing the firewall, or the noVNC console.</p>
+<div class="admonition info">
+<p class="admonition-title">Free vs PRO</p>
+<p>The read-only dashboard is available to everyone. Actions that change state — start/stop, snapshots, backups, migrations — require the PRO version. See <a href="/documentation/pricing/">Pricing</a> for details.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Connect to the node, not a guest</p>
+<p>The dashboard needs <code>pvesh</code>, which only exists on the Proxmox node itself. Point the connection at the hypervisor's IP — not at a VM or container — with a user allowed to run <code>pvesh</code> (root, typically).</p>
+</div>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <details class="question">
 <summary>Connection refused on port 22</summary>
@@ -3588,17 +3634,27 @@ Yes. SSH into the Proxmox node with WebSSH and use <code>qm</code> (VMs) and <co
 Yes. Proxmox VE ships with SSH enabled and root password login allowed. You can connect immediately after installation with the root credentials chosen during setup.</p>
 <p><strong>Can I access the Proxmox web interface from an iPad without exposing it?</strong>
 Yes. Create a WebSSH tunnel forwarding local port 8006 to <code>127.0.0.1:8006</code> on the node, then open <code>https://127.0.0.1:8006</code> in Safari. Only the SSH port needs to be reachable.</p>
+<p><strong>Does WebSSH have a GUI for Proxmox?</strong>
+Yes. Enable the <strong>PROXMOX-OVER-SSH</strong> role on your connection and WebSSH shows a native dashboard: nodes, VMs, containers, storages, snapshots, backups, migrations, tasks and cluster health — carried entirely over SSH, with no exposed API port and no token to configure.</p>
 <p><strong>Does this require a subscription?</strong>
 No. WebSSH is a one-time purchase — no subscription. The free version lets you try it with one saved connection.</p>
 <hr />
 <p><a href="https://apps.apple.com/app/id497714887">Download WebSSH on the App Store →</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>The Proxmox-over-SSH dashboard is available since WebSSH 32.5.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 21, 2026 15:40:21 UTC">July 21, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 27, 2026 05:46:10 UTC">August 27, 2026</span>
       
     
   </small>
