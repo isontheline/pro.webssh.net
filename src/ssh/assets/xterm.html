@@ -113,6 +113,10 @@
       // Open the terminal :
       terminal.open(document.getElementById("terminal"));
 
+      // Column (rectangular) selection with ⌥⌘+drag (#1679) :
+      //!\\ Needs to be called after terminal.open() //!\\
+      TerminalHelper.enableColumnSelection(terminal);
+
       // Selection Handles Addon ->
       //!\\ This addon need to be called after terminal.open() //!\\
       //!\\ Designed primarily for iOS devices, it may interfere with text selection on macOS. //!\\
@@ -145,6 +149,7 @@
       );
 
       // On click on the terminal :
+      document.addEventListener("mousedown", TerminalHelper.mouseDownListener);
       document.addEventListener("click", TerminalHelper.clickListener);
 
       // Removing textarea :

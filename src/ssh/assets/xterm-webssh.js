@@ -978,6 +978,25 @@ const TerminalHelper = {
         };
     },
 
+    // Column (rectangular) selection with ⌥⌘+drag, like VS Code on macOS (#1679) ->
+    // xterm.js only triggers column mode on ⌥+drag when macOptionClickForcesSelection
+    // is off — but that option must stay on so ⌥+click keeps selecting text while
+    // mouse reporting is active (vim, tmux...). WKWebView identifies as "Macintosh"
+    // on iPadOS too, so column mode is unreachable on every platform : rebind the
+    // trigger to ⌥⌘, which conflicts with neither.
+    //!\\ Patches a private service : re-check after any xterm.js upgrade //!\\
+    enableColumnSelection: function (terminal) {
+        const selectionService = terminal._core?._selectionService;
+
+        if (!selectionService) {
+            console.error('Column selection: _selectionService not found, skipping');
+            return;
+        }
+
+        selectionService.shouldColumnSelect = (event) => event.altKey && event.metaKey;
+    },
+    // <- Column (rectangular) selection
+
     loadFont: function (fontFamily, callback) {
         var fontStyle = document.createElement('style');
         fontStyle.appendChild(document.createTextNode("\
@@ -1055,8 +1074,21 @@ const TerminalHelper = {
         }
     },
 
+    // ⌘+click paste must not fire on the click that ends a selection drag —
+    // ⌥⌘+drag column selection (#1679) or ⌘+drag — so remember where the
+    // press started to tell a click from a drag release :
+    _pasteGestureOrigin: null,
+
+    mouseDownListener: function (event) {
+        TerminalHelper._pasteGestureOrigin = { x: event.clientX, y: event.clientY };
+    },
+
     clickListener: function (event) {
-        if (event.button == 0 && event.metaKey) { // Cmd + Left Click => Want to paste content from clipboard
+        const origin = TerminalHelper._pasteGestureOrigin;
+        const dragged = origin !== null
+            && Math.hypot(event.clientX - origin.x, event.clientY - origin.y) > 5;
+
+        if (event.button == 0 && event.metaKey && !event.altKey && !dragged) { // Cmd + Left Click => Want to paste content from clipboard
             JS2IOS.calliOSFunction('pasteClipboardContent');
 
         } else {
