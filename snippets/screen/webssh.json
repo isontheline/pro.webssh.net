@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "files": {
+    "detach.ks": {
+      "name": "Detach",
+      "summary": "Leave the session running in the background (C-a d)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "rectangle.portrait.and.arrow.right",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "new-window.ks": {
+      "name": "New Window",
+      "summary": "Create a new window with a shell (C-a c)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "plus.rectangle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "next-window.ks": {
+      "name": "Next Window",
+      "summary": "Switch to the next window (C-a n)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right.square",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "previous-window.ks": {
+      "name": "Previous Window",
+      "summary": "Switch to the previous window (C-a p)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.left.square",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "window-list.ks": {
+      "name": "Window List",
+      "summary": "Pick a window from the list (C-a \")",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "list.bullet",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "split-horizontal.ks": {
+      "name": "Split Screen Horizontally",
+      "summary": "Split the current region into top and bottom (C-a S)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "trapezoid.and.line.horizontal",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "split-vertical.ks": {
+      "name": "Split Screen Vertically",
+      "summary": "Split the current region side by side (C-a |)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "trapezoid.and.line.vertical",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "next-region.ks": {
+      "name": "Next Region",
+      "summary": "Move the focus to the next region (C-a Tab)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right.circle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "close-region.ks": {
+      "name": "Close Region",
+      "summary": "Remove the current region, its window stays open (C-a X)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "xmark.rectangle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "copy-mode.ks": {
+      "name": "Show History",
+      "summary": "Enter copy/scrollback mode to scroll the history (C-a [)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "clock.arrow.trianglehead.counterclockwise.rotate.90",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    },
+    "kill-window.ks": {
+      "name": "Kill Window",
+      "summary": "Destroy the current window, screen asks for confirmation (C-a k)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "danger": true,
+      "icon": "trash",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "screen",
+        "dnf": "screen",
+        "apk": "screen",
+        "pacman": "screen",
+        "brew": "screen"
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "files": {
+    "status.sh": {
+      "name": "Git Status",
+      "summary": "Compact status with branch name and how far it is from upstream",
+      "os": ["linux", "macos"],
+      "icon": "checklist",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git status --ignored -s", "comment": "Also show ignored files"},
+        {"command": "git status --porcelain", "comment": "Stable output for scripts"},
+        {"command": "git ls-files --others --exclude-standard", "comment": "Untracked files only"}
+      ]
+    },
+    "log-graph.sh": {
+      "name": "Log Graph",
+      "summary": "Last 20 commits as a decorated one-line graph",
+      "os": ["linux", "macos"],
+      "icon": "point.topleft.down.curvedto.point.bottomright.up",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git log --oneline --graph --decorate --all -20", "comment": "Every branch, not only the current one"},
+        {"command": "git log --oneline --since=1.week", "comment": "What happened this week"},
+        {"command": "git log --oneline --author=\"name\"", "comment": "Commits of one author"},
+        {"command": "git log --format='%h%x09%an%x09%ar%x09%s' -20", "comment": "Hash, author, age and subject in tab-separated columns"},
+        {"command": "git log -S 'needle' --oneline", "comment": "Commits that added or removed this exact text"},
+        {"command": "git log --all --oneline --graph --simplify-by-decoration", "comment": "Only commits carrying a branch or tag"}
+      ]
+    },
+    "last-commit.sh": {
+      "name": "Last Commit",
+      "summary": "Files touched by the last commit",
+      "os": ["linux", "macos"],
+      "icon": "clock.arrow.circlepath",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git log -p -1", "comment": "Full patch of the last commit"},
+        {"command": "git diff HEAD~1 --name-only", "comment": "Just the file names"},
+        {"command": "git show --stat HEAD~1", "comment": "The commit before"}
+      ]
+    },
+    "diff-stat.sh": {
+      "name": "Diff Stat",
+      "summary": "Per-file summary of unstaged changes",
+      "os": ["linux", "macos"],
+      "icon": "plus.forwardslash.minus",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git diff --cached --stat", "comment": "Staged changes instead"},
+        {"command": "git diff --word-diff", "comment": "Word-level diff, great for prose and config files"},
+        {"command": "git diff HEAD~3 --stat", "comment": "Everything changed in the last three commits"}
+      ]
+    },
+    "branches.sh": {
+      "name": "Branches",
+      "summary": "Local branches with upstream and ahead/behind counts",
+      "os": ["linux", "macos"],
+      "icon": "arrow.triangle.branch",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git branch -a --sort=-committerdate", "comment": "Local and remote branches, most recent first"},
+        {"command": "git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short) %(committerdate:relative)'", "comment": "Branches with the age of their last commit"},
+        {"command": "git branch --merged", "comment": "Branches already merged into the current one, safe to delete"},
+        {"command": "git remote show origin", "comment": "Remote branches and tracking status"}
+      ]
+    },
+    "pull-rebase.sh": {
+      "name": "Pull Rebase",
+      "summary": "Update the branch without a merge commit, stashing local work around it",
+      "os": ["linux", "macos"],
+      "icon": "arrow.down.circle",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git pull --ff-only", "comment": "Refuse anything but a fast-forward"},
+        {"command": "git fetch --all --prune", "comment": "Fetch every remote and drop deleted remote branches"}
+      ]
+    },
+    "stash.sh": {
+      "name": "Stash",
+      "summary": "Changes set aside with git stash",
+      "os": ["linux", "macos"],
+      "icon": "tray.and.arrow.down",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git stash push -m \"wip\"", "comment": "Set the current changes aside with a label"},
+        {"command": "git stash show -p", "comment": "Patch of the most recent stash"},
+        {"command": "git stash pop", "comment": "Re-apply and drop the most recent stash"},
+        {"command": "git stash drop", "comment": "Discard the most recent stash"}
+      ]
+    },
+    "contributors.sh": {
+      "name": "Contributors",
+      "summary": "Commit count per author, merges excluded",
+      "os": ["linux", "macos"],
+      "icon": "person.2",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git shortlog -sn --since=1.month", "comment": "Last month only"},
+        {"command": "git shortlog -sn --all", "comment": "Across every branch"},
+        {"command": "git rev-list --count HEAD", "comment": "Total number of commits on this branch"}
+      ]
+    },
+    "reflog.sh": {
+      "name": "Reflog",
+      "summary": "Where HEAD has been: the safety net after a bad reset or rebase",
+      "os": ["linux", "macos"],
+      "icon": "lifepreserver",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"}
+    },
+    "discard-changes.sh": {
+      "name": "Discard Changes",
+      "summary": "Throw away every local change to tracked files",
+      "os": ["linux", "macos"],
+      "danger": true,
+      "icon": "trash",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git restore .", "comment": "Working tree only, keeps the index"},
+        {"command": "git clean -fdn", "comment": "Preview which untracked files would be deleted"},
+        {"command": "git clean -fd", "comment": "Delete untracked files and directories"},
+        {"command": "git checkout -- .", "comment": "Old-style equivalent of git restore ."}
+      ]
+    },
+    "repo-size.sh": {
+      "name": "Repo Size",
+      "summary": "Loose objects and pack size of the repository",
+      "os": ["linux", "macos"],
+      "icon": "internaldrive",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git gc", "comment": "Pack loose objects"},
+        {"command": "git gc --prune=now", "comment": "Also drop unreachable objects right away"}
+      ]
+    },
+    "tags.sh": {
+      "name": "Tags",
+      "summary": "Tags sorted by version, newest first",
+      "os": ["linux", "macos"],
+      "icon": "tag",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
+      "examples": [
+        {"command": "git describe --tags --always", "comment": "Closest tag to HEAD, or the short hash"}
+      ]
+    }
+  }
+}

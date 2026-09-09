@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "files": {
+    "line-start.ks": {
+      "name": "Line Start",
+      "summary": "Jump to the beginning of the command line (C-a)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.left.to.line",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "line-end.ks": {
+      "name": "Line End",
+      "summary": "Jump to the end of the command line (C-e)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right.to.line",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "word-back.ks": {
+      "name": "Word Back",
+      "summary": "Move one word backward (M-b)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.left",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "word-forward.ks": {
+      "name": "Word Forward",
+      "summary": "Move one word forward (M-f)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "delete-line.ks": {
+      "name": "Delete Line",
+      "summary": "Erase everything before the cursor (C-u)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "delete.left",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "delete-to-end.ks": {
+      "name": "Delete to End",
+      "summary": "Erase everything after the cursor (C-k)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "delete.right",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "delete-word.ks": {
+      "name": "Delete Word",
+      "summary": "Erase the word before the cursor (C-w)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "delete.backward",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "paste-deleted.ks": {
+      "name": "Paste Deleted",
+      "summary": "Put back the last erased text (C-y)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "doc.on.clipboard",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "search-history.ks": {
+      "name": "Search History",
+      "summary": "Incremental search through previous commands (C-r)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "magnifyingglass",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "last-argument.ks": {
+      "name": "Last Argument",
+      "summary": "Insert the last argument of the previous command (M-.)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "text.insert",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "clear-screen.ks": {
+      "name": "Clear Screen",
+      "summary": "Clear the screen, keep the current line (C-l)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "rectangle.dashed",
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

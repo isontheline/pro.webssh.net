@@ -32,12 +32,29 @@ jobs:
           # (ShellCheck) and .ks key sequences. Anything else could smuggle
           # an unreviewed command past ShellCheck.
           ALLOWED_EXTENSIONS = {".sh", ".ks"}
-          # <ctrl-x> tokens the app expands; ctrl-j (LF) and ctrl-m (CR) are
-          # banned — with no newline allowed either, a .ks can TYPE text but
-          # never EXECUTE it: the user always presses Enter themself.
-          KS_TOKEN = re.compile(r"<ctrl-[a-ik-ln-z]>")
+          # Key tokens the app expands (WebSSH_Native, MacroTokenExpander.swift):
+          #   <ctrl-x>  x in a-z or [ \ ] ^ _ @ /   (<ctrl-[> is ESC)
+          #   <alt-x>   ESC followed by x, one printable ASCII character
+          #   <esc>     ESC          <tab>  TAB
+          # ctrl-j (LF) and ctrl-m (CR) are banned — with no newline allowed
+          # either, a .ks can TYPE text but never EXECUTE it: the user always
+          # presses Enter themself.
+          KS_TOKEN = re.compile(r"<ctrl-[a-ik-ln-z\[\\\]^_@/]>|<alt-[!-=?-~]>|<esc>|<tab>")
+          KS_ANY_TOKEN = re.compile(r"<(?:ctrl|alt)-[^>]*>|<(?:esc|tab|enter|return|cr|lf)>", re.IGNORECASE)
           KS_MAX_SIZE = 64
           KS_MAX_LITERAL = 16
+
+          def expand_key_sequence(text):
+              # Same bytes the app will send, to reason about what the sequence
+              # really types.
+              def expand(m):
+                  token = m.group(0)[1:-1]
+                  if token == "esc": return "\x1b"
+                  if token == "tab": return "\t"
+                  kind, char = token.split("-", 1)
+                  if kind == "alt": return "\x1b" + char
+                  return chr(ord(char) & 0x1f)
+              return KS_TOKEN.sub(expand, text)
 
           def check_key_sequence(scope, path):
               data = open(path, "rb").read()
@@ -50,12 +67,18 @@ jobs:
               if "\n" in text or "\r" in text:
                   errors.append(f"{scope}: .ks must be a single line with NO trailing newline (a newline would auto-execute the typed text)")
               if not KS_TOKEN.search(text):
-                  errors.append(f"{scope}: .ks must contain at least one <ctrl-x> token (a-z, except ctrl-j/ctrl-m)")
+                  errors.append(f"{scope}: .ks must contain at least one key token: <ctrl-x> (a-z or [ \\ ] ^ _ @ /, except ctrl-j/ctrl-m), <alt-x>, <esc> or <tab>")
               literal = KS_TOKEN.sub("", text)
-              if re.search(r"<ctrl-[^>]*>", literal):
-                  errors.append(f"{scope}: unknown or banned <ctrl-...> token (ctrl-j/ctrl-m are Enter — not allowed)")
+              if KS_ANY_TOKEN.search(literal):
+                  errors.append(f"{scope}: unknown or banned key token (lowercase names only; ctrl-j/ctrl-m/enter are Enter — not allowed)")
               elif len(literal) > KS_MAX_LITERAL:
                   errors.append(f"{scope}: too much literal text around the tokens ({len(literal)} > {KS_MAX_LITERAL} chars) — write a .sh snippet instead")
+              # ESC then [ or O opens a CSI/SS3 sequence: the following bytes are
+              # read by the remote as a key, not as text (e.g. ESC O M is keypad
+              # Enter). Whether it comes from <esc>, <ctrl-[> or <alt-[>/<alt-O>,
+              # the .ks must not forge such sequences.
+              if re.search(r"\x1b[\[O]", expand_key_sequence(text)):
+                  errors.append(f"{scope}: ESC followed by '[' or 'O' forges a terminal escape sequence (e.g. keypad Enter) — not allowed")
           errors = []
 
           def check_maintainers(scope, meta):

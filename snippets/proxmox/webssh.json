@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "files": {
+    "pve-version.sh": {
+      "name": "PVE Version",
+      "summary": "Version of every Proxmox VE component and the running kernel",
+      "os": ["linux"],
+      "root": true,
+      "icon": "info.circle",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pveversion", "comment": "One-line summary only"}
+      ]
+    },
+    "cluster-resources.sh": {
+      "name": "Cluster Resources",
+      "summary": "Every guest in the cluster with status, CPU, memory and node",
+      "os": ["linux"],
+      "root": true,
+      "icon": "square.grid.3x3",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pvesh get /cluster/resources --type node", "comment": "Nodes only, with load and memory"},
+        {"command": "pvesh get /cluster/resources --type storage", "comment": "Storages only, with usage"},
+        {"command": "pvesh get /cluster/resources --output-format json-pretty", "comment": "Everything, as JSON"},
+        {"command": "pvesh get /cluster/resources --type vm --noborder --noheader", "comment": "Plain text, easy to pipe into grep or awk"}
+      ]
+    },
+    "node-status.sh": {
+      "name": "Node Status",
+      "summary": "Uptime, load, memory and kernel of the node you are logged into",
+      "os": ["linux"],
+      "root": true,
+      "icon": "server.rack",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pvesh get /version", "comment": "API and release version"},
+        {"command": "pvesh get /cluster/status", "comment": "Cluster membership and quorum as seen by the API"},
+        {"command": "pvesh get \"/nodes/$(hostname)/status\" --output-format yaml", "comment": "Same data as YAML"}
+      ]
+    },
+    "vm-list.sh": {
+      "name": "VM List",
+      "summary": "QEMU virtual machines on this node with VMID, status, memory and PID",
+      "os": ["linux"],
+      "root": true,
+      "icon": "desktopcomputer",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "qm list --full", "comment": "Determine full status of active VMs"},
+        {"command": "qm status 100 --verbose", "comment": "Detailed status of VM 100"},
+        {"command": "qm config 100", "comment": "Configuration of VM 100, pending changes applied"},
+        {"command": "qm listsnapshot 100", "comment": "Snapshots of VM 100"},
+        {"command": "qm shutdown 100", "comment": "Clean ACPI shutdown of VM 100"},
+        {"command": "qm start 100", "comment": "Start VM 100"}
+      ]
+    },
+    "ct-list.sh": {
+      "name": "Container List",
+      "summary": "LXC containers on this node with VMID, status and name",
+      "os": ["linux"],
+      "root": true,
+      "icon": "shippingbox",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pct status 100", "comment": "Status of container 100"},
+        {"command": "pct config 100", "comment": "Configuration of container 100"},
+        {"command": "pct df 100", "comment": "Disk usage of container 100"},
+        {"command": "pct listsnapshot 100", "comment": "Snapshots of container 100"},
+        {"command": "pct pending 100", "comment": "Pending configuration changes of container 100"},
+        {"command": "pct enter 100", "comment": "Open a shell inside container 100"}
+      ]
+    },
+    "cluster-status.sh": {
+      "name": "Cluster Status",
+      "summary": "Quorum, votes and corosync membership as seen by this node",
+      "os": ["linux"],
+      "root": true,
+      "icon": "point.3.connected.trianglepath.dotted",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pvecm nodes", "comment": "Cluster nodes with their votes"},
+        {"command": "pvesh get /cluster/status", "comment": "Same view through the API"}
+      ]
+    },
+    "storage-status.sh": {
+      "name": "Storage Status",
+      "summary": "Free space and state of every datastore",
+      "os": ["linux"],
+      "root": true,
+      "icon": "externaldrive",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pvesm status --content images", "comment": "Storages able to hold VM disks only"},
+        {"command": "pvesm list local", "comment": "Content of the local storage"},
+        {"command": "pvesm list local --vmid 100", "comment": "What guest 100 stores on local"}
+      ]
+    },
+    "recent-tasks.sh": {
+      "name": "Recent Tasks",
+      "summary": "Last 20 tasks of this node: backups, migrations, starts and stops",
+      "os": ["linux"],
+      "root": true,
+      "icon": "list.bullet.rectangle",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pvenode task list --errors 1", "comment": "Failed tasks only"},
+        {"command": "pvenode task list --vmid 100", "comment": "Tasks of guest 100"},
+        {"command": "pvenode task list --typefilter vzdump", "comment": "Backup tasks only"},
+        {"command": "pvenode task log UPID:node:00001234:0000ABCD:65F00000:vzdump:100:root@pam:", "comment": "Full log of a task, paste its UPID from the list"}
+      ]
+    },
+    "backup-jobs.sh": {
+      "name": "Backup Jobs",
+      "summary": "Scheduled vzdump backup jobs of the cluster",
+      "os": ["linux"],
+      "root": true,
+      "icon": "clock.arrow.circlepath",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "vzdump 100 --mode snapshot --compress zstd", "comment": "One-off backup of guest 100 to the default dump location"},
+        {"command": "vzdump --all --mode snapshot --compress zstd --storage local", "comment": "Backup every guest of this node onto the local storage"},
+        {"command": "vzdump --all --mode suspend --exclude 101,102", "comment": "Backup all guests except 101 and 102"}
+      ]
+    },
+    "pve-performance.sh": {
+      "name": "PVE Performance",
+      "summary": "Quick CPU, disk, fsync and DNS benchmark of this node",
+      "os": ["linux"],
+      "root": true,
+      "icon": "speedometer",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pveperf /var/lib/vz", "comment": "Benchmark the disk holding the default storage"}
+      ]
+    }
+  }
+}

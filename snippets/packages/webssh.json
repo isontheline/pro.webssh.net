@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "files": {
+    "list-upgradable.sh": {
+      "name": "List Upgradable",
+      "summary": "Refresh the index and list pending upgrades on apt, dnf, apk, pacman, zypper or brew",
+      "os": ["linux", "macos"],
+      "root": true,
+      "icon": "arrow.down.circle",
+      "maintainers": ["isontheline"],
+      "packages": {"pacman": "pacman-contrib"},
+      "examples": [
+        {"command": "apt list --upgradable", "comment": "Debian/Ubuntu, without refreshing first"},
+        {"command": "dnf check-update --changelogs", "comment": "Fedora/RHEL, with the changelog of each update"},
+        {"command": "zypper list-patches", "comment": "openSUSE, security and bugfix patches only"},
+        {"command": "checkupdates", "comment": "Arch, safe preview without touching the local database (pacman-contrib)"},
+        {"command": "brew outdated", "comment": "Homebrew, without refreshing first"}
+      ]
+    },
+    "upgrade-all.sh": {
+      "name": "Upgrade All",
+      "summary": "Upgrade every installed package on apt, dnf, apk, pacman, zypper or brew",
+      "os": ["linux", "macos"],
+      "root": true,
+      "danger": true,
+      "icon": "arrow.up.circle",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "apt full-upgrade", "comment": "Debian/Ubuntu, also removes packages when required by the upgrade"},
+        {"command": "zypper dist-upgrade", "comment": "openSUSE, full distribution upgrade"},
+        {"command": "apk upgrade -a", "comment": "Alpine, reset every package to the repository version"}
+      ]
+    },
+    "installed-packages.sh": {
+      "name": "Installed Packages",
+      "summary": "Installed packages on apt, dnf, apk, pacman, zypper or brew",
+      "os": ["linux", "macos"],
+      "icon": "shippingbox",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "rpm -qa --last | head -n 20", "comment": "RPM systems, most recently installed first"},
+        {"command": "pacman -Qdt", "comment": "Arch, orphaned dependencies"},
+        {"command": "apk list -O", "comment": "Alpine, orphaned packages"},
+        {"command": "zypper packages --orphaned", "comment": "openSUSE, packages without a repository"},
+        {"command": "brew leaves", "comment": "Homebrew, formulae installed on purpose (not as dependencies)"}
+      ]
+    },
+    "package-owner.sh": {
+      "name": "Package Owner",
+      "summary": "Which package installed a file, on dpkg, rpm, apk or pacman systems",
+      "os": ["linux"],
+      "icon": "magnifyingglass",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "dpkg -S /usr/bin/ssh", "comment": "Debian/Ubuntu"},
+        {"command": "rpm -qf /usr/bin/ssh", "comment": "Fedora/RHEL/openSUSE"},
+        {"command": "apk info -W /usr/bin/ssh", "comment": "Alpine"},
+        {"command": "pacman -Qo /usr/bin/ssh", "comment": "Arch"},
+        {"command": "dpkg -L openssh-server", "comment": "The other way round: files installed by a package (Debian/Ubuntu)"},
+        {"command": "rpm -ql openssh-server", "comment": "Files installed by a package (RPM)"},
+        {"command": "apk info -L openssh", "comment": "Files installed by a package (Alpine)"},
+        {"command": "pacman -Ql openssh", "comment": "Files installed by a package (Arch)"},
+        {"command": "dnf provides '*/sshd'", "comment": "Which package would provide a file not installed yet (Fedora/RHEL)"}
+      ]
+    },
+    "package-cleanup.sh": {
+      "name": "Package Cleanup",
+      "summary": "Remove orphaned dependencies and caches on apt, dnf, apk, pacman, zypper or brew",
+      "os": ["linux", "macos"],
+      "root": true,
+      "danger": true,
+      "icon": "trash",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "brew cleanup -n", "comment": "Homebrew, preview what would be removed"},
+        {"command": "brew autoremove --dry-run", "comment": "Homebrew, preview unneeded dependencies"},
+        {"command": "pacman -Rns $(pacman -Qdtq)", "comment": "Arch, remove orphaned dependencies"}
+      ]
+    },
+    "package-history.sh": {
+      "name": "Package History",
+      "summary": "Recently installed or upgraded packages from the dpkg, dnf, pacman or rpm records",
+      "os": ["linux"],
+      "icon": "clock",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "dnf history info", "comment": "Fedora/RHEL, details of the last transaction"},
+        {"command": "dnf history list --reverse", "comment": "Fedora/RHEL, oldest transaction first"},
+        {"command": "zypper ps", "comment": "openSUSE, processes still using files deleted by an upgrade"}
+      ]
+    }
+  }
+}

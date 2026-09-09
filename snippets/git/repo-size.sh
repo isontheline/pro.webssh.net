@@ -1,0 +1,1 @@
+git count-objects -vH

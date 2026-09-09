@@ -1,0 +1,1 @@
+git pull --rebase --autostash

@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "files": {
+    "top-memory.sh": {
+      "name": "Top Memory",
+      "summary": "The 15 processes using the most memory, portable ps + sort",
+      "os": ["linux", "macos"],
+      "icon": "memorychip",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "ps aux --sort=-%mem | head -n 15", "comment": "Linux procps: let ps do the sorting"},
+        {"command": "ps aux -m | head -n 15", "comment": "macOS/BSD: sorted by memory"},
+        {"command": "ps -eo pid,user,%mem,rss,comm | sort -nrk 3 | head -n 15", "comment": "Compact columns with resident size"}
+      ]
+    },
+    "top-cpu.sh": {
+      "name": "Top CPU",
+      "summary": "The 15 processes using the most CPU, portable ps + sort",
+      "os": ["linux", "macos"],
+      "icon": "cpu",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "ps aux --sort=-%cpu | head -n 15", "comment": "Linux procps: let ps do the sorting"},
+        {"command": "ps aux -r | head -n 15", "comment": "macOS/BSD: sorted by CPU"},
+        {"command": "top -b -n 1 -o %CPU | head -n 20", "comment": "Linux: one top snapshot sorted by CPU"}
+      ]
+    },
+    "usage-by-user.sh": {
+      "name": "Memory by User",
+      "summary": "Memory percentage summed up per user",
+      "os": ["linux", "macos"],
+      "icon": "person.crop.circle",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "ps -eo user,%cpu | awk 'NR>1 {m[$1]+=$2} END {for (u in m) print m[u], u}' | sort -nr", "comment": "CPU instead of memory"},
+        {"command": "ps -u www-data -o pid,%cpu,%mem,comm", "comment": "Processes of one user"}
+      ]
+    },
+    "process-tree.sh": {
+      "name": "Process Tree",
+      "summary": "Every process as a tree with PIDs",
+      "os": ["linux"],
+      "icon": "arrow.triangle.branch",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "psmisc", "dnf": "psmisc", "apk": "psmisc", "pacman": "psmisc"},
+      "examples": [
+        {"command": "pstree -pa 1", "comment": "With command-line arguments"},
+        {"command": "pstree -s 1234", "comment": "Ancestors of one process"},
+        {"command": "pstree -u", "comment": "Show where the user changes"},
+        {"command": "ps -ef --forest", "comment": "Same idea with procps ps"},
+        {"command": "ps axjf", "comment": "BSD-style syntax, with job information"}
+      ]
+    },
+    "find-process.sh": {
+      "name": "Find Process",
+      "summary": "PID and command of processes matching a pattern, sshd here",
+      "os": ["linux", "macos"],
+      "icon": "magnifyingglass",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "pgrep -fa nginx", "comment": "Linux: full command line"},
+        {"command": "pgrep -c nginx", "comment": "Linux: just count them"},
+        {"command": "pgrep -n sshd", "comment": "Newest matching process only"},
+        {"command": "pgrep -x sshd", "comment": "Exact name match"},
+        {"command": "pkill -f \"python app.py\"", "comment": "Terminate every process whose command line matches"},
+        {"command": "pkill -HUP -x nginx", "comment": "Send SIGHUP (reload) by exact name"}
+      ]
+    },
+    "zombies.sh": {
+      "name": "Zombies",
+      "summary": "Zombie processes and the parent that forgot to reap them",
+      "os": ["linux", "macos"],
+      "icon": "figure.walk",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "ps -eo pid,ppid,stat,comm | awk '$3 ~ /^D/'", "comment": "Processes stuck in uninterruptible I/O wait"},
+        {"command": "ps -eo stat | sort | uniq -c | sort -rn", "comment": "Histogram of process states"}
+      ]
+    },
+    "interactive-top.sh": {
+      "name": "Interactive Top",
+      "summary": "htop: scrollable, colored, mouse-friendly process viewer",
+      "os": ["linux", "macos"],
+      "icon": "chart.bar.xaxis",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "htop", "dnf": "htop", "apk": "htop", "pacman": "htop", "brew": "htop"},
+      "examples": [
+        {"command": "htop -t", "comment": "Tree view"},
+        {"command": "htop -u www-data", "comment": "One user only"},
+        {"command": "htop -p 1234,5678", "comment": "Watch specific PIDs"},
+        {"command": "btop", "comment": "The even fancier alternative, when installed"}
+      ]
+    },
+    "io-by-process.sh": {
+      "name": "I/O by Process",
+      "summary": "Which processes read and write the disks right now",
+      "os": ["linux"],
+      "root": true,
+      "icon": "externaldrive.badge.timer",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "iotop", "dnf": "iotop", "pacman": "iotop"},
+      "examples": [
+        {"command": "iotop -obn 3", "comment": "Batch mode, three samples, good for logging"},
+        {"command": "iotop -oPa", "comment": "Accumulated I/O since start instead of bandwidth"},
+        {"command": "iotop -p 1234", "comment": "One process only"}
+      ]
+    },
+    "pidstat.sh": {
+      "name": "Pidstat",
+      "summary": "Per-process CPU usage, five samples one second apart",
+      "os": ["linux"],
+      "icon": "waveform.path.ecg",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "sysstat", "dnf": "sysstat", "apk": "sysstat", "pacman": "sysstat"},
+      "examples": [
+        {"command": "pidstat -d 1", "comment": "Disk I/O per process"},
+        {"command": "pidstat -r 1", "comment": "Memory and page faults per process"},
+        {"command": "pidstat -u -p 1234 1", "comment": "CPU of one process"},
+        {"command": "pidstat -w 1", "comment": "Context switches per process"},
+        {"command": "pidstat -C nginx 1", "comment": "Only processes whose name contains nginx"}
+      ]
+    },
+    "vmstat.sh": {
+      "name": "Vmstat",
+      "summary": "Memory, swap, I/O and CPU: five samples one second apart",
+      "os": ["linux"],
+      "icon": "gauge",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "vmstat -w 1", "comment": "Wide columns, keeps running"},
+        {"command": "vmstat -d", "comment": "Per-disk statistics"},
+        {"command": "vmstat -S M 1 5", "comment": "Memory in megabytes"},
+        {"command": "vmstat -s", "comment": "Event counters since boot"}
+      ]
+    },
+    "port-owner.sh": {
+      "name": "Port Owner",
+      "summary": "Which process holds TCP port 22",
+      "os": ["linux"],
+      "root": true,
+      "icon": "network",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "psmisc", "dnf": "psmisc", "apk": "psmisc", "pacman": "psmisc"},
+      "examples": [
+        {"command": "fuser -v -n tcp 80", "comment": "Same with the explicit namespace syntax"},
+        {"command": "fuser -vm /home", "comment": "Processes using a mounted filesystem, before unmounting it"},
+        {"command": "fuser -v /var/log/syslog", "comment": "Processes holding one file"},
+        {"command": "fuser -k 8080/tcp", "comment": "Kill whatever holds the port"}
+      ]
+    }
+  }
+}

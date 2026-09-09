@@ -30,12 +30,22 @@ snippets/
 7. **Two file kinds only** — each with its own CI validator, so nothing dodges
    review:
    - `.sh` — shell snippets, ShellCheck-verified.
-   - `.ks` — **key sequences**: WebSSH expands `<ctrl-x>` tokens into the real
-     control character when running the snippet (e.g. `<ctrl-b>[` enters tmux
-     copy mode). One single line, **no trailing newline**, at least one token,
-     little literal text. Newlines and `<ctrl-j>`/`<ctrl-m>` are rejected —
-     they are Enter, so a `.ks` can *type* keys but never *execute* a command
-     by itself.
+   - `.ks` — **key sequences**: WebSSH expands key tokens into the real bytes
+     when running the snippet (e.g. `<ctrl-b>[` enters tmux copy mode,
+     `<esc>:wq` leaves vim). One single line, **no trailing newline**, at
+     least one token, little literal text. Tokens (lowercase):
+     - `<ctrl-x>` — control character, `x` a letter `a`-`z` or one of
+       `[ \ ] ^ _ @ /`;
+     - `<alt-x>` — Escape then `x`, one printable ASCII character, case
+       preserved (`<alt-b>` and `<alt-B>` differ);
+     - `<esc>` — Escape (same as `<ctrl-[>`);
+     - `<tab>` — Tab (same as `<ctrl-i>`).
+
+     Newlines and `<ctrl-j>`/`<ctrl-m>` are rejected — they are Enter, so a
+     `.ks` can *type* keys but never *execute* a command by itself. For the
+     same reason an Escape followed by `[` or `O` is rejected (from `<esc>[`,
+     `<ctrl-[>O`, `<alt-[>`, `<alt-O>`…): it would forge a terminal escape
+     sequence such as keypad Enter.
 
 ## `webssh.json` manifest
 

@@ -4,9 +4,14 @@
     "show-history.ks": {
       "name": "Show History",
       "summary": "Enter copy mode to scroll the pane history (prefix + [)",
-      "os": ["linux", "macos"],
+      "os": [
+        "linux",
+        "macos"
+      ],
       "icon": "clock.arrow.trianglehead.counterclockwise.rotate.90",
-      "maintainers": ["isontheline"],
+      "maintainers": [
+        "isontheline"
+      ],
       "packages": {
         "apt": "tmux",
         "dnf": "tmux",
@@ -16,9 +21,14 @@
     "split-horizontal.ks": {
       "name": "Split Screen Horizontally",
       "summary": "Split the current pane into top and bottom (prefix + \")",
-      "os": ["linux", "macos"],
+      "os": [
+        "linux",
+        "macos"
+      ],
       "icon": "trapezoid.and.line.horizontal",
-      "maintainers": ["isontheline"],
+      "maintainers": [
+        "isontheline"
+      ],
       "packages": {
         "apt": "tmux",
         "dnf": "tmux",
@@ -28,9 +38,168 @@
     "split-vertical.ks": {
       "name": "Split Screen Vertically",
       "summary": "Split the current pane side by side (prefix + %)",
-      "os": ["linux", "macos"],
+      "os": [
+        "linux",
+        "macos"
+      ],
       "icon": "trapezoid.and.line.vertical",
-      "maintainers": ["isontheline"],
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "detach.ks": {
+      "name": "Detach",
+      "summary": "Leave the session running in the background (prefix + d)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "rectangle.portrait.and.arrow.right",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "new-window.ks": {
+      "name": "New Window",
+      "summary": "Create a new window (prefix + c)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "plus.rectangle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "next-window.ks": {
+      "name": "Next Window",
+      "summary": "Switch to the next window (prefix + n)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right.square",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "previous-window.ks": {
+      "name": "Previous Window",
+      "summary": "Switch to the previous window (prefix + p)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.left.square",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "next-pane.ks": {
+      "name": "Next Pane",
+      "summary": "Move the focus to the next pane (prefix + o)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.right.circle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "zoom-pane.ks": {
+      "name": "Zoom Pane",
+      "summary": "Toggle the current pane full screen (prefix + z)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "arrow.up.left.and.arrow.down.right",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "kill-pane.ks": {
+      "name": "Kill Pane",
+      "summary": "Close the current pane, tmux asks for confirmation (prefix + x)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "danger": true,
+      "icon": "xmark.rectangle",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "choose-session.ks": {
+      "name": "Choose Session",
+      "summary": "Pick another session from an interactive list (prefix + s)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "list.bullet",
+      "maintainers": [
+        "isontheline"
+      ],
+      "packages": {
+        "apt": "tmux",
+        "dnf": "tmux",
+        "brew": "tmux"
+      }
+    },
+    "choose-window.ks": {
+      "name": "Choose Window",
+      "summary": "Pick a window from an interactive list (prefix + w)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "rectangle.grid.1x2",
+      "maintainers": [
+        "isontheline"
+      ],
       "packages": {
         "apt": "tmux",
         "dnf": "tmux",

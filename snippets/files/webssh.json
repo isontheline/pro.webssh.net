@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "files": {
+    "biggest-files.sh": {
+      "name": "Biggest Files",
+      "summary": "The 20 largest files over 100 MB on the root filesystem",
+      "os": ["linux", "macos"],
+      "icon": "doc.zipper",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "find /var -xdev -type f -size +50M -exec ls -lh {} +", "comment": "Files over 50 MB under /var"},
+        {"command": "find . -type f -empty", "comment": "Empty files"},
+        {"command": "find / -xdev -type f -perm -4000", "comment": "Setuid binaries, worth a look on a hardened box"}
+      ]
+    },
+    "biggest-dirs.sh": {
+      "name": "Biggest Directories",
+      "summary": "Heaviest subdirectories of the current one, this filesystem only",
+      "os": ["linux", "macos"],
+      "icon": "folder.badge.gearshape",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "du -sh -- * | sort -h", "comment": "Every entry here, files included, smallest first"},
+        {"command": "du -xh -d 2 /var | sort -h | tail -n 20", "comment": "Two levels deep under /var"},
+        {"command": "du -ah . | sort -h | tail -n 20", "comment": "Largest files and directories together"},
+        {"command": "du -xh --max-depth=1 --exclude=node_modules .", "comment": "GNU du: skip a directory pattern"}
+      ]
+    },
+    "recent-files.sh": {
+      "name": "Recent Files",
+      "summary": "Files modified during the last hour under the current directory",
+      "os": ["linux", "macos"],
+      "icon": "clock",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "find . -type f -mtime -1", "comment": "Last 24 hours"},
+        {"command": "find . -type f -newermt \"2026-01-01\"", "comment": "Modified since a date"},
+        {"command": "find /etc -type f -mmin -10 -exec ls -l {} +", "comment": "Config files touched in the last 10 minutes, with details"}
+      ]
+    },
+    "count-by-extension.sh": {
+      "name": "Count by Extension",
+      "summary": "How many files of each extension live under the current directory",
+      "os": ["linux", "macos"],
+      "icon": "chart.bar",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "find . -type f | wc -l", "comment": "Total number of files"},
+        {"command": "find . -type d | wc -l", "comment": "Total number of directories"}
+      ]
+    },
+    "tree.sh": {
+      "name": "Tree",
+      "summary": "Directory tree two levels deep, hidden files included",
+      "os": ["linux", "macos"],
+      "icon": "list.bullet.indent",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "tree", "dnf": "tree", "apk": "tree", "pacman": "tree", "brew": "tree"},
+      "examples": [
+        {"command": "tree -d -L 3", "comment": "Directories only, three levels"},
+        {"command": "tree -h --du", "comment": "With human-readable sizes, directories summed up"},
+        {"command": "tree -I 'node_modules|.git'", "comment": "Skip noisy directories"},
+        {"command": "tree --dirsfirst -L 2", "comment": "Directories before files"},
+        {"command": "tree -P '*.conf' -L 3", "comment": "Only files matching a pattern"},
+        {"command": "tree --filelimit 50", "comment": "Do not descend into directories holding more than 50 entries"}
+      ]
+    },
+    "rsync-preview.sh": {
+      "name": "Rsync Preview",
+      "summary": "Dry run showing what rsync would copy or delete, nothing is touched",
+      "os": ["linux", "macos"],
+      "icon": "arrow.left.arrow.right",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "rsync -avh --progress src/ user@host:/dest/", "comment": "Copy to a remote host over SSH with per-file progress"},
+        {"command": "rsync -avh --delete src/ dest/", "comment": "Mirror: files missing from src are deleted in dest"},
+        {"command": "rsync -avh --exclude='.git' --exclude='node_modules' src/ dest/", "comment": "Skip directories"},
+        {"command": "rsync -ah --info=progress2 src/ dest/", "comment": "Linux rsync: one overall progress bar"},
+        {"command": "rsync -avh --bwlimit=5000 src/ user@host:/dest/", "comment": "Cap the transfer at 5000 KB/s"},
+        {"command": "rsync -avhP -e 'ssh -p 2222' src/ user@host:/dest/", "comment": "Non-standard SSH port, resumable partial files"},
+        {"command": "rsync -avhi src/ dest/", "comment": "Itemize: one line per change with what differed"}
+      ]
+    },
+    "archive-directory.sh": {
+      "name": "Archive Directory",
+      "summary": "Compress the current directory into ../name.tar.gz, VCS folders excluded",
+      "os": ["linux", "macos"],
+      "icon": "archivebox",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "tar --zstd -cvf archive.tar.zst dir/", "comment": "Zstandard: faster and smaller than gzip"},
+        {"command": "tar -tzvf archive.tar.gz", "comment": "List the content without extracting"},
+        {"command": "tar -xzf archive.tar.gz -C /dest", "comment": "Extract somewhere else"},
+        {"command": "tar -xzf archive.tar.gz --strip-components=1", "comment": "Extract without the top-level directory"},
+        {"command": "tar -czf etc.tgz --one-file-system --exclude='*.log' /etc", "comment": "Skip logs and mounted filesystems"},
+        {"command": "tar --totals -czf archive.tgz dir/", "comment": "Print the total bytes written"}
+      ]
+    },
+    "checksums.sh": {
+      "name": "Checksums",
+      "summary": "SHA-256 of every file in the current directory, GNU or macOS",
+      "os": ["linux", "macos"],
+      "icon": "checkmark.seal",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "sha256sum -c SHA256SUMS", "comment": "Verify files against a checksum list (GNU)"},
+        {"command": "shasum -a 256 -c SHA256SUMS", "comment": "Same on macOS"},
+        {"command": "sha256sum file | tee file.sha256", "comment": "Print and save the checksum of one file"},
+        {"command": "md5sum file", "comment": "MD5, when that is what the other side expects"}
+      ]
+    },
+    "deleted-but-open.sh": {
+      "name": "Deleted but Open",
+      "summary": "Deleted files still held open: the disk space df cannot explain",
+      "os": ["linux", "macos"],
+      "icon": "trash.slash",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "lsof", "dnf": "lsof", "apk": "lsof", "pacman": "lsof"},
+      "examples": [
+        {"command": "lsof -nP -p 1234", "comment": "Every file open by one process"},
+        {"command": "lsof -nP +D /var/log", "comment": "Who has files open under a directory"},
+        {"command": "lsof -nP -u www-data", "comment": "Files open by one user"}
+      ]
+    },
+    "watch-directory.sh": {
+      "name": "Watch Directory",
+      "summary": "Live feed of files created, modified or deleted under the current directory",
+      "os": ["linux"],
+      "icon": "eye",
+      "maintainers": ["isontheline"],
+      "packages": {"apt": "inotify-tools", "dnf": "inotify-tools", "apk": "inotify-tools", "pacman": "inotify-tools"},
+      "examples": [
+        {"command": "inotifywait -m -r -e close_write /var/www", "comment": "Only completed writes, one line per saved file"},
+        {"command": "inotifywait -m -r --format '%T %e %w%f' --timefmt '%H:%M:%S' .", "comment": "With a timestamp"},
+        {"command": "inotifywait -m -r --exclude '\\.swp$' .", "comment": "Ignore editor swap files"},
+        {"command": "fswatch -r .", "comment": "macOS equivalent (brew install fswatch)"}
+      ]
+    },
+    "fix-permissions.sh": {
+      "name": "Fix Permissions",
+      "summary": "Directories 755 and files 644, recursively from here",
+      "os": ["linux", "macos"],
+      "danger": true,
+      "icon": "lock.open",
+      "maintainers": ["isontheline"],
+      "examples": [
+        {"command": "chmod -R u+rwX,go+rX,go-w .", "comment": "Same result in one command, X sets execute on directories only"},
+        {"command": "chown -R user:group .", "comment": "Fix ownership as well"}
+      ]
+    }
+  }
+}

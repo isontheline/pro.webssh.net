@@ -23,6 +23,9 @@ Want to share yours? See [CONTRIBUTING](README.md).
 # System
 
 - [System Essentials](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/system) — Disk, resources and housekeeping helpers `linux` `macos`
+- [Processes](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/processes) — CPU, memory and I/O hogs, trees and zombies `linux` `macos`
+- [Packages](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/packages) — Updates, cleanup and package lookup on any distro `linux` `macos`
+- [Files & Transfer](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/files) — Disk hogs, archives, rsync and checksums `linux` `macos`
 
 # Security
 
@@ -32,6 +35,16 @@ Want to share yours? See [CONTRIBUTING](README.md).
 
 - [Docker](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/docker) — Disk usage and live container monitoring `linux` `macos`
 
+# Virtualization
+
+- [Proxmox VE](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/proxmox) — Guests, storage, tasks and cluster health `linux`
+
+# Development
+
+- [Git](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/git) — Status, history, branches and recovery `linux` `macos`
+
 # Terminal
 
-- [tmux](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/tmux) — Pane splitting and history shortcuts (prefix Ctrl-B) `linux` `macos`
+- [tmux](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/tmux) — Panes, windows, sessions and history shortcuts (prefix Ctrl-B) `linux` `macos`
+- [GNU screen](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/screen) — Windows, regions and history shortcuts (prefix Ctrl-A) `linux` `macos`
+- [Readline](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/readline) — Command-line editing shortcuts of bash and friends `linux` `macos`
