@@ -144,8 +144,7 @@
       "examples": [
         {"command": "fuser -v -n tcp 80", "comment": "Same with the explicit namespace syntax"},
         {"command": "fuser -vm /home", "comment": "Processes using a mounted filesystem, before unmounting it"},
-        {"command": "fuser -v /var/log/syslog", "comment": "Processes holding one file"},
-        {"command": "fuser -k 8080/tcp", "comment": "Kill whatever holds the port"}
+        {"command": "fuser -v /var/log/syslog", "comment": "Processes holding one file"}
       ]
     }
   }

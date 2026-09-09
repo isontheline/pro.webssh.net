@@ -1,4 +1,3 @@
-# Upgrade every installed package - whatever the package manager
 if command -v apt >/dev/null 2>&1; then
     apt update && apt upgrade
 elif command -v dnf >/dev/null 2>&1; then

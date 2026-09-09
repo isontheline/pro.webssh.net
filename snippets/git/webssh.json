@@ -92,8 +92,7 @@
       "examples": [
         {"command": "git stash push -m \"wip\"", "comment": "Set the current changes aside with a label"},
         {"command": "git stash show -p", "comment": "Patch of the most recent stash"},
-        {"command": "git stash pop", "comment": "Re-apply and drop the most recent stash"},
-        {"command": "git stash drop", "comment": "Discard the most recent stash"}
+        {"command": "git stash pop", "comment": "Re-apply and drop the most recent stash"}
       ]
     },
     "contributors.sh": {
@@ -140,8 +139,7 @@
       "maintainers": ["isontheline"],
       "packages": {"apt": "git", "dnf": "git", "apk": "git", "pacman": "git", "brew": "git"},
       "examples": [
-        {"command": "git gc", "comment": "Pack loose objects"},
-        {"command": "git gc --prune=now", "comment": "Also drop unreachable objects right away"}
+        {"command": "git gc", "comment": "Pack loose objects"}
       ]
     },
     "tags.sh": {

@@ -83,7 +83,7 @@
     },
     "archive-directory.sh": {
       "name": "Archive Directory",
-      "summary": "Compress the current directory into ../name.tar.gz, VCS folders excluded",
+      "summary": "Compress the current directory into ../name-<timestamp>.tar.gz, VCS folders excluded",
       "os": ["linux", "macos"],
       "icon": "archivebox",
       "maintainers": ["isontheline"],
@@ -113,6 +113,7 @@
       "name": "Deleted but Open",
       "summary": "Deleted files still held open: the disk space df cannot explain",
       "os": ["linux", "macos"],
+      "root": true,
       "icon": "trash.slash",
       "maintainers": ["isontheline"],
       "packages": {"apt": "lsof", "dnf": "lsof", "apk": "lsof", "pacman": "lsof"},

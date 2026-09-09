@@ -50,9 +50,7 @@
         {"command": "qm list --full", "comment": "Determine full status of active VMs"},
         {"command": "qm status 100 --verbose", "comment": "Detailed status of VM 100"},
         {"command": "qm config 100", "comment": "Configuration of VM 100, pending changes applied"},
-        {"command": "qm listsnapshot 100", "comment": "Snapshots of VM 100"},
-        {"command": "qm shutdown 100", "comment": "Clean ACPI shutdown of VM 100"},
-        {"command": "qm start 100", "comment": "Start VM 100"}
+        {"command": "qm listsnapshot 100", "comment": "Snapshots of VM 100"}
       ]
     },
     "ct-list.sh": {
@@ -118,9 +116,7 @@
       "icon": "clock.arrow.circlepath",
       "maintainers": ["isontheline"],
       "examples": [
-        {"command": "vzdump 100 --mode snapshot --compress zstd", "comment": "One-off backup of guest 100 to the default dump location"},
-        {"command": "vzdump --all --mode snapshot --compress zstd --storage local", "comment": "Backup every guest of this node onto the local storage"},
-        {"command": "vzdump --all --mode suspend --exclude 101,102", "comment": "Backup all guests except 101 and 102"}
+        {"command": "vzdump 100 --mode snapshot --compress zstd", "comment": "One-off backup of guest 100 to the default dump location"}
       ]
     },
     "pve-performance.sh": {

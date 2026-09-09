@@ -1,5 +1,4 @@
-# Which package installed a file - demo on ls, put any path in f
-f="$(command -v ls)"
+f=/bin/sh
 if command -v dpkg >/dev/null 2>&1; then
     dpkg -S "$f"
 elif command -v rpm >/dev/null 2>&1; then

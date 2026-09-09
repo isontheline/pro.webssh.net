@@ -1,4 +1,3 @@
-# Remove orphaned dependencies and package caches - whatever the package manager
 if command -v apt >/dev/null 2>&1; then
     apt autoremove
 elif command -v dnf >/dev/null 2>&1; then

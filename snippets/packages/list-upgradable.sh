@@ -1,4 +1,3 @@
-# Refresh the index, then list pending upgrades - whatever the package manager
 if command -v apt >/dev/null 2>&1; then
     apt update && apt list --upgradable
 elif command -v dnf >/dev/null 2>&1; then

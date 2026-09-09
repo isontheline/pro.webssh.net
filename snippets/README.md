@@ -41,7 +41,8 @@ snippets/
      - `<esc>` — Escape (same as `<ctrl-[>`);
      - `<tab>` — Tab (same as `<ctrl-i>`).
 
-     Newlines and `<ctrl-j>`/`<ctrl-m>` are rejected — they are Enter, so a
+     Newlines, `<ctrl-j>`/`<ctrl-m>` (Enter) and `<ctrl-o>` (readline's
+     *operate-and-get-next*, which also runs the line) are rejected, so a
      `.ks` can *type* keys but never *execute* a command by itself. For the
      same reason an Escape followed by `[` or `O` is rejected (from `<esc>[`,
      `<ctrl-[>O`, `<alt-[>`, `<alt-O>`…): it would forge a terminal escape

@@ -1,4 +1,3 @@
-# Recently installed or upgraded packages
 if [ -r /var/log/dpkg.log ]; then
     grep -E " (install|upgrade) " /var/log/dpkg.log | tail -n 20
 elif command -v dnf >/dev/null 2>&1; then

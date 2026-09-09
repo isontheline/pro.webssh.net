@@ -1,4 +1,3 @@
-# Installed packages - whatever the package manager
 if command -v apt >/dev/null 2>&1; then
     apt list --installed
 elif command -v dnf >/dev/null 2>&1; then
