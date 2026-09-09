@@ -10,6 +10,9 @@ Since WebSSH 29.3 a "State Bar" is available at the top (iOS) or bottom (macOS) 
 3. Add or order the items you want to display in the State Bar
 4. Tap on "Save" to right icon to save your changes
 
+!!! tip "Built-in items"
+    Some items are managed by WebSSH itself and cannot be removed: the connection state (since 32.9) and the [progress of a running job](/documentation/terminal-progress-bar/) reported through the `OSC 9;4` escape sequence (since 32.10).
+
 ## What's an item?
 An item is a piece of information that you can display in the State Bar. You can add as many items as you want, and you can also reorder them to your liking.
 
