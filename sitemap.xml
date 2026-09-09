@@ -193,10 +193,34 @@
   </url>
   
   <url>
+    <loc>https://webssh.net/documentation/terminal-progress-bar/</loc>
+
+    
+    <lastmod>2026-09-09T19:43:47+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
     <loc>https://webssh.net/documentation/terminal-state-bar/</loc>
 
     
-    <lastmod>2025-09-02T19:28:41+00:00</lastmod>
+    <lastmod>2026-09-09T19:43:47+00:00</lastmod>
 
       
       
@@ -210,7 +234,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>daily</changefreq>
         
       
     
