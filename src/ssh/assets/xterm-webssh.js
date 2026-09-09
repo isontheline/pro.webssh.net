@@ -55,6 +55,96 @@ const JS2IOS = {
     }
 };
 
+// OSC 9;4 progress bar #1706 (ConEmu / Windows Terminal / Ghostty) :
+// ESC ] 9 ; 4 ; state ; value BEL — state 0 remove, 1 set, 2 error,
+// 3 indeterminate, 4 pause ; value 0-100. Parsing semantics replicate
+// @xterm/addon-progress (strict decimal, clamp, last-value reuse) without
+// vendoring the addon (it relies on a private xterm.js emitter constructor).
+const ProgressHelper = {
+    state: 0,
+    value: 0,
+
+    // Strict integer parsing : '' -> 0, any non-digit -> -1 (faulty).
+    toInt: function (s) {
+        let v = 0;
+        for (let i = 0; i < s.length; ++i) {
+            const c = s.charCodeAt(i);
+            if (c < 0x30 || c > 0x39) {
+                return -1;
+            }
+            v = v * 10 + c - 48;
+        }
+        return v;
+    },
+
+    clamp: function (v) {
+        return Math.min(100, Math.max(0, v));
+    },
+
+    // OSC 9 handler : returns false for anything but '4;…' so other OSC 9
+    // usages (ConEmu notifications) fall through to the next handler.
+    handle: function (data) {
+        if (!data.startsWith('4;')) {
+            return false;
+        }
+
+        const parts = data.split(';');
+
+        if (parts.length > 3) {
+            return true; // faulty sequence : swallow
+        }
+
+        if (parts.length === 2) {
+            parts.push('');
+        }
+
+        const st = ProgressHelper.toInt(parts[1]);
+        const pr = ProgressHelper.toInt(parts[2]);
+        let state = ProgressHelper.state;
+        let value = ProgressHelper.value;
+
+        switch (st) {
+            case 0:
+                state = 0;
+                value = 0;
+                break;
+            case 1:
+                if (pr < 0) return true;
+                state = 1;
+                value = ProgressHelper.clamp(pr);
+                break;
+            case 2:
+            case 4:
+                if (pr < 0) return true;
+                state = st;
+                if (pr) value = ProgressHelper.clamp(pr); // 0 / omitted : keep last value
+                break;
+            case 3:
+                state = 3; // keeps last value
+                break;
+            default:
+                return true; // unknown state : swallow
+        }
+
+        // Coalesce : tools emit every percent, native only needs changes.
+        if (state !== ProgressHelper.state || value !== ProgressHelper.value) {
+            ProgressHelper.state = state;
+            ProgressHelper.value = value;
+            JS2IOS.calliOSFunction('notifyProgress', [state, value]);
+        }
+
+        return true;
+    },
+
+    // Called by native on reconnect / manual clear : the WebView is not
+    // reloaded, a job restarting at the same state/value must not be
+    // coalesced away.
+    reset: function () {
+        ProgressHelper.state = 0;
+        ProgressHelper.value = 0;
+    }
+};
+
 const HandlerHelper = {
     // https://xtermjs.org/docs/guides/hooks/
     registerAll: function (terminal) {
@@ -140,6 +230,9 @@ const HandlerHelper = {
                     break;
             }
         });
+
+        // OSC 9;4 progress bar #1706 (ConEmu) :
+        terminal.parser.registerOscHandler(9, (data, params) => ProgressHelper.handle(data));
         // <- OSC
     }
 };
