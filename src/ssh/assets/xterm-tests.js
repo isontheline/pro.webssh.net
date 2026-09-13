@@ -148,6 +148,10 @@ const XtermTests = {
 
         progress: function () {
             return XtermTests.progress.demo();
+        },
+
+        images: function () {
+            return XtermTests.images.demo();
         }
     },
 
@@ -242,6 +246,111 @@ const XtermTests = {
 
             XtermTests.progress.remove();
             await step('remove', 0);
+        }
+    },
+
+    // Inline images #1457 #1708 : SIXEL + iTerm2 inline images through the
+    // real parser -> HandlerHelper (OSC 1337) / @xterm/addon-image. Also
+    // guards the OSC 1337 handler chain (badge must survive the addon).
+    images: {
+        // 1x1 red PNG (68 bytes) :
+        PNG_1x1: 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==',
+
+        // 12x12 red square, VT340 palette register 0 redefined to RGB (100 %, 0, 0) :
+        sixel: function () {
+            terminal.write('\x1bPq#0;2;100;0;0#0!12~-#0!12~\x1b\\\r\n');
+        },
+
+        // Single-shot form (imgcat -l, raw printf) : handled by the addon.
+        iipSingle: function () {
+            const png = XtermTests.images.PNG_1x1;
+            terminal.write('\x1b]1337;File=inline=1;size=' + atob(png).length + ';width=4;height=2;preserveAspectRatio=0:' + png + '\x07\r\n');
+        },
+
+        // Multipart form (stock imgcat) : reassembled by InlineImageHelper.
+        iipMultipart: function (chunkSize) {
+            const png = XtermTests.images.PNG_1x1;
+            const size = chunkSize || 20;
+            terminal.write('\x1b]1337;MultipartFile=inline=1;size=' + atob(png).length + ';width=4;height=2;preserveAspectRatio=0\x07');
+            for (let i = 0; i < png.length; i += size) {
+                terminal.write('\x1b]1337;FilePart=' + png.substring(i, i + size) + '\x07');
+            }
+            terminal.write('\x1b]1337;FileEnd\x07\r\n');
+        },
+
+        // Orphan parts must be swallowed without throwing :
+        orphanParts: function () {
+            terminal.write('\x1b]1337;FilePart=AAAA\x07');
+            terminal.write('\x1b]1337;FileEnd\x07');
+        },
+
+        // Badge regression : the OSC 1337 handler must keep SetBadgeFormat
+        // away from the addon (which swallows anything it cannot parse).
+        badge: function (text) {
+            terminal.write('\x1b]1337;SetBadgeFormat=' + btoa(encodeURIComponent(text)) + '\x07');
+        },
+
+        // DA1 : the addon answers CSI ? 62 ; 4 ; 9 ; 22 c when SIXEL is on.
+        da1: function () {
+            return new Promise((resolve) => {
+                const listener = terminal.onData((data) => {
+                    if (data.indexOf('\x1b[?') === 0 && data.endsWith('c')) {
+                        listener.dispose();
+                        resolve(data);
+                    }
+                });
+                terminal.write('\x1b[c');
+                setTimeout(() => { listener.dispose(); resolve(null); }, 1000);
+            });
+        },
+
+        demo: async function () {
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+            const step = (label, ms) => {
+                terminal.write('\r\n\x1b[2mInline images : ' + label + '\x1b[0m\r\n');
+                return sleep(ms);
+            };
+            const check = (label, ok) => {
+                console.log((ok ? 'PASS' : 'FAIL') + ' : ' + label);
+                terminal.write('\x1b[' + (ok ? '32m PASS' : '31m FAIL') + '\x1b[0m ' + label + '\r\n');
+            };
+
+            const addonLoaded = typeof imageAddon !== 'undefined' && imageAddon !== null;
+            const addonExpected = terminalSettings.inlineImagesStrategy !== 'disabled';
+            check('addon ' + (addonLoaded ? 'loaded' : 'not loaded') + ' (inlineImagesStrategy = ' + terminalSettings.inlineImagesStrategy + ')', addonLoaded === addonExpected);
+
+            await step('DA1 probe', 0);
+            const da1 = await XtermTests.images.da1();
+            check('DA1 reply ' + JSON.stringify(da1) + (addonLoaded ? ' contains ;4' : ' is the stock one'), da1 !== null && (da1.indexOf(';4') !== -1) === addonLoaded);
+
+            await step('SIXEL 12x12 red square', 0);
+            XtermTests.images.sixel();
+            await sleep(300);
+
+            await step('iTerm2 File= (single-shot) 1x1 red PNG on 4x2 cells', 0);
+            XtermTests.images.iipSingle();
+            await sleep(300);
+
+            await step('iTerm2 MultipartFile / FilePart x N / FileEnd (20-byte chunks)', 0);
+            XtermTests.images.iipMultipart(20);
+            await sleep(300);
+            check('no pending multipart transfer left', InlineImageHelper.pending === null);
+
+            await step('orphan FilePart / FileEnd (must be ignored)', 0);
+            XtermTests.images.orphanParts();
+            await sleep(100);
+            check('orphan parts ignored', InlineImageHelper.pending === null);
+
+            await step('badge regression (SetBadgeFormat)', 0);
+            XtermTests.images.badge('IMG OK');
+            await sleep(100);
+            check('badge content = "IMG OK"', document.getElementById('badge').textContent === 'IMG OK');
+            XtermTests.images.badge('');
+
+            if (addonLoaded) {
+                await step('storage usage : ' + imageAddon.storageUsage.toFixed(3) + ' MB / ' + imageAddon.storageLimit + ' MB', 0);
+                check('images stored', imageAddon.storageUsage > 0);
+            }
         }
     }
 }

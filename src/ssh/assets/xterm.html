@@ -25,6 +25,7 @@
     <script src="xterm-addon-web-links.js"></script>
     <script src="xterm-addon-webgl.js"></script>
     <script src="xterm-addon-canvas.js"></script>
+    <script src="xterm-addon-image.js"></script>
     <script src="xterm-selection-handles.js"></script>
     <script src="xterm-magnifier.js"></script>
   </head>
@@ -76,6 +77,32 @@
         terminal.loadAddon(webglAddon);
       }
 
+      // Inline images (SIXEL + iTerm2 inline images) #1457 #1708 ->
+      // @xterm/addon-image draws on its own <canvas class="xterm-image-layer">
+      // and works with both renderers. Limits are sized for a WKWebView :
+      // 10 MB per sequence is the xterm.js parser cap anyway, 2048x2048 px
+      // per image, cache of 32 MB on iOS / 64 MB on macOS (evicted images
+      // show a placeholder pattern). The addon also answers DA1 with ";4"
+      // (SIXEL) and the CSI 14/16/18 t size reports used by img2sixel/chafa.
+      let imageAddon = null;
+      if (terminalSettings.inlineImagesStrategy != "disabled") {
+        imageAddon = new ImageAddon.ImageAddon({
+          enableSizeReports: true,
+          sixelSupport: true,
+          sixelScrolling: true,
+          sixelPaletteLimit: 256,
+          sixelSizeLimit: 10000000,
+          iipSupport: true,
+          iipSizeLimit: 10000000,
+          pixelLimit: 4194304,
+          storageLimit: terminalSettings.isMacOS ? 64 : 32,
+          showPlaceholder: true,
+        });
+        imageAddon._addonType = "ImageAddon";
+        terminal.loadAddon(imageAddon);
+      }
+      // <- Inline images
+
       // Load Fit Addon :
       const fitAddon = new FitAddon.FitAddon();
       if (!terminalSettings.fixedSize) {
@@ -104,7 +131,8 @@
       const magnifier = new MagnifierAddon({
         radius: 40,
         zoom: 2.0,
-        canvasSelector: "canvas:not(.xterm-link-layer)",
+        canvasSelector:
+          "canvas:not(.xterm-link-layer):not(.xterm-image-layer)",
         sideSnapOnly: false,
         debug: false,
       });
@@ -216,6 +244,9 @@
       );
 
       // Register ANSI Escape Sequence handlers :
+      //!\\ Must stay after every loadAddon() : xterm.js calls the OSC handlers
+      // last-registered-first, WebSSH's OSC 1337 handler has to run before the
+      // one of @xterm/addon-image (badge vs inline images, see HandlerHelper) //!\\
       TerminalHelper.registerHandlers();
 
       // Password prompt hint (#1660) :

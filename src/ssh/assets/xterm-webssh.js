@@ -145,6 +145,113 @@ const ProgressHelper = {
     }
 };
 
+// iTerm2 inline images #1708 : @xterm/addon-image 0.9.0 only understands the
+// single-shot "OSC 1337 ; File=<args>:<base64> ST" form. The stock imgcat
+// script (iTerm2 >= 3.5) sends "MultipartFile=<args>", then many 200-byte
+// "FilePart=<base64>" and a final "FileEnd" (tmux-friendly chunks). We
+// reassemble the parts here and replay a synthetic "File=" sequence through
+// terminal.write() : the write queue is FIFO, the image lands exactly where
+// the FileEnd was received. Nothing is decoded here, the addon does it.
+const InlineImageHelper = {
+    // Same cap as the xterm.js OSC/DCS payload limit (PAYLOAD_LIMIT = 10 MB) :
+    // a bigger replay would be dropped by the parser anyway.
+    MAX_BYTES: 10 * 1024 * 1024,
+
+    // { args: string, parts: string[], size: number } while a multipart
+    // transfer is in progress, null otherwise.
+    pending: null,
+
+    // Called by the OSC 1337 handler. Returns true when the command was
+    // consumed (the addon must not see it), false to let the addon handle it.
+    handle: function (command, value) {
+        switch (command) {
+            case 'MultipartFile':
+                // A new transfer always replaces an unfinished one :
+                InlineImageHelper.pending = { args: value.trim(), parts: [], size: 0 };
+                return true;
+
+            case 'FilePart':
+                if (InlineImageHelper.pending === null) {
+                    // Orphan part (transfer aborted or started before we were
+                    // listening) : swallow it silently.
+                    return true;
+                }
+                InlineImageHelper.pending.size += value.length;
+                if (InlineImageHelper.pending.size > InlineImageHelper.MAX_BYTES) {
+                    console.warn('InlineImageHelper : multipart image dropped, over ' + InlineImageHelper.MAX_BYTES + ' bytes');
+                    InlineImageHelper.pending = null;
+                    return true;
+                }
+                InlineImageHelper.pending.parts.push(value);
+                return true;
+
+            case 'FileEnd':
+                const transfer = InlineImageHelper.pending;
+                InlineImageHelper.pending = null;
+                if (transfer !== null && transfer.parts.length > 0 && typeof imageAddon !== 'undefined' && imageAddon !== null) {
+                    return InlineImageHelper.replay('File=' + transfer.args + ':' + transfer.parts.join(''));
+                }
+                return true;
+
+            case 'File':
+                // Single-shot form (imgcat -l, raw printf) : the addon renders it.
+                return false;
+        }
+
+        return false;
+    },
+
+    // Feeds a reassembled "File=<args>:<base64>" payload to the addon.
+    // Preferred path : the addon's own OSC 1337 handler (start / put / end),
+    // called synchronously from inside the parser so the image lands exactly
+    // where the FileEnd was received, before any text that follows it in the
+    // same chunk. end() returns a Promise while the image is decoded : it is
+    // returned to xterm.js, which pauses the input flow until it resolves.
+    // Fallback (private API gone after an upgrade) : replay through
+    // terminal.write(), which only guarantees ordering across chunks.
+    //!\\ Private API : re-check after any @xterm/addon-image upgrade //!\\
+    replay: function (payload) {
+        let iipHandler = null;
+        try {
+            iipHandler = imageAddon._handlers && imageAddon._handlers.get('iip');
+        } catch (e) {
+            iipHandler = null;
+        }
+
+        if (!iipHandler || typeof iipHandler.start !== 'function' || typeof iipHandler.put !== 'function' || typeof iipHandler.end !== 'function') {
+            terminal.write('\x1b]1337;' + payload + '\x07');
+            return true;
+        }
+
+        try {
+            // put() expects UTF-32 code points : the payload is pure ASCII,
+            // fed by 64 K slices to keep the transient buffer small.
+            const SLICE = 65536;
+            const buffer = new Uint32Array(SLICE);
+            iipHandler.start();
+            for (let offset = 0; offset < payload.length; offset += SLICE) {
+                const length = Math.min(SLICE, payload.length - offset);
+                for (let i = 0; i < length; i++) {
+                    buffer[i] = payload.charCodeAt(offset + i);
+                }
+                iipHandler.put(buffer, 0, length);
+            }
+            const result = iipHandler.end(true);
+            return result instanceof Promise ? result.then(() => true) : true;
+        } catch (e) {
+            console.warn('InlineImageHelper : direct replay failed, falling back to terminal.write : ' + e);
+            terminal.write('\x1b]1337;' + payload + '\x07');
+            return true;
+        }
+    },
+
+    // Called by the native side on reconnect / restore : an unfinished
+    // transfer must never leak into the next session.
+    reset: function () {
+        InlineImageHelper.pending = null;
+    }
+};
+
 const HandlerHelper = {
     // https://xtermjs.org/docs/guides/hooks/
     registerAll: function (terminal) {
@@ -212,22 +319,34 @@ const HandlerHelper = {
         });
 
         // iTerm OSC 1337 : https://iterm2.com/documentation-escape-codes.html
+        // Handler chain : xterm.js calls the OSC 1337 handlers last-registered-
+        // first and stops at the first one returning true. @xterm/addon-image
+        // (registered earlier, at loadAddon) returns true for anything it
+        // cannot parse, so this handler MUST return true for what it consumes
+        // (badge, multipart parts) and false for "File=" (rendered by the addon).
         terminal.parser.registerOscHandler(1337, (data, params) => {
-            // Split first part of the data by equals sign
-            let parts = data.split('=');
-            if (parts.length < 2) {
-                return;
-            }
-            let command = parts[0].trim();
-            let value = parts.slice(1).join('=').trim();
-            // Handle the command
+            // Split on the first equals sign only ("FileEnd" has none, base64
+            // payloads may contain '=' padding) :
+            const eq = data.indexOf('=');
+            const command = (eq === -1 ? data : data.substring(0, eq)).trim();
+            const value = eq === -1 ? '' : data.substring(eq + 1);
+
             switch (command) {
                 case 'SetBadgeFormat':
-                    // Decode base64 value
-                    let badgeContent = decodeURIComponent(atob(value));
-                    // Set the badge content
-                    TerminalHelper.setBadgeContent(badgeContent);
-                    break;
+                    // Decode base64 value and set the badge content :
+                    TerminalHelper.setBadgeContent(decodeURIComponent(atob(value.trim())));
+                    return true;
+
+                // Inline images #1708 (multipart reassembly, see InlineImageHelper) :
+                case 'MultipartFile':
+                case 'FilePart':
+                case 'FileEnd':
+                case 'File':
+                    return InlineImageHelper.handle(command, value);
+
+                default:
+                    // Unknown iTerm2 command : let the next handler decide.
+                    return false;
             }
         });
 
@@ -263,7 +382,23 @@ const ResizeHelper = {
             fitAddon.fit();
         }
 
-        JS2IOS.calliOSFunction('notifyTerminalSize', [terminal.cols, terminal.rows]);
+        // Pixel size of the text area (#1457) : forwarded to the SSH PTY as
+        // ws_xpixel / ws_ypixel so img2sixel, chafa, timg... can size images
+        // to the screen. 0 = unknown (the addon still answers CSI 14/16 t).
+        //!\\ Private API : re-check after any xterm.js upgrade //!\\
+        let pixWidth = 0;
+        let pixHeight = 0;
+        try {
+            const dimensions = terminal._core._renderService.dimensions;
+            if (dimensions && dimensions.css && dimensions.css.canvas) {
+                pixWidth = Math.round(dimensions.css.canvas.width) || 0;
+                pixHeight = Math.round(dimensions.css.canvas.height) || 0;
+            }
+        } catch (e) {
+            // Renderer not ready yet : keep 0.
+        }
+
+        JS2IOS.calliOSFunction('notifyTerminalSize', [terminal.cols, terminal.rows, pixWidth, pixHeight]);
     }
 };
 
@@ -586,6 +721,9 @@ const TerminalHelper = {
     }, 1000),
 
     restoreState: function (encodedContent) {
+        // A serialized buffer never carries image bytes : drop any unfinished
+        // multipart transfer before replaying the text (#1708).
+        InlineImageHelper.reset();
         terminal.write(decodeURIComponent(atob(encodedContent)));
     },
 
@@ -893,6 +1031,7 @@ const TerminalHelper = {
             fontFamily: '"Cascadia Code", Menlo, monospace',
             fontSize: 9,
             handedness: 'right',
+            inlineImagesStrategy: 'enabled',
             isMacOS: false,
             openLinksStrategy: 'disabled',
             passwordPromptHintEnabled: false,
@@ -996,6 +1135,11 @@ const TerminalHelper = {
                 terminalSettings.rows = rows;
                 terminalSettings.fixedSize = true;
             }
+        }
+
+        // Inline images (SIXEL / iTerm2) #1457 #1708 :
+        if (fragment.inlineImagesStrategy) {
+            terminalSettings.inlineImagesStrategy = fragment.inlineImagesStrategy;
         }
 
         if (fragment.theme) {
