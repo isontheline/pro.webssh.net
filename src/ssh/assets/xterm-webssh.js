@@ -269,28 +269,74 @@ const SearchHelper = {
     pendingNotify: null,
 
     // Decoration colours derived from the theme (called from buildTheme, so a
-    // theme switch re-derives them). Match : brightYellow at ~55 % alpha so the
-    // theme foreground stays readable on top of it ; active match : the cursor
-    // colour (already the theme accent for selection handles) + foreground border.
+    // theme switch re-derives them). The addon only paints cell backgrounds,
+    // the text keeps the theme foreground : a colour is only usable if, once
+    // composited over the background, it still contrasts with the foreground
+    // while standing apart from the background. Candidates are the theme's
+    // ANSI colours so the highlight belongs to the scheme. Matches : best
+    // candidate at 40 % alpha. Active match : best candidate on a clearly
+    // different hue at 70 % alpha (opaque fails on palettes like Solarized,
+    // whose colours sit at the foreground's luminance), plus a foreground
+    // outline. Never derive from cursorColor : white cursor + white text made
+    // the active match an invisible white block.
     configure: function (theme) {
-        const hex = function (color, fallback) {
-            if (!color) {
-                return fallback;
+        const fg = ColorHelper.parseColor(theme.foreground || '#FFFFFF');
+        const bg = ColorHelper.parseColor(theme.background || '#000000');
+        const candidateKeys = ['brightYellow', 'yellow', 'brightCyan', 'cyan', 'brightMagenta', 'magenta',
+                               'brightGreen', 'green', 'brightBlue', 'blue', 'brightRed', 'red'];
+        const candidates = candidateKeys
+            .map(function (key) { return theme[key] ? ColorHelper.parseColor(theme[key]) : null; })
+            .filter(function (c) { return c !== null; });
+        if (candidates.length === 0) {
+            candidates.push(ColorHelper.parseColor('#FFD866'), ColorHelper.parseColor('#1E90FF'));
+        }
+
+        const MATCH_ALPHA = 0.4;
+        const ACTIVE_ALPHA = 0.7;
+        const MATCH_MIN_VISIBLE = 1.4;   // contrast against the background below which a highlight is invisible
+        const ACTIVE_MIN_VISIBLE = 2.0;  // the active match must pop, not just tint
+        const MIN_HUE_DISTANCE = 60;     // degrees between the two roles' hues
+
+        // Best candidate for the foreground's readability once composited at
+        // `alpha` over the background, among those visible enough against it ;
+        // `avoid` excludes hues close to a colour.
+        const pick = function (alpha, minVisible, avoid) {
+            let pool = avoid
+                ? candidates.filter(function (c) { return ColorHelper.hueDistance(c, avoid) >= MIN_HUE_DISTANCE; })
+                : candidates;
+            if (pool.length === 0) {
+                pool = candidates;
             }
-            const c = ColorHelper.parseColor(color);
-            return ColorHelper.rgbToHex(c.red, c.green, c.blue);
+
+            let best = null, bestScore = -1, fallback = null, fallbackScore = -1;
+            pool.forEach(function (c) {
+                const composited = ColorHelper.composite(c, alpha, bg);
+                const readable = ColorHelper.contrast(composited, fg);
+                const visible = ColorHelper.contrast(composited, bg);
+                if (visible >= minVisible && readable > bestScore) {
+                    bestScore = readable;
+                    best = c;
+                }
+                if (visible > fallbackScore) {
+                    fallbackScore = visible;
+                    fallback = c;
+                }
+            });
+            return best || fallback || candidates[0];
         };
 
-        const match = hex(theme.brightYellow, '#FFD866');
-        const active = hex(theme.cursor || theme.cursorColor, '#FF8C00');
-        const border = hex(theme.foreground, '#FFFFFF');
+        const match = pick(MATCH_ALPHA, MATCH_MIN_VISIBLE, null);
+        const active = pick(ACTIVE_ALPHA, ACTIVE_MIN_VISIBLE, match);
+
+        const toHex = function (c) { return ColorHelper.rgbToHex(c.red, c.green, c.blue); };
+        const alphaHex = function (a) { return Math.round(a * 255).toString(16).padStart(2, '0'); };
 
         SearchHelper.decorations = {
-            matchBackground: match + '8C',
-            matchOverviewRuler: match,
-            activeMatchBackground: active,
-            activeMatchBorder: border,
-            activeMatchColorOverviewRuler: active
+            matchBackground: toHex(match) + alphaHex(MATCH_ALPHA),
+            matchOverviewRuler: toHex(match),
+            activeMatchBackground: toHex(active) + alphaHex(ACTIVE_ALPHA),
+            activeMatchBorder: toHex(fg),
+            activeMatchColorOverviewRuler: toHex(active)
         };
     },
 
@@ -607,6 +653,54 @@ const ColorHelper = {
         let b = 255 - color.blue;
 
         return ColorHelper.rgbToHex(r, g, b);
+    },
+
+    // WCAG relative luminance of a {red, green, blue} 0-255 colour.
+    luminance: function (c) {
+        const channel = function (v) {
+            v = v / 255;
+            return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+        };
+        return 0.2126 * channel(c.red) + 0.7152 * channel(c.green) + 0.0722 * channel(c.blue);
+    },
+
+    // WCAG contrast ratio (1 = identical, 21 = black on white).
+    contrast: function (a, b) {
+        const la = ColorHelper.luminance(a);
+        const lb = ColorHelper.luminance(b);
+        return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+    },
+
+    // Colour `c` at `alpha` over the opaque colour `over`.
+    composite: function (c, alpha, over) {
+        const mix = function (x, y) { return Math.round(alpha * x + (1 - alpha) * y); };
+        return { red: mix(c.red, over.red), green: mix(c.green, over.green), blue: mix(c.blue, over.blue), alpha: 1 };
+    },
+
+    // Hue in degrees (0-360) of a {red, green, blue} colour ; 0 for greys.
+    hue: function (c) {
+        const r = c.red / 255, g = c.green / 255, b = c.blue / 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+        const delta = max - min;
+        if (delta === 0) {
+            return 0;
+        }
+        let h;
+        if (max === r) {
+            h = ((g - b) / delta) % 6;
+        } else if (max === g) {
+            h = (b - r) / delta + 2;
+        } else {
+            h = (r - g) / delta + 4;
+        }
+        h = h * 60;
+        return h < 0 ? h + 360 : h;
+    },
+
+    // Shortest angular distance between two hues (0-180).
+    hueDistance: function (a, b) {
+        const d = Math.abs(ColorHelper.hue(a) - ColorHelper.hue(b)) % 360;
+        return d > 180 ? 360 - d : d;
     },
 };
 
