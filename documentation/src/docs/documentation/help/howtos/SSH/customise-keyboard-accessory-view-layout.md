@@ -113,6 +113,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {PGUP}           | Page Up Key                                                      | 23.0             |
 | {PJUMP}          | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0             |
 | {RIGHT}          | Right Arrow Key                                                  | 23.0             |
+| {SEARCH}         | Search Key : Open the find bar to search the terminal buffer     | 32.10            |
 | {SHIFT_TAB}      | Shift + Tab (Back-Tab) Key                                       | 32.6             |
 | {TAB}            | Tab Key (long press : Shift + Tab)                               | 23.0             |
 | {TOGGLE_KEYBOARD}| Toggle Keyboard : Show / Hide the virtual keyboard               | 30.5             |

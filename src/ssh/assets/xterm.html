@@ -109,9 +109,10 @@
         terminal.loadAddon(fitAddon);
       }
 
-      // Load Search Addon :
+      // Load Search Addon (Search in terminal buffer #539) :
       const searchAddon = new SearchAddon.SearchAddon();
       terminal.loadAddon(searchAddon);
+      searchAddon.onDidChangeResults(SearchHelper.onDidChangeResults);
 
       // Load Serialize Addon :
       const serializeAddon = new SerializeAddon.SerializeAddon();

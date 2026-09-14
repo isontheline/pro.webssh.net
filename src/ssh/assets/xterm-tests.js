@@ -152,6 +152,10 @@ const XtermTests = {
 
         images: function () {
             return XtermTests.images.demo();
+        },
+
+        search: function () {
+            return XtermTests.search.demo();
         }
     },
 
@@ -351,6 +355,116 @@ const XtermTests = {
                 await step('storage usage : ' + imageAddon.storageUsage.toFixed(3) + ' MB / ' + imageAddon.storageLimit + ' MB', 0);
                 check('images stored', imageAddon.storageUsage > 0);
             }
+        }
+    },
+
+    // Search in terminal buffer #539 : drives SearchHelper exactly like the
+    // native find bar does (Base64 term, options, direction) and captures what
+    // would be sent to native through notifySearchResults.
+    search: {
+        // Deterministic haystack :
+        seed: function () {
+            const lines = [
+                'alpha beta gamma',
+                'Alpha ALPHA alphabet',
+                'needle haystack needle',
+                'foo123 bar456 baz789',
+                'regex [bracket] test',
+                'end'
+            ];
+            terminal.write('\r\n' + lines.join('\r\n') + '\r\n');
+        },
+
+        // Runs one SearchHelper call and resolves with the next {index, count, status}
+        // that SearchHelper.notify would forward to native (coalescing bypassed).
+        expect: function (run, timeoutMs) {
+            return new Promise((resolve) => {
+                const original = SearchHelper.notify;
+                const timer = setTimeout(() => {
+                    SearchHelper.notify = original;
+                    resolve({ index: null, count: null, status: 'timeout' });
+                }, timeoutMs || 1000);
+
+                SearchHelper.notify = function (index, count, status) {
+                    clearTimeout(timer);
+                    SearchHelper.notify = original;
+                    SearchHelper.lastNotified = [index, count, status].join(':');
+                    resolve({ index: index, count: count, status: status });
+                };
+
+                run();
+            });
+        },
+
+        find: function (term, options, direction) {
+            return XtermTests.search.expect(() => {
+                SearchHelper.find(Base64.utoa(term), options || {}, direction || 'next');
+            });
+        },
+
+        demo: async function () {
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+            const step = (label) => {
+                terminal.write('\r\n\x1b[2mSearch : ' + label + '\x1b[0m\r\n');
+            };
+            const check = (label, ok) => {
+                console.log((ok ? 'PASS' : 'FAIL') + ' : ' + label);
+                terminal.write('\x1b[' + (ok ? '32m PASS' : '31m FAIL') + '\x1b[0m ' + label + '\r\n');
+            };
+
+            check('addon loaded', typeof searchAddon !== 'undefined' && searchAddon !== null);
+            check('decorations configured from theme', SearchHelper.decorations !== null && /^#[0-9a-f]{6}/i.test(SearchHelper.decorations.matchBackground));
+
+            step('seed');
+            XtermTests.search.seed();
+            await sleep(200);
+
+            SearchHelper.begin();
+            check('begin() mutes selection notifications', SearchHelper.active === true && TerminalHelper.canNotifySelectionChange === false);
+
+            let r = await XtermTests.search.find('alpha');
+            check('"alpha" (default) : 4 matches, index 0 -> ' + JSON.stringify(r), r.count === 4 && r.index === 0 && r.status === 'ok');
+
+            r = await XtermTests.search.expect(() => SearchHelper.next());
+            r = await XtermTests.search.expect(() => SearchHelper.next());
+            check('next x2 : index 2 -> ' + JSON.stringify(r), r.index === 2);
+
+            r = await XtermTests.search.expect(() => SearchHelper.previous());
+            check('previous : index 1 -> ' + JSON.stringify(r), r.index === 1);
+
+            r = await XtermTests.search.find('alpha', { caseSensitive: true });
+            check('caseSensitive : 2 matches -> ' + JSON.stringify(r), r.count === 2);
+
+            r = await XtermTests.search.find('alpha', { caseSensitive: true, wholeWord: true });
+            check('caseSensitive + wholeWord : 1 match -> ' + JSON.stringify(r), r.count === 1);
+
+            r = await XtermTests.search.find('\\d{3}', { regex: true });
+            check('regex \\d{3} : 3 matches -> ' + JSON.stringify(r), r.count === 3);
+
+            r = await XtermTests.search.find('[', { regex: true });
+            check('regex "[" : invalid, nothing selected, no decoration -> ' + JSON.stringify(r),
+                r.status === 'invalid' && terminal.getSelection() === '' && searchAddon._highlightDecorations.length === 0);
+
+            terminal.write('after invalid regex\r\n');
+            await sleep(400);
+            check('no refresh crash after invalid regex', SearchHelper.active === true);
+
+            r = await XtermTests.search.find('zzz-not-there');
+            check('no result : count 0, status none -> ' + JSON.stringify(r), r.count === 0 && r.status === 'none');
+
+            r = await XtermTests.search.find('needle');
+            // Labels written into the terminal must not contain the term itself :
+            check('haystack word : 2 matches -> ' + JSON.stringify(r), r.count === 2);
+
+            step('live growth : writing one more line with the haystack word');
+            r = await XtermTests.search.expect(() => terminal.write('needle\r\n'), 1500);
+            check('addon refresh after write : 3 matches -> ' + JSON.stringify(r), r.count === 3);
+
+            r = await XtermTests.search.expect(() => SearchHelper.clear());
+            check('clear() : idle -> ' + JSON.stringify(r), r.count === 0 && r.status === 'idle' && SearchHelper.lastTerm === '');
+
+            SearchHelper.end();
+            check('end() restores selection notifications', SearchHelper.active === false && TerminalHelper.canNotifySelectionChange === true);
         }
     }
 }

@@ -252,6 +252,177 @@ const InlineImageHelper = {
     }
 };
 
+// Search in terminal buffer #539 : thin state machine over @xterm/addon-search
+// (searchAddon is instantiated in xterm.html). The find bar itself is native
+// (the xterm textarea is removed, no text input exists in this page) : native
+// pushes the term + options here, the addon reports {resultIndex, resultCount}
+// back through onDidChangeResults -> notifySearchResults. The addon re-runs
+// the search by itself on every write / resize (200 ms debounce, noScroll)
+// as long as decorations are passed, so live buffer growth needs no help.
+const SearchHelper = {
+    active: false,          // a find session is open on the native side
+    lastTerm: '',
+    lastOptions: null,      // {caseSensitive, regex, wholeWord}
+    decorations: null,      // built by configure(theme)
+    lastNotified: null,     // 'index:count:status' coalescing key
+    notifyTimer: null,
+    pendingNotify: null,
+
+    // Decoration colours derived from the theme (called from buildTheme, so a
+    // theme switch re-derives them). Match : brightYellow at ~55 % alpha so the
+    // theme foreground stays readable on top of it ; active match : the cursor
+    // colour (already the theme accent for selection handles) + foreground border.
+    configure: function (theme) {
+        const hex = function (color, fallback) {
+            if (!color) {
+                return fallback;
+            }
+            const c = ColorHelper.parseColor(color);
+            return ColorHelper.rgbToHex(c.red, c.green, c.blue);
+        };
+
+        const match = hex(theme.brightYellow, '#FFD866');
+        const active = hex(theme.cursor || theme.cursorColor, '#FF8C00');
+        const border = hex(theme.foreground, '#FFFFFF');
+
+        SearchHelper.decorations = {
+            matchBackground: match + '8C',
+            matchOverviewRuler: match,
+            activeMatchBackground: active,
+            activeMatchBorder: border,
+            activeMatchColorOverviewRuler: active
+        };
+    },
+
+    // A find session starts : the addon selects the active match through
+    // terminal.select(), which must neither pop the iOS selection menu nor
+    // feed copy-on-select (see onSelectionChangeIOS / MacOS).
+    begin: function () {
+        SearchHelper.active = true;
+        TerminalHelper.canNotifySelectionChange = false;
+    },
+
+    // termB64 : Base64 UTF-8 (Base64.atou), regex metacharacters and quotes
+    // never travel as a JS literal. options : {caseSensitive, regex, wholeWord,
+    // incremental}. direction : 'next' | 'previous'.
+    find: function (termB64, options, direction) {
+        let term = '';
+        try {
+            term = termB64 ? Base64.atou(termB64) : '';
+        } catch (e) {
+            console.error('SearchHelper : invalid Base64 term : ' + e);
+        }
+
+        SearchHelper._run(term, options || {}, direction);
+    },
+
+    next: function () {
+        SearchHelper._run(SearchHelper.lastTerm, Object.assign({}, SearchHelper.lastOptions, { incremental: false }), 'next');
+    },
+
+    previous: function () {
+        SearchHelper._run(SearchHelper.lastTerm, Object.assign({}, SearchHelper.lastOptions, { incremental: false }), 'previous');
+    },
+
+    clear: function () {
+        if (typeof searchAddon !== 'undefined') {
+            searchAddon.clearDecorations();
+        }
+        terminal.clearSelection();
+        SearchHelper.lastTerm = '';
+        SearchHelper.notify(-1, 0, 'idle');
+    },
+
+    end: function () {
+        SearchHelper.clear();
+        SearchHelper.active = false;
+        TerminalHelper.canNotifySelectionChange = true;
+    },
+
+    // Called by native on reload / reconnect / close : same as end() but
+    // never talks back (native already reset its own state).
+    reset: function () {
+        if (typeof searchAddon !== 'undefined') {
+            searchAddon.clearDecorations();
+        }
+        if (typeof terminal !== 'undefined') {
+            terminal.clearSelection();
+        }
+        SearchHelper.lastTerm = '';
+        SearchHelper.lastOptions = null;
+        SearchHelper.lastNotified = null;
+        SearchHelper.active = false;
+        TerminalHelper.canNotifySelectionChange = true;
+    },
+
+    _run: function (term, options, direction) {
+        if (!term) {
+            SearchHelper.clear();
+            return;
+        }
+
+        const opts = {
+            caseSensitive: !!options.caseSensitive,
+            regex: !!options.regex,
+            wholeWord: !!options.wholeWord,
+            incremental: !!options.incremental,
+            decorations: SearchHelper.decorations
+        };
+
+        try {
+            if (direction === 'previous') {
+                searchAddon.findPrevious(term, opts);
+            } else {
+                searchAddon.findNext(term, opts);
+            }
+            SearchHelper.lastTerm = term;
+            SearchHelper.lastOptions = { caseSensitive: opts.caseSensitive, regex: opts.regex, wholeWord: opts.wholeWord };
+        } catch (e) {
+            // Invalid regex : the addon throws a SyntaxError from new RegExp(term).
+            // A bare clearDecorations() also wipes its cached term, so the 200 ms
+            // onWriteParsed refresh never re-throws inside a timer. Anything else
+            // is a real bug (e.g. a proposed-API gate) : logged, reported as error.
+            const invalidRegex = opts.regex && e instanceof SyntaxError;
+            if (!invalidRegex) {
+                console.error('SearchHelper : search failed : ' + e);
+            }
+            searchAddon.clearDecorations();
+            terminal.clearSelection();
+            SearchHelper.notify(-1, 0, invalidRegex ? 'invalid' : 'error');
+        }
+    },
+
+    // Wired in xterm.html : searchAddon.onDidChangeResults(SearchHelper.onDidChangeResults)
+    onDidChangeResults: function (e) {
+        SearchHelper.notify(e.resultIndex, e.resultCount, e.resultCount === 0 ? 'none' : 'ok');
+    },
+
+    // Coalesced (ProgressHelper style) : identical triples are dropped and the
+    // addon's live-refresh bursts are throttled to one call per 50 ms.
+    notify: function (index, count, status) {
+        SearchHelper.pendingNotify = [index, count, status];
+
+        if (SearchHelper.notifyTimer) {
+            return;
+        }
+
+        SearchHelper.notifyTimer = setTimeout(function () {
+            SearchHelper.notifyTimer = null;
+            const pending = SearchHelper.pendingNotify;
+            SearchHelper.pendingNotify = null;
+            if (!pending) {
+                return;
+            }
+            const key = pending.join(':');
+            if (key === SearchHelper.lastNotified) {
+                return;
+            }
+            SearchHelper.lastNotified = key;
+            JS2IOS.calliOSFunction('notifySearchResults', pending);
+        }, 50);
+    }
+};
+
 const HandlerHelper = {
     // https://xtermjs.org/docs/guides/hooks/
     registerAll: function (terminal) {
@@ -935,6 +1106,12 @@ const TerminalHelper = {
     }, 250),
 
     onSelectionChangeMacOS: function () {
+        // Search in terminal buffer #539 : the active match is a selection, it
+        // must not feed copy-on-select :
+        if (SearchHelper.active) {
+            return;
+        }
+
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
 
         if (terminalSettings.copyOnSelect) {
@@ -944,6 +1121,12 @@ const TerminalHelper = {
 
     // On iOS we need to debounce selection changes because selected value is not immediately available after selection change event.
     onSelectionChangeIOS: debounce(() => {
+        // Search in terminal buffer #539 : the active match is a selection, it
+        // must neither feed copy-on-select nor pop the selection menu :
+        if (SearchHelper.active) {
+            return;
+        }
+
         TerminalHelper.lastSelectedText = TerminalHelper.exportSelectedText();
 
         if (terminalSettings.copyOnSelect) {
@@ -1188,6 +1371,9 @@ const TerminalHelper = {
         }`;
         // <- Custom Terminal Selection Handles Styles
 
+        // Search in terminal buffer #539 : match colours follow the theme :
+        SearchHelper.configure(theme);
+
         return theme;
     },
 
@@ -1212,6 +1398,12 @@ const TerminalHelper = {
             rows: terminalSettings.rows,
             cols: terminalSettings.cols,
             macOptionClickForcesSelection: true,
+            // Search in terminal buffer #539 : the search addon highlights
+            // matches through registerDecoration(), a proposed API in 5.5 ;
+            // overviewRulerWidth draws the match marks along the scrollbar
+            // (.xterm-decoration-overview-ruler is offset in xterm-webssh.css).
+            allowProposedApi: true,
+            overviewRulerWidth: 14,
         };
     },
 
@@ -1265,6 +1457,13 @@ const TerminalHelper = {
         // A full-screen app (vim, less...) took over : any pending password prompt is stale :
         if (buffer.type === 'alternate') {
             PasswordPromptHelper.hide(true);
+        }
+
+        // Search in terminal buffer #539 : decorations are marker-bound to the
+        // buffer that was active, re-run on normal <-> alternate switch (the
+        // search only ever covers buffer.active) :
+        if (SearchHelper.active && SearchHelper.lastTerm) {
+            SearchHelper.next();
         }
 
         // Inform WebSSH that the buffer has changed :
