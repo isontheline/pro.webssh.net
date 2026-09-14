@@ -102,3 +102,14 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* Search in terminal buffer #539 : active match ring. The addon sets an inline
+   1 px outline in activeMatchBorder ; make it 3 px with a 1 px halo of the
+   opposite colour so it reads on any background (colours set by
+   SearchHelper.configure). */
+.xterm-find-active-result-decoration {
+    outline: 3px solid var(--webssh-search-active-border, #FFFFFF) !important;
+    outline-offset: 0px;
+    box-shadow: 0 0 0 4px var(--webssh-search-active-halo, #000000);
+    border-radius: 2px;
+}

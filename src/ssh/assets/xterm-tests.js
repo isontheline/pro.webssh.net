@@ -422,6 +422,14 @@ const XtermTests = {
             SearchHelper.begin();
             check('begin() mutes selection notifications', SearchHelper.active === true && TerminalHelper.canNotifySelectionChange === false);
 
+            // Forced text colour : a decoration carrying our match background gets a foregroundColor.
+            const probe = terminal.registerDecoration({ marker: terminal.registerMarker(0), backgroundColor: SearchHelper.decorations.matchBackground });
+            check('registerDecoration wrapper forces foregroundColor', !!probe && probe.options.foregroundColor === SearchHelper.foregrounds.match);
+            const plain = terminal.registerDecoration({ marker: terminal.registerMarker(0), backgroundColor: '#123456' });
+            check('registerDecoration wrapper leaves other decorations alone', !!plain && plain.options.foregroundColor === undefined);
+            probe.dispose();
+            plain.dispose();
+
             let r = await XtermTests.search.find('alpha');
             check('"alpha" (default) : 4 matches, index 0 -> ' + JSON.stringify(r), r.count === 4 && r.index === 0 && r.status === 'ok');
 

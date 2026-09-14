@@ -264,23 +264,22 @@ const SearchHelper = {
     lastTerm: '',
     lastOptions: null,      // {caseSensitive, regex, wholeWord}
     decorations: null,      // built by configure(theme)
+    foregrounds: null,      // {match, active} text colours forced on the decorations
+    originalRegisterDecoration: null,
     lastNotified: null,     // 'index:count:status' coalescing key
     notifyTimer: null,
     pendingNotify: null,
 
     // Decoration colours derived from the theme (called from buildTheme, so a
-    // theme switch re-derives them). The addon only paints cell backgrounds,
-    // the text keeps the theme foreground : a colour is only usable if, once
-    // composited over the background, it still contrasts with the foreground
-    // while standing apart from the background. Candidates are the theme's
-    // ANSI colours so the highlight belongs to the scheme. Matches : best
-    // candidate at 40 % alpha. Active match : best candidate on a clearly
-    // different hue at 70 % alpha (opaque fails on palettes like Solarized,
-    // whose colours sit at the foreground's luminance), plus a foreground
-    // outline. Never derive from cursorColor : white cursor + white text made
-    // the active match an invisible white block.
+    // theme switch re-derives them). The addon only passes backgroundColor to
+    // registerDecoration ; the text colour is forced through the wrapper
+    // installed by begin() (xterm.js decorations do support foregroundColor,
+    // the addon just never sets it). Backgrounds are therefore opaque theme
+    // ANSI colours picked for visibility against the background, the two roles
+    // on clearly different hues, and the text is black or white, whichever
+    // contrasts best with each background. Never derive from cursorColor :
+    // white cursor + white text made the active match an invisible block.
     configure: function (theme) {
-        const fg = ColorHelper.parseColor(theme.foreground || '#FFFFFF');
         const bg = ColorHelper.parseColor(theme.background || '#000000');
         const candidateKeys = ['brightYellow', 'yellow', 'brightCyan', 'cyan', 'brightMagenta', 'magenta',
                                'brightGreen', 'green', 'brightBlue', 'blue', 'brightRed', 'red'];
@@ -288,55 +287,84 @@ const SearchHelper = {
             .map(function (key) { return theme[key] ? ColorHelper.parseColor(theme[key]) : null; })
             .filter(function (c) { return c !== null; });
         if (candidates.length === 0) {
-            candidates.push(ColorHelper.parseColor('#FFD866'), ColorHelper.parseColor('#1E90FF'));
+            candidates.push(ColorHelper.parseColor('#FFD866'), ColorHelper.parseColor('#FF5FAF'));
         }
 
-        const MATCH_ALPHA = 0.4;
-        const ACTIVE_ALPHA = 0.7;
-        const MATCH_MIN_VISIBLE = 1.4;   // contrast against the background below which a highlight is invisible
-        const ACTIVE_MIN_VISIBLE = 2.0;  // the active match must pop, not just tint
-        const MIN_HUE_DISTANCE = 60;     // degrees between the two roles' hues
+        const MIN_HUE_DISTANCE = 60; // degrees between the two roles' hues
 
-        // Best candidate for the foreground's readability once composited at
-        // `alpha` over the background, among those visible enough against it ;
-        // `avoid` excludes hues close to a colour.
-        const pick = function (alpha, minVisible, avoid) {
+        // Most visible candidate against the background ; `avoid` excludes
+        // hues close to a colour. Ties keep the first (yellow family first).
+        const pick = function (avoid) {
             let pool = avoid
                 ? candidates.filter(function (c) { return ColorHelper.hueDistance(c, avoid) >= MIN_HUE_DISTANCE; })
                 : candidates;
             if (pool.length === 0) {
                 pool = candidates;
             }
-
-            let best = null, bestScore = -1, fallback = null, fallbackScore = -1;
+            let best = null, bestScore = -1;
             pool.forEach(function (c) {
-                const composited = ColorHelper.composite(c, alpha, bg);
-                const readable = ColorHelper.contrast(composited, fg);
-                const visible = ColorHelper.contrast(composited, bg);
-                if (visible >= minVisible && readable > bestScore) {
-                    bestScore = readable;
+                const score = ColorHelper.contrast(c, bg);
+                if (score > bestScore) {
+                    bestScore = score;
                     best = c;
                 }
-                if (visible > fallbackScore) {
-                    fallbackScore = visible;
-                    fallback = c;
-                }
             });
-            return best || fallback || candidates[0];
+            return best;
         };
 
-        const match = pick(MATCH_ALPHA, MATCH_MIN_VISIBLE, null);
-        const active = pick(ACTIVE_ALPHA, ACTIVE_MIN_VISIBLE, match);
+        const match = pick(null);
+        const active = pick(match);
 
         const toHex = function (c) { return ColorHelper.rgbToHex(c.red, c.green, c.blue); };
-        const alphaHex = function (a) { return Math.round(a * 255).toString(16).padStart(2, '0'); };
+        const black = { red: 0, green: 0, blue: 0 }, white = { red: 255, green: 255, blue: 255 };
+        const textOn = function (c) {
+            return ColorHelper.contrast(c, black) >= ColorHelper.contrast(c, white) ? '#000000' : '#FFFFFF';
+        };
+
+        // Active outline : drawn outside the cell, over the terminal background,
+        // so it takes whichever of black / white contrasts with that background ;
+        // a thin halo of the opposite colour keeps it visible over the match
+        // itself (2 px ring, see .xterm-find-active-result-decoration in
+        // xterm-webssh.css — the addon's inline 1 px outline is overridden there).
+        const border = textOn(bg);
+        const halo = border === '#000000' ? '#FFFFFF' : '#000000';
 
         SearchHelper.decorations = {
-            matchBackground: toHex(match) + alphaHex(MATCH_ALPHA),
+            matchBackground: toHex(match),
             matchOverviewRuler: toHex(match),
-            activeMatchBackground: toHex(active) + alphaHex(ACTIVE_ALPHA),
-            activeMatchBorder: toHex(fg),
+            activeMatchBackground: toHex(active),
+            activeMatchBorder: border,
             activeMatchColorOverviewRuler: toHex(active)
+        };
+        SearchHelper.foregrounds = {
+            match: textOn(match),
+            active: textOn(active)
+        };
+
+        if (typeof document !== 'undefined' && document.documentElement) {
+            document.documentElement.style.setProperty('--webssh-search-active-border', border);
+            document.documentElement.style.setProperty('--webssh-search-active-halo', halo);
+        }
+    },
+
+    // Forces the text colour of the addon's decorations : registerDecoration
+    // is wrapped once, calls carrying one of our two backgrounds get the
+    // matching foregroundColor, every other call (image addon…) is untouched.
+    installDecorationForeground: function () {
+        if (SearchHelper.originalRegisterDecoration) {
+            return;
+        }
+        const original = terminal.registerDecoration;
+        SearchHelper.originalRegisterDecoration = original;
+        terminal.registerDecoration = function (options) {
+            if (options && SearchHelper.decorations && SearchHelper.foregrounds) {
+                if (options.backgroundColor === SearchHelper.decorations.activeMatchBackground) {
+                    options = Object.assign({}, options, { foregroundColor: SearchHelper.foregrounds.active });
+                } else if (options.backgroundColor === SearchHelper.decorations.matchBackground) {
+                    options = Object.assign({}, options, { foregroundColor: SearchHelper.foregrounds.match });
+                }
+            }
+            return original.call(terminal, options);
         };
     },
 
@@ -344,6 +372,7 @@ const SearchHelper = {
     // terminal.select(), which must neither pop the iOS selection menu nor
     // feed copy-on-select (see onSelectionChangeIOS / MacOS).
     begin: function () {
+        SearchHelper.installDecorationForeground();
         SearchHelper.active = true;
         TerminalHelper.canNotifySelectionChange = false;
     },
