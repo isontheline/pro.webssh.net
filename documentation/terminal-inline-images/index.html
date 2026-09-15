@@ -439,8 +439,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-that-the-terminal-advertises-sixel" class="md-nav__link">
-    Check that the terminal advertises SIXEL
+  <a href="#sixel-is-not-advertised-tell-the-tools" class="md-nav__link">
+    SIXEL is not advertised, tell the tools
   </a>
   
 </li>
@@ -3458,8 +3458,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-that-the-terminal-advertises-sixel" class="md-nav__link">
-    Check that the terminal advertises SIXEL
+  <a href="#sixel-is-not-advertised-tell-the-tools" class="md-nav__link">
+    SIXEL is not advertised, tell the tools
   </a>
   
 </li>
@@ -3570,11 +3570,12 @@
 </ul>
 </div>
 <h2 id="sixel">SIXEL</h2>
-<h3 id="check-that-the-terminal-advertises-sixel">Check that the terminal advertises SIXEL</h3>
-<p>Most tools probe the terminal with the <em>Primary Device Attributes</em> query. WebSSH answers with <code>4</code> (SIXEL) in the list :</p>
+<h3 id="sixel-is-not-advertised-tell-the-tools">SIXEL is not advertised, tell the tools</h3>
+<p>Some tools probe the terminal with the <em>Primary Device Attributes</em> query and look for <code>4</code> (SIXEL) in the answer. WebSSH deliberately keeps the answer it has always given, <code>^[[?1;2c</code> (VT100 with AVO, the stock xterm.js one) :</p>
 <div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e[c&#39;</span>
 </code></pre></div>
-<p>You should see <code>^[[?62;4;9;22c</code> typed in the terminal, the <code>;4</code> is the SIXEL capability. The terminal also answers the <code>XTSMGRAPHICS</code> queries (number of color registers, maximum geometry), honours <code>DECSET 80</code> (SIXEL scrolling) and reports its pixel size to the remote host (<code>TIOCGWINSZ</code>), so tools can size images to the screen without any option.</p>
+<p>Advertising a VT200-class terminal with SIXEL (<code>^[[?62;4;9;22c</code>) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (<code>SET TERMINAL/INQUIRE</code>), and breaks Return and the cursor keys in its editors. So force the format on the tool side (<code>chafa -f sixel</code>, <code>timg -p sixel</code>, <code>img2sixel</code> never probes).</p>
+<p>The terminal still answers the <code>XTSMGRAPHICS</code> queries (number of color registers, maximum geometry), honours <code>DECSET 80</code> (SIXEL scrolling) and reports its pixel size to the remote host (<code>TIOCGWINSZ</code>), so tools can size images to the screen without any option.</p>
 <h3 id="examples">Examples</h3>
 <p><a href="https://github.com/saitoha/libsixel">libsixel</a> ships <code>img2sixel</code> (packages <code>libsixel-bin</code> on Debian / Ubuntu, <code>libsixel</code> on Homebrew) :</p>
 <div class="highlight"><pre><span></span><code>img2sixel<span class="w"> </span>photo.jpg
@@ -3590,7 +3591,7 @@
 <p>ImageMagick :</p>
 <div class="highlight"><pre><span></span><code>magick<span class="w"> </span>photo.png<span class="w"> </span>sixel:-
 </code></pre></div>
-<p><code>convert photo.png sixel:-</code> with ImageMagick 6. <a href="https://github.com/hackerb9/lsix">lsix</a> lists the images of a directory as thumbnails, and <code>mpv --vo=sixel video.mp4</code> even plays a video, though not smoothly over SSH.</p>
+<p><code>convert photo.png sixel:-</code> with ImageMagick 6, and <code>mpv --vo=sixel video.mp4</code> even plays a video, though not smoothly over SSH.</p>
 <h2 id="iterm2-inline-images-imgcat">iTerm2 inline images (imgcat)</h2>
 <h3 id="install-imgcat">Install imgcat</h3>
 <p><code>imgcat</code> is a shell script published by iTerm2. It only needs <code>base64</code> on the remote host :</p>
@@ -3631,7 +3632,7 @@
 </ul>
 <h2 id="settings">Settings</h2>
 <ul>
-<li><strong>Inline Images (SIXEL / iTerm2)</strong> : enable or disable the feature (iOS : within system settings &gt; WebSSH &gt; SSH / macOS : within the app settings &gt; SSH). Enabled by default. When disabled, the terminal no longer advertises SIXEL in its device attributes and the image sequences are ignored. The setting is read when a terminal opens : reconnect after changing it.</li>
+<li><strong>Inline Images (SIXEL / iTerm2)</strong> : enable or disable the feature (iOS : within system settings &gt; WebSSH &gt; SSH / macOS : within the app settings &gt; SSH). Enabled by default. When disabled, the image sequences are ignored. The setting is read when a terminal opens : reconnect after changing it.</li>
 </ul>
 <h2 id="useful-links">Useful links</h2>
 <ul>
@@ -3656,7 +3657,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 13, 2026 19:19:18 UTC">September 13, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2026 20:21:39 UTC">September 15, 2026</span>
       
     
   </small>
