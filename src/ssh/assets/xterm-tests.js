@@ -294,7 +294,9 @@ const XtermTests = {
             terminal.write('\x1b]1337;SetBadgeFormat=' + btoa(encodeURIComponent(text)) + '\x07');
         },
 
-        // DA1 : the addon answers CSI ? 62 ; 4 ; 9 ; 22 c when SIXEL is on.
+        // DA1 : must be the stock xterm.js answer (CSI ? 1 ; 2 c) whether the
+        // addon is loaded or not. The addon's own "CSI ? 62 ; 4 ; 9 ; 22 c"
+        // breaks OpenVMS (SET TERMINAL/INQUIRE), see HandlerHelper.
         da1: function () {
             return new Promise((resolve) => {
                 const listener = terminal.onData((data) => {
@@ -305,6 +307,22 @@ const XtermTests = {
                 });
                 terminal.write('\x1b[c');
                 setTimeout(() => { listener.dispose(); resolve(null); }, 1000);
+            });
+        },
+
+        // Number of DA1 replies emitted for one request (handler chain guard :
+        // WebSSH's handler must consume the request, the addon and xterm.js core
+        // must stay silent).
+        da1Count: function () {
+            return new Promise((resolve) => {
+                let count = 0;
+                const listener = terminal.onData((data) => {
+                    if (data.indexOf('\x1b[?') === 0 && data.endsWith('c')) {
+                        count++;
+                    }
+                });
+                terminal.write('\x1b[c');
+                setTimeout(() => { listener.dispose(); resolve(count); }, 300);
             });
         },
 
@@ -325,7 +343,8 @@ const XtermTests = {
 
             await step('DA1 probe', 0);
             const da1 = await XtermTests.images.da1();
-            check('DA1 reply ' + JSON.stringify(da1) + (addonLoaded ? ' contains ;4' : ' is the stock one'), da1 !== null && (da1.indexOf(';4') !== -1) === addonLoaded);
+            check('DA1 reply ' + JSON.stringify(da1) + ' is the stock xterm.js one (addon ' + (addonLoaded ? 'loaded' : 'not loaded') + ')', da1 === HandlerHelper.DA1_REPLY);
+            check('DA1 reply is sent once', await XtermTests.images.da1Count() === 1);
 
             await step('SIXEL 12x12 red square', 0);
             XtermTests.images.sixel();

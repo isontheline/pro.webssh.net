@@ -14,14 +14,16 @@ Since WebSSH 32.10[^1], the terminal can display images **inline**, right where 
     * Images are kept for the current session only : a reconnection or a terminal reload starts with an empty screen.
 
 ## SIXEL
-### Check that the terminal advertises SIXEL
-Most tools probe the terminal with the *Primary Device Attributes* query. WebSSH answers with `4` (SIXEL) in the list :
+### SIXEL is not advertised, tell the tools
+Some tools probe the terminal with the *Primary Device Attributes* query and look for `4` (SIXEL) in the answer. WebSSH deliberately keeps the answer it has always given, `^[[?1;2c` (VT100 with AVO, the stock xterm.js one) :
 
 ```bash
 printf '\e[c'
 ```
 
-You should see `^[[?62;4;9;22c` typed in the terminal, the `;4` is the SIXEL capability. The terminal also answers the `XTSMGRAPHICS` queries (number of color registers, maximum geometry), honours `DECSET 80` (SIXEL scrolling) and reports its pixel size to the remote host (`TIOCGWINSZ`), so tools can size images to the screen without any option.
+Advertising a VT200-class terminal with SIXEL (`^[[?62;4;9;22c`) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (`SET TERMINAL/INQUIRE`), and breaks Return and the cursor keys in its editors. So force the format on the tool side (`chafa -f sixel`, `timg -p sixel`, `img2sixel` never probes).
+
+The terminal still answers the `XTSMGRAPHICS` queries (number of color registers, maximum geometry), honours `DECSET 80` (SIXEL scrolling) and reports its pixel size to the remote host (`TIOCGWINSZ`), so tools can size images to the screen without any option.
 
 ### Examples
 [libsixel](https://github.com/saitoha/libsixel) ships `img2sixel` (packages `libsixel-bin` on Debian / Ubuntu, `libsixel` on Homebrew) :
@@ -52,7 +54,7 @@ ImageMagick :
 magick photo.png sixel:-
 ```
 
-`convert photo.png sixel:-` with ImageMagick 6. [lsix](https://github.com/hackerb9/lsix) lists the images of a directory as thumbnails, and `mpv --vo=sixel video.mp4` even plays a video, though not smoothly over SSH.
+`convert photo.png sixel:-` with ImageMagick 6, and `mpv --vo=sixel video.mp4` even plays a video, though not smoothly over SSH.
 
 ## iTerm2 inline images (imgcat)
 ### Install imgcat
@@ -106,7 +108,7 @@ set -g allow-passthrough on
 * Images are not selectable, copyable or saveable from the terminal for now.
 
 ## Settings
-* **Inline Images (SIXEL / iTerm2)** : enable or disable the feature (iOS : within system settings > WebSSH > SSH / macOS : within the app settings > SSH). Enabled by default. When disabled, the terminal no longer advertises SIXEL in its device attributes and the image sequences are ignored. The setting is read when a terminal opens : reconnect after changing it.
+* **Inline Images (SIXEL / iTerm2)** : enable or disable the feature (iOS : within system settings > WebSSH > SSH / macOS : within the app settings > SSH). Enabled by default. When disabled, the image sequences are ignored. The setting is read when a terminal opens : reconnect after changing it.
 
 ## Useful links
 * [libsixel](https://github.com/saitoha/libsixel) and [Are We Sixel Yet?](https://www.arewesixelyet.com/)

@@ -245,9 +245,10 @@
       );
 
       // Register ANSI Escape Sequence handlers :
-      //!\\ Must stay after every loadAddon() : xterm.js calls the OSC handlers
+      //!\\ Must stay after every loadAddon() : xterm.js calls the handlers
       // last-registered-first, WebSSH's OSC 1337 handler has to run before the
-      // one of @xterm/addon-image (badge vs inline images, see HandlerHelper) //!\\
+      // one of @xterm/addon-image (badge vs inline images) and WebSSH's DA1
+      // handler has to win over the addon's one (OpenVMS, see HandlerHelper) //!\\
       TerminalHelper.registerHandlers();
 
       // Password prompt hint (#1660) :

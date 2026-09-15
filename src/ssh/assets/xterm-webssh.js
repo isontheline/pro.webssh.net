@@ -599,6 +599,37 @@ const HandlerHelper = {
         // OSC 9;4 progress bar #1706 (ConEmu) :
         terminal.parser.registerOscHandler(9, (data, params) => ProgressHelper.handle(data));
         // <- OSC
+
+        // CSI ->
+        // Primary Device Attributes (DA1, "CSI c" / "CSI 0 c") : WebSSH answers
+        // exactly what xterm.js does on its own (InputHandler.sendDeviceAttributesPrimary,
+        // termName "xterm"), i.e. what every release before 32.10 answered.
+        // @xterm/addon-image registers its own DA1 handler at loadAddon() and
+        // replies "CSI ? 62 ; 4 ; 9 ; 22 c" (VT200 series + SIXEL) : OpenVMS runs
+        // SET TERMINAL/INQUIRE at login and reconfigures the terminal line from
+        // that answer, which broke Return and the cursor keys in EDT / EVE over
+        // both Telnet and SSH (32.10 beta report). The host-side terminal setup
+        // matters more than SIXEL auto-detection : tools are told the format
+        // explicitly (chafa -f sixel, timg -p sixel, img2sixel does not probe).
+        // Handlers run last-registered-first and this one is registered after
+        // every loadAddon(), so it always wins over the addon.
+        terminal.parser.registerCsiHandler({ final: 'c' }, (params) => HandlerHelper.handleDeviceAttributesPrimary(params));
+        // <- CSI
+    },
+
+    // Stock xterm.js DA1 answer : VT100 with Advanced Video Option.
+    DA1_REPLY: '\x1b[?1;2c',
+
+    // Returns true in every case : the request is consumed here, neither the
+    // addon nor xterm.js core may answer a second time.
+    handleDeviceAttributesPrimary: function (params) {
+        const first = Array.isArray(params[0]) ? params[0][0] : params[0];
+        // "CSI Ps c" with Ps > 0 is not a request (same as xterm.js core) :
+        if (first > 0) {
+            return true;
+        }
+        terminal.input(HandlerHelper.DA1_REPLY, false);
+        return true;
     }
 };
 
