@@ -3574,7 +3574,7 @@
 <p>Some tools probe the terminal with the <em>Primary Device Attributes</em> query and look for <code>4</code> (SIXEL) in the answer. WebSSH deliberately keeps the answer it has always given, <code>^[[?1;2c</code> (VT100 with AVO, the stock xterm.js one) :</p>
 <div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e[c&#39;</span>
 </code></pre></div>
-<p>Advertising a VT200-class terminal with SIXEL (<code>^[[?62;4;9;22c</code>) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (<code>SET TERMINAL/INQUIRE</code>), and breaks Return and the cursor keys in its editors. So force the format on the tool side (<code>chafa -f sixel</code>, <code>timg -p sixel</code>, <code>img2sixel</code> never probes).</p>
+<p>Advertising a VT200-class terminal with SIXEL (<code>^[[?62;4;9;22c</code>) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (<code>SET TERMINAL/INQUIRE</code>), and breaks Return and the cursor keys in its editors. So force the format on the tool side (<code>chafa -f sixel</code>, <code>timg -p sixel</code>, <code>img2sixel</code> never probes). Tools that trust the probe alone, <code>lsix</code> for instance, need to be told to skip it (see below).</p>
 <p>The terminal still answers the <code>XTSMGRAPHICS</code> queries (number of color registers, maximum geometry), honours <code>DECSET 80</code> (SIXEL scrolling) and reports its pixel size to the remote host (<code>TIOCGWINSZ</code>), so tools can size images to the screen without any option.</p>
 <h3 id="examples">Examples</h3>
 <p><a href="https://github.com/saitoha/libsixel">libsixel</a> ships <code>img2sixel</code> (packages <code>libsixel-bin</code> on Debian / Ubuntu, <code>libsixel</code> on Homebrew) :</p>
@@ -3592,6 +3592,13 @@
 <div class="highlight"><pre><span></span><code>magick<span class="w"> </span>photo.png<span class="w"> </span>sixel:-
 </code></pre></div>
 <p><code>convert photo.png sixel:-</code> with ImageMagick 6, and <code>mpv --vo=sixel video.mp4</code> even plays a video, though not smoothly over SSH.</p>
+<p><a href="https://github.com/hackerb9/lsix">lsix</a> lists the images of a directory as thumbnails, but it relies on the <em>Primary Device Attributes</em> probe alone : it sends <code>\e[c</code>, looks for <code>4</code> in the answer and, as WebSSH answers <code>^[[?1;2c</code>, stops with :</p>
+<div class="highlight"><pre><span></span><code>Error: Your terminal does not report having sixel graphics support.
+</code></pre></div>
+<p>lsix provides an environment variable to skip that check, set it and the thumbnails render as expected :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">LSIX_FORCE_SIXEL_SUPPORT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>lsix
+</code></pre></div>
+<p>Add <code>export LSIX_FORCE_SIXEL_SUPPORT=1</code> to your shell profile to make it permanent.</p>
 <h2 id="iterm2-inline-images-imgcat">iTerm2 inline images (imgcat)</h2>
 <h3 id="install-imgcat">Install imgcat</h3>
 <p><code>imgcat</code> is a shell script published by iTerm2. It only needs <code>base64</code> on the remote host :</p>
@@ -3657,7 +3664,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2026 20:21:39 UTC">September 15, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 15, 2026 20:24:52 UTC">September 15, 2026</span>
       
     
   </small>
