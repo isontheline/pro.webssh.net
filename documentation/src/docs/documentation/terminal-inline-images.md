@@ -21,7 +21,7 @@ Some tools probe the terminal with the *Primary Device Attributes* query and loo
 printf '\e[c'
 ```
 
-Advertising a VT200-class terminal with SIXEL (`^[[?62;4;9;22c`) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (`SET TERMINAL/INQUIRE`), and breaks Return and the cursor keys in its editors. So force the format on the tool side (`chafa -f sixel`, `timg -p sixel`, `img2sixel` never probes).
+Advertising a VT200-class terminal with SIXEL (`^[[?62;4;9;22c`) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (`SET TERMINAL/INQUIRE`), and breaks Return and the cursor keys in its editors. So force the format on the tool side (`chafa -f sixel`, `timg -p sixel`, `img2sixel` never probes). Tools that trust the probe alone, `lsix` for instance, need to be told to skip it (see below).
 
 The terminal still answers the `XTSMGRAPHICS` queries (number of color registers, maximum geometry), honours `DECSET 80` (SIXEL scrolling) and reports its pixel size to the remote host (`TIOCGWINSZ`), so tools can size images to the screen without any option.
 
@@ -55,6 +55,20 @@ magick photo.png sixel:-
 ```
 
 `convert photo.png sixel:-` with ImageMagick 6, and `mpv --vo=sixel video.mp4` even plays a video, though not smoothly over SSH.
+
+[lsix](https://github.com/hackerb9/lsix) lists the images of a directory as thumbnails, but it relies on the *Primary Device Attributes* probe alone : it sends `\e[c`, looks for `4` in the answer and, as WebSSH answers `^[[?1;2c`, stops with :
+
+```
+Error: Your terminal does not report having sixel graphics support.
+```
+
+lsix provides an environment variable to skip that check, set it and the thumbnails render as expected :
+
+```bash
+LSIX_FORCE_SIXEL_SUPPORT=1 lsix
+```
+
+Add `export LSIX_FORCE_SIXEL_SUPPORT=1` to your shell profile to make it permanent.
 
 ## iTerm2 inline images (imgcat)
 ### Install imgcat
