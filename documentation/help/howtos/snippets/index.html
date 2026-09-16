@@ -1748,6 +1748,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dynamic-variables" class="md-nav__link">
+    Dynamic variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-variables" class="md-nav__link">
+    Built-in variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3392,6 +3419,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dynamic-variables" class="md-nav__link">
+    Dynamic variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynamic variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-variables" class="md-nav__link">
+    Built-in variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3440,13 +3494,93 @@
 <li>Select the snippet you want to insert from the list</li>
 <li>The command/script from the snippet will be inserted into your terminal, ready to be executed</li>
 </ol>
+<h2 id="dynamic-variables">Dynamic variables</h2>
+<p>A snippet can ask for values when it runs. Write a placeholder between triple braces and WebSSH shows a small form before sending the command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You are {{{ NAME : Awesome }}}!&quot;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{{ NAME }}}</code></td>
+<td>Free text, empty by default</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : default }}}</code></td>
+<td>Free text, prefilled with <code>default</code> (edge spaces are trimmed)</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : " default " }}}</code></td>
+<td>Quotes keep the spaces and protect <code>:</code> and <code>\|</code> inside the default</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : first : second : third }}}</code></td>
+<td>A choice list, <code>first</code> selected</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : default \| secret }}}</code></td>
+<td>The value is typed in a secure field and hidden in the preview</td>
+</tr>
+</tbody>
+</table>
+<p>Rules:</p>
+<ul>
+<li>A name uses letters, digits and underscores, must not start with a digit and is case-sensitive (<code>{{{ Path }}}</code> and <code>{{{ PATH }}}</code> are two variables).</li>
+<li>The same name used several times is asked once; its first occurrence defines the default, the choices and the modifiers.</li>
+<li>A placeholder that does not follow the syntax is left as-is in the command, so you can see what went wrong.</li>
+<li>Values are inserted exactly as typed: WebSSH adds no shell quoting, and a value is never interpreted as a <a href="../SSH/adding-control-key-to-snippets/">key token</a> such as <code>&lt;ctrl-c&gt;</code> nor as another placeholder.</li>
+<li>Nothing is remembered between runs: every execution starts from the defaults.</li>
+</ul>
+<h3 id="built-in-variables">Built-in variables</h3>
+<p>These names are prefilled from the current connection. They stay editable in the form.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{{ HOST }}}</code></td>
+<td>Hostname or IP address of the connection</td>
+</tr>
+<tr>
+<td><code>{{{ USER }}}</code></td>
+<td>Username of the connection</td>
+</tr>
+<tr>
+<td><code>{{{ PORT }}}</code></td>
+<td>Port of the connection</td>
+</tr>
+<tr>
+<td><code>{{{ CONNECTION }}}</code></td>
+<td>Name of the connection</td>
+</tr>
+<tr>
+<td><code>{{{ DATE }}}</code></td>
+<td>Today, as <code>YYYY-MM-DD</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>-p<span class="w"> </span><span class="o">{{{</span><span class="w"> </span>PORT<span class="w"> </span><span class="o">}}}</span><span class="w"> </span><span class="o">{{{</span><span class="w"> </span>USER<span class="w"> </span><span class="o">}}}</span>@<span class="o">{{{</span><span class="w"> </span>HOST<span class="w"> </span><span class="o">}}}</span>
+tar<span class="w"> </span>czf<span class="w"> </span>backup-<span class="o">{{{</span><span class="w"> </span>DATE<span class="w"> </span><span class="o">}}}</span>.tgz<span class="w"> </span><span class="o">{{{</span><span class="w"> </span>DIR<span class="w"> </span>:<span class="w"> </span>/var/www<span class="w"> </span><span class="o">}}}</span>
+tail<span class="w"> </span>-n<span class="w"> </span><span class="o">{{{</span><span class="w"> </span>LINES<span class="w"> </span>:<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">}}}</span><span class="w"> </span>-f<span class="w"> </span><span class="o">{{{</span><span class="w"> </span>LOG<span class="w"> </span>:<span class="w"> </span>/var/log/syslog<span class="w"> </span>:<span class="w"> </span>/var/log/auth.log<span class="w"> </span>:<span class="w"> </span>/var/log/nginx/error.log<span class="w"> </span><span class="o">}}}</span>
+mysql<span class="w"> </span>-u<span class="w"> </span><span class="o">{{{</span><span class="w"> </span>DB_USER<span class="w"> </span>:<span class="w"> </span>root<span class="w"> </span><span class="o">}}}</span><span class="w"> </span>-p<span class="o">{{{</span><span class="w"> </span>DB_PASSWORD<span class="w"> </span><span class="p">|</span><span class="w"> </span>secret<span class="w"> </span><span class="o">}}}</span><span class="w"> </span><span class="o">{{{</span><span class="w"> </span>DATABASE<span class="w"> </span><span class="o">}}}</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 16, 2025 14:30:35 UTC">November 16, 2025</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 07:18:11 UTC">September 16, 2026</span>
       
     
   </small>

@@ -3354,6 +3354,34 @@
 <p>If you want to add a control-key (Ctrl-A / Ctrl-C / Ctrl-D / ...) to a snippet, you can use the following syntax :</p>
 <p><code>&lt;ctrl-x&gt;</code> (Replace <code>x</code> by the control-key you want to add)</p>
 <p>You can put the control-key anywhere in your snippet. So you can use <code>&lt;ctrl-A&gt;ls</code> to send Ctrl-A and then <code>ls</code> to your SSH session.</p>
+<p>Other key tokens are available:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;ctrl-x&gt;</code></td>
+<td>Control character (<code>x</code> is a letter or one of <code>[ \ ] ^ _ @ /</code>), case-insensitive</td>
+</tr>
+<tr>
+<td><code>&lt;alt-x&gt;</code></td>
+<td>Escape followed by <code>x</code>, one character, case preserved (<code>&lt;alt-b&gt;</code> and <code>&lt;alt-B&gt;</code> differ)</td>
+</tr>
+<tr>
+<td><code>&lt;esc&gt;</code></td>
+<td>Escape (same as <code>&lt;ctrl-[&gt;</code>)</td>
+</tr>
+<tr>
+<td><code>&lt;tab&gt;</code></td>
+<td>Tab (same as <code>&lt;ctrl-i&gt;</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Key tokens are expanded before <a href="../../snippets/#dynamic-variables">dynamic variables</a>, so a value typed in the variables form is never read as a key token.</p>
 <h1 id="examples">Examples</h1>
 <table>
 <thead>
@@ -3379,6 +3407,14 @@
 <td><code>&lt;ctrl-b&gt;%</code></td>
 <td>Split your tmux session vertically</td>
 </tr>
+<tr>
+<td><code>&lt;alt-b&gt;</code></td>
+<td>Move one word backward (readline)</td>
+</tr>
+<tr>
+<td><code>&lt;esc&gt;:wq</code></td>
+<td>Save and quit vim</td>
+</tr>
 </tbody>
 </table>
 
@@ -3387,7 +3423,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 7, 2023 21:26:58 UTC">January 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 07:18:11 UTC">September 16, 2026</span>
       
     
   </small>
