@@ -100,6 +100,47 @@ These examples run a command on the server with `$ssh.exec`. Always bound the ex
 })();
 ```
 
+### Disk usage with a progress ring and a tint
+Same command, but the percentage drives a progress ring instead of the icon, and the item turns orange above 75 % and red above 90 %. With *Graph* enabled, the sparkline follows the percentage.
+
+```javascript
+(function() {
+    let raw = $ssh.exec("timeout -k 1s 1s df / | awk 'NR==2 {print $5}'")
+    if (!raw) {
+        return null;
+    }
+    let percent = parseInt(raw, 10)
+    return {
+        label: percent + ' %',
+        progress: percent / 100,
+        tint: percent >= 90 ? 'error' : (percent >= 75 ? 'warning' : 'normal'),
+        value: percent
+    }
+})();
+```
+
+### Pending updates with a badge
+Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. `apt list` reads the local cache only, so it is fast, but keep the `timeout` anyway. Runs every 3 seconds like every item: consider caching the count in `$vars` with a timestamp if the server is slow.
+
+```javascript
+(function() {
+    let raw = $ssh.exec("timeout -k 2s 2s apt list --upgradable 2>/dev/null | grep -c upgradable")
+    if (raw === null) {
+        return null;
+    }
+    let count = parseInt(raw, 10) || 0
+    if (count === 0) {
+        return null;
+    }
+    return {
+        label: '',
+        icon: 'shippingbox',
+        badge: count,
+        tint: count > 20 ? 'warning' : 'normal'
+    }
+})();
+```
+
 ### Load average
 ```javascript
 (function() {

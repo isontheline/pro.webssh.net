@@ -22,6 +22,10 @@ Wrap your code in an immediately invoked function and return either:
 | --- | --- | --- |
 | `label` | String, Number | The text displayed in the State Bar. Numbers are converted to text. Falls back to an empty string. |
 | `icon` | String (optional) | An [SF Symbol](https://developer.apple.com/sf-symbols/) name. When omitted, the last icon set is kept (the one from the settings on the first run). |
+| `tint`[^3] | String (optional) | `normal` (default), `success`, `warning` or `error`. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the fixed connection item. Anything else is treated as `normal`. |
+| `badge`[^3] | Number, String (optional) | A small capsule drawn on the top right corner of the icon, for counts (pending updates, alerts…). `0`, an empty string or an absent value removes it. |
+| `progress`[^3] | Number (optional) | `0` to `1`. Replaces the icon with a small progress ring. Values outside the range are clamped. |
+| `value`[^3] | Number (optional) | The numeric value used by the [sparkline](index.md#graph). When omitted, the first number found in `label` is used. |
 
 ```javascript
 (function() {
@@ -31,6 +35,23 @@ Wrap your code in an immediately invoked function and return either:
     };
 })();
 ```
+
+A tinted item with a progress ring and an explicit value:
+
+```javascript
+(function() {
+    let used = 85
+    return {
+        label: used + ' %',
+        progress: used / 100,
+        tint: used >= 90 ? 'error' : (used >= 75 ? 'warning' : 'normal'),
+        value: used
+    };
+})();
+```
+
+!!! tip "Sparkline"
+    The script has nothing to do for the sparkline: enable *Graph* in the item settings and WebSSH keeps the last 30 numeric values (from `value`, or the first number of `label`) and draws them next to the label.
 
 ## `$ssh`
 | Function | Returns | Description |
@@ -94,3 +115,4 @@ A JavaScript exception is written to the log (see `console` above) and, as the s
 
 [^1]: Since WebSSH 29.6.
 [^2]: Since WebSSH 32.10. Before that version `WEBSSH_CONNECTION_NAME`, `WEBSSH_CONNECTION_HOST` and `WEBSSH_CONNECTION_USERNAME` were only filled on SSH sessions.
+[^3]: Since WebSSH 32.10.

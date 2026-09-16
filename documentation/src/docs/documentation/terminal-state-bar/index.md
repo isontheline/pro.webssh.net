@@ -16,7 +16,7 @@ From left to right:
 2. **Connection item** (since 32.9): icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection). Tap it to open the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…).
 3. **Progress item** (since 32.10): only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/terminal-progress-bar/).
 4. **Recording button**: start / stop a session recording, add markers, review or list recordings. It can be hidden from the settings (see below).
-5. **Your items**: the items you composed in the settings, scrolling horizontally when they do not fit. On macOS and iPadOS with a pointer, the item under the cursor is highlighted.
+5. **Your items**: the items you composed in the settings, scrolling horizontally when they do not fit. On macOS and iPadOS with a pointer, the item under the cursor is highlighted. An item can be tinted (orange, red, green), carry a badge, a progress ring or a sparkline.
 
 The first four are fixed: they cannot be moved or removed.
 
@@ -59,9 +59,14 @@ Since WebSSH 32.10, built-in items are provided and computed by WebSSH itself. T
 | User | The login user | SSH, mosh |
 | Server identifier | The SSH server banner (eg. `SSH-2.0-OpenSSH_9.6`) | SSH, mosh (bootstrap) |
 | Cipher | The negotiated cipher (incoming / outgoing when they differ) | SSH, mosh (bootstrap) |
-| Round-trip time | The smoothed round-trip time of the mosh transport | mosh |
+| Round-trip time | The smoothed round-trip time of the mosh transport. Numeric: can show a [sparkline](#graph) | mosh |
+| Date & Time | The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Refreshed on the 3 seconds tick, so seconds can lag a little | All sessions, can be added several times |
+| Ephemeris | Sunrise and sunset, the next sun event, or the moon phase, computed on the device from a latitude / longitude entered in the settings. No network, no location permission | All sessions, can be added several times |
 
-An item that does not apply to the current session is simply hidden. Each built-in item can be added only once.
+An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date & Time and Ephemeris.
+
+### Built-in item settings
+Built-in items with settings (Date & Time, Ephemeris, Round-trip time) show a chevron instead of the lock in the list. Tap the row (or Edit in its context menu) to open their settings: a live preview at the top, the *Graph* setting for numeric items, then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.
 
 ### Layout items
 Two built-in items only affect the layout and can be added as many times as you want:
@@ -75,7 +80,13 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 * **Name**: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).
 * **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection.
 * **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run.
+* **Graph**: off by default. See [below](#graph).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
+
+A script can also colour its item (`tint`), add a badge on the icon or replace the icon with a progress ring: see the [Item Result Object](javascript-api.md#item-result-object).
+
+### Graph
+Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: **Off**, **Sparkline** (label + curve) and **Sparkline only** (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
 
 Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
 
