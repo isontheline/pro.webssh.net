@@ -241,30 +241,6 @@
   </url>
   
   <url>
-    <loc>https://webssh.net/documentation/terminal-state-bar/</loc>
-
-    
-    <lastmod>2026-09-09T19:43:47+00:00</lastmod>
-
-      
-      
-      
-        
-        
-        
-        
-        
-        
-        
-
-        
-          <changefreq>daily</changefreq>
-        
-      
-    
-  </url>
-  
-  <url>
     <loc>https://webssh.net/documentation/translations/</loc>
 
     
@@ -2621,6 +2597,78 @@
 
     
     <lastmod>2026-07-30T16:30:18+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/terminal-state-bar/</loc>
+
+    
+    <lastmod>2026-09-16T14:06:36+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/terminal-state-bar/examples/</loc>
+
+    
+    <lastmod>2026-09-16T14:06:36+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/terminal-state-bar/javascript-api/</loc>
+
+    
+    <lastmod>2026-09-16T14:06:36+00:00</lastmod>
 
       
       
