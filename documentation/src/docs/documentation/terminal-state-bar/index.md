@@ -61,7 +61,7 @@ Since WebSSH 32.10, built-in items are provided and computed by WebSSH itself. T
 | Cipher | The negotiated cipher (incoming / outgoing when they differ) | SSH, mosh (bootstrap) |
 | Round-trip time | The smoothed round-trip time of the mosh transport. Numeric: can show a [sparkline](#graph) | mosh |
 | Date & Time | The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Refreshed on the 3 seconds tick, so seconds can lag a little | All sessions, can be added several times |
-| Ephemeris | Sunrise and sunset, the next sun event, or the moon phase, computed on the device from a latitude / longitude entered in the settings. No network, no location permission | All sessions, can be added several times |
+| Ephemeris | Sunrise and sunset, the next sun event, the day progress (a ring filling from sunrise to sunset with the remaining daylight as label), or the moon phase. Computed on the device from a latitude / longitude entered in the settings: no network, no location permission | All sessions, can be added several times |
 
 An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date & Time and Ephemeris.
 
