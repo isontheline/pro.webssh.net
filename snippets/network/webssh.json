@@ -65,6 +65,18 @@
         "dnf": "nethogs",
         "pacman": "nethogs"
       }
+    },
+    "ping-host.sh": {
+      "name": "Ping Host",
+      "summary": "Ping a host a few times — asks for the count and the target (dynamic variables)",
+      "os": [
+        "linux",
+        "macos"
+      ],
+      "icon": "dot.radiowaves.left.and.right",
+      "maintainers": [
+        "isontheline"
+      ]
     }
   }
 }

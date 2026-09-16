@@ -44,6 +44,72 @@ jobs:
           KS_ANY_TOKEN = re.compile(r"<(?:ctrl|alt)-[^>]*>|<(?:esc|tab|enter|return|cr|lf)>", re.IGNORECASE)
           KS_MAX_SIZE = 64
           KS_MAX_LITERAL = 16
+          # Dynamic variables (WebSSH_Native, SnippetTemplate.swift), .sh only:
+          #   {{{ NAME }}}  {{{ NAME : default }}}  {{{ NAME : " default " }}}
+          #   {{{ NAME : first : second }}}  {{{ NAME : default | secret }}}
+          # The app asks the user for the values when the snippet runs. Every
+          # placeholder must parse (the app leaves a malformed one verbatim —
+          # a silent bug in a curated file), and ShellCheck runs on a rendered
+          # copy where each placeholder is replaced by its default, so that
+          # quotes and '|' inside placeholders don't confuse it.
+          VARIABLE = re.compile(r"\{\{\{(.*?)\}\}\}")
+          VARIABLE_NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_]*$")
+          VARIABLE_MODIFIERS = {"secret"}
+          RENDERED = os.path.join(os.environ.get("RUNNER_TEMP", "/tmp"), "rendered-snippets")
+
+          def parse_variable(body):
+              # Mirrors SnippetTemplate.parseBody: top-level ':' splits the parts,
+              # the first top-level '|' starts the modifiers, double quotes
+              # protect both. Returns (name, default) or None when malformed.
+              parts, modifiers, current = [], [], ""
+              in_quotes = in_modifiers = False
+              for ch in body:
+                  if ch == '"':
+                      in_quotes = not in_quotes
+                      current += ch
+                  elif in_quotes:
+                      current += ch
+                  elif ch == "|":
+                      (modifiers if in_modifiers else parts).append(current)
+                      current, in_modifiers = "", True
+                  elif ch == ":" and not in_modifiers:
+                      parts.append(current)
+                      current = ""
+                  else:
+                      current += ch
+              if in_quotes:
+                  return None
+              (modifiers if in_modifiers else parts).append(current)
+              name = parts[0].strip()
+              if not VARIABLE_NAME.match(name):
+                  return None
+              if any(m.strip().lower() not in VARIABLE_MODIFIERS for m in modifiers):
+                  return None
+              def unquote(p):
+                  p = p.strip()
+                  return p[1:-1] if len(p) >= 2 and p[0] == p[-1] == '"' else p
+              values = [unquote(p) for p in parts[1:]]
+              # Empty default ⇒ the name itself, so the rendered command stays realistic.
+              return name, (values[0] if values and values[0] else name)
+
+          def render_variables(scope, text):
+              def substitute(m):
+                  parsed = parse_variable(m.group(1))
+                  if parsed is None:
+                      errors.append(f"{scope}: malformed dynamic variable {m.group(0)} — see snippets/README.md")
+                      return m.group(0)
+                  return parsed[1]
+              return VARIABLE.sub(substitute, text)
+
+          def render_shell_snippet(scope, path, coll, name):
+              try:
+                  text = open(path, encoding="utf-8").read()
+              except UnicodeDecodeError:
+                  return  # already reported by the generic UTF-8 check
+              out_dir = os.path.join(RENDERED, coll)
+              os.makedirs(out_dir, exist_ok=True)
+              with open(os.path.join(out_dir, name), "w", encoding="utf-8") as out:
+                  out.write(render_variables(scope, text))
 
           def expand_key_sequence(text):
               # Same bytes the app will send, to reason about what the sequence
@@ -68,6 +134,8 @@ jobs:
                   return  # already reported by the generic UTF-8 check
               if "\n" in text or "\r" in text:
                   errors.append(f"{scope}: .ks must be a single line with NO trailing newline (a newline would auto-execute the typed text)")
+              if "{{{" in text:
+                  errors.append(f"{scope}: dynamic variables are not allowed in a .ks — write a .sh snippet instead")
               if not KS_TOKEN.search(text):
                   errors.append(f"{scope}: .ks must contain at least one key token: <ctrl-x> (a-z or [ \\ ] ^ _ @ /, except ctrl-j/ctrl-m/ctrl-o), <alt-x>, <esc> or <tab>")
               literal = KS_TOKEN.sub("", text)
@@ -127,6 +195,8 @@ jobs:
                       errors.append(f"{coll}/{name}: extension '{extension}' not allowed — .sh (ShellCheck) or .ks (key sequence) only")
                   elif extension == ".ks":
                       check_key_sequence(f"{coll}/{name}", os.path.join(base, name))
+                  elif extension == ".sh":
+                      render_shell_snippet(f"{coll}/{name}", os.path.join(base, name), coll, name)
                   size = os.path.getsize(os.path.join(base, name))
                   if size > MAX_SIZE:
                       errors.append(f"{coll}/{name}: {size} bytes exceeds the 1 KB limit")
@@ -196,12 +266,14 @@ jobs:
           print(f"OK — {len(collections)} collection(s) validated")
           EOF
 
+      # ShellCheck runs on the copies rendered by the previous step (every
+      # {{{ dynamic variable }}} replaced by its default), never on the sources.
       - name: ShellCheck (errors are blocking)
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq shellcheck
-          find snippets -name "*.sh" -print0 | xargs -0 -r shellcheck -S error -s bash
+          find "$RUNNER_TEMP/rendered-snippets" -name "*.sh" -print0 | xargs -0 -r shellcheck -S error -s bash
 
       - name: ShellCheck (style report, non-blocking)
         continue-on-error: true
         run: |
-          find snippets -name "*.sh" -print0 | xargs -0 -r shellcheck -s bash
+          find "$RUNNER_TEMP/rendered-snippets" -name "*.sh" -print0 | xargs -0 -r shellcheck -s bash

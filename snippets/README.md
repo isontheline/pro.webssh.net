@@ -29,7 +29,16 @@ snippets/
    are invisible to the app.
 7. **Two file kinds only** — each with its own CI validator, so nothing dodges
    review:
-   - `.sh` — shell snippets, ShellCheck-verified.
+   - `.sh` — shell snippets, ShellCheck-verified. They may ask the user for
+     values with **dynamic variables** (`{{{ NAME }}}`, `{{{ NAME : default }}}`,
+     `{{{ NAME : first : second }}}` for a choice, `{{{ NAME : default | secret }}}`
+     for a hidden value — see the
+     [documentation](https://webssh.net/documentation/help/howtos/snippets/#dynamic-variables)).
+     CI validates every placeholder and runs ShellCheck on a copy where each
+     placeholder is replaced by its default (first choice for a list, the name
+     itself when empty), so give a realistic default. Built-in names
+     (`HOST`, `USER`, `PORT`, `CONNECTION`, `DATE`) are prefilled from the
+     connection. `.ks` files must not contain `{{{`.
    - `.ks` — **key sequences**: WebSSH expands key tokens into the real bytes
      when running the snippet (e.g. `<ctrl-b>[` enters tmux copy mode,
      `<esc>:wq` leaves vim). One single line, **no trailing newline**, at

@@ -130,6 +130,18 @@
       "maintainers": [
         "isontheline"
       ]
+    },
+    "follow-log.sh": {
+      "name": "Follow Log",
+      "summary": "Follow a log file — asks for the line count and picks the file (dynamic variables)",
+      "os": [
+        "linux"
+      ],
+      "root": true,
+      "icon": "doc.text.magnifyingglass",
+      "maintainers": [
+        "isontheline"
+      ]
     }
   }
 }
