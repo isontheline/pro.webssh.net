@@ -41,9 +41,9 @@ echo "You are {{{ NAME : Awesome }}}!"
 | --- | --- |
 | `{{{ NAME }}}` | Free text, empty by default |
 | `{{{ NAME : default }}}` | Free text, prefilled with `default` (edge spaces are trimmed) |
-| `{{{ NAME : " default " }}}` | Quotes keep the spaces and protect `:` and `\|` inside the default |
+| `{{{ NAME : " default " }}}` | Quotes keep the spaces and protect `:` and `|` inside the default |
 | `{{{ NAME : first : second : third }}}` | A choice list, `first` selected |
-| `{{{ NAME : default \| secret }}}` | The value is typed in a secure field and hidden in the preview |
+| `{{{ NAME : default | secret }}}` | The value is typed in a secure field and hidden in the preview |
 
 Rules:
 
