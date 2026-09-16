@@ -2447,6 +2447,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#built-in-item-settings" class="md-nav__link">
+    Built-in item settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#layout-items" class="md-nav__link">
     Layout items
   </a>
@@ -2462,6 +2469,19 @@
   <a href="#your-own-items" class="md-nav__link">
     Your own items
   </a>
+  
+    <nav class="md-nav" aria-label="Your own items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3509,6 +3529,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#built-in-item-settings" class="md-nav__link">
+    Built-in item settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#layout-items" class="md-nav__link">
     Layout items
   </a>
@@ -3524,6 +3551,19 @@
   <a href="#your-own-items" class="md-nav__link">
     Your own items
   </a>
+  
+    <nav class="md-nav" aria-label="Your own items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    Graph
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3567,7 +3607,7 @@
 <li><strong>Connection item</strong> (since 32.9): icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection). Tap it to open the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…).</li>
 <li><strong>Progress item</strong> (since 32.10): only visible while a job reports its progress through the <a href="/documentation/terminal-progress-bar/"><code>OSC 9;4</code> escape sequence</a>.</li>
 <li><strong>Recording button</strong>: start / stop a session recording, add markers, review or list recordings. It can be hidden from the settings (see below).</li>
-<li><strong>Your items</strong>: the items you composed in the settings, scrolling horizontally when they do not fit. On macOS and iPadOS with a pointer, the item under the cursor is highlighted.</li>
+<li><strong>Your items</strong>: the items you composed in the settings, scrolling horizontally when they do not fit. On macOS and iPadOS with a pointer, the item under the cursor is highlighted. An item can be tinted (orange, red, green), carry a badge, a progress ring or a sparkline.</li>
 </ol>
 <p>The first four are fixed: they cannot be moved or removed.</p>
 <h2 id="show-or-hide-the-state-bar">Show or hide the State Bar</h2>
@@ -3649,12 +3689,24 @@
 </tr>
 <tr>
 <td>Round-trip time</td>
-<td>The smoothed round-trip time of the mosh transport</td>
+<td>The smoothed round-trip time of the mosh transport. Numeric: can show a <a href="#graph">sparkline</a></td>
 <td>mosh</td>
+</tr>
+<tr>
+<td>Date &amp; Time</td>
+<td>The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Refreshed on the 3 seconds tick, so seconds can lag a little</td>
+<td>All sessions, can be added several times</td>
+</tr>
+<tr>
+<td>Ephemeris</td>
+<td>Sunrise and sunset, the next sun event, or the moon phase, computed on the device from a latitude / longitude entered in the settings. No network, no location permission</td>
+<td>All sessions, can be added several times</td>
 </tr>
 </tbody>
 </table>
-<p>An item that does not apply to the current session is simply hidden. Each built-in item can be added only once.</p>
+<p>An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date &amp; Time and Ephemeris.</p>
+<h3 id="built-in-item-settings">Built-in item settings</h3>
+<p>Built-in items with settings (Date &amp; Time, Ephemeris, Round-trip time) show a chevron instead of the lock in the list. Tap the row (or Edit in its context menu) to open their settings: a live preview at the top, the <em>Graph</em> setting for numeric items, then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.</p>
 <h3 id="layout-items">Layout items</h3>
 <p>Two built-in items only affect the layout and can be added as many times as you want:</p>
 <ul>
@@ -3667,8 +3719,12 @@
 <li><strong>Name</strong>: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).</li>
 <li><strong>Tags</strong>: link the item to one or more connections. Read more about <a href="/documentation/help/howtos/link-connections-using-tags/">WebSSH Tags</a>. Leave empty (or <code>*</code>) to show the item on every connection.</li>
 <li><strong>Icon</strong>: the <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> displayed before the label. The script can change it at every run.</li>
+<li><strong>Graph</strong>: off by default. See <a href="#graph">below</a>.</li>
 <li><strong>JavaScript</strong>: the code executed to compute the item. See the <a href="javascript-api/">JavaScript API</a> and the <a href="examples/">examples</a>.</li>
 </ul>
+<p>A script can also colour its item (<code>tint</code>), add a badge on the icon or replace the icon with a progress ring: see the <a href="javascript-api/#item-result-object">Item Result Object</a>.</p>
+<h3 id="graph">Graph</h3>
+<p>Since WebSSH 32.10, an item can draw a <strong>sparkline</strong> of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the <code>value</code> field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: <strong>Off</strong>, <strong>Sparkline</strong> (label + curve) and <strong>Sparkline only</strong> (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.</p>
 <p>Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.</p>
 <p>Tap an item to copy its label; right click (or long press) offers the same.</p>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
@@ -3684,7 +3740,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 14:06:36 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 16:17:54 UTC">September 16, 2026</span>
       
     
   </small>

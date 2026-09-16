@@ -3623,6 +3623,26 @@
 <td>String (optional)</td>
 <td>An <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> name. When omitted, the last icon set is kept (the one from the settings on the first run).</td>
 </tr>
+<tr>
+<td><code>tint</code><sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>String (optional)</td>
+<td><code>normal</code> (default), <code>success</code>, <code>warning</code> or <code>error</code>. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the fixed connection item. Anything else is treated as <code>normal</code>.</td>
+</tr>
+<tr>
+<td><code>badge</code><sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Number, String (optional)</td>
+<td>A small capsule drawn on the top right corner of the icon, for counts (pending updates, alerts…). <code>0</code>, an empty string or an absent value removes it.</td>
+</tr>
+<tr>
+<td><code>progress</code><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Number (optional)</td>
+<td><code>0</code> to <code>1</code>. Replaces the icon with a small progress ring. Values outside the range are clamped.</td>
+</tr>
+<tr>
+<td><code>value</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Number (optional)</td>
+<td>The numeric value used by the <a href="../#graph">sparkline</a>. When omitted, the first number found in <code>label</code> is used.</td>
+</tr>
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -3632,6 +3652,21 @@
 <span class="w">    </span><span class="p">};</span>
 <span class="p">})();</span>
 </code></pre></div>
+<p>A tinted item with a progress ring and an explicit value:</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">85</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; %&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">progress</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">})();</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Sparkline</p>
+<p>The script has nothing to do for the sparkline: enable <em>Graph</em> in the item settings and WebSSH keeps the last 30 numeric values (from <code>value</code>, or the first number of <code>label</code>) and draws them next to the label.</p>
+</div>
 <h2 id="ssh"><code>$ssh</code></h2>
 <table>
 <thead>
@@ -3797,6 +3832,9 @@
 <li id="fn:2">
 <p>Since WebSSH 32.10. Before that version <code>WEBSSH_CONNECTION_NAME</code>, <code>WEBSSH_CONNECTION_HOST</code> and <code>WEBSSH_CONNECTION_USERNAME</code> were only filled on SSH sessions.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
+<li id="fn:3">
+<p>Since WebSSH 32.10.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -3805,7 +3843,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 14:06:36 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 16:17:54 UTC">September 16, 2026</span>
       
     
   </small>

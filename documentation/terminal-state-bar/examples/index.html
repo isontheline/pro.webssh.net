@@ -2502,6 +2502,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#disk-usage-with-a-progress-ring-and-a-tint" class="md-nav__link">
+    Disk usage with a progress ring and a tint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending-updates-with-a-badge" class="md-nav__link">
+    Pending updates with a badge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-average" class="md-nav__link">
     Load average
   </a>
@@ -3591,6 +3605,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#disk-usage-with-a-progress-ring-and-a-tint" class="md-nav__link">
+    Disk usage with a progress ring and a tint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pending-updates-with-a-badge" class="md-nav__link">
+    Pending updates with a badge
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#load-average" class="md-nav__link">
     Load average
   </a>
@@ -3709,6 +3737,41 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 1s 1s df -h / | awk &#39;NR==2 {print $3}&#39;&quot;</span><span class="p">)</span>
 <span class="p">})();</span>
 </code></pre></div>
+<h3 id="disk-usage-with-a-progress-ring-and-a-tint">Disk usage with a progress ring and a tint</h3>
+<p>Same command, but the percentage drives a progress ring instead of the icon, and the item turns orange above 75 % and red above 90 %. With <em>Graph</em> enabled, the sparkline follows the percentage.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 1s 1s df / | awk &#39;NR==2 {print $5}&#39;&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">raw</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">raw</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; %&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">progress</span><span class="o">:</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">percent</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">percent</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">percent</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="pending-updates-with-a-badge">Pending updates with a badge</h3>
+<p>Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. <code>apt list</code> reads the local cache only, so it is fast, but keep the <code>timeout</code> anyway. Runs every 3 seconds like every item: consider caching the count in <code>$vars</code> with a timestamp if the server is slow.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 2s 2s apt list --upgradable 2&gt;/dev/null | grep -c upgradable&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">raw</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">raw</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shippingbox&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">badge</span><span class="o">:</span><span class="w"> </span><span class="nx">count</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h3 id="load-average">Load average</h3>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">load</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 1s 1s cut -d &#39; &#39; -f 1-3 /proc/loadavg&quot;</span><span class="p">)</span>
@@ -3804,7 +3867,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 14:06:36 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 16:17:54 UTC">September 16, 2026</span>
       
     
   </small>
