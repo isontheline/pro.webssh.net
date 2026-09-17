@@ -79,7 +79,7 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 
 * **Name**: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).
 * **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection.
-* **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run.
+* **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a *Copy name* action: handy to find the names a script can return in `icon`, no Mac needed. The picker's list mode shows all the names.
 * **Graph**: off by default. See [below](#graph).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
 
@@ -87,6 +87,25 @@ A script can also colour its item (`tint`), add a badge on the icon or replace t
 
 ### Graph
 Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: **Off**, **Sparkline** (label + curve) and **Sparkline only** (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
+
+### Test your item
+Since WebSSH 32.10 you can test an item while you write it, without saving anything. The test needs a session that is already open (SSH or mosh, where the State Bar is available): with no open session the test is not offered.
+
+* In the item editor, tap **Test** under the script.
+* In the script editor, tap the **▶︎** button: it runs the text being edited, saved or not. On iPhone and iPad the panel opens half height and the script stays editable behind it.
+
+The panel runs the script on the selected session exactly like the State Bar does, remote commands included, and shows:
+
+* the **real rendering** of the item with the colours of that session's theme (tint, badge, progress ring, sparkline);
+* the **returned value** and whether the item is shown or hidden;
+* the **duration** of the run, orange above 1 second and red above 3 seconds;
+* the **console** output (`console.log`, `console.warn`…);
+* **errors** with their line and column: from the script editor, tap the error to jump to the line;
+* **warnings** for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown `tint`, `progress` outside 0…1, long badge.
+
+**Run once** executes a single run. **Run every 3 seconds** reproduces the tick of the bar, which scripts keeping state in `$vars` and sparklines need. The `$vars` of the test persist between runs and are separate from the real bar; **Reset** clears them along with the sparkline history and the console.
+
+Leaving the item editor with unsaved changes now asks to save, discard or cancel.
 
 Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
 

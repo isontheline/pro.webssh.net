@@ -106,12 +106,12 @@ Read-only variables describing the current session, filled when the State Bar is
 A missing variable returns `undefined`: always provide a fallback (`$vars.get('WEBSSH_CONNECTION_ADDRESS', '')`).
 
 ## `console`
-`console.log`, `console.info`, `console.warn`, `console.error`, `console.debug` and `console.trace` take a single string and write it to the WebSSH log, prefixed with the item identifier. Nothing is shown in the terminal.
+`console.log`, `console.info`, `console.warn`, `console.error`, `console.debug` and `console.trace` take a single string and write it to the WebSSH log, prefixed with the item identifier. Nothing is shown in the terminal. The easiest way to read them is the [test panel](index.md#test-your-item), which lists them live.
 
 The log is a daily file stored in the WebSSH folder of the Files app (macOS: the app's Documents folder), kept for 7 days. It is only written when *File Logger Level* in Settings → Advanced Settings is not disabled; `console.debug` and `console.trace` need the Debug level, `console.log` and `console.info` the Info level.
 
 ## Error handling
-A JavaScript exception is written to the log (see `console` above) and, as the script returned nothing, the item is hidden until a later run succeeds. A malformed Item Result Object (for example an `icon` that is not a string) is logged too and the item keeps its previous content.
+A JavaScript exception is written to the log (see `console` above) and, as the script returned nothing, the item is hidden until a later run succeeds. The [test panel](index.md#test-your-item) shows the message with its line and column. A malformed Item Result Object (for example an `icon` that is not a string) is logged too and the item keeps its previous content.
 
 [^1]: Since WebSSH 29.6.
 [^2]: Since WebSSH 32.10. Before that version `WEBSSH_CONNECTION_NAME`, `WEBSSH_CONNECTION_HOST` and `WEBSSH_CONNECTION_USERNAME` were only filled on SSH sessions.
