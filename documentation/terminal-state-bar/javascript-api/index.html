@@ -3819,10 +3819,10 @@
 </table>
 <p>A missing variable returns <code>undefined</code>: always provide a fallback (<code>$vars.get('WEBSSH_CONNECTION_ADDRESS', '')</code>).</p>
 <h2 id="console"><code>console</code></h2>
-<p><code>console.log</code>, <code>console.info</code>, <code>console.warn</code>, <code>console.error</code>, <code>console.debug</code> and <code>console.trace</code> take a single string and write it to the WebSSH log, prefixed with the item identifier. Nothing is shown in the terminal.</p>
+<p><code>console.log</code>, <code>console.info</code>, <code>console.warn</code>, <code>console.error</code>, <code>console.debug</code> and <code>console.trace</code> take a single string and write it to the WebSSH log, prefixed with the item identifier. Nothing is shown in the terminal. The easiest way to read them is the <a href="../#test-your-item">test panel</a>, which lists them live.</p>
 <p>The log is a daily file stored in the WebSSH folder of the Files app (macOS: the app's Documents folder), kept for 7 days. It is only written when <em>File Logger Level</em> in Settings → Advanced Settings is not disabled; <code>console.debug</code> and <code>console.trace</code> need the Debug level, <code>console.log</code> and <code>console.info</code> the Info level.</p>
 <h2 id="error-handling">Error handling</h2>
-<p>A JavaScript exception is written to the log (see <code>console</code> above) and, as the script returned nothing, the item is hidden until a later run succeeds. A malformed Item Result Object (for example an <code>icon</code> that is not a string) is logged too and the item keeps its previous content.</p>
+<p>A JavaScript exception is written to the log (see <code>console</code> above) and, as the script returned nothing, the item is hidden until a later run succeeds. The <a href="../#test-your-item">test panel</a> shows the message with its line and column. A malformed Item Result Object (for example an <code>icon</code> that is not a string) is logged too and the item keeps its previous content.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -3843,7 +3843,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 16:17:54 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 17, 2026 20:04:06 UTC">September 17, 2026</span>
       
     
   </small>

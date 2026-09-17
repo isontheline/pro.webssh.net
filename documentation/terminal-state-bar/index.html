@@ -2480,6 +2480,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#test-your-item" class="md-nav__link">
+    Test your item
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3562,6 +3569,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#test-your-item" class="md-nav__link">
+    Test your item
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3718,13 +3732,30 @@
 <ul>
 <li><strong>Name</strong>: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).</li>
 <li><strong>Tags</strong>: link the item to one or more connections. Read more about <a href="/documentation/help/howtos/link-connections-using-tags/">WebSSH Tags</a>. Leave empty (or <code>*</code>) to show the item on every connection.</li>
-<li><strong>Icon</strong>: the <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> displayed before the label. The script can change it at every run.</li>
+<li><strong>Icon</strong>: the <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a <em>Copy name</em> action: handy to find the names a script can return in <code>icon</code>, no Mac needed. The picker's list mode shows all the names.</li>
 <li><strong>Graph</strong>: off by default. See <a href="#graph">below</a>.</li>
 <li><strong>JavaScript</strong>: the code executed to compute the item. See the <a href="javascript-api/">JavaScript API</a> and the <a href="examples/">examples</a>.</li>
 </ul>
 <p>A script can also colour its item (<code>tint</code>), add a badge on the icon or replace the icon with a progress ring: see the <a href="javascript-api/#item-result-object">Item Result Object</a>.</p>
 <h3 id="graph">Graph</h3>
 <p>Since WebSSH 32.10, an item can draw a <strong>sparkline</strong> of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the <code>value</code> field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: <strong>Off</strong>, <strong>Sparkline</strong> (label + curve) and <strong>Sparkline only</strong> (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.</p>
+<h3 id="test-your-item">Test your item</h3>
+<p>Since WebSSH 32.10 you can test an item while you write it, without saving anything. The test needs a session that is already open (SSH or mosh, where the State Bar is available): with no open session the test is not offered.</p>
+<ul>
+<li>In the item editor, tap <strong>Test</strong> under the script.</li>
+<li>In the script editor, tap the <strong>▶︎</strong> button: it runs the text being edited, saved or not. On iPhone and iPad the panel opens half height and the script stays editable behind it.</li>
+</ul>
+<p>The panel runs the script on the selected session exactly like the State Bar does, remote commands included, and shows:</p>
+<ul>
+<li>the <strong>real rendering</strong> of the item with the colours of that session's theme (tint, badge, progress ring, sparkline);</li>
+<li>the <strong>returned value</strong> and whether the item is shown or hidden;</li>
+<li>the <strong>duration</strong> of the run, orange above 1 second and red above 3 seconds;</li>
+<li>the <strong>console</strong> output (<code>console.log</code>, <code>console.warn</code>…);</li>
+<li><strong>errors</strong> with their line and column: from the script editor, tap the error to jump to the line;</li>
+<li><strong>warnings</strong> for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown <code>tint</code>, <code>progress</code> outside 0…1, long badge.</li>
+</ul>
+<p><strong>Run once</strong> executes a single run. <strong>Run every 3 seconds</strong> reproduces the tick of the bar, which scripts keeping state in <code>$vars</code> and sparklines need. The <code>$vars</code> of the test persist between runs and are separate from the real bar; <strong>Reset</strong> clears them along with the sparkline history and the console.</p>
+<p>Leaving the item editor with unsaved changes now asks to save, discard or cancel.</p>
 <p>Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.</p>
 <p>Tap an item to copy its label; right click (or long press) offers the same.</p>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
@@ -3740,7 +3771,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 16:50:08 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 17, 2026 20:04:06 UTC">September 17, 2026</span>
       
     
   </small>
