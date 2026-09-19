@@ -3,6 +3,10 @@
 # Inspired by  https://stackoverflow.com/a/25708957/51280
 from http.server import SimpleHTTPRequestHandler
 import socketserver
+import logging
+
+logging.basicConfig(filename="webserver_access.log", level=logging.INFO,
+                     format="%(asctime)s %(message)s")
 
 class MyHTTPRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
@@ -13,6 +17,9 @@ class MyHTTPRequestHandler(SimpleHTTPRequestHandler):
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         self.send_header("Pragma", "no-cache")
         self.send_header("Expires", "0")
+
+    def log_message(self, format, *args):
+        logging.info("%s - %s", self.client_address[0], format % args)
 
 
 if __name__ == '__main__':
