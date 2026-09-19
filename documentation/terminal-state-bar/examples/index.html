@@ -3754,7 +3754,7 @@
 <span class="p">})();</span>
 </code></pre></div>
 <h3 id="pending-updates-with-a-badge">Pending updates with a badge</h3>
-<p>Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. <code>apt list</code> reads the local cache only, so it is fast, but keep the <code>timeout</code> anyway. Runs every 3 seconds like every item: consider caching the count in <code>$vars</code> with a timestamp if the server is slow.</p>
+<p>Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. <code>apt list</code> reads the local cache only, so it is fast, but keep the <code>timeout</code> anyway. The count rarely changes: set the item's <a href="../#refresh-interval">refresh interval</a> to 5 or 10 minutes.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$ssh</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;timeout -k 2s 2s apt list --upgradable 2&gt;/dev/null | grep -c upgradable&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">raw</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -3867,7 +3867,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 12:55:22 UTC">September 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:36:36 UTC">September 19, 2026</span>
       
     
   </small>

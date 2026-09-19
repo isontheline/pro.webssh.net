@@ -2501,6 +2501,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#refresh-interval" class="md-nav__link">
+    Refresh interval
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3604,6 +3611,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#refresh-interval" class="md-nav__link">
+    Refresh interval
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3684,7 +3698,7 @@
 <p>Until you compose your own list, the State Bar shows <strong>Connection info</strong>, <strong>Progress</strong> and <strong>Recording</strong>, each followed by a <strong>Separator</strong>, then <strong>Connection name</strong>, a <strong>Flexible Space</strong> and <strong>Terminal size</strong>, which puts the terminal size on the right edge. If you already had a list before 32.10, the three system items and their separators were added once at its head.</p>
 </div>
 <h2 id="system-items">System items</h2>
-<p>Since WebSSH 32.10, the three elements that used to be fixed are items of the <em>Built-in Items</em> picker, listed first among the other built-in items. Their content is driven by the terminal, not computed every 3 seconds. Each can be added once.</p>
+<p>Since WebSSH 32.10, the three elements that used to be fixed are items of the <em>Built-in Items</em> picker, listed first among the other built-in items. Their content is driven by the terminal, not recomputed on a timer, so they have no refresh interval. Each can be added once.</p>
 <table>
 <thead>
 <tr>
@@ -3765,7 +3779,7 @@
 </tr>
 <tr>
 <td>Date &amp; Time</td>
-<td>The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Refreshed on the 3 seconds tick, so seconds can lag a little</td>
+<td>The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Set its <a href="#refresh-interval">refresh interval</a> to 1 second when you show the seconds</td>
 <td>All sessions, can be added several times</td>
 </tr>
 <tr>
@@ -3777,7 +3791,7 @@
 </table>
 <p>An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date &amp; Time and Ephemeris.</p>
 <h3 id="built-in-item-settings">Built-in item settings</h3>
-<p>Tap a built-in item in the list (or Edit in its context menu) to open its settings: a live preview at the top when the item has parameters (Date &amp; Time, Ephemeris), its <a href="#appearance">appearance</a>, the <em>Graph</em> setting for numeric items (Round-trip time), then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.</p>
+<p>Tap a built-in item in the list (or Edit in its context menu) to open its settings: a live preview at the top when the item has parameters (Date &amp; Time, Ephemeris), its <a href="#appearance">appearance</a>, its <a href="#refresh-interval">refresh interval</a>, the <em>Graph</em> setting for numeric items (Round-trip time), then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.</p>
 <h3 id="layout-items">Layout items</h3>
 <p>Three built-in items only affect the layout and can be added as many times as you want:</p>
 <ul>
@@ -3820,9 +3834,11 @@
 <li><strong>errors</strong> with their line and column: from the script editor, tap the error to jump to the line;</li>
 <li><strong>warnings</strong> for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown <code>tint</code>, <code>progress</code> outside 0…1, long badge.</li>
 </ul>
-<p><strong>Run once</strong> executes a single run. <strong>Run every 3 seconds</strong> reproduces the tick of the bar, which scripts keeping state in <code>$vars</code> and sparklines need. The <code>$vars</code> of the test persist between runs and are separate from the real bar; <strong>Reset</strong> clears them along with the sparkline history and the console.</p>
+<p><strong>Run once</strong> executes a single run. <strong>Run every N s</strong> reproduces the real rhythm of the item, using its <a href="#refresh-interval">refresh interval</a>, which scripts keeping state in <code>$vars</code> and sparklines need. The <code>$vars</code> of the test persist between runs and are separate from the real bar; <strong>Reset</strong> clears them along with the sparkline history and the console.</p>
 <p>Leaving the item editor with unsaved changes now asks to save, discard or cancel.</p>
-<p>Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.</p>
+<h3 id="refresh-interval">Refresh interval</h3>
+<p>Since WebSSH 32.10, each item that is recomputed (your own items and the built-in value items) has its own <strong>refresh interval</strong>: 1, 2, 3 (the default), 5, 10, 15 or 30 seconds, then 1, 2, 5 or 10 minutes. It is in the item editor for your items, and in the settings of a built-in item. Keep a short interval for cheap local values such as a clock, and prefer a long one for scripts that run remote commands: a command that runs every minute costs twenty times less than the default, and a value that rarely changes (pending updates, certificate expiry…) is fine at 5 or 10 minutes. A run that is still in progress is never started again by the next beat, so a slow script simply refreshes less often than asked.</p>
+<p>Items are only recomputed while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.</p>
 <p>Tap an item to copy its label; right click (or long press) offers the same.</p>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
 <ul>
@@ -3837,7 +3853,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:01:25 UTC">September 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:36:36 UTC">September 19, 2026</span>
       
     
   </small>

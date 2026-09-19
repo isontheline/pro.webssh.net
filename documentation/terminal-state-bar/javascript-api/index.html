@@ -3591,7 +3591,7 @@
 
 
 <h1 id="state-bar-javascript-api">State Bar JavaScript API</h1>
-<p>Your own <a href="../">State Bar</a> items are small pieces of JavaScript, executed by WebSSH every 3 seconds while you are not typing. The code runs in a sandbox: there is no DOM, no network and no <code>require</code>. Only the objects described on this page are available.</p>
+<p>Your own <a href="../">State Bar</a> items are small pieces of JavaScript, executed by WebSSH at the item's <a href="../#refresh-interval">refresh interval</a> (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no network and no <code>require</code>. Only the objects described on this page are available.</p>
 <h2 id="what-the-script-must-return">What the script must return</h2>
 <p>Wrap your code in an immediately invoked function and return either:</p>
 <ul>
@@ -3843,7 +3843,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 12:55:22 UTC">September 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:36:36 UTC">September 19, 2026</span>
       
     
   </small>
