@@ -1539,7 +1539,7 @@ const TerminalHelper = {
     buildTerminalSettings: function (terminalSettings) {
         return {
             fontFamily: terminalSettings.fontFamily,
-            allowTransparency: true,
+            allowTransparency: false,
             bellStyle: 'none',
             theme: TerminalHelper.buildTheme(terminalSettings),
             fontSize: terminalSettings.fontSize,
