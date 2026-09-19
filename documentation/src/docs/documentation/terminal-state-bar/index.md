@@ -40,6 +40,8 @@ The former *Recording Button* setting is gone: keep or remove the **Recording** 
     * **Built-in Items**: pick an item provided by WebSSH (see below).
 3. Drag the handles to reorder the items. Long press (or right click) an item to delete it.
 
+The **⋯** menu offers **Reset to Defaults**: after a confirmation, every saved item is deleted, your own scripts included, and the bar gets its original items back. As the list is synchronized through iCloud, the reset applies to your other devices too.
+
 A **preview of the bar** sits above the list and follows every change: order, appearance, separators and flexible spaces are exact. Built-in items show their real value when a session is open (read locally, nothing is sent to the server), your own items show their icon and name since scripts are not run here (use [Test](#test-your-item) for that), and the Progress item is shown with a sample value so you can see where it will appear. The preview uses the theme of the open session, and scrolls sideways when the bar is wider than the screen.
 
 Changes are saved immediately and synchronized through iCloud like the rest of your data. When the settings were opened from a State Bar menu, that bar is rebuilt when you leave them; other open terminals pick up the changes with Restart in their State Bar menu.
