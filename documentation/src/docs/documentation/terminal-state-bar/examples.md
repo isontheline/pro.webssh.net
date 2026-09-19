@@ -120,7 +120,7 @@ Same command, but the percentage drives a progress ring instead of the icon, and
 ```
 
 ### Pending updates with a badge
-Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. `apt list` reads the local cache only, so it is fast, but keep the `timeout` anyway. Runs every 3 seconds like every item: consider caching the count in `$vars` with a timestamp if the server is slow.
+Debian / Ubuntu: counts the upgradable packages and shows the count as a badge on the icon. Hidden when everything is up to date. `apt list` reads the local cache only, so it is fast, but keep the `timeout` anyway. The count rarely changes: set the item's [refresh interval](index.md#refresh-interval) to 5 or 10 minutes.
 
 ```javascript
 (function() {

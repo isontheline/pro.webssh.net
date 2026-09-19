@@ -2,7 +2,7 @@
 title: State Bar JavaScript API
 ---
 # State Bar JavaScript API
-Your own [State Bar](index.md) items are small pieces of JavaScript, executed by WebSSH every 3 seconds while you are not typing. The code runs in a sandbox: there is no DOM, no network and no `require`. Only the objects described on this page are available.
+Your own [State Bar](index.md) items are small pieces of JavaScript, executed by WebSSH at the item's [refresh interval](index.md#refresh-interval) (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no network and no `require`. Only the objects described on this page are available.
 
 ## What the script must return
 Wrap your code in an immediately invoked function and return either:

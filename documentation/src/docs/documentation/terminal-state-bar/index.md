@@ -52,7 +52,7 @@ Changes are saved immediately and synchronized through iCloud like the rest of y
     Until you compose your own list, the State Bar shows **Connection info**, **Progress** and **Recording**, each followed by a **Separator**, then **Connection name**, a **Flexible Space** and **Terminal size**, which puts the terminal size on the right edge. If you already had a list before 32.10, the three system items and their separators were added once at its head.
 
 ## System items
-Since WebSSH 32.10, the three elements that used to be fixed are items of the *Built-in Items* picker, listed first among the other built-in items. Their content is driven by the terminal, not computed every 3 seconds. Each can be added once.
+Since WebSSH 32.10, the three elements that used to be fixed are items of the *Built-in Items* picker, listed first among the other built-in items. Their content is driven by the terminal, not recomputed on a timer, so they have no refresh interval. Each can be added once.
 
 | Item | Shows | Tap |
 | --- | --- | --- |
@@ -75,13 +75,13 @@ Since WebSSH 32.10, built-in items are provided and computed by WebSSH itself. T
 | Server identifier | The SSH server banner (eg. `SSH-2.0-OpenSSH_9.6`) | SSH, mosh (bootstrap) |
 | Cipher | The negotiated cipher (incoming / outgoing when they differ) | SSH, mosh (bootstrap) |
 | Round-trip time | The smoothed round-trip time of the mosh transport. Numeric: can show a [sparkline](#graph) | mosh |
-| Date & Time | The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Refreshed on the 3 seconds tick, so seconds can lag a little | All sessions, can be added several times |
+| Date & Time | The local date and time of the device, with settings: date style, time style, seconds, or a custom pattern. Set its [refresh interval](#refresh-interval) to 1 second when you show the seconds | All sessions, can be added several times |
 | Ephemeris | Sunrise and sunset, the next sun event, the day progress (a ring filling from sunrise to sunset with the remaining daylight as label), or the moon phase. Computed on the device from a latitude / longitude entered in the settings: no network, no location permission | All sessions, can be added several times |
 
 An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date & Time and Ephemeris.
 
 ### Built-in item settings
-Tap a built-in item in the list (or Edit in its context menu) to open its settings: a live preview at the top when the item has parameters (Date & Time, Ephemeris), its [appearance](#appearance), the *Graph* setting for numeric items (Round-trip time), then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.
+Tap a built-in item in the list (or Edit in its context menu) to open its settings: a live preview at the top when the item has parameters (Date & Time, Ephemeris), its [appearance](#appearance), its [refresh interval](#refresh-interval), the *Graph* setting for numeric items (Round-trip time), then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.
 
 ### Layout items
 Three built-in items only affect the layout and can be added as many times as you want:
@@ -128,11 +128,14 @@ The panel runs the script on the selected session exactly like the State Bar doe
 * **errors** with their line and column: from the script editor, tap the error to jump to the line;
 * **warnings** for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown `tint`, `progress` outside 0…1, long badge.
 
-**Run once** executes a single run. **Run every 3 seconds** reproduces the tick of the bar, which scripts keeping state in `$vars` and sparklines need. The `$vars` of the test persist between runs and are separate from the real bar; **Reset** clears them along with the sparkline history and the console.
+**Run once** executes a single run. **Run every N s** reproduces the real rhythm of the item, using its [refresh interval](#refresh-interval), which scripts keeping state in `$vars` and sparklines need. The `$vars` of the test persist between runs and are separate from the real bar; **Reset** clears them along with the sparkline history and the console.
 
 Leaving the item editor with unsaved changes now asks to save, discard or cancel.
 
-Your items are re-computed every 3 seconds while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
+### Refresh interval
+Since WebSSH 32.10, each item that is recomputed (your own items and the built-in value items) has its own **refresh interval**: 1, 2, 3 (the default), 5, 10, 15 or 30 seconds, then 1, 2, 5 or 10 minutes. It is in the item editor for your items, and in the settings of a built-in item. Keep a short interval for cheap local values such as a clock, and prefer a long one for scripts that run remote commands: a command that runs every minute costs twenty times less than the default, and a value that rarely changes (pending updates, certificate expiry…) is fine at 5 or 10 minutes. A run that is still in progress is never started again by the next beat, so a slow script simply refreshes less often than asked.
+
+Items are only recomputed while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
 
 Tap an item to copy its label; right click (or long press) offers the same.
 
