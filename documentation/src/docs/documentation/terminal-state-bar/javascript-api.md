@@ -22,7 +22,7 @@ Wrap your code in an immediately invoked function and return either:
 | --- | --- | --- |
 | `label` | String, Number | The text displayed in the State Bar. Numbers are converted to text. Falls back to an empty string. |
 | `icon` | String (optional) | An [SF Symbol](https://developer.apple.com/sf-symbols/) name. When omitted, the last icon set is kept (the one from the settings on the first run). |
-| `tint`[^3] | String (optional) | `normal` (default), `success`, `warning` or `error`. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the fixed connection item. Anything else is treated as `normal`. |
+| `tint`[^3] | String (optional) | `normal` (default), `success`, `warning` or `error`. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the Connection info item. Anything else is treated as `normal`. When the tint would not be readable on the bar of the current theme (a red tint on a red bar, for example), the item is drawn as an inverted pill instead: a background in the bar's text colour with the content in the tint colour. |
 | `badge`[^3] | Number, String (optional) | A small capsule drawn on the top right corner of the icon, for counts (pending updates, alerts…). `0`, an empty string or an absent value removes it. |
 | `progress`[^3] | Number (optional) | `0` to `1`. Replaces the icon with a small progress ring. Values outside the range are clamped. |
 | `value`[^3] | Number (optional) | The numeric value used by the [sparkline](index.md#graph). When omitted, the first number found in `label` is used. |

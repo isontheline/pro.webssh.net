@@ -10,7 +10,7 @@ Ready to paste items for the [State Bar](index.md). Create an item (Settings →
 ## Session
 
 ### Connection name and icon
-Displays the connection name with its own icon. Since 32.10 this is exactly what the built-in *Connection* item does.
+Displays the connection name with its own icon. Since 32.10 this is exactly what the built-in *Connection name* item does.
 
 ```javascript
 (function() {
