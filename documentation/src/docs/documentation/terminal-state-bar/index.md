@@ -12,13 +12,10 @@ Since WebSSH 29.3 a "State Bar" is available at the top (iOS / iPadOS) or bottom
 ## Anatomy of the State Bar
 From left to right:
 
-1. **Menu button** (waveform icon): opens the State Bar menu (Refresh, Pause / Resume, hide the bar, Help, Restart, Settings).
-2. **Connection item** (since 32.9): icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection). Tap it to open the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…).
-3. **Progress item** (since 32.10): only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/terminal-progress-bar/).
-4. **Recording button**: start / stop a session recording, add markers, review or list recordings. It can be hidden from the settings (see below).
-5. **Your items**: the items you composed in the settings, scrolling horizontally when they do not fit. On macOS and iPadOS with a pointer, the item under the cursor is highlighted. An item can be tinted (orange, red, green), carry a badge, a progress ring or a sparkline.
+1. **Menu button** (waveform icon): opens the State Bar menu (Refresh, Pause / Resume, hide the bar, Help, Restart, Settings). It is the only fixed element: it always sits on the left and cannot be removed.
+2. **Your list of items**, in the order you chose, scrolling horizontally when they do not fit: [system items](#system-items), [built-in items](#built-in-items), [layout items](#layout-items) and [your own items](#your-own-items). On macOS and iPadOS with a pointer, the item under the cursor is highlighted. An item can be tinted (orange, red, green), carry a badge, a progress ring or a sparkline, and has its own [appearance](#appearance).
 
-The first four are fixed: they cannot be moved or removed.
+Until 32.10 the connection information, the progress and the recording button were fixed next to the menu button. They are now ordinary items: move them, restyle them or remove them.
 
 ## Show or hide the State Bar
 The State Bar is enabled by default. Three levels control it:
@@ -27,10 +24,11 @@ The State Bar is enabled by default. Three levels control it:
 * **Per connection**: the *State Bar* option in the terminal section of the connection form: **Inherit** (use the global setting), **Enabled**, **Hidden** or **Disabled**.
 * **In the terminal**: the *State Bar* entry of the terminal menu (⋯) toggles the bar for the current session, and the bar's own menu can hide it too.
 
-Two more settings live next to *State Bar Strategy*:
+One more setting lives next to *State Bar Strategy*:
 
 * **State Bar Background Color**: use the terminal selection color (default) or the terminal background color. The foreground color is adjusted automatically when the contrast is not sufficient.
-* **Recording Button**: show or hide the fixed recording button.
+
+The former *Recording Button* setting is gone: keep or remove the **Recording** item in your list instead.
 
 !!! warning "Not available for every session"
     The State Bar is not available when the session goes through a jump host ("Connect Through"), nor on Telnet sessions. It is available on SSH and mosh sessions.
@@ -45,7 +43,18 @@ Two more settings live next to *State Bar Strategy*:
 Changes are saved immediately and synchronized through iCloud like the rest of your data. When the settings were opened from a State Bar menu, that bar is rebuilt when you leave them; other open terminals pick up the changes with Restart in their State Bar menu.
 
 !!! tip "First launch"
-    Until you compose your own list, the State Bar shows three built-in items: **Connection**, a **Flexible Space** and **Terminal size**, which puts the terminal size on the right edge.
+    Until you compose your own list, the State Bar shows **Connection info**, **Progress** and **Recording** as blocks next to the menu button, then **Connection**, a **Flexible Space** and **Terminal size**, which puts the terminal size on the right edge. If you already had a list before 32.10, the three system items were added once at its head, so your bar looks the same as before.
+
+## System items
+Since WebSSH 32.10, the three elements that used to be fixed are items of the *Built-in Items* picker (section *System*). Their content is driven by the terminal, not computed every 3 seconds. Each can be added once.
+
+| Item | Shows | Tap |
+| --- | --- | --- |
+| Connection info (since 32.9) | Icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection) | Opens the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…) |
+| Progress | Only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/terminal-progress-bar/): ring + percentage, red triangle on error, orange pause icon, spinner when indeterminate, green check when the job completes | None. Its context menu clears a stuck indicator |
+| Recording | Record icon, red while recording | Start / stop a session recording, add markers, review or list recordings |
+
+Removing *Connection info* does not remove the feature: the sheet stays available from the terminal menu (⋯).
 
 ## Built-in items
 Since WebSSH 32.10, built-in items are provided and computed by WebSSH itself. They cannot be edited (a lock is shown in the list) but they can be reordered and deleted, and they are updated automatically with the app: no JavaScript involved.
@@ -66,13 +75,23 @@ Since WebSSH 32.10, built-in items are provided and computed by WebSSH itself. T
 An item that does not apply to the current session is simply hidden. Each built-in item can be added only once, except Date & Time and Ephemeris.
 
 ### Built-in item settings
-Built-in items with settings (Date & Time, Ephemeris, Round-trip time) show a chevron instead of the lock in the list. Tap the row (or Edit in its context menu) to open their settings: a live preview at the top, the *Graph* setting for numeric items, then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.
+Tap a built-in item in the list (or Edit in its context menu) to open its settings: a live preview at the top when the item has parameters (Date & Time, Ephemeris), its [appearance](#appearance), the *Graph* setting for numeric items (Round-trip time), then the item's own parameters. Settings are saved when you leave the sheet and synchronized with the rest of the item.
 
 ### Layout items
-Two built-in items only affect the layout and can be added as many times as you want:
+Three built-in items only affect the layout and can be added as many times as you want:
 
+* **Separator**: a thin vertical line, to delimit groups of items.
 * **Space**: a small fixed gap between two items.
 * **Flexible Space**: pushes the items on either side of it apart. One flexible space aligns everything after it to the right edge; two of them center what stands between them. When the items do not fit in the bar, flexible spaces collapse and the bar scrolls as usual.
+
+## Appearance
+Since WebSSH 32.10, every item (system, built-in or your own) has three appearance settings. For your own items they are in the item editor; for the others, tap the row in the list to open their settings.
+
+* **Style**: **Plain** (content only, the default), **Bordered** (thin rounded outline), **Filled** (light rounded background) or **Block** (full height background and a separator, the look of the former fixed elements, which is why the system items start with it). A `tint` returned by a script still colours every style.
+* **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot.
+* **Maximum label width**: truncates a long label with … beyond 80, 120, 160 or 240 points. Tapping the item still copies the full label.
+
+As every non-layout item now has settings, they show a chevron in the list; only layout items keep the lock.
 
 ## Your own items
 Since WebSSH 29.3 you can write your own items. An item is defined by:
