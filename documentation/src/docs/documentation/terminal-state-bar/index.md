@@ -40,6 +40,8 @@ The former *Recording Button* setting is gone: keep or remove the **Recording** 
     * **Built-in Items**: pick an item provided by WebSSH (see below).
 3. Drag the handles to reorder the items. Long press (or right click) an item to delete it.
 
+A **preview of the bar** sits above the list and follows every change: order, appearance, separators and flexible spaces are exact. Built-in items show their real value when a session is open (read locally, nothing is sent to the server), your own items show their icon and name since scripts are not run here (use [Test](#test-your-item) for that), and the Progress item is shown with a sample value so you can see where it will appear. The preview uses the theme of the open session, and scrolls sideways when the bar is wider than the screen.
+
 Changes are saved immediately and synchronized through iCloud like the rest of your data. When the settings were opened from a State Bar menu, that bar is rebuilt when you leave them; other open terminals pick up the changes with Restart in their State Bar menu.
 
 !!! tip "First launch"
@@ -97,7 +99,7 @@ As every non-layout item now has settings, they show a chevron in the list; only
 Since WebSSH 29.3 you can write your own items. An item is defined by:
 
 * **Name**: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).
-* **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection.
+* **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection. The default items only exist while your list is empty: once you have a list, a connection that matches none of your tagged items shows just the items that apply to it (system and built-in items always do).
 * **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a *Copy name* action: handy to find the names a script can return in `icon`, no Mac needed. The picker's list mode shows all the names.
 * **Graph**: off by default. See [below](#graph).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
