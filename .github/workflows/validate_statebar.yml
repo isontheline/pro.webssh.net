@@ -1,0 +1,35 @@
+name: Validate State Bar Library
+
+on:
+  pull_request:
+    paths:
+      - "statebar/**"
+      - ".github/scripts/validate_statebar.py"
+      - ".github/workflows/validate_statebar.yml"
+  push:
+    branches: [master]
+    paths:
+      - "statebar/**"
+      - ".github/scripts/validate_statebar.py"
+      - ".github/workflows/validate_statebar.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      RENDERED_DIR: ${{ runner.temp }}/rendered-statebar
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate manifests, scripts and index
+        run: python3 .github/scripts/validate_statebar.py
+
+      # Each script is checked once its {{{ VARIABLE }}} placeholders are
+      # replaced by their default value: that is what the app executes.
+      - name: JavaScript syntax (node --check)
+        run: |
+          status=0
+          while IFS= read -r -d '' file; do
+            node --check "$file" || status=1
+          done < <(find "$RENDERED_DIR" -name '*.js' -print0)
+          exit $status
