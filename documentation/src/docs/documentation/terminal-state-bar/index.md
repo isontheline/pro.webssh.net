@@ -41,6 +41,9 @@ The former *Recording Button* setting is gone: keep or remove the **Recording** 
     * **WebSSH Library**: import a ready-made item from the [library](library.md).
 3. Drag the handles to reorder the items. Long press (or right click) an item to delete it.
 
+??? note "Free version"
+    Without WebSSH PRO the list holds up to **10 items**, every row included (system items, separators and spaces too); the count is shown under the list. Once the limit is reached the add button opens the PRO upgrade. Nothing is ever removed or locked: a longer list coming from iCloud stays complete and editable, only adding is limited. [WebSSH PRO](/documentation/pricing/) removes the limit.
+
 The **⋯** menu offers **Export Items…** and **Import Items…**, to save the whole list in a JSON file and load it back, on another account or to share a setup. The export contains every item in order with its appearance and settings; built-in items are stored as references, your own items with their script. An import first checks the file, then asks for a confirmation since it **replaces all your current items**. Only import files you trust: scripts can run commands on your servers. Built-in items unknown to your version of WebSSH are skipped.
 
 The same menu offers **Reset to Defaults**: after a confirmation, every saved item is deleted, your own scripts included, and the bar gets its original items back. As the list is synchronized through iCloud, the reset applies to your other devices too.
