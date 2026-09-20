@@ -2495,6 +2495,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#network-access" class="md-nav__link">
     Network access
   </a>
@@ -2558,6 +2565,20 @@
     <li class="md-nav__item">
       <a href="javascript-api/" class="md-nav__link">
         State Bar JavaScript API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="library/" class="md-nav__link">
+        State Bar Library
       </a>
     </li>
   
@@ -3612,6 +3633,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#network-access" class="md-nav__link">
     Network access
   </a>
@@ -3699,6 +3727,7 @@
 <li>Use the add button (top right):<ul>
 <li><strong>Add</strong>: create your own item, written in JavaScript (see below).</li>
 <li><strong>Built-in Items</strong>: pick an item provided by WebSSH (see below).</li>
+<li><strong>WebSSH Library</strong>: import a ready-made item from the <a href="library/">library</a>.</li>
 </ul>
 </li>
 <li>Drag the handles to reorder the items. Long press (or right click) an item to delete it.</li>
@@ -3836,11 +3865,46 @@
 <li><strong>Icon</strong>: the <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a <em>Copy name</em> action: handy to find the names a script can return in <code>icon</code>, no Mac needed. The picker's list mode shows all the names.</li>
 <li><strong>Graph</strong>: off by default. See <a href="#graph">below</a>.</li>
 <li><strong>Network Access</strong>: off by default. See <a href="#network-access">below</a>.</li>
+<li><strong>Variables</strong>: shown when the script has some. See <a href="#variables">below</a>.</li>
 <li><strong>JavaScript</strong>: the code executed to compute the item. See the <a href="javascript-api/">JavaScript API</a> and the <a href="examples/">examples</a>.</li>
 </ul>
 <p>A script can also colour its item (<code>tint</code>), add a badge on the icon or replace the icon with a progress ring: see the <a href="javascript-api/#item-result-object">Item Result Object</a>.</p>
 <h3 id="graph">Graph</h3>
 <p>Since WebSSH 32.10, an item can draw a <strong>sparkline</strong> of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the <code>value</code> field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: <strong>Off</strong>, <strong>Sparkline</strong> (label + curve) and <strong>Sparkline only</strong> (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.</p>
+<h3 id="variables">Variables</h3>
+<p>Since WebSSH 32.10 a script can declare <strong>variables</strong>, with the same syntax as <a href="../help/howtos/snippets/#dynamic-variables">snippets</a>: <code>{{{ CITY : Paris }}}</code>. The item editor then shows a <em>Variables</em> section with one field per variable, and WebSSH replaces each placeholder by its value every time the item runs. You change the city, the URL or the token <strong>without touching the script</strong>, and items of the <a href="library/">WebSSH Library</a> keep your values when their script is updated.</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{{ NAME }}}</code></td>
+<td>free text, empty by default</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : default }}}</code></td>
+<td>free text, prefilled</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : "https://example.com" }}}</code></td>
+<td>double quotes protect <code>:</code> and <code>|</code> (mandatory for a URL)</td>
+</tr>
+<tr>
+<td><code>{{{ NAME : first : second : third }}}</code></td>
+<td>list of choices, <code>first</code> selected</td>
+</tr>
+<tr>
+<td><code>{{{ NAME | secret }}}</code></td>
+<td>masked field, for a token or a password</td>
+</tr>
+</tbody>
+</table>
+<p>Write a placeholder <strong>inside a JavaScript string</strong>: <code>let city = '{{{ CITY : Paris }}}'</code>. The value is escaped, so a quote or a backslash in it cannot break the script. A name used several times is asked once. The <em>Allowed Hosts</em> field accepts variables too: with <code>{{{ URL }}}</code> the host is taken from the value (<code>https://ha.local:8123/api</code> gives <code>ha.local</code>).</p>
+<p>Values are stored with the item and synchronized like it. The values of <code>secret</code> variables are left out of <a href="#compose-the-state-bar">exported files</a>. On a version of WebSSH older than 32.10 an item with variables is hidden.</p>
 <h3 id="network-access">Network access</h3>
 <p>Since WebSSH 32.10 a script can call web services with <a href="javascript-api/#http"><code>$http</code></a>: a weather service, a status page, your Home Assistant, the API of your monitoring… It also gives items something to show on mosh sessions, where <code>$ssh.exec</code> is not available. Requests are sent by your device, not by the server.</p>
 <p>Nothing reaches the network unless you allow it, item by item:</p>
@@ -3884,7 +3948,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 08:08:13 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 11:35:32 UTC">September 20, 2026</span>
       
     
   </small>

@@ -14,7 +14,7 @@
         <link rel="prev" href="../examples/">
       
       
-        <link rel="next" href="../../../licenses/">
+        <link rel="next" href="../library/">
       
       <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
@@ -2466,6 +2466,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
     $ssh
   </a>
@@ -2531,6 +2538,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../library/" class="md-nav__link">
+        State Bar Library
+      </a>
     </li>
   
 
@@ -3527,6 +3548,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssh" class="md-nav__link">
     $ssh
   </a>
@@ -3681,6 +3709,14 @@
 <p class="admonition-title">Sparkline</p>
 <p>The script has nothing to do for the sparkline: enable <em>Graph</em> in the item settings and WebSSH keeps the last 30 numeric values (from <code>value</code>, or the first number of <code>label</code>) and draws them next to the label.</p>
 </div>
+<h2 id="variables">Variables</h2>
+<p>Since WebSSH 32.10. A <code>{{{ NAME : default }}}</code> placeholder is replaced by the value set in the item editor <strong>before</strong> the script runs, so the script only ever sees plain text. Always put it inside a string literal; the value is escaped for JavaScript. See <a href="../#variables">Variables</a> for the syntax.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{{ CITY : Paris }}}&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{{ UNITS : metric : imperial }}}&#39;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; (&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">;</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h2 id="ssh"><code>$ssh</code></h2>
 <table>
 <thead>
@@ -3954,7 +3990,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 08:08:13 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 11:35:32 UTC">September 20, 2026</span>
       
     
   </small>
