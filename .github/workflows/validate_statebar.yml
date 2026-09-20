@@ -16,13 +16,15 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    env:
-      RENDERED_DIR: ${{ runner.temp }}/rendered-statebar
     steps:
       - uses: actions/checkout@v4
 
+      # The `runner` context does not exist at job level: the folder is
+      # shared with the next step through GITHUB_ENV.
       - name: Validate manifests, scripts and index
-        run: python3 .github/scripts/validate_statebar.py
+        run: |
+          echo "RENDERED_DIR=$RUNNER_TEMP/rendered-statebar" >> "$GITHUB_ENV"
+          RENDERED_DIR="$RUNNER_TEMP/rendered-statebar" python3 .github/scripts/validate_statebar.py
 
       # Each script is checked once its {{{ VARIABLE }}} placeholders are
       # replaced by their default value: that is what the app executes.

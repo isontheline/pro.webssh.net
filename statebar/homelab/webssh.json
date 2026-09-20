@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "files": {
+    "home-assistant-sensor.js": {
+      "name": "Home Assistant Sensor",
+      "summary": "State of one entity through the REST API",
+      "icon": "house",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 30,
+      "graph": "off",
+      "hosts": [
+        "{{{ HOME_ASSISTANT_URL }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "uptime-kuma.js": {
+      "name": "Uptime Kuma",
+      "summary": "Monitors down on a public status page",
+      "icon": "waveform.path.ecg",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "hosts": [
+        "{{{ UPTIME_KUMA_URL }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "prometheus-query.js": {
+      "name": "Prometheus Query",
+      "summary": "Instant value of a PromQL expression",
+      "icon": "flame",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 30,
+      "graph": "sparkline",
+      "hosts": [
+        "{{{ PROMETHEUS_URL }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}
