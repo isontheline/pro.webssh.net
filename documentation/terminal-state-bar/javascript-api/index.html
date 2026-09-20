@@ -2480,6 +2480,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    $http
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#terminal" class="md-nav__link">
     $terminal
   </a>
@@ -3534,6 +3541,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    $http
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#terminal" class="md-nav__link">
     $terminal
   </a>
@@ -3591,7 +3605,7 @@
 
 
 <h1 id="state-bar-javascript-api">State Bar JavaScript API</h1>
-<p>Your own <a href="../">State Bar</a> items are small pieces of JavaScript, executed by WebSSH at the item's <a href="../#refresh-interval">refresh interval</a> (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no network and no <code>require</code>. Only the objects described on this page are available.</p>
+<p>Your own <a href="../">State Bar</a> items are small pieces of JavaScript, executed by WebSSH at the item's <a href="../#refresh-interval">refresh interval</a> (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no <code>require</code>, and no network unless you turn on <a href="../#network-access">Network Access</a> for the item. Only the objects described on this page are available.</p>
 <h2 id="what-the-script-must-return">What the script must return</h2>
 <p>Wrap your code in an immediately invoked function and return either:</p>
 <ul>
@@ -3726,6 +3740,103 @@
 </tr>
 </tbody>
 </table>
+<h2 id="http"><code>$http</code></h2>
+<p>Since WebSSH 32.10. Only exists when <a href="../#network-access">Network Access</a> is turned on for the item: test for it with <code>typeof $http !== 'undefined'</code>. Requests are sent by the device (not by the server), so <code>$http</code> works on mosh sessions too.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$http.get(url)</code></td>
+<td>Object or <code>null</code></td>
+<td>Sends a GET request and waits for the response.</td>
+</tr>
+<tr>
+<td><code>$http.get(url, options)</code></td>
+<td>Object or <code>null</code></td>
+<td>Same, with options (below).</td>
+</tr>
+</tbody>
+</table>
+<p>Options:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>headers</code></td>
+<td>Object (optional)</td>
+<td>Request headers, for example <code>{ Authorization: 'Bearer …', Accept: 'application/json' }</code>.</td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>Number (optional)</td>
+<td>Seconds allowed for the whole request: 3 by default, from 1 to 5.</td>
+</tr>
+</tbody>
+</table>
+<p>Response object:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>Number</td>
+<td>The HTTP status code. A 404 or a 500 is a response, not a failure: check <code>ok</code>.</td>
+</tr>
+<tr>
+<td><code>ok</code></td>
+<td>Boolean</td>
+<td>True when <code>status</code> is between 200 and 299.</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td>String</td>
+<td>The response body as text. Use <code>JSON.parse(r.body)</code> for JSON.</td>
+</tr>
+<tr>
+<td><code>headers</code></td>
+<td>Object</td>
+<td>The response headers, names in lower case.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/status&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Accept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">status</span><span class="p">;</span>
+<span class="p">})();</span>
+</code></pre></div>
+<p><code>$http.get</code> returns <code>null</code>, and writes a <code>console.warn</code> explaining why, when:</p>
+<ul>
+<li>the URL is not <code>http</code> or <code>https</code>;</li>
+<li>the host is not in the <strong>Allowed Hosts</strong> of the item (exact host, or <code>*.example.com</code> for a domain and its subdomains; the port does not matter);</li>
+<li>the server did not answer completely within the timeout, or the connection failed (DNS, TLS, self-signed certificate…);</li>
+<li>the response is larger than 256 KB, or is not text.</li>
+</ul>
+<p>A redirect is followed only when its target is also an allowed host; otherwise the redirect response itself (status 301, 302…) is returned, with a warning. No cookie, cache or credential is kept between two requests. The script waits for the response, and so does the State Bar: keep the timeout low and give the item a long <a href="../#refresh-interval">refresh interval</a> (10 seconds is the minimum with Network Access on).</p>
+<div class="admonition note">
+<p class="admonition-title">eval is disabled</p>
+<p>In a script with Network Access on, <code>eval()</code> and <code>Function()</code> throw an error: a downloaded text can be parsed (<code>JSON.parse</code>), never executed.</p>
+</div>
 <h2 id="terminal"><code>$terminal</code></h2>
 <p>Since WebSSH 30.5.</p>
 <table>
@@ -3843,7 +3954,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:36:36 UTC">September 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 08:08:13 UTC">September 20, 2026</span>
       
     
   </small>

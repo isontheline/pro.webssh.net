@@ -2535,6 +2535,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web-apis" class="md-nav__link">
+    Web APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Web APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-ip-address" class="md-nav__link">
+    Public IP address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-ip-location" class="md-nav__link">
+    Public IP location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    Weather
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-status-page" class="md-nav__link">
+    Service status page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#website-health-check" class="md-nav__link">
+    Website health check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-release-of-a-github-repository" class="md-nav__link">
+    Latest release of a GitHub repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitcoin-price" class="md-nav__link">
+    Bitcoin price
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-assistant-sensor" class="md-nav__link">
+    Home Assistant sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sharing-data-between-items" class="md-nav__link">
     Sharing data between items
   </a>
@@ -3638,6 +3707,75 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web-apis" class="md-nav__link">
+    Web APIs
+  </a>
+  
+    <nav class="md-nav" aria-label="Web APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-ip-address" class="md-nav__link">
+    Public IP address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-ip-location" class="md-nav__link">
+    Public IP location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weather" class="md-nav__link">
+    Weather
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-status-page" class="md-nav__link">
+    Service status page
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#website-health-check" class="md-nav__link">
+    Website health check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#latest-release-of-a-github-repository" class="md-nav__link">
+    Latest release of a GitHub repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitcoin-price" class="md-nav__link">
+    Bitcoin price
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-assistant-sensor" class="md-nav__link">
+    Home Assistant sensor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sharing-data-between-items" class="md-nav__link">
     Sharing data between items
   </a>
@@ -3845,6 +3983,149 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">usagePercent</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="p">};</span>
 <span class="p">})();</span>
 </code></pre></div>
+<h2 id="web-apis">Web APIs</h2>
+<p>Since WebSSH 32.10 a script can call web services with <a href="../javascript-api/#http"><code>$http</code></a>. For each of these examples, turn on <strong>Network Access</strong> in the item and copy the given host into <strong>Allowed Hosts</strong> (<a href="../#network-access">why</a>). Requests are sent by your device, so all of them work on mosh sessions too. These are public services: be kind to them and use the suggested <a href="../#refresh-interval">refresh interval</a>.</p>
+<h3 id="public-ip-address">Public IP address</h3>
+<p>Allowed hosts: <code>api.ipify.org</code>. Refresh: 5 minutes. The public address of your device (not the one of the server).</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.ipify.org&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">trim</span><span class="p">(),</span><span class="w"> </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;globe&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="public-ip-location">Public IP location</h3>
+<p>Allowed hosts: <code>ipinfo.io</code>. Refresh: 10 minutes. City and country of your public address: handy to check at a glance that a VPN is up.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://ipinfo.io/json&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nx">info</span><span class="p">.</span><span class="nx">city</span><span class="p">,</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">country</span><span class="p">].</span><span class="nx">filter</span><span class="p">(</span><span class="nb">Boolean</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">place</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">info</span><span class="p">.</span><span class="nx">ip</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mappin.and.ellipse&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="weather">Weather</h3>
+<p>Allowed hosts: <code>wttr.in</code>. Refresh: 10 minutes. The temperature, with an icon that follows the sky. Leave <code>city</code> empty to let <a href="https://wttr.in/:help">wttr.in</a> locate your public IP address.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Empty city: wttr.in locates the public IP of the device</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Paris&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://wttr.in/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">city</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;?format=%C|%t&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parts</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">trim</span><span class="p">().</span><span class="nx">toLowerCase</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parts</span><span class="p">[</span><span class="mf">1</span><span class="p">].</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud&#39;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;thunder&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud.bolt.rain&#39;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;snow&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;sleet&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;ice&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud.snow&#39;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;rain&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;drizzle&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;shower&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud.rain&#39;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;fog&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;mist&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud.fog&#39;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;partly&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;cloud.sun&#39;</span>
+<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;sunny&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">condition</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s1">&#39;clear&#39;</span><span class="p">))</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sun.max&#39;</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">temperature</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="w"> </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="service-status-page">Service status page</h3>
+<p>Allowed hosts: <code>www.githubstatus.com</code>. Refresh: 5 minutes. Hidden while everything is fine, orange for a minor incident, red otherwise. Works with any <a href="https://www.atlassian.com/software/statuspage">Statuspage</a> site: replace the host, the path <code>/api/v2/status.json</code> is the same.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://www.githubstatus.com/api/v2/status.json&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">status</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">indicator</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// All systems operational: nothing to show</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;GitHub: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">status</span><span class="p">.</span><span class="nx">description</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;exclamationmark.icloud&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">status</span><span class="p">.</span><span class="nx">indicator</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;minor&#39;</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;error&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="website-health-check">Website health check</h3>
+<p>Allowed hosts: the host of your site. Refresh: 1 minute. Shows the response time, turns orange when it is slow and red when the site answers with an error or not at all. With <em>Graph</em> enabled, the sparkline follows the response time.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://example.com/&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">timeout</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">start</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;down&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;xmark.icloud&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">ms</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; ms&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;checkmark.icloud&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;exclamationmark.icloud&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">(</span><span class="nx">ms</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1500</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">ms</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="latest-release-of-a-github-repository">Latest release of a GitHub repository</h3>
+<p>Allowed hosts: <code>api.github.com</code>. Refresh: 10 minutes (GitHub allows 60 anonymous requests per hour and per IP address). Shows the latest tag, with a badge when a release came out since the session started. When the request fails, the last known version stays displayed thanks to <code>$vars</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;mobile-shell/mosh&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.github.com/repos/&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">repo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/releases/latest&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Accept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/vnd.github+json&#39;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Rate limited or offline: keep showing the last known version</span>
+<span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$vars</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;RELEASE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">known</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">known</span><span class="p">,</span><span class="w"> </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shippingbox&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">tag_name</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$vars</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;RELEASE_FIRST&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">$vars</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;RELEASE_FIRST&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">first</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">$vars</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;RELEASE&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tag</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">tag</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shippingbox&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// A release came out since the session started</span>
+<span class="w">        </span><span class="nx">badge</span><span class="o">:</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;new&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">tag</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;success&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="bitcoin-price">Bitcoin price</h3>
+<p>Allowed hosts: <code>api.coinbase.com</code>. Refresh: 1 minute. Enable <em>Graph</em> to get the trend next to the price: <code>value</code> carries the exact number, the label a rounded one.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.coinbase.com/v2/prices/BTC-USD/spot&#39;</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">).</span><span class="nx">data</span><span class="p">.</span><span class="nx">amount</span><span class="p">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;$&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nx">price</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bitcoinsign.circle&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">price</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
+<h3 id="home-assistant-sensor">Home Assistant sensor</h3>
+<p>Allowed hosts: the address of your instance (<code>192.168.1.20</code> here, the port does not matter). Refresh: 30 seconds. Reads one entity through the <a href="https://developers.home-assistant.io/docs/api/rest/">Home Assistant REST API</a> with a long-lived access token (your profile → Security). Plain <code>http</code> is fine on your local network; an instance with a self-signed certificate is not supported.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;http://192.168.1.20:8123&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;YOUR_LONG_LIVED_ACCESS_TOKEN&#39;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">base</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;/api/states/sensor.living_room_temperature&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">sensor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">r</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">sensor</span><span class="p">.</span><span class="nx">attributes</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">sensor</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">unit_of_measurement</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">sensor</span><span class="p">.</span><span class="nx">state</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">unit</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;thermometer.medium&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nb">parseFloat</span><span class="p">(</span><span class="nx">sensor</span><span class="p">.</span><span class="nx">state</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})();</span>
+</code></pre></div>
 <h2 id="sharing-data-between-items">Sharing data between items</h2>
 <p>A key stored with the <code>GLOBAL_</code> prefix is visible to every item of the session. Here a first item reads the uptime once and a second one displays it, without a second remote command.</p>
 <p>Producer item:</p>
@@ -3867,7 +4148,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 19, 2026 16:36:36 UTC">September 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 08:08:13 UTC">September 20, 2026</span>
       
     
   </small>
