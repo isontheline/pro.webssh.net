@@ -192,7 +192,7 @@ Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on
 Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).
 
 ### Items with errors
-A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the State Bar menu shows **Items with Errors (n)**: the list gives the error message of each item, its line, and an **Edit** button. The entry disappears as soon as every item runs fine again.
+A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the menu button of the State Bar (the first icon) wears a **red badge with the number of failing items**, and its menu shows **Items with Errors (n)**: the list gives the error message of each item, its line, and an **Edit** button. The entry disappears as soon as every item runs fine again.
 
 ## Known Issues / Limitations
 * When using `$ssh.exec`, avoid long running commands: they block the State Bar until they finish. Use the [Linux `timeout`](https://www.man7.org/linux/man-pages/man1/timeout.1.html) command to limit the execution time.
