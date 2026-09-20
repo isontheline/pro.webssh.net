@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "files": {
+    "running-guests.js": {
+      "name": "Running Guests",
+      "summary": "Running virtual machines and containers of the node",
+      "icon": "square.stack.3d.up",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "cluster-quorum.js": {
+      "name": "Cluster Quorum",
+      "summary": "Green while the cluster is quorate, hidden on a standalone node",
+      "icon": "checkmark.seal",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "files": {
+    "connection-name.js": {
+      "name": "Connection Name",
+      "summary": "Name of the connection with its own icon",
+      "icon": "server.rack",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "connectivity.js": {
+      "name": "Connectivity",
+      "summary": "Plugged or unplugged cable, red when the connection is down",
+      "icon": "cable.connector",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 3,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "resolved-address.js": {
+      "name": "Resolved Address",
+      "summary": "IP address the SSH engine connected to",
+      "icon": "network",
+      "session": [
+        "ssh"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "user-at-host.js": {
+      "name": "User at Host",
+      "summary": "user@host, highlighted when logged in as root",
+      "icon": "person",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "terminal-size.js": {
+      "name": "Terminal Size",
+      "summary": "Columns x rows of the terminal",
+      "icon": "rectangle.expand.diagonal",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 2,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "mosh-state.js": {
+      "name": "mosh Transport",
+      "summary": "State of the mosh transport, seconds without contact when stale",
+      "icon": "antenna.radiowaves.left.and.right",
+      "session": [
+        "mosh"
+      ],
+      "interval": 2,
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

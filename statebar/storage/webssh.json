@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "files": {
+    "disk-usage.js": {
+      "name": "Disk Usage",
+      "summary": "Usage of a mount point as a progress ring, orange above 75 % and red above 90 %",
+      "icon": "internaldrive",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux",
+        "macos",
+        "freebsd",
+        "openbsd"
+      ],
+      "interval": 60,
+      "graph": "off",
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "disk-free.js": {
+      "name": "Free Disk Space",
+      "summary": "Human readable free space of a mount point",
+      "icon": "internaldrive",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux",
+        "macos",
+        "freebsd",
+        "openbsd"
+      ],
+      "interval": 60,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "inode-usage.js": {
+      "name": "Inode Usage",
+      "summary": "Shown only when more than half of the inodes are used",
+      "icon": "square.stack.3d.up",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 300,
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "zfs-health.js": {
+      "name": "ZFS Health",
+      "summary": "Green while every pool is healthy, red otherwise",
+      "icon": "checkmark.shield",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux",
+        "freebsd"
+      ],
+      "interval": 120,
+      "packages": {
+        "apt": "zfsutils-linux"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "raid-health.js": {
+      "name": "Software RAID Health",
+      "summary": "Linux md arrays: degraded or rebuilding state from /proc/mdstat",
+      "icon": "checkmark.shield",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 120,
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "files": {
+    "server-public-ip.js": {
+      "name": "Server Public IP",
+      "summary": "Public IP address of the server",
+      "icon": "globe",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux",
+        "macos",
+        "freebsd",
+        "openbsd"
+      ],
+      "interval": 600,
+      "packages": {
+        "apt": "curl",
+        "dnf": "curl"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "interface-throughput.js": {
+      "name": "Network Throughput",
+      "summary": "Download and upload rate of the default interface",
+      "icon": "arrow.up.arrow.down",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 3,
+      "graph": "sparkline",
+      "packages": {
+        "apt": "iproute2"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "ping-latency.js": {
+      "name": "Ping Latency",
+      "summary": "Round trip from the server to a host of your choice",
+      "icon": "wifi",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 10,
+      "graph": "sparkline",
+      "packages": {
+        "apt": "iputils-ping"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "listening-ports.js": {
+      "name": "Listening Ports",
+      "summary": "Listening TCP ports, orange when one appeared since the session started",
+      "icon": "antenna.radiowaves.left.and.right",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 30,
+      "packages": {
+        "apt": "iproute2"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "established-connections.js": {
+      "name": "Established Connections",
+      "summary": "Number of established TCP connections",
+      "icon": "point.3.connected.trianglepath.dotted",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 10,
+      "graph": "sparkline",
+      "packages": {
+        "apt": "iproute2"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

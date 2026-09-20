@@ -136,6 +136,10 @@ Since WebSSH 32.10 a script can declare **variables**, with the same syntax as [
 | `{{{ NAME : first : second : third }}}` | list of choices, `first` selected |
 | `{{{ NAME | secret }}}` | masked field, for a token or a password |
 
+Variables come from the script: **add** one by writing a placeholder in the script (the field appears when you come back to the item editor), **remove** one by deleting its placeholder (its value is discarded when you save). This works for your own items as well as for items imported from the library.
+
+No need to remember the syntax: in the script editor, the **{ }** button opens an *Insert Variable* form (name, type, default value or list of choices) and writes the placeholder at the cursor, with the double quotes a URL needs. Leave *Insert as a String* on to get `'{{{ NAME }}}'` ready to use, turn it off when the cursor is already inside a string.
+
 Write a placeholder **inside a JavaScript string**: `let city = '{{{ CITY : Paris }}}'`. The value is escaped, so a quote or a backslash in it cannot break the script. A name used several times is asked once. The *Allowed Hosts* field accepts variables too: with `{{{ URL }}}` the host is taken from the value (`https://ha.local:8123/api` gives `ha.local`).
 
 Values are stored with the item and synchronized like it. The values of `secret` variables are left out of [exported files](#compose-the-state-bar). On a version of WebSSH older than 32.10 an item with variables is hidden.

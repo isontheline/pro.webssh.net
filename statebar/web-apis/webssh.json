@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "files": {
+    "public-ip.js": {
+      "name": "Public IP",
+      "summary": "Public IP address of your device",
+      "icon": "globe",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 300,
+      "hosts": [
+        "api.ipify.org"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "ip-location.js": {
+      "name": "Public IP Location",
+      "summary": "City and country of your public address, handy to check a VPN",
+      "icon": "mappin.and.ellipse",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 600,
+      "hosts": [
+        "ipinfo.io"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "weather.js": {
+      "name": "Weather",
+      "summary": "Temperature with an icon that follows the sky",
+      "icon": "cloud.sun",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 600,
+      "hosts": [
+        "wttr.in"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "status-page.js": {
+      "name": "Service Status Page",
+      "summary": "Incidents of any Statuspage site (GitHub, Cloudflare…), hidden when all is fine",
+      "icon": "exclamationmark.icloud",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 300,
+      "hosts": [
+        "{{{ STATUS_PAGE }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "website-health.js": {
+      "name": "Website Health Check",
+      "summary": "Response time of a URL, red when it fails",
+      "icon": "checkmark.icloud",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "graph": "sparkline",
+      "hosts": [
+        "{{{ URL }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "github-latest-release.js": {
+      "name": "GitHub Latest Release",
+      "summary": "Latest release of a repository, with a badge when a new one comes out",
+      "icon": "shippingbox",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 600,
+      "hosts": [
+        "api.github.com"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "bitcoin-price.js": {
+      "name": "Bitcoin Price",
+      "summary": "Spot price in the currency of your choice, with its trend",
+      "icon": "bitcoinsign.circle",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "graph": "sparkline",
+      "hosts": [
+        "api.coinbase.com"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "json-value.js": {
+      "name": "JSON Value",
+      "summary": "One field of any JSON endpoint, picked with a dotted path",
+      "icon": "curlybraces",
+      "session": [
+        "ssh",
+        "mosh"
+      ],
+      "interval": 60,
+      "hosts": [
+        "{{{ URL }}}"
+      ],
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}
