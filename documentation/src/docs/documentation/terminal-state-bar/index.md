@@ -104,7 +104,7 @@ Three built-in items only affect the layout and can be added as many times as yo
 Since WebSSH 32.10, every item (system, built-in or your own) has three appearance settings. For your own items they are in the item editor; for the others, tap the row in the list to open their settings.
 
 * **Style**: **Plain** (content only, the default), **Bordered** (thin rounded outline) or **Filled** (light rounded background). A `tint` returned by a script still colours every style. To delimit items, use the [Separator](#layout-items) layout item.
-* **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot.
+* **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot. When [Graph](#graph) is on, **Graph only** shows nothing but the curve (the item falls back to icon and label until there are two values to draw).
 * **Maximum label width**: truncates a long label with … beyond 80, 120, 160 or 240 points. Tapping the item still copies the full label.
 
 As every non-layout item now has settings, they show a chevron in the list, and so does the Separator; Space and Flexible Space keep the lock.
@@ -123,7 +123,7 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 A script can also colour its item (`tint`), add a badge on the icon or replace the icon with a progress ring: see the [Item Result Object](javascript-api.md#item-result-object).
 
 ### Graph
-Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: **Off**, **Sparkline** (label + curve) and **Sparkline only** (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
+Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Turn **Graph** on in the item settings; what is shown next to the curve is the [Content](#appearance) setting, which then also offers **Graph only**. The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
 
 ### Variables
 Since WebSSH 32.10 a script can declare **variables**, with the same syntax as [snippets](../help/howtos/snippets.md#dynamic-variables): `{{{ CITY : Paris }}}`. The item editor then shows a *Variables* section with one field per variable, and WebSSH replaces each placeholder by its value every time the item runs. You change the city, the URL or the token **without touching the script**, and items of the [WebSSH Library](library.md) keep your values when their script is updated.
