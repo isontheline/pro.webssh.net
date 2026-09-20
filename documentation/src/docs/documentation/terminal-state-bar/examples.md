@@ -2,7 +2,10 @@
 title: State Bar Examples
 ---
 # State Bar Examples
-Ready to paste items for the [State Bar](index.md). Create an item (Settings → Terminal → State Bar → Add), give it a name and an icon, and paste the script. See the [JavaScript API](javascript-api.md) for the details of what a script can use.
+A few commented items to learn how [State Bar](index.md) scripts work. Create an item (Settings → Terminal → State Bar → Add), give it a name and an icon, and paste the script. See the [JavaScript API](javascript-api.md) for the details of what a script can use.
+
+!!! tip "Looking for ready-made items?"
+    The [WebSSH Library](library.md) holds dozens of items (system, storage, network, Docker, Proxmox, web APIs, homelab…) that you import in one tap, without copying anything.
 
 !!! tip "Built-in first"
     Several of these examples now exist as [built-in items](index.md#built-in-items) (connection, address, terminal size…). They are kept here because they are the simplest way to learn how items work.
@@ -34,15 +37,6 @@ Shows a plugged cable while the SSH connection is up, an unplugged one otherwise
 })();
 ```
 
-### Resolved address
-Returns a scalar: the label is the address and the icon stays the one set in the settings. With the *passthrough* DNS strategy the value is the hostname.
-
-```javascript
-(function() {
-    return $vars.get('WEBSSH_CONNECTION_ADDRESS', '');
-})();
-```
-
 ### Terminal size
 Columns × rows, refreshed when the terminal is resized.
 
@@ -55,50 +49,8 @@ Columns × rows, refreshed when the terminal is resized.
 })();
 ```
 
-### mosh transport state
-On a mosh session, shows the state of the transport and the time since the last contact when it is stale. Hidden on SSH sessions.
-
-```javascript
-(function() {
-    if (typeof $mosh === 'undefined') {
-        return null;
-    }
-    const state = $mosh.state();
-    if (state === 'stale') {
-        return {
-            label: Math.round($mosh.secondsSinceLastContact()) + ' s',
-            icon: 'antenna.radiowaves.left.and.right.slash'
-        };
-    }
-    return {
-        label: state,
-        icon: state === 'connected' ? 'antenna.radiowaves.left.and.right' : 'pause.circle'
-    };
-})();
-```
-
 ## Remote commands
 These examples run a command on the server with `$ssh.exec`. Always bound the execution time with `timeout`, the State Bar waits for the command to finish.
-
-### Remote date
-```javascript
-(function() {
-    let date = $ssh.exec('timeout -k 1s 1s date')
-    return {
-        label: date,
-        icon: 'calendar'
-    }
-})();
-```
-
-### Used disk space on /
-`df` can hang on a stalled mount, hence the 1 second limit.
-
-```javascript
-(function() {
-    return $ssh.exec("timeout -k 1s 1s df -h / | awk 'NR==2 {print $3}'")
-})();
-```
 
 ### Disk usage with a progress ring and a tint
 Same command, but the percentage drives a progress ring instead of the icon, and the item turns orange above 75 % and red above 90 %. With *Graph* enabled, the sparkline follows the percentage.
@@ -137,20 +89,6 @@ Debian / Ubuntu: counts the upgradable packages and shows the count as a badge o
         icon: 'shippingbox',
         badge: count,
         tint: count > 20 ? 'warning' : 'normal'
-    }
-})();
-```
-
-### Load average
-```javascript
-(function() {
-    let load = $ssh.exec("timeout -k 1s 1s cut -d ' ' -f 1-3 /proc/loadavg")
-    if (!load) {
-        return null;
-    }
-    return {
-        label: load.trim(),
-        icon: 'chart.line.uptrend.xyaxis'
     }
 })();
 ```
@@ -222,41 +160,13 @@ Reads `/proc/stat`, keeps the previous snapshot in `$vars` and computes the usag
 ## Web APIs
 Since WebSSH 32.10 a script can call web services with [`$http`](javascript-api.md#http). For each of these examples, turn on **Network Access** in the item and copy the given host into **Allowed Hosts** ([why](index.md#network-access)). Requests are sent by your device, so all of them work on mosh sessions too. These are public services: be kind to them and use the suggested [refresh interval](index.md#refresh-interval).
 
-### Public IP address
-Allowed hosts: `api.ipify.org`. Refresh: 5 minutes. The public address of your device (not the one of the server).
-
-```javascript
-(function() {
-    let r = $http.get('https://api.ipify.org')
-    return r && r.ok ? { label: r.body.trim(), icon: 'globe' } : null;
-})();
-```
-
-### Public IP location
-Allowed hosts: `ipinfo.io`. Refresh: 10 minutes. City and country of your public address: handy to check at a glance that a VPN is up.
-
-```javascript
-(function() {
-    let r = $http.get('https://ipinfo.io/json')
-    if (!r || !r.ok) {
-        return null;
-    }
-    let info = JSON.parse(r.body)
-    let place = [info.city, info.country].filter(Boolean).join(', ')
-    return {
-        label: place || info.ip || '',
-        icon: 'mappin.and.ellipse'
-    }
-})();
-```
-
 ### Weather
-Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon that follows the sky. Leave `city` empty to let [wttr.in](https://wttr.in/:help) locate your public IP address.
+Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon that follows the sky. The city is a [variable](index.md#variables): you set it in the item editor, not in the script. Leave it empty to let [wttr.in](https://wttr.in/:help) locate your public IP address.
 
 ```javascript
 (function() {
     // Empty city: wttr.in locates the public IP of the device
-    let city = 'Paris'
+    let city = '{{{ CITY : Paris }}}'
     let r = $http.get('https://wttr.in/' + encodeURIComponent(city) + '?format=%C|%t')
     if (!r || !r.ok || r.body.indexOf('|') < 0) {
         return null;
@@ -277,34 +187,13 @@ Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon tha
 })();
 ```
 
-### Service status page
-Allowed hosts: `www.githubstatus.com`. Refresh: 5 minutes. Hidden while everything is fine, orange for a minor incident, red otherwise. Works with any [Statuspage](https://www.atlassian.com/software/statuspage) site: replace the host, the path `/api/v2/status.json` is the same.
-
-```javascript
-(function() {
-    let r = $http.get('https://www.githubstatus.com/api/v2/status.json')
-    if (!r || !r.ok) {
-        return null;
-    }
-    let status = JSON.parse(r.body).status
-    if (status.indicator === 'none') {
-        return null; // All systems operational: nothing to show
-    }
-    return {
-        label: 'GitHub: ' + status.description,
-        icon: 'exclamationmark.icloud',
-        tint: status.indicator === 'minor' ? 'warning' : 'error'
-    }
-})();
-```
-
 ### Website health check
-Allowed hosts: the host of your site. Refresh: 1 minute. Shows the response time, turns orange when it is slow and red when the site answers with an error or not at all. With *Graph* enabled, the sparkline follows the response time.
+Allowed hosts: `{{{ URL }}}` (the host is taken from the [variable](index.md#variables)). Refresh: 1 minute. Shows the response time, turns orange when it is slow and red when the site answers with an error or not at all. With *Graph* enabled, the sparkline follows the response time.
 
 ```javascript
 (function() {
     let start = Date.now()
-    let r = $http.get('https://example.com/', { timeout: 5 })
+    let r = $http.get('{{{ URL : "https://example.com/" }}}', { timeout: 5 })
     let ms = Date.now() - start
     if (!r) {
         return { label: 'down', icon: 'xmark.icloud', tint: 'error' };
@@ -314,75 +203,6 @@ Allowed hosts: the host of your site. Refresh: 1 minute. Shows the response time
         icon: r.ok ? 'checkmark.icloud' : 'exclamationmark.icloud',
         tint: r.ok ? (ms > 1500 ? 'warning' : 'normal') : 'error',
         value: ms
-    }
-})();
-```
-
-### Latest release of a GitHub repository
-Allowed hosts: `api.github.com`. Refresh: 10 minutes (GitHub allows 60 anonymous requests per hour and per IP address). Shows the latest tag, with a badge when a release came out since the session started. When the request fails, the last known version stays displayed thanks to `$vars`.
-
-```javascript
-(function() {
-    let repo = 'mobile-shell/mosh'
-    let r = $http.get('https://api.github.com/repos/' + repo + '/releases/latest', {
-        headers: { Accept: 'application/vnd.github+json' }
-    })
-    if (!r || !r.ok) {
-        // Rate limited or offline: keep showing the last known version
-        let known = $vars.get('RELEASE', '')
-        return known ? { label: known, icon: 'shippingbox' } : null;
-    }
-    let tag = JSON.parse(r.body).tag_name
-    let first = $vars.get('RELEASE_FIRST', tag)
-    $vars.set('RELEASE_FIRST', first)
-    $vars.set('RELEASE', tag)
-    return {
-        label: tag,
-        icon: 'shippingbox',
-        // A release came out since the session started
-        badge: tag !== first ? 'new' : '',
-        tint: tag !== first ? 'success' : 'normal'
-    }
-})();
-```
-
-### Bitcoin price
-Allowed hosts: `api.coinbase.com`. Refresh: 1 minute. Enable *Graph* to get the trend next to the price: `value` carries the exact number, the label a rounded one.
-
-```javascript
-(function() {
-    let r = $http.get('https://api.coinbase.com/v2/prices/BTC-USD/spot')
-    if (!r || !r.ok) {
-        return null;
-    }
-    let price = parseFloat(JSON.parse(r.body).data.amount)
-    return {
-        label: '$' + Math.round(price).toLocaleString('en-US'),
-        icon: 'bitcoinsign.circle',
-        value: price
-    }
-})();
-```
-
-### Home Assistant sensor
-Allowed hosts: the address of your instance (`192.168.1.20` here, the port does not matter). Refresh: 30 seconds. Reads one entity through the [Home Assistant REST API](https://developers.home-assistant.io/docs/api/rest/) with a long-lived access token (your profile → Security). Plain `http` is fine on your local network; an instance with a self-signed certificate is not supported.
-
-```javascript
-(function() {
-    let base = 'http://192.168.1.20:8123'
-    let token = 'YOUR_LONG_LIVED_ACCESS_TOKEN'
-    let r = $http.get(base + '/api/states/sensor.living_room_temperature', {
-        headers: { Authorization: 'Bearer ' + token }
-    })
-    if (!r || !r.ok) {
-        return null;
-    }
-    let sensor = JSON.parse(r.body)
-    let unit = (sensor.attributes && sensor.attributes.unit_of_measurement) || ''
-    return {
-        label: sensor.state + ' ' + unit,
-        icon: 'thermometer.medium',
-        value: parseFloat(sensor.state)
     }
 })();
 ```

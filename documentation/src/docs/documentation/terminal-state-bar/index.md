@@ -38,6 +38,7 @@ The former *Recording Button* setting is gone: keep or remove the **Recording** 
 2. Use the add button (top right):
     * **Add**: create your own item, written in JavaScript (see below).
     * **Built-in Items**: pick an item provided by WebSSH (see below).
+    * **WebSSH Library**: import a ready-made item from the [library](library.md).
 3. Drag the handles to reorder the items. Long press (or right click) an item to delete it.
 
 The **⋯** menu offers **Export Items…** and **Import Items…**, to save the whole list in a JSON file and load it back, on another account or to share a setup. The export contains every item in order with its appearance and settings; built-in items are stored as references, your own items with their script. An import first checks the file, then asks for a confirmation since it **replaces all your current items**. Only import files you trust: scripts can run commands on your servers. Built-in items unknown to your version of WebSSH are skipped.
@@ -116,12 +117,28 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 * **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a *Copy name* action: handy to find the names a script can return in `icon`, no Mac needed. The picker's list mode shows all the names.
 * **Graph**: off by default. See [below](#graph).
 * **Network Access**: off by default. See [below](#network-access).
+* **Variables**: shown when the script has some. See [below](#variables).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
 
 A script can also colour its item (`tint`), add a badge on the icon or replace the icon with a progress ring: see the [Item Result Object](javascript-api.md#item-result-object).
 
 ### Graph
 Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: **Off**, **Sparkline** (label + curve) and **Sparkline only** (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
+
+### Variables
+Since WebSSH 32.10 a script can declare **variables**, with the same syntax as [snippets](../help/howtos/snippets.md#dynamic-variables): `{{{ CITY : Paris }}}`. The item editor then shows a *Variables* section with one field per variable, and WebSSH replaces each placeholder by its value every time the item runs. You change the city, the URL or the token **without touching the script**, and items of the [WebSSH Library](library.md) keep your values when their script is updated.
+
+| Syntax | Field |
+| --- | --- |
+| `{{{ NAME }}}` | free text, empty by default |
+| `{{{ NAME : default }}}` | free text, prefilled |
+| `{{{ NAME : "https://example.com" }}}` | double quotes protect `:` and `|` (mandatory for a URL) |
+| `{{{ NAME : first : second : third }}}` | list of choices, `first` selected |
+| `{{{ NAME | secret }}}` | masked field, for a token or a password |
+
+Write a placeholder **inside a JavaScript string**: `let city = '{{{ CITY : Paris }}}'`. The value is escaped, so a quote or a backslash in it cannot break the script. A name used several times is asked once. The *Allowed Hosts* field accepts variables too: with `{{{ URL }}}` the host is taken from the value (`https://ha.local:8123/api` gives `ha.local`).
+
+Values are stored with the item and synchronized like it. The values of `secret` variables are left out of [exported files](#compose-the-state-bar). On a version of WebSSH older than 32.10 an item with variables is hidden.
 
 ### Network access
 Since WebSSH 32.10 a script can call web services with [`$http`](javascript-api.md#http): a weather service, a status page, your Home Assistant, the API of your monitoring… It also gives items something to show on mosh sessions, where `$ssh.exec` is not available. Requests are sent by your device, not by the server.

@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "files": {
+    "running-containers.js": {
+      "name": "Running Containers",
+      "summary": "Number of running containers",
+      "icon": "shippingbox",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 30,
+      "packages": {
+        "apt": "docker.io"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "unhealthy-containers.js": {
+      "name": "Unhealthy Containers",
+      "summary": "Containers failing their health check, hidden when there is none",
+      "icon": "cross.case",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 30,
+      "packages": {
+        "apt": "docker.io"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    },
+    "restarting-containers.js": {
+      "name": "Restarting Containers",
+      "summary": "Containers stuck in a restart loop, hidden when there is none",
+      "icon": "arrow.triangle.2.circlepath",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 30,
+      "packages": {
+        "apt": "docker.io"
+      },
+      "maintainers": [
+        "isontheline"
+      ]
+    }
+  }
+}

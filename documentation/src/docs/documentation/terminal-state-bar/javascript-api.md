@@ -53,6 +53,17 @@ A tinted item with a progress ring and an explicit value:
 !!! tip "Sparkline"
     The script has nothing to do for the sparkline: enable *Graph* in the item settings and WebSSH keeps the last 30 numeric values (from `value`, or the first number of `label`) and draws them next to the label.
 
+## Variables
+Since WebSSH 32.10. A `{{{ NAME : default }}}` placeholder is replaced by the value set in the item editor **before** the script runs, so the script only ever sees plain text. Always put it inside a string literal; the value is escaped for JavaScript. See [Variables](index.md#variables) for the syntax.
+
+```javascript
+(function() {
+    let city = '{{{ CITY : Paris }}}'
+    let units = '{{{ UNITS : metric : imperial }}}'
+    return city + ' (' + units + ')';
+})();
+```
+
 ## `$ssh`
 | Function | Returns | Description |
 | --- | --- | --- |
