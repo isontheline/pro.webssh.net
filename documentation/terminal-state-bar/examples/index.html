@@ -3798,7 +3798,7 @@
 <h2 id="web-apis">Web APIs</h2>
 <p>Since WebSSH 32.10 a script can call web services with <a href="../javascript-api/#http"><code>$http</code></a>. For each of these examples, turn on <strong>Network Access</strong> in the item and copy the given host into <strong>Allowed Hosts</strong> (<a href="../#network-access">why</a>). Requests are sent by your device, so all of them work on mosh sessions too. These are public services: be kind to them and use the suggested <a href="../#refresh-interval">refresh interval</a>.</p>
 <h3 id="weather">Weather</h3>
-<p>Allowed hosts: <code>wttr.in</code>. Refresh: 10 minutes. The temperature, with an icon that follows the sky. The city is a <a href="../#variables">variable</a>: you set it in the item editor, not in the script. Leave it empty to let <a href="https://wttr.in/:help">wttr.in</a> locate your public IP address.</p>
+<p>Allowed hosts: <code>wttr.in</code>. Refresh: 10 minutes. The temperature, with an icon that follows the sky. The <a href="../library/">library</a> version of this item goes further: it reads the JSON forecast and returns a <a href="../javascript-api/#item-result-object"><code>detail</code></a> text, so that tapping the item shows the conditions of the moment and the next three days. The city is a <a href="../#variables">variable</a>: you set it in the item editor, not in the script. Leave it empty to let <a href="https://wttr.in/:help">wttr.in</a> locate your public IP address.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Empty city: wttr.in locates the public IP of the device</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{{ CITY : Paris }}}&#39;</span>
@@ -3860,7 +3860,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 11:35:32 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 15:38:50 UTC">September 20, 2026</span>
       
     
   </small>
