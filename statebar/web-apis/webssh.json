@@ -35,7 +35,7 @@
     },
     "weather.js": {
       "name": "Weather",
-      "summary": "Temperature with an icon that follows the sky",
+      "summary": "Temperature with an icon that follows the sky, and a 3-day forecast when you tap the item",
       "icon": "cloud.sun",
       "session": [
         "ssh",

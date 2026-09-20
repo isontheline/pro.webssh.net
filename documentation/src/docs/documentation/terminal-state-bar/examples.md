@@ -161,7 +161,7 @@ Reads `/proc/stat`, keeps the previous snapshot in `$vars` and computes the usag
 Since WebSSH 32.10 a script can call web services with [`$http`](javascript-api.md#http). For each of these examples, turn on **Network Access** in the item and copy the given host into **Allowed Hosts** ([why](index.md#network-access)). Requests are sent by your device, so all of them work on mosh sessions too. These are public services: be kind to them and use the suggested [refresh interval](index.md#refresh-interval).
 
 ### Weather
-Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon that follows the sky. The city is a [variable](index.md#variables): you set it in the item editor, not in the script. Leave it empty to let [wttr.in](https://wttr.in/:help) locate your public IP address.
+Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon that follows the sky. The [library](library.md) version of this item goes further: it reads the JSON forecast and returns a [`detail`](javascript-api.md#item-result-object) text, so that tapping the item shows the conditions of the moment and the next three days. The city is a [variable](index.md#variables): you set it in the item editor, not in the script. Leave it empty to let [wttr.in](https://wttr.in/:help) locate your public IP address.
 
 ```javascript
 (function() {
