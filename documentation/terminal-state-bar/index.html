@@ -2522,6 +2522,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#item-details" class="md-nav__link">
+    Item details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#items-with-errors" class="md-nav__link">
+    Items with errors
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3660,6 +3674,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#item-details" class="md-nav__link">
+    Item details
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#items-with-errors" class="md-nav__link">
+    Items with errors
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3936,7 +3964,18 @@
 <h3 id="refresh-interval">Refresh interval</h3>
 <p>Since WebSSH 32.10, each item that is recomputed (your own items and the built-in value items) has its own <strong>refresh interval</strong>: 1, 2, 3 (the default), 5, 10, 15 or 30 seconds, then 1, 2, 5 or 10 minutes. It is in the item editor for your items, and in the settings of a built-in item. Keep a short interval for cheap local values such as a clock, and prefer a long one for scripts that run remote commands: a command that runs every minute costs twenty times less than the default, and a value that rarely changes (pending updates, certificate expiry…) is fine at 5 or 10 minutes. Items with <a href="#network-access">Network Access</a> start at 10 seconds. A run that is still in progress is never started again by the next beat, so a slow script simply refreshes less often than asked.</p>
 <p>Items are only recomputed while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.</p>
-<p>Tap an item to copy its label; right click (or long press) offers the same.</p>
+<h3 id="item-details">Item details</h3>
+<p>Since WebSSH 32.10, tap (or click) an item to open its <strong>details</strong>: a popover on Mac and iPad, a sheet on iPhone.</p>
+<ul>
+<li>the <strong>full value</strong>, even when the bar only shows an icon, a curve or a truncated label, with its badge and progress;</li>
+<li>a <strong>large graph</strong> of the history when <a href="#graph">Graph</a> is on: up to 120 values (the bar draws the last 30), with minimum, average, maximum and last value;</li>
+<li>the <strong>details</strong> returned by the script, when it provides some (the list of pending packages, the names of the unhealthy containers, every mount point…): see <a href="javascript-api/#item-result-object"><code>detail</code></a>;</li>
+<li>when it was <strong>last updated</strong>, its refresh interval and how long the last run took (orange above 1 second, red above 3);</li>
+<li>actions: <strong>Copy</strong>, <strong>Refresh</strong> (this item only, right now), <strong>Edit</strong> (opens the item in the settings) and, for an item of the <a href="library/">library</a>, <strong>View Source</strong>.</li>
+</ul>
+<p>Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).</p>
+<h3 id="items-with-errors">Items with errors</h3>
+<p>A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the State Bar menu shows <strong>Items with Errors (n)</strong>: the list gives the error message of each item, its line, and an <strong>Edit</strong> button. The entry disappears as soon as every item runs fine again.</p>
 <h2 id="known-issues-limitations">Known Issues / Limitations</h2>
 <ul>
 <li>When using <code>$ssh.exec</code>, avoid long running commands: they block the State Bar until they finish. Use the <a href="https://www.man7.org/linux/man-pages/man1/timeout.1.html">Linux <code>timeout</code></a> command to limit the execution time.</li>
@@ -3950,7 +3989,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 12:38:13 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 15:24:56 UTC">September 20, 2026</span>
       
     
   </small>
