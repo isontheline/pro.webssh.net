@@ -3903,6 +3903,8 @@
 </tr>
 </tbody>
 </table>
+<p>Variables come from the script: <strong>add</strong> one by writing a placeholder in the script (the field appears when you come back to the item editor), <strong>remove</strong> one by deleting its placeholder (its value is discarded when you save). This works for your own items as well as for items imported from the library.</p>
+<p>No need to remember the syntax: in the script editor, the <strong>{ }</strong> button opens an <em>Insert Variable</em> form (name, type, default value or list of choices) and writes the placeholder at the cursor, with the double quotes a URL needs. Leave <em>Insert as a String</em> on to get <code>'{{{ NAME }}}'</code> ready to use, turn it off when the cursor is already inside a string.</p>
 <p>Write a placeholder <strong>inside a JavaScript string</strong>: <code>let city = '{{{ CITY : Paris }}}'</code>. The value is escaped, so a quote or a backslash in it cannot break the script. A name used several times is asked once. The <em>Allowed Hosts</em> field accepts variables too: with <code>{{{ URL }}}</code> the host is taken from the value (<code>https://ha.local:8123/api</code> gives <code>ha.local</code>).</p>
 <p>Values are stored with the item and synchronized like it. The values of <code>secret</code> variables are left out of <a href="#compose-the-state-bar">exported files</a>. On a version of WebSSH older than 32.10 an item with variables is hidden.</p>
 <h3 id="network-access">Network access</h3>
@@ -3948,7 +3950,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 11:35:32 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 12:21:25 UTC">September 20, 2026</span>
       
     
   </small>
