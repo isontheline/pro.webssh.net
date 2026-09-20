@@ -2,7 +2,7 @@
 title: State Bar JavaScript API
 ---
 # State Bar JavaScript API
-Your own [State Bar](index.md) items are small pieces of JavaScript, executed by WebSSH at the item's [refresh interval](index.md#refresh-interval) (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no network and no `require`. Only the objects described on this page are available.
+Your own [State Bar](index.md) items are small pieces of JavaScript, executed by WebSSH at the item's [refresh interval](index.md#refresh-interval) (3 seconds by default, from 1 second to 10 minutes) while you are not typing. The code runs in a sandbox: there is no DOM, no `require`, and no network unless you turn on [Network Access](index.md#network-access) for the item. Only the objects described on this page are available.
 
 ## What the script must return
 Wrap your code in an immediately invoked function and return either:
@@ -71,6 +71,52 @@ Available on mosh sessions only (since WebSSH 32.9). Test for it with `typeof $m
 | `$mosh.isAlive()` | Boolean | True while the session exists, including when stale or suspended. |
 | `$mosh.isConnected()` | Boolean | True when the server answered recently. |
 | `$mosh.secondsSinceLastContact()` | Number | Seconds since the last datagram from the server, `-1` when the server was never heard. |
+
+## `$http`
+Since WebSSH 32.10. Only exists when [Network Access](index.md#network-access) is turned on for the item: test for it with `typeof $http !== 'undefined'`. Requests are sent by the device (not by the server), so `$http` works on mosh sessions too.
+
+| Function | Returns | Description |
+| --- | --- | --- |
+| `$http.get(url)` | Object or `null` | Sends a GET request and waits for the response. |
+| `$http.get(url, options)` | Object or `null` | Same, with options (below). |
+
+Options:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `headers` | Object (optional) | Request headers, for example `{ Authorization: 'Bearer …', Accept: 'application/json' }`. |
+| `timeout` | Number (optional) | Seconds allowed for the whole request: 3 by default, from 1 to 5. |
+
+Response object:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| `status` | Number | The HTTP status code. A 404 or a 500 is a response, not a failure: check `ok`. |
+| `ok` | Boolean | True when `status` is between 200 and 299. |
+| `body` | String | The response body as text. Use `JSON.parse(r.body)` for JSON. |
+| `headers` | Object | The response headers, names in lower case. |
+
+```javascript
+(function() {
+    let r = $http.get('https://api.example.com/status', { headers: { Accept: 'application/json' } })
+    if (!r || !r.ok) {
+        return null;
+    }
+    return JSON.parse(r.body).status;
+})();
+```
+
+`$http.get` returns `null`, and writes a `console.warn` explaining why, when:
+
+* the URL is not `http` or `https`;
+* the host is not in the **Allowed Hosts** of the item (exact host, or `*.example.com` for a domain and its subdomains; the port does not matter);
+* the server did not answer completely within the timeout, or the connection failed (DNS, TLS, self-signed certificate…);
+* the response is larger than 256 KB, or is not text.
+
+A redirect is followed only when its target is also an allowed host; otherwise the redirect response itself (status 301, 302…) is returned, with a warning. No cookie, cache or credential is kept between two requests. The script waits for the response, and so does the State Bar: keep the timeout low and give the item a long [refresh interval](index.md#refresh-interval) (10 seconds is the minimum with Network Access on).
+
+!!! note "eval is disabled"
+    In a script with Network Access on, `eval()` and `Function()` throw an error: a downloaded text can be parsed (`JSON.parse`), never executed.
 
 ## `$terminal`
 Since WebSSH 30.5.

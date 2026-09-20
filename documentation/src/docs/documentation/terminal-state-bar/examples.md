@@ -219,6 +219,174 @@ Reads `/proc/stat`, keeps the previous snapshot in `$vars` and computes the usag
 })();
 ```
 
+## Web APIs
+Since WebSSH 32.10 a script can call web services with [`$http`](javascript-api.md#http). For each of these examples, turn on **Network Access** in the item and copy the given host into **Allowed Hosts** ([why](index.md#network-access)). Requests are sent by your device, so all of them work on mosh sessions too. These are public services: be kind to them and use the suggested [refresh interval](index.md#refresh-interval).
+
+### Public IP address
+Allowed hosts: `api.ipify.org`. Refresh: 5 minutes. The public address of your device (not the one of the server).
+
+```javascript
+(function() {
+    let r = $http.get('https://api.ipify.org')
+    return r && r.ok ? { label: r.body.trim(), icon: 'globe' } : null;
+})();
+```
+
+### Public IP location
+Allowed hosts: `ipinfo.io`. Refresh: 10 minutes. City and country of your public address: handy to check at a glance that a VPN is up.
+
+```javascript
+(function() {
+    let r = $http.get('https://ipinfo.io/json')
+    if (!r || !r.ok) {
+        return null;
+    }
+    let info = JSON.parse(r.body)
+    let place = [info.city, info.country].filter(Boolean).join(', ')
+    return {
+        label: place || info.ip || '',
+        icon: 'mappin.and.ellipse'
+    }
+})();
+```
+
+### Weather
+Allowed hosts: `wttr.in`. Refresh: 10 minutes. The temperature, with an icon that follows the sky. Leave `city` empty to let [wttr.in](https://wttr.in/:help) locate your public IP address.
+
+```javascript
+(function() {
+    // Empty city: wttr.in locates the public IP of the device
+    let city = 'Paris'
+    let r = $http.get('https://wttr.in/' + encodeURIComponent(city) + '?format=%C|%t')
+    if (!r || !r.ok || r.body.indexOf('|') < 0) {
+        return null;
+    }
+    let parts = r.body.trim().split('|')
+    let condition = parts[0].trim().toLowerCase()
+    let temperature = parts[1].replace('+', '')
+
+    let icon = 'cloud'
+    if (condition.includes('thunder')) icon = 'cloud.bolt.rain'
+    else if (condition.includes('snow') || condition.includes('sleet') || condition.includes('ice')) icon = 'cloud.snow'
+    else if (condition.includes('rain') || condition.includes('drizzle') || condition.includes('shower')) icon = 'cloud.rain'
+    else if (condition.includes('fog') || condition.includes('mist')) icon = 'cloud.fog'
+    else if (condition.includes('partly')) icon = 'cloud.sun'
+    else if (condition.includes('sunny') || condition.includes('clear')) icon = 'sun.max'
+
+    return { label: temperature, icon }
+})();
+```
+
+### Service status page
+Allowed hosts: `www.githubstatus.com`. Refresh: 5 minutes. Hidden while everything is fine, orange for a minor incident, red otherwise. Works with any [Statuspage](https://www.atlassian.com/software/statuspage) site: replace the host, the path `/api/v2/status.json` is the same.
+
+```javascript
+(function() {
+    let r = $http.get('https://www.githubstatus.com/api/v2/status.json')
+    if (!r || !r.ok) {
+        return null;
+    }
+    let status = JSON.parse(r.body).status
+    if (status.indicator === 'none') {
+        return null; // All systems operational: nothing to show
+    }
+    return {
+        label: 'GitHub: ' + status.description,
+        icon: 'exclamationmark.icloud',
+        tint: status.indicator === 'minor' ? 'warning' : 'error'
+    }
+})();
+```
+
+### Website health check
+Allowed hosts: the host of your site. Refresh: 1 minute. Shows the response time, turns orange when it is slow and red when the site answers with an error or not at all. With *Graph* enabled, the sparkline follows the response time.
+
+```javascript
+(function() {
+    let start = Date.now()
+    let r = $http.get('https://example.com/', { timeout: 5 })
+    let ms = Date.now() - start
+    if (!r) {
+        return { label: 'down', icon: 'xmark.icloud', tint: 'error' };
+    }
+    return {
+        label: ms + ' ms',
+        icon: r.ok ? 'checkmark.icloud' : 'exclamationmark.icloud',
+        tint: r.ok ? (ms > 1500 ? 'warning' : 'normal') : 'error',
+        value: ms
+    }
+})();
+```
+
+### Latest release of a GitHub repository
+Allowed hosts: `api.github.com`. Refresh: 10 minutes (GitHub allows 60 anonymous requests per hour and per IP address). Shows the latest tag, with a badge when a release came out since the session started. When the request fails, the last known version stays displayed thanks to `$vars`.
+
+```javascript
+(function() {
+    let repo = 'mobile-shell/mosh'
+    let r = $http.get('https://api.github.com/repos/' + repo + '/releases/latest', {
+        headers: { Accept: 'application/vnd.github+json' }
+    })
+    if (!r || !r.ok) {
+        // Rate limited or offline: keep showing the last known version
+        let known = $vars.get('RELEASE', '')
+        return known ? { label: known, icon: 'shippingbox' } : null;
+    }
+    let tag = JSON.parse(r.body).tag_name
+    let first = $vars.get('RELEASE_FIRST', tag)
+    $vars.set('RELEASE_FIRST', first)
+    $vars.set('RELEASE', tag)
+    return {
+        label: tag,
+        icon: 'shippingbox',
+        // A release came out since the session started
+        badge: tag !== first ? 'new' : '',
+        tint: tag !== first ? 'success' : 'normal'
+    }
+})();
+```
+
+### Bitcoin price
+Allowed hosts: `api.coinbase.com`. Refresh: 1 minute. Enable *Graph* to get the trend next to the price: `value` carries the exact number, the label a rounded one.
+
+```javascript
+(function() {
+    let r = $http.get('https://api.coinbase.com/v2/prices/BTC-USD/spot')
+    if (!r || !r.ok) {
+        return null;
+    }
+    let price = parseFloat(JSON.parse(r.body).data.amount)
+    return {
+        label: '$' + Math.round(price).toLocaleString('en-US'),
+        icon: 'bitcoinsign.circle',
+        value: price
+    }
+})();
+```
+
+### Home Assistant sensor
+Allowed hosts: the address of your instance (`192.168.1.20` here, the port does not matter). Refresh: 30 seconds. Reads one entity through the [Home Assistant REST API](https://developers.home-assistant.io/docs/api/rest/) with a long-lived access token (your profile → Security). Plain `http` is fine on your local network; an instance with a self-signed certificate is not supported.
+
+```javascript
+(function() {
+    let base = 'http://192.168.1.20:8123'
+    let token = 'YOUR_LONG_LIVED_ACCESS_TOKEN'
+    let r = $http.get(base + '/api/states/sensor.living_room_temperature', {
+        headers: { Authorization: 'Bearer ' + token }
+    })
+    if (!r || !r.ok) {
+        return null;
+    }
+    let sensor = JSON.parse(r.body)
+    let unit = (sensor.attributes && sensor.attributes.unit_of_measurement) || ''
+    return {
+        label: sensor.state + ' ' + unit,
+        icon: 'thermometer.medium',
+        value: parseFloat(sensor.state)
+    }
+})();
+```
+
 ## Sharing data between items
 A key stored with the `GLOBAL_` prefix is visible to every item of the session. Here a first item reads the uptime once and a second one displays it, without a second remote command.
 

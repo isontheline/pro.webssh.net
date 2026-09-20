@@ -44,7 +44,16 @@ The **⋯** menu offers **Export Items…** and **Import Items…**, to save the
 
 The same menu offers **Reset to Defaults**: after a confirmation, every saved item is deleted, your own scripts included, and the bar gets its original items back. As the list is synchronized through iCloud, the reset applies to your other devices too.
 
-A **preview of the bar** sits above the list and follows every change: order, appearance, separators and flexible spaces are exact. Built-in items show their real value when a session is open (read locally, nothing is sent to the server), your own items show their icon and name since scripts are not run here (use [Test](#test-your-item) for that), and the Progress item is shown with a sample value so you can see where it will appear. The preview uses the theme of the open session, and scrolls sideways when the bar is wider than the screen. To find which element of the bar a row stands for, on iPhone and iPad choose *Locate in the Bar* in the context menu of the row (long press): the preview scrolls to the item and flashes it, which is especially handy for spaces, flexible spaces and separators. On the Mac, simply hovering a row highlights its item, which also works with a pointer on iPad.
+A **preview of the bar** sits above the list and follows every change: order, appearance, separators and flexible spaces are exact. The Progress item is shown with a sample value so you can see where it will appear. The preview uses the theme of the open session, and scrolls sideways when the bar is wider than the screen.
+
+The preview has two modes, shown under it:
+
+* **Sample values**: built-in items show their real value when a session is open (read locally, nothing is sent to the server) and your own items show their icon and name. No script runs.
+* **Live**: the preview runs your items for real, with the same engine as the State Bar of a terminal: remote commands, `$http` requests, refresh intervals, tints, badges and sparklines (which start from the history of the session's bar). When you open the settings from the **Customize…** entry of a State Bar, the preview is live on that session straight away. Otherwise tap **▶︎** and choose one of the open sessions; **■** goes back to the sample values. With no open session, ▶︎ still runs the items that use `$http`, while `$ssh.exec` returns `null`.
+
+In live mode the preview behaves like the bar of the chosen session: an item whose tags do not match that connection is not run and is drawn dimmed. An item that returns nothing (hidden in the real bar) keeps its icon and name here, so that it stays visible while you edit. The `$vars` of the preview are its own, and the State Bar of that session is paused while the preview runs (one engine at a time on the connection), then resumes when you leave. When you leave the settings after a change, the State Bars of the open sessions are rebuilt with the new list: no need to restart them.
+
+To find which element of the bar a row stands for, on iPhone and iPad choose *Locate in the Bar* in the context menu of the row (long press): the preview scrolls to the item and flashes it, which is especially handy for spaces, flexible spaces and separators. On the Mac, simply hovering a row highlights its item, which also works with a pointer on iPad.
 
 Changes are saved immediately and synchronized through iCloud like the rest of your data. When the settings were opened from a State Bar menu, that bar is rebuilt when you leave them; other open terminals pick up the changes with Restart in their State Bar menu.
 
@@ -106,12 +115,25 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 * **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection. The default items only exist while your list is empty: once you have a list, a connection that matches none of your tagged items shows just the items that apply to it (system and built-in items always do).
 * **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a *Copy name* action: handy to find the names a script can return in `icon`, no Mac needed. The picker's list mode shows all the names.
 * **Graph**: off by default. See [below](#graph).
+* **Network Access**: off by default. See [below](#network-access).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
 
 A script can also colour its item (`tint`), add a badge on the icon or replace the icon with a progress ring: see the [Item Result Object](javascript-api.md#item-result-object).
 
 ### Graph
 Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Three modes: **Off**, **Sparkline** (label + curve) and **Sparkline only** (the curve replaces the label). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
+
+### Network access
+Since WebSSH 32.10 a script can call web services with [`$http`](javascript-api.md#http): a weather service, a status page, your Home Assistant, the API of your monitoring… It also gives items something to show on mosh sessions, where `$ssh.exec` is not available. Requests are sent by your device, not by the server.
+
+Nothing reaches the network unless you allow it, item by item:
+
+* turn on **Network Access** in the item editor: until then `$http` does not exist for that script;
+* list the **Allowed Hosts** the script may contact, separated by commas: `api.example.com, 192.168.1.10`. Use `*.example.com` for a domain and all its subdomains. A pasted URL is reduced to its host. Any other host is refused, including through a redirect.
+
+WebSSH never asks anything while the bar is running: a refused request simply returns `null` and writes a warning that the [test panel](#test-your-item) shows live. With Network Access on, the item is refreshed every 10 seconds at most (shorter [refresh intervals](#refresh-interval) are not offered), and `eval` and `Function` are disabled in the script so that a downloaded text can never be executed.
+
+When you **import** items from a file, Network Access is always switched off on the imported items (the host list is kept): open the item, check its script and its hosts, then turn it back on.
 
 ### Test your item
 Since WebSSH 32.10 you can test an item while you write it, without saving anything. The test needs a session that is already open (SSH or mosh, where the State Bar is available): with no open session the test is not offered.
@@ -126,14 +148,14 @@ The panel runs the script on the selected session exactly like the State Bar doe
 * the **duration** of the run, orange above 1 second and red above 3 seconds;
 * the **console** output (`console.log`, `console.warn`…);
 * **errors** with their line and column: from the script editor, tap the error to jump to the line;
-* **warnings** for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown `tint`, `progress` outside 0…1, long badge.
+* **warnings** for values WebSSH tolerates but you probably did not intend: unknown SF Symbol, unknown `tint`, `progress` outside 0…1, long badge, `$http` used while Network Access is off.
 
 **Run once** executes a single run. **Run every N s** reproduces the real rhythm of the item, using its [refresh interval](#refresh-interval), which scripts keeping state in `$vars` and sparklines need. The `$vars` of the test persist between runs and are separate from the real bar; **Reset** clears them along with the sparkline history and the console.
 
 Leaving the item editor with unsaved changes now asks to save, discard or cancel.
 
 ### Refresh interval
-Since WebSSH 32.10, each item that is recomputed (your own items and the built-in value items) has its own **refresh interval**: 1, 2, 3 (the default), 5, 10, 15 or 30 seconds, then 1, 2, 5 or 10 minutes. It is in the item editor for your items, and in the settings of a built-in item. Keep a short interval for cheap local values such as a clock, and prefer a long one for scripts that run remote commands: a command that runs every minute costs twenty times less than the default, and a value that rarely changes (pending updates, certificate expiry…) is fine at 5 or 10 minutes. A run that is still in progress is never started again by the next beat, so a slow script simply refreshes less often than asked.
+Since WebSSH 32.10, each item that is recomputed (your own items and the built-in value items) has its own **refresh interval**: 1, 2, 3 (the default), 5, 10, 15 or 30 seconds, then 1, 2, 5 or 10 minutes. It is in the item editor for your items, and in the settings of a built-in item. Keep a short interval for cheap local values such as a clock, and prefer a long one for scripts that run remote commands: a command that runs every minute costs twenty times less than the default, and a value that rarely changes (pending updates, certificate expiry…) is fine at 5 or 10 minutes. Items with [Network Access](#network-access) start at 10 seconds. A run that is still in progress is never started again by the next beat, so a slow script simply refreshes less often than asked.
 
 Items are only recomputed while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
 
