@@ -180,7 +180,19 @@ Since WebSSH 32.10, each item that is recomputed (your own items and the built-i
 
 Items are only recomputed while you are not typing. Typing in the terminal pauses the updates until you stop. The Pause entry of the State Bar menu pauses them explicitly (diagonal stripes are drawn over the bar), Refresh forces a run, Restart rebuilds the bar.
 
-Tap an item to copy its label; right click (or long press) offers the same.
+### Item details
+Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on Mac and iPad, a sheet on iPhone.
+
+* the **full value**, even when the bar only shows an icon, a curve or a truncated label, with its badge and progress;
+* a **large graph** of the history when [Graph](#graph) is on: up to 120 values (the bar draws the last 30), with minimum, average, maximum and last value;
+* the **details** returned by the script, when it provides some (the list of pending packages, the names of the unhealthy containers, every mount point…): see [`detail`](javascript-api.md#item-result-object);
+* when it was **last updated**, its refresh interval and how long the last run took (orange above 1 second, red above 3);
+* actions: **Copy**, **Refresh** (this item only, right now), **Edit** (opens the item in the settings) and, for an item of the [library](library.md), **View Source**.
+
+Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).
+
+### Items with errors
+A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the State Bar menu shows **Items with Errors (n)**: the list gives the error message of each item, its line, and an **Edit** button. The entry disappears as soon as every item runs fine again.
 
 ## Known Issues / Limitations
 * When using `$ssh.exec`, avoid long running commands: they block the State Bar until they finish. Use the [Linux `timeout`](https://www.man7.org/linux/man-pages/man1/timeout.1.html) command to limit the execution time.

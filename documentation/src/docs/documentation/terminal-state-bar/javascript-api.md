@@ -25,6 +25,7 @@ Wrap your code in an immediately invoked function and return either:
 | `tint`[^3] | String (optional) | `normal` (default), `success`, `warning` or `error`. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the Connection info item. Anything else is treated as `normal`. When the tint would not be readable on the bar of the current theme (a red tint on a red bar, for example), the item is drawn as an inverted pill instead: a background in the bar's text colour with the content in the tint colour. |
 | `badge`[^3] | Number, String (optional) | A small capsule drawn on the top right corner of the icon, for counts (pending updates, alerts…). `0`, an empty string or an absent value removes it. |
 | `progress`[^3] | Number (optional) | `0` to `1`. Replaces the icon with a small progress ring. Values outside the range are clamped. |
+| `detail`[^3] | String, Array of Strings (optional) | Free text shown in the [details](index.md#item-details) of the item when it is tapped, in a fixed-width font: keep the bar short and put the list here (pending packages, failing units, every mount point…). An array is joined with line breaks. Limited to 8000 characters. |
 | `value`[^3] | Number (optional) | The numeric value used by the [sparkline](index.md#graph). When omitted, the first number found in `label` is used. |
 
 ```javascript
@@ -168,7 +169,7 @@ A missing variable returns `undefined`: always provide a fallback (`$vars.get('W
 The log is a daily file stored in the WebSSH folder of the Files app (macOS: the app's Documents folder), kept for 7 days. It is only written when *File Logger Level* in Settings → Advanced Settings is not disabled; `console.debug` and `console.trace` need the Debug level, `console.log` and `console.info` the Info level.
 
 ## Error handling
-A JavaScript exception is written to the log (see `console` above) and, as the script returned nothing, the item is hidden until a later run succeeds. The [test panel](index.md#test-your-item) shows the message with its line and column. A malformed Item Result Object (for example an `icon` that is not a string) is logged too and the item keeps its previous content.
+A JavaScript exception is listed in **Items with Errors** of the State Bar menu ([see](index.md#items-with-errors)), written to the log (see `console` above) and, as the script returned nothing, the item is hidden until a later run succeeds. The [test panel](index.md#test-your-item) shows the message with its line and column. A malformed Item Result Object (for example an `icon` that is not a string) is logged too and the item keeps its previous content.
 
 [^1]: Since WebSSH 29.6.
 [^2]: Since WebSSH 32.10. Before that version `WEBSSH_CONNECTION_NAME`, `WEBSSH_CONNECTION_HOST` and `WEBSSH_CONNECTION_USERNAME` were only filled on SSH sessions.

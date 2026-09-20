@@ -40,6 +40,7 @@ Rules:
 - Return `null` when there is nothing to show (command missing, no sensor…): never an error text.
 - Prefer hiding the item when all is fine (`pending updates`, `failed services`…): a quiet bar is a useful bar.
 - Use `tint`, `badge`, `progress` and `value` rather than text when they say it better.
+- Keep the label short and put lists in `detail` (shown when the item is tapped): package names, failing units, every mount point…
 - No `eval()`, no `Function()`.
 
 ### Variables

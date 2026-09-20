@@ -11,6 +11,7 @@
         label: names.length === 1 ? names[0] : 'unhealthy',
         icon: 'cross.case',
         badge: names.length,
-        tint: 'error'
+        tint: 'error',
+        detail: names.join('\n')
     };
 })();
