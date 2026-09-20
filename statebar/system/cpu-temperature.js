@@ -9,6 +9,7 @@
         label: celsius + ' °C',
         icon: celsius >= 70 ? 'thermometer.high' : 'thermometer.medium',
         tint: celsius >= 85 ? 'error' : (celsius >= 70 ? 'warning' : 'normal'),
-        value: celsius
+        value: celsius,
+        unit: '°C'
     };
 })();

@@ -8,6 +8,7 @@
     return {
         label: Math.round(price).toLocaleString('en-US') + ' ' + currency,
         icon: 'bitcoinsign.circle',
-        value: price // exact number for the sparkline
+        value: price, // exact number for the graph
+        unit: currency
     };
 })();

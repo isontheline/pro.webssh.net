@@ -35,6 +35,7 @@
         label: usage + ' %',
         icon,
         tint: usage >= 90 ? 'error' : (usage >= 75 ? 'warning' : 'normal'),
-        value: usage
+        value: usage,
+        unit: '%'
     };
 })();

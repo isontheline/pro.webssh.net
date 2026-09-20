@@ -12,6 +12,7 @@
         label: Math.round(ms) + ' ms',
         icon: 'wifi',
         tint: ms > 150 ? 'warning' : 'normal',
-        value: ms
+        value: ms,
+        unit: 'ms'
     };
 })();

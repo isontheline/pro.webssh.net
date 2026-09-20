@@ -13,6 +13,7 @@
         icon: 'memorychip',
         progress: percent / 100,
         tint: percent >= 90 ? 'error' : (percent >= 75 ? 'warning' : 'normal'),
-        value: percent
+        value: percent,
+        unit: '%'
     };
 })();

@@ -184,7 +184,7 @@ Items are only recomputed while you are not typing. Typing in the terminal pause
 Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on Mac and iPad, a sheet on iPhone.
 
 * the **full value**, even when the bar only shows an icon, a curve or a truncated label, with its badge and progress;
-* a **large graph** of the history when [Graph](#graph) is on: up to 120 values (the bar draws the last 30), with minimum, average, maximum and last value;
+* a **large graph** of the history when [Graph](#graph) is on: up to 120 values (the bar draws the last 30) on a real time axis, with minimum, average, maximum and last value. Touch or hover the curve to read a value and its time. Values use the [`unit`](javascript-api.md#item-result-object) returned by the script (*12.3 MB/s* rather than *12309214*); rates, durations and percentages are drawn from zero;
 * the **details** returned by the script, when it provides some (the list of pending packages, the names of the unhealthy containers, every mount point…): see [`detail`](javascript-api.md#item-result-object);
 * when it was **last updated**, its refresh interval and how long the last run took (orange above 1 second, red above 3);
 * actions: **Copy**, **Refresh** (this item only, right now), **Edit** (opens the item in the settings) and, for an item of the [library](library.md), **View Source**.

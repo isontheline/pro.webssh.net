@@ -14,6 +14,7 @@
         label: (sensor.state + ' ' + unit).trim(),
         icon: 'house',
         tint: sensor.state === 'unavailable' ? 'warning' : 'normal',
-        value: isNaN(number) ? undefined : number
+        value: isNaN(number) ? undefined : number,
+        unit: unit || undefined
     };
 })();

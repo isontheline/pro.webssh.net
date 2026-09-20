@@ -13,6 +13,7 @@
         progress: percent / 100, // replaces the icon with a ring
         tint: percent >= 90 ? 'error' : (percent >= 75 ? 'warning' : 'normal'),
         value: percent,
+        unit: '%',
         detail: all ? all.trim() : undefined
     };
 })();

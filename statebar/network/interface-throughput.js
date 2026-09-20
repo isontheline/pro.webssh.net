@@ -18,12 +18,13 @@
     }
     function rate(bytes) {
         let perSecond = Math.max(0, bytes) / seconds
-        if (perSecond >= 1048576) return (perSecond / 1048576).toFixed(1) + ' MB/s'
-        return Math.round(perSecond / 1024) + ' kB/s'
+        if (perSecond >= 1000000) return (perSecond / 1000000).toFixed(1) + ' MB/s'
+        return Math.round(perSecond / 1000) + ' kB/s'
     }
     return {
         label: '↓ ' + rate(now.rx - before.rx) + '  ↑ ' + rate(now.tx - before.tx),
         icon: 'arrow.up.arrow.down',
-        value: Math.max(0, now.rx - before.rx) / seconds
+        value: Math.max(0, now.rx - before.rx) / seconds, // download rate, for the graph
+        unit: 'bytes/s'
     };
 })();

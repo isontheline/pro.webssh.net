@@ -9,6 +9,7 @@
         label: r.ok ? ms + ' ms' : 'HTTP ' + r.status,
         icon: r.ok ? 'checkmark.icloud' : 'exclamationmark.icloud',
         tint: r.ok ? (ms > 1500 ? 'warning' : 'normal') : 'error',
-        value: ms // response time, for the sparkline
+        value: ms, // response time, for the sparkline
+        unit: 'ms'
     };
 })();
