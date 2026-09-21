@@ -28,7 +28,7 @@
     <loc>https://webssh.net/support/</loc>
 
     
-    <lastmod>2026-05-07T20:34:08+00:00</lastmod>
+    <lastmod>2026-09-21T19:38:03+00:00</lastmod>
 
       
       
@@ -42,7 +42,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>daily</changefreq>
         
       
     
@@ -460,7 +460,31 @@
     <loc>https://webssh.net/documentation/changelog/32/</loc>
 
     
-    <lastmod>2026-09-06T16:17:42+00:00</lastmod>
+    <lastmod>2026-09-21T19:38:03+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/changelog/33/</loc>
+
+    
+    <lastmod>2026-09-21T19:38:03+00:00</lastmod>
 
       
       
