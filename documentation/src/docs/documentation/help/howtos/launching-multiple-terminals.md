@@ -7,6 +7,7 @@ title: Multiple connections
 In order to use multiple features at same time (SSH, SFTP, mashREPL, ping, ...) on macOS, you can either :
 * launch a new window (<code>Cmd + N</code>) 
 * launch a new tab (<code>Cmd + T</code>) 
+* switch to a tab (<code>Cmd + 1</code> … <code>Cmd + 8</code>, <code>Cmd + 9</code> for the last tab)
 
 ## iPad
 On iPad you can also use multiple connections :
