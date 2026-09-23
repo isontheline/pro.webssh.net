@@ -3682,7 +3682,7 @@
 <ul>
 <li><strong>What to run</strong>: a saved <strong>Snippet</strong> (chosen from your library), or a one-shot <strong>Command</strong> typed in the field. The last ten one-shot commands are kept under <em>Recent commands</em>; a one-shot command can later be turned into a snippet from the report (<strong>Save as snippet</strong>).</li>
 <li><strong>Where to run</strong>: your SSH connections, grouped by <a href="../arrange-connections-inside-folders/">folder</a>, with a search field, tag chips and <em>Select all</em> buttons. Telnet and port forwarding entries are not listed.</li>
-<li><strong>Settings</strong>: how many <strong>hosts run in parallel</strong> (1 to 8, default 4) and the <strong>timeout per host</strong> (15 s to 10 min, default 1 min). Both are remembered.</li>
+<li><strong>Settings</strong>: how many <strong>hosts run in parallel</strong> (1 to 8, default 4) and an optional <strong>timeout per host</strong> (none by default, up to 1 h): a long <code>apt upgrade</code> is never cut short by a guess, and <strong>Stop</strong> is always there for a command that hangs. Both are remembered.</li>
 </ul>
 <p>Tap <strong>Run on N hosts</strong>. If the command uses <a href="../snippets/#dynamic-variables">dynamic variables</a>, the usual form appears <strong>once</strong>: the values you type apply to every host. The built-in variables (<code>{{{ HOST }}}</code>, <code>{{{ USER }}}</code>, <code>{{{ PORT }}}</code>, <code>{{{ CONNECTION }}}</code>, <code>{{{ DATE }}}</code>) are not asked: they are filled <strong>per host</strong> from each connection.</p>
 <h2 id="confirmation">Confirmation</h2>
@@ -3702,7 +3702,7 @@
 <ul>
 <li><strong>No terminal, no PTY</strong>: the command runs on an SSH <em>exec</em> channel. Interactive programs (<code>top</code>, <code>vim</code>, <code>tmux</code>…), <code>sudo</code> asking for a password and any prompt will block until the timeout. Prefer <code>sudo -n</code>, <code>apt-get -y</code>, <code>DEBIAN_FRONTEND=noninteractive</code>… or set up <code>NOPASSWD</code> in <code>sudoers</code>.</li>
 <li><strong>Snippets sending key strokes</strong> (<code>&lt;ctrl-…&gt;</code>, <code>&lt;esc&gt;</code>, <code>&lt;tab&gt;</code>…) are refused: they need a terminal.</li>
-<li><strong>Timeout</strong>: a command still running after the timeout is stopped (the channel is closed, which ends the remote process) and reported as <em>Timed out</em>.</li>
+<li><strong>Timeout</strong>: off by default. When set, a command still running after the timeout is stopped (the channel is closed, which ends the remote process) and reported as <em>Timed out</em>.</li>
 <li><strong>Output</strong> is kept up to 256 KB per host.</li>
 <li><strong>mosh</strong> and <strong>Telnet</strong> connections are not eligible.</li>
 </ul>
@@ -3716,7 +3716,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 15:12:14 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 15:43:51 UTC">September 23, 2026</span>
       
     
   </small>
