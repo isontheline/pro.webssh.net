@@ -19,7 +19,7 @@ There are three ways to open the *Run on Hosts* sheet:
 
 * **What to run**: a saved **Snippet** (chosen from your library), or a one-shot **Command** typed in the field. The last ten one-shot commands are kept under *Recent commands*; a one-shot command can later be turned into a snippet from the report (**Save as snippet**).
 * **Where to run**: your SSH connections, grouped by [folder](arrange-connections-inside-folders.md), with a search field, tag chips and *Select all* buttons. Telnet and port forwarding entries are not listed.
-* **Settings**: how many **hosts run in parallel** (1 to 8, default 4) and the **timeout per host** (15 s to 10 min, default 1 min). Both are remembered.
+* **Settings**: how many **hosts run in parallel** (1 to 8, default 4) and an optional **timeout per host** (none by default, up to 1 h): a long `apt upgrade` is never cut short by a guess, and **Stop** is always there for a command that hangs. Both are remembered.
 
 Tap **Run on N hosts**. If the command uses [dynamic variables](snippets.md#dynamic-variables), the usual form appears **once**: the values you type apply to every host. The built-in variables (`{{{ HOST }}}`, `{{{ USER }}}`, `{{{ PORT }}}`, `{{{ CONNECTION }}}`, `{{{ DATE }}}`) are not asked: they are filled **per host** from each connection.
 
@@ -46,7 +46,7 @@ Every host goes through the same pipeline as a terminal session: `ssh_config` ov
 
 * **No terminal, no PTY**: the command runs on an SSH *exec* channel. Interactive programs (`top`, `vim`, `tmux`…), `sudo` asking for a password and any prompt will block until the timeout. Prefer `sudo -n`, `apt-get -y`, `DEBIAN_FRONTEND=noninteractive`… or set up `NOPASSWD` in `sudoers`.
 * **Snippets sending key strokes** (`<ctrl-…>`, `<esc>`, `<tab>`…) are refused: they need a terminal.
-* **Timeout**: a command still running after the timeout is stopped (the channel is closed, which ends the remote process) and reported as *Timed out*.
+* **Timeout**: off by default. When set, a command still running after the timeout is stopped (the channel is closed, which ends the remote process) and reported as *Timed out*.
 * **Output** is kept up to 256 KB per host.
 * **mosh** and **Telnet** connections are not eligible.
 
