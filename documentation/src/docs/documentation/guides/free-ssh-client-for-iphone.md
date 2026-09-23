@@ -1,13 +1,13 @@
 ---
-title: Free SSH Client for iPhone — WebSSH
-description: WebSSH is the best free SSH client for iPhone. Connect to remote servers, manage files with SFTP, run diagnostics, and stay in control of your infrastructure — all from your iPhone.
+title: "Free SSH Client for iPhone: No Subscription, No Account"
+description: "Full SSH, SFTP and Telnet terminal on iPhone, free. One-time Pro upgrade, no subscription, no cloud relay: your keys stay on your device. Works offline with a built-in shell."
 ---
 
-# Free SSH Client for iPhone: Full Terminal Access in Your Pocket
+# Free SSH Client for iPhone — No Subscription, No Account Required
 
 Whether you're an on-call sysadmin, a developer who needs to push a hotfix at midnight, or a network engineer troubleshooting from the road, **WebSSH** gives you a full-featured SSH client on your iPhone — for free.
 
-No subscription. No complicated setup. Just open the app, connect, and get to work.
+No subscription. No account to create. No complicated setup. Just open the app, connect, and get to work.
 
 ---
 
@@ -102,6 +102,10 @@ Your session opens in a full terminal interface optimized for mobile input, with
 
 Yes. The free version of WebSSH lets you connect to any SSH server with all features enabled. The only limitation is that you can only save one connection at a time. Upgrade to Pro for unlimited saved connections.
 
+### Do I need to create an account to use WebSSH?
+
+No. WebSSH has no sign-up, no login, and no WebSSH account of any kind. Your connections, keys, and settings are stored on your iPhone. If you want them on your iPad or Mac too, you can optionally sync them through your own [iCloud](/documentation/help/iCloud/) account — nothing ever goes through a WebSSH server.
+
 ### Is it safe to use WebSSH on iPhone over public Wi-Fi?
 
 SSH itself encrypts your entire session, so using WebSSH over public Wi-Fi is as secure as any SSH connection. WebSSH also doesn't route your traffic through any third-party servers — the connection is directly from your iPhone to your remote host.
@@ -126,8 +130,89 @@ Yes. You can tap and hold in the terminal to select text, copy it to your clipbo
 
 Yes. When adding a connection, you can specify any port number. The default is 22, but you can enter any custom port your server is configured to use.
 
+## Related Guides
+
+- [Transfer Files via SFTP on iPhone and iPad](/documentation/guides/sftp-file-transfer-iphone/)
+- [SSH Port Forwarding on iOS — Tunnels on iPhone & iPad](/documentation/guides/port-forwarding-ios/)
+- [Public / Private Key Authentication](/documentation/help/SSH/public-private-key/)
+- [Best SSH Client for iOS Without a Subscription](/documentation/guides/no-subscription-ssh-client-ios/)
+- [Free SSH Client for iPad](/documentation/guides/free-ssh-client-for-ipad/)
+
 ## Download WebSSH for iPhone
 
 Ready to connect? WebSSH is free to download and free to use.
 
 [Download on the App Store →](https://apps.apple.com/app/id497714887)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is WebSSH really free on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The free version of WebSSH lets you connect to any SSH server with all features enabled. The only limitation is that you can only save one connection at a time. Upgrade to Pro (a one-time purchase, not a subscription) for unlimited saved connections."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account to use WebSSH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. WebSSH has no sign-up, no login, and no WebSSH account of any kind. Your connections, keys, and settings are stored on your iPhone, with optional sync through your own iCloud account. Nothing goes through a WebSSH server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to use WebSSH on iPhone over public Wi-Fi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SSH itself encrypts your entire session, so using WebSSH over public Wi-Fi is as secure as any SSH connection. WebSSH also doesn't route your traffic through any third-party servers: the connection goes directly from your iPhone to your remote host."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What iPhone models does WebSSH support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebSSH runs on any iPhone that supports iOS 26 or later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use SSH keys stored in the iOS Files app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can import your private key files (PEM, OpenSSH, or PuTTY format) from the iOS Files app or any compatible cloud storage provider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH support two-factor authentication (2FA)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH supports challenge-response authentication, which is used by servers configured with Google Authenticator, Duo, and other TOTP-based 2FA systems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy and paste in SSH sessions on iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can tap and hold in the terminal to select text, copy it to your clipboard, and paste it into any field. The keyboard accessory row also includes dedicated paste and clipboard controls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH work with non-standard SSH ports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. When adding a connection, you can specify any port number. The default is 22, but you can enter any custom port your server is configured to use."
+      }
+    }
+  ]
+}
+</script>

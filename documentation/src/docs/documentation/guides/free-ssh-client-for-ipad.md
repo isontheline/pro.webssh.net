@@ -1,11 +1,11 @@
 ---
-title: Free SSH Client for iPad — WebSSH
-description: WebSSH is the best free SSH client for iPad. Enjoy a full terminal on a large screen, Split View multitasking, external keyboard support, SFTP file management, and built-in network diagnostics.
+title: "Free SSH Client for iPad: No Subscription, No Account"
+description: "Full SSH, SFTP and Telnet terminal on iPad, free. External keyboard, Split View and Stage Manager support. One-time Pro upgrade, no subscription, no cloud relay: your keys stay on your iPad."
 ---
 
-# Free SSH Client for iPad: Your Portable Sysadmin Workstation
+# Free SSH Client for iPad — No Subscription, No Account Required
 
-The iPad's large screen, external keyboard support, and multitasking capabilities make it an exceptional platform for remote server management — and **WebSSH** is built to take full advantage of it. Whether you're working from a coffee shop, a conference, or the couch, WebSSH turns your iPad into a capable SSH terminal with no monthly fees.
+The iPad's large screen, external keyboard support, and multitasking capabilities make it an exceptional platform for remote server management — and **WebSSH** is built to take full advantage of it. Whether you're working from a coffee shop, a conference, or the couch, WebSSH turns your iPad into a capable SSH terminal with no monthly fees and no account to create.
 
 ---
 
@@ -110,6 +110,10 @@ The terminal interface on iPad renders clearly at full screen. You can enable th
 
 Yes. You can download and use WebSSH for free with full feature access. The only limitation is one saved connection at a time. The Pro upgrade (one-time purchase) removes this limit.
 
+### Do I need to create an account to use WebSSH on iPad?
+
+No. There is no sign-up and no login. Your connections, keys, and settings live on your iPad, and you can optionally sync them to your iPhone and Mac through your own [iCloud](/documentation/help/iCloud/) account. WebSSH never sees them.
+
 ### Does WebSSH support external keyboards on iPad?
 
 Yes. WebSSH works with all Bluetooth and Smart Connector keyboards on iPad. Standard terminal shortcuts like `Ctrl+C`, `Ctrl+Z`, `Tab`, and arrow keys all work natively in SSH sessions.
@@ -142,8 +146,106 @@ Yes. WebSSH works over any network connection — Wi-Fi, 5G, LTE, or even person
 
 Yes. WebSSH Pro is a universal purchase. One payment through the App Store unlocks Pro on all devices sharing the same Apple ID, including iPhone and Mac.
 
+## Related Guides
+
+- [Transfer Files via SFTP on iPhone and iPad](/documentation/guides/sftp-file-transfer-iphone/)
+- [SSH Port Forwarding on iOS — Tunnels on iPhone & iPad](/documentation/guides/port-forwarding-ios/)
+- [Public / Private Key Authentication](/documentation/help/SSH/public-private-key/)
+- [Keyboard Shortcuts & Combo Keys](/documentation/help/SSH/keyboard-shortcuts-combo-keys/)
+- [Best SSH Client for iOS Without a Subscription](/documentation/guides/no-subscription-ssh-client-ios/)
+- [Free SSH Client for iPhone](/documentation/guides/free-ssh-client-for-iphone/)
+
 ## Download WebSSH for iPad
 
 Free to download. No subscription. Works on every iPad running iPadOS 26 or later.
 
 [Download on the App Store →](https://apps.apple.com/app/id497714887)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is WebSSH free to use on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can download and use WebSSH for free with full feature access. The only limitation is one saved connection at a time. The Pro upgrade (a one-time purchase, not a subscription) removes this limit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account to use WebSSH on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no sign-up and no login. Your connections, keys, and settings live on your iPad, with optional sync to your iPhone and Mac through your own iCloud account. WebSSH never sees them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH support external keyboards on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH works with all Bluetooth and Smart Connector keyboards on iPad. Standard terminal shortcuts like Ctrl+C, Ctrl+Z, Tab, and arrow keys all work natively in SSH sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Split View with WebSSH on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH supports iPad multitasking, including Split View and Slide Over. This lets you run WebSSH alongside a browser, notes app, or another SSH session."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What iPad models does WebSSH support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebSSH supports iPadOS 26 or later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the iPad as a laptop replacement for SSH work with WebSSH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For many sysadmin and DevOps tasks, yes. With an iPad Pro or iPad Air, an external keyboard, and WebSSH Pro's unlimited connections, you can manage multiple servers, transfer files via SFTP, and run network diagnostics without a laptop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data safe when using WebSSH on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH is entirely local: it does not route your sessions through any third-party servers or cloud infrastructure. Your connection goes directly from your iPad to your remote host, and all sessions are encrypted by the SSH protocol itself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I import SSH keys from cloud storage on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH integrates with the iOS Files app, so you can import private key files (PEM, OpenSSH, PuTTY .ppk) from iCloud Drive, Dropbox, Google Drive, or any compatible provider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH work over 5G or LTE on iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH works over any network connection: Wi-Fi, 5G, LTE, or personal hotspot. As long as you can reach your server's SSH port from your current network, WebSSH will connect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does buying WebSSH Pro on iPad also cover iPhone and Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH Pro is a universal purchase. One payment through the App Store unlocks Pro on all devices sharing the same Apple ID, including iPhone and Mac."
+      }
+    }
+  ]
+}
+</script>
