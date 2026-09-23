@@ -152,6 +152,8 @@ Yes. WebSSH Pro is a universal purchase. One payment through the App Store unloc
 - [SSH Port Forwarding on iOS — Tunnels on iPhone & iPad](/documentation/guides/port-forwarding-ios/)
 - [Public / Private Key Authentication](/documentation/help/SSH/public-private-key/)
 - [Keyboard Shortcuts & Combo Keys](/documentation/help/SSH/keyboard-shortcuts-combo-keys/)
+- [Edit a config file on a remote server from iPhone or iPad](/documentation/guides/edit-config-file-remote-server-iphone/)
+- [SSH disconnects on iPhone: how to keep sessions alive](/documentation/guides/keep-ssh-session-alive-iphone/)
 - [Best SSH Client for iOS Without a Subscription](/documentation/guides/no-subscription-ssh-client-ios/)
 - [Free SSH Client for iPhone](/documentation/guides/free-ssh-client-for-iphone/)
 

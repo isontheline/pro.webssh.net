@@ -106,3 +106,5 @@ See [SSH Public / Private Key Pair](/documentation/help/SSH/public-private-key/)
 - [Dynamic Port Forwarding](/documentation/help/networking/dynamic-port-forwarding/)
 - [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/)
 - [Port Knocking](/documentation/help/networking/port-knocking/) — hide your SSH port until you knock
+- [Wake your PC or server from iPhone with Wake-on-LAN](/documentation/guides/wake-pc-remotely-from-iphone/)
+- [Automate SSH on iPhone with Shortcuts and deep links](/documentation/guides/ssh-apple-shortcuts-iphone/)

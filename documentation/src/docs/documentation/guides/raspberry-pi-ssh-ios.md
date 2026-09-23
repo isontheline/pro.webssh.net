@@ -118,7 +118,7 @@ WebSSH lets you open multiple SSH sessions simultaneously. Useful when you need 
     The public key isn't correctly installed on the Pi. Check that `~/.ssh/authorized_keys` contains your key, and that permissions are `700` for `~/.ssh` and `600` for `authorized_keys`.
 
 ??? question "Connection drops when I switch apps"
-    This is an iOS background execution limit. On iPad, use Split View or Slide Over to keep WebSSH visible. See [tmux](/documentation/help/howtos/tmux/create-attach-existing-tmux-session/) to keep your session alive server-side regardless of the iOS connection state.
+    This is an iOS background execution limit. On iPad, use Split View or Slide Over to keep WebSSH visible. See [tmux on iPhone](/documentation/guides/tmux-iphone-persistent-ssh-sessions/) to keep your session alive server-side regardless of the iOS connection state, and [why SSH disconnects on iPhone](/documentation/guides/keep-ssh-session-alive-iphone/) for the other options, including mosh.
 
 ## Related Documentation
 

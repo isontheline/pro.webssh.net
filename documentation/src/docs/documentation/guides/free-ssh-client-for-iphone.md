@@ -135,6 +135,8 @@ Yes. When adding a connection, you can specify any port number. The default is 2
 - [Transfer Files via SFTP on iPhone and iPad](/documentation/guides/sftp-file-transfer-iphone/)
 - [SSH Port Forwarding on iOS — Tunnels on iPhone & iPad](/documentation/guides/port-forwarding-ios/)
 - [Public / Private Key Authentication](/documentation/help/SSH/public-private-key/)
+- [Restart a server or service from your iPhone](/documentation/guides/restart-server-from-iphone/)
+- [SSH disconnects on iPhone: how to keep sessions alive](/documentation/guides/keep-ssh-session-alive-iphone/)
 - [Best SSH Client for iOS Without a Subscription](/documentation/guides/no-subscription-ssh-client-ios/)
 - [Free SSH Client for iPad](/documentation/guides/free-ssh-client-for-ipad/)
 

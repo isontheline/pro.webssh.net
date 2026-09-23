@@ -110,6 +110,7 @@ See [iCloud Sync](/documentation/help/iCloud/).
 ## Related Documentation
 
 - [Startup Folder Path](/documentation/help/howtos/SFTP/startup-folder-path/)
+- [Edit a config file on a remote server from iPhone or iPad](/documentation/guides/edit-config-file-remote-server-iphone/)
 - [Search and Replace in Text Editor](/documentation/help/howtos/SFTP/search-replace-text-editor/)
 - [iCloud Sync](/documentation/help/iCloud/)
 - [Launching Multiple Terminals](/documentation/help/howtos/launching-multiple-terminals/)
