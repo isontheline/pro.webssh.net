@@ -1105,10 +1105,58 @@
   </url>
   
   <url>
+    <loc>https://webssh.net/documentation/guides/check-server-logs-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/edit-config-file-remote-server-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-ipad/</loc>
 
     
-    <lastmod>2026-09-23T07:02:05+00:00</lastmod>
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
 
       
       
@@ -1132,7 +1180,7 @@
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-iphone/</loc>
 
     
-    <lastmod>2026-09-23T07:02:05+00:00</lastmod>
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
 
       
       
@@ -1156,7 +1204,7 @@
     <loc>https://webssh.net/documentation/guides/homelab-ssh-tunnel-ios/</loc>
 
     
-    <lastmod>2026-03-15T21:11:45+00:00</lastmod>
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
 
       
       
@@ -1170,7 +1218,31 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/keep-ssh-session-alive-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
@@ -1228,7 +1300,7 @@
     <loc>https://webssh.net/documentation/guides/raspberry-pi-ssh-ios/</loc>
 
     
-    <lastmod>2026-03-15T21:11:45+00:00</lastmod>
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
 
       
       
@@ -1242,7 +1314,31 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/restart-server-from-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
@@ -1252,7 +1348,7 @@
     <loc>https://webssh.net/documentation/guides/sftp-file-transfer-iphone/</loc>
 
     
-    <lastmod>2026-03-15T21:11:45+00:00</lastmod>
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
 
       
       
@@ -1266,7 +1362,31 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/ssh-apple-shortcuts-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
@@ -1315,6 +1435,54 @@
 
         
           <changefreq>monthly</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/tmux-iphone-persistent-ssh-sessions/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/wake-pc-remotely-from-iphone/</loc>
+
+    
+    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
