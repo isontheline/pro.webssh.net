@@ -30,6 +30,9 @@ To use a snippet in your connection terminal:
 3. Select the snippet you want to insert from the list
 4. The command/script from the snippet will be inserted into your terminal, ready to be executed
 
+## Run a snippet on several hosts
+Since WebSSH 33.0 a snippet can be run on several connections at once, without opening a terminal: long press the snippet and choose **Run on Hosts**. See [Run a command on multiple hosts](run-snippet-on-multiple-hosts.md).
+
 ## Dynamic variables
 A snippet can ask for values when it runs. Write a placeholder between triple braces and WebSSH shows a small form before sending the command:
 
