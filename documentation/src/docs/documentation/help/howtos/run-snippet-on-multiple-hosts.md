@@ -7,14 +7,11 @@ title: Run a command on multiple hosts
 ??? abstract "What is it?"
     Since WebSSH 33.0, a snippet — or a command typed for the occasion — can be run on **several saved connections at once**. WebSSH connects to each host in the background, runs the command **without opening a terminal**, and gathers every result in a single **report**: status, exit code, duration and output, host by host.
 
-!!! info "WebSSH PRO"
-    Running on hosts is a [WebSSH PRO](/documentation/pricing/) feature.
-
 ## Where to start from
 
 There are three ways to open the *Run on Hosts* sheet:
 
-1. **From a snippet**: in the *Snippets* section, long press (or right click) a snippet and choose **Run on Hosts**. The hosts linked to the snippet through [tags](link-connections-using-tags.md) are preselected.
+1. **From a snippet**: in the *Snippets* section, tap a snippet (or choose **Run on Hosts** in its context menu; editing is there too). The hosts linked to the snippet through [tags](link-connections-using-tags.md) are preselected.
 2. **From a selection of servers**: in the *Servers* section, choose **Select** in the `⋯` menu, tick the hosts, then tap the **▶︎** button in the navigation bar. The selection is preselected and you then pick a snippet, or type a command.
 3. **From the Servers menu**: choose **Run on Hosts…** in the `⋯` menu of the *Servers* section, then pick everything in the sheet.
 
