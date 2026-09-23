@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://webssh.net/documentation/help/howtos/snippets/">
       
       
-        <link rel="prev" href="../pasting-clipboard-content/">
+        <link rel="prev" href="../run-snippet-on-multiple-hosts/">
       
       
         <link rel="next" href="../switch-language/">
@@ -1797,6 +1797,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../run-snippet-on-multiple-hosts/" class="md-nav__link">
+        Run a command on multiple hosts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1842,6 +1856,13 @@
         <li class="md-nav__item">
   <a href="#how-to-use-a-snippet" class="md-nav__link">
     How to use a snippet?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-snippet-on-several-hosts" class="md-nav__link">
+    Run a snippet on several hosts
   </a>
   
 </li>
@@ -1935,17 +1956,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_14" type="checkbox" id="__nav_3_13_5_14" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_15" type="checkbox" id="__nav_3_13_5_15" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_5_14" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_13_5_15" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_13_5_14">
+        <label class="md-nav__title" for="__nav_3_13_5_15">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2011,17 +2032,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_15" type="checkbox" id="__nav_3_13_5_15" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_16" type="checkbox" id="__nav_3_13_5_16" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_5_15" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_13_5_16" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_13_5_15">
+        <label class="md-nav__title" for="__nav_3_13_5_16">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2129,17 +2150,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_16" type="checkbox" id="__nav_3_13_5_16" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_17" type="checkbox" id="__nav_3_13_5_17" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_5_16" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_13_5_17" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_13_5_16">
+        <label class="md-nav__title" for="__nav_3_13_5_17">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2233,17 +2254,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_17" type="checkbox" id="__nav_3_13_5_17" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_18" type="checkbox" id="__nav_3_13_5_18" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_13_5_17" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_13_5_18" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_13_5_17">
+        <label class="md-nav__title" for="__nav_3_13_5_18">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -3608,6 +3629,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#run-a-snippet-on-several-hosts" class="md-nav__link">
+    Run a snippet on several hosts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dynamic-variables" class="md-nav__link">
     Dynamic variables
   </a>
@@ -3682,6 +3710,8 @@
 <li>Select the snippet you want to insert from the list</li>
 <li>The command/script from the snippet will be inserted into your terminal, ready to be executed</li>
 </ol>
+<h2 id="run-a-snippet-on-several-hosts">Run a snippet on several hosts</h2>
+<p>Since WebSSH 33.0 a snippet can be run on several connections at once, without opening a terminal: long press the snippet and choose <strong>Run on Hosts</strong>. See <a href="../run-snippet-on-multiple-hosts/">Run a command on multiple hosts</a>.</p>
 <h2 id="dynamic-variables">Dynamic variables</h2>
 <p>A snippet can ask for values when it runs. Write a placeholder between triple braces and WebSSH shows a small form before sending the command:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;You are {{{ NAME : Awesome }}}!&quot;</span>
@@ -3768,7 +3798,7 @@ mysql<span class="w"> </span>-u<span class="w"> </span><span class="o">{{{</span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 16, 2026 07:49:39 UTC">September 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 14:22:56 UTC">September 23, 2026</span>
       
     
   </small>
