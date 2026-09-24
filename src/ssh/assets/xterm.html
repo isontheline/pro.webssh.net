@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="xterm.css" />
     <link rel="stylesheet" href="xterm-webssh.css" />
 
+    <!-- Boot errors buffer (#1727) : TerminalHelper.logError only exists once
+         xterm-webssh.js has run, so an error thrown while one of the addon
+         files below loads (e.g. @xterm/addon-image reading the WebAssembly
+         global under iOS Lockdown Mode) would otherwise be lost. Buffer them
+         here and flush them through logError once it is available. -->
+    <script>
+      window.__earlyErrors = [];
+      window.addEventListener("error", (e) => window.__earlyErrors.push(e));
+    </script>
+
     <script src="xterm-scrolly.js"></script>
     <script src="base64.js"></script>
     <script src="xterm-tests.js"></script>
@@ -37,6 +47,8 @@
 
     <script>
       window.addEventListener("error", TerminalHelper.logError);
+      window.__earlyErrors.forEach(TerminalHelper.logError);
+      window.__earlyErrors = [];
 
       const terminalSettings = TerminalHelper.extractTerminalSettings(
         window.location.hash
@@ -84,22 +96,47 @@
       // per image, cache of 32 MB on iOS / 64 MB on macOS (evicted images
       // show a placeholder pattern). The addon also answers DA1 with ";4"
       // (SIXEL) and the CSI 14/16/18 t size reports used by img2sixel/chafa.
+      // iOS Lockdown Mode (#1727) removes the WebAssembly global : the addon
+      // file then throws while loading and ImageAddon is never defined. An
+      // optional addon must never prevent terminal.open() below, so feature
+      // detect and keep any failure local (imageAddon stays null, the imgcat
+      // shim and the DA1 handler in xterm-webssh.js already cope with that).
       let imageAddon = null;
-      if (terminalSettings.inlineImagesStrategy != "disabled") {
-        imageAddon = new ImageAddon.ImageAddon({
-          enableSizeReports: true,
-          sixelSupport: true,
-          sixelScrolling: true,
-          sixelPaletteLimit: 256,
-          sixelSizeLimit: 10000000,
-          iipSupport: true,
-          iipSizeLimit: 10000000,
-          pixelLimit: 4194304,
-          storageLimit: terminalSettings.isMacOS ? 64 : 32,
-          showPlaceholder: true,
+      const canUseInlineImages =
+        terminalSettings.inlineImagesStrategy != "disabled" &&
+        typeof WebAssembly !== "undefined" &&
+        typeof ImageAddon !== "undefined";
+      if (canUseInlineImages) {
+        try {
+          imageAddon = new ImageAddon.ImageAddon({
+            enableSizeReports: true,
+            sixelSupport: true,
+            sixelScrolling: true,
+            sixelPaletteLimit: 256,
+            sixelSizeLimit: 10000000,
+            iipSupport: true,
+            iipSizeLimit: 10000000,
+            pixelLimit: 4194304,
+            storageLimit: terminalSettings.isMacOS ? 64 : 32,
+            showPlaceholder: true,
+          });
+          imageAddon._addonType = "ImageAddon";
+          terminal.loadAddon(imageAddon);
+        } catch (e) {
+          imageAddon = null;
+          TerminalHelper.logError({
+            message: "Inline images addon unavailable",
+            error: e,
+            lineno: 0,
+          });
+        }
+      } else if (terminalSettings.inlineImagesStrategy != "disabled") {
+        TerminalHelper.logError({
+          message:
+            "Inline images addon skipped (WebAssembly or ImageAddon unavailable, Lockdown Mode ?)",
+          error: null,
+          lineno: 0,
         });
-        imageAddon._addonType = "ImageAddon";
-        terminal.loadAddon(imageAddon);
       }
       // <- Inline images
 
