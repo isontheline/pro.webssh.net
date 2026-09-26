@@ -15,7 +15,7 @@
         "openbsd"
       ],
       "interval": 60,
-      "graph": "off",
+      "graph": "history",
       "maintainers": [
         "isontheline"
       ],

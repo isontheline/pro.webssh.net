@@ -47,7 +47,8 @@
       "interval": 10,
       "maintainers": [
         "isontheline"
-      ]
+      ],
+      "graph": "history"
     },
     "uptime.js": {
       "name": "Uptime",

@@ -10,7 +10,7 @@
         "mosh"
       ],
       "interval": 30,
-      "graph": "off",
+      "graph": "history",
       "hosts": [
         "{{{ HOME_ASSISTANT_URL }}}"
       ],

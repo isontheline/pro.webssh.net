@@ -107,7 +107,7 @@ Three built-in items only affect the layout and can be added as many times as yo
 Since WebSSH 32.10, every item (system, built-in or your own) has three appearance settings. For your own items they are in the item editor; for the others, tap the row in the list to open their settings.
 
 * **Style**: **Plain** (content only, the default), **Bordered** (thin rounded outline) or **Filled** (light rounded background). A `tint` returned by a script still colours every style. To delimit items, use the [Separator](#layout-items) layout item.
-* **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot. When [Graph](#graph) is on, **Graph only** shows nothing but the curve (the item falls back to icon and label until there are two values to draw).
+* **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot. When [Graph](#graph) is set to *Sparkline*, **Graph only** shows nothing but the curve (the item falls back to icon and label until there are two values to draw).
 * **Minimum label width**: in points, empty for automatic. The label keeps at least this width, so an item whose value changes length (a CPU usage going from 9 % to 10 %) no longer pushes its neighbours around.
 * **Maximum label width**: in points, empty for none. A longer label is truncated with …; tapping the item still shows and copies the full value.
 
@@ -119,7 +119,7 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 * **Name**: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).
 * **Tags**: link the item to one or more connections. Read more about [WebSSH Tags](/documentation/help/howtos/link-connections-using-tags/). Leave empty (or `*`) to show the item on every connection. The default items only exist while your list is empty: once you have a list, a connection that matches none of your tagged items shows just the items that apply to it (system and built-in items always do).
 * **Icon**: the [SF Symbol](https://developer.apple.com/sf-symbols/) displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a *Copy name* action: handy to find the names a script can return in `icon`, no Mac needed. The picker's list mode shows all the names.
-* **Graph**: off by default. See [below](#graph).
+* **Graph**: off by default: *Details only* or *Sparkline*. See [below](#graph).
 * **Network Access**: off by default. See [below](#network-access).
 * **Variables**: shown when the script has some. See [below](#variables).
 * **JavaScript**: the code executed to compute the item. See the [JavaScript API](javascript-api.md) and the [examples](examples.md).
@@ -127,7 +127,7 @@ Since WebSSH 29.3 you can write your own items. An item is defined by:
 A script can also colour its item (`tint`), add a badge on the icon or replace the icon with a progress ring: see the [Item Result Object](javascript-api.md#item-result-object).
 
 ### Graph
-Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. Turn **Graph** on in the item settings; what is shown next to the curve is the [Content](#appearance) setting, which then also offers **Graph only**. The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
+Since WebSSH 32.10, an item can draw a **sparkline** of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the `value` field of the result, or the first number found in the label) and draws a small curve next to the label. **Graph** has three settings: **Off**, **Details only** (the history is kept and the graph appears in the [item details](#item-details), the bar is unchanged) and **Sparkline** (the curve is also drawn in the bar; what is shown next to it is the [Content](#appearance) setting, which then also offers **Graph only**). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.
 
 ### Variables
 Since WebSSH 32.10 a script can declare **variables**, with the same syntax as [snippets](../help/howtos/snippets.md#dynamic-variables): `{{{ CITY : Paris }}}`. The item editor then shows a *Variables* section with one field per variable, and WebSSH replaces each placeholder by its value every time the item runs. You change the city, the URL or the token **without touching the script**, and items of the [WebSSH Library](library.md) keep your values when their script is updated.
@@ -188,7 +188,7 @@ Items are only recomputed while you are not typing. Typing in the terminal pause
 Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on Mac and iPad, a sheet on iPhone.
 
 * the **full value**, even when the bar only shows an icon, a curve or a truncated label, with its badge and progress;
-* a **large graph** of the history when [Graph](#graph) is on: up to 120 values (the bar draws the last 30) on a real time axis, with minimum, average, maximum and last value. Touch or hover the curve to read a value and its time. Values use the [`unit`](javascript-api.md#item-result-object) returned by the script (*12.3 MB/s* rather than *12309214*); rates, durations and percentages are drawn from zero;
+* a **large graph** of the history when [Graph](#graph) is not off: up to 120 values (the bar draws the last 30) on a real time axis, with minimum, average, maximum and last value. Touch or hover the curve to read a value and its time. Values use the [`unit`](javascript-api.md#item-result-object) returned by the script (*12.3 MB/s* rather than *12309214*); rates, durations and percentages are drawn from zero;
 * the **details** returned by the script, when it provides some (the list of pending packages, the names of the unhealthy containers, every mount point…): see [`detail`](javascript-api.md#item-result-object);
 * when it was **last updated**, its refresh interval and how long the last run took (orange above 1 second, red above 3);
 * actions: **Copy**, **Refresh** (this item only, right now), **Edit** (opens the item in the settings) and, for an item of the [library](library.md), **View Source**.
