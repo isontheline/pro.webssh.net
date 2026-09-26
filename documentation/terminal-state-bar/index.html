@@ -4012,7 +4012,8 @@
 <ul>
 <li><strong>Style</strong>: <strong>Plain</strong> (content only, the default), <strong>Bordered</strong> (thin rounded outline) or <strong>Filled</strong> (light rounded background). A <code>tint</code> returned by a script still colours every style. To delimit items, use the <a href="#layout-items">Separator</a> layout item.</li>
 <li><strong>Content</strong>: <strong>Icon and label</strong>, <strong>Icon only</strong> or <strong>Label only</strong>, to compact a busy bar without touching the script. A progress ring or a badge stays visible in <em>Label only</em>, as they live in the icon slot. When <a href="#graph">Graph</a> is on, <strong>Graph only</strong> shows nothing but the curve (the item falls back to icon and label until there are two values to draw).</li>
-<li><strong>Maximum label width</strong>: truncates a long label with … beyond 80, 120, 160 or 240 points. Tapping the item still copies the full label.</li>
+<li><strong>Minimum label width</strong>: in points, empty for automatic. The label keeps at least this width, so an item whose value changes length (a CPU usage going from 9 % to 10 %) no longer pushes its neighbours around.</li>
+<li><strong>Maximum label width</strong>: in points, empty for none. A longer label is truncated with …; tapping the item still shows and copies the full value.</li>
 </ul>
 <p>As every non-layout item now has settings, they show a chevron in the list, and so does the Separator; Space and Flexible Space keep the lock.</p>
 <h2 id="your-own-items">Your own items</h2>
@@ -4119,7 +4120,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 16:35:09 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2026 13:20:38 UTC">September 26, 2026</span>
       
     
   </small>
