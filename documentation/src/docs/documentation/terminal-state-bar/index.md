@@ -194,6 +194,8 @@ Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on
 * when it was **last updated**, its refresh interval and how long the last run took (orange above 1 second, red above 3);
 * actions: **Copy**, **Refresh** (this item only, right now), **Edit** (opens the item in the settings) and, for an item of the [library](library.md), **View Source**.
 
+**Pin** keeps an item under your eyes while you work: a compact card (value, graph or donut, last update) floats over the terminal, refreshed with the bar. Drag it where you want, resize it from its lower right corner, close it with its cross, tap it to reopen the full details. Several items can be pinned at once. Pins last for the session and typing always stays in the terminal.
+
 Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).
 
 ### Items with errors
