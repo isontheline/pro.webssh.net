@@ -4011,7 +4011,7 @@
 <p>Since WebSSH 32.10, every item (system, built-in or your own) has three appearance settings. For your own items they are in the item editor; for the others, tap the row in the list to open their settings.</p>
 <ul>
 <li><strong>Style</strong>: <strong>Plain</strong> (content only, the default), <strong>Bordered</strong> (thin rounded outline) or <strong>Filled</strong> (light rounded background). A <code>tint</code> returned by a script still colours every style. To delimit items, use the <a href="#layout-items">Separator</a> layout item.</li>
-<li><strong>Content</strong>: <strong>Icon and label</strong>, <strong>Icon only</strong> or <strong>Label only</strong>, to compact a busy bar without touching the script. A progress ring or a badge stays visible in <em>Label only</em>, as they live in the icon slot. When <a href="#graph">Graph</a> is on, <strong>Graph only</strong> shows nothing but the curve (the item falls back to icon and label until there are two values to draw).</li>
+<li><strong>Content</strong>: <strong>Icon and label</strong>, <strong>Icon only</strong> or <strong>Label only</strong>, to compact a busy bar without touching the script. A progress ring or a badge stays visible in <em>Label only</em>, as they live in the icon slot. When <a href="#graph">Graph</a> is set to <em>Sparkline</em>, <strong>Graph only</strong> shows nothing but the curve (the item falls back to icon and label until there are two values to draw).</li>
 <li><strong>Minimum label width</strong>: in points, empty for automatic. The label keeps at least this width, so an item whose value changes length (a CPU usage going from 9 % to 10 %) no longer pushes its neighbours around.</li>
 <li><strong>Maximum label width</strong>: in points, empty for none. A longer label is truncated with …; tapping the item still shows and copies the full value.</li>
 </ul>
@@ -4022,14 +4022,14 @@
 <li><strong>Name</strong>: only used to identify the item in the settings (and as the title of the menu shown when you tap the item).</li>
 <li><strong>Tags</strong>: link the item to one or more connections. Read more about <a href="/documentation/help/howtos/link-connections-using-tags/">WebSSH Tags</a>. Leave empty (or <code>*</code>) to show the item on every connection. The default items only exist while your list is empty: once you have a list, a connection that matches none of your tagged items shows just the items that apply to it (system and built-in items always do).</li>
 <li><strong>Icon</strong>: the <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> displayed before the label. The script can change it at every run. The icon row shows the symbol name, and in the icon picker a long press (or right click) on any symbol shows its name with a <em>Copy name</em> action: handy to find the names a script can return in <code>icon</code>, no Mac needed. The picker's list mode shows all the names.</li>
-<li><strong>Graph</strong>: off by default. See <a href="#graph">below</a>.</li>
+<li><strong>Graph</strong>: off by default: <em>Details only</em> or <em>Sparkline</em>. See <a href="#graph">below</a>.</li>
 <li><strong>Network Access</strong>: off by default. See <a href="#network-access">below</a>.</li>
 <li><strong>Variables</strong>: shown when the script has some. See <a href="#variables">below</a>.</li>
 <li><strong>JavaScript</strong>: the code executed to compute the item. See the <a href="javascript-api/">JavaScript API</a> and the <a href="examples/">examples</a>.</li>
 </ul>
 <p>A script can also colour its item (<code>tint</code>), add a badge on the icon or replace the icon with a progress ring: see the <a href="javascript-api/#item-result-object">Item Result Object</a>.</p>
 <h3 id="graph">Graph</h3>
-<p>Since WebSSH 32.10, an item can draw a <strong>sparkline</strong> of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the <code>value</code> field of the result, or the first number found in the label) and draws a small curve next to the label. Turn <strong>Graph</strong> on in the item settings; what is shown next to the curve is the <a href="#appearance">Content</a> setting, which then also offers <strong>Graph only</strong>. The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.</p>
+<p>Since WebSSH 32.10, an item can draw a <strong>sparkline</strong> of its last values without any work in the script: WebSSH keeps the last 30 numeric values (the <code>value</code> field of the result, or the first number found in the label) and draws a small curve next to the label. <strong>Graph</strong> has three settings: <strong>Off</strong>, <strong>Details only</strong> (the history is kept and the graph appears in the <a href="#item-details">item details</a>, the bar is unchanged) and <strong>Sparkline</strong> (the curve is also drawn in the bar; what is shown next to it is the <a href="#appearance">Content</a> setting, which then also offers <strong>Graph only</strong>). The history lives in memory: it starts again when the bar is restarted or the session reopened. When the values barely move (less than 5 %), a flat line is drawn instead of amplifying noise.</p>
 <h3 id="variables">Variables</h3>
 <p>Since WebSSH 32.10 a script can declare <strong>variables</strong>, with the same syntax as <a href="../help/howtos/snippets/#dynamic-variables">snippets</a>: <code>{{{ CITY : Paris }}}</code>. The item editor then shows a <em>Variables</em> section with one field per variable, and WebSSH replaces each placeholder by its value every time the item runs. You change the city, the URL or the token <strong>without touching the script</strong>, and items of the <a href="library/">WebSSH Library</a> keep your values when their script is updated.</p>
 <table>
@@ -4099,7 +4099,7 @@
 <p>Since WebSSH 32.10, tap (or click) an item to open its <strong>details</strong>: a popover on Mac and iPad, a sheet on iPhone.</p>
 <ul>
 <li>the <strong>full value</strong>, even when the bar only shows an icon, a curve or a truncated label, with its badge and progress;</li>
-<li>a <strong>large graph</strong> of the history when <a href="#graph">Graph</a> is on: up to 120 values (the bar draws the last 30) on a real time axis, with minimum, average, maximum and last value. Touch or hover the curve to read a value and its time. Values use the <a href="javascript-api/#item-result-object"><code>unit</code></a> returned by the script (<em>12.3 MB/s</em> rather than <em>12309214</em>); rates, durations and percentages are drawn from zero;</li>
+<li>a <strong>large graph</strong> of the history when <a href="#graph">Graph</a> is not off: up to 120 values (the bar draws the last 30) on a real time axis, with minimum, average, maximum and last value. Touch or hover the curve to read a value and its time. Values use the <a href="javascript-api/#item-result-object"><code>unit</code></a> returned by the script (<em>12.3 MB/s</em> rather than <em>12309214</em>); rates, durations and percentages are drawn from zero;</li>
 <li>the <strong>details</strong> returned by the script, when it provides some (the list of pending packages, the names of the unhealthy containers, every mount point…): see <a href="javascript-api/#item-result-object"><code>detail</code></a>;</li>
 <li>when it was <strong>last updated</strong>, its refresh interval and how long the last run took (orange above 1 second, red above 3);</li>
 <li>actions: <strong>Copy</strong>, <strong>Refresh</strong> (this item only, right now), <strong>Edit</strong> (opens the item in the settings) and, for an item of the <a href="library/">library</a>, <strong>View Source</strong>.</li>
@@ -4120,7 +4120,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2026 13:20:38 UTC">September 26, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2026 13:34:05 UTC">September 26, 2026</span>
       
     
   </small>
