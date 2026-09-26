@@ -51,6 +51,12 @@
         tint: shown >= 90 ? 'error' : (shown >= 75 ? 'warning' : 'normal'),
         value: shown,
         unit: '%',
-        detail: 'user   ' + percent('user') + ' %\nsystem ' + percent('system') + ' %\niowait ' + percent('iowait') + ' %\ntotal  ' + usage + ' %'
+        // Tap the item: a donut of the whole CPU time
+        parts: [
+            { label: 'user', value: percent('user'), unit: '%' },
+            { label: 'system', value: percent('system'), unit: '%' },
+            { label: 'iowait', value: percent('iowait'), unit: '%' },
+            { label: 'idle', value: Math.max(0, 100 - usage), unit: '%' }
+        ]
     };
 })();

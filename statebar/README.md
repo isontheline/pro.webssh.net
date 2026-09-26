@@ -41,6 +41,7 @@ Rules:
 - Prefer hiding the item when all is fine (`pending updates`, `failed services`…): a quiet bar is a useful bar.
 - Use `tint`, `badge`, `progress` and `value` rather than text when they say it better.
 - When you return a numeric `value`, return its `unit` too (`bytes/s`, `%`, `ms`, `°C`…): the graph of the details uses it.
+- A whole split into parts (CPU user / system / idle, memory, containers by state) goes in `parts`: the details show a donut.
 - Keep the label short and put lists in `detail` (shown when the item is tapped): package names, failing units, every mount point…
 - No `eval()`, no `Function()`.
 
