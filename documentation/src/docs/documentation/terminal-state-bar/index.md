@@ -194,7 +194,7 @@ Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on
 * when it was **last updated**, its refresh interval and how long the last run took (orange above 1 second, red above 3);
 * actions: **Copy**, **Refresh** (this item only, right now), **Edit** (opens the item in the settings) and, for an item of the [library](library.md), **View Source**.
 
-**Pin** keeps an item under your eyes while you work: a compact card (value, graph or donut, last update) floats over the terminal, refreshed with the bar. Drag it where you want, resize it from its lower right corner, close it with its cross, tap it to reopen the full details. Several items can be pinned at once. Pins last for the session and typing always stays in the terminal.
+**Pin** keeps an item under your eyes while you work: a compact card (value, graph or donut, last update) floats over the terminal, refreshed with the bar. Drag it where you want, resize it from its lower right corner, close it with its cross, tap it to reopen the full details. Several items can be pinned at once, and typing always stays in the terminal. Pins last for the session by default. Turn on **Remember Pinned Cards** (Settings → Advanced → SSH, *Terminal State Bar*) to have each host remember its own pinned cards, with their place and size: they come back the next time you open that host, in every pane of it. This memory stays on the device (it never syncs through iCloud, since the layout depends on the screen) and is dropped when the item or the host is deleted, or when the item list is reset.
 
 Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).
 
