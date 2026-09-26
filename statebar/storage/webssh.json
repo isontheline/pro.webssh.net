@@ -18,7 +18,8 @@
       "graph": "off",
       "maintainers": [
         "isontheline"
-      ]
+      ],
+      "minwidth": 40
     },
     "disk-free.js": {
       "name": "Free Disk Space",

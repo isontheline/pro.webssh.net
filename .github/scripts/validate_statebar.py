@@ -120,7 +120,7 @@ def check_entry(scope, meta, script):
     if not isinstance(meta, dict):
         errors.append(f"{scope}: manifest entry must be an object")
         return
-    known = {"name", "summary", "icon", "session", "os", "interval", "graph", "hosts", "packages", "maintainers"}
+    known = {"name", "summary", "icon", "session", "os", "interval", "graph", "hosts", "packages", "maintainers", "minwidth", "maxwidth"}
     for key in meta:
         if key not in known:
             errors.append(f"{scope}: unknown key '{key}'")
@@ -137,6 +137,13 @@ def check_entry(scope, meta, script):
         errors.append(f"{scope}: 'os' values must be among {sorted(OS_VALUES)}")
     if "graph" in meta and meta["graph"] not in GRAPH_VALUES:
         errors.append(f"{scope}: 'graph' must be one of {sorted(GRAPH_VALUES)}")
+    for key in ("minwidth", "maxwidth"):
+        width = meta.get(key)
+        if width is not None and (not isinstance(width, int) or isinstance(width, bool) or not 1 <= width <= 600):
+            errors.append(f"{scope}: '{key}' must be an integer from 1 to 600 (points)")
+    if isinstance(meta.get("minwidth"), int) and isinstance(meta.get("maxwidth"), int) \
+            and not isinstance(meta.get("minwidth"), bool) and meta["minwidth"] > meta["maxwidth"]:
+        errors.append(f"{scope}: 'minwidth' is larger than 'maxwidth'")
     hosts = meta.get("hosts", [])
     if not isinstance(hosts, list) or any(not isinstance(h, str) or not h.strip() for h in hosts):
         errors.append(f"{scope}: 'hosts' must be a list of strings")

@@ -108,7 +108,8 @@ Since WebSSH 32.10, every item (system, built-in or your own) has three appearan
 
 * **Style**: **Plain** (content only, the default), **Bordered** (thin rounded outline) or **Filled** (light rounded background). A `tint` returned by a script still colours every style. To delimit items, use the [Separator](#layout-items) layout item.
 * **Content**: **Icon and label**, **Icon only** or **Label only**, to compact a busy bar without touching the script. A progress ring or a badge stays visible in *Label only*, as they live in the icon slot. When [Graph](#graph) is on, **Graph only** shows nothing but the curve (the item falls back to icon and label until there are two values to draw).
-* **Maximum label width**: truncates a long label with … beyond 80, 120, 160 or 240 points. Tapping the item still copies the full label.
+* **Minimum label width**: in points, empty for automatic. The label keeps at least this width, so an item whose value changes length (a CPU usage going from 9 % to 10 %) no longer pushes its neighbours around.
+* **Maximum label width**: in points, empty for none. A longer label is truncated with …; tapping the item still shows and copies the full value.
 
 As every non-layout item now has settings, they show a chevron in the list, and so does the Separator; Space and Flexible Space keep the lock.
 

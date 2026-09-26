@@ -88,6 +88,7 @@ in the item editor; they survive an update of the script.
 | `os` | no | Remote systems the commands need: `linux`, `macos`, `freebsd`, `openbsd`, `windows`. |
 | `interval` | no | Refresh interval in seconds, 1 to 600 (default 3). **At least 10 with `hosts`.** Be kind to public APIs: minutes, not seconds. |
 | `graph` | no | `off` (default) or `sparkline`. The script then returns a numeric `value`. |
+| `minwidth` | no | Minimum label width in points: the item keeps its width when the value changes length (a percentage, a rate). `maxwidth`: maximum width, longer labels are truncated. |
 | `hosts` | with `$http` | Hosts the script contacts, shown to the user who must allow them. Exact host, `*.example.com`, or a variable: `"{{{ URL }}}"` (the host is taken from the value). Every literal URL of the script must be covered. |
 | `packages` | no | Packages the commands rely on: `{ "apt": "curl", "dnf": "curl" }`. Managers: `apt dnf apk pacman zypper brew pkg`. |
 | `maintainers` | yes | GitHub usernames. |

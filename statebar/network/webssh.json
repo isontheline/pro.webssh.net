@@ -59,7 +59,8 @@
       },
       "maintainers": [
         "isontheline"
-      ]
+      ],
+      "minwidth": 52
     },
     "listening-ports.js": {
       "name": "Listening Ports",

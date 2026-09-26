@@ -80,7 +80,8 @@
       ],
       "maintainers": [
         "isontheline"
-      ]
+      ],
+      "minwidth": 52
     },
     "github-latest-release.js": {
       "name": "GitHub Latest Release",

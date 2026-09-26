@@ -31,7 +31,8 @@
       "graph": "sparkline",
       "maintainers": [
         "isontheline"
-      ]
+      ],
+      "minwidth": 40
     },
     "memory-usage.js": {
       "name": "Memory Usage",
