@@ -3792,24 +3792,29 @@
 <td>An <a href="https://developer.apple.com/sf-symbols/">SF Symbol</a> name. When omitted, the last icon set is kept (the one from the settings on the first run).</td>
 </tr>
 <tr>
-<td><code>tint</code><sup id="fnref6:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td><code>tint</code><sup id="fnref7:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td>String (optional)</td>
 <td><code>normal</code> (default), <code>success</code>, <code>warning</code> or <code>error</code>. Colours the icon and the label (green, orange, red) and tints the item background, exactly like the Connection info item. Anything else is treated as <code>normal</code>. When the tint would not be readable on the bar of the current theme (a red tint on a red bar, for example), the item is drawn as an inverted pill instead: a background in the bar's text colour with the content in the tint colour.</td>
 </tr>
 <tr>
-<td><code>badge</code><sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td><code>badge</code><sup id="fnref6:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td>Number, String (optional)</td>
 <td>A small capsule drawn on the top right corner of the icon, for counts (pending updates, alerts…). <code>0</code>, an empty string or an absent value removes it.</td>
 </tr>
 <tr>
-<td><code>progress</code><sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td><code>progress</code><sup id="fnref5:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td>Number (optional)</td>
 <td><code>0</code> to <code>1</code>. Replaces the icon with a small progress ring. Values outside the range are clamped.</td>
 </tr>
 <tr>
-<td><code>unit</code><sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td><code>unit</code><sup id="fnref4:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
 <td>String (optional)</td>
 <td>Unit of <code>value</code>, used by the graph of the <a href="../#item-details">details</a>. <code>bytes</code>, <code>bytes/s</code> and <code>bits/s</code> are scaled and localized by WebSSH (<code>12309214</code> → <em>12.3 MB/s</em>); <code>%</code>, <code>ms</code>, <code>s</code>, <code>°C</code> and <code>°F</code> are appended to the number; any other short text is appended to a compact number (<code>1250</code> with <code>req/s</code> → <em>1.25K req/s</em>). Without a unit, large numbers are shown in compact form (<em>12.3M</em>).</td>
+</tr>
+<tr>
+<td><code>parts</code><sup id="fnref3:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+<td>Array (optional)</td>
+<td>A composition of a whole, drawn as a <strong>donut</strong> with a legend in the <a href="../#item-details">details</a> of the item: <code>[{ label: 'user', value: 35, unit: '%' }, { label: 'idle', value: 53, unit: '%' }]</code>. At least two parts, values ≥ 0, <code>unit</code> optional (same values as above). The share of each part is computed from the sum.</td>
 </tr>
 <tr>
 <td><code>detail</code><sup id="fnref2:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
@@ -4116,7 +4121,7 @@
 <p>Since WebSSH 32.10. Before that version <code>WEBSSH_CONNECTION_NAME</code>, <code>WEBSSH_CONNECTION_HOST</code> and <code>WEBSSH_CONNECTION_USERNAME</code> were only filled on SSH sessions.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>Since WebSSH 32.10.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Since WebSSH 32.10.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -4126,7 +4131,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 20, 2026 16:12:01 UTC">September 20, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2026 13:52:33 UTC">September 26, 2026</span>
       
     
   </small>
