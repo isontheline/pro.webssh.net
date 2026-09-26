@@ -3,7 +3,7 @@
   "files": {
     "load-average.js": {
       "name": "Load Average",
-      "summary": "1, 5 and 15 minute load averages",
+      "summary": "1, 5 and 15 minute load averages, or just one of them",
       "icon": "chart.line.uptrend.xyaxis",
       "session": [
         "ssh"
@@ -19,7 +19,7 @@
     },
     "cpu-usage.js": {
       "name": "CPU Usage",
-      "summary": "CPU usage over the last interval, from /proc/stat",
+      "summary": "CPU usage from /proc/stat: total, or user / system / I/O wait; tap for the breakdown",
       "icon": "gauge.with.dots.needle.50percent",
       "session": [
         "ssh"
@@ -32,7 +32,7 @@
       "maintainers": [
         "isontheline"
       ],
-      "minwidth": 40
+      "minwidth": 52
     },
     "memory-usage.js": {
       "name": "Memory Usage",
