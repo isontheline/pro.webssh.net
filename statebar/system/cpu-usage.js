@@ -29,14 +29,16 @@
     $vars.set('CPU_STAT', now)
 
     let elapsed = now.total - before.total
+    // One decimal: the parts of the donut must add up, a rounded 0 % user
+    // next to a 1 % total would show idle at 100 %
     function percent(key) {
-        return elapsed > 0 ? Math.round(100 * (now[key] - before[key]) / elapsed) : 0
+        return elapsed > 0 ? Math.round(1000 * (now[key] - before[key]) / elapsed) / 10 : 0
     }
     let usage = elapsed > 0 ? Math.round(100 * (elapsed - (now.idle - before.idle)) / elapsed) : 0
 
     // Which component to show: the total, or one of user / system / I/O wait
     let component = '{{{ COMPONENT : total : user : system : iowait }}}'
-    let shown = component === 'total' ? usage : percent(component)
+    let shown = component === 'total' ? usage : Math.round(percent(component))
     let suffix = { user: ' us', system: ' sy', iowait: ' wa' }[component] || ''
 
     let icon = 'gauge.with.dots.needle.0percent'
@@ -56,7 +58,7 @@
             { label: 'user', value: percent('user'), unit: '%' },
             { label: 'system', value: percent('system'), unit: '%' },
             { label: 'iowait', value: percent('iowait'), unit: '%' },
-            { label: 'idle', value: Math.max(0, 100 - usage), unit: '%' }
+            { label: 'idle', value: Math.max(0, Math.round(10 * (100 - percent('user') - percent('system') - percent('iowait'))) / 10), unit: '%' }
         ]
     };
 })();
