@@ -199,7 +199,16 @@ Since WebSSH 32.10, tap (or click) an item to open its **details**: a popover on
 Right click (or long press) an item to copy its label without opening the details. System items keep their own action (connection information, recording menu…).
 
 ### Items with errors
-A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the menu button of the State Bar (the first icon) wears a **red badge with the number of failing items**, and its menu shows **Items with Errors (n)**: the list gives the error message of each item, its line, and an **Edit** button. The entry disappears as soon as every item runs fine again.
+A script that throws an error hides its item, so nothing in the bar tells you which one failed. When at least one item is failing, the menu button of the State Bar (the first icon) wears a **red badge**, and its menu shows **Items with Errors (n)**: the [console](#console) sheet then opens with the error message of each item, its line, and an **Edit** button. The entry disappears as soon as every item runs fine again.
+
+### Console
+A script can also say something without failing: `console.warn` and `console.error` (see the [JavaScript API](javascript-api.md#console)) reach the State Bar itself, not only the log file.
+
+* An item that is **visible** wears a small **orange or red count** of its unread warnings and errors, in its top right corner. Opening the item's details reads them: the details show the last lines of that item, and the count disappears.
+* When the item is **hidden** (its script returned `null` or threw), the count moves to the **menu button**, added to the failing items: the first icon is where you learn about what you cannot see in the bar.
+* `console.log` never counts. It is only shown in the console sheet and in the item details.
+
+**Console** in the menu of the State Bar (with the number of unread warnings and errors, when there are some) opens the journal of the session: the failing items first, then every line written by every script, newest first, with its item, its time and, when the same line repeats, how many times (identical consecutive lines are merged, and each item keeps its last 60 lines). **Clear** empties it. The journal lives in memory for the session only; nothing is written to disk. The live [preview](#compose-the-state-bar) of the settings has the same counts and the same sheet.
 
 ## Known Issues / Limitations
 * When using `$ssh.exec`, avoid long running commands: they block the State Bar until they finish. Use the [Linux `timeout`](https://www.man7.org/linux/man-pages/man1/timeout.1.html) command to limit the execution time.

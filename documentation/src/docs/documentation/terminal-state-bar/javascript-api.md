@@ -168,6 +168,8 @@ A missing variable returns `undefined`: always provide a fallback (`$vars.get('W
 ## `console`
 `console.log`, `console.info`, `console.warn`, `console.error`, `console.debug` and `console.trace` take a single string and write it to the WebSSH log, prefixed with the item identifier. Nothing is shown in the terminal. The easiest way to read them is the [test panel](index.md#test-your-item), which lists them live.
 
+Since WebSSH 33.0 they also feed the [console of the State Bar](index.md#console): `console.warn` and `console.error` put an unread count on the item (or on the menu button when the item is hidden), and every level except `debug` and `trace` is listed in the console sheet and in the item details. Use `warn` for something the user should glance at without the item failing (a stale cache, a fallback used, a value out of the expected range), `error` for something they must fix, and keep `log` for plain traces: it never counts.
+
 The log is a daily file stored in the WebSSH folder of the Files app (macOS: the app's Documents folder), kept for 7 days. It is only written when *File Logger Level* in Settings → Advanced Settings is not disabled; `console.debug` and `console.trace` need the Debug level, `console.log` and `console.info` the Info level.
 
 ## Error handling
