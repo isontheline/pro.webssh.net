@@ -1,5 +1,7 @@
 ---
 title: Web Browser
+seo_title: "Web Browser over SSH Tunnel (SOCKS Proxy) - WebSSH"
+description: "Browse your private websites through your own SSH server: the WebSSH embedded web browser uses a Dynamic Port Forwarding tunnel as a SOCKS proxy."
 ---
 # Web Browser
 Since WebSSH 23.8 you can now use an embedded Web Browser[^1] to access your websites.

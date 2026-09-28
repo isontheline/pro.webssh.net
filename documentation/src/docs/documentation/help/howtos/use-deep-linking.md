@@ -1,5 +1,7 @@
 ---
 title: Deep Linking
+seo_title: "SSH Deep Linking: Open ssh:// Links - WebSSH"
+description: "Open an SSH connection straight from a link or the search bar: WebSSH handles ssh://username@host:port deep links and asks for confirmation before connecting."
 ---
 
 # Deep Linking

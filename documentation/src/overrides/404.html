@@ -1,0 +1,80 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h1>404 - Not found</h1>
+  <p id="not-found-message">This page does not exist.</p>
+  <ul id="not-found-suggestions"></ul>
+  <p>
+    Go back to the <a href="/">home page</a>, browse the <a href="/documentation/guides/free-ssh-client-for-iphone/">guides</a> or ask for <a href="/support/">support</a>.
+  </p>
+
+  <script>
+    // Wrong case, missing words or typos inside a link : look for the closest page of the sitemap
+    (function () {
+      function normalize(path) {
+        path = path.toLowerCase().replace(/\/index\.html$/, "/").replace(/\/+/g, "/");
+        return path.endsWith("/") ? path : path + "/";
+      }
+
+      function distance(a, b) {
+        var previous = [], current = [], i, j;
+        for (j = 0; j <= b.length; j++) previous[j] = j;
+        for (i = 1; i <= a.length; i++) {
+          current = [i];
+          for (j = 1; j <= b.length; j++) {
+            current[j] = Math.min(
+              previous[j] + 1,
+              current[j - 1] + 1,
+              previous[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1)
+            );
+          }
+          previous = current;
+        }
+        return previous[b.length];
+      }
+
+      var wanted = normalize(window.location.pathname);
+
+      fetch("/sitemap.xml")
+        .then(function (response) { return response.ok ? response.text() : ""; })
+        .then(function (xml) {
+          var paths = (xml.match(/<loc>[^<]+<\/loc>/g) || []).map(function (loc) {
+            return loc.replace(/<\/?loc>/g, "").replace(/^https?:\/\/[^\/]+/, "");
+          });
+
+          var exact = paths.filter(function (path) { return normalize(path) === wanted; })[0];
+          if (exact && exact !== window.location.pathname) {
+            window.location.replace(exact + window.location.hash);
+            return;
+          }
+
+          var closest = paths
+            .map(function (path) { return { path: path, distance: distance(wanted, normalize(path)) }; })
+            .sort(function (a, b) { return a.distance - b.distance; })
+            .filter(function (candidate) { return candidate.distance <= wanted.length * 0.4; })
+            .slice(0, 3);
+
+          if (closest.length === 0) return;
+
+          var isObvious = closest[0].distance <= wanted.length * 0.15
+            && (closest.length === 1 || closest[1].distance > closest[0].distance);
+          if (isObvious) {
+            window.location.replace(closest[0].path);
+            return;
+          }
+
+          document.getElementById("not-found-message").textContent = "This page does not exist. Did you mean:";
+          var list = document.getElementById("not-found-suggestions");
+          closest.forEach(function (candidate) {
+            var item = document.createElement("li");
+            var link = document.createElement("a");
+            link.href = candidate.path;
+            link.textContent = candidate.path;
+            item.appendChild(link);
+            list.appendChild(item);
+          });
+        })
+        .catch(function () {});
+    })();
+  </script>
+{% endblock %}

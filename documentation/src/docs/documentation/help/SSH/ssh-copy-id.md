@@ -1,5 +1,7 @@
 ---
 title: "ssh-copy-id"
+seo_title: "ssh-copy-id: Copy Your SSH Public Key to a Server - WebSSH"
+description: "Copy your public key to the authorized_keys of a remote machine without the ssh-copy-id command: WebSSH does it from the terminal Tools menu."
 ---
 
 # ssh-copy-id : Copy your public key to a remote machine

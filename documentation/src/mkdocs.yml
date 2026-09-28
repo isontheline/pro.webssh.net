@@ -31,6 +31,8 @@ extra:
       link: https://www.buymeacoffee.com/isontheline
     - icon: fontawesome/solid/sun
       link: https://wolf.solar
+hooks:
+  - hooks/faq_schema.py
 plugins:
   - search
   - git-revision-date-localized:
@@ -49,6 +51,8 @@ plugins:
         'documentation/changelog/23.md': 'documentation/changelog/history/23.md'
         'documentation/changelog/24.md': 'documentation/changelog/history/24.md'
         'documentation/help/howtos/link-connections-and-snippets.md': 'documentation/help/howtos/link-connections-using-tags.md'
+        'documentation/terminal-inline-images.md': 'documentation/help/SSH/terminal-inline-images.md'
+        'documentation/terminal-progress-bar.md': 'documentation/help/SSH/terminal-progress-bar.md'
 markdown_extensions:
   - admonition
   - attr_list

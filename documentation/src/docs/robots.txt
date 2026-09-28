@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webssh.net/sitemap.xml

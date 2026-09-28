@@ -1,5 +1,6 @@
 ---
 title: Terminal Font Size
+description: "Pinch in or out on the terminal to change the font size in WebSSH, on iPhone, iPad or a Mac trackpad. The size is kept per device form factor."
 ---
 
 # Terminal Font Size

@@ -1,5 +1,6 @@
 ---
 title: SSH to Synology NAS from iPhone or iPad
+description: "Enable SSH on your Synology NAS, add the connection in WebSSH and connect securely with a private key from your iPhone or iPad."
 ---
 
 # SSH to Synology NAS from iPhone or iPad

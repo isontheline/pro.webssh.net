@@ -1,5 +1,6 @@
 ---
 title: VPN-Over-SSH
+description: "Use a forwarded port outside WebSSH, in Safari, VNC or RDP apps: VPN-Over-SSH turns your own SSH server into a VPN server."
 ---
 
 # VPN-Over-SSH

@@ -1,5 +1,6 @@
 ---
 title: Create or attach an existing tmux session
+description: "Keep your work when the network drops: tmux new -As creates or attaches a named tmux session. Run it automatically when your WebSSH connection starts."
 ---
 
 # Create or attach an existing tmux session

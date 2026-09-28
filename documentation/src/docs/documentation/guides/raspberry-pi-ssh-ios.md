@@ -1,5 +1,6 @@
 ---
 title: How to SSH into a Raspberry Pi from iPhone or iPad
+description: "Enable SSH on your Raspberry Pi, add the connection in WebSSH and log in with a private key from your iPhone or iPad, even from outside your home."
 ---
 
 # How to SSH into a Raspberry Pi from iPhone or iPad

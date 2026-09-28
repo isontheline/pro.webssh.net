@@ -1,5 +1,6 @@
 ---
 title: Arrow Keys Modes
+description: "Arrow keys not working on HP switches, Aruba access points or FortiGate firewalls? Switch the Cursor Keys Mode to Normal in the connection Terminal Settings."
 ---
 
 # Arrow Keys Modes

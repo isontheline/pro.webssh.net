@@ -1,5 +1,6 @@
 ---
 title: Terminal State Bar
+description: "The State Bar shows near real-time information about your SSH session in the WebSSH terminal: built-in items and your own items written in JavaScript."
 ---
 # Terminal State Bar
 Since WebSSH 29.3 a "State Bar" is available at the top (iOS / iPadOS) or bottom (macOS) of the terminal. It displays near real-time information about the current session: built-in items provided by WebSSH, and your own items written in JavaScript.
@@ -70,7 +71,7 @@ Since WebSSH 32.10, the three elements that used to be fixed are items of the *B
 | Item | Shows | Tap |
 | --- | --- | --- |
 | Connection info (since 32.9) | Icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection) | Opens the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…) |
-| Progress | Only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/terminal-progress-bar/): ring + percentage, red triangle on error, orange pause icon, spinner when indeterminate, green check when the job completes | None. Its context menu clears a stuck indicator |
+| Progress | Only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/help/SSH/terminal-progress-bar/): ring + percentage, red triangle on error, orange pause icon, spinner when indeterminate, green check when the job completes | None. Its context menu clears a stuck indicator |
 | Recording | Record icon, red while recording | Start / stop a session recording, add markers, review or list recordings |
 
 Removing *Connection info* does not remove the feature: the sheet stays available from the terminal menu (⋯).

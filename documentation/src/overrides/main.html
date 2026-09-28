@@ -1,6 +1,63 @@
 {% extends "base.html" %}
 
+{# "seo_title" frontmatter key : rendered as is, "title" stays the navigation label #}
+{% block htmltitle %}
+    {% if page and page.meta and page.meta.seo_title %}
+        <title>{{ page.meta.seo_title | e }}</title>
+    {% else %}
+        {{ super() }}
+    {% endif %}
+{% endblock %}
+
 {% block extrahead %}
     <meta name="apple-itunes-app" content="app-id=497714887, affiliate-data=www_webssh_net" />
     <meta name="ahrefs-site-verification" content="18384b51317985f3df4047135c63447036bab36c3df363e66140b59cb9fd58e8" />
+
+    {# Third-party license texts : still reachable but kept out of search results #}
+    {% if page and page.file and page.file.src_path.startswith("licenses/") %}
+        <meta name="robots" content="noindex,follow" />
+    {% endif %}
+
+    {% if page and page.canonical_url %}
+        {% if page.meta and page.meta.seo_title %}
+            {% set share_title = page.meta.seo_title %}
+        {% elif page.meta and page.meta.title %}
+            {% set share_title = page.meta.title ~ " - " ~ config.site_name %}
+        {% else %}
+            {% set share_title = (page.title | striptags) ~ " - " ~ config.site_name %}
+        {% endif %}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="{{ config.site_name | e }}" />
+        <meta property="og:title" content="{{ share_title | e }}" />
+        <meta property="og:url" content="{{ page.canonical_url | e }}" />
+        <meta property="og:image" content="{{ config.site_url.rstrip('/') }}/images/webssh-logo.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="{{ share_title | e }}" />
+        {% if page.meta and page.meta.description %}
+            <meta property="og:description" content="{{ page.meta.description | e }}" />
+            <meta name="twitter:description" content="{{ page.meta.description | e }}" />
+        {% endif %}
+    {% endif %}
+
+    {% if page and page.is_homepage %}
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "WebSSH",
+            "alternateName": "WebSSH - SysAdmin Tools",
+            "description": "SSH, SFTP, Telnet and Port Forwarding client for iPhone, iPad and Mac.",
+            "url": "https://webssh.net/",
+            "image": "https://webssh.net/images/webssh-logo.png",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "iOS, iPadOS, macOS",
+            "downloadUrl": "https://apps.apple.com/us/app/webssh-ssh-client/id497714887",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+        </script>
+    {% endif %}
 {% endblock %}

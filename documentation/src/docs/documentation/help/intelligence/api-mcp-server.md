@@ -1,5 +1,7 @@
 ---
 title: API / MCP Server
+seo_title: "SSH MCP Server & API for macOS - WebSSH"
+description: "WebSSH for macOS includes a built-in API / MCP (Model Context Protocol) server: AI applications like Claude Desktop and your own scripts can drive SSH sessions."
 ---
 
 # API / MCP Server

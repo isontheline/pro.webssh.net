@@ -1,5 +1,6 @@
 ---
 title: Support
+description: "Need help with WebSSH? Report a bug, share an idea or ask a question: contact the maintainer by email or on GitHub."
 ---
 
 # Support

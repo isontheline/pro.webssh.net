@@ -1,5 +1,6 @@
 ---
 title: Apple Magic Keyboard Space Bar Issue
+description: "Space bar not working in the terminal with an Apple Magic Keyboard? Disable Full Keyboard Access in iOS Settings > Accessibility > Keyboard."
 ---
 
 # Apple Magic Keyboard Space Bar Issue

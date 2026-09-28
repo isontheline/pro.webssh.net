@@ -1,5 +1,6 @@
 ---
 title: Terminal Progress Bar (OSC 9;4)
+description: "WebSSH understands the OSC 9;4 escape sequence used by ConEmu, Ghostty, Windows Terminal and WezTerm: long running commands report their progress outside of the terminal."
 ---
 # Terminal Progress Bar (OSC 9;4)
 Since WebSSH 32.10[^1], the terminal understands the `OSC 9;4` escape sequence, originally created by [ConEmu](https://conemu.github.io/en/AnsiEscapeCodes.html#ConEmu_specific_OSC) and adopted by Ghostty, Windows Terminal, WezTerm and Konsole. A long running command can report its progress and WebSSH displays it **outside** of the terminal output.

@@ -1,5 +1,6 @@
 ---
 title: Import - From Other SSH Clients to WebSSH
+seo_title: "Import Connections from Other SSH Clients to WebSSH"
 ---
 
 # Import - From Other SSH Clients to WebSSH

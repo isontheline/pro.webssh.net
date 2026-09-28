@@ -1,5 +1,7 @@
 ---
-title: Copying text to the clipboard from the terminal.
+title: Copying text to the clipboard from the terminal
+seo_title: "Copy Text from an SSH Terminal to the Clipboard (OSC 52) - WebSSH"
+description: "Copy command output from a remote SSH session to your local clipboard with the OSC 52 escape sequence, as simple as: cat filename.txt | wshcopy"
 ---
 
 !!! tip "Copy to clipboard support"

@@ -1,5 +1,7 @@
 ---
 title: Dynamic Port Forwarding (DPF)
+seo_title: "SSH Dynamic Port Forwarding (SOCKS Proxy, Jump Server) - WebSSH"
+description: "Use your SSH server as a jump server or bastion host: Dynamic Port Forwarding starts a local SOCKS proxy and routes your WebSSH connections through it."
 ---
 
 # Dynamic Port Forwarding (DPF)

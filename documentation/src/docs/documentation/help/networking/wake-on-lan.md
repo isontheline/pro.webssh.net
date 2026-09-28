@@ -1,5 +1,6 @@
 ---
 title: Wake-on-LAN
+description: "Power on a computer or server remotely with a Wake-on-LAN magic packet from WebSSH: enable the role on your server, enter its MAC address and wake it up."
 ---
 
 # Wake-on-LAN[^1]

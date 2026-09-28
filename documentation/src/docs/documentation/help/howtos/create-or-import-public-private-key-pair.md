@@ -1,5 +1,6 @@
 ---
 title: Create or Import a Public/Private Key Pair
+description: "Generate a new RSA, ECDSA or ED25519 key pair inside WebSSH, or import an existing private key from a file or from the clipboard."
 ---
 
 # How to create a new Public/Private Key Pair inside WebSSH?

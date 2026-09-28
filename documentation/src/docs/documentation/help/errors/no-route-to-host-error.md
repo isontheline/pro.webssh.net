@@ -1,6 +1,7 @@
 ---
 title: No Route to Host Error
-description: This error may happen when you have not allowed WebSSH to access the local network
+seo_title: "No Route to Host on iPhone or iPad: How to Fix It - WebSSH"
+description: "No route to host error on your iPhone or iPad? Allow WebSSH to access the local network: Settings > Apps > WebSSH > Local Network."
 ---
 
 # No Route to Host Error

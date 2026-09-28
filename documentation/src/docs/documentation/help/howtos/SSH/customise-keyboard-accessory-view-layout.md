@@ -1,5 +1,6 @@
 ---
 title: Keyboard Accessory View Customisation
+description: "Customise the keys displayed above the keyboard in WebSSH: graphical layout editor or KeyboardAccessoryViewLayout directives inside the SSH config file."
 ---
 
 # How to customise the keyboard accessory view layout?[^1]

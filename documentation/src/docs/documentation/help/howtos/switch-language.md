@@ -1,5 +1,6 @@
 ---
 title: Switch WebSSH UI Language
+seo_title: "Switch WebSSH UI Language"
 ---
 
 # Switch WebSSH UI Language

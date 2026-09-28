@@ -1,5 +1,6 @@
 ---
 title: Multiple connections
+description: "Run several SSH or SFTP connections at the same time in WebSSH: windows and tabs on Mac, sidebar and split screen on iPad, multiple windows on iPhone."
 ---
 # How to launch multiple SSH or SFTP connections?
 

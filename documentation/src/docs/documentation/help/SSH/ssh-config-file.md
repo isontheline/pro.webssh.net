@@ -1,5 +1,6 @@
 ---
 title: SSH Config File
+description: "Define default or overriding values for your WebSSH connections with an SSH config file, synced across your devices through iCloud."
 ---
 
 # SSH Config File

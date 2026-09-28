@@ -1,5 +1,7 @@
 ---
 title: Port Forwarding
+seo_title: "SSH Port Forwarding: Local vs Dynamic - WebSSH"
+description: "Local Port Forwarding forwards one port to a remote service, Dynamic Port Forwarding creates a SOCKS proxy. Differences and how to set up both SSH tunnels in WebSSH."
 ---
 
 # Port Forwarding

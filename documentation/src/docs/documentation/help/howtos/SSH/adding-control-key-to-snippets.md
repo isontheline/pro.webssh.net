@@ -1,5 +1,6 @@
 ---
 title: Adding Control-Key to Snippets
+description: "Send Ctrl-C, Ctrl-D, Alt, Esc or Tab from a WebSSH snippet by using key tokens inside the snippet."
 ---
 
 # Adding Control-Key to Snippets

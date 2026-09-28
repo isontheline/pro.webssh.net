@@ -1,5 +1,7 @@
 ---
 title: Public / Private Key
+seo_title: "SSH Public / Private Key Authentication Explained - WebSSH"
+description: "How SSH public key authentication works: the private key stays on your device, protected by a passphrase, while the public key is shared with the server."
 ---
 
 # Public / Private Key

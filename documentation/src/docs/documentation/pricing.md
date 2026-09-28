@@ -1,3 +1,9 @@
+---
+title: Pricing
+seo_title: "WebSSH Pricing: Free, or One-Time PRO Purchase (No Subscription)"
+description: "WebSSH is free with one saved connection. PRO is a one-time lifetime purchase for iPhone, iPad and Mac: unlimited connections, no subscription, no ads, no data collection."
+---
+
 # Pricing
 
 ??? abstract "Why upgrading to PRO?"

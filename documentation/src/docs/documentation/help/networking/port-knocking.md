@@ -1,5 +1,6 @@
 ---
 title: Port Knocking
+description: "Open firewall ports with a port knocking sequence before your SSH, SFTP or tunnel connection. Syntax PORT:PROTOCOL:WAITMS, with examples."
 ---
 # Port Knocking
 !!! abstract "About Port Knocking feature"

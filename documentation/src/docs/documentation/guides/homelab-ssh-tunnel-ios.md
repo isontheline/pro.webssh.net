@@ -1,5 +1,6 @@
 ---
 title: Access Your Homelab Remotely via SSH Tunnel on iOS
+description: "Reach Proxmox, Grafana or any private homelab service from your iPhone or iPad through an SSH tunnel. Local and dynamic port forwarding explained."
 ---
 
 # Access Your Homelab Remotely via SSH Tunnel on iOS

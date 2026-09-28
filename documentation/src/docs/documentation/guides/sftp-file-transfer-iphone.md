@@ -1,5 +1,6 @@
 ---
 title: Transfer Files via SFTP on iPhone and iPad
+description: "Browse, upload, download and edit files on any Linux server, NAS or VPS over SFTP from your iPhone or iPad with WebSSH."
 ---
 
 # Transfer Files via SFTP on iPhone and iPad

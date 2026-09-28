@@ -1,5 +1,6 @@
 ---
 title: Managing Known Hosts
+description: "How WebSSH verifies the authenticity of the hosts you connect to, and how to delete one or all known hosts from mashREPL."
 ---
 
 # Known Hosts

@@ -1,5 +1,7 @@
 ---
 title: Local Port Forwarding (LPF)
+seo_title: "SSH Local Port Forwarding (ssh -L): Syntax and Examples - WebSSH"
+description: "Forward a remote port to your device through an SSH tunnel, like ssh -L does. Syntax LOCAL_PORT:REMOTE_SERVER:REMOTE_PORT, with examples for iPhone, iPad and Mac."
 ---
 
 # Local Port Forwarding (LPF)

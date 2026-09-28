@@ -1,5 +1,6 @@
 ---
 title: iCloud
+description: "Sync your WebSSH connections across your iPhone, iPad and Mac with iCloud. How to enable syncing and fix sync issues on macOS."
 ---
 
 # iCloud

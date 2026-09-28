@@ -1,5 +1,7 @@
 ---
 title: Terminal Inline Images (SIXEL & iTerm2)
+seo_title: "Terminal Inline Images: SIXEL & iTerm2 (imgcat) over SSH - WebSSH"
+description: "Display images right inside your SSH terminal. WebSSH supports SIXEL (img2sixel, chafa, timg) and iTerm2 inline images (imgcat)."
 ---
 # Terminal Inline Images (SIXEL & iTerm2)
 Since WebSSH 32.10[^1], the terminal can display images **inline**, right where a command prints them, without downloading the file first. Two protocols are understood:

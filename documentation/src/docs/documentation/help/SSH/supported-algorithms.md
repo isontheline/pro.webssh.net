@@ -1,5 +1,6 @@
 ---
 title: "Supported Algorithms"
+description: "Ciphers, host key algorithms, key exchange algorithms and MACs supported by WebSSH, and how to enable or disable them from your SSH config file."
 ---
 
 # Supported Algorithms

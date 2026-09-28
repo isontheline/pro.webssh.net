@@ -1,5 +1,8 @@
 ---
 title: FAQ
+faq_schema: true
+seo_title: "WebSSH FAQ - Frequently Asked Questions"
+description: "Answers to the most frequent questions about WebSSH: PRO purchase, private keys, snippets, port forwarding, SFTP, ssh_config and keyboard."
 ---
 
 # FAQ - Frequently Asked Questions

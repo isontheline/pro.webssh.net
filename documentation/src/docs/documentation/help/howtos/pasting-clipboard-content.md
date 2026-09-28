@@ -1,5 +1,6 @@
 ---
 title: Paste Clipboard Content
+description: "How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac."
 ---
 
 # How to paste clipboard content on the terminal?

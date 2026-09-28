@@ -1,5 +1,7 @@
 ---
 title: Scrollback buffer in tmux
+seo_title: "tmux Scrollback Buffer: How to Scroll (Copy Mode) - WebSSH"
+description: "Inside tmux the scrollback buffer is handled by tmux itself: press Ctrl-b then [ to enter copy mode and scroll. Make it a WebSSH snippet to do it in one tap."
 ---
 
 # Scrollback buffer in tmux

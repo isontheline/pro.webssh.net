@@ -1,5 +1,6 @@
 ---
 title: Snippets
+description: "Snippets are reusable commands or scripts you can insert into your SSH terminal. How to create and use them in WebSSH."
 ---
 
 # Snippets

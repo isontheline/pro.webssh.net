@@ -1,5 +1,6 @@
 ---
 title: Best SSH Client for iOS Without a Subscription
+description: "Tired of paying every month for an SSH app? WebSSH is a full SSH and SFTP client for iPhone and iPad: one-time purchase, no account, your data stays on your device."
 ---
 
 # Best SSH Client for iOS Without a Subscription

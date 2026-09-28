@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for file in pages -%}
-  {% if not file.page.is_link and (file.page.abs_url or file.page.canonical_url) %}
+  {# Third-party license texts are "noindex" (see main.html) so they are kept out of the sitemap #}
+  {% if not file.page.is_link and (file.page.abs_url or file.page.canonical_url) and not file.src_path.startswith("licenses/") %}
   <url>
     <loc>{% if file.page.canonical_url %}{{ file.page.canonical_url|e }}{% else %}{{ file.page.abs_url|e }}{% endif %}</loc>
 
