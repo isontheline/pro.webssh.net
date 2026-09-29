@@ -2,18 +2,6 @@
   "version": 1,
   "snapshots": [
     {
-      "timestamp": "2026-08-08T03:55:24.171Z",
-      "totalStars": 567,
-      "repos": [
-        {
-          "fullName": "isontheline/pro.webssh.net",
-          "name": "pro.webssh.net",
-          "owner": "isontheline",
-          "stars": 567
-        }
-      ]
-    },
-    {
       "timestamp": "2026-08-09T03:59:23.195Z",
       "totalStars": 569,
       "repos": [
@@ -615,6 +603,18 @@
     },
     {
       "timestamp": "2026-09-28T03:45:49.920Z",
+      "totalStars": 637,
+      "repos": [
+        {
+          "fullName": "isontheline/pro.webssh.net",
+          "name": "pro.webssh.net",
+          "owner": "isontheline",
+          "stars": 637
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-09-29T03:40:49.034Z",
       "totalStars": 637,
       "repos": [
         {
