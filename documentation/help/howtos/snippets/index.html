@@ -1889,6 +1889,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    Keyboard shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-a-snippet-on-several-hosts" class="md-nav__link">
     Run a snippet on several hosts
   </a>
@@ -3671,6 +3678,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    Keyboard shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-a-snippet-on-several-hosts" class="md-nav__link">
     Run a snippet on several hosts
   </a>
@@ -3752,6 +3766,19 @@
 <li>Select the snippet you want to insert from the list</li>
 <li>The command/script from the snippet will be inserted into your terminal, ready to be executed</li>
 </ol>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<p>Since WebSSH 33.1 a snippet can be run with a keyboard shortcut, on macOS and on iPad with a hardware keyboard. Nine shortcuts are available: <code>⌥⌘1</code> to <code>⌥⌘9</code>.</p>
+<p>To assign one, edit the snippet and pick a shortcut in the <strong>Keyboard Shortcut</strong> row, then save. Assigning a shortcut is a WebSSH PRO feature.</p>
+<ul>
+<li>The snippet runs in the active terminal, which must be connected.</li>
+<li>A snippet restricted by <a href="../link-connections-using-tags/">tags</a> only runs on the connections it matches.</li>
+<li>Picking a shortcut already used by another snippet moves it to the snippet you are editing.</li>
+<li>On macOS, the snippets holding a shortcut are listed in the <strong>Snippets</strong> menu of the menu bar.</li>
+</ul>
+<details class="note">
+<summary>⌥⌘8 and the macOS Zoom</summary>
+<p>macOS reserves <code>⌥⌘8</code> for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.</p>
+</details>
 <h2 id="run-a-snippet-on-several-hosts">Run a snippet on several hosts</h2>
 <p>Since WebSSH 33.0 a snippet can be run on several connections at once, without opening a terminal: long press the snippet and choose <strong>Run on Hosts</strong>. See <a href="../run-snippet-on-multiple-hosts/">Run a command on multiple hosts</a>.</p>
 <h2 id="dynamic-variables">Dynamic variables</h2>
@@ -3840,7 +3867,7 @@ mysql<span class="w"> </span>-u<span class="w"> </span><span class="o">{{{</span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 30, 2026 14:15:00 UTC">September 30, 2026</span>
       
     
   </small>
