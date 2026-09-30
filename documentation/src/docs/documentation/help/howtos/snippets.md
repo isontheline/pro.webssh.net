@@ -31,6 +31,19 @@ To use a snippet in your connection terminal:
 3. Select the snippet you want to insert from the list
 4. The command/script from the snippet will be inserted into your terminal, ready to be executed
 
+## Keyboard shortcuts
+Since WebSSH 33.1 a snippet can be run with a keyboard shortcut, on macOS and on iPad with a hardware keyboard. Nine shortcuts are available: `⌥⌘1` to `⌥⌘9`.
+
+To assign one, edit the snippet and pick a shortcut in the **Keyboard Shortcut** row, then save. Assigning a shortcut is a WebSSH PRO feature.
+
+- The snippet runs in the active terminal, which must be connected.
+- A snippet restricted by [tags](link-connections-using-tags.md) only runs on the connections it matches.
+- Picking a shortcut already used by another snippet moves it to the snippet you are editing.
+- On macOS, the snippets holding a shortcut are listed in the **Snippets** menu of the menu bar.
+
+??? note "⌥⌘8 and the macOS Zoom"
+    macOS reserves `⌥⌘8` for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.
+
 ## Run a snippet on several hosts
 Since WebSSH 33.0 a snippet can be run on several connections at once, without opening a terminal: long press the snippet and choose **Run on Hosts**. See [Run a command on multiple hosts](run-snippet-on-multiple-hosts.md).
 
