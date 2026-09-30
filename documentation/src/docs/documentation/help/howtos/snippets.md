@@ -39,7 +39,7 @@ To assign one, edit the snippet and pick a shortcut in the **Keyboard Shortcut**
 - The snippet runs in the active terminal, which must be connected.
 - A snippet restricted by [tags](link-connections-using-tags.md) only runs on the connections it matches.
 - Picking a shortcut already used by another snippet moves it to the snippet you are editing.
-- On macOS, the snippets holding a shortcut are listed in the **Snippets** menu of the menu bar.
+- On macOS, the snippets holding a shortcut are listed in the menu bar, under **Connection ▸ Snippets**.
 
 ??? note "⌥⌘8 and the macOS Zoom"
     macOS reserves `⌥⌘8` for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.
