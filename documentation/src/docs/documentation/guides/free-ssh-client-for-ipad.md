@@ -156,6 +156,7 @@ Yes. WebSSH Pro is a universal purchase. One payment through the App Store unloc
 - [SSH disconnects on iPhone: how to keep sessions alive](/documentation/guides/keep-ssh-session-alive-iphone/)
 - [Best SSH Client for iOS Without a Subscription](/documentation/guides/no-subscription-ssh-client-ios/)
 - [Free SSH Client for iPhone](/documentation/guides/free-ssh-client-for-iphone/)
+- [Free SSH Client for Mac](/documentation/guides/free-ssh-client-for-mac/)
 
 ## Download WebSSH for iPad
 

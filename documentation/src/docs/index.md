@@ -26,6 +26,7 @@ New to WebSSH? These guides will help you to get things done :
 
 * [Free SSH client for iPhone](/documentation/guides/free-ssh-client-for-iphone/)
 * [Free SSH client for iPad](/documentation/guides/free-ssh-client-for-ipad/)
+* [Free SSH client for Mac](/documentation/guides/free-ssh-client-for-mac/)
 * [Transfer files via SFTP on iPhone and iPad](/documentation/guides/sftp-file-transfer-iphone/)
 * [SSH Port Forwarding on iOS](/documentation/guides/port-forwarding-ios/)
 * [Access your homelab remotely via SSH tunnel](/documentation/guides/homelab-ssh-tunnel-ios/)
