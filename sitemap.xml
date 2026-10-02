@@ -5,7 +5,7 @@
     <loc>https://webssh.net/</loc>
 
     
-    <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+    <lastmod>2026-10-02T20:18:03+00:00</lastmod>
 
       
       
@@ -369,7 +369,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -1155,7 +1155,7 @@
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-ipad/</loc>
 
     
-    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+    <lastmod>2026-10-02T20:18:03+00:00</lastmod>
 
       
       
@@ -1180,7 +1180,32 @@
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-iphone/</loc>
 
     
-    <lastmod>2026-09-23T07:22:06+00:00</lastmod>
+    <lastmod>2026-10-02T20:18:03+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://webssh.net/documentation/guides/free-ssh-client-for-mac/</loc>
+
+    
+    <lastmod>2026-10-02T20:18:03+00:00</lastmod>
 
       
       

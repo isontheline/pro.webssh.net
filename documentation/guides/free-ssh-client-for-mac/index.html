@@ -6,31 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Copy command output from a remote SSH session to your local clipboard with the OSC 52 escape sequence, as simple as: cat filename.txt | wshcopy">
+        <meta name="description" content="Full SSH, SFTP, Telnet, Mosh and serial terminal for Mac, free. Native tabs, split panes and Touch ID lock. One-time Pro upgrade, no subscription, no cloud relay.">
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/copying-text-to-clipboard-from-terminal/">
+        <link rel="canonical" href="https://webssh.net/documentation/guides/free-ssh-client-for-mac/">
       
       
-        <link rel="prev" href="../arrange-connections-inside-folders/">
+        <link rel="prev" href="../free-ssh-client-for-iphone/">
       
       
-        <link rel="next" href="../create-or-import-public-private-key-pair/">
+        <link rel="next" href="../homelab-ssh-tunnel-ios/">
       
-      <link rel="icon" href="../../../../images/favicon.ico">
+      <link rel="icon" href="../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
     
     
     
-        <title>Copy Text from an SSH Terminal to the Clipboard (OSC 52) - WebSSH</title>
+        
+      
+        <title>Free SSH Client for Mac: No Subscription, No Account - WebSSH</title>
+      
+    
     
 
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -40,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/extra.css?20251102B">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css?20251102B">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -61,14 +65,14 @@
         
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WebSSH" />
-        <meta property="og:title" content="Copy Text from an SSH Terminal to the Clipboard (OSC 52) - WebSSH" />
-        <meta property="og:url" content="https://webssh.net/documentation/help/howtos/copying-text-to-clipboard-from-terminal/" />
+        <meta property="og:title" content="Free SSH Client for Mac: No Subscription, No Account - WebSSH" />
+        <meta property="og:url" content="https://webssh.net/documentation/guides/free-ssh-client-for-mac/" />
         <meta property="og:image" content="https://webssh.net/images/webssh-logo.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Copy Text from an SSH Terminal to the Clipboard (OSC 52) - WebSSH" />
+        <meta name="twitter:title" content="Free SSH Client for Mac: No Subscription, No Account - WebSSH" />
         
-            <meta property="og:description" content="Copy command output from a remote SSH session to your local clipboard with the OSC 52 escape sequence, as simple as: cat filename.txt | wshcopy" />
-            <meta name="twitter:description" content="Copy command output from a remote SSH session to your local clipboard with the OSC 52 escape sequence, as simple as: cat filename.txt | wshcopy" />
+            <meta property="og:description" content="Full SSH, SFTP, Telnet, Mosh and serial terminal for Mac, free. Native tabs, split panes and Touch ID lock. One-time Pro upgrade, no subscription, no cloud relay." />
+            <meta name="twitter:description" content="Full SSH, SFTP, Telnet, Mosh and serial terminal for Mac, free. Native tabs, split panes and Touch ID lock. One-time Pro upgrade, no subscription, no cloud relay." />
         
     
 
@@ -92,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-copy-output-to-the-clipboard" class="md-skip">
+        <a href="#free-ssh-client-for-mac-no-subscription-no-account-required" class="md-skip">
           Skip to content
         </a>
       
@@ -106,9 +110,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -124,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Copying text to the clipboard from the terminal
+              Free SSH Client for Mac: No Subscription, No Account
             
           </span>
         </div>
@@ -187,7 +191,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Getting Started
     </a>
   </li>
@@ -199,7 +203,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../../support/" class="md-tabs__link">
+    <a href="../../../support/" class="md-tabs__link">
       Support
     </a>
   </li>
@@ -216,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
         Documentation
       </a>
     </li>
@@ -232,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../licenses/" class="md-tabs__link">
+      <a href="../../../licenses/" class="md-tabs__link">
         Licenses
       </a>
     </li>
@@ -260,9 +264,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../images/webssh-logo.png" alt="logo">
 
     </a>
     WebSSH
@@ -278,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -293,7 +297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../support/" class="md-nav__link">
+      <a href="../../../support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -337,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         About Documentation
       </a>
     </li>
@@ -351,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../becoming-external-tester/" class="md-nav__link">
+      <a href="../../becoming-external-tester/" class="md-nav__link">
         Beta Enrollment
       </a>
     </li>
@@ -365,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contact-me/" class="md-nav__link">
+      <a href="../../contact-me/" class="md-nav__link">
         Contact Me
       </a>
     </li>
@@ -379,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../frequently-asked-questions/" class="md-nav__link">
+      <a href="../../frequently-asked-questions/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -393,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mashREPL/" class="md-nav__link">
+      <a href="../../mashREPL/" class="md-nav__link">
         mashREPL
       </a>
     </li>
@@ -407,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pricing/" class="md-nav__link">
+      <a href="../../pricing/" class="md-nav__link">
         Pricing
       </a>
     </li>
@@ -421,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../translations/" class="md-nav__link">
+      <a href="../../translations/" class="md-nav__link">
         Translations
       </a>
     </li>
@@ -435,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../web-browser/" class="md-nav__link">
+      <a href="../../web-browser/" class="md-nav__link">
         Web Browser
       </a>
     </li>
@@ -476,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/25/" class="md-nav__link">
+      <a href="../../changelog/25/" class="md-nav__link">
         25 - Sunflower
       </a>
     </li>
@@ -490,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/26/" class="md-nav__link">
+      <a href="../../changelog/26/" class="md-nav__link">
         26 - Train
       </a>
     </li>
@@ -504,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/27/" class="md-nav__link">
+      <a href="../../changelog/27/" class="md-nav__link">
         27 - Stars
       </a>
     </li>
@@ -518,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/28/" class="md-nav__link">
+      <a href="../../changelog/28/" class="md-nav__link">
         28 - Fox
       </a>
     </li>
@@ -532,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/29/" class="md-nav__link">
+      <a href="../../changelog/29/" class="md-nav__link">
         29 - Monkey
       </a>
     </li>
@@ -546,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/30/" class="md-nav__link">
+      <a href="../../changelog/30/" class="md-nav__link">
         30 - Snowflake
       </a>
     </li>
@@ -560,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/31/" class="md-nav__link">
+      <a href="../../changelog/31/" class="md-nav__link">
         31 - Ocean
       </a>
     </li>
@@ -574,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/32/" class="md-nav__link">
+      <a href="../../changelog/32/" class="md-nav__link">
         32 - Comet
       </a>
     </li>
@@ -588,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/33/" class="md-nav__link">
+      <a href="../../changelog/33/" class="md-nav__link">
         33 - Ladybug
       </a>
     </li>
@@ -629,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/15/" class="md-nav__link">
+      <a href="../../changelog/history/15/" class="md-nav__link">
         15 - Cactus
       </a>
     </li>
@@ -643,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/16/" class="md-nav__link">
+      <a href="../../changelog/history/16/" class="md-nav__link">
         16 - Gem
       </a>
     </li>
@@ -657,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/17/" class="md-nav__link">
+      <a href="../../changelog/history/17/" class="md-nav__link">
         17 - Shell
       </a>
     </li>
@@ -671,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/18/" class="md-nav__link">
+      <a href="../../changelog/history/18/" class="md-nav__link">
         18 - Honeybee
       </a>
     </li>
@@ -685,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/19/" class="md-nav__link">
+      <a href="../../changelog/history/19/" class="md-nav__link">
         19 - Octopus
       </a>
     </li>
@@ -699,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/20/" class="md-nav__link">
+      <a href="../../changelog/history/20/" class="md-nav__link">
         20 - Moon
       </a>
     </li>
@@ -713,7 +717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/21/" class="md-nav__link">
+      <a href="../../changelog/history/21/" class="md-nav__link">
         21 - Penguin
       </a>
     </li>
@@ -727,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/22/" class="md-nav__link">
+      <a href="../../changelog/history/22/" class="md-nav__link">
         22 - Butterfly
       </a>
     </li>
@@ -741,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/23/" class="md-nav__link">
+      <a href="../../changelog/history/23/" class="md-nav__link">
         23 - Satellite
       </a>
     </li>
@@ -755,7 +759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/24/" class="md-nav__link">
+      <a href="../../changelog/history/24/" class="md-nav__link">
         24 - Dragon
       </a>
     </li>
@@ -769,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/previous-releases/" class="md-nav__link">
+      <a href="../../changelog/history/previous-releases/" class="md-nav__link">
         Previous Releases
       </a>
     </li>
@@ -810,7 +814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.10/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.10/" class="md-nav__link">
         14.10 - Truck
       </a>
     </li>
@@ -824,7 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.11/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.11/" class="md-nav__link">
         14.11 - Milky Way
       </a>
     </li>
@@ -838,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.12/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.12/" class="md-nav__link">
         14.12 - Volcano
       </a>
     </li>
@@ -852,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.13/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.13/" class="md-nav__link">
         14.13 - Tent
       </a>
     </li>
@@ -866,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.14/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.14/" class="md-nav__link">
         14.14 - Green Apple
       </a>
     </li>
@@ -880,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.15/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.15/" class="md-nav__link">
         14.15 - Cookie
       </a>
     </li>
@@ -894,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.16/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.16/" class="md-nav__link">
         14.16 - Whale
       </a>
     </li>
@@ -908,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.17/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.17/" class="md-nav__link">
         14.17 - Trèfle
       </a>
     </li>
@@ -922,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.18/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.18/" class="md-nav__link">
         14.18 - Mushroom
       </a>
     </li>
@@ -936,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.19/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.19/" class="md-nav__link">
         14.19 - Crocodile
       </a>
     </li>
@@ -950,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.6/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.6/" class="md-nav__link">
         14.6 - Bicyclist
       </a>
     </li>
@@ -964,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.7/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.7/" class="md-nav__link">
         14.7 - Tractor
       </a>
     </li>
@@ -978,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.8/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.8/" class="md-nav__link">
         14.8 - Locomotive
       </a>
     </li>
@@ -992,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../changelog/history/14/14.9/" class="md-nav__link">
+      <a href="../../changelog/history/14/14.9/" class="md-nav__link">
         14.9 - Helicopter
       </a>
     </li>
@@ -1025,18 +1029,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_10" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_10" tabindex="0" aria-expanded="true">
           Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1054,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/check-server-logs-iphone/" class="md-nav__link">
+      <a href="../check-server-logs-iphone/" class="md-nav__link">
         How to Check Server Logs from Your iPhone
       </a>
     </li>
@@ -1068,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/edit-config-file-remote-server-iphone/" class="md-nav__link">
+      <a href="../edit-config-file-remote-server-iphone/" class="md-nav__link">
         Edit a Config File on a Remote Server from iPhone or iPad
       </a>
     </li>
@@ -1082,7 +1088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/free-ssh-client-for-ipad/" class="md-nav__link">
+      <a href="../free-ssh-client-for-ipad/" class="md-nav__link">
         Free SSH Client for iPad: No Subscription, No Account
       </a>
     </li>
@@ -1096,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/free-ssh-client-for-iphone/" class="md-nav__link">
+      <a href="../free-ssh-client-for-iphone/" class="md-nav__link">
         Free SSH Client for iPhone: No Subscription, No Account
       </a>
     </li>
@@ -1108,11 +1114,287 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../guides/free-ssh-client-for-mac/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Free SSH Client for Mac: No Subscription, No Account
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Free SSH Client for Mac: No Subscription, No Account
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-webssh" class="md-nav__link">
+    What Is WebSSH?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminalapp-already-has-ssh-why-use-a-client" class="md-nav__link">
+    Terminal.app Already Has SSH. Why Use a Client?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-for-the-mac" class="md-nav__link">
+    Built for the Mac
+  </a>
+  
+    <nav class="md-nav" aria-label="Built for the Mac">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-bar-windows-and-tabs" class="md-nav__link">
+    Menu Bar, Windows and Tabs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-panes" class="md-nav__link">
+    Split Panes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-and-trackpad" class="md-nav__link">
+    Keyboard and Trackpad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drag-and-drop" class="md-nav__link">
+    Drag and Drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-port-client-mac-only" class="md-nav__link">
+    Serial Port Client (Mac only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-api-mcp-server-mac-only" class="md-nav__link">
+    Built-in API / MCP Server (Mac only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-id-lock" class="md-nav__link">
+    Touch ID Lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysadmin-tools-in-the-menu-bar" class="md-nav__link">
+    Sysadmin Tools in the Menu Bar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-feature-set" class="md-nav__link">
+    Full Feature Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Feature Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    Networking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-vs-pro-what-you-get" class="md-nav__link">
+    Free vs. Pro: What You Get
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-your-servers-stay-yours" class="md-nav__link">
+    Privacy: Your Servers Stay Yours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-on-mac" class="md-nav__link">
+    Getting Started on Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    Frequently Asked Questions
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-webssh-free-to-use-on-mac" class="md-nav__link">
+    Is WebSSH free to use on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-create-an-account-to-use-webssh-on-mac" class="md-nav__link">
+    Do I need to create an account to use WebSSH on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-webssh-instead-of-terminalapp" class="md-nav__link">
+    Why use WebSSH instead of Terminal.app?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-macos-versions-does-webssh-support" class="md-nav__link">
+    Which macOS versions does WebSSH support?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-webssh-run-on-apple-silicon-and-intel-macs" class="md-nav__link">
+    Does WebSSH run on Apple Silicon and Intel Macs?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-webssh-support-tabs-and-keyboard-shortcuts-on-mac" class="md-nav__link">
+    Does WebSSH support tabs and keyboard shortcuts on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-webssh-as-a-serial-console-on-mac" class="md-nav__link">
+    Can I use WebSSH as a serial console on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-webssh-with-claude-desktop-or-other-ai-tools" class="md-nav__link">
+    Can I use WebSSH with Claude Desktop or other AI tools?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-buying-webssh-pro-on-iphone-also-cover-my-mac" class="md-nav__link">
+    Does buying WebSSH Pro on iPhone also cover my Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-sync-my-connections-between-mac-iphone-and-ipad" class="md-nav__link">
+    Can I sync my connections between Mac, iPhone and iPad?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    Related Guides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-webssh-for-mac" class="md-nav__link">
+    Download WebSSH for Mac
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1124,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/homelab-ssh-tunnel-ios/" class="md-nav__link">
+      <a href="../homelab-ssh-tunnel-ios/" class="md-nav__link">
         Access Your Homelab Remotely via SSH Tunnel on iOS
       </a>
     </li>
@@ -1138,7 +1420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/keep-ssh-session-alive-iphone/" class="md-nav__link">
+      <a href="../keep-ssh-session-alive-iphone/" class="md-nav__link">
         SSH Disconnects on iPhone: How to Keep Sessions Alive
       </a>
     </li>
@@ -1152,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/no-subscription-ssh-client-ios/" class="md-nav__link">
+      <a href="../no-subscription-ssh-client-ios/" class="md-nav__link">
         Best SSH Client for iOS Without a Subscription
       </a>
     </li>
@@ -1166,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/port-forwarding-ios/" class="md-nav__link">
+      <a href="../port-forwarding-ios/" class="md-nav__link">
         SSH Port Forwarding on iOS — Tunnels on iPhone & iPad
       </a>
     </li>
@@ -1180,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/raspberry-pi-ssh-ios/" class="md-nav__link">
+      <a href="../raspberry-pi-ssh-ios/" class="md-nav__link">
         How to SSH into a Raspberry Pi from iPhone or iPad
       </a>
     </li>
@@ -1194,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/restart-server-from-iphone/" class="md-nav__link">
+      <a href="../restart-server-from-iphone/" class="md-nav__link">
         How to Restart a Server or Service from Your iPhone
       </a>
     </li>
@@ -1208,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/sftp-file-transfer-iphone/" class="md-nav__link">
+      <a href="../sftp-file-transfer-iphone/" class="md-nav__link">
         Transfer Files via SFTP on iPhone and iPad
       </a>
     </li>
@@ -1222,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/ssh-apple-shortcuts-iphone/" class="md-nav__link">
+      <a href="../ssh-apple-shortcuts-iphone/" class="md-nav__link">
         Automate SSH on iPhone with Shortcuts and Deep Links
       </a>
     </li>
@@ -1236,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/ssh-proxmox-iphone/" class="md-nav__link">
+      <a href="../ssh-proxmox-iphone/" class="md-nav__link">
         How to SSH into Proxmox from iPhone or iPad
       </a>
     </li>
@@ -1250,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/synology-ssh-iphone-ipad/" class="md-nav__link">
+      <a href="../synology-ssh-iphone-ipad/" class="md-nav__link">
         SSH to Synology NAS from iPhone or iPad
       </a>
     </li>
@@ -1264,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/tmux-iphone-persistent-ssh-sessions/" class="md-nav__link">
+      <a href="../tmux-iphone-persistent-ssh-sessions/" class="md-nav__link">
         tmux on iPhone: SSH Sessions That Survive Disconnects
       </a>
     </li>
@@ -1278,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../guides/wake-pc-remotely-from-iphone/" class="md-nav__link">
+      <a href="../wake-pc-remotely-from-iphone/" class="md-nav__link">
         Wake Your PC or Server from iPhone with Wake-on-LAN
       </a>
     </li>
@@ -1297,20 +1579,18 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="false">
           Help
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1328,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../iCloud/" class="md-nav__link">
+      <a href="../../help/iCloud/" class="md-nav__link">
         iCloud
       </a>
     </li>
@@ -1342,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../restore-purchases/" class="md-nav__link">
+      <a href="../../help/restore-purchases/" class="md-nav__link">
         Restoring Purchases
       </a>
     </li>
@@ -1383,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
+      <a href="../../help/SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
         Keyboard Shortcuts
       </a>
     </li>
@@ -1397,7 +1677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/lockdown-mode-and-fonts/" class="md-nav__link">
+      <a href="../../help/SSH/lockdown-mode-and-fonts/" class="md-nav__link">
         Lockdown Mode and Custom Fonts
       </a>
     </li>
@@ -1411,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/public-private-key/" class="md-nav__link">
+      <a href="../../help/SSH/public-private-key/" class="md-nav__link">
         Public / Private Key
       </a>
     </li>
@@ -1425,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/ssh-config-file/" class="md-nav__link">
+      <a href="../../help/SSH/ssh-config-file/" class="md-nav__link">
         SSH Config File
       </a>
     </li>
@@ -1439,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/ssh-copy-id/" class="md-nav__link">
+      <a href="../../help/SSH/ssh-copy-id/" class="md-nav__link">
         ssh-copy-id
       </a>
     </li>
@@ -1453,7 +1733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/supported-algorithms/" class="md-nav__link">
+      <a href="../../help/SSH/supported-algorithms/" class="md-nav__link">
         Supported Algorithms
       </a>
     </li>
@@ -1467,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-inline-images/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-inline-images/" class="md-nav__link">
         Terminal Inline Images (SIXEL & iTerm2)
       </a>
     </li>
@@ -1481,7 +1761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-progress-bar/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-progress-bar/" class="md-nav__link">
         Terminal Progress Bar (OSC 9;4)
       </a>
     </li>
@@ -1495,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terrapin-attack/" class="md-nav__link">
+      <a href="../../help/SSH/terrapin-attack/" class="md-nav__link">
         Terrapin Attack
       </a>
     </li>
@@ -1509,7 +1789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
+      <a href="../../help/SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
         Unable to agree upon client-to-server Error
       </a>
     </li>
@@ -1550,7 +1830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-settings/terminal-badge/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-settings/terminal-badge/" class="md-nav__link">
         Terminal Badge
       </a>
     </li>
@@ -1564,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
+      <a href="../../help/SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
         Terminal Font Size
       </a>
     </li>
@@ -1619,7 +1899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
+      <a href="../../help/errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
         Can't connect anymore using macOS Sequoia 15.x
       </a>
     </li>
@@ -1633,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
+      <a href="../../help/errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
         Apple Magic Keyboard Space Bar Issue
       </a>
     </li>
@@ -1647,7 +1927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/no-route-to-host-error/" class="md-nav__link">
+      <a href="../../help/errors/no-route-to-host-error/" class="md-nav__link">
         No Route to Host Error
       </a>
     </li>
@@ -1661,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
+      <a href="../../help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
         Must first connect to the SSH server
       </a>
     </li>
@@ -1680,20 +1960,18 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5" type="checkbox" id="__nav_3_11_5" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5" type="checkbox" id="__nav_3_11_5" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_11_5" tabindex="0" aria-expanded="false">
           Howtos
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1711,7 +1989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arrange-connections-inside-folders/" class="md-nav__link">
+      <a href="../../help/howtos/arrange-connections-inside-folders/" class="md-nav__link">
         Arrange connections inside folders (groups and subgroups)
       </a>
     </li>
@@ -1723,73 +2001,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Copying text to the clipboard from the terminal
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../help/howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
         Copying text to the clipboard from the terminal
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#its-simple-as" class="md-nav__link">
-    It's simple as :
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-install-wshcopy" class="md-nav__link">
-    How to install wshcopy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-use-with-tmux-33" class="md-nav__link">
-    How to use with tmux &gt;= 3.3
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#i-would-like-to-improve-wshcopy" class="md-nav__link">
-    I would like to improve wshcopy
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1801,7 +2017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../create-or-import-public-private-key-pair/" class="md-nav__link">
+      <a href="../../help/howtos/create-or-import-public-private-key-pair/" class="md-nav__link">
         Create or Import a Public/Private Key Pair
       </a>
     </li>
@@ -1815,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../edit-delete-clone-connection/" class="md-nav__link">
+      <a href="../../help/howtos/edit-delete-clone-connection/" class="md-nav__link">
         Edit / Delete / Clone a connection (server)
       </a>
     </li>
@@ -1829,7 +2045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../enabling-verbose-logging/" class="md-nav__link">
+      <a href="../../help/howtos/enabling-verbose-logging/" class="md-nav__link">
         Enabling Verbose Logging
       </a>
     </li>
@@ -1843,7 +2059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../known-hosts-manage/" class="md-nav__link">
+      <a href="../../help/howtos/known-hosts-manage/" class="md-nav__link">
         Managing Known Hosts
       </a>
     </li>
@@ -1857,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../launching-multiple-terminals/" class="md-nav__link">
+      <a href="../../help/howtos/launching-multiple-terminals/" class="md-nav__link">
         Multiple connections
       </a>
     </li>
@@ -1871,7 +2087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../link-connections-using-tags/" class="md-nav__link">
+      <a href="../../help/howtos/link-connections-using-tags/" class="md-nav__link">
         Link Connections using Tags
       </a>
     </li>
@@ -1885,7 +2101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pasting-clipboard-content/" class="md-nav__link">
+      <a href="../../help/howtos/pasting-clipboard-content/" class="md-nav__link">
         Paste Clipboard Content
       </a>
     </li>
@@ -1899,7 +2115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-snippet-on-multiple-hosts/" class="md-nav__link">
+      <a href="../../help/howtos/run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
     </li>
@@ -1913,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../snippets/" class="md-nav__link">
+      <a href="../../help/howtos/snippets/" class="md-nav__link">
         Snippets
       </a>
     </li>
@@ -1927,7 +2143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../switch-language/" class="md-nav__link">
+      <a href="../../help/howtos/switch-language/" class="md-nav__link">
         Switch WebSSH UI Language
       </a>
     </li>
@@ -1941,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use-deep-linking/" class="md-nav__link">
+      <a href="../../help/howtos/use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
     </li>
@@ -1955,7 +2171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+      <a href="../../help/howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
         Use Mystic BBS with Telnet CP437 codepage
       </a>
     </li>
@@ -1996,7 +2212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
         Bad interpreter / No such file or directory
       </a>
     </li>
@@ -2010,7 +2226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SFTP/search-replace-text-editor/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
         Search / Replace text in SFTP editor
       </a>
     </li>
@@ -2024,7 +2240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SFTP/startup-folder-path/" class="md-nav__link">
+      <a href="../../help/howtos/SFTP/startup-folder-path/" class="md-nav__link">
         Startup Folder / Path
       </a>
     </li>
@@ -2072,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/adding-control-key-to-snippets/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
         Adding Control-Key to Snippets
       </a>
     </li>
@@ -2086,7 +2302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
         Keyboard Accessory View Customisation
       </a>
     </li>
@@ -2100,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/use-arrow-keys-modes/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
         Arrow Keys Modes
       </a>
     </li>
@@ -2114,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/use-function-keys-on-mac/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
         Function Keys on Mac
       </a>
     </li>
@@ -2128,7 +2344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/use-meta-alt-option-key/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
         Meta / Alt / Option
       </a>
     </li>
@@ -2142,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH/use-old-special-keys/" class="md-nav__link">
+      <a href="../../help/howtos/SSH/use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
     </li>
@@ -2190,7 +2406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mashREPL/database-backup/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/database-backup/" class="md-nav__link">
         Database Backup
       </a>
     </li>
@@ -2204,7 +2420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mashREPL/database-restore/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/database-restore/" class="md-nav__link">
         Database Restore
       </a>
     </li>
@@ -2218,7 +2434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mashREPL/import/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
     </li>
@@ -2232,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mashREPL/obtain-public-ip-address/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
         Obtain Public IP Address
       </a>
     </li>
@@ -2246,7 +2462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mashREPL/servedit/" class="md-nav__link">
+      <a href="../../help/howtos/mashREPL/servedit/" class="md-nav__link">
         Servedit - Update Connections in Batch
       </a>
     </li>
@@ -2294,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tmux/create-attach-existing-tmux-session/" class="md-nav__link">
+      <a href="../../help/howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
         Create or attach an existing tmux session
       </a>
     </li>
@@ -2308,7 +2524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tmux/tmux-scrollback-buffer/" class="md-nav__link">
+      <a href="../../help/howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
         Scrollback buffer in tmux
       </a>
     </li>
@@ -2363,7 +2579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intelligence/" class="md-nav__link">
+      <a href="../../help/intelligence/" class="md-nav__link">
         Intelligence & Automation
       </a>
     </li>
@@ -2377,7 +2593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../intelligence/api-mcp-server/" class="md-nav__link">
+      <a href="../../help/intelligence/api-mcp-server/" class="md-nav__link">
         API / MCP Server
       </a>
     </li>
@@ -2425,7 +2641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/alternative-addresses/" class="md-nav__link">
+      <a href="../../help/networking/alternative-addresses/" class="md-nav__link">
         Alternative Addresses
       </a>
     </li>
@@ -2439,7 +2655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/checking-host-availability/" class="md-nav__link">
+      <a href="../../help/networking/checking-host-availability/" class="md-nav__link">
         Checking Host Availability
       </a>
     </li>
@@ -2453,7 +2669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/dynamic-port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
     </li>
@@ -2467,7 +2683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/local-port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/local-port-forwarding/" class="md-nav__link">
         Local Port Forwarding (LPF)
       </a>
     </li>
@@ -2481,7 +2697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/port-forwarding/" class="md-nav__link">
+      <a href="../../help/networking/port-forwarding/" class="md-nav__link">
         Port Forwarding
       </a>
     </li>
@@ -2495,7 +2711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/port-knocking/" class="md-nav__link">
+      <a href="../../help/networking/port-knocking/" class="md-nav__link">
         Port Knocking
       </a>
     </li>
@@ -2509,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/vpn-over-ssh/" class="md-nav__link">
+      <a href="../../help/networking/vpn-over-ssh/" class="md-nav__link">
         VPN-Over-SSH
       </a>
     </li>
@@ -2523,7 +2739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/wake-on-lan/" class="md-nav__link">
+      <a href="../../help/networking/wake-on-lan/" class="md-nav__link">
         Wake-on-LAN
       </a>
     </li>
@@ -2578,7 +2794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../legal/privacy-policy/" class="md-nav__link">
+      <a href="../../legal/privacy-policy/" class="md-nav__link">
         Privacy Policy
       </a>
     </li>
@@ -2626,7 +2842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminal-state-bar/" class="md-nav__link">
+      <a href="../../terminal-state-bar/" class="md-nav__link">
         Terminal State Bar
       </a>
     </li>
@@ -2640,7 +2856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminal-state-bar/examples/" class="md-nav__link">
+      <a href="../../terminal-state-bar/examples/" class="md-nav__link">
         State Bar Examples
       </a>
     </li>
@@ -2654,7 +2870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminal-state-bar/javascript-api/" class="md-nav__link">
+      <a href="../../terminal-state-bar/javascript-api/" class="md-nav__link">
         State Bar JavaScript API
       </a>
     </li>
@@ -2668,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminal-state-bar/library/" class="md-nav__link">
+      <a href="../../terminal-state-bar/library/" class="md-nav__link">
         State Bar Library
       </a>
     </li>
@@ -2724,7 +2940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/" class="md-nav__link">
+      <a href="../../../licenses/" class="md-nav__link">
         About Licenses
       </a>
     </li>
@@ -2738,7 +2954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
         ANSITerminal
       </a>
     </li>
@@ -2752,7 +2968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
         Asciinema Player
       </a>
     </li>
@@ -2766,7 +2982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
         BlockAlerts
       </a>
     </li>
@@ -2780,7 +2996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
         CloudKitQueues
       </a>
     </li>
@@ -2794,7 +3010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
         CocoaLumberjack
       </a>
     </li>
@@ -2808,7 +3024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
         ColorPicker
       </a>
     </li>
@@ -2822,7 +3038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CUE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CUE/" class="md-nav__link">
         CueIcons
       </a>
     </li>
@@ -2836,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
         CyberChef
       </a>
     </li>
@@ -2850,7 +3066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
         CYRKeyboardButton
       </a>
     </li>
@@ -2864,7 +3080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
         DNSClient
       </a>
     </li>
@@ -2878,7 +3094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
         DSFSparkline
       </a>
     </li>
@@ -2892,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
         EDSemver
       </a>
     </li>
@@ -2906,7 +3122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
         EventSource
       </a>
     </li>
@@ -2920,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
         Fira Code
       </a>
     </li>
@@ -2934,7 +3150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
         FontAwesome
       </a>
     </li>
@@ -2948,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
         FXForms
       </a>
     </li>
@@ -2962,7 +3178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
         LICENSE GCDTIMER
       </a>
     </li>
@@ -2976,7 +3192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
         GCImagePickerController
       </a>
     </li>
@@ -2990,7 +3206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
         GCPlaceHolderTextView
       </a>
     </li>
@@ -3004,7 +3220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
         GradientButton
       </a>
     </li>
@@ -3018,7 +3234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_HACK/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HACK/" class="md-nav__link">
         Hack - A typeface designed for source code
       </a>
     </li>
@@ -3032,7 +3248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
         HilightedTextEditor
       </a>
     </li>
@@ -3046,7 +3262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
         IAPHelper
       </a>
     </li>
@@ -3060,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
         Iosevka
       </a>
     </li>
@@ -3074,7 +3290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
         ios_system
       </a>
     </li>
@@ -3088,7 +3304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
         iOS-System-Services
       </a>
     </li>
@@ -3102,7 +3318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
         iTerm Color Schemes
       </a>
     </li>
@@ -3116,7 +3332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
         JGActionSheet
       </a>
     </li>
@@ -3130,7 +3346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
         JSController
       </a>
     </li>
@@ -3144,7 +3360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
         KXMenu
       </a>
     </li>
@@ -3158,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
         libtelnet
       </a>
     </li>
@@ -3172,7 +3388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
         MarkdownUI
       </a>
     </li>
@@ -3186,7 +3402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
         MesloLGS NF
       </a>
     </li>
@@ -3200,7 +3416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
         MMWormhole
       </a>
     </li>
@@ -3214,7 +3430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_MONOID/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_MONOID/" class="md-nav__link">
         Monoid
       </a>
     </li>
@@ -3228,7 +3444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
         NanoStore
       </a>
     </li>
@@ -3242,7 +3458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
         NYXImagesKit
       </a>
     </li>
@@ -3256,7 +3472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
         OpenDyslexic
       </a>
     </li>
@@ -3270,7 +3486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
         OpenSSL
       </a>
     </li>
@@ -3284,7 +3500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
         ORSSerialPort
       </a>
     </li>
@@ -3298,7 +3514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
         RaptureXML
       </a>
     </li>
@@ -3312,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
         Reachability
       </a>
     </li>
@@ -3326,7 +3542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
         Runestone
       </a>
     </li>
@@ -3340,7 +3556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
         SimplePing
       </a>
     </li>
@@ -3354,7 +3570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
         Source Code Pro
       </a>
     </li>
@@ -3368,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
         SSHConfig
       </a>
     </li>
@@ -3382,7 +3598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
         SVHttpRequest
       </a>
     </li>
@@ -3396,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
         Swift Argument Parser
       </a>
     </li>
@@ -3410,7 +3626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
         SwiftChess
       </a>
     </li>
@@ -3424,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
         SymbolPicker
       </a>
     </li>
@@ -3438,7 +3654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
         SwiftMessages
       </a>
     </li>
@@ -3452,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
         termcolor-c
       </a>
     </li>
@@ -3466,7 +3682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
         Terminus
       </a>
     </li>
@@ -3480,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
         TPKeyboardAvoiding
       </a>
     </li>
@@ -3494,7 +3710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
         TSLanguageManager
       </a>
     </li>
@@ -3508,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
         TurtleBezierPath
       </a>
     </li>
@@ -3522,7 +3738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
         UCKeychainStore
       </a>
     </li>
@@ -3536,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
         UIAlertControllerConvenience
       </a>
     </li>
@@ -3550,7 +3766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
         UIDeviceHardware
       </a>
     </li>
@@ -3564,7 +3780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
         UIImageViewResizable
       </a>
     </li>
@@ -3578,7 +3794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
         Welcome Sheet
       </a>
     </li>
@@ -3592,7 +3808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
         Xterm.js
       </a>
     </li>
@@ -3606,7 +3822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
+      <a href="../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
         Yubico Mobile iOS SDK (YubiKit)
       </a>
     </li>
@@ -3647,29 +3863,243 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#its-simple-as" class="md-nav__link">
-    It's simple as :
+  <a href="#what-is-webssh" class="md-nav__link">
+    What Is WebSSH?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-install-wshcopy" class="md-nav__link">
-    How to install wshcopy
+  <a href="#terminalapp-already-has-ssh-why-use-a-client" class="md-nav__link">
+    Terminal.app Already Has SSH. Why Use a Client?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-with-tmux-33" class="md-nav__link">
-    How to use with tmux &gt;= 3.3
+  <a href="#built-for-the-mac" class="md-nav__link">
+    Built for the Mac
+  </a>
+  
+    <nav class="md-nav" aria-label="Built for the Mac">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-bar-windows-and-tabs" class="md-nav__link">
+    Menu Bar, Windows and Tabs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#split-panes" class="md-nav__link">
+    Split Panes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard-and-trackpad" class="md-nav__link">
+    Keyboard and Trackpad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#drag-and-drop" class="md-nav__link">
+    Drag and Drop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-port-client-mac-only" class="md-nav__link">
+    Serial Port Client (Mac only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#built-in-api-mcp-server-mac-only" class="md-nav__link">
+    Built-in API / MCP Server (Mac only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-id-lock" class="md-nav__link">
+    Touch ID Lock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sysadmin-tools-in-the-menu-bar" class="md-nav__link">
+    Sysadmin Tools in the Menu Bar
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-feature-set" class="md-nav__link">
+    Full Feature Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Feature Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#protocols" class="md-nav__link">
+    Protocols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    Networking
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal" class="md-nav__link">
+    Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#free-vs-pro-what-you-get" class="md-nav__link">
+    Free vs. Pro: What You Get
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#i-would-like-to-improve-wshcopy" class="md-nav__link">
-    I would like to improve wshcopy
+  <a href="#privacy-your-servers-stay-yours" class="md-nav__link">
+    Privacy: Your Servers Stay Yours
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-on-mac" class="md-nav__link">
+    Getting Started on Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frequently-asked-questions" class="md-nav__link">
+    Frequently Asked Questions
+  </a>
+  
+    <nav class="md-nav" aria-label="Frequently Asked Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is-webssh-free-to-use-on-mac" class="md-nav__link">
+    Is WebSSH free to use on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-create-an-account-to-use-webssh-on-mac" class="md-nav__link">
+    Do I need to create an account to use WebSSH on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-webssh-instead-of-terminalapp" class="md-nav__link">
+    Why use WebSSH instead of Terminal.app?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-macos-versions-does-webssh-support" class="md-nav__link">
+    Which macOS versions does WebSSH support?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-webssh-run-on-apple-silicon-and-intel-macs" class="md-nav__link">
+    Does WebSSH run on Apple Silicon and Intel Macs?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-webssh-support-tabs-and-keyboard-shortcuts-on-mac" class="md-nav__link">
+    Does WebSSH support tabs and keyboard shortcuts on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-webssh-as-a-serial-console-on-mac" class="md-nav__link">
+    Can I use WebSSH as a serial console on Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-webssh-with-claude-desktop-or-other-ai-tools" class="md-nav__link">
+    Can I use WebSSH with Claude Desktop or other AI tools?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-buying-webssh-pro-on-iphone-also-cover-my-mac" class="md-nav__link">
+    Does buying WebSSH Pro on iPhone also cover my Mac?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-sync-my-connections-between-mac-iphone-and-ipad" class="md-nav__link">
+    Can I sync my connections between Mac, iPhone and iPad?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    Related Guides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-webssh-for-mac" class="md-nav__link">
+    Download WebSSH for Mac
   </a>
   
 </li>
@@ -3690,113 +4120,235 @@
 
 
 
-<div class="admonition tip">
-<p class="admonition-title">Copy to clipboard support</p>
-<p>WebSSH<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> supports<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> OSC52 terminal escape sequence that allows copying text to the clipboard from within the terminal. It is supported by many other<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup> terminal emulators, including xterm, gnome-terminal, and iTerm2.</p>
-</div>
-<h1 id="how-to-copy-output-to-the-clipboard">How to copy output to the clipboard?</h1>
-<h2 id="its-simple-as">It's simple as :</h2>
-<ul>
-<li><code>cat filename.txt | wshcopy</code></li>
-<li><code>echo "WebSSH is awesome!" | wshcopy</code></li>
-</ul>
-<p><code>wshcopy</code> will handle the output and send it to WebSSH by using "invisible" terminal chars.</p>
-<div class="admonition warning">
-<p class="admonition-title">Daemon hides under terminal</p>
-<p>As the terminal can do "untrusted" things, WebSSH will ask you (by default) if you approve or deny the clipboard access.</p>
-<p>You can change this behavior inside WebSSH settings (iOS : within system settings &gt; WebSSH &gt; SSH / macOS : within the app settings &gt; SSH) : "Clipboard Access Strategy"</p>
-</div>
-<h2 id="how-to-install-wshcopy">How to install wshcopy</h2>
-<p><code>pip3 install webssh-sh</code></p>
-<h2 id="how-to-use-with-tmux-33">How to use with tmux &gt;= 3.3</h2>
-<ul>
-<li><code>set -g allow-passthrough on</code> <strong>THEN</strong> <code>echo "WebSSH is awesome!" | wshcopy -t tmux</code></li>
-<li><strong>OR</strong></li>
-<li><code>set -g set-clipboard on</code> <strong>THEN</strong> <code>echo "WebSSH is awesome!" | wshcopy -t default</code></li>
-</ul>
-<h2 id="i-would-like-to-improve-wshcopy">I would like to improve wshcopy <img alt="😛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f61b.svg" title=":stuck_out_tongue:" /></h2>
-<p>Repository is here : <a href="https://github.com/isontheline/webssh.sh">webssh-sh</a></p>
-<h1 id="documentation-about-osc52-terminal-escape-sequence">Documentation about OSC52 Terminal Escape Sequence</h1>
-<h2 id="osc-52-sequence">OSC 52 Sequence</h2>
-<p>The sequence consists of the following:
-<code>OSC 52 ; Pc ; Pd BEL</code></p>
-<ul>
-<li><strong>Pc</strong> is the clipboard choice:</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Choice</th>
-<th>Description</th>
-<th>Supported by WebSSH</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>c</code></td>
-<td>clipboard</td>
-<td><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
-</tr>
-<tr>
-<td><code>p</code></td>
-<td>primary</td>
-<td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274c.svg" title=":x:" /></td>
-</tr>
-<tr>
-<td><code>q</code></td>
-<td>secondary</td>
-<td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274c.svg" title=":x:" /></td>
-</tr>
-<tr>
-<td><code>s</code></td>
-<td>select</td>
-<td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274c.svg" title=":x:" /></td>
-</tr>
-<tr>
-<td><code>0-7</code></td>
-<td>cut-buffers</td>
-<td><img alt="❌" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/274c.svg" title=":x:" /></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Pd</strong> is the data to copy to the clipboard. This string should be encoded in base64 <a href="https://www.rfc-editor.org/rfc/rfc4648.html">RFC-4648</a>.</li>
-<li>If <strong>Pd</strong> is "?", the terminal replies to the host with the current contents of the clipboard.</li>
-<li>If <strong>Pd</strong> is neither a base64 string nor "?", the terminal clears the clipboard.</li>
-</ul>
-<h2 id="useful-links">Useful links</h2>
-<ul>
-<li><a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h3-Operating-System-Commands">invisible-island</a></li>
-<li><a href="https://github.com/ojroques/vim-oscyank/blob/main/README.md">vim-oscyank</a></li>
-<li><a href="https://chromium.googlesource.com/apps/libapps/+/a5fb83c190aa9d74f4a9bca233dac6be2664e9e9/hterm/doc/ControlSequences.md#osc">chromium</a></li>
-<li><a href="https://github.com/xtermjs/xterm.js/issues/3260">xterm.js</a></li>
-<li><a href="https://golangexample.com/copy-text-to-the-system-clipboard-from-anywhere-using-the-ansi-osc52-sequence/">golangexample</a></li>
-<li><a href="https://github.com/aymanbagabas/shcopy/blob/master/main.go">shcopy</a></li>
-<li><a href="https://github.com/aymanbagabas/go-osc52/blob/master/osc52.go">go-osc52</a></li>
-<li><a href="https://github.com/tmux/tmux/wiki/Clipboard">tmux</a></li>
-<li><a href="https://www.freecodecamp.org/news/tmux-in-practice-integration-with-system-clipboard-bcd72c62ff7b/">freecodecamp</a></li>
-</ul>
-<div class="footnote">
+<h1 id="free-ssh-client-for-mac-no-subscription-no-account-required">Free SSH Client for Mac — No Subscription, No Account Required</h1>
+<p>Your Mac already ships with <code>ssh</code> in Terminal.app, so why install an SSH client? Because managing more than a couple of servers from a bare terminal means juggling <code>~/.ssh/config</code>, remembering tunnel flags, and switching to a separate SFTP tool for files. <strong>WebSSH</strong> gives you a native Mac app with saved connections, an SFTP browser, one-click port forwards and a proper terminal — for free, with no subscription and no account to create.</p>
+<p><img src="https://raw.githubusercontent.com/isontheline/pro.webssh.net/master/.appstoreconnect/screenshots/webssh-macos.jpg" alt="WebSSH for Mac: SSH client with native tabs, sidebar and menu bar" /></p>
 <hr />
+<h2 id="what-is-webssh">What Is WebSSH?</h2>
+<p>WebSSH is an SSH, SFTP, Telnet, Mosh and serial client for Mac, iPhone and iPad, developed since 2012 by an indie developer. The Mac version is a native Mac app built from the same codebase as the iOS version, so it has a real menu bar, window tabs, keyboard shortcuts and right-click menus, not a stretched phone interface.</p>
+<p>All connections are direct: your credentials and session data go straight from your Mac to your server, never through a third-party relay. WebSSH is available for free on the <a href="https://apps.apple.com/app/id497714887">App Store</a>, and a single download covers Mac, iPhone and iPad under one Apple ID.</p>
+<hr />
+<h2 id="terminalapp-already-has-ssh-why-use-a-client">Terminal.app Already Has SSH. Why Use a Client?</h2>
+<p>If you connect to one server once in a while, Terminal.app is fine. WebSSH earns its place when you manage several hosts, move files around, or want more than a blank black window:</p>
+<ul>
+<li><strong>Saved connections</strong>: host, port, user, key, 2FA and port knocking stored once, opened with a click or a shortcut</li>
+<li><strong>SFTP browser</strong>: browse, edit, upload and download files in a graphical view, with drag and drop</li>
+<li><strong>Port forwarding without flags</strong>: define local and dynamic (SOCKS) tunnels once and start them from the sidebar</li>
+<li><strong>Split panes with broadcast</strong>: run the same command on several servers side by side</li>
+<li><strong>Snippets</strong>: save frequently used commands and fire them with <code>⌥⌘1</code> to <code>⌥⌘9</code></li>
+<li><strong>425 color schemes and bundled Nerd Fonts</strong>: every iTerm2 theme is included, plus FiraCode, Meslo, Hack, Iosevka and more</li>
+<li><strong>Session recording</strong>: record a session in asciinema <code>.cast</code> format for documentation or post-mortems</li>
+<li><strong>iCloud sync</strong>: the connections you set up on your Mac appear on your iPhone and iPad, through your own iCloud account</li>
+</ul>
+<p>WebSSH is a complement to Terminal.app rather than a replacement for it: keep using the shell you love locally, and let WebSSH handle the remote hosts.</p>
+<hr />
+<h2 id="built-for-the-mac">Built for the Mac</h2>
+<p>The Mac version of WebSSH is not a port that ignores the platform. It uses the features Mac users expect:</p>
+<h3 id="menu-bar-windows-and-tabs">Menu Bar, Windows and Tabs</h3>
+<p>Open a new window with <code>⌘N</code> or a new tab with <code>⌘T</code>. Tabs are real macOS window tabs: switch with <code>⌘1</code> to <code>⌘8</code>, jump to the last one with <code>⌘9</code>. Window position and size are restored when you relaunch the app. See <a href="/documentation/help/howtos/launching-multiple-terminals/">launching multiple terminals</a> for the details.</p>
+<h3 id="split-panes">Split Panes</h3>
+<p>Split a terminal vertically with <code>⌘D</code>, horizontally with <code>⇧⌘D</code>, or into four panes with <code>⌥⇧⌘D</code>. Move focus between panes with <code>⌥⌘</code> and the arrow keys, and turn on <strong>Broadcast Input</strong> (<code>⌥⌘B</code>, Pro) to type into every pane at once.</p>
+<h3 id="keyboard-and-trackpad">Keyboard and Trackpad</h3>
+<p>Search the terminal buffer with <code>⌘F</code>, zoom with <code>⌘+</code>, <code>⌘-</code> and <code>⌘0</code>, or pinch on the trackpad to change the font size. Right-click in the terminal for a context menu, or set right-click to paste directly. Right-click a connection in the sidebar to edit, clone or delete it.</p>
+<h3 id="drag-and-drop">Drag and Drop</h3>
+<p>Drop a file onto a terminal to upload it to the current remote directory (Pro). The SFTP browser supports drag and drop in both directions.</p>
+<h3 id="serial-port-client-mac-only">Serial Port Client (Mac only)</h3>
+<p>Plug in a USB-to-serial adapter and WebSSH turns into a serial console for routers, switches, Raspberry Pi boards and embedded devices, with configurable baud rate, parity, stop bits and flow control. This feature is only available on the Mac.</p>
+<h3 id="built-in-api-mcp-server-mac-only">Built-in API / MCP Server (Mac only)</h3>
+<p>WebSSH for Mac includes a local <a href="/documentation/help/intelligence/api-mcp-server/">API / MCP server</a>. AI applications such as Claude Desktop, or your own scripts, can list your terminal sessions, read what is on screen and send commands, all protected by a bearer token and running only on your Mac. This feature is only available on the Mac.</p>
+<h3 id="touch-id-lock">Touch ID Lock</h3>
+<p>Lock WebSSH with Touch ID or a password, and have it lock itself after a delay so a shared or unattended Mac does not expose your servers.</p>
+<h3 id="sysadmin-tools-in-the-menu-bar">Sysadmin Tools in the Menu Bar</h3>
+<p>The <strong>Tools</strong> menu gives you Ping, Traceroute, Whois, DNS Lookup, your public and local addresses, a certificate checker, a web browser for tunneled web interfaces, and mashREPL, a local offline shell.</p>
+<hr />
+<h2 id="full-feature-set">Full Feature Set</h2>
+<h3 id="protocols">Protocols</h3>
+<ul>
+<li><strong>SSH</strong>: encrypted shell sessions to Linux, Unix, macOS, network gear and more</li>
+<li><strong>SFTP</strong>: complete remote file management</li>
+<li><strong>Telnet</strong>: legacy devices and older network hardware</li>
+<li><strong>Mosh</strong>: roaming sessions that survive sleep and network changes, free</li>
+<li><strong>Serial</strong>: direct console access over USB-to-serial adapters (Mac only)</li>
+</ul>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li>Password authentication</li>
+<li>Challenge-response / two-factor authentication (2FA)</li>
+<li>Ed25519, ECDSA and RSA private keys</li>
+<li>In-app key generation, exported in OpenSSH or PuTTY format</li>
+<li>PuTTY Private Key (.ppk) import</li>
+<li>Port Knocking</li>
+<li>Jump hosts (Pro)</li>
+</ul>
+<h3 id="networking">Networking</h3>
+<ul>
+<li>Local port forwarding and dynamic SOCKS proxies, started from the sidebar</li>
+<li>Alternative addresses per host, such as a LAN IP at home and a public hostname elsewhere (Pro)</li>
+<li>Wake-on-LAN, including IPv6</li>
+<li>Proxmox dashboard over SSH</li>
+</ul>
+<h3 id="terminal">Terminal</h3>
+<ul>
+<li>xterm-256color emulation with GPU-accelerated rendering</li>
+<li>Inline images (SIXEL and iTerm2 protocol) and progress bars (OSC 9;4)</li>
+<li>Clipboard integration through OSC 52, with your approval</li>
+<li>tmux, screen and Zellij friendly key handling</li>
+<li>425 iTerm2 color schemes and a theme editor</li>
+</ul>
+<hr />
+<h2 id="free-vs-pro-what-you-get">Free vs. Pro: What You Get</h2>
+<p>The free version of WebSSH includes every feature above. The only restriction is that you can save <strong>one connection</strong> at a time.</p>
+<p><strong>WebSSH Pro</strong> removes that limit, giving you unlimited saved connections, plus jump hosts, broadcast input, drag-and-drop uploads and unlimited snippets. It's a <strong>one-time purchase</strong> with no subscription, and it supports Family Sharing. One purchase covers all your Apple devices — Mac, iPhone and iPad — using the same Apple ID.</p>
+<p>For details, see the <a href="/documentation/pricing/">pricing page</a>.</p>
+<hr />
+<h2 id="privacy-your-servers-stay-yours">Privacy: Your Servers Stay Yours</h2>
+<ul>
+<li><strong>No account</strong>: there is no sign-up and no login</li>
+<li><strong>No analytics</strong>: WebSSH embeds no tracking or analytics SDK, and its App Store privacy label declares no tracking</li>
+<li><strong>Direct connections</strong>: sessions go from your Mac to your server, never through a WebSSH relay</li>
+<li><strong>iCloud sync is opt-in</strong>: when you enable it, your data is stored in your own private iCloud database, which WebSSH the company never sees</li>
+</ul>
+<hr />
+<h2 id="getting-started-on-mac">Getting Started on Mac</h2>
 <ol>
-<li id="fn:1">
-<p>Since 20.5&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>Only copy to clipboard&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>https://github.com/ojroques/vim-oscyank/blob/main/README.md&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
+<li>Download <a href="https://apps.apple.com/app/id497714887">WebSSH from the Mac App Store</a></li>
+<li>Press <code>⌘N</code> or click <strong>+</strong> to create a connection</li>
+<li>Enter the hostname or IP address, port (default: 22), username and authentication method</li>
+<li>Click <strong>Connect</strong></li>
 </ol>
-</div>
+<p>The first time you connect to a device on your local network, macOS asks whether WebSSH may access the local network. Accept it; if you declined by mistake, see <a href="/documentation/help/errors/cant-connect-anymore-using-macos-sequoia/">can't connect anymore on macOS</a> to re-enable it in System Settings.</p>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-webssh-free-to-use-on-mac">Is WebSSH free to use on Mac?</h3>
+<p>Yes. You can download and use WebSSH on your Mac for free with full feature access. The only limitation is one saved connection at a time. The Pro upgrade (one-time purchase, not a subscription) removes this limit.</p>
+<h3 id="do-i-need-to-create-an-account-to-use-webssh-on-mac">Do I need to create an account to use WebSSH on Mac?</h3>
+<p>No. There is no sign-up and no login. Your connections, keys and settings live on your Mac, and you can optionally sync them to your iPhone and iPad through your own <a href="/documentation/help/iCloud/">iCloud</a> account. WebSSH never sees them.</p>
+<h3 id="why-use-webssh-instead-of-terminalapp">Why use WebSSH instead of Terminal.app?</h3>
+<p>Terminal.app is excellent for a single <code>ssh</code> command. WebSSH adds saved connections, a graphical SFTP browser, one-click port forwards, split panes with broadcast input, snippets, session recording and iCloud sync with your iPhone and iPad. Many users keep both.</p>
+<h3 id="which-macos-versions-does-webssh-support">Which macOS versions does WebSSH support?</h3>
+<p>WebSSH requires macOS 26 or later.</p>
+<h3 id="does-webssh-run-on-apple-silicon-and-intel-macs">Does WebSSH run on Apple Silicon and Intel Macs?</h3>
+<p>Yes. WebSSH is a universal Mac app that runs natively on Apple Silicon (M-series) and on Intel Macs that support macOS 26.</p>
+<h3 id="does-webssh-support-tabs-and-keyboard-shortcuts-on-mac">Does WebSSH support tabs and keyboard shortcuts on Mac?</h3>
+<p>Yes. Open a new tab with <code>⌘T</code>, a new window with <code>⌘N</code>, switch tabs with <code>⌘1</code> to <code>⌘8</code> and jump to the last tab with <code>⌘9</code>. Split panes, search, zoom and snippets all have shortcuts in the menu bar.</p>
+<h3 id="can-i-use-webssh-as-a-serial-console-on-mac">Can I use WebSSH as a serial console on Mac?</h3>
+<p>Yes. WebSSH for Mac includes a serial port client with configurable baud rate, parity, stop bits and flow control. Serial is available on the Mac only, not on iPhone or iPad.</p>
+<h3 id="can-i-use-webssh-with-claude-desktop-or-other-ai-tools">Can I use WebSSH with Claude Desktop or other AI tools?</h3>
+<p>Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token.</p>
+<h3 id="does-buying-webssh-pro-on-iphone-also-cover-my-mac">Does buying WebSSH Pro on iPhone also cover my Mac?</h3>
+<p>Yes. WebSSH Pro is a universal purchase. One payment through the App Store unlocks Pro on all devices sharing the same Apple ID, including Mac, iPhone and iPad.</p>
+<h3 id="can-i-sync-my-connections-between-mac-iphone-and-ipad">Can I sync my connections between Mac, iPhone and iPad?</h3>
+<p>Yes. Enable iCloud sync in WebSSH settings on each device and your connections, keys and settings stay in sync through your own iCloud account. Sync is off by default.</p>
+<h2 id="related-guides">Related Guides</h2>
+<ul>
+<li><a href="/documentation/guides/free-ssh-client-for-iphone/">Free SSH Client for iPhone</a></li>
+<li><a href="/documentation/guides/free-ssh-client-for-ipad/">Free SSH Client for iPad</a></li>
+<li><a href="/documentation/help/howtos/launching-multiple-terminals/">Launching multiple terminals</a></li>
+<li><a href="/documentation/help/howtos/snippets/">Snippets and keyboard shortcuts</a></li>
+<li><a href="/documentation/help/intelligence/api-mcp-server/">API / MCP Server for macOS</a></li>
+<li><a href="/documentation/help/networking/port-forwarding/">Port Forwarding</a></li>
+<li><a href="/documentation/help/SSH/public-private-key/">Public / Private Key Authentication</a></li>
+<li><a href="/documentation/help/SSH/keyboard-shortcuts-combo-keys/">Keyboard Shortcuts &amp; Combo Keys</a></li>
+<li><a href="/documentation/help/iCloud/">iCloud Sync</a></li>
+<li><a href="/documentation/guides/no-subscription-ssh-client-ios/">Best SSH Client for iOS Without a Subscription</a></li>
+</ul>
+<h2 id="download-webssh-for-mac">Download WebSSH for Mac</h2>
+<p>Free to download. No subscription. Works on every Mac running macOS 26 or later.</p>
+<p><a href="https://apps.apple.com/app/id497714887">Download on the Mac App Store →</a></p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is WebSSH free to use on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can download and use WebSSH on your Mac for free with full feature access. The only limitation is one saved connection at a time. The Pro upgrade (a one-time purchase, not a subscription) removes this limit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to create an account to use WebSSH on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no sign-up and no login. Your connections, keys and settings live on your Mac, with optional sync to your iPhone and iPad through your own iCloud account. WebSSH never sees them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why use WebSSH instead of Terminal.app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Terminal.app is excellent for a single ssh command. WebSSH adds saved connections, a graphical SFTP browser, one-click port forwards, split panes with broadcast input, snippets, session recording and iCloud sync with your iPhone and iPad. Many users keep both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which macOS versions does WebSSH support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebSSH requires macOS 26 or later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH run on Apple Silicon and Intel Macs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH is a universal Mac app that runs natively on Apple Silicon (M-series) and on Intel Macs that support macOS 26."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does WebSSH support tabs and keyboard shortcuts on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open a new tab with Cmd+T, a new window with Cmd+N, switch tabs with Cmd+1 to Cmd+8 and jump to the last tab with Cmd+9. Split panes, search, zoom and snippets all have shortcuts in the menu bar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use WebSSH as a serial console on Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH for Mac includes a serial port client with configurable baud rate, parity, stop bits and flow control. Serial is available on the Mac only, not on iPhone or iPad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use WebSSH with Claude Desktop or other AI tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does buying WebSSH Pro on iPhone also cover my Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebSSH Pro is a universal purchase. One payment through the App Store unlocks Pro on all devices sharing the same Apple ID, including Mac, iPhone and iPad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I sync my connections between Mac, iPhone and iPad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enable iCloud sync in WebSSH settings on each device and your connections, keys and settings stay in sync through your own iCloud account. Sync is off by default."
+      }
+    }
+  ]
+}
+</script>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 2, 2026 20:18:03 UTC">October 2, 2026</span>
       
     
   </small>
@@ -3886,12 +4438,12 @@ WebSSH &copy; 2012-2026<br />
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
-        <script src="../../../../javascripts/extra.js?20251102B"></script>
+        <script src="../../../javascripts/extra.js?20251102B"></script>
       
     
   </body>
