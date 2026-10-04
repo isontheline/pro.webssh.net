@@ -16,6 +16,7 @@ description: "Customise the keys displayed above the keyboard in WebSSH: graphic
     * The editor offers a live preview, drag & drop reordering, pages management and a key palette.
     * The layout built with the editor is stored on the device itself (it is not synced) and applies to all connections.
     * `#!KeyboardAccessoryViewLayout*` directives defined in the SSH Config File always take precedence over the layout built with the editor.
+    * Since WebSSH 33.1, the **Aa | ⌃** control next to the pages lets you show **icons instead of text** on the special keys that are hard to tell apart on narrow iPhone keys : `{ESC}` `{TAB}` `{CTL}` `{ALT}` `{INS}` `{DEL}` `{HOME}` `{END}` `{PGUP}` `{PGDN}`. This choice is free, stored on the device and also applies to layouts defined in the SSH Config File.
 
 ??? tip "Customising the layout by idioms (iPhone / iPad)"
     Customising the layout by idioms is also available :
