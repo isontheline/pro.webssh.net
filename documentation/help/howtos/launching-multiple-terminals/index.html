@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows and tabs on Mac, sidebar and split screen on iPad, multiple windows on iPhone.">
+        <meta name="description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows, tabs and split panes on Mac, sidebar, split panes and Split View on iPad, multiple windows on iPhone.">
       
       
       
@@ -71,8 +71,8 @@
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Multiple connections - WebSSH" />
         
-            <meta property="og:description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows and tabs on Mac, sidebar and split screen on iPad, multiple windows on iPhone." />
-            <meta name="twitter:description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows and tabs on Mac, sidebar and split screen on iPad, multiple windows on iPhone." />
+            <meta property="og:description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows, tabs and split panes on Mac, sidebar, split panes and Split View on iPad, multiple windows on iPhone." />
+            <meta name="twitter:description" content="Run several SSH or SFTP connections at the same time in WebSSH: windows, tabs and split panes on Mac, sidebar, split panes and Split View on iPad, multiple windows on iPhone." />
         
     
 
@@ -1938,6 +1938,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../split-panes-and-broadcast-input/" class="md-nav__link">
+        Split panes and Broadcast Input
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../switch-language/" class="md-nav__link">
         Switch WebSSH UI Language
       </a>
@@ -1985,17 +1999,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_16" type="checkbox" id="__nav_3_11_5_16" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_17" type="checkbox" id="__nav_3_11_5_17" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5_16" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11_5_17" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_11_5_16">
+        <label class="md-nav__title" for="__nav_3_11_5_17">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2061,17 +2075,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_17" type="checkbox" id="__nav_3_11_5_17" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_18" type="checkbox" id="__nav_3_11_5_18" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5_17" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11_5_18" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_11_5_17">
+        <label class="md-nav__title" for="__nav_3_11_5_18">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2179,17 +2193,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_18" type="checkbox" id="__nav_3_11_5_18" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_19" type="checkbox" id="__nav_3_11_5_19" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5_18" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11_5_19" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_11_5_18">
+        <label class="md-nav__title" for="__nav_3_11_5_19">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2283,17 +2297,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_19" type="checkbox" id="__nav_3_11_5_19" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5_20" type="checkbox" id="__nav_3_11_5_20" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5_19" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11_5_20" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_11_5_19">
+        <label class="md-nav__title" for="__nav_3_11_5_20">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -3699,12 +3713,14 @@
 <p>In order to use multiple features at same time (SSH, SFTP, mashREPL, ping, ...) on macOS, you can either :
 * launch a new window (<code>Cmd + N</code>) 
 * launch a new tab (<code>Cmd + T</code>) 
-* switch to a tab (<code>Cmd + 1</code> … <code>Cmd + 8</code>, <code>Cmd + 9</code> for the last tab)</p>
+* switch to a tab (<code>Cmd + 1</code> … <code>Cmd + 8</code>, <code>Cmd + 9</code> for the last tab)
+* split the current window into panes (<code>Cmd + D</code>) to see several sessions side by side, see <a href="../split-panes-and-broadcast-input/">Split panes and Broadcast Input</a></p>
 <h2 id="ipad">iPad</h2>
 <p>On iPad you can also use multiple connections :
 * Use the sidebar to switch between connections
 * Use the three dots "..." on top on your iPad status bar then press (+) to add a new window or choose to split the screen
-* Use Staging Manager (when available)</p>
+* Use Stage Manager (when available)
+* Split the WebSSH window itself into panes (opt-in in the settings), see <a href="../split-panes-and-broadcast-input/">Split panes and Broadcast Input</a></p>
 <h2 id="iphone">iPhone</h2>
 <p>On iPhone it's also easy as :</p>
 <ol>
@@ -3720,7 +3736,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 6, 2026 19:01:55 UTC">October 6, 2026</span>
       
     
   </small>

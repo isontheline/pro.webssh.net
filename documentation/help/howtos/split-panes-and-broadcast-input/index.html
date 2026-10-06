@@ -6,35 +6,31 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Three ways to edit a remote config file from iPhone or iPad with WebSSH: the SFTP editor, nano or vim over SSH, and sed one-liners. Backup, validate, roll back.">
+        <meta name="description" content="Split a WebSSH window into two or four terminal panes on Mac and iPad, move between them with the keyboard, and turn on Broadcast Input (Pro) to send what you type to every pane at once.">
       
       
       
-        <link rel="canonical" href="https://webssh.net/documentation/guides/edit-config-file-remote-server-iphone/">
+        <link rel="canonical" href="https://webssh.net/documentation/help/howtos/split-panes-and-broadcast-input/">
       
       
-        <link rel="prev" href="../check-server-logs-iphone/">
+        <link rel="prev" href="../snippets/">
       
       
-        <link rel="next" href="../free-ssh-client-for-ipad/">
+        <link rel="next" href="../switch-language/">
       
-      <link rel="icon" href="../../../images/favicon.ico">
+      <link rel="icon" href="../../../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
     
     
     
-        
-      
-        <title>Edit a Config File on a Remote Server from iPhone or iPad - WebSSH</title>
-      
-    
+        <title>Split Panes and Broadcast Input: Type into Several SSH Terminals at Once on Mac and iPad - WebSSH</title>
     
 
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9c788c91.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9c788c91.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -44,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css?20251102B">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css?20251102B">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,14 +61,14 @@
         
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="WebSSH" />
-        <meta property="og:title" content="Edit a Config File on a Remote Server from iPhone or iPad - WebSSH" />
-        <meta property="og:url" content="https://webssh.net/documentation/guides/edit-config-file-remote-server-iphone/" />
+        <meta property="og:title" content="Split Panes and Broadcast Input: Type into Several SSH Terminals at Once on Mac and iPad - WebSSH" />
+        <meta property="og:url" content="https://webssh.net/documentation/help/howtos/split-panes-and-broadcast-input/" />
         <meta property="og:image" content="https://webssh.net/images/webssh-logo.png" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Edit a Config File on a Remote Server from iPhone or iPad - WebSSH" />
+        <meta name="twitter:title" content="Split Panes and Broadcast Input: Type into Several SSH Terminals at Once on Mac and iPad - WebSSH" />
         
-            <meta property="og:description" content="Three ways to edit a remote config file from iPhone or iPad with WebSSH: the SFTP editor, nano or vim over SSH, and sed one-liners. Backup, validate, roll back." />
-            <meta name="twitter:description" content="Three ways to edit a remote config file from iPhone or iPad with WebSSH: the SFTP editor, nano or vim over SSH, and sed one-liners. Backup, validate, roll back." />
+            <meta property="og:description" content="Split a WebSSH window into two or four terminal panes on Mac and iPad, move between them with the keyboard, and turn on Broadcast Input (Pro) to send what you type to every pane at once." />
+            <meta name="twitter:description" content="Split a WebSSH window into two or four terminal panes on Mac and iPad, move between them with the keyboard, and turn on Broadcast Input (Pro) to send what you type to every pane at once." />
         
     
 
@@ -96,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-edit-a-config-file-on-a-remote-server-from-iphone-or-ipad" class="md-skip">
+        <a href="#split-panes-and-broadcast-input" class="md-skip">
           Skip to content
         </a>
       
@@ -110,9 +106,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../../images/webssh-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -128,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Edit a Config File on a Remote Server from iPhone or iPad
+              Split panes and Broadcast Input
             
           </span>
         </div>
@@ -191,7 +187,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../../../.." class="md-tabs__link">
       Getting Started
     </a>
   </li>
@@ -203,7 +199,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../support/" class="md-tabs__link">
+    <a href="../../../../support/" class="md-tabs__link">
       Support
     </a>
   </li>
@@ -220,7 +216,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../" class="md-tabs__link md-tabs__link--active">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
         Documentation
       </a>
     </li>
@@ -236,7 +232,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../licenses/" class="md-tabs__link">
+      <a href="../../../../licenses/" class="md-tabs__link">
         Licenses
       </a>
     </li>
@@ -264,9 +260,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
+    <a href="../../../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
       
-  <img src="../../../images/webssh-logo.png" alt="logo">
+  <img src="../../../../images/webssh-logo.png" alt="logo">
 
     </a>
     WebSSH
@@ -282,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         Getting Started
       </a>
     </li>
@@ -297,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../../../support/" class="md-nav__link">
         Support
       </a>
     </li>
@@ -341,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../../" class="md-nav__link">
         About Documentation
       </a>
     </li>
@@ -355,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../becoming-external-tester/" class="md-nav__link">
+      <a href="../../../becoming-external-tester/" class="md-nav__link">
         Beta Enrollment
       </a>
     </li>
@@ -369,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contact-me/" class="md-nav__link">
+      <a href="../../../contact-me/" class="md-nav__link">
         Contact Me
       </a>
     </li>
@@ -383,7 +379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frequently-asked-questions/" class="md-nav__link">
+      <a href="../../../frequently-asked-questions/" class="md-nav__link">
         FAQ
       </a>
     </li>
@@ -397,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mashREPL/" class="md-nav__link">
+      <a href="../../../mashREPL/" class="md-nav__link">
         mashREPL
       </a>
     </li>
@@ -411,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pricing/" class="md-nav__link">
+      <a href="../../../pricing/" class="md-nav__link">
         Pricing
       </a>
     </li>
@@ -425,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../translations/" class="md-nav__link">
+      <a href="../../../translations/" class="md-nav__link">
         Translations
       </a>
     </li>
@@ -439,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../web-browser/" class="md-nav__link">
+      <a href="../../../web-browser/" class="md-nav__link">
         Web Browser
       </a>
     </li>
@@ -480,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/25/" class="md-nav__link">
+      <a href="../../../changelog/25/" class="md-nav__link">
         25 - Sunflower
       </a>
     </li>
@@ -494,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/26/" class="md-nav__link">
+      <a href="../../../changelog/26/" class="md-nav__link">
         26 - Train
       </a>
     </li>
@@ -508,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/27/" class="md-nav__link">
+      <a href="../../../changelog/27/" class="md-nav__link">
         27 - Stars
       </a>
     </li>
@@ -522,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/28/" class="md-nav__link">
+      <a href="../../../changelog/28/" class="md-nav__link">
         28 - Fox
       </a>
     </li>
@@ -536,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/29/" class="md-nav__link">
+      <a href="../../../changelog/29/" class="md-nav__link">
         29 - Monkey
       </a>
     </li>
@@ -550,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/30/" class="md-nav__link">
+      <a href="../../../changelog/30/" class="md-nav__link">
         30 - Snowflake
       </a>
     </li>
@@ -564,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/31/" class="md-nav__link">
+      <a href="../../../changelog/31/" class="md-nav__link">
         31 - Ocean
       </a>
     </li>
@@ -578,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/32/" class="md-nav__link">
+      <a href="../../../changelog/32/" class="md-nav__link">
         32 - Comet
       </a>
     </li>
@@ -592,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/33/" class="md-nav__link">
+      <a href="../../../changelog/33/" class="md-nav__link">
         33 - Ladybug
       </a>
     </li>
@@ -633,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/15/" class="md-nav__link">
+      <a href="../../../changelog/history/15/" class="md-nav__link">
         15 - Cactus
       </a>
     </li>
@@ -647,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/16/" class="md-nav__link">
+      <a href="../../../changelog/history/16/" class="md-nav__link">
         16 - Gem
       </a>
     </li>
@@ -661,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/17/" class="md-nav__link">
+      <a href="../../../changelog/history/17/" class="md-nav__link">
         17 - Shell
       </a>
     </li>
@@ -675,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/18/" class="md-nav__link">
+      <a href="../../../changelog/history/18/" class="md-nav__link">
         18 - Honeybee
       </a>
     </li>
@@ -689,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/19/" class="md-nav__link">
+      <a href="../../../changelog/history/19/" class="md-nav__link">
         19 - Octopus
       </a>
     </li>
@@ -703,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/20/" class="md-nav__link">
+      <a href="../../../changelog/history/20/" class="md-nav__link">
         20 - Moon
       </a>
     </li>
@@ -717,7 +713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/21/" class="md-nav__link">
+      <a href="../../../changelog/history/21/" class="md-nav__link">
         21 - Penguin
       </a>
     </li>
@@ -731,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/22/" class="md-nav__link">
+      <a href="../../../changelog/history/22/" class="md-nav__link">
         22 - Butterfly
       </a>
     </li>
@@ -745,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/23/" class="md-nav__link">
+      <a href="../../../changelog/history/23/" class="md-nav__link">
         23 - Satellite
       </a>
     </li>
@@ -759,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/24/" class="md-nav__link">
+      <a href="../../../changelog/history/24/" class="md-nav__link">
         24 - Dragon
       </a>
     </li>
@@ -773,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/previous-releases/" class="md-nav__link">
+      <a href="../../../changelog/history/previous-releases/" class="md-nav__link">
         Previous Releases
       </a>
     </li>
@@ -814,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.10/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.10/" class="md-nav__link">
         14.10 - Truck
       </a>
     </li>
@@ -828,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.11/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.11/" class="md-nav__link">
         14.11 - Milky Way
       </a>
     </li>
@@ -842,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.12/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.12/" class="md-nav__link">
         14.12 - Volcano
       </a>
     </li>
@@ -856,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.13/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.13/" class="md-nav__link">
         14.13 - Tent
       </a>
     </li>
@@ -870,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.14/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.14/" class="md-nav__link">
         14.14 - Green Apple
       </a>
     </li>
@@ -884,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.15/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.15/" class="md-nav__link">
         14.15 - Cookie
       </a>
     </li>
@@ -898,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.16/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.16/" class="md-nav__link">
         14.16 - Whale
       </a>
     </li>
@@ -912,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.17/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.17/" class="md-nav__link">
         14.17 - Trèfle
       </a>
     </li>
@@ -926,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.18/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.18/" class="md-nav__link">
         14.18 - Mushroom
       </a>
     </li>
@@ -940,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.19/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.19/" class="md-nav__link">
         14.19 - Crocodile
       </a>
     </li>
@@ -954,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.6/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.6/" class="md-nav__link">
         14.6 - Bicyclist
       </a>
     </li>
@@ -968,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.7/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.7/" class="md-nav__link">
         14.7 - Tractor
       </a>
     </li>
@@ -982,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.8/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.8/" class="md-nav__link">
         14.8 - Locomotive
       </a>
     </li>
@@ -996,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/history/14/14.9/" class="md-nav__link">
+      <a href="../../../changelog/history/14/14.9/" class="md-nav__link">
         14.9 - Helicopter
       </a>
     </li>
@@ -1029,20 +1025,18 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_10" type="checkbox" id="__nav_3_10" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_10" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_10" tabindex="0" aria-expanded="false">
           Guides
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1060,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../check-server-logs-iphone/" class="md-nav__link">
+      <a href="../../../guides/check-server-logs-iphone/" class="md-nav__link">
         How to Check Server Logs from Your iPhone
       </a>
     </li>
@@ -1072,135 +1066,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Edit a Config File on a Remote Server from iPhone or iPad
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../guides/edit-config-file-remote-server-iphone/" class="md-nav__link">
         Edit a Config File on a Remote Server from iPhone or iPad
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#step-0-back-up-first" class="md-nav__link">
-    Step 0: Back Up First
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#option-1-the-built-in-sftp-editor" class="md-nav__link">
-    Option 1: The Built-in SFTP Editor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#option-2-nano-or-vim-over-ssh" class="md-nav__link">
-    Option 2: nano or vim over SSH
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#option-3-a-sed-one-liner" class="md-nav__link">
-    Option 3: A sed One-liner
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validate-before-you-apply" class="md-nav__link">
-    Validate Before You Apply
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apply-and-roll-back" class="md-nav__link">
-    Apply and Roll Back
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-guides" class="md-nav__link">
-    Related Guides
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frequently-asked-questions" class="md-nav__link">
-    Frequently Asked Questions
-  </a>
-  
-    <nav class="md-nav" aria-label="Frequently Asked Questions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#can-i-edit-a-file-owned-by-root-with-the-sftp-editor" class="md-nav__link">
-    Can I edit a file owned by root with the SFTP editor?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-press-esc-or-ctrl-in-vim-and-nano-on-an-iphone" class="md-nav__link">
-    How do I press Esc or Ctrl in vim and nano on an iPhone?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-check-a-config-file-before-restarting-the-service" class="md-nav__link">
-    How do I check a config file before restarting the service?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#does-the-webssh-sftp-editor-support-search-and-replace" class="md-nav__link">
-    Does the WebSSH SFTP editor support search and replace?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1212,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../free-ssh-client-for-ipad/" class="md-nav__link">
+      <a href="../../../guides/free-ssh-client-for-ipad/" class="md-nav__link">
         Free SSH Client for iPad: No Subscription, No Account
       </a>
     </li>
@@ -1226,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../free-ssh-client-for-iphone/" class="md-nav__link">
+      <a href="../../../guides/free-ssh-client-for-iphone/" class="md-nav__link">
         Free SSH Client for iPhone: No Subscription, No Account
       </a>
     </li>
@@ -1240,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../free-ssh-client-for-mac/" class="md-nav__link">
+      <a href="../../../guides/free-ssh-client-for-mac/" class="md-nav__link">
         Free SSH Client for Mac: No Subscription, No Account
       </a>
     </li>
@@ -1254,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab-ssh-tunnel-ios/" class="md-nav__link">
+      <a href="../../../guides/homelab-ssh-tunnel-ios/" class="md-nav__link">
         Access Your Homelab Remotely via SSH Tunnel on iOS
       </a>
     </li>
@@ -1268,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../keep-ssh-session-alive-iphone/" class="md-nav__link">
+      <a href="../../../guides/keep-ssh-session-alive-iphone/" class="md-nav__link">
         SSH Disconnects on iPhone: How to Keep Sessions Alive
       </a>
     </li>
@@ -1282,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../no-subscription-ssh-client-ios/" class="md-nav__link">
+      <a href="../../../guides/no-subscription-ssh-client-ios/" class="md-nav__link">
         Best SSH Client for iOS Without a Subscription
       </a>
     </li>
@@ -1296,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../port-forwarding-ios/" class="md-nav__link">
+      <a href="../../../guides/port-forwarding-ios/" class="md-nav__link">
         SSH Port Forwarding on iOS — Tunnels on iPhone & iPad
       </a>
     </li>
@@ -1310,7 +1180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../raspberry-pi-ssh-ios/" class="md-nav__link">
+      <a href="../../../guides/raspberry-pi-ssh-ios/" class="md-nav__link">
         How to SSH into a Raspberry Pi from iPhone or iPad
       </a>
     </li>
@@ -1324,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../restart-server-from-iphone/" class="md-nav__link">
+      <a href="../../../guides/restart-server-from-iphone/" class="md-nav__link">
         How to Restart a Server or Service from Your iPhone
       </a>
     </li>
@@ -1338,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sftp-file-transfer-iphone/" class="md-nav__link">
+      <a href="../../../guides/sftp-file-transfer-iphone/" class="md-nav__link">
         Transfer Files via SFTP on iPhone and iPad
       </a>
     </li>
@@ -1352,7 +1222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh-apple-shortcuts-iphone/" class="md-nav__link">
+      <a href="../../../guides/ssh-apple-shortcuts-iphone/" class="md-nav__link">
         Automate SSH on iPhone with Shortcuts and Deep Links
       </a>
     </li>
@@ -1366,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssh-proxmox-iphone/" class="md-nav__link">
+      <a href="../../../guides/ssh-proxmox-iphone/" class="md-nav__link">
         How to SSH into Proxmox from iPhone or iPad
       </a>
     </li>
@@ -1380,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synology-ssh-iphone-ipad/" class="md-nav__link">
+      <a href="../../../guides/synology-ssh-iphone-ipad/" class="md-nav__link">
         SSH to Synology NAS from iPhone or iPad
       </a>
     </li>
@@ -1394,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tmux-iphone-persistent-ssh-sessions/" class="md-nav__link">
+      <a href="../../../guides/tmux-iphone-persistent-ssh-sessions/" class="md-nav__link">
         tmux on iPhone: SSH Sessions That Survive Disconnects
       </a>
     </li>
@@ -1408,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wake-pc-remotely-from-iphone/" class="md-nav__link">
+      <a href="../../../guides/wake-pc-remotely-from-iphone/" class="md-nav__link">
         Wake Your PC or Server from iPhone with Wake-on-LAN
       </a>
     </li>
@@ -1427,18 +1297,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="true">
           Help
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1456,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/iCloud/" class="md-nav__link">
+      <a href="../../iCloud/" class="md-nav__link">
         iCloud
       </a>
     </li>
@@ -1470,7 +1342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/restore-purchases/" class="md-nav__link">
+      <a href="../../restore-purchases/" class="md-nav__link">
         Restoring Purchases
       </a>
     </li>
@@ -1511,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
+      <a href="../../SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
         Keyboard Shortcuts
       </a>
     </li>
@@ -1525,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/lockdown-mode-and-fonts/" class="md-nav__link">
+      <a href="../../SSH/lockdown-mode-and-fonts/" class="md-nav__link">
         Lockdown Mode and Custom Fonts
       </a>
     </li>
@@ -1539,7 +1411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/public-private-key/" class="md-nav__link">
+      <a href="../../SSH/public-private-key/" class="md-nav__link">
         Public / Private Key
       </a>
     </li>
@@ -1553,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/ssh-config-file/" class="md-nav__link">
+      <a href="../../SSH/ssh-config-file/" class="md-nav__link">
         SSH Config File
       </a>
     </li>
@@ -1567,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/ssh-copy-id/" class="md-nav__link">
+      <a href="../../SSH/ssh-copy-id/" class="md-nav__link">
         ssh-copy-id
       </a>
     </li>
@@ -1581,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/supported-algorithms/" class="md-nav__link">
+      <a href="../../SSH/supported-algorithms/" class="md-nav__link">
         Supported Algorithms
       </a>
     </li>
@@ -1595,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/terminal-inline-images/" class="md-nav__link">
+      <a href="../../SSH/terminal-inline-images/" class="md-nav__link">
         Terminal Inline Images (SIXEL & iTerm2)
       </a>
     </li>
@@ -1609,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/terminal-progress-bar/" class="md-nav__link">
+      <a href="../../SSH/terminal-progress-bar/" class="md-nav__link">
         Terminal Progress Bar (OSC 9;4)
       </a>
     </li>
@@ -1623,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/terrapin-attack/" class="md-nav__link">
+      <a href="../../SSH/terrapin-attack/" class="md-nav__link">
         Terrapin Attack
       </a>
     </li>
@@ -1637,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
+      <a href="../../SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
         Unable to agree upon client-to-server Error
       </a>
     </li>
@@ -1678,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/terminal-settings/terminal-badge/" class="md-nav__link">
+      <a href="../../SSH/terminal-settings/terminal-badge/" class="md-nav__link">
         Terminal Badge
       </a>
     </li>
@@ -1692,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
+      <a href="../../SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
         Terminal Font Size
       </a>
     </li>
@@ -1747,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
+      <a href="../../errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
         Can't connect anymore using macOS Sequoia 15.x
       </a>
     </li>
@@ -1761,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
+      <a href="../../errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
         Apple Magic Keyboard Space Bar Issue
       </a>
     </li>
@@ -1775,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/errors/no-route-to-host-error/" class="md-nav__link">
+      <a href="../../errors/no-route-to-host-error/" class="md-nav__link">
         No Route to Host Error
       </a>
     </li>
@@ -1789,7 +1661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
+      <a href="../../errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
         Must first connect to the SSH server
       </a>
     </li>
@@ -1808,18 +1680,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5" type="checkbox" id="__nav_3_11_5" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_5" type="checkbox" id="__nav_3_11_5" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_11_5" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_11_5" tabindex="0" aria-expanded="true">
           Howtos
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -1837,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/arrange-connections-inside-folders/" class="md-nav__link">
+      <a href="../arrange-connections-inside-folders/" class="md-nav__link">
         Arrange connections inside folders (groups and subgroups)
       </a>
     </li>
@@ -1851,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
+      <a href="../copying-text-to-clipboard-from-terminal/" class="md-nav__link">
         Copying text to the clipboard from the terminal
       </a>
     </li>
@@ -1865,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/create-or-import-public-private-key-pair/" class="md-nav__link">
+      <a href="../create-or-import-public-private-key-pair/" class="md-nav__link">
         Create or Import a Public/Private Key Pair
       </a>
     </li>
@@ -1879,7 +1753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/edit-delete-clone-connection/" class="md-nav__link">
+      <a href="../edit-delete-clone-connection/" class="md-nav__link">
         Edit / Delete / Clone a connection (server)
       </a>
     </li>
@@ -1893,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/enabling-verbose-logging/" class="md-nav__link">
+      <a href="../enabling-verbose-logging/" class="md-nav__link">
         Enabling Verbose Logging
       </a>
     </li>
@@ -1907,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/known-hosts-manage/" class="md-nav__link">
+      <a href="../known-hosts-manage/" class="md-nav__link">
         Managing Known Hosts
       </a>
     </li>
@@ -1921,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/launching-multiple-terminals/" class="md-nav__link">
+      <a href="../launching-multiple-terminals/" class="md-nav__link">
         Multiple connections
       </a>
     </li>
@@ -1935,7 +1809,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/link-connections-using-tags/" class="md-nav__link">
+      <a href="../link-connections-using-tags/" class="md-nav__link">
         Link Connections using Tags
       </a>
     </li>
@@ -1949,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/open-files-with-webssh/" class="md-nav__link">
+      <a href="../open-files-with-webssh/" class="md-nav__link">
         Open files with WebSSH (Text Editor & Hex Viewer)
       </a>
     </li>
@@ -1963,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/pasting-clipboard-content/" class="md-nav__link">
+      <a href="../pasting-clipboard-content/" class="md-nav__link">
         Paste Clipboard Content
       </a>
     </li>
@@ -1977,7 +1851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/run-snippet-on-multiple-hosts/" class="md-nav__link">
+      <a href="../run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
     </li>
@@ -1991,7 +1865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/snippets/" class="md-nav__link">
+      <a href="../snippets/" class="md-nav__link">
         Snippets
       </a>
     </li>
@@ -2003,11 +1877,100 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../help/howtos/split-panes-and-broadcast-input/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Split panes and Broadcast Input
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Split panes and Broadcast Input
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-is-available" class="md-nav__link">
+    Where it is available
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-a-pane" class="md-nav__link">
+    Split a pane
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    Keyboard shortcuts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close-a-pane" class="md-nav__link">
+    Close a pane
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#broadcast-input-pro" class="md-nav__link">
+    Broadcast Input (Pro)
+  </a>
+  
+    <nav class="md-nav" aria-label="Broadcast Input (Pro)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-replicated" class="md-nav__link">
+    What is replicated
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-it-turns-off" class="md-nav__link">
+    When it turns off
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2019,7 +1982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/switch-language/" class="md-nav__link">
+      <a href="../switch-language/" class="md-nav__link">
         Switch WebSSH UI Language
       </a>
     </li>
@@ -2033,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/use-deep-linking/" class="md-nav__link">
+      <a href="../use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
     </li>
@@ -2047,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+      <a href="../use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
         Use Mystic BBS with Telnet CP437 codepage
       </a>
     </li>
@@ -2088,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
+      <a href="../SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
         Bad interpreter / No such file or directory
       </a>
     </li>
@@ -2102,7 +2065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
+      <a href="../SFTP/search-replace-text-editor/" class="md-nav__link">
         Search / Replace text in SFTP editor
       </a>
     </li>
@@ -2116,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SFTP/startup-folder-path/" class="md-nav__link">
+      <a href="../SFTP/startup-folder-path/" class="md-nav__link">
         Startup Folder / Path
       </a>
     </li>
@@ -2164,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
+      <a href="../SSH/adding-control-key-to-snippets/" class="md-nav__link">
         Adding Control-Key to Snippets
       </a>
     </li>
@@ -2178,7 +2141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
+      <a href="../SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
         Keyboard Accessory View Customisation
       </a>
     </li>
@@ -2192,7 +2155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
+      <a href="../SSH/use-arrow-keys-modes/" class="md-nav__link">
         Arrow Keys Modes
       </a>
     </li>
@@ -2206,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
+      <a href="../SSH/use-function-keys-on-mac/" class="md-nav__link">
         Function Keys on Mac
       </a>
     </li>
@@ -2220,7 +2183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
+      <a href="../SSH/use-meta-alt-option-key/" class="md-nav__link">
         Meta / Alt / Option
       </a>
     </li>
@@ -2234,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/SSH/use-old-special-keys/" class="md-nav__link">
+      <a href="../SSH/use-old-special-keys/" class="md-nav__link">
         Old Special Keys
       </a>
     </li>
@@ -2282,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/mashREPL/database-backup/" class="md-nav__link">
+      <a href="../mashREPL/database-backup/" class="md-nav__link">
         Database Backup
       </a>
     </li>
@@ -2296,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/mashREPL/database-restore/" class="md-nav__link">
+      <a href="../mashREPL/database-restore/" class="md-nav__link">
         Database Restore
       </a>
     </li>
@@ -2310,7 +2273,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/mashREPL/import/" class="md-nav__link">
+      <a href="../mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
     </li>
@@ -2324,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
+      <a href="../mashREPL/obtain-public-ip-address/" class="md-nav__link">
         Obtain Public IP Address
       </a>
     </li>
@@ -2338,7 +2301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/mashREPL/servedit/" class="md-nav__link">
+      <a href="../mashREPL/servedit/" class="md-nav__link">
         Servedit - Update Connections in Batch
       </a>
     </li>
@@ -2386,7 +2349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
+      <a href="../tmux/create-attach-existing-tmux-session/" class="md-nav__link">
         Create or attach an existing tmux session
       </a>
     </li>
@@ -2400,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
+      <a href="../tmux/tmux-scrollback-buffer/" class="md-nav__link">
         Scrollback buffer in tmux
       </a>
     </li>
@@ -2455,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/intelligence/" class="md-nav__link">
+      <a href="../../intelligence/" class="md-nav__link">
         Intelligence & Automation
       </a>
     </li>
@@ -2469,7 +2432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/intelligence/api-mcp-server/" class="md-nav__link">
+      <a href="../../intelligence/api-mcp-server/" class="md-nav__link">
         API / MCP Server
       </a>
     </li>
@@ -2517,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/alternative-addresses/" class="md-nav__link">
+      <a href="../../networking/alternative-addresses/" class="md-nav__link">
         Alternative Addresses
       </a>
     </li>
@@ -2531,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/checking-host-availability/" class="md-nav__link">
+      <a href="../../networking/checking-host-availability/" class="md-nav__link">
         Checking Host Availability
       </a>
     </li>
@@ -2545,7 +2508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/dynamic-port-forwarding/" class="md-nav__link">
+      <a href="../../networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
     </li>
@@ -2559,7 +2522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/local-port-forwarding/" class="md-nav__link">
+      <a href="../../networking/local-port-forwarding/" class="md-nav__link">
         Local Port Forwarding (LPF)
       </a>
     </li>
@@ -2573,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/port-forwarding/" class="md-nav__link">
+      <a href="../../networking/port-forwarding/" class="md-nav__link">
         Port Forwarding
       </a>
     </li>
@@ -2587,7 +2550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/port-knocking/" class="md-nav__link">
+      <a href="../../networking/port-knocking/" class="md-nav__link">
         Port Knocking
       </a>
     </li>
@@ -2601,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/vpn-over-ssh/" class="md-nav__link">
+      <a href="../../networking/vpn-over-ssh/" class="md-nav__link">
         VPN-Over-SSH
       </a>
     </li>
@@ -2615,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../help/networking/wake-on-lan/" class="md-nav__link">
+      <a href="../../networking/wake-on-lan/" class="md-nav__link">
         Wake-on-LAN
       </a>
     </li>
@@ -2670,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../legal/privacy-policy/" class="md-nav__link">
+      <a href="../../../legal/privacy-policy/" class="md-nav__link">
         Privacy Policy
       </a>
     </li>
@@ -2718,7 +2681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminal-state-bar/" class="md-nav__link">
+      <a href="../../../terminal-state-bar/" class="md-nav__link">
         Terminal State Bar
       </a>
     </li>
@@ -2732,7 +2695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminal-state-bar/examples/" class="md-nav__link">
+      <a href="../../../terminal-state-bar/examples/" class="md-nav__link">
         State Bar Examples
       </a>
     </li>
@@ -2746,7 +2709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminal-state-bar/javascript-api/" class="md-nav__link">
+      <a href="../../../terminal-state-bar/javascript-api/" class="md-nav__link">
         State Bar JavaScript API
       </a>
     </li>
@@ -2760,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminal-state-bar/library/" class="md-nav__link">
+      <a href="../../../terminal-state-bar/library/" class="md-nav__link">
         State Bar Library
       </a>
     </li>
@@ -2816,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/" class="md-nav__link">
+      <a href="../../../../licenses/" class="md-nav__link">
         About Licenses
       </a>
     </li>
@@ -2830,7 +2793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
         ANSITerminal
       </a>
     </li>
@@ -2844,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
         Asciinema Player
       </a>
     </li>
@@ -2858,7 +2821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
         BlockAlerts
       </a>
     </li>
@@ -2872,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
         CloudKitQueues
       </a>
     </li>
@@ -2886,7 +2849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
         CocoaLumberjack
       </a>
     </li>
@@ -2900,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
         ColorPicker
       </a>
     </li>
@@ -2914,7 +2877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_CUE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_CUE/" class="md-nav__link">
         CueIcons
       </a>
     </li>
@@ -2928,7 +2891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
         CyberChef
       </a>
     </li>
@@ -2942,7 +2905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
         CYRKeyboardButton
       </a>
     </li>
@@ -2956,7 +2919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
         DNSClient
       </a>
     </li>
@@ -2970,7 +2933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
         DSFSparkline
       </a>
     </li>
@@ -2984,7 +2947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
         EDSemver
       </a>
     </li>
@@ -2998,7 +2961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
         EventSource
       </a>
     </li>
@@ -3012,7 +2975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
         Fira Code
       </a>
     </li>
@@ -3026,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
         FontAwesome
       </a>
     </li>
@@ -3040,7 +3003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
         FXForms
       </a>
     </li>
@@ -3054,7 +3017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
         LICENSE GCDTIMER
       </a>
     </li>
@@ -3068,7 +3031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
         GCImagePickerController
       </a>
     </li>
@@ -3082,7 +3045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
         GCPlaceHolderTextView
       </a>
     </li>
@@ -3096,7 +3059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
         GradientButton
       </a>
     </li>
@@ -3110,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_HACK/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_HACK/" class="md-nav__link">
         Hack - A typeface designed for source code
       </a>
     </li>
@@ -3124,7 +3087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
         HilightedTextEditor
       </a>
     </li>
@@ -3138,7 +3101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
         IAPHelper
       </a>
     </li>
@@ -3152,7 +3115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
         Iosevka
       </a>
     </li>
@@ -3166,7 +3129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
         ios_system
       </a>
     </li>
@@ -3180,7 +3143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
         iOS-System-Services
       </a>
     </li>
@@ -3194,7 +3157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
         iTerm Color Schemes
       </a>
     </li>
@@ -3208,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
         JGActionSheet
       </a>
     </li>
@@ -3222,7 +3185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
         JSController
       </a>
     </li>
@@ -3236,7 +3199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_KXMENU/" class="md-nav__link">
         KXMenu
       </a>
     </li>
@@ -3250,7 +3213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
         libtelnet
       </a>
     </li>
@@ -3264,7 +3227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
         MarkdownUI
       </a>
     </li>
@@ -3278,7 +3241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
         MesloLGS NF
       </a>
     </li>
@@ -3292,7 +3255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
         MMWormhole
       </a>
     </li>
@@ -3306,7 +3269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_MONOID/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_MONOID/" class="md-nav__link">
         Monoid
       </a>
     </li>
@@ -3320,7 +3283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
         NanoStore
       </a>
     </li>
@@ -3334,7 +3297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
         NYXImagesKit
       </a>
     </li>
@@ -3348,7 +3311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
         OpenDyslexic
       </a>
     </li>
@@ -3362,7 +3325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
         OpenSSL
       </a>
     </li>
@@ -3376,7 +3339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
         ORSSerialPort
       </a>
     </li>
@@ -3390,7 +3353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
         RaptureXML
       </a>
     </li>
@@ -3404,7 +3367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
         Reachability
       </a>
     </li>
@@ -3418,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
         Runestone
       </a>
     </li>
@@ -3432,7 +3395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
         SimplePing
       </a>
     </li>
@@ -3446,7 +3409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
         Source Code Pro
       </a>
     </li>
@@ -3460,7 +3423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
         SSHConfig
       </a>
     </li>
@@ -3474,7 +3437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
         SVHttpRequest
       </a>
     </li>
@@ -3488,7 +3451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
         Swift Argument Parser
       </a>
     </li>
@@ -3502,7 +3465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
         SwiftChess
       </a>
     </li>
@@ -3516,7 +3479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
         SymbolPicker
       </a>
     </li>
@@ -3530,7 +3493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
         SwiftMessages
       </a>
     </li>
@@ -3544,7 +3507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
         termcolor-c
       </a>
     </li>
@@ -3558,7 +3521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
         Terminus
       </a>
     </li>
@@ -3572,7 +3535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
         TPKeyboardAvoiding
       </a>
     </li>
@@ -3586,7 +3549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
         TSLanguageManager
       </a>
     </li>
@@ -3600,7 +3563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
         TurtleBezierPath
       </a>
     </li>
@@ -3614,7 +3577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
         UCKeychainStore
       </a>
     </li>
@@ -3628,7 +3591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
         UIAlertControllerConvenience
       </a>
     </li>
@@ -3642,7 +3605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
         UIDeviceHardware
       </a>
     </li>
@@ -3656,7 +3619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
         UIImageViewResizable
       </a>
     </li>
@@ -3670,7 +3633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
         Welcome Sheet
       </a>
     </li>
@@ -3684,7 +3647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
         Xterm.js
       </a>
     </li>
@@ -3698,7 +3661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
+      <a href="../../../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
         Yubico Mobile iOS SDK (YubiKit)
       </a>
     </li>
@@ -3739,86 +3702,51 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-0-back-up-first" class="md-nav__link">
-    Step 0: Back Up First
+  <a href="#where-it-is-available" class="md-nav__link">
+    Where it is available
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-1-the-built-in-sftp-editor" class="md-nav__link">
-    Option 1: The Built-in SFTP Editor
+  <a href="#split-a-pane" class="md-nav__link">
+    Split a pane
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-2-nano-or-vim-over-ssh" class="md-nav__link">
-    Option 2: nano or vim over SSH
+  <a href="#keyboard-shortcuts" class="md-nav__link">
+    Keyboard shortcuts
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-3-a-sed-one-liner" class="md-nav__link">
-    Option 3: A sed One-liner
+  <a href="#close-a-pane" class="md-nav__link">
+    Close a pane
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#validate-before-you-apply" class="md-nav__link">
-    Validate Before You Apply
+  <a href="#broadcast-input-pro" class="md-nav__link">
+    Broadcast Input (Pro)
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apply-and-roll-back" class="md-nav__link">
-    Apply and Roll Back
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-guides" class="md-nav__link">
-    Related Guides
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frequently-asked-questions" class="md-nav__link">
-    Frequently Asked Questions
-  </a>
-  
-    <nav class="md-nav" aria-label="Frequently Asked Questions">
+    <nav class="md-nav" aria-label="Broadcast Input (Pro)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#can-i-edit-a-file-owned-by-root-with-the-sftp-editor" class="md-nav__link">
-    Can I edit a file owned by root with the SFTP editor?
+  <a href="#what-is-replicated" class="md-nav__link">
+    What is replicated
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-do-i-press-esc-or-ctrl-in-vim-and-nano-on-an-iphone" class="md-nav__link">
-    How do I press Esc or Ctrl in vim and nano on an iPhone?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-do-i-check-a-config-file-before-restarting-the-service" class="md-nav__link">
-    How do I check a config file before restarting the service?
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#does-the-webssh-sftp-editor-support-search-and-replace" class="md-nav__link">
-    Does the WebSSH SFTP editor support search and replace?
+  <a href="#when-it-turns-off" class="md-nav__link">
+    When it turns off
   </a>
   
 </li>
@@ -3844,160 +3772,129 @@
 
 
 
-<h1 id="how-to-edit-a-config-file-on-a-remote-server-from-iphone-or-ipad">How to Edit a Config File on a Remote Server from iPhone or iPad</h1>
-<p>Changing one line in <code>nginx.conf</code>, adding a host to <code>/etc/hosts</code>, fixing a typo in a <code>.env</code> file: small edits should not require a laptop. <strong>WebSSH</strong> gives you three ways to do them from an iPhone or iPad, from a graphical editor to a single command.</p>
-<p>Pick the one that fits the file and the situation, and keep the backup and validation steps: they are what make editing from a phone safe.</p>
-<h2 id="step-0-back-up-first">Step 0: Back Up First</h2>
-<p>Whatever method you choose, start with a copy you can restore in one command:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span>/etc/nginx/nginx.conf.bak-<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>
-</code></pre></div>
-<h2 id="option-1-the-built-in-sftp-editor">Option 1: The Built-in SFTP Editor</h2>
-<p>Best for files your user can write, and for anything longer than a few lines.</p>
-<ol>
-<li>Open (or create) an <strong>SFTP</strong> connection to the server. SFTP uses the same host, port, user and key as SSH.</li>
-<li>Navigate to the file and tap it. WebSSH opens it in the text editor.</li>
-<li>Make your changes.</li>
-<li>Tap <strong>Save</strong>. The file is written back to the server.</li>
-</ol>
-<p>With an external keyboard the editor supports search and replace (<strong>Cmd-F</strong>, <strong>Cmd-Option-F</strong> to replace, <strong>Alt-G</strong> to jump to a line). See <a href="/documentation/help/howtos/SFTP/search-replace-text-editor/">Search and replace in the SFTP editor</a>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Skip the “Are you sure to edit?” prompt for your usual extensions</p>
-<p>Add <code>#!SFTPTextEditorDefaultFileExtensions .conf,.env,.yml,.json</code> to your <a href="/documentation/help/SSH/ssh-config-file/">WebSSH SSH Config File</a>. Files with those extensions open directly in the editor.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Files owned by root</p>
-<p>SFTP runs with the permissions of the user you log in as. If the file belongs to root and your user cannot write it, use option 2 or 3 with <code>sudo</code>, or copy the file to your home directory, edit it there, then <code>sudo cp</code> it back.</p>
-</div>
-<p>Since WebSSH 32.9 you can also open a file browser (SCP) directly from an SSH terminal, so you can switch from shell to editor without launching a second connection.</p>
-<h2 id="option-2-nano-or-vim-over-ssh">Option 2: nano or vim over SSH</h2>
-<p>Best for root-owned files and for servers where you already have a shell open.</p>
-<p><strong>nano</strong> is the friendlier choice on a phone:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/nginx/nginx.conf
-</code></pre></div>
-<p>Save with <strong>Ctrl-O</strong>, then <strong>Enter</strong>, quit with <strong>Ctrl-X</strong>. Both keys are on the WebSSH accessory row above the keyboard.</p>
-<p><strong>vim</strong> works too, and WebSSH snippets make the awkward key sequences one tap. Using <a href="/documentation/help/howtos/SSH/adding-control-key-to-snippets/">key tokens</a>:</p>
+<h1 id="split-panes-and-broadcast-input">Split panes and Broadcast Input</h1>
+<details class="abstract">
+<summary>What is it?</summary>
+<p>Since WebSSH 31.5<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, a window can be split into several <strong>panes</strong>, each one hosting its own session (SSH, SFTP, Telnet, mosh, a text editor…) side by side. Since WebSSH 32.9<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, <strong>Broadcast Input</strong> (Pro) replicates what you type in one pane to every terminal pane of the window: type <code>sudo apt upgrade</code> once, run it on four servers.</p>
+</details>
+<h2 id="where-it-is-available">Where it is available</h2>
 <table>
 <thead>
 <tr>
-<th>Snippet name</th>
-<th>Content</th>
-<th>What it does</th>
+<th>Platform</th>
+<th>Split panes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>vim: save and quit</td>
-<td><code>&lt;esc&gt;:wq</code></td>
-<td>Save and exit</td>
+<td><strong>Mac</strong></td>
+<td>Enabled by default</td>
 </tr>
 <tr>
-<td>vim: quit without saving</td>
-<td><code>&lt;esc&gt;:q!</code></td>
-<td>Discard and exit</td>
+<td><strong>iPad</strong></td>
+<td>Opt-in: open the iPadOS <strong>Settings</strong> app &gt; <strong>WebSSH</strong> &gt; <strong>Menus</strong> &gt; <strong>Split Panes</strong> &gt; <strong>Supported Platforms</strong> and choose <strong>macOS + iPadOS</strong></td>
 </tr>
 <tr>
-<td>nano: save and quit</td>
-<td><code>&lt;ctrl-o&gt;</code> then a new line, then <code>&lt;ctrl-x&gt;</code></td>
-<td>Write the file and exit</td>
+<td><strong>iPhone</strong></td>
+<td>Not available. Use tabs instead, see <a href="../launching-multiple-terminals/">Multiple connections</a></td>
 </tr>
 </tbody>
 </table>
-<p>Add a new line in the snippet editor wherever you need an Enter key.</p>
-<h2 id="option-3-a-sed-one-liner">Option 3: A sed One-liner</h2>
-<p>Best for a known, repeatable change: flipping a value, commenting a line out, adding a line.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># change a value</span>
-sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^worker_processes .*/worker_processes 4;/&#39;</span><span class="w"> </span>/etc/nginx/nginx.conf
-
-<span class="c1"># comment out a line</span>
-sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^PasswordAuthentication yes/#&amp;/&#39;</span><span class="w"> </span>/etc/ssh/sshd_config
-
-<span class="c1"># append a line if it is missing</span>
-grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;^192.168.1.20 nas$&#39;</span><span class="w"> </span>/etc/hosts<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;192.168.1.20 nas&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/hosts
-</code></pre></div>
-<p>Turn the ones you use often into a <a href="/documentation/help/howtos/snippets/">snippet</a> with <a href="/documentation/help/howtos/snippets/#dynamic-variables">dynamic variables</a>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^{{{ KEY }}} .*/{{{ KEY }}} {{{ VALUE }}}/&#39;</span><span class="w"> </span><span class="o">{{{</span><span class="w"> </span>FILE<span class="w"> </span>:<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="o">}}}</span>
-</code></pre></div>
-<h2 id="validate-before-you-apply">Validate Before You Apply</h2>
-<p>A syntax error in a config file can take the service down when it restarts. Most daemons can check a file without applying it:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nginx<span class="w"> </span>-t
-sudo<span class="w"> </span>sshd<span class="w"> </span>-t
-sudo<span class="w"> </span>apachectl<span class="w"> </span>configtest
-sudo<span class="w"> </span>haproxy<span class="w"> </span>-c<span class="w"> </span>-f<span class="w"> </span>/etc/haproxy/haproxy.cfg
-sudo<span class="w"> </span>visudo<span class="w"> </span>-c
-docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>/srv/myapp/compose.yml<span class="w"> </span>config<span class="w"> </span>--quiet
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Be extra careful with sshd_config</p>
-<p>If you break the SSH server configuration and restart it, you lose your only way in. Always run <code>sudo sshd -t</code> first, and keep a second session open until you have confirmed a fresh connection works.</p>
-</div>
-<h2 id="apply-and-roll-back">Apply and Roll Back</h2>
-<p>Apply the change with a reload when the service supports it, a restart otherwise. See <a href="/documentation/guides/restart-server-from-iphone/">Restart a server or service from your iPhone</a>.</p>
-<p>If something breaks, the backup from step 0 puts things back:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cp<span class="w"> </span>/etc/nginx/nginx.conf.bak-2026-09-23<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>systemctl<span class="w"> </span>reload<span class="w"> </span>nginx
-</code></pre></div>
-<h2 id="related-guides">Related Guides</h2>
+<p>The same <strong>Split Panes</strong> settings group also lets you choose on which side of the navigation bar the pane button appears (<strong>Button Side</strong>: left or right).</p>
+<h2 id="split-a-pane">Split a pane</h2>
+<p>Every pane shows a <strong>pane button</strong> (a split-window icon, labelled <em>Pane Options</em>) in its navigation bar. Its menu offers:</p>
 <ul>
-<li><a href="/documentation/guides/sftp-file-transfer-iphone/">Transfer files via SFTP on iPhone and iPad</a></li>
-<li><a href="/documentation/guides/restart-server-from-iphone/">Restart a server or service from your iPhone</a></li>
-<li><a href="/documentation/guides/check-server-logs-iphone/">Check server logs from your iPhone</a></li>
-<li><a href="/documentation/help/howtos/SFTP/search-replace-text-editor/">Search and replace in the SFTP editor</a></li>
+<li><strong>Split Vertically</strong>: the pane is split into a left and a right pane</li>
+<li><strong>Split Horizontally</strong>: the pane is split into a top and a bottom pane</li>
+<li><strong>Split 2×2</strong>: the pane is split into four panes</li>
+<li><strong>Broadcast Input</strong>: see <a href="#broadcast-input-pro">below</a></li>
+<li><strong>Close Pane</strong></li>
 </ul>
-<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
-<h3 id="can-i-edit-a-file-owned-by-root-with-the-sftp-editor">Can I edit a file owned by root with the SFTP editor?</h3>
-<p>Only if the user you log in as can write it, because SFTP uses that user's permissions. For root-owned files use sudo nano or sudo vim in an SSH session, a sudo sed one-liner, or edit a copy in your home directory and copy it back with sudo cp.</p>
-<h3 id="how-do-i-press-esc-or-ctrl-in-vim-and-nano-on-an-iphone">How do I press Esc or Ctrl in vim and nano on an iPhone?</h3>
-<p>WebSSH shows an accessory row above the on-screen keyboard with Esc, Ctrl, Tab and the arrow keys. For sequences you type often, create a snippet with key tokens such as <esc>:wq for vim or <ctrl-o> and <ctrl-x> for nano.</p>
-<h3 id="how-do-i-check-a-config-file-before-restarting-the-service">How do I check a config file before restarting the service?</h3>
-<p>Most daemons have a test mode: nginx -t, sshd -t, apachectl configtest, haproxy -c, visudo -c. Run it before reloading or restarting, especially for sshd_config, where a mistake can lock you out.</p>
-<h3 id="does-the-webssh-sftp-editor-support-search-and-replace">Does the WebSSH SFTP editor support search and replace?</h3>
-<p>Yes. With an external keyboard use Cmd-F to search, Cmd-Option-F to replace, Shift-Cmd-Option-F to replace all and Alt-G to jump to a line.</p>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I edit a file owned by root with the SFTP editor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Only if the user you log in as can write it, because SFTP uses that user's permissions. For root-owned files use sudo nano or sudo vim in an SSH session, a sudo sed one-liner, or edit a copy in your home directory and copy it back with sudo cp."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I press Esc or Ctrl in vim and nano on an iPhone?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "WebSSH shows an accessory row above the on-screen keyboard with Esc, Ctrl, Tab and the arrow keys. For sequences you type often, create a snippet with key tokens such as <esc>:wq for vim or <ctrl-o> and <ctrl-x> for nano."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I check a config file before restarting the service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most daemons have a test mode: nginx -t, sshd -t, apachectl configtest, haproxy -c, visudo -c. Run it before reloading or restarting, especially for sshd_config, where a mistake can lock you out."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does the WebSSH SFTP editor support search and replace?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. With an external keyboard use Cmd-F to search, Cmd-Option-F to replace, Shift-Cmd-Option-F to replace all and Alt-G to jump to a line."
-      }
-    }
-  ]
-}
-</script>
+<p>On Mac, the same actions are listed in the menu bar under <strong>View</strong> &gt; <strong>Pane</strong>.</p>
+<p>The new pane opens on the <strong>servers list</strong>: tap a connection to launch it there. You can also pick a session from the sidebar: it opens in the pane that currently has the focus. A pane can be split again, as many times as the screen allows.</p>
+<ul>
+<li><strong>Resize</strong>: drag the divider between two panes.</li>
+<li><strong>Focus</strong>: tap or click a pane. The focused pane is the one with the solid border; it receives the keyboard and the sessions you launch from the sidebar.</li>
+<li><strong>SFTP side by side</strong>: when split panes are enabled, the file browser opened from a terminal (<strong>Browse Files</strong>) appears in a new pane next to it, so you can drag and drop files between panes.</li>
+</ul>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Split Vertically</td>
+<td><code>⌘D</code></td>
+</tr>
+<tr>
+<td>Split Horizontally</td>
+<td><code>⇧⌘D</code></td>
+</tr>
+<tr>
+<td>Split 2×2</td>
+<td><code>⌥⇧⌘D</code></td>
+</tr>
+<tr>
+<td>Focus the pane on the left / right / above / below</td>
+<td><code>⌥⌘←</code> <code>⌥⌘→</code> <code>⌥⌘↑</code> <code>⌥⌘↓</code></td>
+</tr>
+<tr>
+<td>Broadcast Input (toggle)</td>
+<td><code>⌥⌘B</code></td>
+</tr>
+<tr>
+<td>Close Pane</td>
+<td><code>⇧⌘W</code></td>
+</tr>
+</tbody>
+</table>
+<p>On iPad with a hardware keyboard, the shortcuts work once split panes are enabled in the settings. Focus navigation, Broadcast Input and Close Pane are only active while the window has more than one pane.</p>
+<h2 id="close-a-pane">Close a pane</h2>
+<p><strong>Close Pane</strong> (<code>⇧⌘W</code>) removes the focused pane and gives its space to its neighbour. The last pane of a window cannot be removed: closing it brings back the servers list.</p>
+<p>Closing a pane only removes it from the layout. A session that is still connected stays listed in the sidebar; select it there to show it again in the focused pane.</p>
+<h2 id="broadcast-input-pro">Broadcast Input (Pro)</h2>
+<p>Broadcast Input sends what you type in the focused terminal to <strong>every other terminal pane of the same window</strong>. It needs at least two panes and a <a href="/documentation/pricing/">WebSSH Pro</a> licence.</p>
+<p>Turn it on (and off) from the pane button menu &gt; <strong>Broadcast Input</strong>, from <strong>View</strong> &gt; <strong>Pane</strong> &gt; <strong>Broadcast Input</strong> on Mac, or with <code>⌥⌘B</code>.</p>
+<h3 id="what-is-replicated">What is replicated</h3>
+<p>Everything sent by the focused terminal: keystrokes, the special keys of the keyboard accessory bar (<kbd>Ctrl</kbd>, <kbd>Esc</kbd>, arrows, function keys…), pasted text and <a href="../snippets/">snippets</a>. Each pane keeps showing its own output: only the <strong>input</strong> is shared.</p>
+<p>While Broadcast Input is active, every participating pane shows a <strong>dashed border</strong> in the system accent colour (the focused pane keeps its solid border as well). Panes without a dashed border receive nothing:</p>
+<ul>
+<li>panes showing the servers list, a text editor or the file browser</li>
+<li>terminals that are not connected</li>
+<li>panes of <strong>other windows or tabs</strong>: Broadcast Input is per window</li>
+</ul>
+<h3 id="when-it-turns-off">When it turns off</h3>
+<p>Broadcast Input is never remembered: it is off when WebSSH starts and in every new window, and it switches itself off as soon as a window is back to a single pane. Turning it back on is one tap in the pane menu.</p>
+<details class="warning">
+<summary>Check the dashed borders before pressing Enter</summary>
+<p>Every pane with a dashed border gets the exact same keystrokes, whatever it is doing: a host sitting at a password prompt, another in <code>vim</code>, a third one at a root shell. A command meant for one server runs on all of them.</p>
+</details>
+<details class="tip">
+<summary>Many hosts, no interaction needed?</summary>
+<p>When the command does not need a terminal (no prompt, no <code>sudo</code> password), <a href="../run-snippet-on-multiple-hosts/">Run a command on multiple hosts</a> does the job in the background, without opening a single pane, and gathers the results in a report.</p>
+</details>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Split panes require WebSSH 31.5 or later.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Broadcast Input and the <code>⌥⌘</code> + arrow keys focus navigation require WebSSH 32.9 or later. Broadcast Input is a WebSSH Pro feature.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 07:22:06 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 6, 2026 19:01:55 UTC">October 6, 2026</span>
       
     
   </small>
@@ -4087,12 +3984,12 @@ WebSSH &copy; 2012-2026<br />
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ba449ae6.min.js"></script>
       
-        <script src="../../../javascripts/extra.js?20251102B"></script>
+        <script src="../../../../javascripts/extra.js?20251102B"></script>
       
     
   </body>

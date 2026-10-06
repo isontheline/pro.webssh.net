@@ -1205,7 +1205,7 @@
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-mac/</loc>
 
     
-    <lastmod>2026-10-02T20:18:03+00:00</lastmod>
+    <lastmod>2026-10-06T19:01:55+00:00</lastmod>
 
       
       
@@ -2130,7 +2130,7 @@
     <loc>https://webssh.net/documentation/help/howtos/launching-multiple-terminals/</loc>
 
     
-    <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+    <lastmod>2026-10-06T19:01:55+00:00</lastmod>
 
       
       
@@ -2230,7 +2230,7 @@
     <loc>https://webssh.net/documentation/help/howtos/run-snippet-on-multiple-hosts/</loc>
 
     
-    <lastmod>2026-09-23T15:43:51+00:00</lastmod>
+    <lastmod>2026-10-06T19:01:55+00:00</lastmod>
 
       
       
@@ -2256,6 +2256,31 @@
 
     
     <lastmod>2026-09-30T14:49:40+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/split-panes-and-broadcast-input/</loc>
+
+    
+    <lastmod>2026-10-06T19:01:55+00:00</lastmod>
 
       
       
