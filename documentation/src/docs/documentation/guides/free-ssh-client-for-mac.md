@@ -46,7 +46,7 @@ Open a new window with `⌘N` or a new tab with `⌘T`. Tabs are real macOS wind
 
 ### Split Panes
 
-Split a terminal vertically with `⌘D`, horizontally with `⇧⌘D`, or into four panes with `⌥⇧⌘D`. Move focus between panes with `⌥⌘` and the arrow keys, and turn on **Broadcast Input** (`⌥⌘B`, Pro) to type into every pane at once.
+Split a terminal vertically with `⌘D`, horizontally with `⇧⌘D`, or into four panes with `⌥⇧⌘D`. Move focus between panes with `⌥⌘` and the arrow keys, and turn on **Broadcast Input** (`⌥⌘B`, Pro) to type into every pane at once. See [split panes and Broadcast Input](/documentation/help/howtos/split-panes-and-broadcast-input/) for the details.
 
 ### Keyboard and Trackpad
 
@@ -186,6 +186,7 @@ Yes. Enable iCloud sync in WebSSH settings on each device and your connections, 
 - [Free SSH Client for iPhone](/documentation/guides/free-ssh-client-for-iphone/)
 - [Free SSH Client for iPad](/documentation/guides/free-ssh-client-for-ipad/)
 - [Launching multiple terminals](/documentation/help/howtos/launching-multiple-terminals/)
+- [Split panes and Broadcast Input](/documentation/help/howtos/split-panes-and-broadcast-input/)
 - [Snippets and keyboard shortcuts](/documentation/help/howtos/snippets/)
 - [API / MCP Server for macOS](/documentation/help/intelligence/api-mcp-server/)
 - [Port Forwarding](/documentation/help/networking/port-forwarding/)

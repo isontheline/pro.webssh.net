@@ -51,4 +51,4 @@ Every host goes through the same pipeline as a terminal session: `ssh_config` ov
 * **mosh** and **Telnet** connections are not eligible.
 
 !!! tip "Interactive work on a few hosts"
-    When you need to *see* and *drive* what happens (an upgrade asking questions, for example), open the sessions side by side on iPad or Mac and use **Terminal Broadcast Input** (`⌥⌘B`): what you type goes to every pane.
+    When you need to *see* and *drive* what happens (an upgrade asking questions, for example), open the sessions side by side on iPad or Mac and use **Terminal Broadcast Input** (`⌥⌘B`): what you type goes to every pane. See [Split panes and Broadcast Input](split-panes-and-broadcast-input.md).
