@@ -100,7 +100,10 @@ See [iCloud Sync](/documentation/help/iCloud/).
     The user account doesn't have write permission on the destination folder. Use SSH to run `ls -la` and check ownership, then `chmod` or `chown` as needed.
 
 ??? question "Can't download a whole folder"
-    WebSSH currently supports downloading individual files. For folder downloads, zip the folder first via SSH (`zip -r archive.zip folder/`), then download the archive.
+    Since WebSSH 31.3 a folder can be downloaded or uploaded with its subfolders from the browser. On an older version, zip the folder first via SSH (`zip -r archive.zip folder/`), then download the archive.
+
+??? question "The server has no SFTP subsystem"
+    Routers, appliances and minimal containers often ship without `sftp-server`. Enable the **SCP** role on the connection instead: same file browser, transfers over SCP. See [SCP File Browser](/documentation/help/howtos/scp-file-browser/).
 
 ??? question "I get 'Must first connect to the SSH server' error"
     See [this error guide](/documentation/help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/) for the explanation and fix.
@@ -111,6 +114,7 @@ See [iCloud Sync](/documentation/help/iCloud/).
 ## Related Documentation
 
 - [Startup Folder Path](/documentation/help/howtos/SFTP/startup-folder-path/)
+- [SCP File Browser](/documentation/help/howtos/scp-file-browser/)
 - [Edit a config file on a remote server from iPhone or iPad](/documentation/guides/edit-config-file-remote-server-iphone/)
 - [Search and Replace in Text Editor](/documentation/help/howtos/SFTP/search-replace-text-editor/)
 - [iCloud Sync](/documentation/help/iCloud/)

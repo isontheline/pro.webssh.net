@@ -78,7 +78,7 @@ If you want to reach your NAS when you're not on your home Wi-Fi:
 
 - **Synology DDNS:** enable it in **Control Panel → External Access → DDNS** — you'll get a free `yourname.synology.me` hostname
 - **Port forwarding:** on your router, forward the SSH port to your NAS local IP
-- **SSH Tunnel:** if you don't want to expose SSH directly to the internet, set up a jump host and use [Local Port Forwarding](/documentation/help/networking/local-port-forwarding/) in WebSSH
+- **Jump host:** if you don't want to expose the NAS directly to the internet, reach it through a server that is: set that server as the [jump host](/documentation/guides/ssh-jump-host-bastion-iphone-ipad-mac/) of the NAS connection, or use [Local Port Forwarding](/documentation/help/networking/local-port-forwarding/) through it for DSM
 
 !!! warning "Exposing SSH to the internet"
     If you open an SSH port to the internet, use key-based authentication and disable password login in DSM. Check **Control Panel → Terminal & SNMP** and ensure only key auth is accepted.

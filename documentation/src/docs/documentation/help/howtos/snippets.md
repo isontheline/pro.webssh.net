@@ -44,6 +44,9 @@ To assign one, edit the snippet and pick a shortcut in the **Keyboard Shortcut**
 ??? note "⌥⌘8 and the macOS Zoom"
     macOS reserves `⌥⌘8` for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.
 
+## Import snippets from a GitHub Gist
+Since WebSSH 32.7 the **•••** menu of the Snippets screen offers **Import from Gist…**: the files of a public gist become snippets, and a snippet can later be refreshed from its source. The same menu opens the **WebSSH Library**, a curated collection of ready-made snippets. See [Import Snippets from GitHub Gist](import-snippets-from-github-gist.md).
+
 ## Run a snippet on several hosts
 Since WebSSH 33.0 a snippet can be run on several connections at once, without opening a terminal: long press the snippet and choose **Run on Hosts**. See [Run a command on multiple hosts](run-snippet-on-multiple-hosts.md).
 

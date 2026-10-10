@@ -52,7 +52,7 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 | [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: |
 | [Web Browser](/documentation/web-browser/) | :white_check_mark: | :white_check_mark: |
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :white_check_mark: |
-| **Sysadmin Tools** | **FREE** | **PRO** |
+| **[Sysadmin Tools](/documentation/tools/)** | **FREE** | **PRO** |
 | [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: |
 | Ping | :white_check_mark: | :white_check_mark: |
 | Traceroute | :white_check_mark: | :white_check_mark: |

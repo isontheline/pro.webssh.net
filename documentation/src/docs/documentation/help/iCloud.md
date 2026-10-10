@@ -13,10 +13,10 @@ By default your data are not synced with iCloud. To enable it, follow these step
 2. Go to Settings :gear:
 3. Check "Enable iCloud" [^1]
 
-!!! warning "iCloud as Backup"
+??? warning "iCloud as Backup"
     iCloud shouldn't be used as a backup!
 
-    Instead you should use mashREPL in order to [make a backup](/documentation/help/howtos/mashREPL/database-backup/) of the WebSSH database.
+    WebSSH makes an [automatic backup](/documentation/help/howtos/automatic-database-backups/) of its database every day since version 32.2. You can also [make one by hand](/documentation/help/howtos/mashREPL/database-backup/) with mashREPL.
 
 ??? tip "Syncing doesn't work on my macOS"
     If the sync doesn't work on your macOS device, please check the following steps :

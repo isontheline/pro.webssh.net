@@ -98,7 +98,7 @@ By default, a forwarded port is usable inside WebSSH. To use it in **Safari, VNC
     iOS suspends backgrounded apps. Keep WebSSH in Split View / Slide Over on iPad, or re-launch the tunnel when returning to it. Enabling VPN-Over-SSH also helps keep the tunnel alive while you use other apps.
 
 ??? question "I need to reach a server that's not directly exposed"
-    Chain through a bastion: launch a Dynamic Port Forwarding tunnel (`*`) to the reachable host first, then connect to the internal one — WebSSH routes it through the jump host automatically.
+    For an SSH, SFTP or SCP session, set the reachable host as the [jump host](/documentation/guides/ssh-jump-host-bastion-iphone-ipad-mac/) of the internal server's connection. For a tunnel, launch a Dynamic Port Forwarding tunnel (`*`) to the reachable host first, then connect to the internal one — WebSSH routes it through the bastion automatically.
 
 ## Going further
 

@@ -167,7 +167,7 @@ The visible screen auto-refreshes every ~10 seconds, so the dashboard stays live
 ## Going further
 
 - **Multiple nodes?** Use [tags](/documentation/help/howtos/link-connections-using-tags/) to group your cluster's connections, and [folders](/documentation/help/howtos/arrange-connections-inside-folders/) to keep the list tidy.
-- **Node behind a bastion?** [Dynamic Port Forwarding](/documentation/help/networking/dynamic-port-forwarding/) turns any reachable SSH server into a jump host for your whole homelab.
+- **Node behind a bastion?** Set the reachable server as the [jump host](/documentation/guides/ssh-jump-host-bastion-iphone-ipad-mac/) of the node's connection: SSH, SFTP and Proxmox-over-SSH then go through it. For the web UI tunnel, [Dynamic Port Forwarding](/documentation/help/networking/dynamic-port-forwarding/) to the bastion still does the job.
 - **Wake a sleeping machine:** WebSSH supports [Wake On LAN](/documentation/help/networking/wake-on-lan/) for nodes you power down between uses.
 - **More homelab services:** see [Access Your Homelab Remotely via SSH Tunnel on iOS](/documentation/guides/homelab-ssh-tunnel-ios/).
 

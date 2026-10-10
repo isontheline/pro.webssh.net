@@ -9,6 +9,9 @@ title: Database Restore
 
 `<webssh.db>` is the name of your WebSSH database file you want to restore.
 
+??? info "Restore from the Settings"
+    Since WebSSH 32.2 the backups, automatic or manual, are listed in **Settings ▸ Maintenance ▸ Database Backup**, where a long press on a backup offers **Restore**. See [Automatic Database Backups](/documentation/help/howtos/automatic-database-backups/).
+
 !!! warning "iCloud Sync"
     If you have iCloud enabled inside WebSSH settings, you should disable it and enable it again after the database restore in order to sync restore changes with all your devices.
 
