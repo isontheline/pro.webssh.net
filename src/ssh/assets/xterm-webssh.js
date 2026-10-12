@@ -1256,7 +1256,10 @@ const TerminalHelper = {
     },
 
     onTitleChange: debounce((title) => {
-        JS2IOS.calliOSFunction('notifyTerminalTitle', Base64.btoa(title));
+        // #1752 : btoa throws InvalidCharacterError above U+00FF, so a title
+        // such as "✳ session" never reached the native side (which decodes
+        // the payload as UTF-8, hence utoa) :
+        JS2IOS.calliOSFunction('notifyTerminalTitle', Base64.utoa(title));
     }, 250),
 
     onSelectionChangeMacOS: function () {
