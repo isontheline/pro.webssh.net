@@ -97,6 +97,8 @@ When you press a Special Key, the corresponding action will be executed.
 | {ALT}            | Alt / Meta / Option Key                                          | 32.4             |
 | {ARROWS}         | The all-in-one four arrows key                                   | 23.0             |
 | {BRACKETS}       | All brackets options on same key                                 | 28.3             |
+| {COPY_ALL}       | Copy All Key : Copy the whole terminal buffer (screen + scrollback) to the clipboard | 33.2 |
+| {COPY_SCREEN}    | Copy Screen Key : Copy the visible terminal screen to the clipboard | 33.2          |
 | {CTL}            | Control Key                                                      | 23.0             |
 | {DEL}            | Delete Key                                                       | 23.0             |
 | {DOWN}           | Down Arrow Key                                                   | 23.0             |
@@ -115,6 +117,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {PGUP}           | Page Up Key                                                      | 23.0             |
 | {PJUMP}          | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0             |
 | {RIGHT}          | Right Arrow Key                                                  | 23.0             |
+| {SCROLLBACK}     | Scrollback Key : Open the terminal buffer in the text viewer     | 33.2             |
 | {SEARCH}         | Search Key : Open the find bar to search the terminal buffer     | 32.10            |
 | {SHIFT_TAB}      | Shift + Tab (Back-Tab) Key                                       | 32.6             |
 | {TAB}            | Tab Key (long press : Shift + Tab)                               | 23.0             |
