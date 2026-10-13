@@ -29,7 +29,7 @@ To use a snippet in your connection terminal:
 1. Launch the desired connection
 2. Tap the `< />` top button on the navigation bar
 3. Select the snippet you want to insert from the list
-4. The command/script from the snippet will be inserted into your terminal, ready to be executed
+4. The command/script from the snippet will be inserted into your terminal, ready to be executed — or run immediately when **Execute on tap** is enabled (see below)
 
 ## Keyboard shortcuts
 Since WebSSH 33.1 a snippet can be run with a keyboard shortcut, on macOS and on iPad with a hardware keyboard. Nine shortcuts are available: `⌥⌘1` to `⌥⌘9`.
@@ -43,6 +43,14 @@ To assign one, edit the snippet and pick a shortcut in the **Keyboard Shortcut**
 
 ??? note "⌥⌘8 and the macOS Zoom"
     macOS reserves `⌥⌘8` for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.
+
+## Execute on tap
+Since WebSSH 33.2 a snippet can run as soon as it is inserted, with no extra tap on Enter: edit the snippet, turn on **Execute on tap**, then save. WebSSH sends Enter right after the command, using the *Carriage Return* character of the connection's profile. Snippets that run on tap wear a ⏎ badge in the list.
+
+- The switch is **off by default**: a snippet that runs by itself must be opted into.
+- It also applies to [keyboard shortcuts](#keyboard-shortcuts), to the **Snippets** context menu on macOS and to [dynamic variables](#dynamic-variables) (Enter follows the command once the form is validated).
+- A command whose text already ends with a line break runs on tap too, as it always did: WebSSH never sends Enter twice, so the switch is harmless on such a snippet. The ⏎ badge is shown in both cases.
+- [Run on Hosts](run-snippet-on-multiple-hosts.md) is not affected: it executes the command directly, without a terminal.
 
 ## Import snippets from a GitHub Gist
 Since WebSSH 32.7 the **•••** menu of the Snippets screen offers **Import from Gist…**: the files of a public gist become snippets, and a snippet can later be refreshed from its source. The same menu opens the **WebSSH Library**, a curated collection of ready-made snippets. See [Import Snippets from GitHub Gist](import-snippets-from-github-gist.md).
