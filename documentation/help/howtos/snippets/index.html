@@ -1994,6 +1994,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#execute-on-tap" class="md-nav__link">
+    Execute on tap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import-snippets-from-a-github-gist" class="md-nav__link">
     Import snippets from a GitHub Gist
   </a>
@@ -3852,6 +3859,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#execute-on-tap" class="md-nav__link">
+    Execute on tap
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import-snippets-from-a-github-gist" class="md-nav__link">
     Import snippets from a GitHub Gist
   </a>
@@ -3938,7 +3952,7 @@
 <li>Launch the desired connection</li>
 <li>Tap the <code>&lt; /&gt;</code> top button on the navigation bar</li>
 <li>Select the snippet you want to insert from the list</li>
-<li>The command/script from the snippet will be inserted into your terminal, ready to be executed</li>
+<li>The command/script from the snippet will be inserted into your terminal, ready to be executed — or run immediately when <strong>Execute on tap</strong> is enabled (see below)</li>
 </ol>
 <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
 <p>Since WebSSH 33.1 a snippet can be run with a keyboard shortcut, on macOS and on iPad with a hardware keyboard. Nine shortcuts are available: <code>⌥⌘1</code> to <code>⌥⌘9</code>.</p>
@@ -3953,6 +3967,14 @@
 <summary>⌥⌘8 and the macOS Zoom</summary>
 <p>macOS reserves <code>⌥⌘8</code> for its accessibility Zoom when "Use keyboard shortcuts to zoom" is enabled in System Settings. In that case the shortcut never reaches WebSSH: pick another one.</p>
 </details>
+<h2 id="execute-on-tap">Execute on tap</h2>
+<p>Since WebSSH 33.2 a snippet can run as soon as it is inserted, with no extra tap on Enter: edit the snippet, turn on <strong>Execute on tap</strong>, then save. WebSSH sends Enter right after the command, using the <em>Carriage Return</em> character of the connection's profile. Snippets that run on tap wear a ⏎ badge in the list.</p>
+<ul>
+<li>The switch is <strong>off by default</strong>: a snippet that runs by itself must be opted into.</li>
+<li>It also applies to <a href="#keyboard-shortcuts">keyboard shortcuts</a>, to the <strong>Snippets</strong> context menu on macOS and to <a href="#dynamic-variables">dynamic variables</a> (Enter follows the command once the form is validated).</li>
+<li>A command whose text already ends with a line break runs on tap too, as it always did: WebSSH never sends Enter twice, so the switch is harmless on such a snippet. The ⏎ badge is shown in both cases.</li>
+<li><a href="../run-snippet-on-multiple-hosts/">Run on Hosts</a> is not affected: it executes the command directly, without a terminal.</li>
+</ul>
 <h2 id="import-snippets-from-a-github-gist">Import snippets from a GitHub Gist</h2>
 <p>Since WebSSH 32.7 the <strong>•••</strong> menu of the Snippets screen offers <strong>Import from Gist…</strong>: the files of a public gist become snippets, and a snippet can later be refreshed from its source. The same menu opens the <strong>WebSSH Library</strong>, a curated collection of ready-made snippets. See <a href="../import-snippets-from-github-gist/">Import Snippets from GitHub Gist</a>.</p>
 <h2 id="run-a-snippet-on-several-hosts">Run a snippet on several hosts</h2>
@@ -4043,7 +4065,7 @@ mysql<span class="w"> </span>-u<span class="w"> </span><span class="o">{{{</span
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 10, 2026 15:49:16 UTC">October 10, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 13, 2026 16:28:08 UTC">October 13, 2026</span>
       
     
   </small>
