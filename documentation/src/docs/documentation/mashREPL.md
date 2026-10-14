@@ -5,8 +5,8 @@
 ## Available commands
 | Command    | Since | Comments |
 | --- | --- | --- |
-| `awk`      | 14.6 | Standard input not supported yet, only piping and redirection |
-| `cat`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `awk`      | 14.6 | Standard input supported on WebSSH >= 33.2 |
+| `cat`      | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `cd`       | 14.6 | |
 | `cp`       | 14.6 | |
 | `curl`     | 14.17 | Removed in 33.2 to keep the app small. Use the [HTTP Forge](/documentation/tools/#http-forge) tool for HTTP requests |
@@ -24,24 +24,24 @@
 | `mans`     | 23.2 | Network Scanner "like" nmap |
 | `mkdir`    | 14.6 | |
 | `mv`       | 14.6 | |
-| `nslookup` | 14.6 | Standard input not supported yet, only piping and redirection |
+| `nslookup` | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `openurl`  | 14.6 | |
 | `open`     | 14.6 | |
 | `ping`     | 14.6 | |
 | `printenv` | 14.6 | |
 | `pwd`      | 14.6 | |
 | `rm`       | 14.6 | |
-| `sed`      | 14.6 | Standard input not supported yet, only piping and redirection |
+| `sed`      | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `setenv`   | 14.6 | |
-| `sort`     | 14.6 | Standard input not supported yet, only piping and redirection |
+| `sort`     | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `stat`     | 14.6 | |
-| `tail`     | 14.6 | Standard input not supported yet, only piping and redirection |
+| `tail`     | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `tar`      | 14.6 | |
 | `touch`    | 14.6 | |
 | `uname`    | 14.6 | |
 | `unsetenv` | 14.6 | |
 | `uptime`   | 14.6 | |
 | `webssh`   | 14.6 | |
-| `wc`       | 14.6 | Standard input not supported yet, only piping and redirection |
+| `wc`       | 14.6 | Standard input supported on WebSSH >= 33.2 |
 | `whoami`   | 14.6 | |
 | `whois`    | 14.6 | |
