@@ -20,7 +20,6 @@
 | `host`     | 14.6 | |
 | `ifconfig` | 14.6 | |
 | `ls`       | 14.6 | |
-| `lua`      | 14.6 | Standard input not supported yet, only piping and redirection |
 | `malte`    | 21.0 | Little Text Editor with a GUI |
 | `mans`     | 23.2 | Network Scanner "like" nmap |
 | `mkdir`    | 14.6 | |
@@ -32,7 +31,6 @@
 | `printenv` | 14.6 | |
 | `pwd`      | 14.6 | |
 | `rm`       | 14.6 | |
-| `route`    | 14.6 | |
 | `sed`      | 14.6 | Standard input not supported yet, only piping and redirection |
 | `setenv`   | 14.6 | |
 | `sort`     | 14.6 | Standard input not supported yet, only piping and redirection |
