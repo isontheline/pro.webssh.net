@@ -100,7 +100,7 @@ Edits local files with syntax highlighting, find and replace, and auto-saved dra
 The [embedded browser](/documentation/web-browser/), able to route its traffic through an SSH tunnel to reach the web interfaces of your private network, with private sessions, bookmarks (3 in the FREE version) and saved credentials.
 
 ### mashREPL
-A [minimal shell](/documentation/mashREPL/) running on the device itself: `ls`, `cat`, `grep`, `curl`, `dig`, `ping`, `whois`, `tar`, a small text editor and `mans`, a port scanner in the spirit of nmap. Its `webssh` command manages the app itself: database backup and restore, import and export, fingerprints.
+A [minimal shell](/documentation/mashREPL/) running on the device itself: `ls`, `cat`, `grep`, `dig`, `ping`, `whois`, `tar`, a small text editor and `mans`, a port scanner in the spirit of nmap. Its `webssh` command manages the app itself: database backup and restore, import and export, fingerprints.
 
 ### Serial Port
 On the Mac only, a terminal on a USB-to-serial adapter for switches, routers and boards.

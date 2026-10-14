@@ -9,7 +9,7 @@
 | `cat`      | 14.6 | Standard input not supported yet, only piping and redirection |
 | `cd`       | 14.6 | |
 | `cp`       | 14.6 | |
-| `curl`     | 14.17 | |
+| `curl`     | 14.17 | Removed in 33.2 to keep the app small. Use the [HTTP Forge](/documentation/tools/#http-forge) tool for HTTP requests |
 | `date`     | 14.6 | |
 | `dig`      | 14.6 | |
 | `du`       | 14.6 | |

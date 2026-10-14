@@ -81,7 +81,7 @@ WebSSH includes sysadmin tools you'll reach for constantly:
 
 ### Offline Shell with mashREPL
 
-No network? No problem. WebSSH's **mashREPL** feature gives you a local shell on your iPad with commands including `ls`, `grep`, `curl`, `ping`, `tar`, and many more. Useful for testing scripts, exploring syntax, or keeping productive in offline environments.
+No network? No problem. WebSSH's **mashREPL** feature gives you a local shell on your iPad with commands including `ls`, `grep`, `dig`, `ping`, `tar`, and many more. Useful for testing scripts, exploring syntax, or keeping productive in offline environments.
 
 ---
 

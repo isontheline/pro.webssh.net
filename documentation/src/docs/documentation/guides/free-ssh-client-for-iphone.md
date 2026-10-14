@@ -51,7 +51,7 @@ When a quick SSH session isn't enough, WebSSH's built-in diagnostic tools are ri
 
 ### Offline Shell with mashREPL
 
-Away from your server but need a quick command? WebSSH includes **mashREPL**, a local offline shell with commands like `ls`, `grep`, `curl`, `ping`, `tar`, and many more — no network connection required.
+Away from your server but need a quick command? WebSSH includes **mashREPL**, a local offline shell with commands like `ls`, `grep`, `dig`, `ping`, `tar`, and many more — no network connection required.
 
 ### SFTP File Management
 
