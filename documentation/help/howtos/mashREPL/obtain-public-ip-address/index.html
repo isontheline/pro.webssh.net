@@ -3759,26 +3759,36 @@
 <thead>
 <tr>
 <th>Command</th>
+<th>Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>dig +short myip.opendns.com @resolver1.opendns.com</code></td>
+<td>IPv4 or IPv6, whichever your device uses to reach the resolver</td>
 </tr>
 <tr>
-<td><code>curl ifconfig.me</code></td>
+<td><code>dig -4 +short myip.opendns.com @resolver1.opendns.com</code></td>
+<td>Force IPv4</td>
 </tr>
 <tr>
-<td><code>curl icanhazip.com</code></td>
+<td><code>dig -6 +short AAAA myip.opendns.com @resolver1.opendns.com</code></td>
+<td>Force IPv6</td>
 </tr>
 <tr>
-<td><code>curl ipecho.net/plain</code></td>
+<td><code>dig +short TXT o-o.myaddr.l.google.com @ns1.google.com</code></td>
+<td>Google's resolver, answer between quotes</td>
 </tr>
 <tr>
-<td><code>curl ifconfig.co</code></td>
+<td><code>host myip.opendns.com resolver1.opendns.com</code></td>
+<td>Same lookup, verbose output</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Prefer an HTTP service?</p>
+<p>The <code>curl</code> command left mashREPL in WebSSH 33.2. Open the <a href="/documentation/tools/#http-forge">HTTP Forge</a> tool and send a GET request to <code>https://ifconfig.me</code> or <code>https://icanhazip.com</code> instead.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Use of VPN / Proxy</p>
 <p>If you use a VPN or a Proxy (like iCloud Private Relay) you won't be able to retrieve your Public IP Address this these commands. Instead you will retrieve the Output IP Address of your VPN / Proxy.</p>
@@ -3789,7 +3799,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 25, 2022 20:42:39 UTC">November 25, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 08:33:20 UTC">October 14, 2026</span>
       
     
   </small>
