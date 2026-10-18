@@ -30,6 +30,7 @@ New to WebSSH? These guides will help you to get things done :
 * [Transfer files via SFTP on iPhone and iPad](/documentation/guides/sftp-file-transfer-iphone/)
 * [SSH Port Forwarding on iOS](/documentation/guides/port-forwarding-ios/)
 * [Access your homelab remotely via SSH tunnel](/documentation/guides/homelab-ssh-tunnel-ios/)
+* [Expose a local port to the Internet from iPhone, iPad or Mac](/documentation/guides/expose-local-port-internet-iphone/)
 * [SSH into a Raspberry Pi](/documentation/guides/raspberry-pi-ssh-ios/), [Proxmox](/documentation/guides/ssh-proxmox-iphone/) or a [Synology NAS](/documentation/guides/synology-ssh-iphone-ipad/)
 * [Keep SSH sessions alive on iPhone](/documentation/guides/keep-ssh-session-alive-iphone/)
 * [Best SSH client for iOS without a subscription](/documentation/guides/no-subscription-ssh-client-ios/)

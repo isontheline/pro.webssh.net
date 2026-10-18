@@ -50,6 +50,11 @@ description: "Answers to the most frequent questions about WebSSH: PRO purchase,
 
     More information about DPF is available here : [Dynamic Port Forwarding (DPF)](/documentation/help/networking/dynamic-port-forwarding/)
 
+??? abstract "Can I expose a local port to the Internet with a public URL?"
+    Yes. The **Public URL** tool gives a port of your device, or of a machine on your local network, a public `https://` address through a tunnel provider (tunnl.gg today), using SSH remote port forwarding. Pick the provider and the target, choose a Random, Stable or Pro address, press Start and share the address or its QR code. The address works only while the tunnel runs in WebSSH.
+
+    More information : [Public URL](/documentation/help/networking/public-url/)
+
 ??? abstract "How can I check that I own the PRO version of WebSSH?"
     To verify that you own the PRO version of WebSSH, please follow these steps:
 

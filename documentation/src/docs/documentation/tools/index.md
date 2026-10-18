@@ -10,7 +10,7 @@ Besides terminals and file browsers, WebSSH ships a toolbox for the daily chores
 ## The Tools screen
 - Tools are grouped in **Network Tools** and **Other tools**, sorted by name, with a search field that also matches aliases such as `dig`, `nslookup`, `nmap`, `curl`, `cyberchef` or `xxd`.
 - **All / Favorites / Recents** segments. Long press a tool to add it to your favorites, or to **Pin to Sidebar**: a pinned tool gets its own row in the sidebar, under a *Tools* header, with its attention badge. Pins are kept on the device, not synced.
-- On the Mac, the most used tools are also in the **Tools** menu of the menu bar, with `⌃⌥⌘` shortcuts: `A` Addresses, `D` DNS Lookup, `P` Ping, `T` Traceroute, `W` Whois, `E` Certificate Checker, `O` Postmaster, `M` mashREPL, `X` Text Editor, `B` Web Browser, `S` Serial Port.
+- On the Mac, the most used tools are also in the **Tools** menu of the menu bar, with `⌃⌥⌘` shortcuts: `A` Addresses, `D` DNS Lookup, `P` Ping, `T` Traceroute, `W` Whois, `E` Certificate Checker, `O` Postmaster, `M` mashREPL, `X` Text Editor, `B` Web Browser, `U` Public URL, `S` Serial Port.
 - Every tool is usable in the FREE version. Where a limit applies, it is listed below; [WebSSH PRO](/documentation/pricing/) removes it.
 
 ## Network tools
@@ -55,6 +55,11 @@ Reports can be copied or shared as text or Markdown. FREE audits 1 domain. Domai
 
 ### Network Scanner
 **Port Scan** probes a host for the top 100 or top 1000 ports, or a custom list such as `22,80,443,8000-8100`, and names the services found; web ports offer *Open in browser*. **Discover Hosts** sweeps a subnet (your local one by default, up to 1024 addresses) by probing a few TCP ports, and names the hosts found through reverse DNS and Bonjour. Tap a host to port-scan it. FREE shows the first 3 results of a scan.
+
+### Public URL
+Exposes a port of your device, or of a machine on your local network, as a public `https://` address through a tunnel provider ([tunnl.gg](https://tunnl.gg) today): a dev server, a webhook receiver, Home Assistant, a NAS. Pick the provider and the target (`localhost` or a LAN address, plus the port), choose a **Random**, **Stable** (same address every time, derived from a key WebSSH generates for the tunnel) or **Pro** address (reserved name, the provider's own plan), press **Start**: the address is shown with copy, share and a QR code, and every request that goes through is logged with its method, path, status and duration. A target that only speaks HTTPS, such as Proxmox or a NAS, works too: WebSSH adds TLS towards it, with an option to accept a self-signed certificate. Running Public URLs appear under **Forwardings** in the sidebar.
+
+The provider's host key is verified against a key built into WebSSH or a DNSSEC-validated SSHFP record, never by asking you. Free tunnels close after 24 hours or 2 hours without traffic. FREE keeps 1 saved Public URL; every mode is available in FREE. See [Public URL](/documentation/help/networking/public-url/) and the [step-by-step guide](/documentation/guides/expose-local-port-internet-iphone/).
 
 ### Subnet Calculator
 Type a CIDR, an address with a mask, or a bare IP, in IPv4 or IPv6: network and broadcast addresses, first and last usable host, subnet and wildcard masks, counts, binary representations, address class (private, CGNAT, link-local, ULA…). Tap a bit to flip it, test whether an IP belongs to the subnet, and see where the block sits on a Hilbert map of the IPv4 space. Fully offline.
@@ -122,6 +127,7 @@ WebSSH collects nothing, but a network tool has to talk to someone. For the reco
 | Postmaster | Your resolvers, 22 blacklist operators (they see the checked IPs), and the domain's MX hosts on port 25 |
 | Certificate Checker, Ping, Traceroute, Network Scanner | The target only |
 | Secret Share | 1time.io or enclosed.cc, which receive encrypted content and never the key |
+| Public URL | The tunnel provider you picked (tunnl.gg), which sees the visitors' requests in clear and relays them to your target |
 | HTTP Forge, the *HTTP request* step of Baker | The URL you enter |
 | Subnet Calculator, Password Generator, Crontab Generator, Code Forge, Hex Viewer, Baker | Nobody, they work offline |
 

@@ -23,3 +23,6 @@ Both are simple to use, and can be configured in WebSSH by following the instruc
 
 [:fontawesome-solid-arrows-split-up-and-left: Local Port Forwarding](/documentation/help/networking/local-port-forwarding/){ .md-button .md-button--primary }
 [:fontawesome-brands-galactic-republic: Dynamic Port Forwarding](/documentation/help/networking/dynamic-port-forwarding/){ .md-button .md-button--primary }
+
+??? tip "The other direction: a public address for a local port"
+    LPF and DPF bring remote services to your device. To do the opposite, give a port of your device or of your local network a public `https://` address through a tunnel provider (SSH remote port forwarding, `ssh -R`), see [Public URL](/documentation/help/networking/public-url/).
