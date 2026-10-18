@@ -2621,6 +2621,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-inspector" class="md-nav__link">
+    Request inspector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-a-target-on-the-network" class="md-nav__link">
+    Find a target on the network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-the-provider-is-verified" class="md-nav__link">
     How the provider is verified
   </a>
@@ -3947,6 +3968,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#request-inspector" class="md-nav__link">
+    Request inspector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-a-target-on-the-network" class="md-nav__link">
+    Find a target on the network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-the-provider-is-verified" class="md-nav__link">
     How the provider is verified
   </a>
@@ -4046,6 +4088,25 @@
 <li><strong>Host header</strong>: sent to your service instead of the public name, for development servers that reject unknown hosts.</li>
 <li><strong>Reconnect automatically</strong>: off by default. When enabled, WebSSH reconnects after a drop, with a growing delay, as long as it is in the foreground. iOS suspends the app in the background: a tunnel started on an iPhone or iPad stays up only while WebSSH is on screen.</li>
 </ul>
+<h2 id="request-inspector">Request inspector</h2>
+<p>Every request that goes through the tunnel is captured <strong>on the device</strong>: the provider only relays bytes, WebSSH is the one that reads them. FREE shows the last 10 requests, one line each: method, path, status, duration and visitor address. <a href="/documentation/pricing/">WebSSH PRO</a> keeps the last 300 exchanges and opens their detail:</p>
+<ul>
+<li><strong>Headers and bodies</strong> of the request and the response, JSON pretty-printed, images inline, anything else as a hex preview. Bodies are kept up to 256 KB each and flagged when truncated.</li>
+<li><strong>Masked secrets</strong>: the values of <code>Authorization</code>, <code>Cookie</code>, <code>Set-Cookie</code>, <code>Stripe-Signature</code>, API keys and any header whose name contains <em>token</em>, <em>secret</em> or <em>signature</em> are hidden until you reveal them.</li>
+<li><strong>Copy as…</strong> cURL, raw HTTP, Markdown or JSON; <strong>Open in HTTP Forge</strong> to edit and resend.</li>
+<li><strong>Replay</strong> sends the captured request again, from the device straight to the target, without triggering the sender a second time. Replayed rows carry a ↻ badge.</li>
+<li><strong>Filters</strong> by path, method, status class, errors only, and <strong>Export</strong> as HAR (opens in Safari, Chrome or Proxyman) or NDJSON, masked unless you include the secrets.</li>
+</ul>
+<p>On iPad and Mac the detail sits next to the list; on iPhone it opens as a sheet. The log lives in memory for the session and is never saved.</p>
+<h2 id="access-control">Access control</h2>
+<p><em>WebSSH PRO.</em> Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.</p>
+<ul>
+<li><strong>Password</strong>: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.</li>
+<li><strong>Secret link</strong>: only the address carrying the key opens the service, everything else answers <em>Not found</em>. <strong>Copy secret link</strong> and the QR code include the key. Scripts and webhooks can put the key in the <code>X-WebSSH-Key</code> header instead.</li>
+</ul>
+<p>The password or key is stored in the Keychain of the device that set it, next to the tunnel's key: a Public URL protected on one device shows <em>configured elsewhere</em> on another until you set a secret there. Rules by visitor IP are not available yet.</p>
+<h2 id="find-a-target-on-the-network">Find a target on the network</h2>
+<p><strong>Discover on network</strong> in the target section lists the HTTP services announced with Bonjour on your network (Home Assistant, a NAS, printers…). Picking one fills the host and port and turns <strong>Target uses HTTPS</strong> on for <code>https</code> services. Many services, Proxmox or a custom server for instance, do not announce themselves: type their address. The first use asks for the local network permission.</p>
 <h2 id="how-the-provider-is-verified">How the provider is verified</h2>
 <p>WebSSH never asks you to trust the host key of a provider:</p>
 <ol>
@@ -4074,8 +4135,8 @@
 <ul>
 <li>The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the <strong>local network</strong> permission the first time.</li>
 <li><strong>Where encryption ends.</strong> Visitors reach the provider over HTTPS; the provider forwards the traffic to WebSSH over SSH. The relay therefore sees the content of the requests, like any tunnel service. Do not expose a service you would not put behind the provider.</li>
-<li>The request log lives in memory for the duration of the session and is never saved.</li>
-<li>FREE keeps <strong>1 saved Public URL</strong>; <a href="/documentation/pricing/">WebSSH PRO</a> removes the limit. Every mode of every provider is available in FREE.</li>
+<li>The request log lives in memory for the duration of the session and is never saved; the inspector and the access control are enforced on the device, so they work the same with every provider.</li>
+<li>FREE keeps <strong>1 saved Public URL</strong> and shows the last 10 requests; <a href="/documentation/pricing/">WebSSH PRO</a> removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and adds access control. Every mode of every provider is available in FREE.</li>
 <li>Exposing a port of a <em>remote</em> server you are connected to is a different need: see <a href="/documentation/help/networking/local-port-forwarding/">Local Port Forwarding</a> and the <a href="/documentation/help/networking/port-forwarding/">port forwarding overview</a>.</li>
 <li>Abuse of a tunnl.gg address can be reported to <code>abuse@tunnl.gg</code> with the address and timestamps.</li>
 </ul>
@@ -4100,7 +4161,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 15:49:50 UTC">October 18, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 17:00:01 UTC">October 18, 2026</span>
       
     
   </small>

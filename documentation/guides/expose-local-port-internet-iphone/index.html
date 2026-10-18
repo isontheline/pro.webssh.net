@@ -1157,6 +1157,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#finding-the-target-without-typing-an-address" class="md-nav__link">
+    Finding the target without typing an address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#case-4-a-service-that-only-speaks-https" class="md-nav__link">
     Case 4: a service that only speaks HTTPS
   </a>
@@ -3970,6 +3977,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#finding-the-target-without-typing-an-address" class="md-nav__link">
+    Finding the target without typing an address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#case-4-a-service-that-only-speaks-https" class="md-nav__link">
     Case 4: a service that only speaks HTTPS
   </a>
@@ -4043,7 +4057,7 @@
 </ol>
 <p>After a second or two the live screen shows the address. <strong>Copy</strong> it, <strong>Share</strong> it, scan the QR code with another phone, or <strong>Open</strong> it in a browser. Every request that goes through is logged with its method, path, status and duration, which is exactly what you want when debugging a webhook.</p>
 <h2 id="case-1-a-webhook-receiver-on-your-mac">Case 1: a webhook receiver on your Mac</h2>
-<p>Your handler listens on <code>localhost:3000</code>. Create a Public URL with target <code>localhost</code> and port <code>3000</code>, start it, and paste <code>https://&lt;name&gt;.tunnl.gg/webhooks/stripe</code> in the dashboard of the service. Each call appears in the request log with its status code and the time your handler took to answer. A <code>detail</code> line tells you when nothing answered on the port.</p>
+<p>Your handler listens on <code>localhost:3000</code>. Create a Public URL with target <code>localhost</code> and port <code>3000</code>, start it, and paste <code>https://&lt;name&gt;.tunnl.gg/webhooks/stripe</code> in the dashboard of the service. Each call appears in the request log with its status code and the time your handler took to answer. A <code>detail</code> line tells you when nothing answered on the port. With WebSSH PRO, tap a call to read the headers and the JSON Stripe sent, <strong>Replay</strong> it against your handler after a fix instead of re-triggering the event in the dashboard, or <strong>Copy as cURL</strong> to share it. To keep strangers away from the endpoint, set the Public URL to <strong>Secret link</strong> and register the link with its key in Stripe.</p>
 <details class="tip">
 <summary>Development servers that check the Host header</summary>
 <p>Some frameworks refuse requests whose <code>Host</code> header is not <code>localhost</code>. Set <strong>Host header</strong> to <code>localhost</code> in the options of the Public URL and the provider rewrites it for you.</p>
@@ -4053,6 +4067,8 @@
 <p>Two things to keep in mind on an iPhone or iPad: the tunnel lives only while WebSSH is on screen (iOS suspends apps in the background), and the Pi must stay reachable from the phone, so the phone has to be on the home Wi-Fi.</p>
 <h2 id="case-3-show-a-colleague-the-app-running-on-your-mac">Case 3: show a colleague the app running on your Mac</h2>
 <p>Target <code>localhost</code>, the port of your app, mode <strong>Random</strong> if you prefer a disposable address. Share the link; stop the tunnel when the demo is over and the address dies within seconds. Browsers see a one-time notice page from the provider on free tunnels, once a day: tell your colleague to expect it.</p>
+<h2 id="finding-the-target-without-typing-an-address">Finding the target without typing an address</h2>
+<p>On the iPhone especially, <strong>Discover on network</strong> in the target section lists what the network announces with Bonjour: Home Assistant, a Synology, printers. Tap the service, the host and port are filled in, and HTTPS is switched on when the service announces it. Proxmox and most custom servers stay silent: type their address.</p>
 <h2 id="case-4-a-service-that-only-speaks-https">Case 4: a service that only speaks HTTPS</h2>
 <p>Proxmox on <code>192.168.1.5:8006</code>, a Synology on <code>5001</code>, UniFi on <code>8443</code>: these answer in HTTPS only, often with a self-signed certificate. The provider sends plain HTTP into the tunnel, so a plain forward would fail at the TLS handshake. In the Public URL, turn on <strong>Target uses HTTPS</strong>: WebSSH opens a TLS connection to the service itself for each request. If the certificate is self-signed, also turn on <strong>Accept any certificate</strong>, which only concerns the hop between WebSSH and the service on your own network.</p>
 <h2 id="stable-random-or-pro">Stable, Random or Pro?</h2>
@@ -4081,7 +4097,7 @@
 <p>A Stable address belongs to the device that created it: the key behind it never leaves that device's Keychain. Delete the Public URL and the address is gone for good.</p>
 <h2 id="security-notes">Security notes</h2>
 <ul>
-<li>The address is public while the tunnel is open. Anyone who has it reaches your service: put a password on the service, or stop the tunnel when you are done.</li>
+<li>The address is public while the tunnel is open. Anyone who has it reaches your service: put a password on the service, protect the Public URL with a <strong>password</strong> or a <strong>secret link</strong> (WebSSH PRO, enforced on your device), or stop the tunnel when you are done.</li>
 <li>Visitors reach the provider over HTTPS and the provider forwards the traffic to WebSSH over SSH, so the provider sees the requests in clear. Do not expose what you would not hand to the provider.</li>
 <li>WebSSH verifies the provider's host key against a key built into the app, or an SSHFP record validated through DNSSEC. A key matching neither is refused, no questions asked.</li>
 <li>Free tunnels close after 24 hours or 2 hours without traffic; a request log that stops growing usually means the service behind the tunnel stopped, not the tunnel.</li>
@@ -4120,7 +4136,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 15:49:50 UTC">October 18, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 17:00:01 UTC">October 18, 2026</span>
       
     
   </small>
