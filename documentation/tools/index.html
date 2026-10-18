@@ -1082,6 +1082,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../guides/expose-local-port-internet-iphone/" class="md-nav__link">
+        Expose a Local Port to the Internet from iPhone, iPad or Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guides/free-ssh-client-for-ipad/" class="md-nav__link">
         Free SSH Client for iPad: No Subscription, No Account
       </a>
@@ -2541,6 +2555,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/networking/public-url/" class="md-nav__link">
+        Public URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/networking/vpn-over-ssh/" class="md-nav__link">
         VPN-Over-SSH
       </a>
@@ -2850,6 +2878,13 @@
           <li class="md-nav__item">
   <a href="#network-scanner" class="md-nav__link">
     Network Scanner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#public-url" class="md-nav__link">
+    Public URL
   </a>
   
 </li>
@@ -3720,8 +3755,78 @@
   
   
     <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTATOMICS/" class="md-nav__link">
+        Swift Atomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
         SwiftChess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTCRYPTO/" class="md-nav__link">
+        Swift Crypto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIO/" class="md-nav__link">
+        Swift NIO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIOSSH/" class="md-nav__link">
+        Swift NIO SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIOTRANSPORTSERVICES/" class="md-nav__link">
+        Swift NIO Transport Services
       </a>
     </li>
   
@@ -4028,6 +4133,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#public-url" class="md-nav__link">
+    Public URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#subnet-calculator" class="md-nav__link">
     Subnet Calculator
   </a>
@@ -4172,7 +4284,7 @@
 <ul>
 <li>Tools are grouped in <strong>Network Tools</strong> and <strong>Other tools</strong>, sorted by name, with a search field that also matches aliases such as <code>dig</code>, <code>nslookup</code>, <code>nmap</code>, <code>curl</code>, <code>cyberchef</code> or <code>xxd</code>.</li>
 <li><strong>All / Favorites / Recents</strong> segments. Long press a tool to add it to your favorites, or to <strong>Pin to Sidebar</strong>: a pinned tool gets its own row in the sidebar, under a <em>Tools</em> header, with its attention badge. Pins are kept on the device, not synced.</li>
-<li>On the Mac, the most used tools are also in the <strong>Tools</strong> menu of the menu bar, with <code>⌃⌥⌘</code> shortcuts: <code>A</code> Addresses, <code>D</code> DNS Lookup, <code>P</code> Ping, <code>T</code> Traceroute, <code>W</code> Whois, <code>E</code> Certificate Checker, <code>O</code> Postmaster, <code>M</code> mashREPL, <code>X</code> Text Editor, <code>B</code> Web Browser, <code>S</code> Serial Port.</li>
+<li>On the Mac, the most used tools are also in the <strong>Tools</strong> menu of the menu bar, with <code>⌃⌥⌘</code> shortcuts: <code>A</code> Addresses, <code>D</code> DNS Lookup, <code>P</code> Ping, <code>T</code> Traceroute, <code>W</code> Whois, <code>E</code> Certificate Checker, <code>O</code> Postmaster, <code>M</code> mashREPL, <code>X</code> Text Editor, <code>B</code> Web Browser, <code>U</code> Public URL, <code>S</code> Serial Port.</li>
 <li>Every tool is usable in the FREE version. Where a limit applies, it is listed below; <a href="/documentation/pricing/">WebSSH PRO</a> removes it.</li>
 </ul>
 <h2 id="network-tools">Network tools</h2>
@@ -4205,6 +4317,9 @@
 <p>Reports can be copied or shared as text or Markdown. FREE audits 1 domain. Domains and their last report sync with iCloud.</p>
 <h3 id="network-scanner">Network Scanner</h3>
 <p><strong>Port Scan</strong> probes a host for the top 100 or top 1000 ports, or a custom list such as <code>22,80,443,8000-8100</code>, and names the services found; web ports offer <em>Open in browser</em>. <strong>Discover Hosts</strong> sweeps a subnet (your local one by default, up to 1024 addresses) by probing a few TCP ports, and names the hosts found through reverse DNS and Bonjour. Tap a host to port-scan it. FREE shows the first 3 results of a scan.</p>
+<h3 id="public-url">Public URL</h3>
+<p>Exposes a port of your device, or of a machine on your local network, as a public <code>https://</code> address through a tunnel provider (<a href="https://tunnl.gg">tunnl.gg</a> today): a dev server, a webhook receiver, Home Assistant, a NAS. Pick the provider and the target (<code>localhost</code> or a LAN address, plus the port), choose a <strong>Random</strong>, <strong>Stable</strong> (same address every time, derived from a key WebSSH generates for the tunnel) or <strong>Pro</strong> address (reserved name, the provider's own plan), press <strong>Start</strong>: the address is shown with copy, share and a QR code, and every request that goes through is logged with its method, path, status and duration. A target that only speaks HTTPS, such as Proxmox or a NAS, works too: WebSSH adds TLS towards it, with an option to accept a self-signed certificate. Running Public URLs appear under <strong>Forwardings</strong> in the sidebar.</p>
+<p>The provider's host key is verified against a key built into WebSSH or a DNSSEC-validated SSHFP record, never by asking you. Free tunnels close after 24 hours or 2 hours without traffic. FREE keeps 1 saved Public URL; every mode is available in FREE. See <a href="/documentation/help/networking/public-url/">Public URL</a> and the <a href="/documentation/guides/expose-local-port-internet-iphone/">step-by-step guide</a>.</p>
 <h3 id="subnet-calculator">Subnet Calculator</h3>
 <p>Type a CIDR, an address with a mask, or a bare IP, in IPv4 or IPv6: network and broadcast addresses, first and last usable host, subnet and wildcard masks, counts, binary representations, address class (private, CGNAT, link-local, ULA…). Tap a bit to flip it, test whether an IP belongs to the subnet, and see where the block sits on a Hilbert map of the IPv4 space. Fully offline.</p>
 <p>Shortcuts: <strong>Calculate Subnet</strong>, runs without opening the app.</p>
@@ -4275,6 +4390,10 @@
 <td>1time.io or enclosed.cc, which receive encrypted content and never the key</td>
 </tr>
 <tr>
+<td>Public URL</td>
+<td>The tunnel provider you picked (tunnl.gg), which sees the visitors' requests in clear and relays them to your target</td>
+</tr>
+<tr>
 <td>HTTP Forge, the <em>HTTP request</em> step of Baker</td>
 <td>The URL you enter</td>
 </tr>
@@ -4294,7 +4413,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 08:33:20 UTC">October 14, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 15:49:50 UTC">October 18, 2026</span>
       
     
   </small>
