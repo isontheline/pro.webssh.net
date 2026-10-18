@@ -45,6 +45,28 @@ For the Pro mode, **Copy public key** in the editor (and in the error shown when
 - **Host header**: sent to your service instead of the public name, for development servers that reject unknown hosts.
 - **Reconnect automatically**: off by default. When enabled, WebSSH reconnects after a drop, with a growing delay, as long as it is in the foreground. iOS suspends the app in the background: a tunnel started on an iPhone or iPad stays up only while WebSSH is on screen.
 
+## Request inspector
+Every request that goes through the tunnel is captured **on the device**: the provider only relays bytes, WebSSH is the one that reads them. FREE shows the last 10 requests, one line each: method, path, status, duration and visitor address. [WebSSH PRO](/documentation/pricing/) keeps the last 300 exchanges and opens their detail:
+
+- **Headers and bodies** of the request and the response, JSON pretty-printed, images inline, anything else as a hex preview. Bodies are kept up to 256 KB each and flagged when truncated.
+- **Masked secrets**: the values of `Authorization`, `Cookie`, `Set-Cookie`, `Stripe-Signature`, API keys and any header whose name contains *token*, *secret* or *signature* are hidden until you reveal them.
+- **Copy as…** cURL, raw HTTP, Markdown or JSON; **Open in HTTP Forge** to edit and resend.
+- **Replay** sends the captured request again, from the device straight to the target, without triggering the sender a second time. Replayed rows carry a ↻ badge.
+- **Filters** by path, method, status class, errors only, and **Export** as HAR (opens in Safari, Chrome or Proxyman) or NDJSON, masked unless you include the secrets.
+
+On iPad and Mac the detail sits next to the list; on iPhone it opens as a sheet. The log lives in memory for the session and is never saved.
+
+## Access control
+*WebSSH PRO.* Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.
+
+- **Password**: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.
+- **Secret link**: only the address carrying the key opens the service, everything else answers *Not found*. **Copy secret link** and the QR code include the key. Scripts and webhooks can put the key in the `X-WebSSH-Key` header instead.
+
+The password or key is stored in the Keychain of the device that set it, next to the tunnel's key: a Public URL protected on one device shows *configured elsewhere* on another until you set a secret there. Rules by visitor IP are not available yet.
+
+## Find a target on the network
+**Discover on network** in the target section lists the HTTP services announced with Bonjour on your network (Home Assistant, a NAS, printers…). Picking one fills the host and port and turns **Target uses HTTPS** on for `https` services. Many services, Proxmox or a custom server for instance, do not announce themselves: type their address. The first use asks for the local network permission.
+
 ## How the provider is verified
 WebSSH never asks you to trust the host key of a provider:
 
@@ -71,8 +93,8 @@ The provider's Pro plan lifts these limits and adds reserved names. See the [tun
 ## Good to know
 - The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the **local network** permission the first time.
 - **Where encryption ends.** Visitors reach the provider over HTTPS; the provider forwards the traffic to WebSSH over SSH. The relay therefore sees the content of the requests, like any tunnel service. Do not expose a service you would not put behind the provider.
-- The request log lives in memory for the duration of the session and is never saved.
-- FREE keeps **1 saved Public URL**; [WebSSH PRO](/documentation/pricing/) removes the limit. Every mode of every provider is available in FREE.
+- The request log lives in memory for the duration of the session and is never saved; the inspector and the access control are enforced on the device, so they work the same with every provider.
+- FREE keeps **1 saved Public URL** and shows the last 10 requests; [WebSSH PRO](/documentation/pricing/) removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and adds access control. Every mode of every provider is available in FREE.
 - Exposing a port of a *remote* server you are connected to is a different need: see [Local Port Forwarding](/documentation/help/networking/local-port-forwarding/) and the [port forwarding overview](/documentation/help/networking/port-forwarding/).
 - Abuse of a tunnl.gg address can be reported to `abuse@tunnl.gg` with the address and timestamps.
 

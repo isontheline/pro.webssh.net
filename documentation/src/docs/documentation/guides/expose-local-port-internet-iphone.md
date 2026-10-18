@@ -30,7 +30,7 @@ After a second or two the live screen shows the address. **Copy** it, **Share** 
 
 ## Case 1: a webhook receiver on your Mac
 
-Your handler listens on `localhost:3000`. Create a Public URL with target `localhost` and port `3000`, start it, and paste `https://<name>.tunnl.gg/webhooks/stripe` in the dashboard of the service. Each call appears in the request log with its status code and the time your handler took to answer. A `detail` line tells you when nothing answered on the port.
+Your handler listens on `localhost:3000`. Create a Public URL with target `localhost` and port `3000`, start it, and paste `https://<name>.tunnl.gg/webhooks/stripe` in the dashboard of the service. Each call appears in the request log with its status code and the time your handler took to answer. A `detail` line tells you when nothing answered on the port. With WebSSH PRO, tap a call to read the headers and the JSON Stripe sent, **Replay** it against your handler after a fix instead of re-triggering the event in the dashboard, or **Copy as cURL** to share it. To keep strangers away from the endpoint, set the Public URL to **Secret link** and register the link with its key in Stripe.
 
 ??? tip "Development servers that check the Host header"
     Some frameworks refuse requests whose `Host` header is not `localhost`. Set **Host header** to `localhost` in the options of the Public URL and the provider rewrites it for you.
@@ -44,6 +44,10 @@ Two things to keep in mind on an iPhone or iPad: the tunnel lives only while Web
 ## Case 3: show a colleague the app running on your Mac
 
 Target `localhost`, the port of your app, mode **Random** if you prefer a disposable address. Share the link; stop the tunnel when the demo is over and the address dies within seconds. Browsers see a one-time notice page from the provider on free tunnels, once a day: tell your colleague to expect it.
+
+## Finding the target without typing an address
+
+On the iPhone especially, **Discover on network** in the target section lists what the network announces with Bonjour: Home Assistant, a Synology, printers. Tap the service, the host and port are filled in, and HTTPS is switched on when the service announces it. Proxmox and most custom servers stay silent: type their address.
 
 ## Case 4: a service that only speaks HTTPS
 
@@ -61,7 +65,7 @@ A Stable address belongs to the device that created it: the key behind it never 
 
 ## Security notes
 
-- The address is public while the tunnel is open. Anyone who has it reaches your service: put a password on the service, or stop the tunnel when you are done.
+- The address is public while the tunnel is open. Anyone who has it reaches your service: put a password on the service, protect the Public URL with a **password** or a **secret link** (WebSSH PRO, enforced on your device), or stop the tunnel when you are done.
 - Visitors reach the provider over HTTPS and the provider forwards the traffic to WebSSH over SSH, so the provider sees the requests in clear. Do not expose what you would not hand to the provider.
 - WebSSH verifies the provider's host key against a key built into the app, or an SSHFP record validated through DNSSEC. A key matching neither is refused, no questions asked.
 - Free tunnels close after 24 hours or 2 hours without traffic; a request log that stops growing usually means the service behind the tunnel stopped, not the tunnel.
