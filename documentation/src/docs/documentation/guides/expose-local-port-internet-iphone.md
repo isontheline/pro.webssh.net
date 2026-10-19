@@ -16,7 +16,7 @@ WebSSH does this with **Public URL**, built on SSH remote port forwarding and a 
 - Nothing else: no account, no server, no router configuration
 
 !!! tip "How it works"
-    WebSSH opens an SSH connection to a tunnel provider ([tunnl.gg](https://tunnl.gg) today) and asks it to publish an address. Each request arriving on that address travels back through the SSH connection and WebSSH delivers it to the host and port you chose. The address works only while the tunnel runs in WebSSH.
+    WebSSH opens an SSH connection to a tunnel provider ([tunnl.gg](https://tunnl.gg/pricing?ref=webssh) today) and asks it to publish an address. Each request arriving on that address travels back through the SSH connection and WebSSH delivers it to the host and port you chose. The address works only while the tunnel runs in WebSSH.
 
 ## Step by step
 

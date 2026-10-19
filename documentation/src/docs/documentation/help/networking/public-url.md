@@ -10,7 +10,7 @@ description: "Give a port of your device, or of a machine on your local network,
 Under the hood it is SSH remote port forwarding (`ssh -R`): WebSSH opens an SSH connection to a **tunnel provider**, asks it to publish an address, and relays every incoming request to the host and port you chose. The address only works while the tunnel is running in WebSSH.
 
 !!! info "Providers"
-    The first provider is [tunnl.gg](https://tunnl.gg). More providers may be added over time; the provider is chosen when you create a Public URL.
+    The first provider is [tunnl.gg](https://tunnl.gg/pricing?ref=webssh). More providers may be added over time; the provider is chosen when you create a Public URL.
 
 ## Create a Public URL
 1. Open **Tools** in the sidebar, then **Public URL** (on the Mac, `⌃⌥⌘U`)
@@ -88,7 +88,7 @@ The live screen says which of the two checks accepted the key. The accepted key 
 - Browsers visiting a free tunnel see a **tunnl.gg notice page once a day**, a phishing protection; tools such as webhooks or `curl` are not affected.
 - Request and response bodies up to 128 MB; WebSockets are supported.
 
-The provider's Pro plan lifts these limits and adds reserved names. See the [tunnl.gg documentation](https://tunnl.gg/docs).
+The provider's Pro plan lifts these limits and adds reserved names. See the [tunnl.gg documentation](https://tunnl.gg/docs?ref=webssh).
 
 ## Good to know
 - The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the **local network** permission the first time.
