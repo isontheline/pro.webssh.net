@@ -16,9 +16,10 @@ Under the hood it is SSH remote port forwarding (`ssh -R`): WebSSH opens an SSH 
 1. Open **Tools** in the sidebar, then **Public URL** (on the Mac, `⌃⌥⌘U`)
 2. Press the **[+]** button
 3. Pick the **provider**
-4. Fill in the **target**: `localhost` for a service running on the device itself, or the address of a machine on your network, such as `192.168.1.20`, and its **port**
-5. Choose the **address mode** (see below)
-6. Save, then press **Start**
+4. Fill in the **target**: `localhost` for a service running on the device itself, or the address of a machine on your network, such as `192.168.1.20`, and its **port**. You can also paste a full address such as `https://192.168.1.20:8443` into the host field: the port and **Target uses HTTPS** follow, and a port of `443` or `8443` turns HTTPS on by itself. **Discover on network** lists the services announced on your network instead
+5. Save, then press **Start**
+
+Everything else lives under **Advanced options**, folded for a new Public URL and opened when you edit one whose settings differ from the defaults: a **name** (when empty, the Public URL is listed under its target, such as `localhost:8080`, or under the name of the service picked on the network), the HTTPS switches, the **address mode** and the **key** (each on its own screen, see below), the host header, automatic reconnection and access control. The line under the folded group sums up the choices in force.
 
 The live screen shows the address with **Copy**, **Share** and **Open** buttons, a QR code, the time left before the provider closes a free tunnel, and a log of the requests that went through: method, path, status, duration and visitor IP. **Stop** closes the tunnel; the address stops answering within seconds.
 
