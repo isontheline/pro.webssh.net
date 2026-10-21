@@ -4047,7 +4047,7 @@
 <li>Fill in the <strong>target</strong>: <code>localhost</code> for a service running on the device itself, or the address of a machine on your network, such as <code>192.168.1.20</code>, and its <strong>port</strong>. You can also paste a full address such as <code>https://192.168.1.20:8443</code> into the host field: the port and <strong>Target uses HTTPS</strong> follow, and a port of <code>443</code> or <code>8443</code> turns HTTPS on by itself. <strong>Discover on network</strong> lists the services announced on your network instead</li>
 <li>Save, then press <strong>Start</strong></li>
 </ol>
-<p>Everything else lives under <strong>Advanced options</strong>, folded for a new Public URL and opened when you edit one whose settings differ from the defaults: a <strong>name</strong> (when empty, the Public URL is listed under its target, such as <code>localhost:8080</code>, or under the name of the service picked on the network), the HTTPS switches, the <strong>address mode</strong> and the <strong>key</strong> (each on its own screen, see below), the host header, automatic reconnection and access control. The line under the folded group sums up the choices in force.</p>
+<p>Everything else lives under <strong>Advanced options</strong>, folded for a new Public URL and opened when you edit one whose settings differ from the defaults: a <strong>name</strong> (when empty, the Public URL is listed under its target, such as <code>localhost:8080</code>, or under the name of the service picked on the network), the HTTPS switches, the <strong>address mode</strong> and the <strong>key</strong> (each on its own screen, see below), the host header and automatic reconnection. The line under the folded group sums up the choices in force.</p>
 <p>The live screen shows the address with <strong>Copy</strong>, <strong>Share</strong> and <strong>Open</strong> buttons, a QR code, the time left before the provider closes a free tunnel, and a log of the requests that went through: method, path, status, duration and visitor IP. <strong>Stop</strong> closes the tunnel; the address stops answering within seconds.</p>
 <p>Public URLs you create appear in the sidebar under <strong>Forwardings</strong> while they run, next to your tunnels and jump hosts.</p>
 <h2 id="address-modes">Address modes</h2>
@@ -4099,7 +4099,7 @@
 </ul>
 <p>On iPad and Mac the detail sits next to the list; on iPhone it opens as a sheet. The log lives in memory for the session and is never saved.</p>
 <h2 id="access-control">Access control</h2>
-<p><em>WebSSH PRO.</em> Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.</p>
+<p><em>WebSSH PRO, not offered on tunnl.gg.</em> Password protection and IP rules are part of tunnl.gg Pro, so WebSSH does not duplicate them for that provider and the section does not appear in its editor; the built-in access control below is planned for the WebSSH Link provider. Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.</p>
 <ul>
 <li><strong>Password</strong>: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.</li>
 <li>
@@ -4139,8 +4139,8 @@
 <ul>
 <li>The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the <strong>local network</strong> permission the first time.</li>
 <li><strong>Where encryption ends.</strong> Visitors reach the provider over HTTPS; the provider forwards the traffic to WebSSH over SSH. The relay therefore sees the content of the requests, like any tunnel service. Do not expose a service you would not put behind the provider.</li>
-<li>The request log lives in memory for the duration of the session and is never saved; the inspector and the access control are enforced on the device, so they work the same with every provider.</li>
-<li>FREE keeps <strong>1 saved Public URL</strong> and shows the last 10 requests; <a href="/documentation/pricing/">WebSSH PRO</a> removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and adds access control. Every mode of every provider is available in FREE.</li>
+<li>The request log lives in memory for the duration of the session and is never saved; the inspector is enforced on the device, so it works the same with every provider.</li>
+<li>FREE keeps <strong>1 saved Public URL</strong> and shows the last 10 requests; <a href="/documentation/pricing/">WebSSH PRO</a> removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and, on providers that offer it, access control. Every mode of every provider is available in FREE.</li>
 <li>Exposing a port of a <em>remote</em> server you are connected to is a different need: see <a href="/documentation/help/networking/local-port-forwarding/">Local Port Forwarding</a> and the <a href="/documentation/help/networking/port-forwarding/">port forwarding overview</a>.</li>
 <li>Abuse of a tunnl.gg address can be reported to <code>abuse@tunnl.gg</code> with the address and timestamps.</li>
 </ul>
@@ -4165,7 +4165,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 20:05:20 UTC">October 21, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 20:19:28 UTC">October 21, 2026</span>
       
     
   </small>
