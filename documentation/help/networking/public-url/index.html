@@ -4102,7 +4102,11 @@
 <p><em>WebSSH PRO.</em> Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.</p>
 <ul>
 <li><strong>Password</strong>: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.</li>
-<li><strong>Secret link</strong>: only the address carrying the key opens the service, everything else answers <em>Not found</em>. <strong>Copy secret link</strong> and the QR code include the key. Scripts and webhooks can put the key in the <code>X-WebSSH-Key</code> header instead.</li>
+<li>
+<p><strong>Secret link</strong>: only the address carrying the key opens the service, everything else answers <em>Not found</em>. The key travels as the <code>key</code> query parameter: <code>https://&lt;name&gt;.tunnl.gg/?key=&lt;key&gt;</code> (any path works, for instance <code>https://&lt;name&gt;.tunnl.gg/webhook?key=&lt;key&gt;</code>); <strong>Copy secret link</strong> and the QR code on the live screen include it. Once a browser has opened the link, the following requests of that browser pass without the parameter for 12 hours. Scripts and webhook senders can put the key in the <code>X-WebSSH-Key</code> header instead of the address:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-WebSSH-Key: &lt;key&gt;&quot;</span><span class="w"> </span>https://&lt;name&gt;.tunnl.gg/
+</code></pre></div>
+</li>
 </ul>
 <p>The password or key is stored in the Keychain of the device that set it, next to the tunnel's key: a Public URL protected on one device shows <em>configured elsewhere</em> on another until you set a secret there. Rules by visitor IP are not available yet.</p>
 <h2 id="find-a-target-on-the-network">Find a target on the network</h2>
@@ -4161,7 +4165,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 19:53:19 UTC">October 21, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 21, 2026 20:05:20 UTC">October 21, 2026</span>
       
     
   </small>
