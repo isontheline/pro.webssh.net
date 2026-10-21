@@ -19,7 +19,7 @@ Under the hood it is SSH remote port forwarding (`ssh -R`): WebSSH opens an SSH 
 4. Fill in the **target**: `localhost` for a service running on the device itself, or the address of a machine on your network, such as `192.168.1.20`, and its **port**. You can also paste a full address such as `https://192.168.1.20:8443` into the host field: the port and **Target uses HTTPS** follow, and a port of `443` or `8443` turns HTTPS on by itself. **Discover on network** lists the services announced on your network instead
 5. Save, then press **Start**
 
-Everything else lives under **Advanced options**, folded for a new Public URL and opened when you edit one whose settings differ from the defaults: a **name** (when empty, the Public URL is listed under its target, such as `localhost:8080`, or under the name of the service picked on the network), the HTTPS switches, the **address mode** and the **key** (each on its own screen, see below), the host header, automatic reconnection and access control. The line under the folded group sums up the choices in force.
+Everything else lives under **Advanced options**, folded for a new Public URL and opened when you edit one whose settings differ from the defaults: a **name** (when empty, the Public URL is listed under its target, such as `localhost:8080`, or under the name of the service picked on the network), the HTTPS switches, the **address mode** and the **key** (each on its own screen, see below), the host header and automatic reconnection. The line under the folded group sums up the choices in force.
 
 The live screen shows the address with **Copy**, **Share** and **Open** buttons, a QR code, the time left before the provider closes a free tunnel, and a log of the requests that went through: method, path, status, duration and visitor IP. **Stop** closes the tunnel; the address stops answering within seconds.
 
@@ -58,7 +58,7 @@ Every request that goes through the tunnel is captured **on the device**: the pr
 On iPad and Mac the detail sits next to the list; on iPhone it opens as a sheet. The log lives in memory for the session and is never saved.
 
 ## Access control
-*WebSSH PRO.* Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.
+*WebSSH PRO, not offered on tunnl.gg.* Password protection and IP rules are part of tunnl.gg Pro, so WebSSH does not duplicate them for that provider and the section does not appear in its editor; the built-in access control below is planned for the WebSSH Link provider. Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.
 
 - **Password**: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.
 - **Secret link**: only the address carrying the key opens the service, everything else answers *Not found*. The key travels as the `key` query parameter: `https://<name>.tunnl.gg/?key=<key>` (any path works, for instance `https://<name>.tunnl.gg/webhook?key=<key>`); **Copy secret link** and the QR code on the live screen include it. Once a browser has opened the link, the following requests of that browser pass without the parameter for 12 hours. Scripts and webhook senders can put the key in the `X-WebSSH-Key` header instead of the address:
@@ -99,8 +99,8 @@ The provider's Pro plan lifts these limits and adds reserved names. See the [tun
 ## Good to know
 - The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the **local network** permission the first time.
 - **Where encryption ends.** Visitors reach the provider over HTTPS; the provider forwards the traffic to WebSSH over SSH. The relay therefore sees the content of the requests, like any tunnel service. Do not expose a service you would not put behind the provider.
-- The request log lives in memory for the duration of the session and is never saved; the inspector and the access control are enforced on the device, so they work the same with every provider.
-- FREE keeps **1 saved Public URL** and shows the last 10 requests; [WebSSH PRO](/documentation/pricing/) removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and adds access control. Every mode of every provider is available in FREE.
+- The request log lives in memory for the duration of the session and is never saved; the inspector is enforced on the device, so it works the same with every provider.
+- FREE keeps **1 saved Public URL** and shows the last 10 requests; [WebSSH PRO](/documentation/pricing/) removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and, on providers that offer it, access control. Every mode of every provider is available in FREE.
 - Exposing a port of a *remote* server you are connected to is a different need: see [Local Port Forwarding](/documentation/help/networking/local-port-forwarding/) and the [port forwarding overview](/documentation/help/networking/port-forwarding/).
 - Abuse of a tunnl.gg address can be reported to `abuse@tunnl.gg` with the address and timestamps.
 
