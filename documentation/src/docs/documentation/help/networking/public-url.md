@@ -61,7 +61,12 @@ On iPad and Mac the detail sits next to the list; on iPhone it opens as a sheet.
 *WebSSH PRO.* Protects the service from anyone who finds the address. WebSSH answers the refused requests itself, before anything reaches your service; the provider still relays them.
 
 - **Password**: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.
-- **Secret link**: only the address carrying the key opens the service, everything else answers *Not found*. **Copy secret link** and the QR code include the key. Scripts and webhooks can put the key in the `X-WebSSH-Key` header instead.
+- **Secret link**: only the address carrying the key opens the service, everything else answers *Not found*. The key travels as the `key` query parameter: `https://<name>.tunnl.gg/?key=<key>` (any path works, for instance `https://<name>.tunnl.gg/webhook?key=<key>`); **Copy secret link** and the QR code on the live screen include it. Once a browser has opened the link, the following requests of that browser pass without the parameter for 12 hours. Scripts and webhook senders can put the key in the `X-WebSSH-Key` header instead of the address:
+
+    ```bash
+    curl -H "X-WebSSH-Key: <key>" https://<name>.tunnl.gg/
+    ```
+
 
 The password or key is stored in the Keychain of the device that set it, next to the tunnel's key: a Public URL protected on one device shows *configured elsewhere* on another until you set a secret there. Rules by visitor IP are not available yet.
 
