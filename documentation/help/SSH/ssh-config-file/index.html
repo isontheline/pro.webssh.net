@@ -4100,6 +4100,13 @@ This allows advanced matching beyond the standard <code>*</code> and <code>?</co
 <td>See above</td>
 </tr>
 <tr>
+<td>#!SFTPPort</td>
+<td>Integer</td>
+<td>Port used for SFTP connections when SFTP is served on a different port than SSH (dedicated SFTP daemon). Overrides <code>Port</code> for SFTP launches only, SCP keeps the SSH port.</td>
+<td>33.2</td>
+<td><code>#!SFTPPort 2022</code></td>
+</tr>
+<tr>
 <td>#!SFTPTextEditorDefaultFileExtensions</td>
 <td>String</td>
 <td>Default file extensions for SFTP text editor. It will allow you to bypass the "Are you sure to edit?" dialog. Comma-separated values.</td>
@@ -4136,7 +4143,7 @@ This allows advanced matching beyond the standard <code>*</code> and <code>?</co
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 19:31:45 UTC">October 22, 2026</span>
       
     
   </small>
