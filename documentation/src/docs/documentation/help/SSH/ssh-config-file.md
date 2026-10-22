@@ -91,6 +91,7 @@ All special features are prefixed by `#!` and are not part of the SSH Config Fil
 | #!KeyboardAccessoryViewLayout | String | Keyboard accessory view layout. See [Keyboard Accessory View Customisation](/documentation/help/howtos/SSH/customise-keyboard-accessory-view-layout/) | 23.0 | `#!KeyboardAccessoryView {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.]` |
 | #!KeyboardAccessoryViewLayoutIdiomPad | String | Same as above (overwrites) but only apply to iPad devices | 23.0 | See above |
 | #!KeyboardAccessoryViewLayoutIdiomPhone | String | Same as above (overwrites) but only apply to iPhone devices | 23.0 | See above |
+| #!SFTPPort | Integer | Port used for SFTP connections when SFTP is served on a different port than SSH (dedicated SFTP daemon). Overrides `Port` for SFTP launches only, SCP keeps the SSH port. | 33.2 | `#!SFTPPort 2022` |
 | #!SFTPTextEditorDefaultFileExtensions | String | Default file extensions for SFTP text editor. It will allow you to bypass the "Are you sure to edit?" dialog. Comma-separated values. | 23.0 | `#!SFTPTextEditorDefaultFileExtensions .txt,.json,.md` |
 | #!RemoteCharacterSet | String | Remote character set to use. Only applicable to telnet connections. Possible values : `UTF-8`, `CP437` | 26.2 | `#!RemoteCharacterSet CP437` |
 | #!TermType | String | $TERM environment variable value | 21.4 | `#!TermType xterm-256color` |
