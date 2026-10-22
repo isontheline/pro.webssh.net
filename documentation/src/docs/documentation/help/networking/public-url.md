@@ -25,6 +25,8 @@ The live screen shows the address with **Copy**, **Share** and **Open** buttons,
 
 Public URLs you create appear in the sidebar under **Forwardings** while they run, next to your tunnels and jump hosts.
 
+Editing a Public URL that is online keeps it running on its previous settings: everything but the name and automatic reconnection is read when the tunnel starts. Saving offers to **restart** it right away, with a warning when the public address will change (provider, address mode, reserved name or key); **Later** leaves a reminder with a Restart button on the live screen.
+
 ## Address modes
 | Mode | Address | Needs |
 | --- | --- | --- |
