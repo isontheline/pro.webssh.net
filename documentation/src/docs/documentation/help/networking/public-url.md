@@ -25,6 +25,8 @@ The live screen shows the address with **Copy**, **Share** and **Open** buttons,
 
 Public URLs you create appear in the sidebar under **Forwardings** while they run, next to your tunnels and jump hosts.
 
+On iPhone and iPad, a Public URL does not survive the app going to the background: iOS closes the connection and the provider drops a silent client within a minute. The live screen then shows *Interrupted in the background*, and the tunnel starts again by itself as soon as WebSSH returns to the foreground, whether or not automatic reconnection is enabled. A Stable address comes back unchanged; a Random one gets a new name.
+
 Editing a Public URL that is online keeps it running on its previous settings: everything but the name and automatic reconnection is read when the tunnel starts. Saving offers to **restart** it right away, with a warning when the public address will change (provider, address mode, reserved name or key); **Later** leaves a reminder with a Restart button on the live screen.
 
 ## Address modes
