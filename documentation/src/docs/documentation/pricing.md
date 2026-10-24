@@ -25,7 +25,7 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 ??? info "Will PRO ever become a subscription?"
     **No.** WebSSH **PRO** is and will remain a **one-time lifetime purchase** : every feature that runs on your device is included, forever, with **FREE** regular updates.
 
-    In the future, WebSSH may offer **optional cloud-powered services** (features that rely on servers running 24/7). Because these have recurring infrastructure costs, they would be offered as a **separate, optional subscription** — but nothing you already own moves behind it. Your **PRO** purchase keeps its full value, always.
+    Some upcoming features rely on servers that WebSSH runs around the clock. Because that infrastructure has a recurring cost, those **cloud-powered services** are grouped under **WebSSH Link**, an **optional subscription** that is separate from **PRO**. Nothing you already own moves behind it: everything WebSSH Link offers can also be done, in one form or another, with the third-party providers already built into the app. Your **PRO** purchase keeps its full value, always.
 
 ??? danger "It's too expensive!"
     Since 2012, WebSSH has been sustained and maintained as an indie app supported by a one-time purchase, with regular monthly updates provided for **FREE**. No hidden costs.
@@ -79,11 +79,11 @@ Yes you see it right : **FREE** version is the most generous free tier you can f
 If you need more information about the differences between **FREE** and **PRO** versions, please [contact me](/documentation/contact-me/) or [open a discussion](https://github.com/isontheline/pro.webssh.net/discussions/new/choose) on GitHub.
 
 ??? tip "Want to support WebSSH even further?"
-    :heart: WebSSH **PRO** is — and will always remain — a **one-time lifetime purchase**. But if you'd like to go further and help me keep WebSSH moving forward, you can now leave a small voluntary tip: the **WebSSH Developer Tip**, a monthly or yearly subscription available in the app (Settings → WebSSH Sponsorship) once you own **PRO**.
+    :heart: WebSSH **PRO** is — and will always remain — a **one-time lifetime purchase**. If you would like to go further, WebSSH offers **WebSSH Link**, an optional monthly or yearly subscription available in the app (Settings → WebSSH Link, formerly the WebSSH Developer Tip).
 
-    :gift: As a thank-you, supporters unlock a few **digital goodies**: mini games and other delightfully useless things :sweat_smile:. The tip never unlocks — and will never unlock — any real feature.
+    :cloud: WebSSH Link gives access to the **cloud services operated by WebSSH itself**: services that need a server running 24/7 and therefore have a recurring cost. Every one of them has a counterpart you can use for free with a third-party provider already built into the app, so **nothing is taken away** from FREE or PRO users: WebSSH Link is the way to run these services on WebSSH's own infrastructure, and to support the development of the app further.
 
-    Thank you so much for your support!
+    :gift: Subscribers also keep the **Extras**: mini games and other small pleasures. Thank you so much for your support!
 
 [^1]: Serial Port Client is only available on macOS
 [^2]: Connectors are coming soon on a future version of WebSSH - so stay tuned for more information about this new feature!
