@@ -1561,6 +1561,17 @@ const TerminalHelper = {
             // (.xterm-decoration-overview-ruler is offset in xterm-webssh.css).
             allowProposedApi: true,
             overviewRulerWidth: 14,
+            // OSC 8 hyperlinks #1768 : the core OscLinkProvider is always
+            // registered (not an addon) and, without a linkHandler, falls back
+            // to confirm() + window.open(), which returns null inside WKWebView :
+            // the link never opens and the Open Links Strategy is ignored. Route
+            // the activation to the native bridge instead ; the native side
+            // confirms the real destination (the label can hide it) and applies
+            // the strategy, "disabled" included. Non-http(s) schemes stay
+            // inactive (allowNonHttpProtocols left to its default).
+            linkHandler: {
+                activate: TerminalHelper.onHyperlinkClick,
+            },
         };
     },
 
@@ -1706,6 +1717,12 @@ const TerminalHelper = {
 
     onLinkClick: function (event, uri) {
         JS2IOS.calliOSFunction('openLink', uri);
+    },
+
+    // OSC 8 hyperlinks #1768 : separate bridge function so the native side can
+    // ask for confirmation before applying the Open Links Strategy.
+    onHyperlinkClick: function (event, uri) {
+        JS2IOS.calliOSFunction('openHyperlink', uri);
     }
 };
 
