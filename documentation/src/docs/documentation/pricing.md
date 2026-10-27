@@ -53,6 +53,13 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
 | [iCloud Sync](/documentation/help/iCloud/) | :white_check_mark: | :white_check_mark: |
 | [Web Browser](/documentation/web-browser/) | :white_check_mark: | :white_check_mark: |
+| Web Browser : Bookmarks | :cross_mark: (Only 3) | :white_check_mark: |
+| [Jump Hosts](/documentation/guides/ssh-jump-host-bastion-iphone-ipad-mac/) (bastion / ProxyJump chains) | :cross_mark: | :white_check_mark: |
+| [Public URL](/documentation/help/networking/public-url/) : tunnels running at the same time | :cross_mark: (Only 1) | :white_check_mark: |
+| Public URL : request inspector (headers, bodies, replay, export) and access control | :cross_mark: (Last 10 requests) | :white_check_mark: |
+| [Alternative Addresses](/documentation/help/networking/alternative-addresses/) | :cross_mark: | :white_check_mark: |
+| Multi-pane broadcast input | :cross_mark: | :white_check_mark: |
+| Snippet keyboard shortcuts (⌥⌘1…9) | :cross_mark: | :white_check_mark: |
 | [VPN-Over-SSH](/documentation/help/networking/vpn-over-ssh/) | :white_check_mark: | :white_check_mark: |
 | **[Sysadmin Tools](/documentation/tools/)** | **FREE** | **PRO** |
 | [Local terminal](/documentation/mashREPL/) | :white_check_mark: | :white_check_mark: |
@@ -63,6 +70,11 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
 | Wake-on-LAN | :white_check_mark: | :white_check_mark: |
 | Baker Toolkit : Unlimited number of recipes | :cross_mark: (Only 1) | :white_check_mark: |
+| Certificate Checker : watched hosts, background checks and notifications | :cross_mark: (1 host, manual checks) | :white_check_mark: |
+| Postmaster : monitored domains | :cross_mark: (Only 1) | :white_check_mark: |
+| Code Forge : saved projects, styles and scanner | :cross_mark: (1 project) | :white_check_mark: |
+| Hex Viewer : save changes | :cross_mark: | :white_check_mark: |
+| Secret Share : self-hosted servers | :cross_mark: | :white_check_mark: |
 | Tools Full Capabilities | :cross_mark: (Limited) | :white_check_mark: |
 | **Operating System Support** | **FREE** | **PRO** |
 | iPhoneOS | :white_check_mark: | :white_check_mark: |
