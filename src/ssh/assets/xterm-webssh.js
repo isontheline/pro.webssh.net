@@ -550,6 +550,13 @@ const HandlerHelper = {
             const pd = dataParts[1];
 
             switch (pc) {
+                // Empty Pc : xterm treats it as "s 0" (selection + cut buffer 0)
+                // and it is what tmux emits for its own buffers (copy mode with
+                // set-clipboard, set-buffer -w, load-buffer -w : tty_set_selection
+                // is called with an empty clip string). Map it to the clipboard
+                // like every other emulator does, otherwise tmux history never
+                // reaches the device clipboard (discussion #1736).
+                case '':
                 case 'c':
                     if (pd == '?') {
                         // TODO : Ask user if we can access (read) the clipboard :

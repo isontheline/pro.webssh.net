@@ -139,6 +139,10 @@ const XtermTests = {
             // Should write to clipboard :
             terminal.write('\x1b]52;c;' + btoa('WebSSH is awesome!') + '\x1b');
 
+            // Should write to clipboard too : empty Pc as emitted by tmux
+            // (set-clipboard copy mode, set-buffer -w, load-buffer -w) :
+            terminal.write('\x1b]52;;' + btoa('WebSSH is awesome, tmux too!') + '\x07');
+
             // Blinking underline cursor :
             terminal.write('\x1b[3 q');
 
