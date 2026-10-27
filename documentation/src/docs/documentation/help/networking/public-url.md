@@ -9,8 +9,8 @@ description: "Give a port of your device, or of a machine on your local network,
 
 Under the hood it is SSH remote port forwarding (`ssh -R`): WebSSH opens an SSH connection to a **tunnel provider**, asks it to publish an address, and relays every incoming request to the host and port you chose. The address only works while the tunnel is running in WebSSH.
 
-!!! info "Providers"
-    The first provider is [tunnl.gg](https://tunnl.gg/pricing?ref=webssh). More providers may be added over time; the provider is chosen when you create a Public URL.
+??? info "Providers"
+    The first provider is [tunnl.gg](https://tunnl.gg/pricing?ref=webssh). More providers may be added over time; the provider is chosen when you create a Public URL. Depending on the features you need, a provider may apply its own conditions or pricing; WebSSH does not manage provider accounts or access and is not responsible for the service.
 
 ## Create a Public URL
 1. Open **Tools** in the sidebar, then **Public URL** (on the Mac, `⌃⌥⌘U`)
@@ -104,7 +104,7 @@ The provider's Pro plan lifts these limits and adds reserved names. See the [tun
 - The target can be any host your device can reach: on an iPhone the common case is a machine on the local network, which asks for the **local network** permission the first time.
 - **Where encryption ends.** Visitors reach the provider over HTTPS; the provider forwards the traffic to WebSSH over SSH. The relay therefore sees the content of the requests, like any tunnel service. Do not expose a service you would not put behind the provider.
 - The request log lives in memory for the duration of the session and is never saved; the inspector is enforced on the device, so it works the same with every provider.
-- FREE keeps **1 saved Public URL** and shows the last 10 requests; [WebSSH PRO](/documentation/pricing/) removes the limit, opens the request inspector (300 exchanges, headers, bodies, replay, export) and, on providers that offer it, access control. Every mode of every provider is available in FREE.
+- FREE saves as many Public URLs as you like but runs **one at a time** and shows the last 10 requests; [WebSSH PRO](/documentation/pricing/) (or an active [Developer Tip](/documentation/webssh-link/)) lets several run at once, opens the request inspector (300 exchanges, headers, bodies, replay, export) and, on providers that offer it, access control. Every mode of every provider is available in FREE.
 - Exposing a port of a *remote* server you are connected to is a different need: see [Local Port Forwarding](/documentation/help/networking/local-port-forwarding/) and the [port forwarding overview](/documentation/help/networking/port-forwarding/).
 - Abuse of a tunnl.gg address can be reported to `abuse@tunnl.gg` with the address and timestamps.
 
