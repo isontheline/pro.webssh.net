@@ -17,7 +17,7 @@ description: "WebSSH Link groups the cloud services run by WebSSH itself: webhoo
 - **Hosted one-time secret sharing**: an instance of the Secret Share backend run by WebSSH under the Link brand, next to the public providers already in the app.
 
 ## How to get it
-WebSSH Link is included in the **Developer Tip**, the optional monthly or yearly subscription available in the app (Settings → Purchases → Developer Tip). The Developer Tip also includes the **Extras** (mini games and other small pleasures) and **every PRO feature while the subscription is active**.
+WebSSH Link is included in the **Developer Tip**, the optional monthly or yearly subscription available in the app (Settings → Purchases → Developer Tip). The Developer Tip also includes the **Extras** (mini games and other small pleasures).
 
 It does not require [WebSSH PRO](/documentation/pricing/): you can subscribe without owning PRO. PRO alone does not give access to WebSSH Link, and PRO remains a one-time lifetime purchase that never requires a subscription.
 

@@ -27,7 +27,7 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 
     Some upcoming features rely on servers that WebSSH runs around the clock. Because that infrastructure has a recurring cost, those **cloud-powered services** are grouped under [WebSSH Link](/documentation/webssh-link/) and come with the **Developer Tip**, an **optional** monthly or yearly subscription that is separate from **PRO** (Settings → Purchases → Developer Tip). Nothing you already own moves behind it: everything WebSSH Link offers can also be done, in one form or another, with the third-party providers already built into the app. Your **PRO** purchase keeps its full value, always.
 
-    The Developer Tip also unlocks **every PRO feature while the subscription is active**, handy if you prefer a subscription to the one-time purchase. **PRO** itself never requires a subscription.
+    The Developer Tip does not replace **PRO**: PRO is the features, the Developer Tip is the support (with the Extras as a thank-you). **PRO** never requires a subscription.
 
 ??? danger "It's too expensive!"
     Since 2012, WebSSH has been sustained and maintained as an indie app supported by a one-time purchase, with regular monthly updates provided for **FREE**. No hidden costs.
@@ -85,7 +85,7 @@ If you need more information about the differences between **FREE** and **PRO** 
 
     :cloud: The Developer Tip gives access to [WebSSH Link](/documentation/webssh-link/), the **cloud services operated by WebSSH itself** (coming soon): services that need a server running 24/7 and therefore have a recurring cost. Every one of them has a counterpart you can use for free with a third-party provider already built into the app, so **nothing is taken away** from FREE or PRO users: WebSSH Link is the way to run these services on WebSSH's own infrastructure, and to support the development of the app further.
 
-    :gift: Subscribers also get the **Extras** (mini games and other small pleasures) and **every PRO feature while the subscription is active**, handy if you prefer a subscription to the one-time purchase. **PRO** remains a one-time lifetime purchase and never requires a subscription. Thank you so much for your support!
+    :gift: Subscribers also get the **Extras** (mini games and other small pleasures). **PRO** remains a one-time lifetime purchase and never requires a subscription. Thank you so much for your support!
 
 [^1]: Serial Port Client is only available on macOS
 [^2]: Connectors are coming soon on a future version of WebSSH - so stay tuned for more information about this new feature!
