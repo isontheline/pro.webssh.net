@@ -113,6 +113,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {LEFT}           | Left Arrow Key                                                   | 23.0             |
 | {PASTE}          | Paste Key : Paste the clipboard content to the terminal          | 23.0             |
 | {PASTE_PASSWORD} | Paste Password Key : Paste the current connection password       | 23.0             |
+| {PASTE_SLOW}     | Paste Slowly Key : Paste the clipboard in small rate-limited chunks, see [Paste Slowly](../paste-slowly-serial-devices.md) | 33.3 |
 | {PGDN}           | Page Down Key                                                    | 23.0             |
 | {PGUP}           | Page Up Key                                                      | 23.0             |
 | {PJUMP}          | Page Jump : Add a new keys page to allow you to subdivide layout | 23.0             |
