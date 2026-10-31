@@ -6,6 +6,9 @@ seo_title: "Import Connections from Other SSH Clients to WebSSH"
 # Import - From Other SSH Clients to WebSSH
 When you need to import connections into WebSSH, you can use the "webssh import" command line inside mashREPL.
 
+??? tip "The other way around"
+    To write all your WebSSH connections into a single `ssh_config` file, see [Export - From WebSSH to an ssh_config File](/documentation/help/howtos/mashREPL/export/).
+
 ??? bug "Relatively Young Tool"
     * This tool has been introduced in version 24 of WebSSH in order to help users to import their connections from other SSH clients.
     * This tool is relatively young and will be improved over time. Feel free to [contact me](/support/) if you have any question or suggestion.

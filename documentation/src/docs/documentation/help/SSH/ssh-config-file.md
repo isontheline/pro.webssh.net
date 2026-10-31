@@ -8,6 +8,9 @@ description: "Define default or overriding values for your WebSSH connections wi
 ??? tip "Synced through iCloud"
     If you have enabled iCloud inside WebSSH your SSH Config File will be synced on all your devices.
 
+??? tip "Import / Export"
+    This file never creates connections by itself. To turn existing `ssh_config` aliases into WebSSH connections, or to write all your WebSSH connections into a single `ssh_config` file, use the `webssh import sshconfig` and `webssh export sshconfig` commands of mashREPL : [Import](/documentation/help/howtos/mashREPL/import/) / [Export](/documentation/help/howtos/mashREPL/export/).
+
 ??? warning "Configuration Overwrite"
     When you define a SSH Config File inside WebSSH, it will overwrite the default configuration you have done inside each matched connections.
 

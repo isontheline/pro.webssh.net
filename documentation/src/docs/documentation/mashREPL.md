@@ -57,7 +57,22 @@
 | `unsetenv` | 14.6 | |
 | `uptime`   | 14.6 | |
 | `wc`       | 14.6 | Standard input supported on WebSSH >= 33.2 |
-| `webssh`   | 14.6 | |
+| `webssh`   | 14.6 | Manages WebSSH itself, see [below](#the-webssh-command) |
 | `whoami`   | 14.6 | |
 | `whois`    | 14.6 | |
 | `xargs`    | 33.2 |  |
+
+## The `webssh` command
+`webssh` manages the app itself from mashREPL. Type `webssh` alone to list its commands, and `webssh <command> --help` for the options of a command.
+
+| Command | What it does |
+| --- | --- |
+| `webssh database backup` | [Backs up the database](/documentation/help/howtos/mashREPL/database-backup/) in `~/backups` |
+| `webssh database restore <webssh.db>` | [Restores a database backup](/documentation/help/howtos/mashREPL/database-restore/) |
+| `webssh database compact` / `vacuum` / `locate` | Maintenance of the database file |
+| `webssh export sshconfig [--apply] [--to-file <path>]` | [Exports all your connections](/documentation/help/howtos/mashREPL/export/) into one `ssh_config` file. Dry run without `--apply` |
+| `webssh fingerprint clean <host>` / `all` | Forgets the host key fingerprints you have accepted |
+| `webssh import sshconfig [--apply] [--overwrite] [--from-file <path>]` | [Imports `ssh_config` aliases](/documentation/help/howtos/mashREPL/import/) as connections. Dry run without `--apply` |
+| `webssh servedit update` / `delete` | [Updates or deletes connections in batch](/documentation/help/howtos/mashREPL/servedit/) |
+| `webssh store sync` / `unregister all` | Refreshes your purchases with the App Store |
+| `webssh version [build, full]` | Prints the WebSSH version |
