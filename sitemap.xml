@@ -155,7 +155,7 @@
     <loc>https://webssh.net/documentation/mashREPL/</loc>
 
     
-    <lastmod>2026-10-14T15:10:28+00:00</lastmod>
+    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
 
       
       
@@ -1755,7 +1755,7 @@
     <loc>https://webssh.net/documentation/help/SSH/ssh-config-file/</loc>
 
     
-    <lastmod>2026-10-22T19:31:45+00:00</lastmod>
+    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
 
       
       
@@ -2827,10 +2827,35 @@
   
   
   <url>
+    <loc>https://webssh.net/documentation/help/howtos/mashREPL/export/</loc>
+
+    
+    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
     <loc>https://webssh.net/documentation/help/howtos/mashREPL/import/</loc>
 
     
-    <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
 
       
       

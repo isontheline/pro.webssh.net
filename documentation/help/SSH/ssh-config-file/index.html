@@ -2296,6 +2296,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../howtos/mashREPL/export/" class="md-nav__link">
+        Export - From WebSSH to an ssh_config File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../howtos/mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
@@ -3869,6 +3883,10 @@
 <summary>Synced through iCloud</summary>
 <p>If you have enabled iCloud inside WebSSH your SSH Config File will be synced on all your devices.</p>
 </details>
+<details class="tip">
+<summary>Import / Export</summary>
+<p>This file never creates connections by itself. To turn existing <code>ssh_config</code> aliases into WebSSH connections, or to write all your WebSSH connections into a single <code>ssh_config</code> file, use the <code>webssh import sshconfig</code> and <code>webssh export sshconfig</code> commands of mashREPL : <a href="/documentation/help/howtos/mashREPL/import/">Import</a> / <a href="/documentation/help/howtos/mashREPL/export/">Export</a>.</p>
+</details>
 <details class="warning">
 <summary>Configuration Overwrite</summary>
 <p>When you define a SSH Config File inside WebSSH, it will overwrite the default configuration you have done inside each matched connections.</p>
@@ -4157,7 +4175,7 @@ This allows advanced matching beyond the standard <code>*</code> and <code>?</co
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 22, 2026 19:31:45 UTC">October 22, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 31, 2026 16:30:17 UTC">October 31, 2026</span>
       
     
   </small>

@@ -432,6 +432,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-webssh-command" class="md-nav__link">
+    The webssh command
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2318,6 +2325,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/export/" class="md-nav__link">
+        Export - From WebSSH to an ssh_config File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/howtos/mashREPL/import/" class="md-nav__link">
         Import - From Other SSH Clients to WebSSH
       </a>
@@ -3885,6 +3906,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-webssh-command" class="md-nav__link">
+    The webssh command
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4179,7 +4207,7 @@
 <tr>
 <td><code>webssh</code></td>
 <td>14.6</td>
-<td></td>
+<td>Manages WebSSH itself, see <a href="#the-webssh-command">below</a></td>
 </tr>
 <tr>
 <td><code>whoami</code></td>
@@ -4198,13 +4226,61 @@
 </tr>
 </tbody>
 </table>
+<h2 id="the-webssh-command">The <code>webssh</code> command</h2>
+<p><code>webssh</code> manages the app itself from mashREPL. Type <code>webssh</code> alone to list its commands, and <code>webssh &lt;command&gt; --help</code> for the options of a command.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>webssh database backup</code></td>
+<td><a href="/documentation/help/howtos/mashREPL/database-backup/">Backs up the database</a> in <code>~/backups</code></td>
+</tr>
+<tr>
+<td><code>webssh database restore &lt;webssh.db&gt;</code></td>
+<td><a href="/documentation/help/howtos/mashREPL/database-restore/">Restores a database backup</a></td>
+</tr>
+<tr>
+<td><code>webssh database compact</code> / <code>vacuum</code> / <code>locate</code></td>
+<td>Maintenance of the database file</td>
+</tr>
+<tr>
+<td><code>webssh export sshconfig [--apply] [--to-file &lt;path&gt;]</code></td>
+<td><a href="/documentation/help/howtos/mashREPL/export/">Exports all your connections</a> into one <code>ssh_config</code> file. Dry run without <code>--apply</code></td>
+</tr>
+<tr>
+<td><code>webssh fingerprint clean &lt;host&gt;</code> / <code>all</code></td>
+<td>Forgets the host key fingerprints you have accepted</td>
+</tr>
+<tr>
+<td><code>webssh import sshconfig [--apply] [--overwrite] [--from-file &lt;path&gt;]</code></td>
+<td><a href="/documentation/help/howtos/mashREPL/import/">Imports <code>ssh_config</code> aliases</a> as connections. Dry run without <code>--apply</code></td>
+</tr>
+<tr>
+<td><code>webssh servedit update</code> / <code>delete</code></td>
+<td><a href="/documentation/help/howtos/mashREPL/servedit/">Updates or deletes connections in batch</a></td>
+</tr>
+<tr>
+<td><code>webssh store sync</code> / <code>unregister all</code></td>
+<td>Refreshes your purchases with the App Store</td>
+</tr>
+<tr>
+<td><code>webssh version [build, full]</code></td>
+<td>Prints the WebSSH version</td>
+</tr>
+</tbody>
+</table>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 14, 2026 15:10:28 UTC">October 14, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 31, 2026 16:30:17 UTC">October 31, 2026</span>
       
     
   </small>
