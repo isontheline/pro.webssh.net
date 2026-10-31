@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac.">
+        <meta name="description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac. Paste Special: paste the password, paste slowly for serial devices.">
       
       
       
         <link rel="canonical" href="https://webssh.net/documentation/help/howtos/pasting-clipboard-content/">
       
       
-        <link rel="prev" href="../open-files-with-webssh/">
+        <link rel="prev" href="../paste-slowly-serial-devices/">
       
       
         <link rel="next" href="../run-snippet-on-multiple-hosts/">
@@ -71,8 +71,8 @@
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Paste Clipboard Content - WebSSH" />
         
-            <meta property="og:description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac." />
-            <meta name="twitter:description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac." />
+            <meta property="og:description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac. Paste Special: paste the password, paste slowly for serial devices." />
+            <meta name="twitter:description" content="How to paste clipboard content into the WebSSH terminal: long press or ellipsis menu on iPhone and iPad, Cmd + V or right click on Mac. Paste Special: paste the password, paste slowly for serial devices." />
         
     
 
@@ -1923,6 +1923,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../paste-slowly-serial-devices/" class="md-nav__link">
+        Paste Slowly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1968,6 +1982,13 @@
         <li class="md-nav__item">
   <a href="#macos" class="md-nav__link">
     macOS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paste-special" class="md-nav__link">
+    Paste Special
   </a>
   
 </li>
@@ -2090,17 +2111,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_20" type="checkbox" id="__nav_3_12_5_20" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_21" type="checkbox" id="__nav_3_12_5_21" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_20" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_21" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_20">
+        <label class="md-nav__title" for="__nav_3_12_5_21">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2166,17 +2187,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_21" type="checkbox" id="__nav_3_12_5_21" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_22" type="checkbox" id="__nav_3_12_5_22" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_21" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_22" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_21">
+        <label class="md-nav__title" for="__nav_3_12_5_22">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2284,17 +2305,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_22" type="checkbox" id="__nav_3_12_5_22" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_22" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_22">
+        <label class="md-nav__title" for="__nav_3_12_5_23">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2402,17 +2423,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_23">
+        <label class="md-nav__title" for="__nav_3_12_5_24">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -3922,6 +3943,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#paste-special" class="md-nav__link">
+    Paste Special
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3954,13 +3982,29 @@
 <li>Press <code>Cmd + V</code> <strong>OR</strong></li>
 <li>Press <code>Cmd</code> and press your left mouse button</li>
 </ul>
+<h2 id="paste-special">Paste Special</h2>
+<p>The <strong>Paste Special</strong> submenu (contextual menu and "..." ellipsis button) offers :</p>
+<ul>
+<li><strong>Paste Password</strong> : paste the password of the current connection (<code>⌥⌘P</code> on the Mac)</li>
+<li><strong>Paste Slowly</strong> : send the clipboard in small chunks with a pause between them, for serial devices and retro computers that lose characters on a normal paste (<code>⌥⌘V</code> on the Mac)</li>
+<li><strong>Advanced Paste…</strong> : choose the chunk size and the delays before pasting (<code>⌃⌥⌘V</code> on the Mac)</li>
+</ul>
+<p>See <a href="../paste-slowly-serial-devices/">Paste Slowly</a> for the details.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Paste Slowly and Advanced Paste require WebSSH 33.3 or later.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 31, 2026 21:49:11 UTC">October 31, 2026</span>
       
     
   </small>
