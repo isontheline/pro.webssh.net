@@ -62,7 +62,7 @@ Plug in a USB-to-serial adapter and WebSSH turns into a serial console for route
 
 ### Built-in API / MCP Server (Mac only)
 
-WebSSH for Mac includes a local [API / MCP server](/documentation/help/intelligence/api-mcp-server/). AI applications such as Claude Desktop, or your own scripts, can list your terminal sessions, read what is on screen and send commands, all protected by a bearer token and running only on your Mac. This feature is only available on the Mac.
+WebSSH for Mac includes a local [API / MCP server](/documentation/help/intelligence/api-mcp-server/). AI applications such as Claude Desktop, or your own scripts, can list your terminal sessions, read what is on screen and send commands, all protected by a bearer token and listening on your Mac only unless you allow your local network. Claude Desktop connects through the `webssh-mcp` bridge shipped inside the app: one line to paste, no extension to install. This feature is only available on the Mac.
 
 ### Touch ID Lock
 
@@ -171,7 +171,7 @@ Yes. WebSSH for Mac includes a serial port client with configurable baud rate, p
 
 ### Can I use WebSSH with Claude Desktop or other AI tools?
 
-Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token.
+Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It listens on your Mac only by default and is protected by a token; Claude Desktop connects through the bridge shipped inside the app, no extension needed.
 
 ### Does buying WebSSH Pro on iPhone also cover my Mac?
 
@@ -267,7 +267,7 @@ Free to download. No subscription. Works on every Mac running macOS 26 or later.
       "name": "Can I use WebSSH with Claude Desktop or other AI tools?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token."
+        "text": "Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It listens on your Mac only by default and is protected by a token; Claude Desktop connects through the bridge shipped inside the app, no extension needed."
       }
     },
     {
