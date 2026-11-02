@@ -2539,6 +2539,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-claude-code-cursor-vs-code-or-codex" class="md-nav__link">
+    Using Claude Code, Cursor, VS Code or Codex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-access" class="md-nav__link">
+    Network access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#webssh-openapi-specification" class="md-nav__link">
     WebSSH OpenAPI Specification
   </a>
@@ -4003,6 +4017,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#using-claude-code-cursor-vs-code-or-codex" class="md-nav__link">
+    Using Claude Code, Cursor, VS Code or Codex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-access" class="md-nav__link">
+    Network access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#webssh-openapi-specification" class="md-nav__link">
     WebSSH OpenAPI Specification
   </a>
@@ -4072,7 +4100,6 @@
 <li>✅ Make Whois Requests</li>
 <li>🚧 Make Ping Requests</li>
 <li>🚧 Launch Traceroute</li>
-<li>✅ Make Documentation Search</li>
 </ul>
 <h2 id="usage-instructions">Usage Instructions</h2>
 <h3 id="enabling-the-api-mcp-server">Enabling the API / MCP Server</h3>
@@ -4086,15 +4113,46 @@
 <li>Toggle the <strong>API / MCP Server</strong> switch to <strong>ON</strong></li>
 </ol>
 <h3 id="using-claude-desktop-as-a-mcp-client">Using Claude Desktop as a MCP Client</h3>
-<p>Make sure you have Docker Desktop installed on your Mac, then:</p>
+<p>Claude Desktop only talks to local MCP servers through <strong>stdio</strong>: it refuses <code>localhost</code> URLs in its Connectors settings, whatever the scheme, because custom connectors are reached from Anthropic's servers. Since version <code>33.3</code>, WebSSH therefore ships a tiny bridge inside the app bundle, <code>WebSSH.app/Contents/MacOS/webssh-mcp</code>, which relays Claude's requests to the API / MCP server running in WebSSH. WebSSH writes the port and the token for it: nothing to install, nothing to copy by hand.</p>
+<p><strong>One-click setup</strong></p>
 <ol>
-<li><a href="https://github.com/webssh-software/webssh-mcpb-dxt-extension/releases">Download latest WebSSH MCPB Extension here</a></li>
-<li>Open the .mcpb file (Claude should launch if installed)</li>
-<li>Review and adjust the settings (e.g., Port, Bearer Token)</li>
-<li>Turn on the WebSSH Extension in Claude Desktop</li>
-<li>The first time wait a minute to allow Docker to pull the container image needed</li>
-<li>Now just ask Claude to perform actions using WebSSH!</li>
+<li>In WebSSH, go to <strong>Inventory</strong> &gt; <strong>Tools</strong>, right-click (or long-press) <strong>API / MCP</strong> and choose <strong>Claude</strong> &gt; <strong>Install into Claude Desktop…</strong></li>
+<li>A file panel opens on Claude's folder (<code>~/Library/Application Support/Claude</code>): click <strong>Open</strong>. WebSSH adds its <code>webssh</code> entry (bridge path, port and token) to <code>claude_desktop_config.json</code>, keeping everything else in the file and a copy of the previous version next to it (<code>claude_desktop_config.json.webssh-backup</code>). Run it again whenever you change the port or the token</li>
+<li>Quit and relaunch Claude Desktop</li>
 </ol>
+<p><strong>Manual setup</strong></p>
+<ol>
+<li>In WebSSH, right-click <strong>API / MCP</strong> and choose <strong>Claude</strong> &gt; <strong>Copy Claude Desktop Configuration</strong></li>
+<li>In Claude Desktop, open <strong>Settings</strong> &gt; <strong>Developer</strong> &gt; <strong>Edit Config</strong> (this opens <code>claude_desktop_config.json</code>)</li>
+<li>Paste the copied fragment, merging the <code>webssh</code> entry into an existing <code>mcpServers</code> object if you already have one:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;webssh&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Applications/WebSSH.app/Contents/MacOS/webssh-mcp&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;WEBSSH_MCP_TOKEN&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;YOUR_BEARER_TOKEN_HERE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;WEBSSH_MCP_PORT&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1985&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Quit and relaunch Claude Desktop</li>
+<li>Make sure the <strong>API / MCP</strong> switch is <strong>ON</strong> in WebSSH, then ask Claude to use WebSSH!</li>
+</ol>
+<p>You do not even need WebSSH to be running when Claude starts: the tools are listed right away, and the first time Claude uses one, WebSSH is launched in the background and its server started (the installer also sets <strong>Start Strategy</strong> to <em>Launch when WebSSH starts</em>). If WebSSH cannot start, Claude receives a clear message telling you what to check.</p>
+<p>The <strong>Claude</strong> submenu only appears when a Claude application is detected on your Mac (Claude Desktop or Claude Code).</p>
+<blockquote>
+<p>The former <strong>WebSSH MCPB extension</strong> (<code>webssh-mcpb-dxt-extension</code>, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.</p>
+</blockquote>
+<h3 id="using-claude-code-cursor-vs-code-or-codex">Using Claude Code, Cursor, VS Code or Codex</h3>
+<p>These clients connect to a local HTTP MCP server directly. In WebSSH, right-click <strong>API / MCP</strong> and choose <strong>Claude</strong> &gt; <strong>Copy Claude Code Command</strong> to get a ready-to-run command such as:</p>
+<p><code>claude mcp add --transport http webssh http://127.0.0.1:1985/mcp --header "Authorization: Bearer YOUR_BEARER_TOKEN_HERE"</code></p>
+<p>For other clients, use the URL <code>http://127.0.0.1:1985/mcp</code> (Streamable HTTP) with the <code>Authorization: Bearer …</code> header described below.</p>
+<h3 id="network-access">Network access</h3>
+<p>By default the server listens on <code>127.0.0.1</code> only: it can be reached from this Mac and nothing else. To let another device on your local network connect (with the Bearer token), set <strong>Listen on</strong> to <strong>Any device on the local network</strong> in <strong>WebSSH</strong> &gt; <strong>Settings</strong> &gt; <strong>API / MCP</strong>, then switch the server off and on again.</p>
 <h3 id="webssh-openapi-specification">WebSSH OpenAPI Specification</h3>
 <p>Once the API / MCP server is enabled, you can access the OpenAPI specification by navigating to:
 <code>http://localhost:1985/openapi.json</code></p>
@@ -4114,7 +4172,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 2, 2026 21:14:08 UTC">November 2, 2026</span>
       
     
   </small>

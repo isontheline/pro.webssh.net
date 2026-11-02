@@ -669,7 +669,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -694,7 +694,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -719,7 +719,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -744,7 +744,7 @@
         
 
         
-          <changefreq>monthly</changefreq>
+          <changefreq>yearly</changefreq>
         
       
     
@@ -1255,7 +1255,7 @@
     <loc>https://webssh.net/documentation/guides/free-ssh-client-for-mac/</loc>
 
     
-    <lastmod>2026-10-06T19:01:55+00:00</lastmod>
+    <lastmod>2026-11-01T21:36:14+00:00</lastmod>
 
       
       
@@ -2769,7 +2769,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -3019,7 +3019,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     
@@ -3030,7 +3030,7 @@
     <loc>https://webssh.net/documentation/help/intelligence/api-mcp-server/</loc>
 
     
-    <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+    <lastmod>2026-11-02T21:14:08+00:00</lastmod>
 
       
       
@@ -3294,7 +3294,7 @@
         
 
         
-          <changefreq>daily</changefreq>
+          <changefreq>monthly</changefreq>
         
       
     

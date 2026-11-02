@@ -4441,7 +4441,7 @@
 <h3 id="serial-port-client-mac-only">Serial Port Client (Mac only)</h3>
 <p>Plug in a USB-to-serial adapter and WebSSH turns into a serial console for routers, switches, Raspberry Pi boards and embedded devices, with configurable baud rate, parity, stop bits and flow control. This feature is only available on the Mac.</p>
 <h3 id="built-in-api-mcp-server-mac-only">Built-in API / MCP Server (Mac only)</h3>
-<p>WebSSH for Mac includes a local <a href="/documentation/help/intelligence/api-mcp-server/">API / MCP server</a>. AI applications such as Claude Desktop, or your own scripts, can list your terminal sessions, read what is on screen and send commands, all protected by a bearer token and running only on your Mac. This feature is only available on the Mac.</p>
+<p>WebSSH for Mac includes a local <a href="/documentation/help/intelligence/api-mcp-server/">API / MCP server</a>. AI applications such as Claude Desktop, or your own scripts, can list your terminal sessions, read what is on screen and send commands, all protected by a bearer token and listening on your Mac only unless you allow your local network. Claude Desktop connects through the <code>webssh-mcp</code> bridge shipped inside the app: one line to paste, no extension to install. This feature is only available on the Mac.</p>
 <h3 id="touch-id-lock">Touch ID Lock</h3>
 <p>Lock WebSSH with Touch ID or a password, and have it lock itself after a delay so a shared or unattended Mac does not expose your servers.</p>
 <h3 id="sysadmin-tools-in-the-menu-bar">Sysadmin Tools in the Menu Bar</h3>
@@ -4519,7 +4519,7 @@
 <h3 id="can-i-use-webssh-as-a-serial-console-on-mac">Can I use WebSSH as a serial console on Mac?</h3>
 <p>Yes. WebSSH for Mac includes a serial port client with configurable baud rate, parity, stop bits and flow control. Serial is available on the Mac only, not on iPhone or iPad.</p>
 <h3 id="can-i-use-webssh-with-claude-desktop-or-other-ai-tools">Can I use WebSSH with Claude Desktop or other AI tools?</h3>
-<p>Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token.</p>
+<p>Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It listens on your Mac only by default and is protected by a token; Claude Desktop connects through the bridge shipped inside the app, no extension needed.</p>
 <h3 id="does-buying-webssh-pro-on-iphone-also-cover-my-mac">Does buying WebSSH Pro on iPhone also cover my Mac?</h3>
 <p>Yes. WebSSH Pro is a universal purchase. One payment through the App Store unlocks Pro on all devices sharing the same Apple ID, including Mac, iPhone and iPad.</p>
 <h3 id="can-i-sync-my-connections-between-mac-iphone-and-ipad">Can I sync my connections between Mac, iPhone and iPad?</h3>
@@ -4607,7 +4607,7 @@
       "name": "Can I use WebSSH with Claude Desktop or other AI tools?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It runs only on your Mac and is protected by a token."
+        "text": "Yes. WebSSH for Mac includes a local API / MCP server. Once enabled in WebSSH settings, MCP clients such as Claude Desktop can read your terminal sessions and send commands. It listens on your Mac only by default and is protected by a token; Claude Desktop connects through the bridge shipped inside the app, no extension needed."
       }
     },
     {
@@ -4635,7 +4635,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 6, 2026 19:01:55 UTC">October 6, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 1, 2026 21:36:14 UTC">November 1, 2026</span>
       
     
   </small>
