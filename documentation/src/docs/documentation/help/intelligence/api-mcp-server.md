@@ -43,9 +43,17 @@ This feature is only available on macOS.
 7. Toggle the **API / MCP Server** switch to **ON**
 
 ### Using Claude Desktop as a MCP Client
-Claude Desktop only talks to local MCP servers through **stdio**: it refuses `localhost` URLs in its Connectors settings, whatever the scheme, because custom connectors are reached from Anthropic's servers. Since version `33.3`, WebSSH therefore ships a tiny bridge inside the app bundle, `WebSSH.app/Contents/MacOS/webssh-mcp`, which relays Claude's requests to the API / MCP server running in WebSSH. It finds the port and the token by itself: nothing to copy, nothing to install.
+Claude Desktop only talks to local MCP servers through **stdio**: it refuses `localhost` URLs in its Connectors settings, whatever the scheme, because custom connectors are reached from Anthropic's servers. Since version `33.3`, WebSSH therefore ships a tiny bridge inside the app bundle, `WebSSH.app/Contents/MacOS/webssh-mcp`, which relays Claude's requests to the API / MCP server running in WebSSH. WebSSH writes the port and the token for it: nothing to install, nothing to copy by hand.
 
-1. In WebSSH, go to **Inventory** > **Tools**, right-click (or long-press) **API / MCP** and choose **Copy Claude Desktop Configuration**
+**One-click setup**
+
+1. In WebSSH, go to **Inventory** > **Tools**, right-click (or long-press) **API / MCP** and choose **Claude** > **Install into Claude Desktop…**
+2. A file panel opens on Claude's folder (`~/Library/Application Support/Claude`): click **Open**. WebSSH adds its `webssh` entry (bridge path, port and token) to `claude_desktop_config.json`, keeping everything else in the file and a copy of the previous version next to it (`claude_desktop_config.json.webssh-backup`). Run it again whenever you change the port or the token
+3. Quit and relaunch Claude Desktop
+
+**Manual setup**
+
+1. In WebSSH, right-click **API / MCP** and choose **Claude** > **Copy Claude Desktop Configuration**
 2. In Claude Desktop, open **Settings** > **Developer** > **Edit Config** (this opens `claude_desktop_config.json`)
 3. Paste the copied fragment, merging the `webssh` entry into an existing `mcpServers` object if you already have one:
 
@@ -53,7 +61,11 @@ Claude Desktop only talks to local MCP servers through **stdio**: it refuses `lo
 {
   "mcpServers": {
     "webssh": {
-      "command": "/Applications/WebSSH.app/Contents/MacOS/webssh-mcp"
+      "command": "/Applications/WebSSH.app/Contents/MacOS/webssh-mcp",
+      "env": {
+        "WEBSSH_MCP_TOKEN": "YOUR_BEARER_TOKEN_HERE",
+        "WEBSSH_MCP_PORT": "1985"
+      }
     }
   }
 }
@@ -62,12 +74,14 @@ Claude Desktop only talks to local MCP servers through **stdio**: it refuses `lo
 4. Quit and relaunch Claude Desktop
 5. Make sure the **API / MCP** switch is **ON** in WebSSH, then ask Claude to use WebSSH!
 
-If WebSSH is not running or the server is switched off, Claude receives a clear error telling you what to open.
+You do not even need WebSSH to be running when Claude starts: the tools are listed right away, and the first time Claude uses one, WebSSH is launched in the background and its server started (the installer also sets **Start Strategy** to *Launch when WebSSH starts*). If WebSSH cannot start, Claude receives a clear message telling you what to check.
+
+The **Claude** submenu only appears when a Claude application is detected on your Mac (Claude Desktop or Claude Code).
 
 > The former **WebSSH MCPB extension** (`webssh-mcpb-dxt-extension`, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.
 
 ### Using Claude Code, Cursor, VS Code or Codex
-These clients connect to a local HTTP MCP server directly. In WebSSH, right-click **API / MCP** and choose **Copy Claude Code Command** to get a ready-to-run command such as:
+These clients connect to a local HTTP MCP server directly. In WebSSH, right-click **API / MCP** and choose **Claude** > **Copy Claude Code Command** to get a ready-to-run command such as:
 
 ```claude mcp add --transport http webssh http://127.0.0.1:1985/mcp --header "Authorization: Bearer YOUR_BEARER_TOKEN_HERE"```
 
