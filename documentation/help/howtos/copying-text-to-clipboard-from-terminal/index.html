@@ -3987,10 +3987,10 @@
 <li><code>echo "WebSSH is awesome!" | wshcopy</code></li>
 </ul>
 <p><code>wshcopy</code> will handle the output and send it to WebSSH by using "invisible" terminal chars.</p>
-<div class="admonition warning">
-<p class="admonition-title">Daemon hides under terminal</p>
-<p>As the terminal can do "untrusted" things, WebSSH will ask you (by default) if you approve or deny the clipboard access.</p>
-<p>You can change this behavior inside WebSSH settings (iOS : within system settings &gt; WebSSH &gt; SSH / macOS : within the app settings &gt; SSH) : "Clipboard Access Strategy"</p>
+<div class="admonition info">
+<p class="admonition-title">Clipboard Access Strategy</p>
+<p>Since WebSSH 33.3<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>, a remote write to the clipboard is <strong>accepted by default</strong> and signalled by a short <strong>"Clipboard updated"</strong> notice on the connection item of the <a href="/documentation/terminal-state-bar/">terminal state bar</a>. Nothing interrupts you, like in kitty, Alacritty, WezTerm or Ghostty.</p>
+<p>If you prefer to approve every write, or to refuse them all, change <strong>Settings &gt; Advanced Settings &gt; Security &gt; Clipboard Access Strategy</strong> to <strong>Ask</strong> (an alert for every sequence, the behaviour of versions before 33.3) or <strong>Deny</strong>. Reading the clipboard from the remote side (<code>?</code> query) is not supported.</p>
 </div>
 <h2 id="how-to-install-wshcopy">How to install wshcopy</h2>
 <p><code>pip3 install webssh-sh</code></p>
@@ -4000,6 +4000,7 @@
 <li><strong>OR</strong></li>
 <li><code>set -g set-clipboard on</code> <strong>THEN</strong> <code>echo "WebSSH is awesome!" | wshcopy -t default</code></li>
 </ul>
+<p>Since WebSSH 33.3, <code>set -g set-clipboard on</code> alone is enough for tmux's own copies (copy mode, mouse selection, <code>tmux capture-pane -pS - | tmux load-buffer -w -</code>) to reach the device clipboard: earlier versions ignored the empty selector tmux uses.</p>
 <h2 id="i-would-like-to-improve-wshcopy">I would like to improve wshcopy <img alt="😛" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f61b.svg" title=":stuck_out_tongue:" /></h2>
 <p>Repository is here : <a href="https://github.com/isontheline/webssh.sh">webssh-sh</a></p>
 <h1 id="documentation-about-osc52-terminal-escape-sequence">Documentation about OSC52 Terminal Escape Sequence</h1>
@@ -4022,6 +4023,11 @@
 <td><code>c</code></td>
 <td>clipboard</td>
 <td><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td><em>(empty)</em></td>
+<td>the selector tmux sends for its own buffers (<code>set-clipboard</code>, <code>set-buffer -w</code>, <code>load-buffer -w</code>)</td>
+<td><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> since 33.3</td>
 </tr>
 <tr>
 <td><code>p</code></td>
@@ -4074,6 +4080,9 @@
 <li id="fn:3">
 <p>https://github.com/ojroques/vim-oscyank/blob/main/README.md&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
+<li id="fn:4">
+<p>Before 33.3 the default strategy was Ask.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -4082,7 +4091,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 3, 2026 20:04:12 UTC">November 3, 2026</span>
       
     
   </small>
