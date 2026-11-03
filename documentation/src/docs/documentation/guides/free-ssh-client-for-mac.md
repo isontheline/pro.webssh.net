@@ -105,7 +105,7 @@ The **Tools** menu gives you Ping, Traceroute, Whois, DNS Lookup, your public an
 
 - xterm-256color emulation with GPU-accelerated rendering
 - Inline images (SIXEL and iTerm2 protocol) and progress bars (OSC 9;4)
-- Clipboard integration through OSC 52, with your approval
+- Clipboard integration through OSC 52, signalled in the state bar (approval on request)
 - tmux, screen and Zellij friendly key handling
 - 425 iTerm2 color schemes and a theme editor
 

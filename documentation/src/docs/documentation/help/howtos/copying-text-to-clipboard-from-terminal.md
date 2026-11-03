@@ -14,10 +14,10 @@ description: "Copy command output from a remote SSH session to your local clipbo
 
 `wshcopy` will handle the output and send it to WebSSH by using "invisible" terminal chars.
 
-!!! warning "Daemon hides under terminal"
-    As the terminal can do "untrusted" things, WebSSH will ask you (by default) if you approve or deny the clipboard access.
+!!! info "Clipboard Access Strategy"
+    Since WebSSH 33.3[^4], a remote write to the clipboard is **accepted by default** and signalled by a short **"Clipboard updated"** notice on the connection item of the [terminal state bar](/documentation/terminal-state-bar/). Nothing interrupts you, like in kitty, Alacritty, WezTerm or Ghostty.
 
-    You can change this behavior inside WebSSH settings (iOS : within system settings > WebSSH > SSH / macOS : within the app settings > SSH) : "Clipboard Access Strategy"
+    If you prefer to approve every write, or to refuse them all, change **Settings > Advanced Settings > Security > Clipboard Access Strategy** to **Ask** (an alert for every sequence, the behaviour of versions before 33.3) or **Deny**. Reading the clipboard from the remote side (`?` query) is not supported.
 
 ## How to install wshcopy
 `pip3 install webssh-sh`
@@ -26,6 +26,8 @@ description: "Copy command output from a remote SSH session to your local clipbo
 * `set -g allow-passthrough on` **THEN** `echo "WebSSH is awesome!" | wshcopy -t tmux`
 * **OR**
 * `set -g set-clipboard on` **THEN** `echo "WebSSH is awesome!" | wshcopy -t default`
+
+Since WebSSH 33.3, `set -g set-clipboard on` alone is enough for tmux's own copies (copy mode, mouse selection, `tmux capture-pane -pS - | tmux load-buffer -w -`) to reach the device clipboard: earlier versions ignored the empty selector tmux uses.
 
 ## I would like to improve wshcopy :stuck_out_tongue:
 Repository is here : [webssh-sh](https://github.com/isontheline/webssh.sh)
@@ -40,6 +42,7 @@ The sequence consists of the following:
 | Choice | Description | Supported by WebSSH |
 | --- | --- | --- |
 | `c` | clipboard | :white_check_mark: |
+| *(empty)* | the selector tmux sends for its own buffers (`set-clipboard`, `set-buffer -w`, `load-buffer -w`) | :white_check_mark: since 33.3 |
 | `p` | primary | :x: |
 | `q` | secondary | :x: |
 | `s` | select | :x: |
@@ -63,3 +66,4 @@ The sequence consists of the following:
 [^1]: Since 20.5
 [^2]: Only copy to clipboard
 [^3]: https://github.com/ojroques/vim-oscyank/blob/main/README.md
+[^4]: Before 33.3 the default strategy was Ask.
