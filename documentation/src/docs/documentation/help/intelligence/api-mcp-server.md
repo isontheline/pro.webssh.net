@@ -80,12 +80,21 @@ The **Claude** submenu only appears when a Claude application is detected on you
 
 > The former **WebSSH MCPB extension** (`webssh-mcpb-dxt-extension`, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.
 
-### Using Claude Code, Cursor, VS Code or Codex
-These clients connect to a local HTTP MCP server directly. In WebSSH, right-click **API / MCP** and choose **Claude** > **Copy Claude Code Command** to get a ready-to-run command such as:
+### The AI Assistants screen
+Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try. Every client goes through the `webssh-mcp` bridge: it starts WebSSH when needed and carries the token for you.
 
-```claude mcp add --transport http webssh http://127.0.0.1:1985/mcp --header "Authorization: Bearer YOUR_BEARER_TOKEN_HERE"```
+- **Claude Desktop**: one click, as above.
+- **Claude Code**: copy the command and run it in a terminal, e.g. `claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`.
+- **Codex** (CLI, IDE extension and the Codex app share the configuration): `codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`.
+- **Cursor** and **VS Code**: an **Install** link, or **Copy configuration** to paste into the editor's MCP settings.
 
-For other clients, use the URL `http://127.0.0.1:1985/mcp` (Streamable HTTP) with the `Authorization: Bearer …` header described below.
+Scripts and clients without stdio can still use the HTTP endpoint directly, see below.
+
+### Seeing what the assistant does
+- The **API / MCP** card and a sidebar tile show the connected assistant and the last command it sent.
+- In the terminal, the **Assistant** item of the state bar lights up for a few seconds with the command, and a short banner appears.
+- The terminal's **…** menu has an **Assistant journal** with every command received by that session.
+- **Settings** > **API / MCP** > **Assistant commands**: choose **Ask before running a command** to approve each command in a sheet (Deny, Allow, Always for this session). Off by default.
 
 ### Network access
 By default the server listens on `127.0.0.1` only: it can be reached from this Mac and nothing else. To let another device on your local network connect (with the Bearer token), set **Listen on** to **Any device on the local network** in **WebSSH** > **Settings** > **API / MCP**, then switch the server off and on again.
