@@ -2539,8 +2539,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-claude-code-cursor-vs-code-or-codex" class="md-nav__link">
-    Using Claude Code, Cursor, VS Code or Codex
+  <a href="#the-ai-assistants-screen" class="md-nav__link">
+    The AI Assistants screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeing-what-the-assistant-does" class="md-nav__link">
+    Seeing what the assistant does
   </a>
   
 </li>
@@ -4017,8 +4024,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-claude-code-cursor-vs-code-or-codex" class="md-nav__link">
-    Using Claude Code, Cursor, VS Code or Codex
+  <a href="#the-ai-assistants-screen" class="md-nav__link">
+    The AI Assistants screen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seeing-what-the-assistant-does" class="md-nav__link">
+    Seeing what the assistant does
   </a>
   
 </li>
@@ -4147,10 +4161,22 @@
 <blockquote>
 <p>The former <strong>WebSSH MCPB extension</strong> (<code>webssh-mcpb-dxt-extension</code>, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.</p>
 </blockquote>
-<h3 id="using-claude-code-cursor-vs-code-or-codex">Using Claude Code, Cursor, VS Code or Codex</h3>
-<p>These clients connect to a local HTTP MCP server directly. In WebSSH, right-click <strong>API / MCP</strong> and choose <strong>Claude</strong> &gt; <strong>Copy Claude Code Command</strong> to get a ready-to-run command such as:</p>
-<p><code>claude mcp add --transport http webssh http://127.0.0.1:1985/mcp --header "Authorization: Bearer YOUR_BEARER_TOKEN_HERE"</code></p>
-<p>For other clients, use the URL <code>http://127.0.0.1:1985/mcp</code> (Streamable HTTP) with the <code>Authorization: Bearer …</code> header described below.</p>
+<h3 id="the-ai-assistants-screen">The AI Assistants screen</h3>
+<p>Open <strong>Inventory</strong> &gt; <strong>Tools</strong> &gt; <strong>AI Assistants</strong> (or tap the <strong>API / MCP</strong> card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try. Every client goes through the <code>webssh-mcp</code> bridge: it starts WebSSH when needed and carries the token for you.</p>
+<ul>
+<li><strong>Claude Desktop</strong>: one click, as above.</li>
+<li><strong>Claude Code</strong>: copy the command and run it in a terminal, e.g. <code>claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>.</li>
+<li><strong>Codex</strong> (CLI, IDE extension and the Codex app share the configuration): <code>codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>.</li>
+<li><strong>Cursor</strong> and <strong>VS Code</strong>: an <strong>Install</strong> link, or <strong>Copy configuration</strong> to paste into the editor's MCP settings.</li>
+</ul>
+<p>Scripts and clients without stdio can still use the HTTP endpoint directly, see below.</p>
+<h3 id="seeing-what-the-assistant-does">Seeing what the assistant does</h3>
+<ul>
+<li>The <strong>API / MCP</strong> card and a sidebar tile show the connected assistant and the last command it sent.</li>
+<li>In the terminal, the <strong>Assistant</strong> item of the state bar lights up for a few seconds with the command, and a short banner appears.</li>
+<li>The terminal's <strong>…</strong> menu has an <strong>Assistant journal</strong> with every command received by that session.</li>
+<li><strong>Settings</strong> &gt; <strong>API / MCP</strong> &gt; <strong>Assistant commands</strong>: choose <strong>Ask before running a command</strong> to approve each command in a sheet (Deny, Allow, Always for this session). Off by default.</li>
+</ul>
 <h3 id="network-access">Network access</h3>
 <p>By default the server listens on <code>127.0.0.1</code> only: it can be reached from this Mac and nothing else. To let another device on your local network connect (with the Bearer token), set <strong>Listen on</strong> to <strong>Any device on the local network</strong> in <strong>WebSSH</strong> &gt; <strong>Settings</strong> &gt; <strong>API / MCP</strong>, then switch the server off and on again.</p>
 <h3 id="webssh-openapi-specification">WebSSH OpenAPI Specification</h3>
@@ -4172,7 +4198,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 2, 2026 21:14:08 UTC">November 2, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 3, 2026 21:07:22 UTC">November 3, 2026</span>
       
     
   </small>
