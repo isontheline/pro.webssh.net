@@ -28,6 +28,7 @@ This feature is only available on macOS.
 * ✅ Send Commands to Terminal
 * ✅ Run a command in the background on an open SSH session (output and exit status, nothing typed in the terminal)
 * ✅ Capture the terminal as an image (PNG or JPEG)
+* ✅ List directories, read text files and download files on the server of an open SSH session (SCP over the existing connection)
 * ✅ Retrieve your IP Addresses
 * ✅ Make DNS Lookup
 * ✅ Make Whois Requests
@@ -84,6 +85,8 @@ The **Claude** submenu only appears when a Claude application is detected on you
 
 ### Background commands and permissions
 Besides typing into the visible terminal, an assistant can run a command on a dedicated channel of a session you already opened: nothing appears on screen, and it gets the output and the exit status back. WebSSH never opens a connection for it, and refuses it on mosh, Telnet and jump-host sessions. **Settings** > **API / MCP** > **Background commands** decides: *Ask* (default) shows a sheet with the command, where you can also allow it for the rest of that session; *Allow* runs it; *Deny* refuses it. Outputs above 16 KB are written to `~/Downloads/WebSSH/<session>/` and the assistant receives the path and a preview. Every background command is listed in the session's journal and leaves a marker in its recording.
+
+File reads work the same way: an assistant can list a directory, read a text file or download a file on the server of an open SSH session, over that session (SCP on the existing connection, so nothing new is opened). **Settings** > **API / MCP** > **Reading files** holds the same three answers. Small text files come back to the assistant directly; larger ones and downloads land in `~/Downloads/WebSSH/<session>/`, never overwriting an existing file.
 
 ### Ask an assistant from a session
 On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.
