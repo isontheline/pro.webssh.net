@@ -92,7 +92,7 @@ Scripts and clients without stdio can still use the HTTP endpoint directly, see 
 
 ### Seeing what the assistant does
 - The **API / MCP** card and a sidebar tile show the connected assistant and the last command it sent.
-- In the terminal, the **Assistant** item of the state bar lights up for a few seconds with the command, and a short banner appears.
+- In the terminal, the **Assistant** item of the state bar lights up for a few seconds with the command.
 - The terminal's **…** menu has an **Assistant journal** with every command received by that session.
 - **Settings** > **API / MCP** > **Assistant commands**: choose **Ask before running a command** to approve each command in a sheet (Deny, Allow, Always for this session). Off by default.
 
