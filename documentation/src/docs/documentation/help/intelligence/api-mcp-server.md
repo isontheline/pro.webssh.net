@@ -85,7 +85,7 @@ Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** car
 
 - **Claude Desktop**: one click, as above.
 - **Claude Code**: copy the command and run it in a terminal, e.g. `claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`.
-- **Codex** (CLI, IDE extension and the Codex app share the configuration): `codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`.
+- **Codex** (CLI, IDE extension and the Codex app share the configuration): `codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`. The Codex app bundled in ChatGPT does not put `codex` on your PATH: the command WebSSH copies then points at the bundled CLI, or use **Copy configuration** and paste the block into `~/.codex/config.toml`.
 - **Cursor** and **VS Code**: an **Install** link, or **Copy configuration** to paste into the editor's MCP settings.
 
 Scripts and clients without stdio can still use the HTTP endpoint directly, see below.
