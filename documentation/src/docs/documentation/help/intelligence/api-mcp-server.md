@@ -33,6 +33,9 @@ This feature is only available on macOS.
 * ✅ Retrieve your IP Addresses
 * ✅ Make DNS Lookup
 * ✅ Make Whois Requests
+* ✅ Subnet calculator (IPv4 / IPv6)
+* ✅ Cron expression explainer with the next run dates
+* ✅ TLS certificate check (trust, expiry, chain)
 * 🚧 Make Ping Requests
 * 🚧 Launch Traceroute
 
