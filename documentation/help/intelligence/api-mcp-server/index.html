@@ -4166,7 +4166,7 @@
 <ul>
 <li><strong>Claude Desktop</strong>: one click, as above.</li>
 <li><strong>Claude Code</strong>: copy the command and run it in a terminal, e.g. <code>claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>.</li>
-<li><strong>Codex</strong> (CLI, IDE extension and the Codex app share the configuration): <code>codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>.</li>
+<li><strong>Codex</strong> (CLI, IDE extension and the Codex app share the configuration): <code>codex mcp add webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>. The Codex app bundled in ChatGPT does not put <code>codex</code> on your PATH: the command WebSSH copies then points at the bundled CLI, or use <strong>Copy configuration</strong> and paste the block into <code>~/.codex/config.toml</code>.</li>
 <li><strong>Cursor</strong> and <strong>VS Code</strong>: an <strong>Install</strong> link, or <strong>Copy configuration</strong> to paste into the editor's MCP settings.</li>
 </ul>
 <p>Scripts and clients without stdio can still use the HTTP endpoint directly, see below.</p>
@@ -4200,7 +4200,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 4, 2026 07:59:18 UTC">November 4, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 4, 2026 08:24:17 UTC">November 4, 2026</span>
       
     
   </small>
