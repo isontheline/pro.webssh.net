@@ -91,6 +91,8 @@ File reads work the same way: an assistant can list a directory, read a text fil
 
 Writing works the same way, with two more settings: **Writing files** (write a text file the assistant composed, upload a file from your `~/Downloads` folder, create a folder, rename or move, chmod) and **Deleting files** (files and folders; a non-empty folder needs an explicit recursive request, and the approval sheet shows the command in red). WebSSH refuses to delete `/` or your home itself, and only uploads from `~/Downloads`, the one local folder it can read.
 
+All of these defaults are also on the **AI Assistants** screen, under **Permissions**, next to the list of open sessions where you answered "Always for this session": forget one from its context menu, or reset them all.
+
 ### Ask an assistant from a session
 On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.
 
