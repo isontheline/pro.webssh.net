@@ -93,7 +93,9 @@ Scripts and clients without stdio can still use the HTTP endpoint directly, see 
 ### Seeing what the assistant does
 - The **API / MCP** card and a sidebar tile show the connected assistant and the last command it sent.
 - In the terminal, the **Assistant** item of the state bar lights up for a few seconds with the command.
-- The terminal's **…** menu has an **Assistant journal** with every command received by that session.
+- The terminal's **…** menu (and a tap on the ✦ witness) opens the **Session journal**: the recording of that session when there is one, then everything the assistants did in it.
+- **Inventory** > **History** > **Assistants** keeps one card per terminal session touched by an assistant (commands, screens read, lookups), with the History retention. These events never sync to iCloud, like the recordings. A card opens its Session journal.
+- When a session is being recorded, each assistant command leaves a marker in the recording: for a full audit, turn recording on (**AI Assistants** > bottom of the screen > **Recording settings**).
 - **Settings** > **API / MCP** > **Assistant commands**: choose **Ask before running a command** to approve each command in a sheet (Deny, Allow, Always for this session). Off by default.
 
 ### Network access
