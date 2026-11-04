@@ -80,8 +80,11 @@ The **Claude** submenu only appears when a Claude application is detected on you
 
 > The former **WebSSH MCPB extension** (`webssh-mcpb-dxt-extension`, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.
 
+### Ask an assistant from a session
+On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.
+
 ### The AI Assistants screen
-Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try. Every client goes through the `webssh-mcp` bridge: it starts WebSSH when needed and carries the token for you.
+Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try: tap one to copy it, or open it straight in Claude Desktop (chat or Claude Code), Codex or Cursor, where it lands in the composer for you to send. Every client goes through the `webssh-mcp` bridge: it starts WebSSH when needed and carries the token for you.
 
 - **Claude Desktop**: one click, as above.
 - **Claude Code**: copy the command and run it in a terminal, e.g. `claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp`.
