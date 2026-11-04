@@ -2539,6 +2539,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#background-commands-and-permissions" class="md-nav__link">
+    Background commands and permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ask-an-assistant-from-a-session" class="md-nav__link">
+    Ask an assistant from a session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-ai-assistants-screen" class="md-nav__link">
     The AI Assistants screen
   </a>
@@ -4024,6 +4038,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#background-commands-and-permissions" class="md-nav__link">
+    Background commands and permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ask-an-assistant-from-a-session" class="md-nav__link">
+    Ask an assistant from a session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-ai-assistants-screen" class="md-nav__link">
     The AI Assistants screen
   </a>
@@ -4109,6 +4137,9 @@
 <ul>
 <li>✅ Retrieve Terminal Content</li>
 <li>✅ Send Commands to Terminal</li>
+<li>✅ Run a command in the background on an open SSH session (output and exit status, nothing typed in the terminal)</li>
+<li>✅ Capture the terminal as an image (PNG or JPEG)</li>
+<li>✅ List directories, read text files and download files on the server of an open SSH session (SCP over the existing connection)</li>
 <li>✅ Retrieve your IP Addresses</li>
 <li>✅ Make DNS Lookup</li>
 <li>✅ Make Whois Requests</li>
@@ -4161,8 +4192,13 @@
 <blockquote>
 <p>The former <strong>WebSSH MCPB extension</strong> (<code>webssh-mcpb-dxt-extension</code>, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.</p>
 </blockquote>
+<h3 id="background-commands-and-permissions">Background commands and permissions</h3>
+<p>Besides typing into the visible terminal, an assistant can run a command on a dedicated channel of a session you already opened: nothing appears on screen, and it gets the output and the exit status back. WebSSH never opens a connection for it, and refuses it on mosh, Telnet and jump-host sessions. <strong>Settings</strong> &gt; <strong>API / MCP</strong> &gt; <strong>Background commands</strong> decides: <em>Ask</em> (default) shows a sheet with the command, where you can also allow it for the rest of that session; <em>Allow</em> runs it; <em>Deny</em> refuses it. Outputs above 16 KB are written to <code>~/Downloads/WebSSH/&lt;session&gt;/</code> and the assistant receives the path and a preview. Every background command is listed in the session's journal and leaves a marker in its recording.</p>
+<p>File reads work the same way: an assistant can list a directory, read a text file or download a file on the server of an open SSH session, over that session (SCP on the existing connection, so nothing new is opened). <strong>Settings</strong> &gt; <strong>API / MCP</strong> &gt; <strong>Reading files</strong> holds the same three answers. Small text files come back to the assistant directly; larger ones and downloads land in <code>~/Downloads/WebSSH/&lt;session&gt;/</code>, never overwriting an existing file.</p>
+<h3 id="ask-an-assistant-from-a-session">Ask an assistant from a session</h3>
+<p>On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.</p>
 <h3 id="the-ai-assistants-screen">The AI Assistants screen</h3>
-<p>Open <strong>Inventory</strong> &gt; <strong>Tools</strong> &gt; <strong>AI Assistants</strong> (or tap the <strong>API / MCP</strong> card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try. Every client goes through the <code>webssh-mcp</code> bridge: it starts WebSSH when needed and carries the token for you.</p>
+<p>Open <strong>Inventory</strong> &gt; <strong>Tools</strong> &gt; <strong>AI Assistants</strong> (or tap the <strong>API / MCP</strong> card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try: tap one to copy it, or open it straight in Claude Desktop (chat or Claude Code), Codex or Cursor, where it lands in the composer for you to send. Every client goes through the <code>webssh-mcp</code> bridge: it starts WebSSH when needed and carries the token for you.</p>
 <ul>
 <li><strong>Claude Desktop</strong>: one click, as above.</li>
 <li><strong>Claude Code</strong>: copy the command and run it in a terminal, e.g. <code>claude mcp add --transport stdio webssh --env WEBSSH_MCP_TOKEN=… --env WEBSSH_MCP_PORT=1985 -- /Applications/WebSSH.app/Contents/MacOS/webssh-mcp</code>.</li>
@@ -4200,7 +4236,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 4, 2026 08:24:17 UTC">November 4, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 4, 2026 16:08:24 UTC">November 4, 2026</span>
       
     
   </small>
