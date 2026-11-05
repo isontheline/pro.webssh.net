@@ -2539,8 +2539,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#background-commands-and-permissions" class="md-nav__link">
-    Background commands and permissions
+  <a href="#permissions" class="md-nav__link">
+    Permissions
   </a>
   
 </li>
@@ -4038,8 +4038,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#background-commands-and-permissions" class="md-nav__link">
-    Background commands and permissions
+  <a href="#permissions" class="md-nav__link">
+    Permissions
   </a>
   
 </li>
@@ -4196,11 +4196,17 @@
 <blockquote>
 <p>The former <strong>WebSSH MCPB extension</strong> (<code>webssh-mcpb-dxt-extension</code>, which required Docker Desktop) is deprecated: the built-in bridge replaces it. You can remove the extension from Claude Desktop.</p>
 </blockquote>
-<h3 id="background-commands-and-permissions">Background commands and permissions</h3>
-<p>Besides typing into the visible terminal, an assistant can run a command on a dedicated channel of a session you already opened: nothing appears on screen, and it gets the output and the exit status back. WebSSH never opens a connection for it, and refuses it on mosh, Telnet and jump-host sessions. <strong>Settings</strong> &gt; <strong>API / MCP</strong> &gt; <strong>Background commands</strong> decides: <em>Ask</em> (default) shows a sheet with the command, where you can also allow it for the rest of that session; <em>Allow</em> runs it; <em>Deny</em> refuses it. Outputs above 16 KB are written to <code>~/Downloads/WebSSH/&lt;session&gt;/</code> and the assistant receives the path and a preview. Every background command is listed in the session's journal and leaves a marker in its recording.</p>
-<p>File reads work the same way: an assistant can list a directory, read a text file or download a file on the server of an open SSH session, over that session (SCP on the existing connection, so nothing new is opened). <strong>Settings</strong> &gt; <strong>API / MCP</strong> &gt; <strong>Reading files</strong> holds the same three answers. Small text files come back to the assistant directly; larger ones and downloads land in <code>~/Downloads/WebSSH/&lt;session&gt;/</code>, never overwriting an existing file.</p>
-<p>Writing works the same way, with two more settings: <strong>Writing files</strong> (write a text file the assistant composed, upload a file from your <code>~/Downloads</code> folder, create a folder, rename or move, chmod) and <strong>Deleting files</strong> (files and folders; a non-empty folder needs an explicit recursive request, and the approval sheet shows the command in red). WebSSH refuses to delete <code>/</code> or your home itself, and only uploads from <code>~/Downloads</code>, the one local folder it can read.</p>
-<p>All of these defaults are also on the <strong>AI Assistants</strong> screen, under <strong>Permissions</strong>, next to the list of open sessions where you answered "Always for this session": forget one from its context menu, or reset them all.</p>
+<h3 id="permissions">Permissions</h3>
+<p>Every action an assistant takes on your sessions belongs to a family, and each family has one answer: <strong>Allow</strong>, <strong>Ask</strong> (the default for all of them) or <strong>Deny</strong>. Ask shows a sheet in WebSSH with who is asking, which session and what is about to happen, where you can also allow the rest of that session. Defaults live in <strong>Settings</strong> &gt; <strong>API / MCP</strong> and on the <strong>AI Assistants</strong> screen, under <strong>Permissions</strong>, next to the open sessions where you answered "Always for this session" (forget one from its context menu, or reset them all).</p>
+<ul>
+<li><strong>Terminal commands</strong>: typed into the visible terminal, as if you had typed them.</li>
+<li><strong>Background commands</strong>: run on a separate channel of the session you already opened, nothing appears in the terminal, and the assistant gets the output and the exit status. WebSSH never opens a connection for it, and refuses it on mosh, Telnet and jump-host sessions. Outputs above 16 KB are written to <code>~/Downloads/WebSSH/&lt;session&gt;/</code> and the assistant receives the path and a preview.</li>
+<li><strong>Reading the terminal</strong>: the screen as text, or as a screenshot. <strong>Once you let a command through in a tab, reading that tab is allowed for the rest of the session</strong>, since seeing the result is the natural next step; a read with no command before it still asks. When you deny a read, the assistant still gets the session's name and state, with a note saying the screen was not shared. Listing your open sessions (names and identifiers only) never asks.</li>
+<li><strong>Reading files</strong>: listing a directory, reading a text file or downloading a file on the server of an open SSH session, over that session (SCP on the existing connection, nothing new is opened). Small text files come back to the assistant directly; larger ones and downloads land in <code>~/Downloads/WebSSH/&lt;session&gt;/</code>, never overwriting an existing file.</li>
+<li><strong>Writing files</strong>: write a text file the assistant composed, upload a file from your <code>~/Downloads</code> folder (the one local folder WebSSH can read), create a folder, rename or move, chmod.</li>
+<li><strong>Deleting files</strong>: files and folders; a non-empty folder needs an explicit recursive request, and the sheet shows the command in red. WebSSH refuses to delete <code>/</code> or your home itself.</li>
+</ul>
+<p>Every one of these actions is listed in the session's journal (<strong>History</strong> &gt; <strong>Assistants</strong>), and commands leave a marker in the session recording.</p>
 <h3 id="ask-an-assistant-from-a-session">Ask an assistant from a session</h3>
 <p>On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.</p>
 <h3 id="the-ai-assistants-screen">The AI Assistants screen</h3>
@@ -4242,7 +4248,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 4, 2026 17:31:02 UTC">November 4, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 5, 2026 20:27:30 UTC">November 5, 2026</span>
       
     
   </small>
