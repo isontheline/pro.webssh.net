@@ -114,7 +114,7 @@ Scripts and clients without stdio can still use the HTTP endpoint directly, see 
 
 ### Seeing what the assistant does
 - The **API / MCP** card shows the connected assistant and the last command it sent.
-- Each connected assistant has its own tile in the sidebar, with its last action. The badge tells its state: a moon on grey while it has asked nothing yet or for a minute, sparkles on green when it is active, an orange question mark while a request waits for your approval, a red hand when its last request was refused, an orange triangle when it failed.
+- Each connected assistant has its own tile in the sidebar, with its last action. The badge tells its state: a moon on grey while it has asked nothing yet, or nothing for about 15 seconds, sparkles on green when it is active, an orange question mark while a request waits for your approval, a red hand when its last request was refused, an orange triangle when it failed.
 - Click the tile, or the assistant's row in **AI Assistants**, to list everything that connection did, newest first; an action made in a terminal opens that session's journal. Right-click the tile to open **AI Assistants**.
 - In the terminal, the **Assistant** item of the state bar lights up for a few seconds with the command.
 - The terminal's **…** menu (and a tap on the ✦ witness) opens the **Session journal**: the recording of that session when there is one, then everything the assistants did in it.
