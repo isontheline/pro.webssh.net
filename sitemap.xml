@@ -155,7 +155,7 @@
     <loc>https://webssh.net/documentation/mashREPL/</loc>
 
     
-    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
+    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
 
       
       
@@ -2105,7 +2105,7 @@
     <loc>https://webssh.net/documentation/help/howtos/automatic-database-backups/</loc>
 
     
-    <lastmod>2026-10-10T15:49:16+00:00</lastmod>
+    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
 
       
       
@@ -2577,6 +2577,31 @@
   
   
   <url>
+    <loc>https://webssh.net/documentation/help/howtos/wsbk-backup-file-format/</loc>
+
+    
+    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
     <loc>https://webssh.net/documentation/help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/</loc>
 
     
@@ -2805,7 +2830,7 @@
     <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-backup/</loc>
 
     
-    <lastmod>2026-10-10T15:49:16+00:00</lastmod>
+    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
 
       
       
@@ -2830,7 +2855,7 @@
     <loc>https://webssh.net/documentation/help/howtos/mashREPL/database-restore/</loc>
 
     
-    <lastmod>2026-10-10T15:49:16+00:00</lastmod>
+    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
 
       
       

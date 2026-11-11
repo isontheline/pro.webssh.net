@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own. Where the backups are, how long they are kept, how to restore one, and why they must be kept private.">
+        <meta name="description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own, encrypted with a password. Where the backups are, how long they are kept, how to restore or export one, and how the database password works.">
       
       
       
@@ -67,8 +67,8 @@
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Automatic Backups of Your WebSSH Connections, Keys and Snippets - WebSSH" />
         
-            <meta property="og:description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own. Where the backups are, how long they are kept, how to restore one, and why they must be kept private." />
-            <meta name="twitter:description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own. Where the backups are, how long they are kept, how to restore one, and why they must be kept private." />
+            <meta property="og:description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own, encrypted with a password. Where the backups are, how long they are kept, how to restore or export one, and how the database password works." />
+            <meta name="twitter:description" content="WebSSH backs up its database (connections, keys, snippets, settings) once a day on its own, encrypted with a password. Where the backups are, how long they are kept, how to restore or export one, and how the database password works." />
         
     
 
@@ -1819,12 +1819,59 @@
     When a backup is made
   </a>
   
+    <nav class="md-nav" aria-label="When a backup is made">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-backup-fails" class="md-nav__link">
+    When a backup fails
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#where-to-find-them" class="md-nav__link">
     Where to find them
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-password" class="md-nav__link">
+    The database password
+  </a>
+  
+    <nav class="md-nav" aria-label="The database password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-older-backups" class="md-nav__link">
+    Encrypting older backups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backups-under-another-password" class="md-nav__link">
+    Backups under another password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-strong-password" class="md-nav__link">
+    Choosing a strong password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1840,6 +1887,19 @@
     Back up now, restore, delete
   </a>
   
+    <nav class="md-nav" aria-label="Back up now, restore, delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-a-backup" class="md-nav__link">
+    Export a backup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1852,6 +1912,13 @@
         <li class="md-nav__item">
   <a href="#from-mashrepl" class="md-nav__link">
     From mashREPL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-developers" class="md-nav__link">
+    For developers
   </a>
   
 </li>
@@ -2122,23 +2189,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../wsbk-backup-file-format/" class="md-nav__link">
+        The .wsbk Backup File Format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_21" type="checkbox" id="__nav_3_12_5_21" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_22" type="checkbox" id="__nav_3_12_5_22" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_21" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_22" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_21">
+        <label class="md-nav__title" for="__nav_3_12_5_22">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2204,17 +2285,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_22" type="checkbox" id="__nav_3_12_5_22" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_22" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_22">
+        <label class="md-nav__title" for="__nav_3_12_5_23">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2322,17 +2403,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_23">
+        <label class="md-nav__title" for="__nav_3_12_5_24">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2440,17 +2521,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_25">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -3951,12 +4032,59 @@
     When a backup is made
   </a>
   
+    <nav class="md-nav" aria-label="When a backup is made">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-backup-fails" class="md-nav__link">
+    When a backup fails
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#where-to-find-them" class="md-nav__link">
     Where to find them
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-database-password" class="md-nav__link">
+    The database password
+  </a>
+  
+    <nav class="md-nav" aria-label="The database password">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encrypting-older-backups" class="md-nav__link">
+    Encrypting older backups
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backups-under-another-password" class="md-nav__link">
+    Backups under another password
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-strong-password" class="md-nav__link">
+    Choosing a strong password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3972,6 +4100,19 @@
     Back up now, restore, delete
   </a>
   
+    <nav class="md-nav" aria-label="Back up now, restore, delete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#export-a-backup" class="md-nav__link">
+    Export a backup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3984,6 +4125,13 @@
         <li class="md-nav__item">
   <a href="#from-mashrepl" class="md-nav__link">
     From mashREPL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-developers" class="md-nav__link">
+    For developers
   </a>
   
 </li>
@@ -4007,18 +4155,50 @@
 <h1 id="automatic-database-backups1">Automatic Database Backups<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h1>
 <p>Everything you set up in WebSSH lives in one database: connections, private keys, snippets, settings, State Bar items. Since WebSSH 32.2 that database is backed up automatically, so a bad restore, a deleted connection or a sync gone wrong can be undone without a Mac and without a restore from a device backup.</p>
 <p>Automatic backups are enabled by default, on iPhone, iPad and Mac, in the FREE and PRO versions alike.</p>
+<p>Since WebSSH 33.4 every backup is <strong>encrypted with a password</strong><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. A backup holds your connections and may hold passwords and private keys: a copy that leaves your device can no longer be read without the <a href="#the-database-password">database password</a>.</p>
 <h2 id="when-a-backup-is-made">When a backup is made</h2>
 <p>WebSSH checks at launch, when it comes back to the foreground and once an hour while it stays open. When the last backup is <strong>24 hours</strong> old or more, a new one is written. One backup a day, no more, whatever you do with the app in between.</p>
 <p>An automatic backup is taken after the app has migrated its database to a new version, not before.</p>
+<p>Before each backup WebSSH checks that the database is sound. A database that fails this check is <strong>not backed up</strong>, so that a damaged copy never takes the place of a good one; the <strong>Local Database</strong> screen then says so. Restoring a backup repairs it.</p>
+<h3 id="when-a-backup-fails">When a backup fails</h3>
+<p>If a backup cannot be written (the database failed its check, the disk is full…), a <strong>red dot</strong> appears on the settings gear, on <strong>Maintenance</strong> and on <strong>Local Database</strong>, and the screen says what went wrong. While it lasts, WebSSH <strong>stops deleting older backups</strong>: the copies you have are kept as they are. The dot goes away by itself at the next backup that succeeds, or after a restore.</p>
 <h2 id="where-to-find-them">Where to find them</h2>
-<p>Open <strong>Settings ▸ Maintenance ▸ Database Backup</strong>. The screen lists the backups, newest first, with their date, time and size, and holds the <strong>Automatic backups</strong> switch.</p>
+<p>Open <strong>Settings ▸ Maintenance ▸ Local Database</strong>. The screen lists the backups, newest first, with their date, time and size, under the <strong>Automatic backups</strong> switch, and starts with the <strong>Database Password</strong> section. A closed padlock marks an encrypted backup, an open one a backup made before WebSSH 33.4.</p>
 <p>The files are regular files in the <strong>backups</strong> folder of WebSSH, the same folder used by the mashREPL command below:</p>
 <ul>
 <li>on iPhone and iPad, in the <strong>Files</strong> app, under <em>On My iPhone</em> (or <em>On My iPad</em>) ▸ <strong>WebSSH</strong> ▸ <strong>backups</strong></li>
 <li>on the Mac, in the app container: <code>~/Library/Containers/com.itimeteo.webssh/Data/Documents/backups</code></li>
 </ul>
-<p>Each file is named after its creation time, <code>20260612_221406_webssh.db</code> for a backup made on June 12, 2026 at 22:14:06. Copy a file from there to keep it somewhere else, or to move your setup to another device.</p>
+<p>Each file is named after its creation time, <code>20261112_221406_webssh.wsbk</code> for a backup made on November 12, 2026 at 22:14:06. Copy a file from there to keep it somewhere else, or to move your setup to another device: you will need the database password to restore it there.</p>
+<p>Backups made before WebSSH 33.4 are named <code>…_webssh.db</code> and are <strong>not</strong> encrypted: see <a href="#encrypting-older-backups">Encrypting older backups</a>.</p>
 <p>Backups are <strong>not</strong> synced through iCloud. <a href="/documentation/help/iCloud/">iCloud Sync</a> keeps the records of your devices in step; it is not a backup, which is exactly what these files are for.</p>
+<h2 id="the-database-password">The database password</h2>
+<p>Backups are encrypted with one password per device, the <strong>database password</strong>. It is kept in the Keychain of the device and is never synced through iCloud.</p>
+<ul>
+<li>Until you choose one, <strong>WebSSH generates it</strong> (something like <code>K7QM-2XHD-9PWA-RT4E-B6NZ-LC3V</code>), so that no backup is ever written in clear, even the very first one.</li>
+</ul>
+<p>The button at the end of the <strong>Database Password</strong> row (or a long press, a right click on the Mac) opens a menu:</p>
+<ul>
+<li><strong>Show Password</strong> displays it, after Face ID, Touch ID or your passcode. Write it down or save it in a password manager.</li>
+<li><strong>Set My Password…</strong> replaces it with a password of your own. All the existing backups are then encrypted again with the new password; the progress is shown and may take a few seconds per backup.</li>
+</ul>
+<p>On the device that made them, backups restore without asking for anything. The password is needed to restore a backup <strong>on another device</strong>, or after the device itself was erased or restored.</p>
+<div class="admonition danger">
+<p class="admonition-title">A lost password cannot be recovered</p>
+<p>WebSSH cannot recover or reset the database password, and neither can we. Without it an encrypted backup is unreadable. If you keep backups outside the device, keep the password too.</p>
+</div>
+<details class="info">
+<summary>After restoring or replacing your device</summary>
+<p>The database password does not travel with a device backup. WebSSH then generates a new one and keeps backing up. The older backups are still there: when you restore one of them, WebSSH asks for the password they were encrypted with.</p>
+</details>
+<p>Encryption cannot be turned off, and WebSSH never decrypts backups in place. To get a clear copy, <a href="#export-a-backup">export it</a>.</p>
+<h3 id="encrypting-older-backups">Encrypting older backups</h3>
+<p>After updating to WebSSH 33.4, the backups already on the device stay as they were. A row above the list then reads <strong>Some backups are not encrypted. Encrypt them now?</strong> Tap it: each older backup is encrypted with the database password, verified, and only then is the clear file removed. Setting your own password does the same.</p>
+<h3 id="backups-under-another-password">Backups under another password</h3>
+<p>A backup can be encrypted with a password that is no longer the database password of the device: it came from another device, or the device was restored and WebSSH generated a new password. Such a backup has a padlock with a warning sign and reads <strong>Another password</strong> next to its size.</p>
+<p>To restore or export one, WebSSH asks for its password. You type it <strong>once</strong>: every backup that this password opens is then encrypted again with the current database password, and gets its normal padlock back. The password you typed is not saved, and no backup is ever written in clear on the way.</p>
+<h3 id="choosing-a-strong-password">Choosing a strong password</h3>
+<p>A bar under the field rates the password you are typing, from <strong>Weak</strong> to <strong>Very strong</strong>. It is an estimate from its length and the kinds of characters used, and it never refuses a password: the choice is yours. A long passphrase rates better than a short mix of symbols.</p>
 <h2 id="how-long-they-are-kept">How long they are kept</h2>
 <p>WebSSH thins the folder out each time it writes a backup:</p>
 <ul>
@@ -4027,12 +4207,19 @@
 <li>one per month is kept for the <strong>year</strong> before that,</li>
 <li>older files are deleted.</li>
 </ul>
+<p>Nothing is deleted while the last backup failed (see above).</p>
 <p>A year of history is about twenty small files. There is no size cap. Backups made by hand with mashREPL live in the same folder and follow the same rotation.</p>
 <h2 id="back-up-now-restore-delete">Back up now, restore, delete</h2>
 <ul>
 <li><strong>Backup Now</strong>, at the top right of the screen, writes a backup immediately, even when automatic backups are off.</li>
-<li><strong>Restore</strong>: long press a backup (right click on the Mac) and choose <strong>Restore</strong>. The backup <strong>replaces</strong> the current database; nothing is merged. Quit and relaunch WebSSH afterwards for the restored data to load.</li>
+<li><strong>Restore</strong>: long press a backup (right click on the Mac) and choose <strong>Restore</strong>. The backup <strong>replaces</strong> the current database; nothing is merged. Quit and relaunch WebSSH afterwards for the restored data to load. If the backup was encrypted with another password, WebSSH asks for it; a wrong password changes nothing. The database being replaced is itself backed up first, so a restore can be undone.</li>
 <li><strong>Delete</strong>: same menu. Deleting a backup cannot be undone.</li>
+</ul>
+<h3 id="export-a-backup">Export a backup</h3>
+<p>The same menu holds two export actions, which let you choose the folder where the file is saved (on the device, in iCloud Drive or in any location of the Files app):</p>
+<ul>
+<li><strong>Export (Encrypted)</strong> asks which password protects the exported file: the database password, or <strong>another password</strong> used for this export only (handy to hand a backup to a colleague without giving away your own password). That other password is not saved.</li>
+<li><strong>Export (Not Encrypted)</strong> exports the plain SQLite database, after Face ID, Touch ID or your passcode. Anyone who gets that file can read everything in it.</li>
 </ul>
 <details class="warning">
 <summary>Restore and iCloud</summary>
@@ -4043,18 +4230,24 @@
 <p>Before cleaning up dozens of connections, importing keys or restoring something else, tap <strong>Backup Now</strong>. The file waits in the list for a week at least.</p>
 </details>
 <h2 id="turning-it-off">Turning it off</h2>
-<p>Switch <strong>Automatic backups</strong> off on the same screen. The existing files are left in place and are no longer rotated; <strong>Backup Now</strong> still works.</p>
+<p>Switch <strong>Automatic backups</strong> off, on the first row of the <strong>Backups</strong> section. The existing files are left in place and are no longer rotated; <strong>Backup Now</strong> still works.</p>
 <h2 id="from-mashrepl">From mashREPL</h2>
 <p>The <a href="/documentation/mashREPL/">mashREPL</a> commands predate the automatic backups and use the same folder and format:</p>
 <div class="highlight"><pre><span></span><code>webssh database backup
-webssh database restore 20260612_221406_webssh.db
+webssh database restore 20261112_221406_webssh.wsbk
 </code></pre></div>
+<p>mashREPL never asks for a password. A backup encrypted with another password than the one of the device is restored from the Settings screen.</p>
 <p>See <a href="../mashREPL/database-backup/">Database Backup</a> and <a href="../mashREPL/database-restore/">Database Restore</a>.</p>
+<h2 id="for-developers">For developers</h2>
+<p>The <code>.wsbk</code> format is documented: see <a href="../wsbk-backup-file-format/">The .wsbk backup file format</a> to decrypt a backup with your own tools and get the SQLite file.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>Available since WebSSH 32.2&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Available since WebSSH 33.4&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -4064,7 +4257,7 @@ webssh database restore 20260612_221406_webssh.db
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 10, 2026 15:49:16 UTC">October 10, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 05:46:17 UTC">November 11, 2026</span>
       
     
   </small>
