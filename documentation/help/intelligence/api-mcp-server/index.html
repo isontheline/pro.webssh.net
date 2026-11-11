@@ -4262,7 +4262,9 @@
 <p>Scripts and clients without stdio can still use the HTTP endpoint directly, see below.</p>
 <h3 id="seeing-what-the-assistant-does">Seeing what the assistant does</h3>
 <ul>
-<li>The <strong>API / MCP</strong> card and a sidebar tile show the connected assistant and the last command it sent.</li>
+<li>The <strong>API / MCP</strong> card shows the connected assistant and the last command it sent.</li>
+<li>Each connected assistant has its own tile in the sidebar, with its last action. The badge tells its state: a moon on grey while it has asked nothing yet or for a minute, sparkles on green when it is active, an orange question mark while a request waits for your approval, a red hand when its last request was refused, an orange triangle when it failed.</li>
+<li>Click the tile, or the assistant's row in <strong>AI Assistants</strong>, to list everything that connection did, newest first; an action made in a terminal opens that session's journal. Right-click the tile to open <strong>AI Assistants</strong>.</li>
 <li>In the terminal, the <strong>Assistant</strong> item of the state bar lights up for a few seconds with the command.</li>
 <li>The terminal's <strong>…</strong> menu (and a tap on the ✦ witness) opens the <strong>Session journal</strong>: the recording of that session when there is one, then everything the assistants did in it.</li>
 <li><strong>Inventory</strong> &gt; <strong>History</strong> &gt; <strong>Assistants</strong> keeps one card per terminal session touched by an assistant (commands, screens read, lookups), with the History retention. These events never sync to iCloud, like the recordings. A card opens its Session journal.</li>
@@ -4290,7 +4292,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 5, 2026 20:27:30 UTC">November 5, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 20:05:56 UTC">November 11, 2026</span>
       
     
   </small>
