@@ -45,13 +45,15 @@ The button at the end of the **Database Password** row (or a long press, a right
 - **Show Password** displays it, after Face ID, Touch ID or your passcode. Write it down or save it in a password manager.
 - **Set My Password…** replaces it with a password of your own. All the existing backups are then encrypted again with the new password; the progress is shown and may take a few seconds per backup.
 
+The same section holds the **Encrypt Secrets** switch, which protects the passwords and private keys stored on the device with this password: see [Encrypt Passwords and Private Keys](encrypt-passwords-and-private-keys.md).
+
 On the device that made them, backups restore without asking for anything. The password is needed to restore a backup **on another device**, or after the device itself was erased or restored.
 
 !!! danger "A lost password cannot be recovered"
     WebSSH cannot recover or reset the database password, and neither can we. Without it an encrypted backup is unreadable. If you keep backups outside the device, keep the password too.
 
 ??? info "After restoring or replacing your device"
-    The database password does not travel with a device backup. WebSSH then generates a new one and keeps backing up. The older backups are still there: when you restore one of them, WebSSH asks for the password they were encrypted with.
+    The database password does not travel with a device backup. WebSSH then generates a new one and keeps backing up. The older backups are still there: when you restore one of them, WebSSH asks for the password they were encrypted with. That password then becomes the database password of the device again, and the backups made in the meantime follow it.
 
 Encryption cannot be turned off, and WebSSH never decrypts backups in place. To get a clear copy, [export it](#export-a-backup).
 
@@ -61,7 +63,12 @@ After updating to WebSSH 33.4, the backups already on the device stay as they we
 ### Backups under another password
 A backup can be encrypted with a password that is no longer the database password of the device: it came from another device, or the device was restored and WebSSH generated a new password. Such a backup has a padlock with a warning sign and reads **Another password** next to its size.
 
-To restore or export one, WebSSH asks for its password. You type it **once**: every backup that this password opens is then encrypted again with the current database password, and gets its normal padlock back. The password you typed is not saved, and no backup is ever written in clear on the way.
+To restore or export one, WebSSH asks for its password. You type it **once**: every backup that this password opens is then encrypted again with the current database password, and gets its normal padlock back. No backup is ever written in clear on the way.
+
+What happens to the password you typed depends on the database password of the device:
+
+- when you **chose** it, it stays. The password you typed is not saved.
+- when **WebSSH generated** it and you are **restoring**, the password you typed takes its place: it is one you know, and every backup then goes with it.
 
 ### Choosing a strong password
 A bar under the field rates the password you are typing, from **Weak** to **Very strong**. It is an estimate from its length and the kinds of characters used, and it never refuses a password: the choice is yours. A long passphrase rates better than a short mix of symbols.
