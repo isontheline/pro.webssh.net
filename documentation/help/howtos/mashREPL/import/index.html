@@ -4022,7 +4022,7 @@
 <div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>import<span class="w"> </span>sshconfig<span class="w"> </span>--from-file<span class="w"> </span>my_config_file
 </code></pre></div></p>
 <h2 id="from-json-connections-file">From : JSON connections file</h2>
-<p>Since WebSSH 33.4 (<a href="https://github.com/isontheline/pro.webssh.net/issues/1128">#1128</a>) you can import a JSON connections file : a file written by <a href="/documentation/help/howtos/mashREPL/export/#to-json-connections-file"><code>webssh export json</code></a> or by <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning</em>, or one you wrote yourself in the <a href="/documentation/help/howtos/provision-connections-from-url/#the-connections-file">same format</a>.</p>
+<p>Since WebSSH 33.4 (<a href="https://github.com/isontheline/pro.webssh.net/issues/1128">#1128</a>) you can import a JSON connections file : a file written by <a href="/documentation/help/howtos/mashREPL/export/#to-json-connections-file"><code>webssh export json</code></a> or by <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning &amp; Import / Export</em>, or one you wrote yourself in the <a href="/documentation/help/howtos/provision-connections-from-url/#the-connections-file">same format</a>.</p>
 <p>Dry run, which lists what would be created, updated and skipped :
 <div class="highlight"><pre><span></span><code>webssh<span class="w"> </span>import<span class="w"> </span>json<span class="w"> </span>webssh-connections.json
 </code></pre></div></p>
@@ -4035,7 +4035,7 @@
 <ul>
 <li>A connection is recognized by the <code>id</code> of its entry, then by its name</li>
 <li>A file holding passwords and private keys imports them with the connections ; a key already on the device is reused, not duplicated</li>
-<li>An encrypted file (<code>.wsbk</code>) opens by itself when it was encrypted with the database password of this device. A password is never typed in the terminal : a file protected by another password is imported from <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning</em> &gt; <em>Import connections…</em></li>
+<li>An encrypted file (<code>.wsbk</code>) opens by itself when it was encrypted with the database password of this device. A password is never typed in the terminal : a file protected by another password is imported from <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning &amp; Import / Export</em> &gt; <em>Import</em></li>
 <li>Like <code>webssh import sshconfig</code>, applying the import requires <a href="/documentation/pricing/">WebSSH PRO</a></li>
 </ul>
 <details class="tip">
@@ -4048,7 +4048,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 13:41:04 UTC">November 11, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 16:49:10 UTC">November 11, 2026</span>
       
     
   </small>

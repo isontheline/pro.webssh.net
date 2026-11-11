@@ -4323,13 +4323,14 @@
 <h3 id="in-settings">In Settings</h3>
 <ol>
 <li>Open WebSSH Settings <img alt="⚙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2699.svg" title=":gear:" /></li>
-<li>Go to <em>Maintenance</em> &gt; <em>Provisioning</em></li>
+<li>Go to <em>Maintenance</em> &gt; <em>Provisioning &amp; Import / Export</em></li>
+<li>Choose <em>Provisioning</em></li>
 <li>Type the URL and save it</li>
 </ol>
 <p>The same screen shows when the file was last applied, what happened, and the last error if any.</p>
 <h2 id="when-is-the-file-read">When is the file read?</h2>
 <ul>
-<li>When the URL is registered, and each time you press <em>Apply now</em> in <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning</em>.</li>
+<li>When the URL is registered, and each time you press <em>Apply now</em> on the <em>Provisioning</em> screen.</li>
 <li>When the app is opened or comes back to the foreground, at most once every 15 minutes.</li>
 </ul>
 <p>When the URL cannot be reached (no network, server down, device off the company network), nothing happens: the connections already created stay as they are, and the next attempt will do. The reason is shown on the <em>Provisioning</em> screen.</p>
@@ -4344,8 +4345,8 @@
 <h3 id="when-an-entry-is-removed-from-the-file">When an entry is removed from the file</h3>
 <p>Nothing is deleted silently. WebSSH lists the connections that are no longer in the file and lets you <strong>remove</strong> them or <strong>keep</strong> them as ordinary connections. Closing that sheet changes nothing: the question comes back later.</p>
 <h2 id="export-and-import-a-connections-file">Export and import a connections file</h2>
-<p><em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning</em> also writes and reads the same file format, which is handy to prepare the file of a fleet, or to move connections from one device to another.</p>
-<p><strong>Export connections…</strong> saves <code>webssh-connections.json</code> in the folder you choose. Two options:</p>
+<p><em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning &amp; Import / Export</em> has two more choices, <em>Export</em> and <em>Import</em>. They write and read the same file format, which is handy to prepare the file of a fleet, or to move connections from one device to another.</p>
+<p><strong>Export</strong> saves <code>webssh-connections.json</code> in the folder you choose. Two options:</p>
 <ul>
 <li><em>Include passwords and private keys</em>: off by default. Without it the file never contains a credential, and it can be served as a provisioning URL as it is.</li>
 <li><em>Encrypt the file</em>: the file becomes <code>webssh-connections.wsbk</code>, protected by your <a href="../automatic-database-backups/#the-database-password">database password</a> or by a password you choose for this export. It is the same container as the <a href="../wsbk-backup-file-format/">encrypted backups</a>.</li>
@@ -4354,7 +4355,7 @@
 <summary>A file with credentials in clear</summary>
 <p>With the first option on and the second one off, the file holds your passwords, private keys and passphrases as readable text. WebSSH asks you to authenticate and to confirm. Store and transmit such a file accordingly, and never serve it as a provisioning URL.</p>
 </details>
-<p><strong>Import connections…</strong> reads a file exported by WebSSH, or written by hand, and shows how many connections it would create and update before doing anything. An encrypted file opens by itself when it was protected by the database password of the device; otherwise its password is asked. A file read this way may carry credentials: they are imported with the connections.</p>
+<p><strong>Import</strong> opens the file picker, reads a file exported by WebSSH, or written by hand, and shows how many connections it would create and update before doing anything. An encrypted file opens by itself when it was protected by the database password of the device; otherwise its password is asked. A file read this way may carry credentials: they are imported with the connections.</p>
 <p>The same exists in <a href="/documentation/mashREPL/">mashREPL</a>: see <a href="/documentation/help/howtos/mashREPL/export/#to-json-connections-file">webssh export json</a> and <a href="/documentation/help/howtos/mashREPL/import/#from-json-connections-file">webssh import json</a>.</p>
 <details class="info">
 <summary>When the secrets of the database are locked</summary>
@@ -4410,7 +4411,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 13:41:04 UTC">November 11, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 16:49:10 UTC">November 11, 2026</span>
       
     
   </small>
