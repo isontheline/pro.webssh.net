@@ -100,7 +100,7 @@ webssh export json --apply --with-secrets --encrypt
 ```
 
 ??? danger "--with-secrets without --encrypt"
-    The file then holds your passwords, private keys and passphrases as readable text. Store and transmit it accordingly, and never serve it as a provisioning URL. A password is never typed in the terminal, so the only encryption offered here is the database password : to protect the file with another password, use *Settings* > *Maintenance* > *Provisioning* > *Export connections…*
+    The file then holds your passwords, private keys and passphrases as readable text. Store and transmit it accordingly, and never serve it as a provisioning URL. A password is never typed in the terminal, so the only encryption offered here is the database password : to protect the file with another password, use *Settings* > *Maintenance* > *Provisioning & Import / Export* > *Export*
 
 Tunnels, and connections without a host, are not exported : the dry run lists them as bypassed.
 

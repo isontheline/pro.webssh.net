@@ -41,7 +41,7 @@ webssh import sshconfig --from-file my_config_file
 ```
 
 ## From : JSON connections file
-Since WebSSH 33.4 ([#1128](https://github.com/isontheline/pro.webssh.net/issues/1128)) you can import a JSON connections file : a file written by [`webssh export json`](/documentation/help/howtos/mashREPL/export/#to-json-connections-file) or by *Settings* > *Maintenance* > *Provisioning*, or one you wrote yourself in the [same format](/documentation/help/howtos/provision-connections-from-url/#the-connections-file).
+Since WebSSH 33.4 ([#1128](https://github.com/isontheline/pro.webssh.net/issues/1128)) you can import a JSON connections file : a file written by [`webssh export json`](/documentation/help/howtos/mashREPL/export/#to-json-connections-file) or by *Settings* > *Maintenance* > *Provisioning & Import / Export*, or one you wrote yourself in the [same format](/documentation/help/howtos/provision-connections-from-url/#the-connections-file).
 
 Dry run, which lists what would be created, updated and skipped :
 ```bash
@@ -60,7 +60,7 @@ webssh import json webssh-connections.json --apply --overwrite
 
 * A connection is recognized by the `id` of its entry, then by its name
 * A file holding passwords and private keys imports them with the connections ; a key already on the device is reused, not duplicated
-* An encrypted file (`.wsbk`) opens by itself when it was encrypted with the database password of this device. A password is never typed in the terminal : a file protected by another password is imported from *Settings* > *Maintenance* > *Provisioning* > *Import connections…*
+* An encrypted file (`.wsbk`) opens by itself when it was encrypted with the database password of this device. A password is never typed in the terminal : a file protected by another password is imported from *Settings* > *Maintenance* > *Provisioning & Import / Export* > *Import*
 * Like `webssh import sshconfig`, applying the import requires [WebSSH PRO](/documentation/pricing/)
 
 ??? tip "Keep devices up to date"

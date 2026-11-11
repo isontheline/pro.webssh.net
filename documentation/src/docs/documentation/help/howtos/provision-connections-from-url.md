@@ -118,13 +118,14 @@ The URL of the file is the value of `url`, [percent-encoded](https://en.wikipedi
 
 ### In Settings
 1. Open WebSSH Settings :gear:
-2. Go to *Maintenance* > *Provisioning*
-3. Type the URL and save it
+2. Go to *Maintenance* > *Provisioning & Import / Export*
+3. Choose *Provisioning*
+4. Type the URL and save it
 
 The same screen shows when the file was last applied, what happened, and the last error if any.
 
 ## When is the file read?
-- When the URL is registered, and each time you press *Apply now* in *Settings* > *Maintenance* > *Provisioning*.
+- When the URL is registered, and each time you press *Apply now* on the *Provisioning* screen.
 - When the app is opened or comes back to the foreground, at most once every 15 minutes.
 
 When the URL cannot be reached (no network, server down, device off the company network), nothing happens: the connections already created stay as they are, and the next attempt will do. The reason is shown on the *Provisioning* screen.
@@ -140,9 +141,9 @@ When the URL cannot be reached (no network, server down, device off the company 
 Nothing is deleted silently. WebSSH lists the connections that are no longer in the file and lets you **remove** them or **keep** them as ordinary connections. Closing that sheet changes nothing: the question comes back later.
 
 ## Export and import a connections file
-*Settings* > *Maintenance* > *Provisioning* also writes and reads the same file format, which is handy to prepare the file of a fleet, or to move connections from one device to another.
+*Settings* > *Maintenance* > *Provisioning & Import / Export* has two more choices, *Export* and *Import*. They write and read the same file format, which is handy to prepare the file of a fleet, or to move connections from one device to another.
 
-**Export connections…** saves `webssh-connections.json` in the folder you choose. Two options:
+**Export** saves `webssh-connections.json` in the folder you choose. Two options:
 
 - *Include passwords and private keys*: off by default. Without it the file never contains a credential, and it can be served as a provisioning URL as it is.
 - *Encrypt the file*: the file becomes `webssh-connections.wsbk`, protected by your [database password](automatic-database-backups.md#the-database-password) or by a password you choose for this export. It is the same container as the [encrypted backups](wsbk-backup-file-format.md).
@@ -150,7 +151,7 @@ Nothing is deleted silently. WebSSH lists the connections that are no longer in 
 ??? danger "A file with credentials in clear"
     With the first option on and the second one off, the file holds your passwords, private keys and passphrases as readable text. WebSSH asks you to authenticate and to confirm. Store and transmit such a file accordingly, and never serve it as a provisioning URL.
 
-**Import connections…** reads a file exported by WebSSH, or written by hand, and shows how many connections it would create and update before doing anything. An encrypted file opens by itself when it was protected by the database password of the device; otherwise its password is asked. A file read this way may carry credentials: they are imported with the connections.
+**Import** opens the file picker, reads a file exported by WebSSH, or written by hand, and shows how many connections it would create and update before doing anything. An encrypted file opens by itself when it was protected by the database password of the device; otherwise its password is asked. A file read this way may carry credentials: they are imported with the connections.
 
 The same exists in [mashREPL](/documentation/mashREPL/): see [webssh export json](/documentation/help/howtos/mashREPL/export/#to-json-connections-file) and [webssh import json](/documentation/help/howtos/mashREPL/import/#from-json-connections-file).
 
