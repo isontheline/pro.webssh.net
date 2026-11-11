@@ -9,6 +9,8 @@ title: Database Backup
 
 Now you will have a database backup located in the "backups" directory of WebSSH.
 
+Since WebSSH 33.4 the backup is a `.wsbk` file, **encrypted** with the database password of the device. That password is shown in **Settings ▸ Maintenance ▸ Local Database**; you need it to restore the backup on another device. See [Automatic Database Backups](/documentation/help/howtos/automatic-database-backups/#the-database-password).
+
 ??? info "Automatic backups"
     Since WebSSH 32.2 the database is backed up once a day on its own, in the same folder. See [Automatic Database Backups](/documentation/help/howtos/automatic-database-backups/) to list, restore or delete them from the Settings.
 

@@ -67,8 +67,8 @@
 
 | Command | What it does |
 | --- | --- |
-| `webssh database backup` | [Backs up the database](/documentation/help/howtos/mashREPL/database-backup/) in `~/backups` |
-| `webssh database restore <webssh.db>` | [Restores a database backup](/documentation/help/howtos/mashREPL/database-restore/) |
+| `webssh database backup` | [Backs up the database](/documentation/help/howtos/mashREPL/database-backup/) in `~/backups`, encrypted |
+| `webssh database restore <backup.wsbk>` | [Restores a database backup](/documentation/help/howtos/mashREPL/database-restore/) |
 | `webssh database compact` / `vacuum` / `locate` | Maintenance of the database file |
 | `webssh export sshconfig [--apply] [--to-file <path>]` | [Exports all your connections](/documentation/help/howtos/mashREPL/export/) into one `ssh_config` file. Dry run without `--apply` |
 | `webssh fingerprint clean <host>` / `all` | Forgets the host key fingerprints you have accepted |
