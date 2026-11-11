@@ -100,6 +100,9 @@ ab9c0f811addac50c96af85c9f99399306
 
 The first 39 bytes are the header (up to `…a8a9aaab`), the last 16 are the tag (`9c0f811addac50c96af85c9f99399306`), and the 58 bytes in between are the ciphertext.
 
+## A .wsbk file that is not a database
+The same container, with the same header, key derivation and encryption, also protects the [connections file](provision-connections-from-url.md#export-and-import-a-connections-file) that WebSSH exports as `webssh-connections.wsbk`. Once decrypted, such a file is not a SQLite database but a JSON text: its first byte is `{`, where a database starts with `SQLite format 3`. WebSSH tells the two apart the same way, so a connections file offered as a backup to restore is refused, and the other way around.
+
 ## Versions of the format
 The version byte is `1`. Version 1 files will remain readable by every later version of WebSSH. If the format ever changes (another key derivation, another cipher), the version byte or the key derivation byte will change with it and this page will describe both.
 

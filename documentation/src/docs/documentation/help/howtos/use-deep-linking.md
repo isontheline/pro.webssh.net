@@ -61,3 +61,12 @@ Here is an example:
 ```
 webssh://username@host:port
 ```
+
+## Provisioning link
+A link of another kind does not open a connection : it registers the URL of a file listing connections, which WebSSH then creates and keeps up to date.
+
+```
+webssh://provision?url=https%3A%2F%2Fexample.com%2Fwebssh-connections.json
+```
+
+See [Provision Connections from a URL](/documentation/help/howtos/provision-connections-from-url/).

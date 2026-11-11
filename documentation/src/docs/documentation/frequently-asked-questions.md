@@ -150,3 +150,8 @@ description: "Answers to the most frequent questions about WebSSH: PRO purchase,
 
 ??? abstract "How can I generate an SSH public/private key pair using WebSSH?"
     To generate an SSH [Public / Private Key Pair](/documentation/help/SSH/public-private-key/) using WebSSH, please refer to this guide : [Create or Import a Public/Private Key Pair](/documentation/help/howtos/create-or-import-public-private-key-pair/)
+
+??? abstract "Can I deploy connections to a fleet of devices with an MDM such as Microsoft Intune or Jamf?"
+    Yes, since WebSSH 33.4. Host a JSON file listing your connections on an HTTPS URL, then push that URL to the devices with the Managed App Configuration key `provisioningURL` : WebSSH creates the connections and keeps them up to date. The same works without an MDM, with a link or from the settings.
+
+    Please refer to this guide : [Provision Connections from a URL](/documentation/help/howtos/provision-connections-from-url/)

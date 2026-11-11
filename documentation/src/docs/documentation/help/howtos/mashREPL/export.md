@@ -14,6 +14,9 @@ When you need to get all your connections out of WebSSH, for example to reuse th
 ??? tip "The other way around"
     To load an existing `ssh_config` file into WebSSH, see [Import - From Other SSH Clients to WebSSH](/documentation/help/howtos/mashREPL/import/).
 
+??? tip "Two formats"
+    `webssh export sshconfig` writes an `ssh_config` file for OpenSSH and other SSH clients. `webssh export json` writes a [JSON connections file](#to-json-connections-file), the format WebSSH itself reads back, from a file or from a [provisioning URL](/documentation/help/howtos/provision-connections-from-url/).
+
 ## To : ssh_config
 1. Launch WebSSH
 2. Start a mashREPL instance :fontawesome-solid-terminal: (Tools > mashREPL)
@@ -66,5 +69,39 @@ Host my.host.com
 * The `Host` alias is the connection name when it is a simple word (letters, digits, `.`, `-`, `_`), so you can type `ssh homelab` right away. A name with spaces or symbols, a name already used by a previous connection, or no name at all, gives the hostname as alias[^1]
 * Passwords, private keys and passphrases are **never** exported : the file only holds how to reach your servers, not how to authenticate
 * Telnet connections are not part of an `ssh_config` file and are skipped
+
+## To : JSON connections file
+Since WebSSH 33.4 ([#1128](https://github.com/isontheline/pro.webssh.net/issues/1128)) you can export your connections as a JSON connections file : the format of a [provisioning URL](/documentation/help/howtos/provision-connections-from-url/), which WebSSH can also import back on another device.
+
+Dry run :
+```bash
+webssh export json
+```
+
+Write the file (`webssh-connections.json` in the WebSSH documents folder) :
+```bash
+webssh export json --apply
+```
+
+You can also choose the destination file :
+```bash
+webssh export json --apply --to-file my_connections.json
+```
+
+By default the file holds how to reach your servers (name, host, port, user, folder, tags, roles, name of the key) and never a credential. Two options change that :
+
+| Option | Effect |
+| --- | --- |
+| `--with-secrets` | Adds passwords, private keys and remembered passphrases |
+| `--encrypt` | Writes `webssh-connections.wsbk` instead : the same file, encrypted with your [database password](/documentation/help/howtos/automatic-database-backups/#the-database-password) |
+
+```bash
+webssh export json --apply --with-secrets --encrypt
+```
+
+??? danger "--with-secrets without --encrypt"
+    The file then holds your passwords, private keys and passphrases as readable text. Store and transmit it accordingly, and never serve it as a provisioning URL. A password is never typed in the terminal, so the only encryption offered here is the database password : to protect the file with another password, use *Settings* > *Maintenance* > *Provisioning* > *Export connections…*
+
+Tunnels, and connections without a host, are not exported : the dry run lists them as bypassed.
 
 [^1]: Before WebSSH 33.3 the alias was always the hostname, whatever the connection name.
