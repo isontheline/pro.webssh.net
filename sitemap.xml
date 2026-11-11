@@ -2105,7 +2105,7 @@
     <loc>https://webssh.net/documentation/help/howtos/automatic-database-backups/</loc>
 
     
-    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
+    <lastmod>2026-11-11T12:38:40+00:00</lastmod>
 
       
       
@@ -2220,6 +2220,31 @@
 
         
           <changefreq>yearly</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/encrypt-passwords-and-private-keys/</loc>
+
+    
+    <lastmod>2026-11-11T12:38:40+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
         
       
     
