@@ -1969,6 +1969,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/howtos/provision-connections-from-url/" class="md-nav__link">
+        Provision Connections from a URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/howtos/run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
@@ -2086,17 +2100,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_23">
+        <label class="md-nav__title" for="__nav_3_12_5_24">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2162,17 +2176,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_25">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2280,17 +2294,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_25">
+        <label class="md-nav__title" for="__nav_3_12_5_26">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2398,17 +2412,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -4079,6 +4093,11 @@ Related GitHub issues could be found to track this feature request :</p>
 <summary>How can I generate an SSH public/private key pair using WebSSH?</summary>
 <p>To generate an SSH <a href="/documentation/help/SSH/public-private-key/">Public / Private Key Pair</a> using WebSSH, please refer to this guide : <a href="/documentation/help/howtos/create-or-import-public-private-key-pair/">Create or Import a Public/Private Key Pair</a></p>
 </details>
+<details class="abstract">
+<summary>Can I deploy connections to a fleet of devices with an MDM such as Microsoft Intune or Jamf?</summary>
+<p>Yes, since WebSSH 33.4. Host a JSON file listing your connections on an HTTPS URL, then push that URL to the devices with the Managed App Configuration key <code>provisioningURL</code> : WebSSH creates the connections and keeps them up to date. The same works without an MDM, with a link or from the settings.</p>
+<p>Please refer to this guide : <a href="/documentation/help/howtos/provision-connections-from-url/">Provision Connections from a URL</a></p>
+</details>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -4307,6 +4326,14 @@ Related GitHub issues could be found to track this feature request :</p>
         "@type": "Answer",
         "text": "To generate an SSH Public / Private Key Pair using WebSSH, please refer to this guide : Create or Import a Public/Private Key Pair"
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I deploy connections to a fleet of devices with an MDM such as Microsoft Intune or Jamf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, since WebSSH 33.4. Host a JSON file listing your connections on an HTTPS URL, then push that URL to the devices with the Managed App Configuration key provisioningURL : WebSSH creates the connections and keeps them up to date. The same works without an MDM, with a link or from the settings. Please refer to this guide : Provision Connections from a URL"
+      }
     }
   ]
 }
@@ -4317,7 +4344,7 @@ Related GitHub issues could be found to track this feature request :</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 18, 2026 15:49:50 UTC">October 18, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 13:41:04 UTC">November 11, 2026</span>
       
     
   </small>

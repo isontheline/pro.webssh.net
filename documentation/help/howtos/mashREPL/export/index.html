@@ -1963,6 +1963,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../provision-connections-from-url/" class="md-nav__link">
+        Provision Connections from a URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
@@ -2080,17 +2094,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_23">
+        <label class="md-nav__title" for="__nav_3_12_5_24">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2156,17 +2170,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_25">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2276,17 +2290,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="true">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_25">
+        <label class="md-nav__title" for="__nav_3_12_5_26">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2380,6 +2394,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#to-json-connections-file" class="md-nav__link">
+    To : JSON connections file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2449,17 +2470,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -3976,6 +3997,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#to-json-connections-file" class="md-nav__link">
+    To : JSON connections file
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4004,6 +4032,10 @@
 <details class="tip">
 <summary>The other way around</summary>
 <p>To load an existing <code>ssh_config</code> file into WebSSH, see <a href="/documentation/help/howtos/mashREPL/import/">Import - From Other SSH Clients to WebSSH</a>.</p>
+</details>
+<details class="tip">
+<summary>Two formats</summary>
+<p><code>webssh export sshconfig</code> writes an <code>ssh_config</code> file for OpenSSH and other SSH clients. <code>webssh export json</code> writes a <a href="#to-json-connections-file">JSON connections file</a>, the format WebSSH itself reads back, from a file or from a <a href="/documentation/help/howtos/provision-connections-from-url/">provisioning URL</a>.</p>
 </details>
 <h2 id="to-ssh_config">To : ssh_config</h2>
 <ol>
@@ -4049,6 +4081,43 @@ Host my.host.com
 <li>Passwords, private keys and passphrases are <strong>never</strong> exported : the file only holds how to reach your servers, not how to authenticate</li>
 <li>Telnet connections are not part of an <code>ssh_config</code> file and are skipped</li>
 </ul>
+<h2 id="to-json-connections-file">To : JSON connections file</h2>
+<p>Since WebSSH 33.4 (<a href="https://github.com/isontheline/pro.webssh.net/issues/1128">#1128</a>) you can export your connections as a JSON connections file : the format of a <a href="/documentation/help/howtos/provision-connections-from-url/">provisioning URL</a>, which WebSSH can also import back on another device.</p>
+<p>Dry run :
+<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span><span class="nb">export</span><span class="w"> </span>json
+</code></pre></div></p>
+<p>Write the file (<code>webssh-connections.json</code> in the WebSSH documents folder) :
+<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span><span class="nb">export</span><span class="w"> </span>json<span class="w"> </span>--apply
+</code></pre></div></p>
+<p>You can also choose the destination file :
+<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span><span class="nb">export</span><span class="w"> </span>json<span class="w"> </span>--apply<span class="w"> </span>--to-file<span class="w"> </span>my_connections.json
+</code></pre></div></p>
+<p>By default the file holds how to reach your servers (name, host, port, user, folder, tags, roles, name of the key) and never a credential. Two options change that :</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--with-secrets</code></td>
+<td>Adds passwords, private keys and remembered passphrases</td>
+</tr>
+<tr>
+<td><code>--encrypt</code></td>
+<td>Writes <code>webssh-connections.wsbk</code> instead : the same file, encrypted with your <a href="/documentation/help/howtos/automatic-database-backups/#the-database-password">database password</a></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>webssh<span class="w"> </span><span class="nb">export</span><span class="w"> </span>json<span class="w"> </span>--apply<span class="w"> </span>--with-secrets<span class="w"> </span>--encrypt
+</code></pre></div>
+<details class="danger">
+<summary>--with-secrets without --encrypt</summary>
+<p>The file then holds your passwords, private keys and passphrases as readable text. Store and transmit it accordingly, and never serve it as a provisioning URL. A password is never typed in the terminal, so the only encryption offered here is the database password : to protect the file with another password, use <em>Settings</em> &gt; <em>Maintenance</em> &gt; <em>Provisioning</em> &gt; <em>Export connections…</em></p>
+</details>
+<p>Tunnels, and connections without a host, are not exported : the dry run lists them as bypassed.</p>
 <div class="footnote">
 <hr />
 <ol>
@@ -4063,7 +4132,7 @@ Host my.host.com
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 31, 2026 16:30:17 UTC">October 31, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 13:41:04 UTC">November 11, 2026</span>
       
     
   </small>

@@ -1963,6 +1963,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../provision-connections-from-url/" class="md-nav__link">
+        Provision Connections from a URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
@@ -2101,6 +2115,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#provisioning-link" class="md-nav__link">
+    Provisioning link
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2149,17 +2170,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_23" type="checkbox" id="__nav_3_12_5_23" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_23" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_23">
+        <label class="md-nav__title" for="__nav_3_12_5_24">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2225,17 +2246,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_25">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2343,17 +2364,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_25">
+        <label class="md-nav__title" for="__nav_3_12_5_26">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2461,17 +2482,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -4002,6 +4023,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#provisioning-link" class="md-nav__link">
+    Provisioning link
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4096,13 +4124,18 @@
 <p>Here is an example:</p>
 <div class="highlight"><pre><span></span><code>webssh://username@host:port
 </code></pre></div>
+<h2 id="provisioning-link">Provisioning link</h2>
+<p>A link of another kind does not open a connection : it registers the URL of a file listing connections, which WebSSH then creates and keeps up to date.</p>
+<div class="highlight"><pre><span></span><code>webssh://provision?url=https%3A%2F%2Fexample.com%2Fwebssh-connections.json
+</code></pre></div>
+<p>See <a href="/documentation/help/howtos/provision-connections-from-url/">Provision Connections from a URL</a>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 13:41:04 UTC">November 11, 2026</span>
       
     
   </small>

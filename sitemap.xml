@@ -130,7 +130,7 @@
     <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
 
     
-    <lastmod>2026-10-18T15:49:50+00:00</lastmod>
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
 
       
       
@@ -2427,6 +2427,31 @@
   
   
   <url>
+    <loc>https://webssh.net/documentation/help/howtos/provision-connections-from-url/</loc>
+
+    
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
     <loc>https://webssh.net/documentation/help/howtos/run-snippet-on-multiple-hosts/</loc>
 
     
@@ -2555,7 +2580,7 @@
     <loc>https://webssh.net/documentation/help/howtos/use-deep-linking/</loc>
 
     
-    <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
 
       
       
@@ -2605,7 +2630,7 @@
     <loc>https://webssh.net/documentation/help/howtos/wsbk-backup-file-format/</loc>
 
     
-    <lastmod>2026-11-11T05:46:17+00:00</lastmod>
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
 
       
       
@@ -2905,7 +2930,7 @@
     <loc>https://webssh.net/documentation/help/howtos/mashREPL/export/</loc>
 
     
-    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
 
       
       
@@ -2930,7 +2955,7 @@
     <loc>https://webssh.net/documentation/help/howtos/mashREPL/import/</loc>
 
     
-    <lastmod>2026-10-31T16:30:17+00:00</lastmod>
+    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
 
       
       
