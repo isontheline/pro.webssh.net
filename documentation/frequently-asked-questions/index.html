@@ -1983,6 +1983,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/howtos/raw-tcp-connection-serial-over-ip/" class="md-nav__link">
+        Raw TCP Connection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/howtos/run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
@@ -2053,6 +2067,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/howtos/telnet-connections/" class="md-nav__link">
+        Telnet Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/howtos/use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
@@ -2100,17 +2128,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_26">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2176,17 +2204,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_25">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2294,17 +2322,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_28" type="checkbox" id="__nav_3_12_5_28" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_28" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_28">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2412,17 +2440,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_29" type="checkbox" id="__nav_3_12_5_29" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_29" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_27">
+        <label class="md-nav__title" for="__nav_3_12_5_29">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -4048,6 +4076,14 @@ I hope to add this feature in a future release.</p>
 <p>Yes, since 29.0 WebSSH supports serial port connections BUT requires a Mac. Not available on iOS or iPadOS.</p>
 </details>
 <details class="abstract">
+<summary>Can WebSSH open a raw TCP connection, like netcat or PuTTY Raw?</summary>
+<p>Yes, since 33.4. Enable the Telnet role of a server and turn <strong>Raw connection</strong> on: WebSSH then opens a plain TCP socket with no Telnet protocol, on iPhone, iPad and Mac. This is what serial-to-IP bridges and other devices that are not Telnet servers need. See <a href="/documentation/help/howtos/raw-tcp-connection-serial-over-ip/">Raw TCP Connection</a>.</p>
+</details>
+<details class="abstract">
+<summary>Is WebSSH a Telnet client?</summary>
+<p>Yes. Enable the Telnet role of a server to open Telnet sessions, with a configurable port, local echo and character set (UTF-8 or CP437 for BBS). See <a href="/documentation/help/howtos/telnet-connections/">Telnet Connections</a>.</p>
+</details>
+<details class="abstract">
 <summary>Can I store the passphrase for an encrypted private key in WebSSH?</summary>
 <p>Yes, WebSSH allows you to store the passphrase for an encrypted private key. When you add a private key that is encrypted, you will be prompted to enter the passphrase. You can choose to save the passphrase securely within the app so that you don't have to enter it each time you use the key.</p>
 </details>
@@ -4265,6 +4301,22 @@ Related GitHub issues could be found to track this feature request :</p>
     },
     {
       "@type": "Question",
+      "name": "Can WebSSH open a raw TCP connection, like netcat or PuTTY Raw?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, since 33.4. Enable the Telnet role of a server and turn Raw connection on: WebSSH then opens a plain TCP socket with no Telnet protocol, on iPhone, iPad and Mac. This is what serial-to-IP bridges and other devices that are not Telnet servers need. See Raw TCP Connection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is WebSSH a Telnet client?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enable the Telnet role of a server to open Telnet sessions, with a configurable port, local echo and character set (UTF-8 or CP437 for BBS). See Telnet Connections."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Can I store the passphrase for an encrypted private key in WebSSH?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -4344,7 +4396,7 @@ Related GitHub issues could be found to track this feature request :</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 11, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2026</span>
       
     
   </small>

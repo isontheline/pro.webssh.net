@@ -130,7 +130,7 @@
     <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
 
     
-    <lastmod>2026-11-11T13:41:04+00:00</lastmod>
+    <lastmod>2026-11-14T11:38:29+00:00</lastmod>
 
       
       
@@ -2380,7 +2380,7 @@
     <loc>https://webssh.net/documentation/help/howtos/paste-slowly-serial-devices/</loc>
 
     
-    <lastmod>2026-10-31T21:49:11+00:00</lastmod>
+    <lastmod>2026-11-14T11:38:29+00:00</lastmod>
 
       
       
@@ -2431,6 +2431,31 @@
 
     
     <lastmod>2026-11-11T16:49:10+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/raw-tcp-connection-serial-over-ip/</loc>
+
+    
+    <lastmod>2026-11-14T11:38:29+00:00</lastmod>
 
       
       
@@ -2556,6 +2581,31 @@
 
     
     <lastmod>2026-09-28T19:34:42+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
+    <loc>https://webssh.net/documentation/help/howtos/telnet-connections/</loc>
+
+    
+    <lastmod>2026-11-14T11:38:29+00:00</lastmod>
 
       
       

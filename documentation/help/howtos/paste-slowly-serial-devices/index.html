@@ -2046,6 +2046,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../raw-tcp-connection-serial-over-ip/" class="md-nav__link">
+        Raw TCP Connection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../run-snippet-on-multiple-hosts/" class="md-nav__link">
         Run a command on multiple hosts
       </a>
@@ -2116,6 +2130,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../telnet-connections/" class="md-nav__link">
+        Telnet Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../use-deep-linking/" class="md-nav__link">
         Deep Linking
       </a>
@@ -2163,17 +2191,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_24" type="checkbox" id="__nav_3_12_5_24" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_24" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_24">
+        <label class="md-nav__title" for="__nav_3_12_5_26">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2239,17 +2267,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_25" type="checkbox" id="__nav_3_12_5_25" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_25" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_25">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2357,17 +2385,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_28" type="checkbox" id="__nav_3_12_5_28" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_28" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_28">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2475,17 +2503,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_29" type="checkbox" id="__nav_3_12_5_29" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_29" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_27">
+        <label class="md-nav__title" for="__nav_3_12_5_29">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -4040,7 +4068,7 @@
 <h2 id="when-do-you-need-it">When do you need it?</h2>
 <p>Some devices cannot keep up with a normal paste:</p>
 <ul>
-<li>a <strong>serial port reached through a serial-over-TCP bridge</strong> (ser2net, ESP-Link, a USB-serial adapter on a Raspberry Pi…) with <strong>no flow control</strong> (no CTS/RTS, no XON/XOFF) and a small UART buffer (16 bytes on a classic 16550)</li>
+<li>a <strong>serial port reached through a serial-over-TCP bridge</strong> (ser2net, ESP-Link, a USB-serial adapter on a Raspberry Pi…) with <strong>no flow control</strong> (no CTS/RTS, no XON/XOFF) and a small UART buffer (16 bytes on a classic 16550). Reach such a bridge with a <a href="../raw-tcp-connection-serial-over-ip/">Raw TCP Connection</a> rather than Telnet</li>
 <li><strong>retro computers</strong> and single-board machines (RC2014, Z80 or 6502 boards, CP/M monitors, an Apple II…) where you paste an Intel HEX or a BASIC listing into a monitor that processes one line at a time</li>
 <li><strong>microcontroller REPLs</strong> (MicroPython, CircuitPython, a Forth…) and network gear consoles that drop characters when they arrive too fast</li>
 </ul>
@@ -4156,7 +4184,8 @@
 </details>
 <h2 id="tips">Tips</h2>
 <ul>
-<li><strong>Carriage return</strong>: in the connection's <strong>Terminal Settings</strong>, set <strong>Carriage Return</strong> to <code>\r</code> for serial targets. With <code>\r\n</code> every line ending costs two bytes, and the Telnet role turns each of them into a <code>CR LF</code> pair, so a 16-byte budget is reached sooner than it looks.</li>
+<li><strong>Carriage return</strong>: on a <a href="../raw-tcp-connection-serial-over-ip/">raw connection</a>, every line ending of the pasted text is sent as the <strong>Carriage Return</strong> of the connection's <strong>Terminal Settings</strong>. Keep <code>\r</code> for serial targets: with <code>\r\n</code> every line costs one more byte of the chunk budget.</li>
+<li><strong>Telnet adds a byte per line</strong>: on a <a href="../telnet-connections/">Telnet connection</a> every line ending is sent as a <code>CR LF</code> pair, whatever the Carriage Return setting. A device that is not a Telnet server should be reached with a raw connection<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</li>
 <li><strong>Bracketed paste</strong> is honoured: when the remote program asked for it, the whole slow paste is wrapped in a single bracketed-paste sequence, even if you cancel it.</li>
 <li><strong>Broadcast Input</strong>: with <a href="../split-panes-and-broadcast-input/">split panes</a> and Broadcast Input on, the other panes receive the chunks at the same slow pace.</li>
 <li><strong>One paste at a time</strong>: a second paste requested while a slow paste runs is ignored. Cancel the first one if you need to start over.</li>
@@ -4168,6 +4197,9 @@
 <li id="fn:1">
 <p>Paste Slowly, Advanced Paste, the <code>{PASTE_SLOW}</code> key and the Paste Mode profile setting require WebSSH 33.3 or later.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
+<li id="fn:2">
+<p>The raw connection requires WebSSH 33.4 or later. Before 33.4, a Carriage Return set to <code>\r\n</code> was sent as two <code>CR LF</code> pairs on Telnet.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -4176,7 +4208,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 31, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2026</span>
       
     
   </small>
