@@ -145,6 +145,73 @@ const ProgressHelper = {
     }
 };
 
+// OSC 7501 Program Status Protocol (WebSSH_Native specs/program-status) :
+// ESC ] 7501 ; key=value(:key=value)* ST — a program reports that it is idle,
+// working, blocked on the user, done or failed. The page does three things
+// and nothing else : it answers the feature-detection query, it hands the raw
+// body of each report to the native side (where the specification is
+// enforced and unit-tested : limits, grammar, base64, records), and it tells
+// native about a full reset (RIS), which removes every record.
+const ProgramStatusHelper = {
+    // Native setting (WEBSSH_SETTING_PROGRAM_STATUS_STRATEGY), pushed at
+    // notifyTerminalReady. Disabled : reports are dropped and the query is
+    // left unanswered, so a program that probes sees an unsupporting terminal.
+    enabled: true,
+
+    // "Whole sequence, OSC through ST : 4096 bytes". The handler receives the
+    // body only : ESC ] 7 5 0 1 ; is 7 bytes and the terminator at least 1.
+    // A longer body can never be a legal report ; it is not even bridged.
+    MAX_BODY_LENGTH: 4088,
+
+    // Minimal reply : no "states" / "kinds" lists means the five states and
+    // the three kinds of the specification, which is what WebSSH handles.
+    // Always terminated by ESC \ (the parser does not tell which terminator
+    // the query used).
+    DETECTION_REPLY: '\x1b]7501;?\x1b\\',
+
+    configure: function (config) {
+        if (typeof config.enabled !== 'undefined') {
+            ProgramStatusHelper.enabled = !!config.enabled;
+        }
+    },
+
+    // OSC 7501 handler : always consumes the sequence.
+    handle: function (data) {
+        if (!ProgramStatusHelper.enabled) {
+            return true;
+        }
+
+        if (data.trim() === '?') {
+            // Synchronous on purpose : programs send "CSI c" right after the
+            // query and treat a DA1 answer arriving first as "unsupported".
+            // The parser reaches that CSI only after this handler returns,
+            // so this reply is always queued before DA1_REPLY. Like DA1 it
+            // goes back through onData -> dataPushBack, never as user input.
+            terminal.input(ProgramStatusHelper.DETECTION_REPLY, false);
+            return true;
+        }
+
+        if (data.length > ProgramStatusHelper.MAX_BODY_LENGTH) {
+            return true;
+        }
+
+        // Not coalesced : a report restated after the user dismissed a
+        // "done" must show again. utoa : the body should be ASCII, but
+        // nothing guarantees it and btoa throws above U+00FF (#1752).
+        JS2IOS.calliOSFunction('notifyProgramStatus', Base64.utoa(data));
+        return true;
+    },
+
+    // ESC c (RIS) : "A full reset removes every record". Returns false so
+    // xterm.js still performs its own reset.
+    handleFullReset: function () {
+        if (ProgramStatusHelper.enabled) {
+            JS2IOS.calliOSFunction('notifyProgramStatusReset');
+        }
+        return false;
+    }
+};
+
 // iTerm2 inline images #1708 : @xterm/addon-image 0.9.0 only understands the
 // single-shot "OSC 1337 ; File=<args>:<base64> ST" form. The stock imgcat
 // script (iTerm2 >= 3.5) sends "MultipartFile=<args>", then many 200-byte
@@ -605,7 +672,15 @@ const HandlerHelper = {
 
         // OSC 9;4 progress bar #1706 (ConEmu) :
         terminal.parser.registerOscHandler(9, (data, params) => ProgressHelper.handle(data));
+
+        // OSC 7501 Program Status Protocol :
+        terminal.parser.registerOscHandler(7501, (data, params) => ProgramStatusHelper.handle(data));
         // <- OSC
+
+        // ESC ->
+        // RIS (ESC c) clears the program status records ; xterm.js then resets.
+        terminal.parser.registerEscHandler({ final: 'c' }, () => ProgramStatusHelper.handleFullReset());
+        // <- ESC
 
         // CSI ->
         // Primary Device Attributes (DA1, "CSI c" / "CSI 0 c") : WebSSH answers

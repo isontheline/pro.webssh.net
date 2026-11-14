@@ -27,6 +27,7 @@ const XtermTests = {
     // a Promise (timed scenarios). Launch from the Web Inspector console :
     //   XtermTests.launchTests()        SGR + events (synchronous, historical)
     //   XtermTests.run('progress')      one scenario
+    //   XtermTests.run('programStatus') OSC 7501 timeline (~ 25 s)
     //   XtermTests.runAll()             everything, sequentially
     scenarios: {
         // From : https://gist.github.com/iansan5653/c4a0b9f5c30d74258c5f132084b78db9
@@ -154,6 +155,10 @@ const XtermTests = {
             return XtermTests.progress.demo();
         },
 
+        programStatus: function () {
+            return XtermTests.programStatus.demo();
+        },
+
         images: function () {
             return XtermTests.images.demo();
         },
@@ -254,6 +259,122 @@ const XtermTests = {
 
             XtermTests.progress.remove();
             await step('remove', 0);
+        }
+    },
+
+    // OSC 7501 Program Status Protocol (specs/program-status) : unit helpers
+    // + scripted demo. Everything goes through terminal.write, hence the real
+    // parser -> ProgramStatusHelper -> native (state bar Activity item,
+    // sidebar capsule, Picture in Picture strip, tab title, haptic).
+    // The rules themselves are unit-tested natively (ProgramStatusTests).
+    programStatus: {
+        b64: function (text) {
+            return Base64.utoa(text);
+        },
+
+        // Raw body, e.g. raw('state=working:app=demo').
+        raw: function (body, terminator) {
+            terminal.write('\x1b]7501;' + body + (terminator || '\x1b\\'));
+        },
+
+        // report('blocked', 'Deploy?', {kind: 'permission', app: 'demo', id: 'a/b', progress: 40, title: 'EU'})
+        report: function (state, message, options) {
+            const o = options || {};
+            const pairs = ['state=' + state];
+            if (o.id) pairs.push('id=' + o.id);
+            if (o.kind) pairs.push('kind=' + o.kind);
+            if (o.progress !== undefined) pairs.push('progress=' + o.progress);
+            pairs.push('app=' + (o.app || 'demo'));
+            if (o.title) pairs.push('title=' + XtermTests.programStatus.b64(o.title));
+            if (message) pairs.push('msg=' + XtermTests.programStatus.b64(message));
+            XtermTests.programStatus.raw(pairs.join(':'));
+        },
+
+        clear: function (id) {
+            XtermTests.programStatus.raw(id ? 'state=clear:id=' + id : 'state=clear');
+        },
+
+        // Feature detection followed by DA1, as programs send it. The two
+        // answers are logged in the order the page emits them : the OSC 7501
+        // reply must come first.
+        query: function () {
+            const seen = [];
+            const subscription = terminal.onData((data) => seen.push(JSON.stringify(data)));
+            terminal.write('\x1b]7501;?\x1b\\\x1b[c', () => {
+                subscription.dispose();
+                console.log('OSC 7501 query answers, in order : ' + seen.join(' then '));
+            });
+        },
+
+        // Reports that must change nothing (the previous status stays) and
+        // the tolerated oddities (the report is applied).
+        faulty: function () {
+            const t = XtermTests.programStatus;
+            t.raw('state=Working:app=demo');                        // case : ignored
+            t.raw('state=paused:app=demo');                         // unknown state : ignored
+            t.raw('app=demo');                                      // no state : ignored
+            t.raw('state=working:id=');                             // empty id : ignored
+            t.raw('state=working:id=a/b/c/d/e/f/g/h/i');            // 9 levels : ignored
+            t.raw('state=working:abcdefghijklmnopq=1');             // 17-byte key : discarded
+            t.raw('state=working:msg=' + t.b64('two\nlines'));      // control character : discarded
+            t.raw('state=working:msg=not*base64');                  // bad byte : pair skipped, report applied without msg
+            t.raw('state=working:msg=' + 'A'.repeat(4200));         // over 4096 bytes : never bridged
+        },
+
+        // Timeline : single program, then several records, then the edge cases.
+        demo: async function () {
+            const t = XtermTests.programStatus;
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+            const step = (label, ms) => {
+                terminal.write('\r\n\x1b[2mOSC 7501 : ' + label + '\x1b[0m\r\n');
+                return sleep(ms);
+            };
+
+            t.query();
+            await step('feature detection (see the console)', 500);
+
+            t.report('working', 'Installing updates');
+            await step('working, no percentage (spinner)', 2500);
+
+            for (let i = 0; i <= 100; i += 10) {
+                t.report('working', 'Installing updates', { progress: i });
+                await sleep(200);
+            }
+            await step('working with progress', 500);
+
+            t.report('blocked', 'Password required to install updates', { kind: 'auth' });
+            await step('blocked / auth (one pulse, one haptic)', 3000);
+
+            t.report('blocked', 'Password required to install updates', { kind: 'auth' });
+            await step('same status restated (no pulse)', 2000);
+
+            t.report('blocked', 'Apply 3 to add, 1 to change, 0 to destroy?', { kind: 'permission' });
+            await step('blocked / permission', 2500);
+
+            t.report('blocked', 'Which branch should be deployed?', { kind: 'question' });
+            await step('blocked / question', 2500);
+
+            t.report('working', 'Deploying v2.4.1', { app: 'deploy' });
+            t.report('working', 'Pushing image', { id: 'us-east', title: 'US East', progress: 40, app: 'deploy' });
+            t.report('blocked', 'Approve deploy to eu-west (production)?', { id: 'eu-west', title: 'EU West', kind: 'permission', app: 'deploy' });
+            await step('several records : the blocked child wins (open the detail panel)', 4000);
+
+            t.clear('eu-west');
+            t.clear('us-east');
+            t.report('error', 'rsync failed (exit 23)', { app: 'deploy' });
+            await step('children cleared, root in error', 3000);
+
+            t.report('done', 'Deployed to 3 regions', { app: 'deploy' });
+            await step('done : stays until a key is typed in the session', 3000);
+
+            t.faulty();
+            await step('faulty reports : "done" must still be shown, except the last valid one (working, no msg)', 3000);
+
+            t.report('idle', null, { app: 'deploy' });
+            await step('idle : discreet icon', 2500);
+
+            t.clear();
+            await step('clear : nothing left', 0);
         }
     },
 
