@@ -7,19 +7,19 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
         with:
           # https://github.com/timvink/mkdocs-git-revision-date-localized-plugin/issues/10#issuecomment-585752881
           # Number of commits to fetch. 0 indicates all history.
           # Default: 1
           fetch-depth: 0
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.8'
-          architecture: 'x64'
+          python-version: '3.13'
       - run: pip install mkdocs=="1.4.3"
       - run: pip install mkdocs-material=="9.0.4" 
-      - run: pip install mkdocs-git-revision-date-localized-plugin
+      # 1.2.9 is the last line compatible with mkdocs 1.4.x (newer ones need mkdocs >= 1.5)
+      - run: pip install mkdocs-git-revision-date-localized-plugin=="1.2.9"
       - run: pip install mkdocs-redirects
       - run: cd documentation/src; mkdocs build --clean
       - run: echo "webssh.net" > documentation/src/site/CNAME
