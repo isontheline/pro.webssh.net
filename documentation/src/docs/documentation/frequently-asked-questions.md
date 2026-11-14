@@ -112,6 +112,12 @@ description: "Answers to the most frequent questions about WebSSH: PRO purchase,
 ??? abstract "Does WebSSH support serial port connections?"
     Yes, since 29.0 WebSSH supports serial port connections BUT requires a Mac. Not available on iOS or iPadOS.
 
+??? abstract "Can WebSSH open a raw TCP connection, like netcat or PuTTY Raw?"
+    Yes, since 33.4. Enable the Telnet role of a server and turn **Raw connection** on: WebSSH then opens a plain TCP socket with no Telnet protocol, on iPhone, iPad and Mac. This is what serial-to-IP bridges and other devices that are not Telnet servers need. See [Raw TCP Connection](/documentation/help/howtos/raw-tcp-connection-serial-over-ip/).
+
+??? abstract "Is WebSSH a Telnet client?"
+    Yes. Enable the Telnet role of a server to open Telnet sessions, with a configurable port, local echo and character set (UTF-8 or CP437 for BBS). See [Telnet Connections](/documentation/help/howtos/telnet-connections/).
+
 ??? abstract "Can I store the passphrase for an encrypted private key in WebSSH?"
     Yes, WebSSH allows you to store the passphrase for an encrypted private key. When you add a private key that is encrypted, you will be prompted to enter the passphrase. You can choose to save the passphrase securely within the app so that you don't have to enter it each time you use the key.
 

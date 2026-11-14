@@ -12,7 +12,7 @@ description: "Paste text in rate-limited chunks from WebSSH on iPhone, iPad and 
 
 Some devices cannot keep up with a normal paste:
 
-* a **serial port reached through a serial-over-TCP bridge** (ser2net, ESP-Link, a USB-serial adapter on a Raspberry Pi…) with **no flow control** (no CTS/RTS, no XON/XOFF) and a small UART buffer (16 bytes on a classic 16550)
+* a **serial port reached through a serial-over-TCP bridge** (ser2net, ESP-Link, a USB-serial adapter on a Raspberry Pi…) with **no flow control** (no CTS/RTS, no XON/XOFF) and a small UART buffer (16 bytes on a classic 16550). Reach such a bridge with a [Raw TCP Connection](raw-tcp-connection-serial-over-ip.md) rather than Telnet
 * **retro computers** and single-board machines (RC2014, Z80 or 6502 boards, CP/M monitors, an Apple II…) where you paste an Intel HEX or a BASIC listing into a monitor that processes one line at a time
 * **microcontroller REPLs** (MicroPython, CircuitPython, a Forth…) and network gear consoles that drop characters when they arrive too fast
 
@@ -69,10 +69,12 @@ From then on every paste on that connection — `⌘V`, the Paste menu item, the
 
 ## Tips
 
-* **Carriage return**: in the connection's **Terminal Settings**, set **Carriage Return** to `\r` for serial targets. With `\r\n` every line ending costs two bytes, and the Telnet role turns each of them into a `CR LF` pair, so a 16-byte budget is reached sooner than it looks.
+* **Carriage return**: on a [raw connection](raw-tcp-connection-serial-over-ip.md), every line ending of the pasted text is sent as the **Carriage Return** of the connection's **Terminal Settings**. Keep `\r` for serial targets: with `\r\n` every line costs one more byte of the chunk budget.
+* **Telnet adds a byte per line**: on a [Telnet connection](telnet-connections.md) every line ending is sent as a `CR LF` pair, whatever the Carriage Return setting. A device that is not a Telnet server should be reached with a raw connection[^2].
 * **Bracketed paste** is honoured: when the remote program asked for it, the whole slow paste is wrapped in a single bracketed-paste sequence, even if you cancel it.
 * **Broadcast Input**: with [split panes](split-panes-and-broadcast-input.md) and Broadcast Input on, the other panes receive the chunks at the same slow pace.
 * **One paste at a time**: a second paste requested while a slow paste runs is ignored. Cancel the first one if you need to start over.
 * **Background**: on iPhone and iPad, a long slow paste pauses while WebSSH is in the background and resumes when you come back.
 
 [^1]: Paste Slowly, Advanced Paste, the `{PASTE_SLOW}` key and the Paste Mode profile setting require WebSSH 33.3 or later.
+[^2]: The raw connection requires WebSSH 33.4 or later. Before 33.4, a Carriage Return set to `\r\n` was sent as two `CR LF` pairs on Telnet.
