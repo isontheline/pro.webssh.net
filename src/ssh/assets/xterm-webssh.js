@@ -1248,6 +1248,58 @@ const TerminalHelper = {
         return hasCanvasAddon ? "canvas" : "DOM";
     },
 
+    // Picture in Picture of a terminal (WebSSH_Native specs/terminal-pip, D-014) ->
+    // Returns the terminal screen as a JPEG data URL, read from the renderer
+    // canvases instead of the web view. WebKit stops painting the page of a
+    // window that is not on screen (an unselected Mac tab) and the native
+    // capture then returns the same image for ever. xterm.js stops too
+    // (requestAnimationFrame, paused render service), so the rows are rendered
+    // here first, synchronously, through the render service.
+    // Returns "" when there is nothing reliable to read : DOM renderer (no
+    // canvas), lost WebGL context, renderer not ready. The caller then shows
+    // its "not displayed" notice.
+    // Relies on WebglAddon(true) (preserveDrawingBuffer), like the magnifier.
+    pipFrame: function (maxWidth) {
+        try {
+            if (TerminalHelper.getRenderType() === "DOM") return "";
+            const screen = document.querySelector('div.xterm-screen');
+            if (!screen) return "";
+
+            const renderService = terminal._core._renderService;
+            if (!renderService || typeof renderService._renderRows !== "function") return "";
+            renderService._renderRows(0, terminal.rows - 1);
+
+            const canvases = Array.from(screen.querySelectorAll('canvas'))
+                .filter(canvas => canvas.width > 0 && canvas.height > 0);
+            if (canvases.length === 0) return "";
+            for (const canvas of canvases) {
+                // On a 2D canvas both calls return null : nothing is created.
+                const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+                if (gl && gl.isContextLost()) return "";
+            }
+
+            const width = Math.max(...canvases.map(canvas => canvas.width));
+            const height = Math.max(...canvases.map(canvas => canvas.height));
+            const scale = (maxWidth > 0 && width > maxWidth) ? maxWidth / width : 1;
+
+            const frame = TerminalHelper._pipCanvas || (TerminalHelper._pipCanvas = document.createElement('canvas'));
+            frame.width = Math.max(2, Math.round(width * scale));
+            frame.height = Math.max(2, Math.round(height * scale));
+            const context = frame.getContext('2d');
+            const theme = terminal.options.theme || {};
+            context.fillStyle = theme.background || '#000000';
+            context.fillRect(0, 0, frame.width, frame.height);
+            // Document order is the stacking order : text, then links, images…
+            for (const canvas of canvases) {
+                context.drawImage(canvas, 0, 0, canvas.width * scale, canvas.height * scale);
+            }
+            return frame.toDataURL('image/jpeg', 0.85);
+        } catch (error) {
+            return "";
+        }
+    },
+    // <- Picture in Picture of a terminal
+
     getBracketedPasteMode: function () {
         // Support of "Bracketed Paste" mode #1356 ->
         return terminal._core.coreService.decPrivateModes.bracketedPasteMode;
