@@ -4130,7 +4130,7 @@ qm<span class="w"> </span>start<span class="w"> </span><span class="m">100</span
 qm<span class="w"> </span>shutdown<span class="w"> </span><span class="m">100</span><span class="w">             </span><span class="c1"># clean shutdown</span>
 qm<span class="w"> </span>stop<span class="w"> </span><span class="m">100</span><span class="w">                 </span><span class="c1"># force stop (like pulling the plug)</span>
 qm<span class="w"> </span>reboot<span class="w"> </span><span class="m">100</span><span class="w">               </span><span class="c1"># reboot</span>
-qm<span class="w"> </span>config<span class="w"> </span><span class="m">100</span><span class="w">               </span><span class="c1"># show a VM&#39;s configuration</span>
+qm<span class="w"> </span>config<span class="w"> </span><span class="m">100</span><span class="w">               </span><span class="c1"># show a VM's configuration</span>
 </code></pre></div>
 <p><strong>LXC containers (<code>pct</code>):</strong></p>
 <div class="highlight"><pre><span></span><code>pct<span class="w"> </span>list<span class="w">                    </span><span class="c1"># all containers with status</span>
@@ -4161,7 +4161,7 @@ df<span class="w"> </span>-h<span class="w">                       </span><span 
 </ol>
 <p><strong>Authorize it on the Proxmox node</strong> — SSH in once with your password, then:</p>
 <div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.ssh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PASTE_YOUR_PUBLIC_KEY_HERE&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/authorized_keys
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"PASTE_YOUR_PUBLIC_KEY_HERE"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.ssh/authorized_keys
 chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
 </code></pre></div>
 <p>Finally, edit the WebSSH connection, set authentication to your new key, and reconnect. See <a href="/documentation/help/howtos/create-or-import-public-private-key-pair/">Create or Import a Public / Private Key Pair</a> for details, including importing an existing key.</p>
@@ -4266,7 +4266,7 @@ No. WebSSH is a one-time purchase — no subscription. The free version lets you
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 10, 2026 15:49:16 UTC">October 10, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 10, 2026</span>
       
     
   </small>

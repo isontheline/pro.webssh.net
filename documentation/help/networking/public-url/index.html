@@ -4190,7 +4190,7 @@
 <li><strong>Password</strong>: browsers get a login page served by WebSSH (cookie valid 12 hours, five wrong attempts per connection lock it for a minute); tools and webhook senders that support it can send the password as HTTP basic auth.</li>
 <li>
 <p><strong>Secret link</strong>: only the address carrying the key opens the service, everything else answers <em>Not found</em>. The key travels as the <code>key</code> query parameter: <code>https://&lt;name&gt;.tunnl.gg/?key=&lt;key&gt;</code> (any path works, for instance <code>https://&lt;name&gt;.tunnl.gg/webhook?key=&lt;key&gt;</code>); <strong>Copy secret link</strong> and the QR code on the live screen include it. Once a browser has opened the link, the following requests of that browser pass without the parameter for 12 hours. Scripts and webhook senders can put the key in the <code>X-WebSSH-Key</code> header instead of the address:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;X-WebSSH-Key: &lt;key&gt;&quot;</span><span class="w"> </span>https://&lt;name&gt;.tunnl.gg/
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s2">"X-WebSSH-Key: &lt;key&gt;"</span><span class="w"> </span>https://&lt;name&gt;.tunnl.gg/
 </code></pre></div>
 </li>
 </ul>
@@ -4251,7 +4251,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 27, 2026 10:03:05 UTC">October 27, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 27, 2026</span>
       
     
   </small>

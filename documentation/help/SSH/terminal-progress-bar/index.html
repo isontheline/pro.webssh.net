@@ -4253,46 +4253,46 @@
 <h2 id="examples">Examples</h2>
 <p>All the examples below can be pasted as is in a WebSSH terminal.</p>
 <h3 id="set-a-value">Set a value</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;50\a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;50\a'</span>
 </code></pre></div>
 <h3 id="animate-from-0-to-100">Animate from 0 to 100 %</h3>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">100</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;%d\a&#39;</span><span class="w"> </span><span class="nv">$i</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.05<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">100</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;%d\a'</span><span class="w"> </span><span class="nv">$i</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.05<span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </code></pre></div>
 <h3 id="complete-a-job">Complete a job</h3>
-<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;0\a&#39;</span>
+<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;0\a'</span>
 </code></pre></div>
 The indicator shows a green check with "100 %" for a moment, then disappears.</p>
 <h3 id="error-state">Error state</h3>
-<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;40\a&#39;</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;2\a&#39;</span>
+<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;40\a'</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;2\a'</span>
 </code></pre></div>
 The value (40 %) is kept and the indicator turns red. On iPhone, a haptic feedback is played once when the job enters the error state.</p>
-<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;2;70\a&#39;</span>
+<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;2;70\a'</span>
 </code></pre></div>
 Same error state with a new value, no second haptic feedback.</p>
 <h3 id="a-job-that-fails-halfway">A job that fails halfway</h3>
-<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">60</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;%d\a&#39;</span><span class="w"> </span><span class="nv">$i</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.1<span class="p">;</span><span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;2\a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>seq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">60</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;%d\a'</span><span class="w"> </span><span class="nv">$i</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">0</span>.1<span class="p">;</span><span class="w"> </span><span class="k">done</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;2\a'</span>
 </code></pre></div>
 <h3 id="pause-warning-state">Pause / warning state</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;55\a&#39;</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;4\a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;55\a'</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;4\a'</span>
 </code></pre></div>
-<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;4;80\a&#39;</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span>.5<span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;80\a&#39;</span>
+<p><div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;4;80\a'</span><span class="p">;</span><span class="w"> </span>sleep<span class="w"> </span><span class="m">1</span>.5<span class="p">;</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;80\a'</span>
 </code></pre></div>
 Pause with a new value, then resume at the same value.</p>
 <h3 id="indeterminate-state">Indeterminate state</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;3\a&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;3\a'</span>
 </code></pre></div>
 <h3 id="clamping-and-malformed-sequences">Clamping and malformed sequences</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;250\a&#39;</span><span class="w">    </span><span class="c1"># clamped to 100 %</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;x\a&#39;</span><span class="w">      </span><span class="c1"># ignored : value is not a decimal number</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;2;3\a&#39;</span><span class="w">    </span><span class="c1"># ignored : too many parameters</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;250\a'</span><span class="w">    </span><span class="c1"># clamped to 100 %</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;x\a'</span><span class="w">      </span><span class="c1"># ignored : value is not a decimal number</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;2;3\a'</span><span class="w">    </span><span class="c1"># ignored : too many parameters</span>
 </code></pre></div>
 <h2 id="wrap-any-long-running-command">Wrap any long running command</h2>
 <p>A small shell function is enough to get an indeterminate indicator while a command runs, then a green check or a red triangle depending on its exit code:</p>
-<div class="highlight"><pre><span></span><code>osc_progress<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;%s\a&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<div class="highlight"><pre><span></span><code>osc_progress<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;%s\a'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 
 run_with_progress<span class="o">()</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span>osc_progress<span class="w"> </span><span class="m">3</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">        </span>osc_progress<span class="w"> </span><span class="m">0</span>
 <span class="w">    </span><span class="k">else</span>
 <span class="w">        </span><span class="nb">local</span><span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="nv">$?</span>
@@ -4306,18 +4306,18 @@ run_with_progress<span class="w"> </span>apt-get<span class="w"> </span>upgrade<
 <p>When the command knows its own progress, report it with state <code>1</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">total</span><span class="o">=</span><span class="k">$(</span>ls<span class="w"> </span>*.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="m">0</span>
 <span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.log<span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<span class="w">    </span>gzip<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span>
+<span class="w">    </span>gzip<span class="w"> </span><span class="s2">"</span><span class="nv">$f</span><span class="s2">"</span>
 <span class="w">    </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="nv">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
-<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;1;%d\a&#39;</span><span class="w"> </span><span class="k">$((</span><span class="nv">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">total</span><span class="k">))</span>
+<span class="w">    </span><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;1;%d\a'</span><span class="w"> </span><span class="k">$((</span><span class="nv">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">total</span><span class="k">))</span>
 <span class="k">done</span>
-<span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e]9;4;0\a&#39;</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">'\e]9;4;0\a'</span>
 </code></pre></div>
 <h2 id="using-tmux">Using tmux</h2>
 <p>tmux does not forward unknown <code>OSC</code> sequences to the terminal. Enable passthrough and wrap the sequence in a <code>DCS tmux</code> envelope (every <code>ESC</code> of the inner sequence is doubled):</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># in .tmux.conf (tmux &gt;= 3.3)</span>
 <span class="nb">set</span><span class="w"> </span>-g<span class="w"> </span>allow-passthrough<span class="w"> </span>on
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\ePtmux;\e\e]9;4;1;50\a\e\\&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\ePtmux;\e\e]9;4;1;50\a\e\\'</span>
 </code></pre></div>
 <h2 id="stuck-indicator">Stuck indicator?</h2>
 <p>A job killed before sending the <code>0</code> state (for instance with <code>Ctrl+C</code>) never removes its indicator. WebSSH handles it two ways:</p>
@@ -4353,7 +4353,7 @@ run_with_progress<span class="w"> </span>apt-get<span class="w"> </span>upgrade<
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2026</span>
       
     
   </small>

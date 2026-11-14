@@ -4206,16 +4206,16 @@
 <h2 id="option-3-a-sed-one-liner">Option 3: A sed One-liner</h2>
 <p>Best for a known, repeatable change: flipping a value, commenting a line out, adding a line.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># change a value</span>
-sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^worker_processes .*/worker_processes 4;/&#39;</span><span class="w"> </span>/etc/nginx/nginx.conf
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^worker_processes .*/worker_processes 4;/'</span><span class="w"> </span>/etc/nginx/nginx.conf
 
 <span class="c1"># comment out a line</span>
-sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^PasswordAuthentication yes/#&amp;/&#39;</span><span class="w"> </span>/etc/ssh/sshd_config
+sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^PasswordAuthentication yes/#&amp;/'</span><span class="w"> </span>/etc/ssh/sshd_config
 
 <span class="c1"># append a line if it is missing</span>
-grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">&#39;^192.168.1.20 nas$&#39;</span><span class="w"> </span>/etc/hosts<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;192.168.1.20 nas&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/hosts
+grep<span class="w"> </span>-q<span class="w"> </span><span class="s1">'^192.168.1.20 nas$'</span><span class="w"> </span>/etc/hosts<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'192.168.1.20 nas'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/hosts
 </code></pre></div>
 <p>Turn the ones you use often into a <a href="/documentation/help/howtos/snippets/">snippet</a> with <a href="/documentation/help/howtos/snippets/#dynamic-variables">dynamic variables</a>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s/^{{{ KEY }}} .*/{{{ KEY }}} {{{ VALUE }}}/&#39;</span><span class="w"> </span><span class="o">{{{</span><span class="w"> </span>FILE<span class="w"> </span>:<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="o">}}}</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">'s/^{{{ KEY }}} .*/{{{ KEY }}} {{{ VALUE }}}/'</span><span class="w"> </span><span class="o">{{{</span><span class="w"> </span>FILE<span class="w"> </span>:<span class="w"> </span>/etc/nginx/nginx.conf<span class="w"> </span><span class="o">}}}</span>
 </code></pre></div>
 <h2 id="validate-before-you-apply">Validate Before You Apply</h2>
 <p>A syntax error in a config file can take the service down when it restarts. Most daemons can check a file without applying it:</p>
@@ -4297,7 +4297,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 07:22:06 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
       
     
   </small>

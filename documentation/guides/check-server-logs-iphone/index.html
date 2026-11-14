@@ -4165,7 +4165,7 @@
 <p><strong>System and service logs (systemd):</strong></p>
 <div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>nginx<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span><span class="w"> </span>--no-pager<span class="w">          </span><span class="c1"># last 50 lines of a service</span>
 journalctl<span class="w"> </span>-u<span class="w"> </span>nginx<span class="w"> </span>-f<span class="w">                        </span><span class="c1"># follow it live</span>
-journalctl<span class="w"> </span>-p<span class="w"> </span>err<span class="w"> </span>--since<span class="w"> </span><span class="s2">&quot;10 min ago&quot;</span><span class="w"> </span>--no-pager<span class="w">   </span><span class="c1"># errors only, last 10 minutes</span>
+journalctl<span class="w"> </span>-p<span class="w"> </span>err<span class="w"> </span>--since<span class="w"> </span><span class="s2">"10 min ago"</span><span class="w"> </span>--no-pager<span class="w">   </span><span class="c1"># errors only, last 10 minutes</span>
 journalctl<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>warning<span class="w"> </span>--no-pager<span class="w">           </span><span class="c1"># warnings and worse since boot</span>
 </code></pre></div>
 <p><strong>Plain log files:</strong></p>
@@ -4280,7 +4280,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 07:22:06 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
       
     
   </small>

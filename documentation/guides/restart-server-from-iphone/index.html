@@ -4179,7 +4179,7 @@
 <p>Restarting is fast, but restarting the wrong thing costs more time than it saves. Run this first:</p>
 <div class="highlight"><pre><span></span><code>uptime<span class="w">                 </span><span class="c1"># load average and time since last boot</span>
 systemctl<span class="w"> </span>--failed<span class="w">     </span><span class="c1"># which units are actually broken</span>
-df<span class="w"> </span>-h<span class="w"> </span>/<span class="w">                </span><span class="c1"># a full disk is a common reason a restart won&#39;t help</span>
+df<span class="w"> </span>-h<span class="w"> </span>/<span class="w">                </span><span class="c1"># a full disk is a common reason a restart won't help</span>
 free<span class="w"> </span>-m<span class="w">                </span><span class="c1"># memory pressure</span>
 who<span class="w">                    </span><span class="c1"># is anyone else logged in?</span>
 </code></pre></div>
@@ -4195,7 +4195,7 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>nginx<span class="w"
 <p><code>sudo systemctl reload nginx</code> applies a new configuration without dropping active connections. Most web servers, proxies and mail servers support it.</p>
 </div>
 <h2 id="restart-a-docker-container">Restart a Docker Container</h2>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span>--format<span class="w"> </span><span class="s1">&#39;{{.Names}}\t{{.Status}}&#39;</span>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps<span class="w"> </span>--format<span class="w"> </span><span class="s1">'{{.Names}}\t{{.Status}}'</span>
 docker<span class="w"> </span>restart<span class="w"> </span>myapp
 docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w"> </span><span class="m">50</span><span class="w"> </span>myapp
 </code></pre></div>
@@ -4207,7 +4207,7 @@ docker<span class="w"> </span>logs<span class="w"> </span>--tail<span class="w">
 </code></pre></div>
 <p>Your SSH session ends immediately. That is expected. Wait 30 to 60 seconds, relaunch the connection in WebSSH and check that <code>uptime</code> now shows minutes, not days.</p>
 <p>On a machine other people use, give them a warning and keep an exit:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>shutdown<span class="w"> </span>-r<span class="w"> </span>+2<span class="w"> </span><span class="s2">&quot;Rebooting in 2 minutes for maintenance&quot;</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>shutdown<span class="w"> </span>-r<span class="w"> </span>+2<span class="w"> </span><span class="s2">"Rebooting in 2 minutes for maintenance"</span>
 sudo<span class="w"> </span>shutdown<span class="w"> </span>-c<span class="w">        </span><span class="c1"># cancel while the countdown runs</span>
 </code></pre></div>
 <div class="admonition warning">
@@ -4309,7 +4309,7 @@ systemctl<span class="w"> </span>status<span class="w"> </span><span class="o">{
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 07:22:06 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
       
     
   </small>

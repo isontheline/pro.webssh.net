@@ -4158,7 +4158,7 @@
 <h2 id="sixel">SIXEL</h2>
 <h3 id="sixel-is-not-advertised-tell-the-tools">SIXEL is not advertised, tell the tools</h3>
 <p>Some tools probe the terminal with the <em>Primary Device Attributes</em> query and look for <code>4</code> (SIXEL) in the answer. WebSSH deliberately keeps the answer it has always given, <code>^[[?1;2c</code> (VT100 with AVO, the stock xterm.js one) :</p>
-<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\e[c&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">'\e[c'</span>
 </code></pre></div>
 <p>Advertising a VT200-class terminal with SIXEL (<code>^[[?62;4;9;22c</code>) makes some hosts reconfigure the terminal line at login, OpenVMS in particular (<code>SET TERMINAL/INQUIRE</code>), and breaks Return and the cursor keys in its editors. So force the format on the tool side (<code>chafa -f sixel</code>, <code>timg -p sixel</code>, <code>img2sixel</code> never probes). Tools that trust the probe alone, <code>lsix</code> for instance, need to be told to skip it (see below).</p>
 <p>The terminal still answers the <code>XTSMGRAPHICS</code> queries (number of color registers, maximum geometry), honours <code>DECSET 80</code> (SIXEL scrolling) and reports its pixel size to the remote host (<code>TIOCGWINSZ</code>), so tools can size images to the screen without any option.</p>
@@ -4250,7 +4250,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2026</span>
       
     
   </small>

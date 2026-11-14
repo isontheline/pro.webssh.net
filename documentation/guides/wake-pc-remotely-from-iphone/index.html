@@ -4180,7 +4180,7 @@
 <h2 id="step-1-enable-wake-on-lan-on-the-machine">Step 1: Enable Wake-on-LAN on the Machine</h2>
 <p><strong>In the BIOS or UEFI:</strong> look for <em>Wake on LAN</em>, <em>Power On by PCI-E</em> or <em>Resume by LAN</em>, usually under Power Management, and enable it. On some boards you also need to disable <em>ErP</em> or <em>Deep Sleep</em> modes.</p>
 <p><strong>Linux:</strong></p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ethtool<span class="w"> </span>eth0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Wake-on<span class="w">      </span><span class="c1"># &quot;g&quot; means magic packet is supported</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ethtool<span class="w"> </span>eth0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Wake-on<span class="w">      </span><span class="c1"># "g" means magic packet is supported</span>
 sudo<span class="w"> </span>ethtool<span class="w"> </span>-s<span class="w"> </span>eth0<span class="w"> </span>wol<span class="w"> </span>g<span class="w">            </span><span class="c1"># enable it</span>
 </code></pre></div>
 <p>Make it persistent with a systemd unit or your network manager's <code>wake-on-lan</code> setting, otherwise it resets at boot.</p>
@@ -4188,9 +4188,9 @@ sudo<span class="w"> </span>ethtool<span class="w"> </span>-s<span class="w"> </
 <p><strong>macOS:</strong> System Settings → Energy → <em>Wake for network access</em>.</p>
 <p><strong>Synology, QNAP and other NAS:</strong> Control Panel → Hardware &amp; Power → enable <em>WOL on LAN 1</em>.</p>
 <h2 id="step-2-find-the-mac-address">Step 2: Find the MAC Address</h2>
-<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>eth0<span class="w">          </span><span class="c1"># Linux: the &quot;link/ether&quot; line</span>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>eth0<span class="w">          </span><span class="c1"># Linux: the "link/ether" line</span>
 ifconfig<span class="w"> </span>en0<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>ether<span class="w">  </span><span class="c1"># macOS</span>
-ipconfig<span class="w"> </span>/all<span class="w">              </span><span class="c1"># Windows: &quot;Physical Address&quot;</span>
+ipconfig<span class="w"> </span>/all<span class="w">              </span><span class="c1"># Windows: "Physical Address"</span>
 </code></pre></div>
 <p>It looks like <code>A8:5E:45:12:34:56</code>.</p>
 <h2 id="step-3-configure-webssh">Step 3: Configure WebSSH</h2>
@@ -4310,7 +4310,7 @@ shutdown<span class="w"> </span>/s<span class="w"> </span>/t<span class="w"> </s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 23, 2026 07:22:06 UTC">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
       
     
   </small>

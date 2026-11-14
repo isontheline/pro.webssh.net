@@ -4088,10 +4088,10 @@
 [SSH]
       sequence      = 1789,1985,1492,2005
       seq_timeout   = 10
-      start_command = /bin/firewall-cmd --zone=public --add-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
+      start_command = /bin/firewall-cmd --zone=public --add-rich-rule 'rule family="ipv4" source address="%IP%" port protocol="tcp" port="22" accept'
       tcpflags      = syn
       cmd_timeout   = 10
-      stop_command  = /bin/firewall-cmd --zone=public --remove-rich-rule &#39;rule family=&quot;ipv4&quot; source address=&quot;%IP%&quot; port protocol=&quot;tcp&quot; port=&quot;22&quot; accept&#39;
+      stop_command  = /bin/firewall-cmd --zone=public --remove-rich-rule 'rule family="ipv4" source address="%IP%" port protocol="tcp" port="22" accept'
 </code></pre></div>
 <ul>
 <li>On this example, we use the <strong>firewall-cmd</strong> command to open the port <strong>22</strong> on the server after you have knocked the right sequence : <strong>1789,1985,1492,2005</strong></li>
@@ -4103,7 +4103,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 28, 2026 19:34:42 UTC">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2026</span>
       
     
   </small>

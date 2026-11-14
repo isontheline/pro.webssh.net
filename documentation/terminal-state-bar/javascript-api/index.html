@@ -4147,7 +4147,7 @@
 <li><code>undefined</code> or <code>null</code>: the item is <strong>hidden</strong> until a later run returns a value.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;Hello!&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s1">'Hello!'</span><span class="p">;</span>
 <span class="p">})();</span>
 </code></pre></div>
 <h3 id="item-result-object">Item Result Object</h3>
@@ -4209,8 +4209,8 @@
 </table>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;42 %&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gauge.with.dots.needle.50percent&#39;</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">'42 %'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">icon</span><span class="o">:</span><span class="w"> </span><span class="s1">'gauge.with.dots.needle.50percent'</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="p">})();</span>
 </code></pre></div>
@@ -4218,9 +4218,9 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">85</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; %&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">' %'</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">progress</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;error&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="p">),</span>
+<span class="w">        </span><span class="nx">tint</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">90</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'error'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">used</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">75</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">'warning'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'normal'</span><span class="p">),</span>
 <span class="w">        </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="nx">used</span>
 <span class="w">    </span><span class="p">};</span>
 <span class="p">})();</span>
@@ -4232,9 +4232,9 @@
 <h2 id="variables">Variables</h2>
 <p>Since WebSSH 32.10. A <code>{{{ NAME : default }}}</code> placeholder is replaced by the value set in the item editor <strong>before</strong> the script runs, so the script only ever sees plain text. Always put it inside a string literal; the value is escaped for JavaScript. See <a href="../#variables">Variables</a> for the syntax.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{{ CITY : Paris }}}&#39;</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;{{{ UNITS : metric : imperial }}}&#39;</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; (&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'{{{ CITY : Paris }}}'</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'{{{ UNITS : metric : imperial }}}'</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">city</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">' ('</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">units</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">')'</span><span class="p">;</span>
 <span class="p">})();</span>
 </code></pre></div>
 <h2 id="ssh"><code>$ssh</code></h2>
@@ -4374,7 +4374,7 @@
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://api.example.com/status&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Accept</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$http</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://api.example.com/status'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Accept</span><span class="o">:</span><span class="w"> </span><span class="s1">'application/json'</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">r</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="nx">r</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -4511,7 +4511,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 26, 2026 16:42:53 UTC">September 26, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 26, 2026</span>
       
     
   </small>
