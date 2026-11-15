@@ -66,6 +66,7 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 | Ping | :white_check_mark: | :white_check_mark: |
 | Traceroute | :white_check_mark: | :white_check_mark: |
 | DNS Lookup | :white_check_mark: | :white_check_mark: |
+| [DNS Propagation](/documentation/help/networking/dns-propagation/) : worldwide resolvers and your own resolver lists | :cross_mark: (4 resolvers) | :white_check_mark: |
 | Whois Lookup | :white_check_mark: | :white_check_mark: |
 | Find your Addresses | :white_check_mark: | :white_check_mark: |
 | Wake-on-LAN | :white_check_mark: | :white_check_mark: |

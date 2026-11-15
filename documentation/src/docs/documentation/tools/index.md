@@ -28,7 +28,7 @@ Lists every hop to the host, up to 50, with its IP, reverse DNS name and latency
 ### DNS Lookup
 Resolves **A, AAAA, MX, NS, PTR, SOA, SRV and TXT** records, with their TTL. Queries use the system resolvers and fall back to Cloudflare, Google and Quad9. Append `@dns-server` to the name, `example.com@ns1.example.net`, to ask a specific server.
 
-**Propagation** sends the same query to public resolvers around the world at once and tells you whether they agree: majority answer, divergent answers, no response, with the latency of each resolver. Four resolvers in the FREE version, 29 with PRO.
+**Propagation** sends the same query to public resolvers around the world at once and tells you whether they agree: majority answer, divergent answers, no response, with the latency of each resolver. Four resolvers in the FREE version, 29 with PRO. With PRO you can also build your own **resolver lists** (the caches of an ISP, your internal DNS servers) and query them alone or together with the worldwide list. See [DNS Propagation](/documentation/help/networking/dns-propagation/).
 
 FREE shows the first 3 records of a lookup. Shortcuts: **DNS Lookup** (host, record type, optional resolver), runs without opening the app.
 
@@ -122,7 +122,7 @@ WebSSH collects nothing, but a network tool has to talk to someone. For the reco
 | Tool | Talks to |
 | --- | --- |
 | Addresses | Cloudflare or Google DNS, then OpenDNS |
-| DNS Lookup | Your system resolvers, with Cloudflare, Google and Quad9 as fallback; Propagation asks up to 29 public resolvers |
+| DNS Lookup | Your system resolvers, with Cloudflare, Google and Quad9 as fallback; Propagation asks up to 29 public resolvers, and the resolvers of the lists you created and checked |
 | Whois | RDAP and WHOIS servers of the registries |
 | Postmaster | Your resolvers, 22 blacklist operators (they see the checked IPs), and the domain's MX hosts on port 25 |
 | Certificate Checker, Ping, Traceroute, Network Scanner | The target only |

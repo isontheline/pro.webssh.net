@@ -55,6 +55,11 @@ description: "Answers to the most frequent questions about WebSSH: PRO purchase,
 
     More information : [Public URL](/documentation/help/networking/public-url/)
 
+??? abstract "Can I check DNS propagation against my own resolvers, such as ISP caches or internal DNS servers?"
+    Yes, since WebSSH 33.4 with WebSSH PRO. In the **Propagation** mode of the DNS Lookup tool, create a **resolver list** with the IP addresses of your resolvers, then check it in the **Resolvers** menu, alone or together with the worldwide list of public resolvers. Keep in mind that most ISP caches only answer from their own network.
+
+    More information : [DNS Propagation](/documentation/help/networking/dns-propagation/)
+
 ??? abstract "How can I check that I own the PRO version of WebSSH?"
     To verify that you own the PRO version of WebSSH, please follow these steps:
 
