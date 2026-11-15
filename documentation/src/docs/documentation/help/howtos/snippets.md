@@ -42,7 +42,7 @@ Once you have more than a handful of snippets, arrange them in groups so you no 
 Good to know:
 
 - A snippet belongs to one group at most, and there are no sub-groups.
-- Group names are not case sensitive: typing `docker` joins an existing `Docker` group.
+- Group names are shown in capitals and are not case sensitive: typing `docker` joins the `DOCKER` group.
 - A group exists as long as one snippet uses it.
 - Groups only arrange the list. To make a snippet available on some connections only, use [tags](link-connections-using-tags.md).
 - On Mac, the terminal right-click menu shows one submenu per group, and the sidebar lists your groups under the Snippets tile.
