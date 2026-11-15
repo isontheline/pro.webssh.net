@@ -31,6 +31,24 @@ To use a snippet in your connection terminal:
 3. Select the snippet you want to insert from the list
 4. The command/script from the snippet will be inserted into your terminal, ready to be executed — or run immediately when **Execute on tap** is enabled (see below)
 
+## Groups
+Once you have more than a handful of snippets, arrange them in groups so you no longer scroll through the whole list to find one.
+
+- **Put a snippet in a group**: edit the snippet and fill in **Group Name**, or pick an existing group from the button next to the field. You can also long-press (right-click on Mac) a snippet and choose **Move to Group**.
+- **Show a group**: as soon as one group exists, a row of chips appears under the search field, in the Snippets list and in the snippet picker of your terminal. Tap a chip to see only the snippets of that group, tap **All** to see everything. Your last choice is remembered.
+- **Move several snippets at once**: from the `•••` menu choose **Select**, select the snippets, then use the group button of the navigation bar.
+- **Rename or remove a group**: long-press (right-click on Mac) its chip. Removing a group never deletes snippets: they simply no longer belong to a group.
+
+Good to know:
+
+- A snippet belongs to one group at most, and there are no sub-groups.
+- Group names are not case sensitive: typing `docker` joins an existing `Docker` group.
+- A group exists as long as one snippet uses it.
+- Groups only arrange the list. To make a snippet available on some connections only, use [tags](link-connections-using-tags.md).
+- On Mac, the terminal right-click menu shows one submenu per group, and the sidebar lists your groups under the Snippets tile.
+- A snippet imported from the WebSSH Library lands in the group of its category (Docker, Network…). Move it wherever you like.
+- Groups follow your snippets through iCloud sync and backups.
+
 ## Keyboard shortcuts
 Since WebSSH 33.1 a snippet can be run with a keyboard shortcut, on macOS and on iPad with a hardware keyboard. Nine shortcuts are available: `⌥⌘1` to `⌥⌘9`.
 
