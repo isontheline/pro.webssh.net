@@ -35,9 +35,10 @@ To use a snippet in your connection terminal:
 Once you have more than a handful of snippets, arrange them in groups so you no longer scroll through the whole list to find one.
 
 - **Put a snippet in a group**: edit the snippet and fill in **Group Name**, or pick an existing group from the button next to the field. You can also long-press (right-click on Mac) a snippet and choose **Move to Group**.
-- **Show a group**: as soon as one group exists, a row of chips appears under the search field, in the Snippets list and in the snippet picker of your terminal. Tap a chip to see only the snippets of that group, tap **All** to see everything. Your last choice is remembered.
+- **Show a group while connected**: as soon as one group exists, a row of chips appears under the search field of the snippet picker of your terminal. Tap a chip to see only the snippets of that group, tap **All** to see everything. Your last choice is remembered.
+- **Show a group in the Snippets list**: use the arrow of the Snippets tile in the sidebar and pick a group. A banner shows the group in use; its ✕ brings everything back.
 - **Move several snippets at once**: from the `•••` menu choose **Select**, select the snippets, then use the group button of the navigation bar.
-- **Rename or remove a group**: long-press (right-click on Mac) its chip. Removing a group never deletes snippets: they simply no longer belong to a group.
+- **Rename a group**: move its snippets to the new name, one by one from the editor or all at once with a multiple selection.
 
 Good to know:
 
