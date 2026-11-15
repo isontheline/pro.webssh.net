@@ -122,3 +122,6 @@ The trailing backticked tokens are OS markers used by the in-app filter chips.
 2. CI validates the manifest, the file listing and runs ShellCheck on `.sh` files.
 3. A maintainer reviews (especially `danger` flags) and merges.
    Merged content appears in the app within a few minutes (CDN cache).
+
+Passing the checks is not an acceptance: see the repository's
+[contribution policy](../CONTRIBUTING.md).

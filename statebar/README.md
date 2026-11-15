@@ -14,6 +14,8 @@ statebar/
 
 Every pull request is validated by [`validate_statebar.yml`](../.github/workflows/validate_statebar.yml).
 Run it locally from the repository root: `python3 .github/scripts/validate_statebar.py`.
+Passing the checks is not an acceptance: see the repository's
+[contribution policy](../CONTRIBUTING.md).
 
 ## The script
 
