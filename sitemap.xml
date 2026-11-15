@@ -130,7 +130,7 @@
     <loc>https://webssh.net/documentation/frequently-asked-questions/</loc>
 
     
-    <lastmod>2026-11-14T11:38:29+00:00</lastmod>
+    <lastmod>2026-11-15T14:55:27+00:00</lastmod>
 
       
       
@@ -180,7 +180,7 @@
     <loc>https://webssh.net/documentation/pricing/</loc>
 
     
-    <lastmod>2026-10-27T17:06:26+00:00</lastmod>
+    <lastmod>2026-11-15T14:55:27+00:00</lastmod>
 
       
       
@@ -3227,6 +3227,31 @@
   
   
   <url>
+    <loc>https://webssh.net/documentation/help/networking/dns-propagation/</loc>
+
+    
+    <lastmod>2026-11-15T14:55:27+00:00</lastmod>
+
+      
+      
+      
+        
+        
+        
+        
+        
+        
+        
+
+        
+          <changefreq>daily</changefreq>
+        
+      
+    
+  </url>
+  
+  
+  <url>
     <loc>https://webssh.net/documentation/help/networking/dynamic-port-forwarding/</loc>
 
     
@@ -3530,7 +3555,7 @@
     <loc>https://webssh.net/documentation/tools/</loc>
 
     
-    <lastmod>2026-10-19T20:38:54+00:00</lastmod>
+    <lastmod>2026-11-15T14:55:27+00:00</lastmod>
 
       
       

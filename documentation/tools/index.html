@@ -2611,6 +2611,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/networking/dns-propagation/" class="md-nav__link">
+        DNS Propagation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
@@ -4409,7 +4423,7 @@
 <p>Lists every hop to the host, up to 50, with its IP, reverse DNS name and latency. Same Auto / IPv4 / IPv6 scope as Ping. Long press a hop to copy it or run a Whois on it.</p>
 <h3 id="dns-lookup">DNS Lookup</h3>
 <p>Resolves <strong>A, AAAA, MX, NS, PTR, SOA, SRV and TXT</strong> records, with their TTL. Queries use the system resolvers and fall back to Cloudflare, Google and Quad9. Append <code>@dns-server</code> to the name, <code>example.com@ns1.example.net</code>, to ask a specific server.</p>
-<p><strong>Propagation</strong> sends the same query to public resolvers around the world at once and tells you whether they agree: majority answer, divergent answers, no response, with the latency of each resolver. Four resolvers in the FREE version, 29 with PRO.</p>
+<p><strong>Propagation</strong> sends the same query to public resolvers around the world at once and tells you whether they agree: majority answer, divergent answers, no response, with the latency of each resolver. Four resolvers in the FREE version, 29 with PRO. With PRO you can also build your own <strong>resolver lists</strong> (the caches of an ISP, your internal DNS servers) and query them alone or together with the worldwide list. See <a href="/documentation/help/networking/dns-propagation/">DNS Propagation</a>.</p>
 <p>FREE shows the first 3 records of a lookup. Shortcuts: <strong>DNS Lookup</strong> (host, record type, optional resolver), runs without opening the app.</p>
 <h3 id="whois">Whois</h3>
 <p>Registration details of a domain or an IP address. Domains are queried over RDAP first, with a fallback to the classic WHOIS port for the TLDs that lack it, so almost every TLD is covered. IPs go to the right regional registry (ARIN, RIPE, APNIC, LACNIC, AFRINIC). The formatted view shows creation, update and expiry dates, transfer locks, DNSSEC, nameservers and contacts; the raw view shows the server answer. A domain that returns nothing is reported as <em>available</em>.</p>
@@ -4483,7 +4497,7 @@
 </tr>
 <tr>
 <td>DNS Lookup</td>
-<td>Your system resolvers, with Cloudflare, Google and Quad9 as fallback; Propagation asks up to 29 public resolvers</td>
+<td>Your system resolvers, with Cloudflare, Google and Quad9 as fallback; Propagation asks up to 29 public resolvers, and the resolvers of the lists you created and checked</td>
 </tr>
 <tr>
 <td>Whois</td>
@@ -4525,7 +4539,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2026</span>
       
     
   </small>

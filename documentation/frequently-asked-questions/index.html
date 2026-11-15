@@ -2621,6 +2621,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../help/networking/dns-propagation/" class="md-nav__link">
+        DNS Propagation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../help/networking/dynamic-port-forwarding/" class="md-nav__link">
         Dynamic Port Forwarding (DPF)
       </a>
@@ -4011,6 +4025,11 @@ A GitHub issue could be find to track this feature request : <a href="https://gi
 <p>More information : <a href="/documentation/help/networking/public-url/">Public URL</a></p>
 </details>
 <details class="abstract">
+<summary>Can I check DNS propagation against my own resolvers, such as ISP caches or internal DNS servers?</summary>
+<p>Yes, since WebSSH 33.4 with WebSSH PRO. In the <strong>Propagation</strong> mode of the DNS Lookup tool, create a <strong>resolver list</strong> with the IP addresses of your resolvers, then check it in the <strong>Resolvers</strong> menu, alone or together with the worldwide list of public resolvers. Keep in mind that most ISP caches only answer from their own network.</p>
+<p>More information : <a href="/documentation/help/networking/dns-propagation/">DNS Propagation</a></p>
+</details>
+<details class="abstract">
 <summary>How can I check that I own the PRO version of WebSSH?</summary>
 <p>To verify that you own the PRO version of WebSSH, please follow these steps:</p>
 <ol>
@@ -4193,6 +4212,14 @@ Related GitHub issues could be found to track this feature request :</p>
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. The Public URL tool gives a port of your device, or of a machine on your local network, a public https:// address through a tunnel provider (tunnl.gg today), using SSH remote port forwarding. Pick the provider and the target, choose a Random, Stable or Pro address, press Start and share the address or its QR code. The address works only while the tunnel runs in WebSSH. More information : Public URL"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I check DNS propagation against my own resolvers, such as ISP caches or internal DNS servers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, since WebSSH 33.4 with WebSSH PRO. In the Propagation mode of the DNS Lookup tool, create a resolver list with the IP addresses of your resolvers, then check it in the Resolvers menu, alone or together with the worldwide list of public resolvers. Keep in mind that most ISP caches only answer from their own network. More information : DNS Propagation"
       }
     },
     {
@@ -4396,7 +4423,7 @@ Related GitHub issues could be found to track this feature request :</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 15, 2026</span>
       
     
   </small>
