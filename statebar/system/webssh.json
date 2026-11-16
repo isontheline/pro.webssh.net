@@ -50,6 +50,22 @@
       ],
       "graph": "history"
     },
+    "swap-usage.js": {
+      "name": "Swap Usage",
+      "summary": "Used and total swap with a progress ring, hidden when the server has no swap",
+      "icon": "externaldrive",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 10,
+      "maintainers": [
+        "zebra-jay"
+      ],
+      "graph": "history"
+    },
     "uptime.js": {
       "name": "Uptime",
       "summary": "How long the server has been up",
