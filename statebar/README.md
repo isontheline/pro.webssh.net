@@ -86,7 +86,7 @@ in the item editor; they survive an update of the script.
 | --- | --- | --- |
 | `name` | yes | Name of the imported item. |
 | `summary` | yes | One line, English. |
-| `icon` | yes | [SF Symbols](https://developer.apple.com/sf-symbols/) name, the initial icon of the item. |
+| `icon` | yes | [SF Symbols](https://developer.apple.com/sf-symbols/) name, the initial icon of the item. It must be listed in [`sf_symbols.txt`](../.github/scripts/sf_symbols.txt), the symbols available on the oldest iOS the app supports; the icons a script returns are checked the same way. |
 | `session` | yes | Where the item is useful: `ssh`, `mosh`. An item that calls `$ssh.exec` is `["ssh"]` only. |
 | `os` | no | Remote systems the commands need: `linux`, `macos`, `freebsd`, `openbsd`, `windows`. |
 | `interval` | no | Refresh interval in seconds, 1 to 600 (default 3). **At least 10 with `hosts`.** Be kind to public APIs: minutes, not seconds. |

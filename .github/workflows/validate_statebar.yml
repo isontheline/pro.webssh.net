@@ -5,12 +5,14 @@ on:
     paths:
       - "statebar/**"
       - ".github/scripts/validate_statebar.py"
+      - ".github/scripts/sf_symbols.txt"
       - ".github/workflows/validate_statebar.yml"
   push:
     branches: [master]
     paths:
       - "statebar/**"
       - ".github/scripts/validate_statebar.py"
+      - ".github/scripts/sf_symbols.txt"
       - ".github/workflows/validate_statebar.yml"
 
 jobs:

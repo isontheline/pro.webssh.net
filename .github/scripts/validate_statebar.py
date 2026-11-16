@@ -8,6 +8,9 @@ workflow can run `node --check` on real JavaScript.
 
 Mirrors the app (WebSSH_Native): StateBarLibraryModels.swift (manifest),
 SnippetTemplate.swift (placeholders), StateBarHTTPBridge.swift (hosts).
+
+Icons are checked against sf_symbols.txt (next to this script), the SF Symbols
+available on the oldest iOS the app supports. See generate_sf_symbols.py.
 """
 import json, os, re, sys, tempfile
 
@@ -20,8 +23,12 @@ INDEX_MARKERS = SESSION_VALUES | OS_VALUES | {"http"}
 PACKAGE_MANAGERS = {"apt", "dnf", "apk", "pacman", "zypper", "brew", "pkg"}
 NETWORK_MIN_INTERVAL = 10
 USERNAME = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$")
-# SF Symbols names; existence can't be checked here, the app falls back to a default icon.
+# Shape of an SF Symbols name; its existence is checked against SF_SYMBOLS below.
 SF_SYMBOL = re.compile(r"[a-z0-9]+(?:\.[a-z0-9]+)*$")
+SF_SYMBOLS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sf_symbols.txt")
+# `icon: <expression>` in an object literal, or `icon = <expression>`.
+ICON_ASSIGNMENT = re.compile(r"\bicon\s*[:=](?!=)")
+COMPARISON = re.compile(r"[=!]==?")
 VARIABLE = re.compile(r"\{\{\{(.*?)\}\}\}")
 VARIABLE_NAME = re.compile(r"[A-Za-z_][A-Za-z0-9_]*$")
 VARIABLE_MODIFIERS = {"secret"}
@@ -30,6 +37,12 @@ SSH_EXEC_LITERAL = re.compile(r"""\$ssh\.exec\(\s*(['"`])(.*?)\1""", re.S)
 FORBIDDEN = [(re.compile(r"\beval\s*\("), "eval()"), (re.compile(r"\bFunction\s*\("), "Function()")]
 
 errors, warnings = [], []
+try:
+    with open(SF_SYMBOLS_PATH, encoding="utf-8") as handle:
+        SF_SYMBOLS = {line.strip() for line in handle if line.strip() and not line.startswith("#")}
+except OSError:
+    SF_SYMBOLS = set()
+    errors.append(f"{SF_SYMBOLS_PATH} is missing: run .github/scripts/generate_sf_symbols.py on a Mac")
 rendered_dir = os.environ.get("RENDERED_DIR") or tempfile.mkdtemp(prefix="rendered-statebar-")
 
 
@@ -116,6 +129,49 @@ def host_allowed(host, patterns):
     return False
 
 
+def check_icon(scope, name):
+    if SF_SYMBOLS and name not in SF_SYMBOLS:
+        errors.append(f"{scope}: icon '{name}' is not an SF Symbol available on every iOS release the app supports"
+                      " (unknown name, or added by a newer iOS)")
+
+
+def icon_literals(script):
+    """String literals a script gives as an icon: `icon: a ? 'x' : 'y'`, `icon = 'x'`.
+
+    Each expression is read up to its end (`,` `;` `}` or a line break outside
+    parentheses). A literal compared with something (`state === 'connected'`)
+    is not an icon; neither is one that does not look like a symbol name (a
+    variable name passed to $vars.get). Computed icons cannot be checked.
+    """
+    found = []
+    for match in ICON_ASSIGNMENT.finditer(script):
+        position, depth = match.end(), 0
+        while position < len(script):
+            ch = script[position]
+            if ch in "'\"`":
+                end = position + 1
+                while end < len(script) and script[end] != ch:
+                    end += 2 if script[end] == "\\" else 1
+                literal = script[position + 1:end]
+                before = script[match.end():position].rstrip()
+                after = script[end + 1:].lstrip()
+                if SF_SYMBOL.match(literal) and not COMPARISON.match(after) \
+                        and not re.search(r"[=!]==?$", before):
+                    found.append(literal)
+                position = end + 1
+                continue
+            if ch in "([":
+                depth += 1
+            elif ch in ")]":
+                depth -= 1
+                if depth < 0:
+                    break
+            elif depth == 0 and ch in ",;}\n":
+                break
+            position += 1
+    return found
+
+
 def check_entry(scope, meta, script):
     if not isinstance(meta, dict):
         errors.append(f"{scope}: manifest entry must be an object")
@@ -130,6 +186,8 @@ def check_entry(scope, meta, script):
     icon = meta.get("icon")
     if not isinstance(icon, str) or not SF_SYMBOL.match(icon):
         errors.append(f"{scope}: 'icon' must be an SF Symbols name")
+    else:
+        check_icon(f"{scope} (webssh.json)", icon)
     session = meta.get("session")
     if not isinstance(session, list) or not session or any(s not in SESSION_VALUES for s in session):
         errors.append(f"{scope}: 'session' must be a non-empty list among {sorted(SESSION_VALUES)}")
@@ -187,6 +245,9 @@ def check_entry(scope, meta, script):
                 continue
             if not host_allowed(match.group(1).lower(), patterns):
                 errors.append(f"{scope}: {match.group(0)} is not covered by 'hosts'")
+
+    for literal in dict.fromkeys(icon_literals(script)):
+        check_icon(scope, literal)
 
     for pattern, label in FORBIDDEN:
         if pattern.search(script):

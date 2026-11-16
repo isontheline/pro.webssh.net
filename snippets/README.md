@@ -87,8 +87,10 @@ snippets/
   destructive commands — when in doubt, flag it.
 - `icon` — optional [SF Symbols](https://developer.apple.com/sf-symbols/) name
   applied to the imported snippet (e.g. `network`, `shippingbox`, `externaldrive`).
-  Prefer symbols available since SF Symbols 1/2: on devices whose OS does not
-  know the symbol yet, the app silently falls back to a default snippet icon.
+  CI rejects a name that is missing from
+  [`sf_symbols.txt`](../.github/scripts/sf_symbols.txt), the symbols available on
+  the oldest iOS the app supports: an unknown or too recent symbol would silently
+  fall back to a default snippet icon.
 - `root` — set to `true` when the command needs root privileges to be useful
   (`lastb`, `nethogs`…). The app shows a discreet key badge; don't put `sudo`
   in the snippet itself.

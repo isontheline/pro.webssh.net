@@ -4,10 +4,14 @@ on:
   pull_request:
     paths:
       - "snippets/**"
+      - ".github/scripts/sf_symbols.txt"
+      - ".github/workflows/validate_snippets.yml"
   push:
     branches: [master]
     paths:
       - "snippets/**"
+      - ".github/scripts/sf_symbols.txt"
+      - ".github/workflows/validate_snippets.yml"
 
 jobs:
   validate:
@@ -25,9 +29,13 @@ jobs:
           OS_VALUES = {"linux", "macos", "windows", "freebsd", "openbsd"}
           USERNAME = re.compile(r"[A-Za-z0-9](?:[A-Za-z0-9]|-(?=[A-Za-z0-9])){0,38}$")
           # SF Symbols names: dot-separated lowercase segments (e.g.
-          # "externaldrive.badge.checkmark"). Existence can't be checked on
-          # Linux — the app falls back to a default icon for unknown names.
+          # "externaldrive.badge.checkmark"), then looked up in sf_symbols.txt:
+          # the symbols available on the oldest iOS the app supports (see
+          # .github/scripts/generate_sf_symbols.py). The app falls back to a
+          # default icon for an unknown name, which hides the mistake.
           SF_SYMBOL = re.compile(r"[a-z0-9]+(?:\.[a-z0-9]+)*$")
+          with open(".github/scripts/sf_symbols.txt", encoding="utf-8") as handle:
+              SF_SYMBOLS = {line.strip() for line in handle if line.strip() and not line.startswith("#")}
           # Only two snippet kinds exist, each with its own validator: .sh
           # (ShellCheck) and .ks key sequences. Anything else could smuggle
           # an unreviewed command past ShellCheck.
@@ -229,6 +237,8 @@ jobs:
                   icon = (meta or {}).get("icon")
                   if icon is not None and (not isinstance(icon, str) or not SF_SYMBOL.match(icon)):
                       errors.append(f"{coll}/{name}: 'icon' must be an SF Symbols name (lowercase, dot-separated)")
+                  elif icon is not None and icon not in SF_SYMBOLS:
+                      errors.append(f"{coll}/{name}: icon '{icon}' is not an SF Symbol available on every iOS release the app supports (unknown name, or added by a newer iOS)")
                   check_maintainers(f"{coll}/{name}", meta)
 
               for name in sorted(on_disk - set(files)):

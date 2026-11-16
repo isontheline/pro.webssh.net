@@ -96,7 +96,7 @@
       "summary": "Which processes read and write the disks right now",
       "os": ["linux"],
       "root": true,
-      "icon": "externaldrive.badge.timer",
+      "icon": "externaldrive",
       "maintainers": ["isontheline"],
       "packages": {"apt": "iotop", "dnf": "iotop", "pacman": "iotop"},
       "examples": [
