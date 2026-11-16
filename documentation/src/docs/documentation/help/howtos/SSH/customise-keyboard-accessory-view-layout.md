@@ -111,6 +111,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {HOME}           | Home Key                                                         | 23.0             |
 | {INS}            | Insert Key                                                       | 23.0             |
 | {LEFT}           | Left Arrow Key                                                   | 23.0             |
+| {NEW_LINE}       | New Line Key : Send a line feed (same as Shift + Enter and Ctrl + J), see [Shift + Enter for a New Line](shift-enter-new-line.md) | 33.4 |
 | {PASTE}          | Paste Key : Paste the clipboard content to the terminal          | 23.0             |
 | {PASTE_PASSWORD} | Paste Password Key : Paste the current connection password       | 23.0             |
 | {PASTE_SLOW}     | Paste Slowly Key : Paste the clipboard in small rate-limited chunks, see [Paste Slowly](../paste-slowly-serial-devices.md) | 33.3 |
