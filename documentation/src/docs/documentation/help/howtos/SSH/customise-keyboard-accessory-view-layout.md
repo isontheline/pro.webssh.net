@@ -16,6 +16,7 @@ description: "Customise the keys displayed above the keyboard in WebSSH: graphic
     * The editor offers a live preview, drag & drop reordering, pages management and a key palette.
     * The layout built with the editor is stored on the device itself (it is not synced) and applies to all connections.
     * `#!KeyboardAccessoryViewLayout*` directives defined in the SSH Config File always take precedence over the layout built with the editor.
+    * Since WebSSH 33.4, the default layouts end with a third page holding the **{COMPOSE}** and **{EDIT}** keys.
     * Since WebSSH 33.1, the **Aa | ⌃** control next to the pages lets you show **icons instead of text** on the special keys that are hard to tell apart on narrow iPhone keys : `{ESC}` `{TAB}` `{CTL}` `{ALT}` `{INS}` `{DEL}` `{HOME}` `{END}` `{PGUP}` `{PGDN}`. This choice is free, stored on the device and also applies to layouts defined in the SSH Config File.
 
 ??? tip "Customising the layout by idioms (iPhone / iPad)"
@@ -28,23 +29,23 @@ description: "Customise the keys displayed above the keyboard in WebSSH: graphic
 ??? info "iPhone Default Layout"
     The default iPhone layout is the following :
     ```
-    {ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{EDIT}
+    {ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{PJUMP}{COMPOSE}{EDIT}
     ```
 
     If VoiceOver is enabled, the default iPhone layout will be :
     ```
-    {ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
+    {ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{PJUMP}{COMPOSE}{EDIT}
     ```
 
 ??? info "iPad Default Layout"
     The default iPad layout is the following :
     ```
-    {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{EDIT}
+    {ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{PJUMP}{COMPOSE}{EDIT}
     ```
 
     If VoiceOver is enabled, the default iPad layout will be :
     ```
-    {ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
+    {ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{PJUMP}{COMPOSE}{EDIT}
     ```
 
 ## Layout Syntax
@@ -97,6 +98,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {ALT}            | Alt / Meta / Option Key                                          | 32.4             |
 | {ARROWS}         | The all-in-one four arrows key                                   | 23.0             |
 | {BRACKETS}       | All brackets options on same key                                 | 28.3             |
+| {COMPOSE}        | Compose Key : Swap the keys for a multi-line text field to write a prompt or a long command, then send it to the terminal, see [Compose Bar](../compose-bar.md) | 33.4 |
 | {COPY_ALL}       | Copy All Key : Copy the whole terminal buffer (screen + scrollback) to the clipboard | 33.2 |
 | {COPY_SCREEN}    | Copy Screen Key : Copy the visible terminal screen to the clipboard | 33.2          |
 | {CTL}            | Control Key                                                      | 23.0             |

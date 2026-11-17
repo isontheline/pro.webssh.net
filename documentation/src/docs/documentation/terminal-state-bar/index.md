@@ -73,6 +73,7 @@ Since WebSSH 32.10, the three elements that used to be fixed are items of the *B
 | Connection info (since 32.9) | Icon only when everything is fine, icon + label when the state degrades (orange for a warning, red for an error, for example a mosh session waiting for the server or a lost SSH connection) | Opens the connection information sheet (key exchange, cipher, host key fingerprint, jump hosts, mosh transport…) |
 | Progress | Only visible while a job reports its progress through the [`OSC 9;4` escape sequence](/documentation/help/SSH/terminal-progress-bar/): ring + percentage, red triangle on error, orange pause icon, spinner when indeterminate, green check when the job completes | None. Its context menu clears a stuck indicator |
 | Recording | Record icon, red while recording | Start / stop a session recording, add markers, review or list recordings |
+| Compose (since 33.4) | Pencil icon. Not in the default list: add it from the *Built-in Items* picker | Opens the [Compose bar](/documentation/help/howtos/compose-bar/), or goes back and forth between its field and the terminal |
 
 Removing *Connection info* does not remove the feature: the sheet stays available from the terminal menu (⋯).
 
