@@ -1799,6 +1799,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../compose-bar/" class="md-nav__link">
+        Compose Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../copying-text-to-clipboard-from-terminal/" class="md-nav__link">
         Copying text to the clipboard from the terminal
       </a>
@@ -2126,17 +2140,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_26" type="checkbox" id="__nav_3_12_5_26" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_26" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="false">
           SFTP
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SFTP" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_26">
+        <label class="md-nav__title" for="__nav_3_12_5_27">
           <span class="md-nav__icon md-icon"></span>
           SFTP
         </label>
@@ -2204,17 +2218,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_27" type="checkbox" id="__nav_3_12_5_27" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_28" type="checkbox" id="__nav_3_12_5_28" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_27" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_3_12_5_28" tabindex="0" aria-expanded="true">
           SSH
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="SSH" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_27">
+        <label class="md-nav__title" for="__nav_3_12_5_28">
           <span class="md-nav__icon md-icon"></span>
           SSH
         </label>
@@ -2437,17 +2451,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_28" type="checkbox" id="__nav_3_12_5_28" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_29" type="checkbox" id="__nav_3_12_5_29" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_28" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_29" tabindex="0" aria-expanded="false">
           mashREPL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_28">
+        <label class="md-nav__title" for="__nav_3_12_5_29">
           <span class="md-nav__icon md-icon"></span>
           mashREPL
         </label>
@@ -2555,17 +2569,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_29" type="checkbox" id="__nav_3_12_5_29" >
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12_5_30" type="checkbox" id="__nav_3_12_5_30" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_12_5_29" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_3_12_5_30" tabindex="0" aria-expanded="false">
           Tmux
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Tmux" data-md-level="4">
-        <label class="md-nav__title" for="__nav_3_12_5_29">
+        <label class="md-nav__title" for="__nav_3_12_5_30">
           <span class="md-nav__icon md-icon"></span>
           Tmux
         </label>
@@ -4172,6 +4186,7 @@
 <li>The editor offers a live preview, drag &amp; drop reordering, pages management and a key palette.</li>
 <li>The layout built with the editor is stored on the device itself (it is not synced) and applies to all connections.</li>
 <li><code>#!KeyboardAccessoryViewLayout*</code> directives defined in the SSH Config File always take precedence over the layout built with the editor.</li>
+<li>Since WebSSH 33.4, the default layouts end with a third page holding the <strong>{COMPOSE}</strong> and <strong>{EDIT}</strong> keys.</li>
 <li>Since WebSSH 33.1, the <strong>Aa | ⌃</strong> control next to the pages lets you show <strong>icons instead of text</strong> on the special keys that are hard to tell apart on narrow iPhone keys : <code>{ESC}</code> <code>{TAB}</code> <code>{CTL}</code> <code>{ALT}</code> <code>{INS}</code> <code>{DEL}</code> <code>{HOME}</code> <code>{END}</code> <code>{PGUP}</code> <code>{PGDN}</code>. This choice is free, stored on the device and also applies to layouts defined in the SSH Config File.</li>
 </ul>
 </details>
@@ -4187,19 +4202,19 @@
 <details class="info">
 <summary>iPhone Default Layout</summary>
 <p>The default iPhone layout is the following :
-<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{EDIT}
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}{ARROWS}[/][:][-][|]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[!][*][$]{PJUMP}{COMPOSE}{EDIT}
 </code></pre></div></p>
 <p>If VoiceOver is enabled, the default iPhone layout will be :
-<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{LEFT}{UP}{DOWN}{RIGHT}[/][|]{PJUMP}[:][-]{FN}{INS}{PGUP}{PGDN}{HOME}{END}{PJUMP}{COMPOSE}{EDIT}
 </code></pre></div></p>
 </details>
 <details class="info">
 <summary>iPad Default Layout</summary>
 <p>The default iPad layout is the following :
-<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{EDIT}
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/][*]{ARROWS}[|][:][-][!]{PJUMP}{INS}{PGUP}{PGDN}{HOME}{END}[$][.][`]{PJUMP}{COMPOSE}{EDIT}
 </code></pre></div></p>
 <p>If VoiceOver is enabled, the default iPad layout will be :
-<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{EDIT}
+<div class="highlight"><pre><span></span><code>{ESC}{TAB}{CTL}{FN}[/]{LEFT}{UP}{DOWN}{RIGHT}[|][-]{PJUMP}[*][:][!][$][.]{INS}{PGUP}{PGDN}{HOME}{END}{PJUMP}{COMPOSE}{EDIT}
 </code></pre></div></p>
 </details>
 <h2 id="layout-syntax">Layout Syntax</h2>
@@ -4256,6 +4271,11 @@
 <td>{BRACKETS}</td>
 <td>All brackets options on same key</td>
 <td>28.3</td>
+</tr>
+<tr>
+<td>{COMPOSE}</td>
+<td>Compose Key : Swap the keys for a multi-line text field to write a prompt or a long command, then send it to the terminal, see <a href="../../compose-bar/">Compose Bar</a></td>
+<td>33.4</td>
 </tr>
 <tr>
 <td>{COPY_ALL}</td>
@@ -4413,7 +4433,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 16, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 17, 2026</span>
       
     
   </small>
