@@ -112,6 +112,7 @@ When you press a Special Key, the corresponding action will be executed.
 | {HELP}           | Help Key : Show this help page                                   | 23.0             |
 | {HOME}           | Home Key                                                         | 23.0             |
 | {INS}            | Insert Key                                                       | 23.0             |
+| {KEYMAP}         | Key Map Key : Turn the key map of the session on and off, see [Key Maps](../key-maps.md) | 33.5 |
 | {LEFT}           | Left Arrow Key                                                   | 23.0             |
 | {NEW_LINE}       | New Line Key : Send a line feed (same as Shift + Enter and Ctrl + J), see [Shift + Enter for a New Line](shift-enter-new-line.md) | 33.4 |
 | {PASTE}          | Paste Key : Paste the clipboard content to the terminal          | 23.0             |
