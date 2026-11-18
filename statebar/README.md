@@ -17,6 +17,25 @@ Run it locally from the repository root: `python3 .github/scripts/validate_state
 Passing the checks is not an acceptance: see the repository's
 [contribution policy](../CONTRIBUTING.md).
 
+## Tested in WebSSH, on a real host
+
+An item is accepted only if **you have run it in WebSSH**, on a session opened to a real machine that
+has what the item reads (the disks, the service, the sensor, the API account). The validator checks the
+layout, not the behaviour: mocks, stubs, emulated devices and outputs copied from a documentation do not
+show how the item behaves on the hardware it targets.
+
+The pull request description must include:
+
+- a **screenshot of the item in the State Bar** (and of its details when it returns `detail`, `parts`
+  or a graph);
+- the **raw output of the remote commands** on the tested host, with its system and version
+  (`Debian 13`, `FreeBSD 14.2`…), secrets and addresses removed;
+- what you could not test (other systems, other hardware, the failure case).
+
+A pull request without these is closed without review. No device or no WebSSH at hand? Open an
+[issue](https://github.com/isontheline/pro.webssh.net/issues) describing the item instead: the idea is
+welcome, and someone able to test it can pick it up.
+
 ## The script
 
 One immediately invoked function, as described in the
