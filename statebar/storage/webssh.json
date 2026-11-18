@@ -87,6 +87,25 @@
       "maintainers": [
         "isontheline"
       ]
+    },
+    "smart-health.js": {
+      "name": "SMART Health",
+      "summary": "ATA/SATA and NVMe disks, PASSED or failed, hidden when smartctl cannot check any",
+      "icon": "checkmark.shield",
+      "session": [
+        "ssh"
+      ],
+      "os": [
+        "linux"
+      ],
+      "interval": 120,
+      "packages": {
+        "apt": "smartmontools",
+        "dnf": "smartmontools"
+      },
+      "maintainers": [
+        "Ankit-matrix"
+      ]
     }
   }
 }

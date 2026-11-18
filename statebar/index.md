@@ -23,7 +23,7 @@ Want to share yours? See [CONTRIBUTING](README.md).
 # Server
 
 - [System](system) — Load, CPU, memory, swap, temperature, pending updates and failed services `ssh` `linux`
-- [Storage](storage) — Disk usage rings, free space, inodes, ZFS and software RAID health `ssh` `linux` `freebsd`
+- [Storage](storage) — Disk usage rings, free space, inodes, SMART, ZFS and software RAID health `ssh` `linux` `freebsd`
 - [Network](network) — Public IP of the server, throughput, latency and open ports `ssh` `linux`
 
 # Containers & Virtualization
