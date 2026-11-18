@@ -81,6 +81,8 @@ The same server may run programs that expect different keys. The key map can be 
 | **Mac** | Right click the terminal **or** click the "…" ellipsis button, then **Key Map** |
 | **Keyboard accessory bar** | Add the `{KEYMAP}` key to your layout, see [Keyboard Accessory View Customisation](SSH/customise-keyboard-accessory-view-layout.md). It turns the key map of the session on and off and stays lit while keys are remapped |
 
+While a key map is active, the "…" ellipsis button of the terminal shows a **badge**. Open it and look at **Key Map** to see which one.
+
 ## Good to know
 
 * **Modifiers are left alone**: `Shift`, `Alt` or `Ctrl` held with an arrow key send what they sent before. On a hardware keyboard `Ctrl` + arrow stands for `Page Up`, `Page Down`, `Home` and `End`, and follows the key map of those keys.
