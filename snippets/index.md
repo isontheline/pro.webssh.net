@@ -33,7 +33,7 @@ Want to share yours? See [CONTRIBUTING](README.md).
 
 # Docker
 
-- [Docker](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/docker) — Disk usage and live container monitoring `linux` `macos`
+- [Docker](https://github.com/isontheline/pro.webssh.net/tree/master/snippets/docker) — Containers, images, logs, stats, Compose, disk usage and cleanup `linux` `macos`
 
 # Virtualization
 

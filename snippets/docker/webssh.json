@@ -17,6 +17,71 @@
       "packages": {
         "brew": "ctop"
       }
+    },
+    "docker-ps.sh": {
+      "name": "Docker Containers",
+      "summary": "All containers with their image, status and published ports",
+      "os": ["linux", "macos"],
+      "icon": "list.bullet",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker ps", "comment": "Running containers only"},
+        {"command": "docker ps -a --filter status=exited", "comment": "Containers that have stopped"},
+        {"command": "docker ps --filter health=unhealthy", "comment": "Containers failing their health check"}
+      ]
+    },
+    "docker-images.sh": {
+      "name": "Docker Images",
+      "summary": "Local images with tag, size and age",
+      "os": ["linux", "macos"],
+      "icon": "square.stack.3d.up",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker images --filter dangling=true", "comment": "Untagged leftovers, candidates for cleanup"}
+      ]
+    },
+    "container-stats.sh": {
+      "name": "Container Stats",
+      "summary": "One-shot CPU, memory and network usage of running containers",
+      "os": ["linux", "macos"],
+      "icon": "gauge",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker stats", "comment": "Live view (Ctrl-C to quit)"}
+      ]
+    },
+    "container-logs.sh": {
+      "name": "Container Logs",
+      "summary": "Follow the logs of a container, starting from its last lines",
+      "os": ["linux", "macos"],
+      "icon": "doc.text",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker logs --since 10m my-container", "comment": "Only the last 10 minutes"},
+        {"command": "docker logs --tail 200 my-container 2>&1 | grep -i error", "comment": "Search the recent logs for errors"}
+      ]
+    },
+    "compose-status.sh": {
+      "name": "Compose Status",
+      "summary": "State of the Docker Compose services of the current directory",
+      "os": ["linux", "macos"],
+      "icon": "rectangle.stack",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker compose logs --tail 50 -f", "comment": "Follow the logs of every service"}
+      ]
+    },
+    "docker-prune.sh": {
+      "name": "Docker Prune",
+      "summary": "Remove stopped containers, unused networks and dangling images (asks for confirmation)",
+      "os": ["linux", "macos"],
+      "danger": true,
+      "icon": "trash",
+      "maintainers": ["mateen-789"],
+      "examples": [
+        {"command": "docker container prune", "comment": "Stopped containers only"},
+        {"command": "docker image prune", "comment": "Dangling images only"}
+      ]
     }
   }
 }
