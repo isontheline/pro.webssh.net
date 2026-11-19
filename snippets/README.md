@@ -14,6 +14,27 @@ snippets/
     └── my-snippet.sh     ← one file per snippet
 ```
 
+## Tested in WebSSH, on a real host
+
+A snippet is accepted only if **you have run it in WebSSH**: created in your snippet library
+with the exact content of the file, then run in a live session opened to a real machine that
+has what the command needs (the service, the package, the hardware). CI checks the layout and
+the shell syntax, not the behaviour: a run in another terminal does not show how the snippet is
+typed, how its dynamic variables are asked, or how a key sequence is expanded by the app.
+
+The pull request description must include:
+
+- a **screenshot of each snippet run in a WebSSH session** (and of the variables sheet when
+  the snippet has dynamic variables);
+- the **system and version** of the tested host (`Debian 13`, `macOS 26`…) and the version of
+  the tools involved;
+- what you could not test (other systems listed in `os`, the destructive path of a
+  `danger` snippet…).
+
+A pull request without these is closed without review. No device or no WebSSH at hand? Open an
+[issue](https://github.com/isontheline/pro.webssh.net/issues) describing the snippet instead:
+the idea is welcome, and someone able to test it can pick it up.
+
 ## Rules
 
 1. **One command (or short self-contained block) per file.** Each line is typed into
@@ -120,7 +141,8 @@ The trailing backticked tokens are OS markers used by the in-app filter chips.
 
 ## Process
 
-1. Fork, create your collection folder, open a Pull Request.
+1. Fork, create your collection folder, test every snippet in WebSSH (see above), open a
+   Pull Request.
 2. CI validates the manifest, the file listing and runs ShellCheck on `.sh` files.
 3. A maintainer reviews (especially `danger` flags) and merges.
    Merged content appears in the app within a few minutes (CDN cache).
