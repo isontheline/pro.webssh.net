@@ -100,7 +100,10 @@ Every action an assistant takes on your sessions belongs to a family, and each f
 Every one of these actions is listed in the session's journal (**History** > **Assistants**), and commands leave a marker in the session recording.
 
 ### Ask an assistant from a session
-On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.
+On the Mac, when an assistant app is installed, a ✦ button sits in the terminal bar next to Snippets. It asks what you want (explain the screen, summarize the last output, why the last command failed, suggest a command…), lets you pick the app (Claude chat, Claude Code, Codex, OpenCode or Cursor; the ones connected right now are marked), and opens it with your question and the session's identity in the composer. Nothing is sent until you press Enter there, and the assistant reads the session through WebSSH.
+
+??? note "OpenCode in Ask an assistant"
+    OpenCode is offered here only with an OpenCode Desktop release **newer than 2.3.2**: up to that version the app receives the link and opens nothing (fixed on OpenCode's side in [pull request 65332](https://github.com/anomalyco/opencode/pull/65332)). OpenCode opens a new session in the `/tmp` folder, a neutral place: the assistant reads your session through WebSSH, not from files. Connecting OpenCode to WebSSH (below) works with any version.
 
 ### The AI Assistants screen
 Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try: tap one to copy it, or open it straight in Claude Desktop (chat or Claude Code), Codex or Cursor, where it lands in the composer for you to send. Every client goes through the `webssh-mcp` bridge: it starts WebSSH when needed and carries the token for you.
