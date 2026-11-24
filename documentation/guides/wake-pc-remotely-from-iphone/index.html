@@ -4298,6 +4298,10 @@ ipconfig<span class="w"> </span>/all<span class="w">              </span><span c
 <p class="admonition-title">Check when it is up</p>
 <p>Use the <strong>Ping</strong> tool in WebSSH while the machine boots. As soon as it answers, SSH is usually a few seconds away.</p>
 </div>
+<details class="tip">
+<summary>One tap with Apple Shortcuts</summary>
+<p>Since WebSSH 33.5 the <strong>Send Wake-on-LAN Packet</strong> action of the Shortcuts app sends the magic packet without opening WebSSH. Chain it with <strong>Wait</strong> and <strong>Open URLs</strong> to wake the machine and connect in one tap: see <a href="/documentation/guides/ssh-apple-shortcuts-iphone/">Automate SSH with Shortcuts</a>.</p>
+</details>
 <h2 id="waking-a-machine-from-outside-your-network">Waking a Machine from Outside Your Network</h2>
 <p>The magic packet is a <strong>broadcast</strong> and broadcasts do not cross the internet, and usually not VPNs either. Three ways around it, from simplest to most robust:</p>
 <p><strong>Option 1: Send the packet from a device that is always on.</strong> A Raspberry Pi, a router running OpenWrt, a NAS: SSH into it from WebSSH and send the packet from there:</p>
@@ -4394,7 +4398,7 @@ shutdown<span class="w"> </span>/s<span class="w"> </span>/t<span class="w"> </s
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2026</span>
       
     
   </small>

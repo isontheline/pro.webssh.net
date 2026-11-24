@@ -2806,6 +2806,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wake-up-a-device-from-apple-shortcuts2" class="md-nav__link">
+    Wake up a device from Apple Shortcuts2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4062,6 +4069,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wake-up-a-device-from-apple-shortcuts2" class="md-nav__link">
+    Wake up a device from Apple Shortcuts2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4092,11 +4106,32 @@
 </ol>
 <h2 id="wake-up-a-device">Wake up a device</h2>
 <p>Just launch the context menu on the server and select "Wake-on-LAN" from the "Launch" section.</p>
+<h2 id="wake-up-a-device-from-apple-shortcuts2">Wake up a device from Apple Shortcuts<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></h2>
+<p>The <strong>Send Wake-on-LAN Packet</strong> action of the Shortcuts app sends the magic packet without opening WebSSH. Use it in a shortcut, a Home Screen icon, a widget, a personal automation, or ask Siri: <em>“Wake a device with WebSSH”</em>.</p>
+<ol>
+<li>Open <strong>Shortcuts</strong> and create a new shortcut</li>
+<li>Search for <strong>WebSSH</strong> in the action list and add <strong>Send Wake-on-LAN Packet</strong></li>
+<li>Choose the <strong>Target</strong>:<ul>
+<li><strong>Saved Server</strong>: pick a server that has the Wake-on-LAN role and a MAC address. The MAC address and the port are read from the server each time the shortcut runs.</li>
+<li><strong>Mac Address</strong>: type the MAC address of the device</li>
+</ul>
+</li>
+<li>Optional: set a <strong>Broadcast Address</strong> and a <strong>Port</strong>. Left empty, WebSSH uses the broadcast address of the current Wi-Fi network and the port saved on the server (9 for a typed MAC address).</li>
+</ol>
+<p>The action returns <em>true</em> when the magic packet has left your device and <em>false</em> otherwise, so the next actions can test it with <strong>If</strong>. Wake-on-LAN has no acknowledgement: <em>true</em> does not prove that the machine has woken up.</p>
+<p>To wake a machine and connect to it, chain <strong>Send Wake-on-LAN Packet</strong>, <strong>Wait</strong> (30 to 90 seconds) and <strong>Open URLs</strong> with a <a href="/documentation/help/howtos/use-deep-linking/">deep link</a> to the server.</p>
+<details class="info">
+<summary>Local network</summary>
+<p>The magic packet is sent from your device: it must be on the same local network as the machine, and WebSSH must be allowed to access the local network (iOS Settings → Privacy &amp; Security → Local Network). If the action reports that the packet could not be sent, wake a server once from the app to get the permission prompt.</p>
+</details>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>Available since WebSSH 29.2&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Available since WebSSH 33.5&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -4106,7 +4141,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 28, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2026</span>
       
     
   </small>

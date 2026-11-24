@@ -1346,8 +1346,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recipe-5-spotlight-and-siri" class="md-nav__link">
-    Recipe 5: Spotlight and Siri
+  <a href="#recipe-5-wake-a-machine-then-connect" class="md-nav__link">
+    Recipe 5: Wake a Machine, Then Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe-6-spotlight-and-siri" class="md-nav__link">
+    Recipe 6: Spotlight and Siri
   </a>
   
 </li>
@@ -1384,6 +1391,13 @@
           <li class="md-nav__item">
   <a href="#which-webssh-actions-are-available-in-the-shortcuts-app" class="md-nav__link">
     Which WebSSH actions are available in the Shortcuts app?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-a-shortcut-wake-my-pc-or-server-with-wake-on-lan" class="md-nav__link">
+    Can a Shortcut wake my PC or server with Wake-on-LAN?
   </a>
   
 </li>
@@ -4172,8 +4186,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recipe-5-spotlight-and-siri" class="md-nav__link">
-    Recipe 5: Spotlight and Siri
+  <a href="#recipe-5-wake-a-machine-then-connect" class="md-nav__link">
+    Recipe 5: Wake a Machine, Then Connect
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recipe-6-spotlight-and-siri" class="md-nav__link">
+    Recipe 6: Spotlight and Siri
   </a>
   
 </li>
@@ -4210,6 +4231,13 @@
           <li class="md-nav__item">
   <a href="#which-webssh-actions-are-available-in-the-shortcuts-app" class="md-nav__link">
     Which WebSSH actions are available in the Shortcuts app?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-a-shortcut-wake-my-pc-or-server-with-wake-on-lan" class="md-nav__link">
+    Can a Shortcut wake my PC or server with Wake-on-LAN?
   </a>
   
 </li>
@@ -4319,15 +4347,25 @@ sftp://alice@nas.local
 <li><strong>Calculate Subnet</strong></li>
 <li><strong>Generate Password</strong></li>
 <li><strong>Cron</strong>: validate an expression, explain it, or open the cron generator</li>
+<li><strong>Send Wake-on-LAN Packet</strong> (since WebSSH 33.5): wakes a saved server or a MAC address without opening WebSSH, also available by voice with <em>“Wake a device with WebSSH”</em></li>
 <li><strong>Open a Tool</strong>: jumps to any WebSSH tool, ping, traceroute, network scanner, certificate checker, Postmaster, mashREPL, and more, also available by voice with <em>“Open a tool in WebSSH”</em></li>
 </ul>
 <p>The lookup actions return their result to the next action, so you can chain them. Two examples:</p>
 <p><strong>Pre-deploy DNS check.</strong> <em>DNS Lookup</em> for <code>app.example.com</code> → <em>If</em> the result does not contain the expected IP → <em>Show Notification</em> “DNS not propagated yet”. Otherwise → <em>Open URLs</em> with the <code>webssh://</code> link to the deployment host.</p>
 <p><strong>Is the home connection healthy?</strong> <em>Get IP Address</em> → <em>Show Result</em>. Combine with the <em>Open a Tool</em> action set to <em>Ping</em> to reach the diagnostics screen in one step.</p>
-<h2 id="recipe-5-spotlight-and-siri">Recipe 5: Spotlight and Siri</h2>
+<h2 id="recipe-5-wake-a-machine-then-connect">Recipe 5: Wake a Machine, Then Connect</h2>
+<p>Since WebSSH 33.5 the <strong>Send Wake-on-LAN Packet</strong> action powers on a machine from a shortcut, with WebSSH staying in the background.</p>
+<ol>
+<li>Add <strong>Send Wake-on-LAN Packet</strong> and pick a saved server (it needs the <a href="/documentation/help/networking/wake-on-lan/">Wake-on-LAN role</a> and a MAC address), or switch <strong>Target</strong> to <em>Mac Address</em> and type one</li>
+<li>Add <strong>If</strong> on the result: when it is false, <strong>Show Notification</strong> “Could not send the magic packet” and stop</li>
+<li>Add <strong>Wait</strong> for 30 to 90 seconds, the time the machine needs to boot</li>
+<li>Add <strong>Open URLs</strong> with the <code>webssh://</code> link to the same server</li>
+</ol>
+<p>The action tells you that the magic packet left your iPhone, not that the machine woke up. Your iPhone must be on the same local network as the machine: in a <em>Wi-Fi</em> automation, trigger the shortcut when the phone <strong>joins</strong> your home network.</p>
+<h2 id="recipe-6-spotlight-and-siri">Recipe 6: Spotlight and Siri</h2>
 <ul>
 <li>Type <code>ssh://alice@host</code> in the iOS <strong>Search</strong> field to open a one-time connection without saving it.</li>
-<li>Say <em>“Get my IP address with WebSSH”</em> or <em>“Open a tool in WebSSH”</em> to Siri. These two phrases are registered as App Shortcuts; the other actions are available inside the Shortcuts app.</li>
+<li>Say <em>“Get my IP address with WebSSH”</em>, <em>“Open a tool in WebSSH”</em> or <em>“Wake a device with WebSSH”</em> to Siri. These phrases are registered as App Shortcuts; the other actions are available inside the Shortcuts app.</li>
 </ul>
 <h2 id="related-guides">Related Guides</h2>
 <ul>
@@ -4342,7 +4380,9 @@ sftp://alice@nas.local
 <h3 id="can-a-shortcut-run-a-command-on-my-server-through-webssh">Can a Shortcut run a command on my server through WebSSH?</h3>
 <p>A deep link opens the connection but does not carry a command. Set the connection's Execute command in WebSSH (for example tmux new -As ops) so the session starts in the task you want, then open that connection from the shortcut.</p>
 <h3 id="which-webssh-actions-are-available-in-the-shortcuts-app">Which WebSSH actions are available in the Shortcuts app?</h3>
-<p>Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner.</p>
+<p>Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner. Since WebSSH 33.5: Send Wake-on-LAN Packet, which wakes a saved server or a MAC address in the background.</p>
+<h3 id="can-a-shortcut-wake-my-pc-or-server-with-wake-on-lan">Can a Shortcut wake my PC or server with Wake-on-LAN?</h3>
+<p>Yes, since WebSSH 33.5. Add the Send Wake-on-LAN Packet action and pick a saved server that has the Wake-on-LAN role, or type a MAC address. The magic packet is sent in the background, and the action returns whether it was sent so the shortcut can wait and then open the connection.</p>
 <h3 id="is-it-safe-to-put-my-ssh-password-in-a-deep-link">Is it safe to put my SSH password in a deep link?</h3>
 <p>No. Links stored in shortcuts, NFC tags or Home Screen icons are easy to copy. Use key authentication and reference the key by name with the key parameter so the secret stays inside WebSSH.</p>
 <script type="application/ld+json">
@@ -4371,7 +4411,15 @@ sftp://alice@nas.local
       "name": "Which WebSSH actions are available in the Shortcuts app?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner."
+        "text": "Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner. Since WebSSH 33.5: Send Wake-on-LAN Packet, which wakes a saved server or a MAC address in the background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a Shortcut wake my PC or server with Wake-on-LAN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, since WebSSH 33.5. Add the Send Wake-on-LAN Packet action and pick a saved server that has the Wake-on-LAN role, or type a MAC address. The magic packet is sent in the background, and the action returns whether it was sent so the shortcut can wait and then open the connection."
       }
     },
     {
@@ -4391,7 +4439,7 @@ sftp://alice@nas.local
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 23, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 24, 2026</span>
       
     
   </small>
