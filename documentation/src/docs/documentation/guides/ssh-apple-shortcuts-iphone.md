@@ -67,6 +67,7 @@ Since WebSSH 32.7, search for **WebSSH** in the Shortcuts action list. You will 
 - **Calculate Subnet**
 - **Generate Password**
 - **Cron**: validate an expression, explain it, or open the cron generator
+- **Send Wake-on-LAN Packet** (since WebSSH 33.5): wakes a saved server or a MAC address without opening WebSSH, also available by voice with *“Wake a device with WebSSH”*
 - **Open a Tool**: jumps to any WebSSH tool, ping, traceroute, network scanner, certificate checker, Postmaster, mashREPL, and more, also available by voice with *“Open a tool in WebSSH”*
 
 The lookup actions return their result to the next action, so you can chain them. Two examples:
@@ -75,10 +76,21 @@ The lookup actions return their result to the next action, so you can chain them
 
 **Is the home connection healthy?** *Get IP Address* → *Show Result*. Combine with the *Open a Tool* action set to *Ping* to reach the diagnostics screen in one step.
 
-## Recipe 5: Spotlight and Siri
+## Recipe 5: Wake a Machine, Then Connect
+
+Since WebSSH 33.5 the **Send Wake-on-LAN Packet** action powers on a machine from a shortcut, with WebSSH staying in the background.
+
+1. Add **Send Wake-on-LAN Packet** and pick a saved server (it needs the [Wake-on-LAN role](/documentation/help/networking/wake-on-lan/) and a MAC address), or switch **Target** to *Mac Address* and type one
+2. Add **If** on the result: when it is false, **Show Notification** “Could not send the magic packet” and stop
+3. Add **Wait** for 30 to 90 seconds, the time the machine needs to boot
+4. Add **Open URLs** with the `webssh://` link to the same server
+
+The action tells you that the magic packet left your iPhone, not that the machine woke up. Your iPhone must be on the same local network as the machine: in a *Wi-Fi* automation, trigger the shortcut when the phone **joins** your home network.
+
+## Recipe 6: Spotlight and Siri
 
 - Type `ssh://alice@host` in the iOS **Search** field to open a one-time connection without saving it.
-- Say *“Get my IP address with WebSSH”* or *“Open a tool in WebSSH”* to Siri. These two phrases are registered as App Shortcuts; the other actions are available inside the Shortcuts app.
+- Say *“Get my IP address with WebSSH”*, *“Open a tool in WebSSH”* or *“Wake a device with WebSSH”* to Siri. These phrases are registered as App Shortcuts; the other actions are available inside the Shortcuts app.
 
 ## Related Guides
 
@@ -99,7 +111,11 @@ A deep link opens the connection but does not carry a command. Set the connectio
 
 ### Which WebSSH actions are available in the Shortcuts app?
 
-Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner.
+Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner. Since WebSSH 33.5: Send Wake-on-LAN Packet, which wakes a saved server or a MAC address in the background.
+
+### Can a Shortcut wake my PC or server with Wake-on-LAN?
+
+Yes, since WebSSH 33.5. Add the Send Wake-on-LAN Packet action and pick a saved server that has the Wake-on-LAN role, or type a MAC address. The magic packet is sent in the background, and the action returns whether it was sent so the shortcut can wait and then open the connection.
 
 ### Is it safe to put my SSH password in a deep link?
 
@@ -131,7 +147,15 @@ No. Links stored in shortcuts, NFC tags or Home Screen icons are easy to copy. U
       "name": "Which WebSSH actions are available in the Shortcuts app?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner."
+        "text": "Since WebSSH 32.7: Get IP Address, DNS Lookup, Whois, Calculate Subnet, Generate Password, cron validation and explanation, and Open a Tool, which launches any WebSSH tool such as ping, traceroute or the network scanner. Since WebSSH 33.5: Send Wake-on-LAN Packet, which wakes a saved server or a MAC address in the background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a Shortcut wake my PC or server with Wake-on-LAN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, since WebSSH 33.5. Add the Send Wake-on-LAN Packet action and pick a saved server that has the Wake-on-LAN role, or type a MAC address. The magic packet is sent in the background, and the action returns whether it was sent so the shortcut can wait and then open the connection."
       }
     },
     {

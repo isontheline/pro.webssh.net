@@ -64,6 +64,9 @@ See [Wake-on-LAN](/documentation/help/networking/wake-on-lan/).
 !!! tip "Check when it is up"
     Use the **Ping** tool in WebSSH while the machine boots. As soon as it answers, SSH is usually a few seconds away.
 
+??? tip "One tap with Apple Shortcuts"
+    Since WebSSH 33.5 the **Send Wake-on-LAN Packet** action of the Shortcuts app sends the magic packet without opening WebSSH. Chain it with **Wait** and **Open URLs** to wake the machine and connect in one tap: see [Automate SSH with Shortcuts](/documentation/guides/ssh-apple-shortcuts-iphone/).
+
 ## Waking a Machine from Outside Your Network
 
 The magic packet is a **broadcast** and broadcasts do not cross the internet, and usually not VPNs either. Three ways around it, from simplest to most robust:
