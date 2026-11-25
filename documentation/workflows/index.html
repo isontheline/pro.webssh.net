@@ -593,6 +593,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#versions" class="md-nav__link">
+    Versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import-and-export" class="md-nav__link">
     Import and export
   </a>
@@ -4261,6 +4268,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#versions" class="md-nav__link">
+    Versions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#import-and-export" class="md-nav__link">
     Import and export
   </a>
@@ -4302,6 +4316,7 @@
 <li><a href="#where-a-node-runs">Where a node runs</a>: hosts, groups, tags</li>
 <li><a href="#run-a-workflow">Run a workflow</a> and the <a href="#ways-to-start-a-workflow">ways to start one</a></li>
 <li><a href="#trust">Trust</a>, <a href="#secrets">secrets</a> and the <a href="#run-history">run history</a></li>
+<li><a href="#versions">Versions</a>: going back to an earlier state</li>
 <li><a href="#import-and-export">Import and export</a></li>
 </ul>
 </details>
@@ -4386,7 +4401,7 @@
 <li><strong>More</strong>: long press (or right click) a node to duplicate, disable or delete it, and a link to insert a node on it or delete it.</li>
 <li><strong>Undo / Redo</strong>: the toolbar button, ⌘Z and ⇧⌘Z on a keyboard.</li>
 </ul>
-<p>The <strong>⋯</strong> menu of the editor offers <strong>Show as List</strong>: the same workflow as a list, which is also what VoiceOver users get by default. It also holds <strong>Run history</strong> and <strong>Export</strong>.</p>
+<p>The <strong>⋯</strong> menu of the editor offers <strong>Show as List</strong>: the same workflow as a list, which is also what VoiceOver users get by default. It also holds <strong>Run history</strong>, <strong>Versions</strong> and <strong>Export</strong>.</p>
 <p>A warning sign on a node means that one of its settings is missing; the workflow cannot run until it is completed.</p>
 <h2 id="nodes">Nodes</h2>
 <p>Every node has a <strong>name</strong> (used to refer to it), can be <strong>disabled</strong>, and says what happens <strong>if it fails</strong>:</p>
@@ -4535,6 +4550,19 @@
 <li><strong>Keep the data of the runs</strong> (on by default) can be turned off per workflow: a run then only keeps how it went.</li>
 <li>A run that is cut because the app stayed in the background too long, or was closed, is marked <strong>Interrupted</strong>. It is not resumed.</li>
 </ul>
+<h2 id="versions">Versions</h2>
+<p>WebSSH keeps the earlier states of a workflow, so that a change can still be taken back once the editor is closed. <strong>⋯ → Versions</strong> in the editor lists them, newest first, with what each one changed.</p>
+<ul>
+<li>A version is kept <strong>by itself</strong>: when you leave the editor after a change, and before each run.</li>
+<li>Tap a version to see it on the canvas. Nothing can be changed there; the settings of a node open to be read.</li>
+<li><strong>Restore</strong> asks for a confirmation, then puts it back. The workflow as it was is kept as a version too, so a restore can be undone.</li>
+<li>In the <strong>run history</strong>, a run shows <strong>Workflow as it ran</strong> while that version is kept.</li>
+</ul>
+<p>The last 20 versions of each workflow are kept <strong>on the device</strong>: they are never synchronized. Moving nodes around does not make a new version.</p>
+<details class="note">
+<summary>Secrets and trust</summary>
+<p>A secret that was removed since a version was kept does not come back with it: set it again. A version that was never checked on this device asks before its first run, as the workflow did.</p>
+</details>
 <h2 id="import-and-export">Import and export</h2>
 <p><strong>Export</strong> (menu of a workflow in the library, or ⋯ in the editor) saves a workflow as a <code>.wsworkflow</code> file, which is readable JSON. <strong>Import</strong> is in the ⋯ menu of the library; a <code>.wsworkflow</code> file can also be opened with WebSSH from Files or the Finder.</p>
 <ul>
