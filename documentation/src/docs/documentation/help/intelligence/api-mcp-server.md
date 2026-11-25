@@ -36,6 +36,10 @@ This feature is only available on macOS.
 * ✅ Subnet calculator (IPv4 / IPv6)
 * ✅ Cron expression explainer with the next run dates
 * ✅ TLS certificate check (trust, expiry, chain)
+* ✅ Read your [Workflows](/documentation/workflows/): the list, one workflow with its nodes and settings (never a secret), the catalogue of nodes
+* ✅ List the saved hosts a workflow can run on (names, addresses, groups and tags, never a password or a key)
+* ✅ Change a workflow (nodes, links, settings, name), with your approval on what changes; never create or delete one
+* ✅ Run a workflow with your agreement, and read how its last runs went, node by node
 * 🚧 Make Ping Requests
 * 🚧 Launch Traceroute
 
@@ -96,6 +100,11 @@ Every action an assistant takes on your sessions belongs to a family, and each f
 - **Reading files**: listing a directory, reading a text file or downloading a file on the server of an open SSH session, over that session (SCP on the existing connection, nothing new is opened). Small text files come back to the assistant directly; larger ones and downloads land in `~/Downloads/WebSSH/<session>/`, never overwriting an existing file.
 - **Writing files**: write a text file the assistant composed, upload a file from your `~/Downloads` folder (the one local folder WebSSH can read), create a folder, rename or move, chmod.
 - **Deleting files**: files and folders; a non-empty folder needs an explicit recursive request, and the sheet shows the command in red. WebSSH refuses to delete `/` or your home itself.
+- **Reading workflows**: the nodes of one [workflow](/documentation/workflows/) with their settings: commands, targets, references. **Secrets are never included**: the assistant only learns that one is set. The sheet names the workflow and lists its nodes, and "Always for this workflow" stops asking for that workflow until WebSSH quits. Listing your workflows (names and sizes only) and reading the catalogue of nodes never ask.
+- **Changing workflows**: the assistant sends a workflow back with its changes: nodes added, removed or edited, links, settings, the name. The sheet lists what changes, node by node, and **Show on the canvas** opens the workflow as it would become. An assistant can neither set nor read a secret, and can neither create nor delete a workflow. After a change, the workflow asks you to check it before its next run, and its previous state stays in its [versions](/documentation/workflows/#versions), where the new one reads "Edited by" the assistant. With the editor open on that workflow the change shows at once, and Undo takes it back. Checking a change without storing it never asks.
+- **Reading the runs of workflows**: the last runs of one workflow, as its [run history](/documentation/workflows/#run-history) shows them: how each ended, then, node by node, what came in and what went out. Secrets stay masked, long texts are cut, and nothing is there for a workflow set not to keep the data of its runs. This is what lets an assistant tell you why a workflow failed.
+- **Running workflows**: the sheet shows what starts the run and its values, then what the workflow does outside its own data: commands, files, hosts. The run then shows in WebSSH, where you can stop it, and the assistant gets its outcome. **A workflow that is to be checked (one an assistant just changed, for instance) always asks, even on Allow.** An assistant can only start what you start by hand: a manual trigger, or a terminal-selection trigger with a text it gives.
+- **Reading the inventory**: the names, addresses, groups and tags of the saved hosts a workflow can run on. Never a password, a key nor a user name.
 
 Every one of these actions is listed in the session's journal (**History** > **Assistants**), and commands leave a marker in the session recording.
 
@@ -104,6 +113,9 @@ On the Mac, when an assistant app is installed, a ✦ button sits in the termina
 
 ??? note "OpenCode in Ask an assistant"
     OpenCode is offered here only with an OpenCode Desktop release **newer than 2.3.2**: up to that version the app receives the link and opens nothing (fixed on OpenCode's side in [pull request 65332](https://github.com/anomalyco/opencode/pull/65332)). OpenCode opens a new session in the `/tmp` folder, a neutral place: the assistant reads your session through WebSSH, not from files. Connecting OpenCode to WebSSH (below) works with any version.
+
+### Ask an assistant about a workflow
+The same ✦ button sits in the bar of the [workflow](/documentation/workflows/) editor, next to **⋯**. It suggests questions about the workflow on screen (explain it step by step, why its last run failed, what could go wrong, "change this workflow so that…") and opens the assistant you pick with your question and the workflow's name and id. Nothing of the workflow itself travels in the link: the assistant reads it through WebSSH, under the **Reading workflows** permission, and asks before it changes or runs it.
 
 ### The AI Assistants screen
 Open **Inventory** > **Tools** > **AI Assistants** (or tap the **API / MCP** card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try: tap one to copy it, or open it straight in Claude Desktop (chat or Claude Code), Codex or Cursor, where it lands in the composer for you to send. Every client goes through the `webssh-mcp` bridge: it starts WebSSH when needed and carries the token for you.

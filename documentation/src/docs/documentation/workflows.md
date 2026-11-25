@@ -16,6 +16,7 @@ A workflow runs **on your device**, with the hosts, keys and passwords WebSSH al
     * [Run a workflow](#run-a-workflow) and the [ways to start one](#ways-to-start-a-workflow)
     * [Trust](#trust), [secrets](#secrets) and the [run history](#run-history)
     * [Versions](#versions): going back to an earlier state
+    * [With an AI assistant](#with-an-ai-assistant): explain, change and run a workflow
     * [Import and export](#import-and-export)
 
 ## Create a workflow
@@ -144,6 +145,15 @@ The settings of a node have a **Last run** tab: what that node received and prod
 ??? note "Runs started by Shortcuts"
     A run started by Shortcuts never shows a connection sheet: a server that asks for a password fails its node at once, with a clear error. Use keys, or hosts whose password is saved.
 
+## With an AI assistant
+On the Mac, an AI assistant connected to WebSSH ([API / MCP Server](/documentation/help/intelligence/api-mcp-server/)) can work on your workflows, each kind of action with your approval:
+
+* **read** a workflow and explain it: secrets are never included;
+* **change** it: you are shown what changes, node by node and on the canvas, and the previous state stays in the [versions](#versions);
+* **run** it and **read its runs**, to tell you why one failed.
+
+The **✦** button of the editor, next to **⋯**, asks an assistant about the workflow on screen. An assistant never creates nor deletes a workflow.
+
 ## Trust
 A workflow can run commands on your servers, so WebSSH keeps track of where it comes from, **per device**:
 
@@ -167,6 +177,7 @@ WebSSH keeps the earlier states of a workflow, so that a change can still be tak
 * Tap a version to see it on the canvas. Nothing can be changed there; the settings of a node open to be read.
 * **Restore** asks for a confirmation, then puts it back. The workflow as it was is kept as a version too, so a restore can be undone.
 * In the **run history**, a run shows **Workflow as it ran** while that version is kept.
+* A change made by an [AI assistant](/documentation/help/intelligence/api-mcp-server/) leaves two versions: the workflow before it, and the workflow as the assistant left it, under its name.
 
 The last 20 versions of each workflow are kept **on the device**: they are never synchronized. Moving nodes around does not make a new version.
 
