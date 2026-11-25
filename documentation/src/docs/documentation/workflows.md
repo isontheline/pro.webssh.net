@@ -152,7 +152,7 @@ On the Mac, an AI assistant connected to WebSSH ([API / MCP Server](/documentati
 * **change** it: you are shown what changes, node by node and on the canvas, and the previous state stays in the [versions](#versions);
 * **run** it and **read its runs**, to tell you why one failed.
 
-The **✦** button of the editor, next to **⋯**, asks an assistant about the workflow on screen. An assistant never creates nor deletes a workflow.
+The **✦** button of the editor, beside the add button, asks an assistant about the workflow on screen. An assistant never creates nor deletes a workflow.
 
 ## Trust
 A workflow can run commands on your servers, so WebSSH keeps track of where it comes from, **per device**:
