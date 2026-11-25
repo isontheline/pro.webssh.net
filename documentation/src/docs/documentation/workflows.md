@@ -15,6 +15,7 @@ A workflow runs **on your device**, with the hosts, keys and passwords WebSSH al
     * [Where a node runs](#where-a-node-runs): hosts, groups, tags
     * [Run a workflow](#run-a-workflow) and the [ways to start one](#ways-to-start-a-workflow)
     * [Trust](#trust), [secrets](#secrets) and the [run history](#run-history)
+    * [Versions](#versions): going back to an earlier state
     * [Import and export](#import-and-export)
 
 ## Create a workflow
@@ -55,7 +56,7 @@ A workflow reads **from top to bottom**: a node receives by its top, and sends b
 * **More**: long press (or right click) a node to duplicate, disable or delete it, and a link to insert a node on it or delete it.
 * **Undo / Redo**: the toolbar button, ⌘Z and ⇧⌘Z on a keyboard.
 
-The **⋯** menu of the editor offers **Show as List**: the same workflow as a list, which is also what VoiceOver users get by default. It also holds **Run history** and **Export**.
+The **⋯** menu of the editor offers **Show as List**: the same workflow as a list, which is also what VoiceOver users get by default. It also holds **Run history**, **Versions** and **Export**.
 
 A warning sign on a node means that one of its settings is missing; the workflow cannot run until it is completed.
 
@@ -158,6 +159,19 @@ Tokens and passwords used by a node (the token of an HTTP request, for instance)
 * The history stays **on the device**: it is never synchronized.
 * **Keep the data of the runs** (on by default) can be turned off per workflow: a run then only keeps how it went.
 * A run that is cut because the app stayed in the background too long, or was closed, is marked **Interrupted**. It is not resumed.
+
+## Versions
+WebSSH keeps the earlier states of a workflow, so that a change can still be taken back once the editor is closed. **⋯ → Versions** in the editor lists them, newest first, with what each one changed.
+
+* A version is kept **by itself**: when you leave the editor after a change, and before each run.
+* Tap a version to see it on the canvas. Nothing can be changed there; the settings of a node open to be read.
+* **Restore** asks for a confirmation, then puts it back. The workflow as it was is kept as a version too, so a restore can be undone.
+* In the **run history**, a run shows **Workflow as it ran** while that version is kept.
+
+The last 20 versions of each workflow are kept **on the device**: they are never synchronized. Moving nodes around does not make a new version.
+
+??? note "Secrets and trust"
+    A secret that was removed since a version was kept does not come back with it: set it again. A version that was never checked on this device asks before its first run, as the workflow did.
 
 ## Import and export
 **Export** (menu of a workflow in the library, or ⋯ in the editor) saves a workflow as a `.wsworkflow` file, which is readable JSON. **Import** is in the ⋯ menu of the library; a `.wsworkflow` file can also be opened with WebSSH from Files or the Finder.
