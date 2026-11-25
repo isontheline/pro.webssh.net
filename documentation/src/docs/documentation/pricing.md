@@ -48,6 +48,7 @@ description: "WebSSH is free with one saved connection. PRO is a one-time lifeti
 | Proxmox-Over-SSH[^3] | :check_mark: (Read Only) | :white_check_mark: |
 | Snippets | :check_mark: (3 Snippets) | :white_check_mark: |
 | [Terminal State Bar](/documentation/terminal-state-bar/) | :check_mark: (10 Items) | :white_check_mark: |
+| [Workflows](/documentation/workflows/) | :check_mark: (1 Workflow of 10 Nodes) | :white_check_mark: |
 | **Advanced Features** | **FREE** | **PRO** |
 | [Port Forwarding](/documentation/help/networking/port-forwarding/) | :white_check_mark: | :white_check_mark: |
 | [Port Knocking](/documentation/help/networking/port-knocking/) | :white_check_mark: | :white_check_mark: |
