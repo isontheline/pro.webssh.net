@@ -1,0 +1,4661 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build workflows from nodes in WebSSH: run commands on several servers, check certificates, call APIs, branch on the results. They run on your device, with your saved hosts and keys.">
+      
+      
+      
+        <link rel="canonical" href="https://webssh.net/documentation/workflows/">
+      
+      
+        <link rel="prev" href="../webssh-link/">
+      
+      
+        <link rel="next" href="../changelog/25/">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.0.4">
+    
+    
+    
+        <title>Workflows: Automate SSH Tasks on iPhone, iPad and Mac - WebSSH</title>
+    
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9c788c91.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css?20251102B">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+    <meta name="apple-itunes-app" content="app-id=497714887, affiliate-data=www_webssh_net" />
+    <meta name="ahrefs-site-verification" content="18384b51317985f3df4047135c63447036bab36c3df363e66140b59cb9fd58e8" />
+
+    
+    
+
+    
+        
+            
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="WebSSH" />
+        <meta property="og:title" content="Workflows: Automate SSH Tasks on iPhone, iPad and Mac - WebSSH" />
+        <meta property="og:url" content="https://webssh.net/documentation/workflows/" />
+        <meta property="og:image" content="https://webssh.net/images/webssh-logo.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Workflows: Automate SSH Tasks on iPhone, iPad and Mac - WebSSH" />
+        
+            <meta property="og:description" content="Build workflows from nodes in WebSSH: run commands on several servers, check certificates, call APIs, branch on the results. They run on your device, with your saved hosts and keys." />
+            <meta name="twitter:description" content="Build workflows from nodes in WebSSH: run commands on several servers, check certificates, call APIs, branch on the results. They run on your device, with your saved hosts and keys." />
+        
+    
+
+    
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#workflows" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WebSSH" class="md-header__button md-logo" aria-label="WebSSH" data-md-component="logo">
+      
+  <img src="../../images/webssh-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WebSSH
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Workflows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Getting Started
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../support/" class="md-tabs__link">
+      Support
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../licenses/" class="md-tabs__link">
+        Licenses
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WebSSH" class="md-nav__button md-logo" aria-label="WebSSH" data-md-component="logo">
+      
+  <img src="../../images/webssh-logo.png" alt="logo">
+
+    </a>
+    WebSSH
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="true">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        About Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../becoming-external-tester/" class="md-nav__link">
+        Beta Enrollment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact-me/" class="md-nav__link">
+        Contact Me
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frequently-asked-questions/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mashREPL/" class="md-nav__link">
+        mashREPL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pricing/" class="md-nav__link">
+        Pricing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        Translations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-browser/" class="md-nav__link">
+        Web Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webssh-link/" class="md-nav__link">
+        WebSSH Link
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Workflows
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-workflow" class="md-nav__link">
+    Create a workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-editor" class="md-nav__link">
+    The editor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-references" class="md-nav__link">
+    Data and references
+  </a>
+  
+    <nav class="md-nav" aria-label="Data and references">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-node-runs" class="md-nav__link">
+    Where a node runs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-workflow" class="md-nav__link">
+    Run a workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ways-to-start-a-workflow" class="md-nav__link">
+    Ways to start a workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust" class="md-nav__link">
+    Trust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-history" class="md-nav__link">
+    Run history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-and-export" class="md-nav__link">
+    Import and export
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    Limits
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11" type="checkbox" id="__nav_3_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11" tabindex="0" aria-expanded="false">
+          Changelog
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Changelog" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Changelog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/25/" class="md-nav__link">
+        25 - Sunflower
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/26/" class="md-nav__link">
+        26 - Train
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/27/" class="md-nav__link">
+        27 - Stars
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/28/" class="md-nav__link">
+        28 - Fox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/29/" class="md-nav__link">
+        29 - Monkey
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/30/" class="md-nav__link">
+        30 - Snowflake
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/31/" class="md-nav__link">
+        31 - Ocean
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/32/" class="md-nav__link">
+        32 - Comet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/33/" class="md-nav__link">
+        33 - Ladybug
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_10" type="checkbox" id="__nav_3_11_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11_10" tabindex="0" aria-expanded="false">
+          History
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="History" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_11_10">
+          <span class="md-nav__icon md-icon"></span>
+          History
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/15/" class="md-nav__link">
+        15 - Cactus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/16/" class="md-nav__link">
+        16 - Gem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/17/" class="md-nav__link">
+        17 - Shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/18/" class="md-nav__link">
+        18 - Honeybee
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/19/" class="md-nav__link">
+        19 - Octopus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/20/" class="md-nav__link">
+        20 - Moon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/21/" class="md-nav__link">
+        21 - Penguin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/22/" class="md-nav__link">
+        22 - Butterfly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/23/" class="md-nav__link">
+        23 - Satellite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/24/" class="md-nav__link">
+        24 - Dragon
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/previous-releases/" class="md-nav__link">
+        Previous Releases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_11_10_12" type="checkbox" id="__nav_3_11_10_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_11_10_12" tabindex="0" aria-expanded="false">
+          14
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="14" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_11_10_12">
+          <span class="md-nav__icon md-icon"></span>
+          14
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.10/" class="md-nav__link">
+        14.10 - Truck
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.11/" class="md-nav__link">
+        14.11 - Milky Way
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.12/" class="md-nav__link">
+        14.12 - Volcano
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.13/" class="md-nav__link">
+        14.13 - Tent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.14/" class="md-nav__link">
+        14.14 - Green Apple
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.15/" class="md-nav__link">
+        14.15 - Cookie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.16/" class="md-nav__link">
+        14.16 - Whale
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.17/" class="md-nav__link">
+        14.17 - Trèfle
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.18/" class="md-nav__link">
+        14.18 - Mushroom
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.19/" class="md-nav__link">
+        14.19 - Crocodile
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.6/" class="md-nav__link">
+        14.6 - Bicyclist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.7/" class="md-nav__link">
+        14.7 - Tractor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.8/" class="md-nav__link">
+        14.8 - Locomotive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/history/14/14.9/" class="md-nav__link">
+        14.9 - Helicopter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_12" type="checkbox" id="__nav_3_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_12" tabindex="0" aria-expanded="false">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_12">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/check-server-logs-iphone/" class="md-nav__link">
+        How to Check Server Logs from Your iPhone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/edit-config-file-remote-server-iphone/" class="md-nav__link">
+        Edit a Config File on a Remote Server from iPhone or iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/expose-local-port-internet-iphone/" class="md-nav__link">
+        Expose a Local Port to the Internet from iPhone, iPad or Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/free-ssh-client-for-ipad/" class="md-nav__link">
+        Free SSH Client for iPad: No Subscription, No Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/free-ssh-client-for-iphone/" class="md-nav__link">
+        Free SSH Client for iPhone: No Subscription, No Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/free-ssh-client-for-mac/" class="md-nav__link">
+        Free SSH Client for Mac: No Subscription, No Account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/homelab-ssh-tunnel-ios/" class="md-nav__link">
+        Access Your Homelab Remotely via SSH Tunnel on iOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/keep-ssh-session-alive-iphone/" class="md-nav__link">
+        SSH Disconnects on iPhone: How to Keep Sessions Alive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/no-subscription-ssh-client-ios/" class="md-nav__link">
+        Best SSH Client for iOS Without a Subscription
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/port-forwarding-ios/" class="md-nav__link">
+        SSH Port Forwarding on iOS — Tunnels on iPhone & iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/raspberry-pi-ssh-ios/" class="md-nav__link">
+        How to SSH into a Raspberry Pi from iPhone or iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/record-ssh-session-asciinema-iphone-ipad-mac/" class="md-nav__link">
+        Record an SSH Session as asciinema on iPhone, iPad and Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/restart-server-from-iphone/" class="md-nav__link">
+        How to Restart a Server or Service from Your iPhone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/sftp-file-transfer-iphone/" class="md-nav__link">
+        Transfer Files via SFTP on iPhone and iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/ssh-apple-shortcuts-iphone/" class="md-nav__link">
+        Automate SSH on iPhone with Shortcuts and Deep Links
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/ssh-jump-host-bastion-iphone-ipad-mac/" class="md-nav__link">
+        SSH Through a Bastion (Jump Host) from iPhone, iPad and Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/ssh-proxmox-iphone/" class="md-nav__link">
+        How to SSH into Proxmox from iPhone or iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/synology-ssh-iphone-ipad/" class="md-nav__link">
+        SSH to Synology NAS from iPhone or iPad
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/tmux-iphone-persistent-ssh-sessions/" class="md-nav__link">
+        tmux on iPhone: SSH Sessions That Survive Disconnects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/wake-pc-remotely-from-iphone/" class="md-nav__link">
+        Wake Your PC or Server from iPhone with Wake-on-LAN
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13" type="checkbox" id="__nav_3_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13" tabindex="0" aria-expanded="false">
+          Help
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Help" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_13">
+          <span class="md-nav__icon md-icon"></span>
+          Help
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/iCloud/" class="md-nav__link">
+        iCloud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/restore-purchases/" class="md-nav__link">
+        Restoring Purchases
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_3" type="checkbox" id="__nav_3_13_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_3" tabindex="0" aria-expanded="false">
+          SSH
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SSH" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_13_3">
+          <span class="md-nav__icon md-icon"></span>
+          SSH
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/keyboard-shortcuts-combo-keys/" class="md-nav__link">
+        Keyboard Shortcuts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/lockdown-mode-and-fonts/" class="md-nav__link">
+        Lockdown Mode and Custom Fonts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/public-private-key/" class="md-nav__link">
+        Public / Private Key
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/ssh-config-file/" class="md-nav__link">
+        SSH Config File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/ssh-copy-id/" class="md-nav__link">
+        ssh-copy-id
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/supported-algorithms/" class="md-nav__link">
+        Supported Algorithms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/terminal-inline-images/" class="md-nav__link">
+        Terminal Inline Images (SIXEL & iTerm2)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/terminal-progress-bar/" class="md-nav__link">
+        Terminal Progress Bar (OSC 9;4)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/terrapin-attack/" class="md-nav__link">
+        Terrapin Attack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/unable-to-agree-upon-client-to-server/" class="md-nav__link">
+        Unable to agree upon client-to-server Error
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_3_11" type="checkbox" id="__nav_3_13_3_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_3_11" tabindex="0" aria-expanded="false">
+          Terminal settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Terminal settings" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_13_3_11">
+          <span class="md-nav__icon md-icon"></span>
+          Terminal settings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/terminal-settings/terminal-badge/" class="md-nav__link">
+        Terminal Badge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/SSH/terminal-settings/terminal-font-size/" class="md-nav__link">
+        Terminal Font Size
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_4" type="checkbox" id="__nav_3_13_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_4" tabindex="0" aria-expanded="false">
+          Errors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Errors" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_13_4">
+          <span class="md-nav__icon md-icon"></span>
+          Errors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/errors/cant-connect-anymore-using-macos-sequoia/" class="md-nav__link">
+        Can't connect anymore using macOS Sequoia 15.x
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/errors/magic-keyboard-space-bar-issue/" class="md-nav__link">
+        Apple Magic Keyboard Space Bar Issue
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/errors/no-route-to-host-error/" class="md-nav__link">
+        No Route to Host Error
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/errors/ssh-sftp-error-must-first-connect-to-the-ssh-server/" class="md-nav__link">
+        Must first connect to the SSH server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5" type="checkbox" id="__nav_3_13_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_5" tabindex="0" aria-expanded="false">
+          Howtos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Howtos" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_13_5">
+          <span class="md-nav__icon md-icon"></span>
+          Howtos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/arrange-connections-inside-folders/" class="md-nav__link">
+        Arrange connections inside folders (groups and subgroups)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/automatic-database-backups/" class="md-nav__link">
+        Automatic Database Backups
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/compose-bar/" class="md-nav__link">
+        Compose Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/copying-text-to-clipboard-from-terminal/" class="md-nav__link">
+        Copying text to the clipboard from the terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/create-or-import-public-private-key-pair/" class="md-nav__link">
+        Create or Import a Public/Private Key Pair
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/edit-delete-clone-connection/" class="md-nav__link">
+        Edit / Delete / Clone a connection (server)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/enabling-verbose-logging/" class="md-nav__link">
+        Enabling Verbose Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/encrypt-passwords-and-private-keys/" class="md-nav__link">
+        Encrypt Passwords and Private Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/import-snippets-from-github-gist/" class="md-nav__link">
+        Import Snippets from GitHub Gist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/key-maps/" class="md-nav__link">
+        Key Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/known-hosts-manage/" class="md-nav__link">
+        Managing Known Hosts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/launching-multiple-terminals/" class="md-nav__link">
+        Multiple connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/link-connections-using-tags/" class="md-nav__link">
+        Link Connections using Tags
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/open-files-with-webssh/" class="md-nav__link">
+        Open files with WebSSH (Text Editor & Hex Viewer)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/paste-slowly-serial-devices/" class="md-nav__link">
+        Paste Slowly
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/pasting-clipboard-content/" class="md-nav__link">
+        Paste Clipboard Content
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/provision-connections-from-url/" class="md-nav__link">
+        Provision Connections from a URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/raw-tcp-connection-serial-over-ip/" class="md-nav__link">
+        Raw TCP Connection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/run-snippet-on-multiple-hosts/" class="md-nav__link">
+        Run a command on multiple hosts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/scp-file-browser/" class="md-nav__link">
+        SCP File Browser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/snippets/" class="md-nav__link">
+        Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/split-panes-and-broadcast-input/" class="md-nav__link">
+        Split panes and Broadcast Input
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/switch-language/" class="md-nav__link">
+        Switch WebSSH UI Language
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/telnet-connections/" class="md-nav__link">
+        Telnet Connections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/use-deep-linking/" class="md-nav__link">
+        Deep Linking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/use-mystic-bbs-telnet-cp437-character-translation/" class="md-nav__link">
+        Use Mystic BBS with Telnet CP437 codepage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/wsbk-backup-file-format/" class="md-nav__link">
+        The .wsbk Backup File Format
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_28" type="checkbox" id="__nav_3_13_5_28" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_5_28" tabindex="0" aria-expanded="false">
+          SFTP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SFTP" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_13_5_28">
+          <span class="md-nav__icon md-icon"></span>
+          SFTP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SFTP/bad-interpreter-no-such-file-or-directory/" class="md-nav__link">
+        Bad interpreter / No such file or directory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SFTP/search-replace-text-editor/" class="md-nav__link">
+        Search / Replace text in SFTP editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SFTP/startup-folder-path/" class="md-nav__link">
+        Startup Folder / Path
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_29" type="checkbox" id="__nav_3_13_5_29" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_5_29" tabindex="0" aria-expanded="false">
+          SSH
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SSH" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_13_5_29">
+          <span class="md-nav__icon md-icon"></span>
+          SSH
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/adding-control-key-to-snippets/" class="md-nav__link">
+        Adding Control-Key to Snippets
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/customise-keyboard-accessory-view-layout/" class="md-nav__link">
+        Keyboard Accessory View Customisation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/shift-enter-new-line/" class="md-nav__link">
+        Shift + Enter for a New Line
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/use-arrow-keys-modes/" class="md-nav__link">
+        Arrow Keys Modes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/use-function-keys-on-mac/" class="md-nav__link">
+        Function Keys on Mac
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/use-meta-alt-option-key/" class="md-nav__link">
+        Meta / Alt / Option
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/SSH/use-old-special-keys/" class="md-nav__link">
+        Old Special Keys
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_30" type="checkbox" id="__nav_3_13_5_30" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_5_30" tabindex="0" aria-expanded="false">
+          mashREPL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="mashREPL" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_13_5_30">
+          <span class="md-nav__icon md-icon"></span>
+          mashREPL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/database-backup/" class="md-nav__link">
+        Database Backup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/database-restore/" class="md-nav__link">
+        Database Restore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/export/" class="md-nav__link">
+        Export - From WebSSH to an ssh_config File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/import/" class="md-nav__link">
+        Import - From Other SSH Clients to WebSSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/obtain-public-ip-address/" class="md-nav__link">
+        Obtain Public IP Address
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/mashREPL/servedit/" class="md-nav__link">
+        Servedit - Update Connections in Batch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_5_31" type="checkbox" id="__nav_3_13_5_31" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_5_31" tabindex="0" aria-expanded="false">
+          Tmux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tmux" data-md-level="4">
+        <label class="md-nav__title" for="__nav_3_13_5_31">
+          <span class="md-nav__icon md-icon"></span>
+          Tmux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/tmux/create-attach-existing-tmux-session/" class="md-nav__link">
+        Create or attach an existing tmux session
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/howtos/tmux/tmux-scrollback-buffer/" class="md-nav__link">
+        Scrollback buffer in tmux
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_6" type="checkbox" id="__nav_3_13_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_6" tabindex="0" aria-expanded="false">
+          Intelligence
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Intelligence" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_13_6">
+          <span class="md-nav__icon md-icon"></span>
+          Intelligence
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/intelligence/" class="md-nav__link">
+        Intelligence & Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/intelligence/api-mcp-server/" class="md-nav__link">
+        API / MCP Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_13_7" type="checkbox" id="__nav_3_13_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_13_7" tabindex="0" aria-expanded="false">
+          Networking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Networking" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_13_7">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/alternative-addresses/" class="md-nav__link">
+        Alternative Addresses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/checking-host-availability/" class="md-nav__link">
+        Checking Host Availability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/dns-propagation/" class="md-nav__link">
+        DNS Propagation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/dynamic-port-forwarding/" class="md-nav__link">
+        Dynamic Port Forwarding (DPF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/local-port-forwarding/" class="md-nav__link">
+        Local Port Forwarding (LPF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/port-forwarding/" class="md-nav__link">
+        Port Forwarding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/port-knocking/" class="md-nav__link">
+        Port Knocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/public-url/" class="md-nav__link">
+        Public URL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/vpn-over-ssh/" class="md-nav__link">
+        VPN-Over-SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../help/networking/wake-on-lan/" class="md-nav__link">
+        Wake-on-LAN
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_14" type="checkbox" id="__nav_3_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_14" tabindex="0" aria-expanded="false">
+          Legal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Legal" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_14">
+          <span class="md-nav__icon md-icon"></span>
+          Legal
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../legal/privacy-policy/" class="md-nav__link">
+        Privacy Policy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_15" type="checkbox" id="__nav_3_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_15" tabindex="0" aria-expanded="false">
+          Terminal state bar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Terminal state bar" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_15">
+          <span class="md-nav__icon md-icon"></span>
+          Terminal state bar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-state-bar/" class="md-nav__link">
+        Terminal State Bar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-state-bar/examples/" class="md-nav__link">
+        State Bar Examples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-state-bar/javascript-api/" class="md-nav__link">
+        State Bar JavaScript API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal-state-bar/library/" class="md-nav__link">
+        State Bar Library
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3_16" type="checkbox" id="__nav_3_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_16" tabindex="0" aria-expanded="false">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_16">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Licenses
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Licenses" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Licenses
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/" class="md-nav__link">
+        About Licenses
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_ANSITERMINAL/" class="md-nav__link">
+        ANSITerminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_ASCIINEMA_PLAYER/" class="md-nav__link">
+        Asciinema Player
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_BLOCKALERTS/" class="md-nav__link">
+        BlockAlerts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_CLOUDKITQUEUES/" class="md-nav__link">
+        CloudKitQueues
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_COCOALUMBERJACK/" class="md-nav__link">
+        CocoaLumberjack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_COLORPICKER/" class="md-nav__link">
+        ColorPicker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_CUE/" class="md-nav__link">
+        CueIcons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_CYBERCHEF/" class="md-nav__link">
+        CyberChef
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_CYRKEYBOARDBUTTON/" class="md-nav__link">
+        CYRKeyboardButton
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_DNSCLIENT/" class="md-nav__link">
+        DNSClient
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_DSFSPARKLINE/" class="md-nav__link">
+        DSFSparkline
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_EDSEMVER/" class="md-nav__link">
+        EDSemver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_EVENTSOURCE/" class="md-nav__link">
+        EventSource
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_FIRACODE/" class="md-nav__link">
+        Fira Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_FONTAWESOME/" class="md-nav__link">
+        FontAwesome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_FXFORMS/" class="md-nav__link">
+        FXForms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_GCDTIMER/" class="md-nav__link">
+        LICENSE GCDTIMER
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_GCIMAGEPICKERCONTROLLER/" class="md-nav__link">
+        GCImagePickerController
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_GCPLACEHOLDERTEXTVIEW/" class="md-nav__link">
+        GCPlaceHolderTextView
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_GRADIENTBUTTON/" class="md-nav__link">
+        GradientButton
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_HACK/" class="md-nav__link">
+        Hack - A typeface designed for source code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_HIGHLIGHTEDTEXTEDITOR/" class="md-nav__link">
+        HilightedTextEditor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_IAPHELPER/" class="md-nav__link">
+        IAPHelper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_IOSEVKA/" class="md-nav__link">
+        Iosevka
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_IOS_SYSTEM/" class="md-nav__link">
+        ios_system
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_IOS_SYSTEM_SERVICES/" class="md-nav__link">
+        iOS-System-Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_ITERM2_COLOR_SCHEMES/" class="md-nav__link">
+        iTerm Color Schemes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_JGACTIONSHEET/" class="md-nav__link">
+        JGActionSheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_JSCONTROLLER/" class="md-nav__link">
+        JSController
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_KXMENU/" class="md-nav__link">
+        KXMenu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_LIBTELNET/" class="md-nav__link">
+        libtelnet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_MARKDOWNUI/" class="md-nav__link">
+        MarkdownUI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_MESLOLGS_NF/" class="md-nav__link">
+        MesloLGS NF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_MMWORMHOLE/" class="md-nav__link">
+        MMWormhole
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_MONOID/" class="md-nav__link">
+        Monoid
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_NANOSTORE/" class="md-nav__link">
+        NanoStore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_NYXIMAGESKIT/" class="md-nav__link">
+        NYXImagesKit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_OPENDYSLEXIC/" class="md-nav__link">
+        OpenDyslexic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_OPENSSL/" class="md-nav__link">
+        OpenSSL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_ORSSERIALPORT/" class="md-nav__link">
+        ORSSerialPort
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_QUICKJS/" class="md-nav__link">
+        QuickJS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_RAPTUREXML/" class="md-nav__link">
+        RaptureXML
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_REACHABILITY/" class="md-nav__link">
+        Reachability
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_RUNESTONE/" class="md-nav__link">
+        Runestone
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SIMPLEPING/" class="md-nav__link">
+        SimplePing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SOURCECODEPRO/" class="md-nav__link">
+        Source Code Pro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SSHCONFIG/" class="md-nav__link">
+        SSHConfig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SVHTTPREQUEST/" class="md-nav__link">
+        SVHttpRequest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTARGUMENTPARSER/" class="md-nav__link">
+        Swift Argument Parser
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTATOMICS/" class="md-nav__link">
+        Swift Atomics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTCHESS/" class="md-nav__link">
+        SwiftChess
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTCRYPTO/" class="md-nav__link">
+        Swift Crypto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIO/" class="md-nav__link">
+        Swift NIO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIOSSH/" class="md-nav__link">
+        Swift NIO SSH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SWIFTNIOTRANSPORTSERVICES/" class="md-nav__link">
+        Swift NIO Transport Services
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SYMBOLPICKER/" class="md-nav__link">
+        SymbolPicker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_SwiftMessages/" class="md-nav__link">
+        SwiftMessages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_TERMCOLOR_C/" class="md-nav__link">
+        termcolor-c
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_TERMINUS/" class="md-nav__link">
+        Terminus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_TPKEYBOARDAVOIDING/" class="md-nav__link">
+        TPKeyboardAvoiding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_TSLANGUAGEMANAGER/" class="md-nav__link">
+        TSLanguageManager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_TURTLEBEZIERPATH/" class="md-nav__link">
+        TurtleBezierPath
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_UCKEYCHAINSTORE/" class="md-nav__link">
+        UCKeychainStore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_UIALERTCONTROLLER_CONVENIENCE/" class="md-nav__link">
+        UIAlertControllerConvenience
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_UIDEVICEHARDWARE/" class="md-nav__link">
+        UIDeviceHardware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_UIIMAGEVIEWRESIZABLE/" class="md-nav__link">
+        UIImageViewResizable
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_WELCOMESHEET/" class="md-nav__link">
+        Welcome Sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_XTERMJS/" class="md-nav__link">
+        Xterm.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../licenses/LICENSE_YUBIKIT/" class="md-nav__link">
+        Yubico Mobile iOS SDK (YubiKit)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-workflow" class="md-nav__link">
+    Create a workflow
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-editor" class="md-nav__link">
+    The editor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodes" class="md-nav__link">
+    Nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-and-references" class="md-nav__link">
+    Data and references
+  </a>
+  
+    <nav class="md-nav" aria-label="Data and references">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-a-node-runs" class="md-nav__link">
+    Where a node runs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-a-workflow" class="md-nav__link">
+    Run a workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ways-to-start-a-workflow" class="md-nav__link">
+    Ways to start a workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trust" class="md-nav__link">
+    Trust
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-history" class="md-nav__link">
+    Run history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#import-and-export" class="md-nav__link">
+    Import and export
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    Limits
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="workflows">Workflows</h1>
+<p>Since WebSSH 33.6 the <strong>Workflows</strong> section lets you chain actions as nodes on a canvas: run a command on a set of servers, read the result, branch on it, call an API, send yourself a notification.</p>
+<p>A workflow runs <strong>on your device</strong>, with the hosts, keys and passwords WebSSH already knows. There is no server in between and nothing to install on your machines.</p>
+<details class="info">
+<summary>On this page</summary>
+<ul>
+<li><a href="#create-a-workflow">Create a workflow</a>, blank or from an example</li>
+<li><a href="#the-editor">The editor</a> and <a href="#nodes">the nodes</a></li>
+<li><a href="#data-and-references">Data and references</a>: how a node uses what the previous one produced</li>
+<li><a href="#where-a-node-runs">Where a node runs</a>: hosts, groups, tags</li>
+<li><a href="#run-a-workflow">Run a workflow</a> and the <a href="#ways-to-start-a-workflow">ways to start one</a></li>
+<li><a href="#trust">Trust</a>, <a href="#secrets">secrets</a> and the <a href="#run-history">run history</a></li>
+<li><a href="#import-and-export">Import and export</a></li>
+</ul>
+</details>
+<h2 id="create-a-workflow">Create a workflow</h2>
+<ol>
+<li>Open the <strong>Workflows</strong> tile of the sidebar.</li>
+<li>Use the add button (top right).</li>
+<li>Choose <strong>Blank workflow</strong>, or one of the <strong>examples</strong>.</li>
+</ol>
+<p>A blank workflow starts with a <em>Manual run</em> trigger. An example opens directly in the editor.</p>
+<h3 id="examples">Examples</h3>
+<p>The examples name no server: the nodes that run on hosts are flagged until you choose yours. Their titles and node names are in English in every language.</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fleet health</td>
+<td>Uptime and disk usage of a set of servers, with a notification when the root disk goes over a limit</td>
+</tr>
+<tr>
+<td>Certificates about to expire</td>
+<td>Checks the TLS certificate of each domain of a list and tells which ones expire soon</td>
+</tr>
+<tr>
+<td>Wake, then connect</td>
+<td>Wake-on-LAN, a wait, a check of the SSH port, then a command</td>
+</tr>
+<tr>
+<td>Restart a service safely</td>
+<td>Restarts a systemd service, checks that it came back, shows its last log lines when it did not</td>
+</tr>
+<tr>
+<td>What is this address?</td>
+<td>From an IP address selected in a terminal: whois, reverse DNS and ping</td>
+</tr>
+<tr>
+<td>Domain check</td>
+<td>Addresses, e-mail setup, certificate and HTTPS port of a domain</td>
+</tr>
+<tr>
+<td>Pending updates</td>
+<td>Counts the packages waiting for an upgrade on each server (Debian, Ubuntu), the most behind first</td>
+</tr>
+<tr>
+<td>Deploy a configuration file</td>
+<td>Copies an nginx file from a reference server to others, tests it, reloads only where the test passes</td>
+</tr>
+<tr>
+<td>New password for an account</td>
+<td>Generates a password, sets it on a set of servers, copies a one-time link to hand it over</td>
+</tr>
+<tr>
+<td>API health</td>
+<td>Calls an endpoint with a token and tells whether it answers 200</td>
+</tr>
+<tr>
+<td>Status of the selected service</td>
+<td>From a unit name selected in a terminal: its systemd status</td>
+</tr>
+<tr>
+<td>Servers that need a reboot</td>
+<td>Lists the servers where an update asked for a reboot (Debian, Ubuntu)</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Commands that need rights</summary>
+<p>The examples that restart a service or change a password use <code>sudo -n</code>: without a password-less sudo they fail at once with a readable error, they never wait for a password.</p>
+</details>
+<h2 id="the-editor">The editor</h2>
+<p>A workflow reads <strong>from top to bottom</strong>: a node receives by its top, and sends by the outputs at its bottom.</p>
+<ul>
+<li><strong>Add a node</strong>: tap the add icon of an output to add a node under it, already connected. The add button of the toolbar adds a node anywhere.</li>
+<li><strong>Connect</strong>: drag from an output to another node. Dropping in the empty space opens the list of nodes.</li>
+<li><strong>Move</strong>: drag a node. <strong>Tidy Up</strong> (floating button) lays the whole graph out again.</li>
+<li><strong>Settings of a node</strong>: double tap (or double click) a node. They open beside the canvas on iPad and Mac, in a sheet on iPhone.</li>
+<li><strong>More</strong>: long press (or right click) a node to duplicate, disable or delete it, and a link to insert a node on it or delete it.</li>
+<li><strong>Undo / Redo</strong>: the toolbar button, ⌘Z and ⇧⌘Z on a keyboard.</li>
+</ul>
+<p>The <strong>⋯</strong> menu of the editor offers <strong>Show as List</strong>: the same workflow as a list, which is also what VoiceOver users get by default. It also holds <strong>Run history</strong> and <strong>Export</strong>.</p>
+<p>A warning sign on a node means that one of its settings is missing; the workflow cannot run until it is completed.</p>
+<h2 id="nodes">Nodes</h2>
+<p>Every node has a <strong>name</strong> (used to refer to it), can be <strong>disabled</strong>, and says what happens <strong>if it fails</strong>:</p>
+<ul>
+<li><strong>Stop the run</strong> (default)</li>
+<li><strong>Skip the item and go on</strong></li>
+<li><strong>Send the item out by Error</strong>: the node gains an <em>Error</em> output, where the failing items go with the reason in their <code>error</code> field.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Nodes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Triggers</td>
+<td>Manual run, Terminal selection</td>
+</tr>
+<tr>
+<td>SSH</td>
+<td>Run a command</td>
+</tr>
+<tr>
+<td>Remote Files</td>
+<td>Read a remote file, Write a remote file, List a remote folder</td>
+</tr>
+<tr>
+<td>Tools</td>
+<td>HTTP request, DNS lookup, Check a certificate, Check a port, Ping, Whois, Check e-mail setup, Calculate a subnet, Read a cron expression, Addresses of this device, Generate a password, Share a secret, Wake-on-LAN</td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Set fields, Parse (JSON, lines, CSV), Baker operation, Baker recipe</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>JavaScript</td>
+</tr>
+<tr>
+<td>Logic</td>
+<td>If, Filter, Merge, Wait</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>Result, Notification, Copy to clipboard</td>
+</tr>
+</tbody>
+</table>
+<p>The Tools nodes use the same engines as the <a href="/documentation/tools/">Sysadmin Tools</a> of WebSSH. <em>Baker operation</em> applies one operation of the Baker Toolkit; <em>Baker recipe</em> applies a recipe you saved there, and follows it when you change it.</p>
+<h2 id="data-and-references">Data and references</h2>
+<p>What travels along a link is a list of <strong>items</strong>. An item is a set of fields; a node that ran on a server also attaches that server to each item it produces.</p>
+<ul>
+<li><em>Run a command</em> gives one item per host, with <code>text</code> (the output) and <code>exitCode</code>.</li>
+<li><em>If</em> sends each item by <strong>True</strong> or by <strong>False</strong>; <em>Filter</em> keeps the items that match.</li>
+<li>A Tools node adds what the tool answered to the fields of the item (<code>status</code> for an HTTP request, <code>daysUntilExpiry</code> for a certificate, and so on).</li>
+</ul>
+<p>In most settings you can refer to that data with double braces:</p>
+<table>
+<thead>
+<tr>
+<th>Reference</th>
+<th>Gives</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>{{ $json.text }}</code></td>
+<td>A field of the incoming item</td>
+</tr>
+<tr>
+<td><code>{{ $json.data.id }}</code>, <code>{{ $json["a name"] }}</code></td>
+<td>A field inside a field; a name with spaces</td>
+</tr>
+<tr>
+<td><code>{{ $node["Disk usage"].json.text }}</code></td>
+<td>A field of what another node produced</td>
+</tr>
+<tr>
+<td><code>{{ $vars.SERVICE }}</code></td>
+<td>A value asked when the run starts</td>
+</tr>
+<tr>
+<td><code>{{ $host.name }}</code>, <code>{{ $host.address }}</code></td>
+<td>The server the item comes from</td>
+</tr>
+<tr>
+<td><code>{{ $trigger.text }}</code></td>
+<td>What started the run (the selected text, for instance)</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>{}</strong> button of a setting inserts a reference for you. After a first run it lists the fields the node really received.</p>
+<p>Helpers: <code>optional(...)</code> gives nothing instead of an error when the field does not exist, <code>length(...)</code> counts, <code>json(...)</code> writes the value as JSON, <code>raw(...)</code> (see below).</p>
+<details class="warning">
+<summary>Values in a command are quoted</summary>
+<p>A value inserted in an SSH command is quoted for the shell, so that a file name with a space or a <code>;</code> cannot change the command. <code>raw(...)</code> lifts that protection: use it only for a value you wrote yourself.</p>
+</details>
+<p>A <code>{{</code> that is not followed by <code>$</code> is left alone: Docker and Jinja templates in your commands are not touched.</p>
+<h3 id="javascript">JavaScript</h3>
+<p>The <em>JavaScript</em> node transforms items with a script. It runs either once with all the items (<code>items</code>, and <code>$hosts</code> for their servers), or once per item (<code>item</code>, <code>$host</code>). Return an object, a list of objects, or nothing.</p>
+<p>The script only sees data: it has no network and no access to your servers. It is stopped after its timeout (10 seconds by default, 2 minutes at most). What it writes with <code>console.log</code> is shown with the run.</p>
+<h2 id="where-a-node-runs">Where a node runs</h2>
+<p>The nodes that work on servers have a <strong>Run on</strong> setting:</p>
+<ul>
+<li><strong>Chosen hosts</strong>: saved hosts you pick one by one.</li>
+<li><strong>Group</strong> or <strong>Tag</strong>: every saved host of that group or with that tag, read when the workflow runs.</li>
+<li><strong>Host of each item</strong>: the server each incoming item comes from. Use it after a node that already ran on servers.</li>
+<li><strong>Session the run came from</strong>: the saved host of the terminal the workflow was started from.</li>
+</ul>
+<p>A workflow opens <strong>its own connections</strong>, a few servers at a time, and closes them when it ends: it never types in your open terminals. Jump hosts are followed. When a server asks for a password, a passphrase or a host key confirmation, the usual connection sheet is shown.</p>
+<h2 id="run-a-workflow">Run a workflow</h2>
+<p>The <strong>Run</strong> button of the editor starts the workflow. When it has several triggers, or when its trigger asks for values, a sheet asks first.</p>
+<p>On the canvas, the run is read on the nodes:</p>
+<ul>
+<li>each node shows whether it is running, succeeded (with the number of items it sent out), failed or was skipped;</li>
+<li>the links the data went through are coloured, so you can see which output of an <em>If</em> was taken;</li>
+<li>a bar at the bottom names the node being run and offers <strong>Stop</strong>, <strong>Details</strong>, and once the run is over <strong>Run again</strong>.</li>
+</ul>
+<p><strong>Details</strong> lists the nodes with what came in and went out of each. The <strong>Results</strong> are what the <em>Result</em> nodes produced, each under the name of its node; a long result is folded.</p>
+<p>The settings of a node have a <strong>Last run</strong> tab: what that node received and produced the last time the workflow ran.</p>
+<h2 id="ways-to-start-a-workflow">Ways to start a workflow</h2>
+<ul>
+<li><strong>Manual run</strong>: the Run button. The trigger can declare values to ask at the start (<code>{{ $vars.NAME }}</code>), each with a default.</li>
+<li><strong>From the sidebar</strong>: long press (or right click) a workflow in the library and choose <strong>Pin to Sidebar</strong>. A tap on the pinned tile runs it.</li>
+<li><strong>From a terminal selection</strong>: add a <em>Terminal selection</em> trigger. Select some text in a terminal, right click and choose <strong>Selection → Run a workflow</strong>. The selected text is <code>{{ $trigger.text }}</code>.</li>
+<li><strong>From Shortcuts</strong>: the <strong>Run Workflow</strong> action opens WebSSH and runs the workflow you chose. Combined with a personal automation, it is also the way to run a workflow at a set time.</li>
+</ul>
+<details class="note">
+<summary>Runs started by Shortcuts</summary>
+<p>A run started by Shortcuts never shows a connection sheet: a server that asks for a password fails its node at once, with a clear error. Use keys, or hosts whose password is saved.</p>
+</details>
+<h2 id="trust">Trust</h2>
+<p>A workflow can run commands on your servers, so WebSSH keeps track of where it comes from, <strong>per device</strong>:</p>
+<ul>
+<li>a workflow you made or changed on a device is trusted on that device;</li>
+<li>a workflow that arrived through iCloud or from a file is not: its first run shows <strong>Check before running</strong>, the list of what it does outside its own data (the commands, the files, the hosts), and waits for your agreement.</li>
+</ul>
+<h2 id="secrets">Secrets</h2>
+<p>Tokens and passwords used by a node (the token of an HTTP request, for instance) are stored in the <strong>Keychain</strong> of the device, never in the workflow. They are masked wherever a run is shown, and so are the passwords a workflow generates.</p>
+<h2 id="run-history">Run history</h2>
+<p><strong>⋯ → Run history</strong> (also in the menu of a workflow in the library) lists the last 20 runs of a workflow on this device, whatever started them: when, how they ended, how long they took. Open a run to see each node, with what came in and went out.</p>
+<ul>
+<li>The history stays <strong>on the device</strong>: it is never synchronized.</li>
+<li><strong>Keep the data of the runs</strong> (on by default) can be turned off per workflow: a run then only keeps how it went.</li>
+<li>A run that is cut because the app stayed in the background too long, or was closed, is marked <strong>Interrupted</strong>. It is not resumed.</li>
+</ul>
+<h2 id="import-and-export">Import and export</h2>
+<p><strong>Export</strong> (menu of a workflow in the library, or ⋯ in the editor) saves a workflow as a <code>.wsworkflow</code> file, which is readable JSON. <strong>Import</strong> is in the ⋯ menu of the library; a <code>.wsworkflow</code> file can also be opened with WebSSH from Files or the Finder.</p>
+<ul>
+<li>A file <strong>never contains a secret</strong>: set them again after an import.</li>
+<li>An imported workflow is <strong>not trusted</strong>: it asks before its first run.</li>
+<li>Hosts chosen one by one are specific to the device that exported the file; on another device, choose them again. Groups and tags work when they have the same names.</li>
+</ul>
+<p>Workflows are also synchronized through <a href="/documentation/help/iCloud/">iCloud</a> like your other WebSSH data.</p>
+<details class="note">
+<summary>Free version</summary>
+<p>Without WebSSH PRO you keep full use of <strong>one workflow of up to 10 nodes</strong> (triggers count). Beyond that, for instance after an import, a workflow can be viewed and deleted; adding a node or running it opens the PRO upgrade. The nodes of the Tools family are not counted against the limits of the tools they use. <a href="/documentation/pricing/">WebSSH PRO</a> removes the limits.</p>
+</details>
+<h2 id="limits">Limits</h2>
+<ul>
+<li>An item holds up to 256 KB of fields and 5 MB of bytes; an output passes on up to 1,000 items.</li>
+<li>A command is stopped after its timeout (60 seconds by default).</li>
+<li><em>Wait</em> goes up to one hour: a run is not a scheduler.</li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2026</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <div style="color:var(--md-footer-fg-color--lighter)">
+WebSSH &copy; 2012-2026<br />
+❤️ Love what I'm building? Support me with a <a href="https://www.buymeacoffee.com/isontheline" target="_blank">coffee</a> or <a href="https://github.com/sponsors/isontheline" target="_blank">sponsorship</a>!
+</div>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/isontheline/pro.webssh.net" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/sponsors/isontheline" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m47.6 300.4 180.7 168.7c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9l180.7-168.7c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141-45.6-7.6-92 7.3-124.6 39.9l-12 12-12-12c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.buymeacoffee.com/isontheline" target="_blank" rel="noopener" title="www.buymeacoffee.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M96 64c0-17.7 14.3-32 32-32h384c70.7 0 128 57.3 128 128s-57.3 128-128 128h-32c0 53-43 96-96 96H192c-53 0-96-43-96-96V64zm384 160h32c35.3 0 64-28.7 64-64s-28.7-64-64-64h-32v128zM32 416h512c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://wolf.solar" target="_blank" rel="noopener" title="wolf.solar" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391l-19.9 107.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121l19.9-107.9c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1l90.3-62.3c4.5-3.1 10.2-3.7 15.2-1.6zM352 256c0 53-43 96-96 96s-96-43-96-96 43-96 96-96 96 43 96 96zm32 0c0-70.7-57.3-128-128-128s-128 57.3-128 128 57.3 128 128 128 128-57.3 128-128z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ba449ae6.min.js"></script>
+      
+        <script src="../../javascripts/extra.js?20251102B"></script>
+      
+    
+  </body>
+</html>
