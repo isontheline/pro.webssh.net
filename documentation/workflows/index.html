@@ -572,6 +572,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#with-an-ai-assistant" class="md-nav__link">
+    With an AI assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#trust" class="md-nav__link">
     Trust
   </a>
@@ -4247,6 +4254,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#with-an-ai-assistant" class="md-nav__link">
+    With an AI assistant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#trust" class="md-nav__link">
     Trust
   </a>
@@ -4317,6 +4331,7 @@
 <li><a href="#run-a-workflow">Run a workflow</a> and the <a href="#ways-to-start-a-workflow">ways to start one</a></li>
 <li><a href="#trust">Trust</a>, <a href="#secrets">secrets</a> and the <a href="#run-history">run history</a></li>
 <li><a href="#versions">Versions</a>: going back to an earlier state</li>
+<li><a href="#with-an-ai-assistant">With an AI assistant</a>: explain, change and run a workflow</li>
 <li><a href="#import-and-export">Import and export</a></li>
 </ul>
 </details>
@@ -4535,6 +4550,14 @@
 <summary>Runs started by Shortcuts</summary>
 <p>A run started by Shortcuts never shows a connection sheet: a server that asks for a password fails its node at once, with a clear error. Use keys, or hosts whose password is saved.</p>
 </details>
+<h2 id="with-an-ai-assistant">With an AI assistant</h2>
+<p>On the Mac, an AI assistant connected to WebSSH (<a href="/documentation/help/intelligence/api-mcp-server/">API / MCP Server</a>) can work on your workflows, each kind of action with your approval:</p>
+<ul>
+<li><strong>read</strong> a workflow and explain it: secrets are never included;</li>
+<li><strong>change</strong> it: you are shown what changes, node by node and on the canvas, and the previous state stays in the <a href="#versions">versions</a>;</li>
+<li><strong>run</strong> it and <strong>read its runs</strong>, to tell you why one failed.</li>
+</ul>
+<p>The <strong>✦</strong> button of the editor, next to <strong>⋯</strong>, asks an assistant about the workflow on screen. An assistant never creates nor deletes a workflow.</p>
 <h2 id="trust">Trust</h2>
 <p>A workflow can run commands on your servers, so WebSSH keeps track of where it comes from, <strong>per device</strong>:</p>
 <ul>
@@ -4557,6 +4580,7 @@
 <li>Tap a version to see it on the canvas. Nothing can be changed there; the settings of a node open to be read.</li>
 <li><strong>Restore</strong> asks for a confirmation, then puts it back. The workflow as it was is kept as a version too, so a restore can be undone.</li>
 <li>In the <strong>run history</strong>, a run shows <strong>Workflow as it ran</strong> while that version is kept.</li>
+<li>A change made by an <a href="/documentation/help/intelligence/api-mcp-server/">AI assistant</a> leaves two versions: the workflow before it, and the workflow as the assistant left it, under its name.</li>
 </ul>
 <p>The last 20 versions of each workflow are kept <strong>on the device</strong>: they are never synchronized. Moving nodes around does not make a new version.</p>
 <details class="note">

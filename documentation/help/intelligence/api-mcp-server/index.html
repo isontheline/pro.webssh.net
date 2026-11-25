@@ -2679,6 +2679,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ask-an-assistant-about-a-workflow" class="md-nav__link">
+    Ask an assistant about a workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-ai-assistants-screen" class="md-nav__link">
     The AI Assistants screen
   </a>
@@ -4206,6 +4213,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ask-an-assistant-about-a-workflow" class="md-nav__link">
+    Ask an assistant about a workflow
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-ai-assistants-screen" class="md-nav__link">
     The AI Assistants screen
   </a>
@@ -4301,6 +4315,10 @@
 <li>✅ Subnet calculator (IPv4 / IPv6)</li>
 <li>✅ Cron expression explainer with the next run dates</li>
 <li>✅ TLS certificate check (trust, expiry, chain)</li>
+<li>✅ Read your <a href="/documentation/workflows/">Workflows</a>: the list, one workflow with its nodes and settings (never a secret), the catalogue of nodes</li>
+<li>✅ List the saved hosts a workflow can run on (names, addresses, groups and tags, never a password or a key)</li>
+<li>✅ Change a workflow (nodes, links, settings, name), with your approval on what changes; never create or delete one</li>
+<li>✅ Run a workflow with your agreement, and read how its last runs went, node by node</li>
 <li>🚧 Make Ping Requests</li>
 <li>🚧 Launch Traceroute</li>
 </ul>
@@ -4359,6 +4377,11 @@
 <li><strong>Reading files</strong>: listing a directory, reading a text file or downloading a file on the server of an open SSH session, over that session (SCP on the existing connection, nothing new is opened). Small text files come back to the assistant directly; larger ones and downloads land in <code>~/Downloads/WebSSH/&lt;session&gt;/</code>, never overwriting an existing file.</li>
 <li><strong>Writing files</strong>: write a text file the assistant composed, upload a file from your <code>~/Downloads</code> folder (the one local folder WebSSH can read), create a folder, rename or move, chmod.</li>
 <li><strong>Deleting files</strong>: files and folders; a non-empty folder needs an explicit recursive request, and the sheet shows the command in red. WebSSH refuses to delete <code>/</code> or your home itself.</li>
+<li><strong>Reading workflows</strong>: the nodes of one <a href="/documentation/workflows/">workflow</a> with their settings: commands, targets, references. <strong>Secrets are never included</strong>: the assistant only learns that one is set. The sheet names the workflow and lists its nodes, and "Always for this workflow" stops asking for that workflow until WebSSH quits. Listing your workflows (names and sizes only) and reading the catalogue of nodes never ask.</li>
+<li><strong>Changing workflows</strong>: the assistant sends a workflow back with its changes: nodes added, removed or edited, links, settings, the name. The sheet lists what changes, node by node, and <strong>Show on the canvas</strong> opens the workflow as it would become. An assistant can neither set nor read a secret, and can neither create nor delete a workflow. After a change, the workflow asks you to check it before its next run, and its previous state stays in its <a href="/documentation/workflows/#versions">versions</a>, where the new one reads "Edited by" the assistant. With the editor open on that workflow the change shows at once, and Undo takes it back. Checking a change without storing it never asks.</li>
+<li><strong>Reading the runs of workflows</strong>: the last runs of one workflow, as its <a href="/documentation/workflows/#run-history">run history</a> shows them: how each ended, then, node by node, what came in and what went out. Secrets stay masked, long texts are cut, and nothing is there for a workflow set not to keep the data of its runs. This is what lets an assistant tell you why a workflow failed.</li>
+<li><strong>Running workflows</strong>: the sheet shows what starts the run and its values, then what the workflow does outside its own data: commands, files, hosts. The run then shows in WebSSH, where you can stop it, and the assistant gets its outcome. <strong>A workflow that is to be checked (one an assistant just changed, for instance) always asks, even on Allow.</strong> An assistant can only start what you start by hand: a manual trigger, or a terminal-selection trigger with a text it gives.</li>
+<li><strong>Reading the inventory</strong>: the names, addresses, groups and tags of the saved hosts a workflow can run on. Never a password, a key nor a user name.</li>
 </ul>
 <p>Every one of these actions is listed in the session's journal (<strong>History</strong> &gt; <strong>Assistants</strong>), and commands leave a marker in the session recording.</p>
 <h3 id="ask-an-assistant-from-a-session">Ask an assistant from a session</h3>
@@ -4367,6 +4390,8 @@
 <summary>OpenCode in Ask an assistant</summary>
 <p>OpenCode is offered here only with an OpenCode Desktop release <strong>newer than 2.3.2</strong>: up to that version the app receives the link and opens nothing (fixed on OpenCode's side in <a href="https://github.com/anomalyco/opencode/pull/65332">pull request 65332</a>). OpenCode opens a new session in the <code>/tmp</code> folder, a neutral place: the assistant reads your session through WebSSH, not from files. Connecting OpenCode to WebSSH (below) works with any version.</p>
 </details>
+<h3 id="ask-an-assistant-about-a-workflow">Ask an assistant about a workflow</h3>
+<p>The same ✦ button sits in the bar of the <a href="/documentation/workflows/">workflow</a> editor, next to <strong>⋯</strong>. It suggests questions about the workflow on screen (explain it step by step, why its last run failed, what could go wrong, "change this workflow so that…") and opens the assistant you pick with your question and the workflow's name and id. Nothing of the workflow itself travels in the link: the assistant reads it through WebSSH, under the <strong>Reading workflows</strong> permission, and asks before it changes or runs it.</p>
 <h3 id="the-ai-assistants-screen">The AI Assistants screen</h3>
 <p>Open <strong>Inventory</strong> &gt; <strong>Tools</strong> &gt; <strong>AI Assistants</strong> (or tap the <strong>API / MCP</strong> card). The screen shows whether the server runs and which assistant is connected, lets you connect each client, and lists prompts to try: tap one to copy it, or open it straight in Claude Desktop (chat or Claude Code), Codex or Cursor, where it lands in the composer for you to send. Every client goes through the <code>webssh-mcp</code> bridge: it starts WebSSH when needed and carries the token for you.</p>
 <ul>
@@ -4409,7 +4434,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 25, 2026</span>
       
     
   </small>
