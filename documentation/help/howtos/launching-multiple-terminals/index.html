@@ -1993,6 +1993,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#open-all-the-connections-of-a-group" class="md-nav__link">
+    Open all the connections of a group
+  </a>
+  
+    <nav class="md-nav" aria-label="Open all the connections of a group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-group-title" class="md-nav__link">
+    From the group title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-a-selection" class="md-nav__link">
+    From a selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-forwardings" class="md-nav__link">
+    Port forwardings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4104,6 +4138,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#open-all-the-connections-of-a-group" class="md-nav__link">
+    Open all the connections of a group
+  </a>
+  
+    <nav class="md-nav" aria-label="Open all the connections of a group">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-the-group-title" class="md-nav__link">
+    From the group title
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-a-selection" class="md-nav__link">
+    From a selection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-forwardings" class="md-nav__link">
+    Port forwardings
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4142,13 +4210,40 @@
 <li>Launch another SSH or SFTP connection</li>
 <li>Switch between connections by using the "multiple windows" top left icon on the navigation bar</li>
 </ol>
+<h2 id="open-all-the-connections-of-a-group">Open all the connections of a group</h2>
+<p>Since WebSSH 33.5 the connections of a <a href="../arrange-connections-inside-folders/">group</a> can be opened in one go, one after the other. This is a PRO feature: the menus are shown to everyone, and the upgrade is offered when an entry is chosen.</p>
+<h3 id="from-the-group-title">From the group title</h3>
+<p>In the <em>Servers</em> section, each group title has a <code>⋯</code> button <strong>just before its name</strong>. Its menu offers:</p>
+<ul>
+<li><strong>Open All in Tabs</strong> (macOS): one tab per connection, in the current window</li>
+<li><strong>Open All in This Window</strong> (macOS) or <strong>Open All</strong> (iPad, iPhone): every session is opened in the current window and stays reachable from the sidebar, or from the "multiple windows" icon on iPhone</li>
+<li><strong>Open All in Split View</strong> (macOS and iPad, when <a href="../split-panes-and-broadcast-input/">split panes</a> are enabled): from 2 to 4 connections side by side</li>
+</ul>
+<p>Good to know:</p>
+<ul>
+<li>Each entry shows how many connections it is about to open. Only the connections <strong>currently shown</strong> in the group are opened: the search field and the <em>Favorites</em> / <em>SSH</em> / <em>SFTP</em> tabs narrow them down.</li>
+<li>A subgroup is a group of its own: <code>PROD</code> does not open <code>PROD / WEB</code>.</li>
+<li>The button is not shown for connections that have no group, nor on the <em>Recents</em> tab.</li>
+<li>Above 8 connections, WebSSH asks for a confirmation first.</li>
+<li>A connection that fails does not stop the others: the progress sheet lists them and offers <strong>Retry Failed Connections</strong>. The cross on a row gives up on that connection only.</li>
+</ul>
+<h3 id="from-a-selection">From a selection</h3>
+<p>To pick the connections by hand, possibly across several groups:</p>
+<ol>
+<li>Choose <strong>Select</strong> in the <code>⋯</code> menu of the <em>Servers</em> section, or hold <code>Cmd</code> and click a connection (Mac, or iPad with a keyboard)</li>
+<li>Tick the connections</li>
+<li>Use the <strong>Open</strong> button of the navigation bar (the stacked rectangles): it offers the same entries as above</li>
+</ol>
+<p>The other buttons of the selection bar are <strong>Run on Hosts</strong> (see <a href="../run-snippet-on-multiple-hosts/">Run a command on multiple hosts</a>), <strong>Color</strong>, <strong>Delete</strong>, and <strong>Edit</strong> when a single connection is ticked. <strong>Cancel</strong> leaves the selection.</p>
+<h3 id="port-forwardings">Port forwardings</h3>
+<p>The <em>Forwardings</em> section has the same button on its group titles and in its selection bar, with <strong>Start All</strong> and <strong>Stop All</strong>. <strong>Start All</strong> leaves the forwardings that are already running alone. <strong>Stop All</strong> is available to everyone.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 6, 2026</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 26, 2026</span>
       
     
   </small>
